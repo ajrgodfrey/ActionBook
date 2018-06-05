@@ -1,0 +1,75 @@
+# Getting started with BrailleR {#GettingStarted}
+
+
+The BrailleR package has been created for the benefit of blind people wishing to
+get more out of R than it already offers --- which is actually quite a
+lot!
+
+
+
+## Installing the BrailleR package
+
+To use the functionality of the BrailleR package you need to have it installed. The package has several dependencies so installation from the CRAN repository is recommended. This would be done by issuing the following two commands in an R session:
+
+```r
+chooseCRANmirror(ind=1)
+install.packages("BrailleR")
+```
+
+If for some reason you have difficulty with the above commands, you can install the BrailleR package using a zip file version available from a CRAN repository or the latest version on GitHub. 
+
+From time to time, you should check that you are using the most recent version of the BrailleR package. You  can update all installed packages using the commands:
+
+```r
+chooseCRANmirror(ind=1)
+update.packages(ask=FALSE)
+```
+
+Once you've got the package installed, you still need to get it running in your current R session by issuing one last command. When you issue the first of the following lines, the package start messages will also appear.
+
+```r
+library(BrailleR)
+```
+
+You're ready to go!
+
+
+### Some initial setting up instructions
+
+When you first use the `library(BrailleR)` command, you will see some start up messages and a question. The rules of R packages include not writing to the user's hard drive without expressly asking them for permission to do so. If you do not want a folder for your `BrailleR` files then use the temporary folder which will be removed when you end your R session. This will mean you need to answer the question over the location of the `MyBrailleR` folder next time you issue the `library(BrailleR)` command though.
+
+The welcome message from `BrailleR` suggests you issue the `GetGoing()` command. This will ask you a few questions that will help personalise your use of the `BrailleR` package. We will see how to alter these settings in Chapter blah later so don't panic if you don't do it all right the first time. You can re-issue the `GetGoing()` command again at any time.
+
+
+The book you are reading now can be reached from your R session by issuing the command `BrailleRInAction()`. That might seem a bit much, but do remember you can use tab completion to avoid typing the whole command name out in full. You will probably need no more than `B`, `r`, `a`, then tab (which adds the rest of BrailleR), then `I` and one last tab; add the opening and closing parentheses and press the Enter key. This will open the front page of the book in your browser. A similar command, `BrailleRHome()`, will open the BrailleR Project home page.
+
+Itis all too easy to feel you're doing it on your own, which even the most accomplished people have experienced. I put the `ThankYou()` command in the BrailleR package so that it would be easy to send me a message to tell me about your experiences as a blind person using R or to ask for help; it starts an email message to me.  I'm not the only blind person out there using R, and many of us are on an email list so that we can share ideas and solutions for problems, many of which are specific to blind users. The `JoinBlindRUG()` command will start the email needed to join the BlindRUG email list.
+
+## What else do you need?
+
+You obviously have R installed or an intention to do so soon if you are reading this document. Aside from R and the add-on packages that BrailleR needs, there are no other software requirements. There are several optional software installations that could make life easier if they are installed before you need them. In order of necessity, they are:
+
+### The document converter --- pandoc
+
+BrailleR requires the very useful file converter called pandoc. Get it from the 
+[pandoc download page](https://github.com/jgm/pandoc/releases)
+
+### The principal integrated development environment --- RStudio
+
+It is a good idea to install RStudio, even if you can't actually use it as a blind person using screen reading software. The reason is that RStudio installs a few other useful tools that we will make use of by other means. Get it from the
+[RStudio download page](https://www.rstudio.com/products/rstudio/download2)
+
+### One programming language --- Python
+
+WriteR is a simple text editor written in wxPython that needs Python27 and wxPython. Unfortunately, they are two separate downloads at present. You do not need this editor so do not install Python unless you are really keen. Windows users can obtain an executable file by issuing `GetWriteR()` once the BrailleR package has been successfully installed. More on this in Chapter #WriteR
+
+
+
+## BrailleR commands used in this chapter
+
+The only BrailleR command actually recommended in this chapter was `GetGoing()`. You might find it useful to use `BrailleRHome()` and `BrailleRInAction()` from time to time, but you're already reading the book that the second of these commands opens. 
+
+The `ThankYou()` and `JoinBlindRUG()` commands should be used when you want to connect with me, or other blind R users.
+
+At this stage it is recommended that you install any additional software manually when it is required.
+

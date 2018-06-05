@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Analysis of the Airquality2 data, using Ozone as the response variable and Month as the single grouping factor.</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+      font-family: arial, helvetica, sans-serif;   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+color: blue;     font-weight: bold; margin-bottom: 15pt; text-align: center;
+   font-size:2.2em;
+}
+
+h2 {
+color: darkred; font-weight: bold; 
+font-size:1.8em;
+padding-top: 15pt;
+}
+
+h3 {
+font-weight: bold; padding-left: 5pt; padding-top: 5pt;
+   font-size:1.4em;
+}
+
+h4 {
+color: blue;   margin-bottom: 15pt; text-align: center;
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid orange;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table {
+   max-width: 95%;
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+   border: 2pt solid darkblue;
+}
+
+td, th {
+  border: none;
+  padding: 5pt;
+}
+
+th{
+font-weight: bold; 
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Analysis of the Airquality2 data, using Ozone as the response variable and Month as the single grouping factor.</h1>
+
+<h4>Prepared by Jonathan Godfrey</h4>
+
+<h2>Group summaries</h2>
+
+<table><thead>
+<tr>
+<th align="left">Level</th>
+<th align="left">Mean</th>
+<th align="left">Standard deviation</th>
+<th align="left">n</th>
+<th align="left">Standard error</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">5</td>
+<td align="left">23.61538</td>
+<td align="left">22.22445</td>
+<td align="left">26</td>
+<td align="left">4.358573</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">29.44444</td>
+<td align="left">18.20790</td>
+<td align="left">9</td>
+<td align="left">6.069301</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">59.11538</td>
+<td align="left">31.63584</td>
+<td align="left">26</td>
+<td align="left">6.204298</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">59.96154</td>
+<td align="left">39.68121</td>
+<td align="left">26</td>
+<td align="left">7.782126</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">31.44828</td>
+<td align="left">24.14182</td>
+<td align="left">29</td>
+<td align="left">4.483024</td>
+</tr>
+</tbody></table>
+
+<p>The ratio of the largest group standard deviation to the smallest is 2.18  </p>
+
+<h2>Comparative boxplots</h2>
+
+<p><img src="data:image/png;base64,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" alt="Comparative boxplots"/></p>
+
+<pre><code> This graph has 5 boxplots printed vertically
+ with the title: 
+ &quot;&quot; appears on the x-axis.
+ &quot;&quot; appears on the y-axis.
+ Tick marks for the y-axis are at: 0, 50, 100, and 150 
+ Group 5 has 26 values.
+ An outlier is marked at: 115 
+ The whiskers extend to 1 and 45 from the ends of the box, 
+ which are at 11 and 32 
+ The median, 18 is 33 % from the lower end of the box to the upper end.
+ The upper whisker is 1.3 times the length of the lower whisker.
+ Group 6 has 9 values.
+ An outlier is marked at: 71 
+ The whiskers extend to 12 and 39 from the ends of the box, 
+ which are at 20 and 37 
+ The median, 23 is 18 % from the lower end of the box to the upper end.
+ The upper whisker is 0.25 times the length of the lower whisker.
+ Group 7 has 26 values.
+ There are no outliers marked for this group 
+ The whiskers extend to 7 and 135 from the ends of the box, 
+ which are at 35 and 80 
+ The median, 60 is 56 % from the lower end of the box to the upper end.
+ The upper whisker is 1.96 times the length of the lower whisker.
+ Group 8 has 26 values.
+ There are no outliers marked for this group 
+ The whiskers extend to 9 and 168 from the ends of the box, 
+ which are at 28 and 84 
+ The median, 52 is 43 % from the lower end of the box to the upper end.
+ The upper whisker is 4.42 times the length of the lower whisker.
+ Group 9 has 29 values.
+ An outlier is marked at: 96 78 73 91 
+ The whiskers extend to 7 and 47 from the ends of the box, 
+ which are at 16 and 36 
+ The median, 23 is 35 % from the lower end of the box to the upper end.
+ The upper whisker is 1.22 times the length of the lower whisker.
+</code></pre>
+
+<h2>Comparative dotplots</h2>
+
+<pre><code>Warning in dotplot.formula(Ozone ~ Month, xlab = &quot;Ozone&quot;, ylab = &quot;Month&quot;):
+The dotplot command is a wrapper for stripchart, and is not a base R
+function.
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="Comparative dotplots"/></p>
+
+<pre><code>This graph has 5 dotplots printed horizontally
+with the title: 
+&quot;&quot; appears on the x-axis.
+&quot;&quot; appears on the y-axis.
+Tick marks for the x-axis are at: 0, 50, 100, and 150 
+the data that range from 1 to 168 has been broken into 6 bins.
+The counts are:
+5: 18 7 0 0 1 0 
+6: 5 3 1 0 0 0 
+7: 5 7 9 4 1 0 
+8: 7 6 7 3 2 1 
+9: 19 6 2 2 0 0 
+</code></pre>
+
+<h2>One-way Analysis of Variance</h2>
+
+<pre><code>
+The p value for Month is 0
+
+The ratios of the group standard deviations to the overall standard deviation 
+ (groups ordered by increasing mean) are:
+ 0.76 0.62 1.08 1.35 0.82
+
+</code></pre>
+
+<pre><code>             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+Month         4  29438    7359   8.536 4.83e-06 ***
+Residuals   111  95705     862                     
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+37 observations deleted due to missingness
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAElBMVEX9/v0AAAB/f3++vr79/v3/AAD6BNaXAAAABnRSTlP/////AP8NmbZAAAAACXBIWXMAAAsSAAALEgHS3X78AAAZwUlEQVR4nO2di2KsKAyGlx7m/V95W0cQNEjCNZD8e7bTKkTwM+EiOv9ZlUj9N7sAqjlS8EKl4IVKwQuVghcqBS9UCl6oFLxQKXihUvBCpeCFSsELlYIXKgUvVApeqBS8UCl4oVLwQqXghUrBC5WCFyoFL1QKXqgUvFApeKFS8EKl4IVKwQuVghcqBS9UCl6oFLxQKXihUvBC1Qe8OfTcHH08tqdNHUnMPeFbNl4ywc9cqqPKwUbgPLZQJ/DBz9Tetw3gvpXBH0VFgjdh0uiPluoN/rxgvx/fDY6guW0PMgUXuv9wUcRbXAn8o8LHf8ZfEuYCHDkNLlSUqDN4c/846wptt94trvMUngFzz7IgeH9ZB/9HZ2N18K6Nj6r0vBKujWFEj//0hh4naSXwcOkfp8HGP9cDb53/Om4mrnIQ+Yz/zeW9/ek+nJ+bIGQsIh/GEuCvOl0/H5vaqmOov7GBLvlHQLAOvL1VOvKZp3HmyoC/h3oTnoNOnZkB4KOaPTdE22/5oo1rh3oL9G2ep8HaW9W61XNCr95EH/48+L5akMGGZ8O4frBvRLqUvYfu5+MZ6oNgdqS5yC/l8Sr2UvBCpeCFSsELlYIXKjp4s5zana3ZNaErWZUC8DVnboZagm9naowUPDtTY6Tg2ZkaIwXPztQYKfg2OTequ4JP5YJ6xRvVXcG/5FKPx9liqsICmyhnbljMVAq+KJ96PM4WUxUX+OngG9VdwU8yNUal4KF2jXflv30y45b3uE0NrfMVqe6v4MHMrCvvn1G4FuiJAU+r+2bgn4s55YCn1X1j8EJDPbLue7bxUSFFgg82wdJe/SRTYyTH4wEpeEi7tfGAcgU2+DptVHcK+O3mq91+9LMqG9VdPV7BQ/lEtPH4WL9R3cX36knt10Z1LwR/Pra6RJuvvXpI7218avlROD/E/mRIAQ85Y3Ebn9jmZoS3AL9JqAedsTV4PxW8Bfg9evWgM3bp3O3SxifAny/gIJmaKsgZtVefSfJMY6BhHvu6t2rjQdtlRZqnsgLfwC8S3e5S8IW5VvP4uxT8237YlQ2QdaO6K3h0GnwyPlLwDdLgk/GRGPC+DxYEb0yox5ovLtgkSQFv3AduLFtqfx2JAe/mrWSB9y+JJTzXvRl462bh0KF+g9uyV60J48+9wIMY81O2i3fuvuDBO2ZiwEPaHvz16vdH+RT8a4ItevWi23hQ+3fu0poCnsstjUznbpeFGKBmgAe6GoMl7aFJQCLBuwJsDT4Tq0SGeix4whXKDnyu7CI9Hhvq111zl1/sKhI83uMXBW/yI1EN9ZiEKJNshFrb/pPcc4JP2Fj72bm6Xn3wBc/XtroCtZMxCHf/5Z71eDjcgSeOTeWxQszcwXV/egOXuoOFu+vHIkK9ZPDpusdf+MholS3G3X/OhAm5Nh68gBYHX9WrN4GFeCMHoajbLPjk5bxuGx98Wysi1IP9GyDvGnUP+nRtevXEcDczMBp7PUq09cxdRoXgwaZkiXH8cXB0qKeY5aBXl/oJh3D5zh3oysZWDGnmTuAQV9muNI6nPKJc3KuvGcty6QNvFuoNPPw89HOfsCkFXzKJ4Xkr+B66PTSQS53cc7XxcNf2eT1kDurj0NxQH2gr8C/YoenZNr36nC23mwN4QhtPsdrOVGEB0mcVnJYfCJ5HqA/Pz0bgk/6euhlT2Ksn2mIkPPilHqhIdeuSN+FQHr9I5XGiDOcQaZCmOgt4K082R0q7gg+0E3igBI8h3C1HQkGoxx99LRXO1ReZ6qmS24MjO3fstEnnDnr92qu3H5mSe3YGv9e6egh8PlNyz/ttWZotZnItIiLUL9HG3whlvf3Ik9xzrblbovJoEe7HL7vKFiFx4E0w9tkRPMbb/5Rv4xfp2WLlXoF0/I5IjDVbVag6hYXEcm/fueNy5y0lEvi0BUZr7q4xPJq6zXfuqFO2bO68pXRUh7ACB0gTb5q+ytafcgr35h6/Bnj3ezYtAjzOVDeVXnUiQ/1GnTtXGdQQLsqY3PP+CFXKFir51MAYhGZEqGc+h1HezCDAk656DPipTaIJIvjyN2kOfzdkbz+yJveUgce4yOS+kLE4j2f/Dpyg0SrInNzz+ghV0hbmVE1/1Awb6ikm25lCH/JQibcfuZN7Cnv1S4CvGsenTI7V2Ukt5Y6auWvl8SzW3IUFyIR6zjeovt5ecdTmnbv0qZru6A8t27kz1dyHguczt1M3c5dKOkxf6nVuhAn1pHE8xuOnej66V2+pdR+kem8/rCT3tJ+y9dxnun79TRrYbDtTuSO1uTcwpVc/HTx+5g5ttqJIJB0TNg2OlgOfehIPuuqwEzjTp2zRbTy7Xv238C0OlgGfmq0GT1wO/NXEz5yyJYCnmG1n6u0of97e5uQhwKez+V3f6Pnvn7W//7vP+/+/243NpBnwv4mO3UqjwDdzmjbgr40v7bffNX+uHtm5YxXqzyFcqwPlwKeusZI2flSo/2REGMfzuR/vuA8CT7Zl7P0kB/vRw7kcuhzY11Ian2Ah8Cf1dh7TezjXA12VfkuHBm+JI5qO+mmLfeg43u+aPo535MtKkR7R9FJjZ//aTO5pPnN3gZ8+nDvJNwHfg0qsn6aN+6kpHj8V/NEP8b+/pUwQHe3xfa6skVO2fCZwTvKYKdvJbfxP606d00jwPt3scfxKt2V7tSNTPH5m5+5bkCVuy3pvXxw8jzb+KABy5o5msrWM6ch9KHg+U7ZYjydYbWfqMOcnbHqdK3nj+GNCDtfGEy7RlhUyJuTe0HB0kOSefm383PvxlvYkDd5sI42gbif16qd27ih35whWK0oU2Qm4NzKZOFByT7/HpOdP4HBdgdO5XY8OldzT7zHp6eCZ9uoPb2+1wiZ7sOSeXb9blhDqKVYrs5uBzv49YnLPpt8tyy7UX8R/Wq6wyR42uWfTN1vSevX9F2IYM97bj+Mm92wKnjKBMwD85e6DOz7iwJsggiMK3DnUX9zL8pdLJngmnTtzLvEfTt0KBM/ntqxv12dwFwjeWmQbT+pv0etuvv4+hbqVCJ7UuYMNABcEue5nMWZxlwee2LlLmEBtezcyc/rSKvhsUnh7+FfRCPyI8tPc3QoEj+/cGcrkMq3uxuAtd1IpeOgqXwI8fjjXD/xfT77Fyw1qVAge9BhB4B9bqeAnrzoUCJ4wjn+Jx3XgR0/PQpIJ3v3a0Crh+LOj/CGRbfy0V6EcA3eDvvPTU+J69ecVO2Wu3pyPuXM4U+WhPvT44XeTyzUZvJk+c3OqGDxwA4NDfbKaF+rHrrDJSRz4SZ07BlM2sUrBm2XBBxoH/vs2Sk4nqLhzB3RRONULpYHg4z4RA4nr1YcaBP7vZgwv6rYKfN3sFQeN8nh21K2C72fqvPP7Q7nVM1Aa6huaCj37vMXzY42CZ6fG4CPAjnpyOcdkKfh2pmLP/q6n48j8kIIvyJaaw2BLGZCCL8n1bLXvpqaup8NIwRflesxebVR3Bf+W64rqzzuT7L39Twq+MJt6fGBrOdWcuUTdf14Ox0rJqtDBY85Pt8Q9TVflz9++qTlQZXZICr5NfgX/p13AtzuUgq9MrOBLskNS8G2k4P+k4NvuXga8ir8UvFApeKFS8EKl4IVKwQuVghcqBS9UrcF/7wS+3Q+8Jccn/t5lRKYmlqNW2QO97c6X8nV/WSUbg78WLOHw0BL7A7QuR62yB3pjky/lK9nCSnYI9fgTbkiJjXsGGQOekriN3uHUgM+/W4MDeAodS7xK8KkHe3z+OFUev8hcPZ6OXx2ELTlL8JkaZN+rWg2+qIpz2/htPD57lI7gy2o4uVdvab16vOmxvfr3dY1HivfcOftVxwal43ihUvBCpeCFSsELlYIXKgUvVApeqBS8UCl4oVLwQqXghUrBC5WCFyoFL1QKXqgUvFApeKEaCt6vfTXxopLHApKBbzToIHOt8U2luO81V86XDC1Py1jwwS8bgw8eAXjb/9yQzhbsb6QJ4I11q2vPBajXOlS3Au+6wMc+ENNKUb2un67O5vyOp6tyMXhfdxP8aHxCRod6G9TsFvbNVf3432LU7Z3g+7/oDNj7KQH/tTghUzze/Qu827oKxR4fRoaFFBIEKxRWO+Pxt3+tTshU8MGf9gQPxoLrcxG9um78531zMiY2PiGTwJvgOVnfYJ1/hNf7t3Vb2eN9PWzoxlcbH40A/JNF0R6foeUJ0XG8UCl4oVLwQqXghUrBC5WCFyoFL1QKXqgUvFApeKFS8EKl4IVKwQuVghcqBS9UCl6oFLxQKXihUvBCpeCFSsELlYIXKgUvVApeqBS8UCl4oVLwQqXghUrBC5WCFyoFL1QKXqgUvFApeKFS8EKl4IVKwQuVghcqBS9UCl6oFLxQKXihUvBCpeCFSsELlYIXKgUvVApeqBS8UCl4oRoAHvoWPfPy133XEt9L4r5R7b45+nhsh021KtOr+oM3/sd9Y+Iv7C5WCr5GKrn3bQNyXzsNBB9+vWD0JUTXVyvFX9F3fl1R8I0+fL+I7AJvnvX0XyRkofq7750Kv5PJW4h2miBddGIKNAi8Db8+K/rNxh8GTOirzzYEhF8r9ix+YnvgFMHpiM5GtDO2Y0IjZI1r46/y5cHfE8ZnjaN8Gx9XAiy7eVTzXmsbGjKPM9PijAzq1Qenwn+bmvFfoQaCv38nI3Pw1vlv+NVxQNnvX6xnvUffQr3/TmoT/B4buI5G17g2/opj9yseBB/HSht+cFQQtMNtUIyPA4J14G1Y8/Dj4RlADKBrKHjn6kDscx9wwsXAm1tdbhvA+l9/AhtvNiI7XUJ9eSS5Gfl+nj/voS74WvFnwrhXzxt8WK2o9x59APW34Z/3sxFbC76eNDZC1Cv46ApUcVMVGAW/pqpDsYIXqgFtvIqj9O6cUCHAe5c3i6rd2ZpdE4o+n4/5q/vv58ceH1Tw98o3OonD1BL88fNfO4O99Qf+++9z26Pg6abWBE/y+NvdFWeLsb4FNm6uxG1qaH0pefDW/XTKDeee88GsK2/MdbW6oksH/+frD4fPj+PNUuChexjCQ31C+Qmce694GfD1of6RUwp40GPWAR9sKjD01dP6UioFT7PFVIXgoZwb1V3Bv2QLcoYBQECop9liqtICP7q1gtp4mi2mKi5w7jmQBaTgOZi6VtSY8pUzxEMm9/xHPj44xuMsLuP4c04pmGLqr1fw/n4O3pY5L1pCtnniBR4acPZT1uMJJblPkcgDX5w7CPV8wAN92Bdb4eNttYXrLTbgLxvrgne/iwS/x3DO+BRU8NrG81fzXv1KyhWY2L9ZShnw5F79UsqDL2rmlpB6/Ot+IngN9WsoW2Bq/2Yn8HJDvdRmrm44x04eY4CSzTj+fAR25FBICng/Ng2jN5fh3IzpTkwbv0O4M24ukQKeHOor5+q5ga+3NV/GushFCPWJaGeAl6u1mKtn5/FwtqczcAYPdtXKwN/CBs5UXuzaeLAw4dvXELaYClFg+GWkUXux3Zq7t5AoBnwyF1h3AeDXe3YOUGGBgarvVPcg1IMZn83fRpU/90uewGli656QyWnCFEPslC0qM61DOnDQ8i4FD6nfbdn54JEPTdIu5vryjBRiypZ41WMSzubupkibmqzKPPyMKPhmJm31XP1I5dt4MNxVPSq8SKgvaOZK23iOoZ6QbxnwWI/vEe24aAb4ZUK9YPBmz0kM7KtQqL36fYZzjWwxFZfO3QxhevVjxrKjhL4fPyTaTWv1EOC3WHrlZb5E3e8NzRaXhmevfkfwzpHnh3oT/BsrxDh+s57t9dUvmF59785d+FVkQyWuc0fx+P7RjnGoh268k23dE068RChtfHqx5SNvFXiWHt/hqp87c0d5oAIsKUhqv1C/HfijBDW9+nNi67JVv9iSaahvNY4PvkYQabGHCJ07uJkz557nxpU0sHM339FdKfC9eriNB/IyqBlNiFDfwJbbffUXp6lB5y5h1u4V6htOW/qvSF2nczfmJs2M9wXNGMfPB89mypZxr76JrXvCqdwNYQIHb7awNH5GqSx/uaaAnylDmbnrvvTKMJ65a2GLkSgeTzF7/CycwBmk6I0g4sB/n27vBL6oNIN0Tl/kh7I7v+eOTeduXLfO0MC7CUqc7erSDdb8UD+ujb/eBYMM9QnwUCBQ8Jxv0ph48JBv4+EHKqDMa4BHj+PHNXMLjePXBX9iR4/jhzRz6wznFDyQdK/l1YkVOOu28ZQpW8kPVOy2yvZPWI+nmVxLVeD99rGvaKsTZSEGwWpdbo5t/Ki3QgzSdxYDHeqBNC+PiG/1fHwLW4z0Zfb5/p5LC0e7eFODNXcs787tNnN3nOQPzuNR4NPbaGUarDx4MA5VvRFj/v34D/ImzaBmjif49lf9jCbtOvgf916du81CfXrOFtiGqMLUAcDp8KwmcLiCp1Qe482zwX/w77kb079hCZ5oC1OH2aEeD37Q5BVD8OS3QqBSz3P4z58oc/W9X3dm0CetsWZ4/Hh9nPxNBiZt/LU8gpqzVluDD3h7HQXE3Y8f8A4ct/6RnceTFyO8XbyjHpqEeF+FCArYfDhHz8YVPD3cpavgT3mner7yvkqB9niS6kL9SPCVa+5Ak/a1Dn5X2yYNxzsqBa6NL1h6tUDnLl/3srtzKPAt6knkfZUiGJ4379wVaij47ORV887d5eg11SzkHRTjGqQpeEhlz8e/1cE/Jl1Qz1IHTxSk002anUJ9hwkcQj2b8r4KgAz1NJO2/AWHHDt3FJOB3fdD5xL14f0oACbUY00WlmQ8+OvICU0A35l3WILvRzYZWFJocyk4vlO2A0L9MN5BCb4fZZmhvDuO40l3qAjgx/P2Bahq428n7jva//fL/N/vj+8n+v/ffOb303z+/fsk/ifZw/8/Hvw83l7ocTxYmxePp5fk9PhPOv+nSOkjoidw8MPud/BXkebeyCGN43s/RXRaMs29IHtRDJjAeVyDU8GboM6F4BNmbflw7vPi8a01Yjh3I+4ncJqOoIkKrzpEKQbM1X8+n4GegAz19NuyR2qwoWk7V18qIni02dJso9s+0pQt2MGB27njAoZbrMvRZ6+r9783NFuYbfhwrho8sD3Tq5/bp4NK8V4ccrRbYhyP79XDk1cp8G8LMbylqR5P6tyhXXkZ8JWdu3MUcttocR4/tXMXXnXNwRcUhu3Sq2TG50jnPE958CxivkXQwhe0uHPH9+5cs7l6f03Mn8Bxvza0evxcINSTOndJI6E1ZzCdgcc4ntDG08zaNcBjO3eEEuVCPY/h3NEzRdaN2qsvKw1Tj28f6ufKkL5pEm21vDRc2/hU9sQEzksdmHTpMOHOpyOYtGssvbqOnFDZCw6ZuPWLKHfnNpzA8UdO7nkN9UnwKLee3cZjPZ5mtigbY/A2+aV7xAmcMN3cXj0j8HxDPXExAgbq3OagOtSDc/iFoZ7xYkuLj8zoOswO9cHvmbTEFz9JfsHhCm188HsmLfEFh6Vl4ujx5jUR0tYj3eRQfxWEkPo9XWFpzoOwA19wTxqVjseQr3nnbqdQT57EwCTkwR01gQOneWytAj/jhDRv41fSe4Hfol0CfGk5+IV6N+yttMVUGI9vZOo9Mz/whtIArQGe1f34M7OC7y/CcI4e7RR8JuES4/iBFz3Dzp3B132R4Rw61I8Dz3I418TWIx2PVqE5+F3G8cZ0mcCZP47H3aShRzsdx/OWA9q8V1+cmxd4anF8p4C7uIFn1qu3lrL2yPoZznyG6RcHdpUtweLxc4/hnE9Cuh//YpLFuvpQCh7SCZ7o8W8PTbqj7Qu+NDNL8C1sud3O5XlwL6WVemAUkRHIZWxwQoJzVFY2tPKhnujxb/uZ8PYqKw84vseE+uf18tiCnVyqF6KNh/MlFlvyV/VNmi+tBHj3Cpjg83G46yFDc35cjxGf2/yya7/TRJGhXoXgwV7xEuBDZy0HHyDAz3FFfVvzvXpCn7+22uAMR8nbnWMFX2SiqO4A+OgJ42uHcU1/CL5tJ1Ac+In340/vfni8va4lj/iWMAgFTQsMadc2PlB5gR85MeBjBw+82U9wmCsOGOOer3Leb4OU9SoFT7PFVM3BL6Qq8AUdHFZqHuoXknp8S1Olt2UnSMG3NCUAvPDOXU9TYyRvOBdIwUNS8HRT+4d6GPxyqj9/cd3/za0OScmq0Nt4zPnplrin6UZmX/dWZK0xDIjeq0dIwXfIquB7mW5kVsH3SKzgi7ICUvB0KfgmpVDw/Q0D6gJexV8KXqgUvFApeKFS8EKl4IVKwQuVgheq1uANbYFw+GgRwjQ+NbEcaItFpm9ZrS3P26xGjcEfZTt/opKTEvsDtC4H8uhBCSimb1ld9t6HfVeHUI8vniElNv6Zo8aJUWoI3hBKtQ54Ch1LvErwqTl7PKlUj4uGaaj/E56OXx2EP4U7gKesa1rF48nFE+jx1hJKtQp4ct+TEL1Ipnv16k2J6VtWS4FXcdhX6TheqBS8UCl4oVLwQqXghUrBC5WCFyoFL1QKXqgUvFApeKFS8EKl4IVKwQuVghcqBS9UCl6ohoL3a19v60wfi0rarZthJy5VGws++EXBz9UE8Nc6U/cu/8f64SsoNF86N1tu0Z0Jauz+DirbvcajQ70NqN7CvvGft3/7ULf2VsfHKbhv6aYpHu/+Bd5t/eLhyOPDyLCHzrqe1QzPQlT17kFuKvjgT3u//uPLfh/yJvqZ8vX+9Z0E3jwaNeuv+vD6P37u1MRb3705W73A0eM2fiePV+U1xN2tguenQeFNwQuVghcqBS9UCl6oFLxQKXihUvBCpeCFSsELlYIXKgUvVApeqBS8UP0P098bTduipVgAAAAASUVORK5CYII=" alt="Residual analysis"/></p>
+
+<h2>Tests for homogeneity of Variance</h2>
+
+<pre><code>
+    Bartlett test of homogeneity of variances
+
+data:  Ozone by Month
+Bartlett&#39;s K-squared = 13.451, df = 4, p-value = 0.00927
+</code></pre>
+
+<pre><code>
+    Fligner-Killeen test of homogeneity of variances
+
+data:  Ozone by Month
+Fligner-Killeen:med chi-squared = 19.341, df = 4, p-value =
+0.0006736
+</code></pre>
+
+<h2>Tukey Honestly Significant Difference test</h2>
+
+<pre><code>For term Month the comparisons which are significant at 5% are:
+7 and 5 with a difference of 35.5 and P-value of 3e-04 
+8 and 5 with a difference of 36.35 and P-value of 2e-04 
+7 and 9 with a difference of 27.67 and P-value of 0.0062 
+8 and 9 with a difference of 28.51 and P-value of 0.0043 
+</code></pre>
+
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+    factor levels have been ordered
+
+Fit: aov(formula = Ozone ~ Month, data = airquality2)
+
+$Month
+          diff         lwr      upr     p adj
+6-5  5.8290598 -25.6630930 37.32121 0.9858842
+9-5  7.8328912 -14.1594735 29.82526 0.8603562
+7-5 35.5000000  12.9158068 58.08419 0.0002795
+8-5 36.3461538  13.7619606 58.93035 0.0001869
+9-6  2.0038314 -29.0666371 33.07430 0.9997676
+7-6 29.6709402  -1.8212127 61.16309 0.0749128
+8-6 30.5170940  -0.9750588 62.00925 0.0622826
+7-9 27.6671088   5.6747440 49.65947 0.0061535
+8-9 28.5132626   6.5208979 50.50563 0.0043387
+8-7  0.8461538 -21.7380394 23.43035 0.9999733
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="Plot of Tukey HSD"/></p>
+
+</body>
+
+</html>

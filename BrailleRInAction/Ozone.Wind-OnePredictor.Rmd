@@ -1,0 +1,89 @@
+# Analysis of the Airquality data, using Ozone as the response variable and Wind as the single predictor.
+#### Prepared by  Jonathan Godfrey   
+
+```{r setup2, purl=FALSE, include=FALSE}
+library(BrailleR)
+knitr::opts_chunk$set(dev=c("png", "pdf", "postscript", "svg"))
+knitr::opts_chunk$set(echo=FALSE, comment="", fig.path="airquality/Ozone.Wind-", fig.width=7)
+```
+
+## Variable summaries
+
+The response variable is Ozone and the predictor variable is Wind.
+
+```{r VariableSummary}
+attach(airquality)
+SummaryResponse <- summary(na.omit(Ozone))
+SummaryPredictor <- summary(na.omit(Wind))
+SummaryTable <- cbind(Ozone=SummaryResponse,Wind=SummaryPredictor)
+row.names(SummaryTable) <- c("Minimum","Lower Quartile", "Median","Mean","Upper Quartile","Maximum")
+Sds <- c(sd(Ozone, na.rm=T),sd(Wind, na.rm=T))
+Nas <- c(sum(is.na(Ozone)), sum(is.na(Wind)))
+SummaryTable <- rbind(SummaryTable,"Standard Deviation"=Sds,"Missing Values"=Nas)
+detach(airquality)
+```
+
+```{r PrintSummary, results="asis", purl=FALSE}
+kable(t(SummaryTable), row.names=T, align=rep("c",8))
+```  
+
+```{r VariableSummaryTex, purl=FALSE}
+library(xtable)
+ThisTexFile = "airquality/Ozone.Wind-VariableSummary.tex"
+TabCapt = "Summary statistics for variables Ozone and Wind."
+print(xtable(t(SummaryTable), caption=TabCapt, label="Ozone-VariableSummary", digits=4, align="lrrrrrrrr"), include.rownames = FALSE, file = ThisTexFile)
+```  
+
+## Scatter Plot
+
+```{r ScatterPlot, fig.cap="Scatter Plot"}
+# Remove the missing values
+completeCases <- complete.cases(Data[ResponseName])*complete.cases(Data[PredictorName])
+assign(DataName, Data[completeCases==1,])
+
+plot(Ozone~Wind, data=airquality, ylab=Ozone, xlab=Wind)
+attach(airquality)
+WhereXY(Ozone,Wind)
+detach(airquality)
+```  
+
+## Linear regression
+
+```{r SimpleLinMod}
+Ozone.Wind.lm <- lm(Ozone~Wind, data=airquality)
+VI( Ozone.Wind.lm )
+VI(summary(Ozone.Wind.lm))
+summary(Ozone.Wind.lm)
+```
+
+```{r FittedLinePlot}
+plot(Ozone~Wind, data=airquality, ylab=Ozone, xlab=Wind)
+abline(Ozone.Wind.lm)
+```
+
+
+```{r SimpleLinModResAnal, fig.cap="Residual analysis"}
+par(mfrow=c(2,2))
+plot(Ozone.Wind.lm)
+```  
+
+A separate html page showing the residual analysis and model validity checking for Ozone.Wind.lm is at [Ozone.Wind.lm.Validity.html](Ozone.Wind.lm.Validity.html)  
+
+### One-way Analysis of Variance
+
+```{r OneWayANOVA1}
+anova(Ozone.Wind.lm)
+```  
+
+```{r SimpleLinMod-TEX, purl=FALSE}
+ThisTexFile = "airquality/Ozone-Wind-lm.tex"
+TabCapt = "Linear regression model for Ozone with the single Predictor Wind."
+print(xtable(Ozone.Wind.lm, caption=TabCapt, label="Ozone-Wind-lm", digits=4), file = ThisTexFile)
+```
+
+```{r ANOVA-TEX, purl=FALSE}
+ThisTexFile = "airquality/Ozone-Wind-anova.tex"
+TabCapt = "Analysis of variance for the linear regression model having Ozone as the response and the Predictor Wind."
+print(xtable(anova(Ozone.Wind.lm), caption=TabCapt, label="Ozone-Wind-lm", digits=4), file = ThisTexFile)
+```  
+

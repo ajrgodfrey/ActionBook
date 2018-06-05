@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Checking validity for the model &ldquo;MyModel&rdquo; by way of standardised residuals, leverages, and Cook&#39;s distances</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+      font-family: arial, helvetica, sans-serif;   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+color: blue;     font-weight: bold; margin-bottom: 15pt; text-align: center;
+   font-size:2.2em;
+}
+
+h2 {
+color: darkred; font-weight: bold; 
+font-size:1.8em;
+padding-top: 15pt;
+}
+
+h3 {
+font-weight: bold; padding-left: 5pt; padding-top: 5pt;
+   font-size:1.4em;
+}
+
+h4 {
+color: blue;   margin-bottom: 15pt; text-align: center;
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid orange;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table {
+   max-width: 95%;
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+   border: 2pt solid darkblue;
+}
+
+td, th {
+  border: none;
+  padding: 5pt;
+}
+
+th{
+font-weight: bold; 
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Checking validity for the model &ldquo;MyModel&rdquo; by way of standardised residuals, leverages, and Cook&#39;s distances</h1>
+
+<h4>Prepared by Jonathan Godfrey</h4>
+
+<h2>Basic summary measures</h2>
+
+<h3>Counts</h3>
+
+<p>116 values in all, made up of
+111 unique values,
+116 observed, and
+0 missing values.   </p>
+
+<h3>Measures of location</h3>
+
+<table><thead>
+<tr>
+<th>Data</th>
+<th>all</th>
+<th>5% trimmed</th>
+<th>10% trimmed</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Mean</td>
+<td>0.0097637</td>
+<td>-0.0403546</td>
+<td>-0.071051</td>
+</tr>
+</tbody></table>
+
+<h3>Quantiles</h3>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="left">Quantile</th>
+<th align="right">Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">0%</td>
+<td align="left">Minimum</td>
+<td align="right">-1.7411</td>
+</tr>
+<tr>
+<td align="left">25%</td>
+<td align="left">Lower Quartile</td>
+<td align="right">-0.7381</td>
+</tr>
+<tr>
+<td align="left">50%</td>
+<td align="left">Median</td>
+<td align="right">-0.0248</td>
+</tr>
+<tr>
+<td align="left">75%</td>
+<td align="left">Upper Quartile</td>
+<td align="right">0.4790</td>
+</tr>
+<tr>
+<td align="left">100%</td>
+<td align="left">Maximum</td>
+<td align="right">5.6503</td>
+</tr>
+</tbody></table>
+
+<h3>Measures of spread</h3>
+
+<table><thead>
+<tr>
+<th>Measure</th>
+<th>IQR</th>
+<th>Standard deviation</th>
+<th>Variance</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Value</td>
+<td>1.2170951</td>
+<td>1.0409577</td>
+<td>1.0835929</td>
+</tr>
+</tbody></table>
+
+<h2>Basic univariate graphs</h2>
+
+<h3>Histogram</h3>
+
+<p><img src="data:image/png;base64,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" alt="The histogram"/></p>
+
+<pre><code>This is a histogram, with the title: Histogram of Residuals
+&quot;Residuals&quot; is marked on the x-axis.
+Tick marks for the x-axis are at: -2, 0, 2, 4, and 6 
+There are a total of 116 elements for this variable.
+Tick marks for the y-axis are at: 0, 10, 20, 30, and 40 
+It has 8 bins with equal widths, starting at -2 and ending at 6 .
+The mids and counts for the bins are:
+mid = -1.5  count = 14 
+mid = -0.5  count = 45 
+mid = 0.5  count = 47 
+mid = 1.5  count = 5 
+mid = 2.5  count = 2 
+mid = 3.5  count = 2 
+mid = 4.5  count = 0 
+mid = 5.5  count = 1
+</code></pre>
+
+<h3>Boxplot</h3>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAD8CAMAAACsEEbvAAAACVBMVEX9/v0AAAD9/v3/vTJ9AAAAA3RSTlP//wDXyg1BAAAACXBIWXMAAAsSAAALEgHS3X78AAAEVUlEQVR4nO3dgW7aMBRA0Sb//9HTVAJ2khrXIa+2771Su5IEP9pDAFVs+1oN2ddf3wD7m4SHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0CaAX757c0x26WyNd2s9t57ufjO/v+aBL/7ks73HQxPUX65V3NhzU8Cnn58XHh/HvansfsvJWuuyHfTYtS2+Pq+7+3qI5oJfEobvj73LksEftpyutR10vJBvqHjK6acp4BOj5BxONzxcXhe2ax635HeV177jEvmewR7u54HPObJTN3HZMR+3bCdtsmj+KLIeJmVnfNi3fbEp4LfPn4DPnvfzZ4hT+PxJfxz5yeCvP9Rnn9IRhyWyu0P6sD9EU8DvT87yi7v1dV5mu9fkuPV13R9e3J3s9cVdbEvyA38+QT8/8kf+7Kj8+HV/XPpsn+x63TnSL3b3qP6bAL7QOA7hCQ9NeGhzw9uPCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDuwK/WM/dCH/hunZ3wkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8ND6hr/5X/gh1zl8zTEFXuF/THhowkMTHprw0ISHJjw04aEJD014aHHwLQhdw499rxK+OeHrlha+q4RvTvi6pYXvKuGbE75uaeG7SvjmhK9bWviuEr652sXPbmD82wH3E4VvrnLx5eTQs233dpgYCP941+tv/3w7pgTfOvRTN24V3jP+zbZ7E/5z+Rz/06jixZYlzo/pHb7PhG9O+Lqlhe8q4ZsTvm5p4btK+OaEr1ta+K4Svjnh65YWvqvi4O9awvfVNyU8NOGhCQ9NeGjCQxMemvDQhIcmPLTO4a92/SbMWt/wdlvCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHdie89dx98GGnvHM+n/ATzykl/MRzSgk/8ZxSwk88p5TwE88pJfzEc0pdgrdxEx6a8NCEhyY8NOGhCQ9NeGjCQxMe2rVf2Yb8v28xU+LmjP8r22WN+B5ipsTN+X8PCxlT7upD/Tzw26yAKcLXTpgKfhn+oX4N+UkFwged8CPDby+EhG8ZMjD8o8ledMVMef+e94j6fwdOGHycRgfu1/8mzcduSWnM/UNCz8TR4W3ghIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQ/sH5YrXX9/bqKcAAAAASUVORK5CYII=" alt="The boxplot"/></p>
+
+<pre><code>This graph has a boxplot printed horizontally
+with the title: 
+&quot;&quot; appears on the x-axis.
+&quot;&quot; appears on the y-axis.
+Tick marks for the x-axis are at: -2, 0, 2, and 4 
+This variable  has 116 values.
+An outlier is marked at: 3.078684 3.464865 5.650349 
+The whiskers extend to -1.741091 and 2.293202 from the ends of the box, 
+which are at -0.7420239 and 0.4867491 
+The median, -0.02483821 is 58 % from the left end of the box to the right end.
+The right whisker is 1.81 times the length of the left whisker.
+</code></pre>
+
+<h2>Assessing normality</h2>
+
+<h3>Formal tests for normality</h3>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">Statistic</th>
+<th align="right">P Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Shapiro-Wilk</td>
+<td align="right">0.8679</td>
+<td align="right">0.0000</td>
+</tr>
+<tr>
+<td align="left">Anderson-Darling</td>
+<td align="right">2.3852</td>
+<td align="right">0.0000</td>
+</tr>
+<tr>
+<td align="left">Cramer-von Mises</td>
+<td align="right">0.3178</td>
+<td align="right">0.0002</td>
+</tr>
+<tr>
+<td align="left">Lilliefors (Kolmogorov-Smirnov)</td>
+<td align="right">0.1036</td>
+<td align="right">0.0038</td>
+</tr>
+<tr>
+<td align="left">Pearson chi-square</td>
+<td align="right">28.5862</td>
+<td align="right">0.0026</td>
+</tr>
+<tr>
+<td align="left">Shapiro-Francia</td>
+<td align="right">0.8597</td>
+<td align="right">0.0000</td>
+</tr>
+</tbody></table>
+
+<h3>Normality plot</h3>
+
+<p><img src="data:image/png;base64,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" alt="The normality plot"/></p>
+
+<h2>Formal tests of moments</h2>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">Statistic</th>
+<th align="right">Z</th>
+<th align="right">P Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">D&#39;Agostino skewness</td>
+<td align="right">1.9015</td>
+<td align="right">6.227</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Anscombe-Glynn kurtosis</td>
+<td align="right">10.2460</td>
+<td align="right">5.181</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+<h2>Regression diagnostic plots</h2>
+
+<h3>Standardised residuals</h3>
+
+<p><img src="data:image/png;base64,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" alt="Standardised residuals plotted against fitted values"/></p>
+
+<pre><code>     1  2  3  4 Sum
+4    5  0  6  7  18
+3   12  8 11  7  38
+2    1  9 12  4  26
+1    0 13 21  0  34
+Sum 18 30 50 18 116
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAACVBMVEX9/v0AAAD9/v3/vTJ9AAAAA3RSTlP//wDXyg1BAAAACXBIWXMAAAsSAAALEgHS3X78AAALXUlEQVR4nO2di3LjqhIAj/z/H33vbuJN4hjES2Kgu2trU3GsEVYLBhCS/3sIkv9mF0DmoHgoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCg94g+JzIXiO7aVq1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxU/hdMr0+hLk/6z4Szge0w+P4megeCiKp2KOl0koHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB7KIPHvwig+Mt3ijye1oWUq/TX+r/LjxwupU0HiMKKp/79im/rVGJPj39ZuxUfGXj0UxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUPZW7xrvJNsLf51xb98oXgoioeytXhzfJq9xUsSxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTyUZcV74a2PVcV7qb0TxUNRPJRVxZvjO1lWvPSheCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIqHongoioeieCiKh6J4KIXijz/rmceGlqmUiT+e/waGlqkoHorioZTm+Hrvig+NvXooiodSIv54MjS0TMUaD0XxUIp79Tb1eVZ7UEPFON7hXIblHs3iBM4YFF8cei82Fe/VuVP2zPFXhJapKB5KYY53OLcbFTXeHL8TNU09rsav1mGrQfFplhui1VCT48eGjo/iLwkdH8XnI3w0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" alt="Standardised residuals plotted against order"/></p>
+
+<pre><code>     1  2  3  4 Sum
+4    6  5  6  1  18
+3   12  9  8  9  38
+2    6  4  7  9  26
+1    5 11  8 10  34
+Sum 29 29 29 29 116
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAACVBMVEX9/v0AAAD9/v3/vTJ9AAAAA3RSTlP//wDXyg1BAAAACXBIWXMAAAsSAAALEgHS3X78AAALzUlEQVR4nO2djZqjqBYA17z/Q9873UnaHzSgBA9U1X7bPWMUnJRwABH/ewiS/+4+AbkHxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ7kifpLIfFH8hWPl2ygeiuKhKB6K4qEoHorioSgeiuKhKB7KCOI/jj/KlgHETw3zGgfFQ1E8lAHEG+PPMIJ4OYHioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qEoHorioSgeiuKhKB6K4qFUEp9KRvGRuSx+elGatNzK9RL/o3xabNi7FCQONar6/yu2qu+NOjE+WboVHxlb9VAUD0XxUBQPRfFQFA9F8VAUD0XxUBQPRfFQFA9F8VAUD0XxUBQPRfFQFA9F8VAUDyWUeKdktyOS+PUEffkiioeieCiRxBvjGxJKvLRD8VAUD0XxUBQPRfFQFA9F8VAUD0XxUBQPRfFQFA+lW/HeybtGr+K9d38RxUNRPJQs8dPvysR1k76IMf4aOeKn526F37RiIqN4KIqHkhfjT714QPGR6bVVLxdRPBTFQ1E8lKxW/bnXSik+Mrkjd/WTllvJq+pPOVR8ZIzxUBQPRfFQFA/F7hwUu3NQ7M5BMcZDUTwUxUNRPBTFQ8kU75y70SjpzjmAMxCKh6J4KMZ4KLbqoVjVQ/G2LBTvzkEZJMa7TEIpY4h3YZRiFA9F8VByF0bI2Lcw6aoY40vJXArlMU2hxUspueL//VT8QOSLfziAMxIl8+oVPxBjtOqzsAE4hyPeLt8CxUNRPJTcGTj7jfrd0Z1o37Ixfk72bdm9AZz90R2/5shUEb8c3Tk5b0OaUkl8KhAoPjLZs2x3d90d3VF8ZDitelmgeCjOsoViiYeieCglz85Z1Q9EQT/ehyZH4vIAzumk5VYUD+X63bmzScut2KqHwhHv7cIFmTG+/+6cE3CWFJT4vmO84peUVPWW+IHoRHyFAG2MX1AS4+smXZqU2qrSR6te8dVRPJROJmIYoGuTP2TbeXdOlmTfpPm8b2HSciuKh1IyA6du0nIrfbTqpTqKh5LVnevi7pw9viKGKfGO8ZQxzNQrxZcxzGRLxZcxjHhjfBnjiJcisgdwHKsfi2Fa9VKG4qHkj9Vb1Q+FjTsoioeieCjej4fSb6vekbpLdCvesflrZImP+N45xV8jbyLG72SMuklfJEu84WCXbPHl3+D9Md5aYZ/8El876fpsLgXF7zOQ+O1pKn6f0cT/lfqf2wvbcGDY/yVL/P0PTebm93eN7lytVgJPuu3HpzL8vTYVn8NI4h+W+HwGE/9YxvjDHdgEF6+mbxFL/NqzFfPXCCV+4zmy+M4rI8WfJPCpZXGD+P2ikhh7C1usFF+a9NE31sBzrSwUX5r0lW/surV6vuJWRll0Jf7DoTk9d19z/SRUjF/tUnibNWusrvcauhqhWvXzI6fi26x54i3xv3Ql/riysMSX0Jf4D4fljM5b4H8JKX4vxq8+L0tNFsQUn5FyfuqG9RQE8V89l15I3f86QPGDkLwNckAE8VdnTFrVP7oUf73A6r0r8a+C+vy/uCGv7AXdxPjp+d+pTv3P6myaPyK++L+X3lUWz64UOhD/mFX4uQdniIc39sOKnzXGX8W+8OCioX1c8Y8rfpnQmUH7/eNey/a9P+UV/x7ElxbH6fEhPDzbi7NUFb+i8SzbOvVtnvjlxJy9XYclkvha3/47nb0LKXFVGOOXNJ16VU38R4vF/cPxaC/+oMm1+eRUOcxTqvhD2s6yPXh0ruDZ1+2wdPJYXOW+JJT4/V13DkpuXm+kl+00kWL8Zq9z4tcZKD5FpFb9+uBZVztH/Kc2vMwJJX6mbv1KjJ3ZFPMjdrPcNB3Y0f2XSOIXbbnHo7DCzi7Y1gD/iCq+fHEMxRdxXfzuGnjXxJc30XJrcMX/47L4afU7O+lUWrNbsZtXHNaLzI1jfMwmxRfEn1wI853KYQeuP4L+Q0KVeMW3o12Mz6oCPg/Sdsew4jOTzvz3Z+tOjtLXulaqXnQxr+Bo4ksSXydXLYughbQqis9MfDTaDeDUrfFWY/mzbdUSH5tAI3flqx2sBcWM8TGJI/5EMUsfArBWgfHEE+rpCvQpfjGwu/iD4jOJI/5g9u3HhQ7nGxSfRSDxR+l86BouNhjjcxhQvOTQpfhE5W8pL6QD8Vr9Bj2Ily+geCh3ircKv5EbxX+1KR78orr/9AYVH7x/F+D0OhB/pnQE+GaPCHB6wWP82RUMlgfdX7GugIvPSOL00hU/t+vny6VdP5ma3H8pBhf/uKDtfWBA8ffTgfiDhzPyVjBUfIKw4l9LUyZmWC1y2M/l79P7K9Z4RBX/tPZ+hK5U/F+M13qS4OI3f97dae8T6/k0PYgvmJuzPVzxaaKKv1hDK/4TYcVvUvv4vsjl4rTvvxjjk/QifjUU9/7bTHAiS6Xv0pX4reSZ7YR4q/l9OhI/Wxzls/htP7B00fvBK4u44teLHy0G7VPD8NsXD2T1CXdyL9u9PwKI31ljeJNC0sXz4OWv5fjPwdEHJ1W2e3/cL/4Zvddt9lTI3q19X57fx2ReNh/OKn/3/ggifrH776WQn0JCfKL3Z4xfEFZ80Te/El+8KiaQ+8VvZ9mc8DSP8Ym1EcsTHJ4A4n/2/TguV5Dt+xWV8zNR/JIg4iuSED98wD5BUPEXTE16ziGm+JK62SdnT9G9eOP3OSKLL139VgqIKf494vI5je3g7F56Mieo+MfP2F1ekT+cj/l3KppfEFl8lvlnVJjllzhI8RsCi8+r6zfiU5IVvyGu+MTQ614uixiflGyMXxNJ/LkeuXdkThFIfC1jlu4cBhQvOSgeSiTx1tENiSPeAt8UxUNRPJQ44u2GNSWQeGmJ4ssYplpSfBHjNEQUX4TiryfdJYq/nnSfGOMvJy23ongoiofSTHyj4DhMDP42rcQ3ag6P0+r+NoqHongoxngotuqhKB6K4qGEE2+QbkM08UfNcq+JinQk3q5aTRQPJZr4zysVSxXCiT9K0Bhfj57ES0UUD0XxUBQPRfFQrot/vSOgNGm5lcvif3rXk+J7o4r4fz8V3xeVxD9SL/k9cz7SiAoxfp3Q9OLCacm3sVUP5ZviJTJVxKdTaVXkzac+ih84nyMUP3A+R1yJ8cN9UaPlc4TiB87nCMUPnM8Rih84nyMuiZd+UTwUxUNRPBTFQ1E8FMVDUTwUxUNRPJRrQ7ZNpt21yaXls7q9D9m2eZ691VPz7Z7ODzFL9WpVP474V14NclF8bg5DiU89m9Kei+LHWr22UYHvWfyrIaT4M5l0LP7JYI2uNrl8nvPegvgzcJqJb2cjgPfrT9JUO5OjbL6fSdOS2Lt46RjFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQxlV/M7K3ZuXLjySG6bDzdM7h0uneC/Dip/93Pt0d8OUFv96iKTZsyTfZHzxz4L5++v5Sq3pb7r+fPu7RL/fwzNtN79/9c3w4qf1r+nxfpvaevumik9vfl1IXbsfVvwrxs8EPxJXwt/GucYc8Y/lIb0xrPjHrGQuqvSV+N+PF1V9lvjFHzpkZPHrUjklxG8qhPVvxffFQnwqls82nIvxD8VH5LBVPy1+vfUmqvoptfmZto076RDFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUNRPBTFQ1E8FMVDUTwUxUP5H3pQsvxBpw5WAAAAAElFTkSuQmCC" alt="standardised residuals plotted against lagged residuals"/></p>
+
+<pre><code>     1  2  3  4 Sum
+4    3  4  6  4  17
+3   12  8 11  8  39
+2    7  9  8  3  27
+1   12  5 12  3  32
+Sum 34 26 37 18 115
+</code></pre>
+
+<p>The lag 1 autocorrelation of the standardised residuals is 0.0750988.</p>
+
+<h3>Influence</h3>
+
+<p><img src="data:image/png;base64,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" alt="Standardised residuals plotted against leverages"/></p>
+
+<pre><code>     1  2  3 4 Sum
+4    6  8  2 2  18
+3   20  9  7 2  38
+2   21  2  1 2  26
+1   34  0  0 0  34
+Sum 81 19 10 6 116
+</code></pre>
+
+<p>9 points have excessive leverage.
+0 points have Cook&#39;s distances greater than one.</p>
+
+<h3>Outliers and influential observations</h3>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">Ozone</th>
+<th align="right">Temp</th>
+<th align="right">Fit</th>
+<th align="right">St.residual</th>
+<th align="right">Leverage</th>
+<th align="right">Cooks.distance</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">8</td>
+<td align="right">19</td>
+<td align="right">59</td>
+<td align="right">-3.701996</td>
+<td align="right">0.9784191</td>
+<td align="right">0.0430365</td>
+<td align="right">0.0215340</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="right">8</td>
+<td align="right">61</td>
+<td align="right">1.155411</td>
+<td align="right">0.2928054</td>
+<td align="right">0.0361280</td>
+<td align="right">0.0016198</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="right">18</td>
+<td align="right">58</td>
+<td align="right">-6.130699</td>
+<td align="right">1.0426275</td>
+<td align="right">0.0467807</td>
+<td align="right">0.0266545</td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="right">6</td>
+<td align="right">57</td>
+<td align="right">-8.559403</td>
+<td align="right">0.6284639</td>
+<td align="right">0.0507182</td>
+<td align="right">0.0106074</td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="right">1</td>
+<td align="right">59</td>
+<td align="right">-3.701996</td>
+<td align="right">0.2018318</td>
+<td align="right">0.0430365</td>
+<td align="right">0.0009238</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="right">4</td>
+<td align="right">61</td>
+<td align="right">1.155411</td>
+<td align="right">0.1216508</td>
+<td align="right">0.0361280</td>
+<td align="right">0.0002798</td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="right">32</td>
+<td align="right">61</td>
+<td align="right">1.155411</td>
+<td align="right">1.3292763</td>
+<td align="right">0.0361280</td>
+<td align="right">0.0328938</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="right">115</td>
+<td align="right">79</td>
+<td align="right">44.872070</td>
+<td align="right">3.0786841</td>
+<td align="right">0.0087439</td>
+<td align="right">0.0389106</td>
+</tr>
+<tr>
+<td align="left">62</td>
+<td align="right">135</td>
+<td align="right">84</td>
+<td align="right">57.015587</td>
+<td align="right">3.4648648</td>
+<td align="right">0.0122515</td>
+<td align="right">0.0678989</td>
+</tr>
+<tr>
+<td align="left">86</td>
+<td align="right">108</td>
+<td align="right">85</td>
+<td align="right">59.444290</td>
+<td align="right">2.0918265</td>
+<td align="right">0.0135329</td>
+<td align="right">0.0291512</td>
+</tr>
+<tr>
+<td align="left">99</td>
+<td align="right">122</td>
+<td align="right">89</td>
+<td align="right">69.159103</td>
+<td align="right">2.2932024</td>
+<td align="right">0.0205914</td>
+<td align="right">0.0532903</td>
+</tr>
+<tr>
+<td align="left">117</td>
+<td align="right">168</td>
+<td align="right">81</td>
+<td align="right">49.729477</td>
+<td align="right">5.6503491</td>
+<td align="right">0.0095671</td>
+<td align="right">0.1212923</td>
+</tr>
+<tr>
+<td align="left">120</td>
+<td align="right">76</td>
+<td align="right">97</td>
+<td align="right">88.588730</td>
+<td align="right">-0.5412386</td>
+<td align="right">0.0439863</td>
+<td align="right">0.0067811</td>
+</tr>
+<tr>
+<td align="left">122</td>
+<td align="right">84</td>
+<td align="right">96</td>
+<td align="right">86.160026</td>
+<td align="right">-0.0925771</td>
+<td align="right">0.0403855</td>
+<td align="right">0.0001819</td>
+</tr>
+</tbody></table>
+
+</body>
+
+</html>

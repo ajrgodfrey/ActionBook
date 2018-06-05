@@ -1,0 +1,6 @@
+book_filename: "BrailleR"
+chapter_name: "Chapter "
+repo: https://github.com/ajrgodfrey/BrailleR
+output_dir: BrailleRInAction
+clean: [packages.bib, bookdown.bbl]
+new_session: yes

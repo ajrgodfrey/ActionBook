@@ -1,0 +1,14 @@
+.Rproj.user
+.Rhistory
+.RData
+_bookdown_files
+.DS_Store
+*.rds
+.Rapp.history
+WriteROptions
+RTerminal
+BrailleROptions
+Temp.R
+Make*.R
+*.bat
+Make*.Rout

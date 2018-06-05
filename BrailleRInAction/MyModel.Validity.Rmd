@@ -1,0 +1,190 @@
+# Checking validity for the model "MyModel" by way of standardised residuals, leverages, and Cook's distances
+```{r GetVars, echo=FALSE}
+Residuals=rstudent(MyModel)
+Fits= fitted(MyModel)
+Leverages= hatvalues(MyModel)
+Cooks= cooks.distance(MyModel)
+```    
+#### Prepared by Jonathan Godfrey   
+
+```{r setup, purl=FALSE, include=FALSE}
+library(BrailleR)
+opts_chunk$set(dev=c("png", "pdf", "postscript", "svg"))
+opts_chunk$set(comment="", echo=FALSE, fig.path="MyModel.Validity/Residuals-", fig.width=7)
+```  
+
+## Basic summary measures
+
+```{r BasicSummaries}
+Residuals.count = length(Residuals)
+Residuals.unique = length(unique(Residuals))
+Residuals.Nobs = sum(!is.na(Residuals))
+Residuals.Nmiss = sum(is.na(Residuals))
+Residuals.mean = mean(Residuals, na.rm = TRUE)
+Residuals.tmean5 = mean(Residuals, trim =0.025, na.rm = TRUE)
+Residuals.tmean10 = mean(Residuals, trim =0.05, na.rm = TRUE)
+Residuals.IQR = IQR(Residuals, na.rm = TRUE)
+Residuals.sd = sd(Residuals, na.rm = TRUE)
+Residuals.var = var(Residuals, na.rm = TRUE)
+Residuals.skew = moments::skewness(Residuals, na.rm = TRUE)
+Residuals.kurt = moments::kurtosis(Residuals, na.rm = TRUE)
+```
+
+### Counts
+
+`r Residuals.count` values in all, made up of
+`r Residuals.unique` unique values,
+`r Residuals.Nobs` observed, and
+`r Residuals.Nmiss` missing values.   
+
+
+
+### Measures of location
+
+Data | all | 5% trimmed | 10% trimmed
+----- | ------ | ----- | ------
+Mean | `r Residuals.mean` | `r Residuals.tmean5` | `r Residuals.tmean10`
+
+### Quantiles
+
+```{r Quantiles1}
+Quantiles=quantile(Residuals, na.rm=TRUE)
+QList=c("Minimum", "Lower Quartile", "Median", "Upper Quartile", "Maximum")
+Results=data.frame(Quantile=QList, Value=Quantiles[1:5])
+```
+
+```{r QuantilesPrint, eval=FALSE}
+Results
+```
+
+```{r QuantilesKable, results="asis", purl=FALSE}
+kable(Results, digits=4)
+```
+
+### Measures of spread
+
+Measure | IQR | Standard deviation | Variance
+-------- | ------ | -------- | ------
+Value | `r Residuals.IQR` | `r Residuals.sd` | `r Residuals.var`   
+
+
+## Basic univariate graphs    
+### Histogram    
+
+```{r Hist, fig.cap="The histogram", fig.height=5}    
+VI(hist(Residuals, xlab="Residuals", main="Histogram of Residuals"))
+```   
+
+
+### Boxplot    
+
+```{r Boxplot, fig.cap="The boxplot", fig.height=3.5}  
+VI(boxplot(Residuals, horizontal=TRUE, main = "Boxplot of Residuals"))
+```   
+
+
+## Assessing normality
+
+### Formal tests for normality
+
+```{r NormalityTests}
+library(nortest)
+Results = matrix(0, nrow=6, ncol=2)
+dimnames(Results) = list(c("Shapiro-Wilk", "Anderson-Darling", "Cramer-von Mises",
+"Lilliefors (Kolmogorov-Smirnov)", "Pearson chi-square", "Shapiro-Francia"), c("Statistic", "P Value"))
+ SW =shapiro.test(Residuals)
+Results[1,] = c(SW$statistic, SW$p.value)
+AD = ad.test(Residuals)
+Results[2,] = c(AD$statistic, AD$p.value)
+CV = cvm.test(Residuals)
+Results[3,] = c(CV$statistic, CV$p.value)
+LI = lillie.test(Residuals)
+Results[4,] = c(LI$statistic, LI$p.value)
+PE = pearson.test(Residuals)
+Results[5,] = c(PE$statistic, PE$p.value)
+SF = sf.test(Residuals)
+Results[6,] = c(SF$statistic, SF$p.value)
+```
+
+```{r NormalityTestsPrint, eval=FALSE}
+Results
+```
+
+```{r NormalityTestsKable, results="asis", purl=FALSE}
+kable(Results, digits=c(4,4))
+```   
+
+### Normality plot    
+
+```{r NormPlot, fig.cap="The normality plot", fig.height=7}  
+qqnorm(Residuals, main = "Normality Plot for Residuals")
+qqline(Residuals)
+```   
+
+
+## Formal tests of moments
+
+```{r MomentsTests}
+library(moments)
+Results = matrix(0, nrow=2, ncol=3)
+dimnames(Results)= list(c( "D'Agostino skewness", "Anscombe-Glynn kurtosis"),
+ c("Statistic","Z",  "P Value"))
+AG = moments::agostino.test(Residuals)
+AN = moments::anscombe.test(Residuals)
+Results[1,] = c(AG$statistic, AG$p.value)
+Results[2,] = c(AN$statistic, AN$p.value)
+```
+
+```{r MomentsTestsPrint, eval=FALSE}
+Results
+```
+
+```{r MomentsTests2, results="asis", purl=FALSE}
+kable(Results, digits=c(4,3,4))
+```   
+
+## Regression diagnostic plots
+### Standardised residuals
+
+```{r Fits, fig.cap="Standardised residuals plotted against fitted values"}
+plot(Fits, Residuals)
+WhereXY(Fits, Residuals, yDist="normal")
+```
+
+```{r Order, fig.cap="Standardised residuals plotted against order"}
+plot(Residuals)
+WhereXY(1:length(Residuals), Residuals, yDist="normal")
+```
+
+```{r Lag1Resids, fig.cap="standardised residuals plotted against lagged residuals"}
+n = length(Residuals)
+plot(Residuals[-n], Residuals[-1], ylab= paste("Residuals 2 to", n), xlab=paste("Residuals 1 to",(n-1)))
+WhereXY(Residuals[-n], Residuals[-1], xDist="normal")
+```
+The lag 1 autocorrelation of the standardised residuals is `r cor(Residuals[-n], Residuals[-1])`.
+
+### Influence
+
+```{r Leverages, fig.cap="Standardised residuals plotted against leverages"}
+plot(Leverages, Residuals)
+WhereXY(Leverages, Residuals, yDist="normal")
+```
+
+`r sum(Leverages>2*mean(Leverages))` points have excessive leverage.
+`r sum(Cooks>1)` points have Cook's distances greater than one.
+
+### Outliers and influential observations
+
+```{r ListInfObs}
+InflObs = data.frame(MyModel$model, Fit=Fits, St.residual=Residuals, Leverage=Leverages, Cooks.distance=Cooks)[abs(Residuals)>2 | Cooks > 1 | Leverages > 2*mean(Leverages) , ]
+```
+
+```{r ListInfObsLatex, purl=FALSE}
+library(xtable)
+print(xtable(InflObs, caption="Listing of suspected outliers and influential observations.", label="InflObsMyModel", digits=4), file = "MyModel.Validity/Influential.tex")
+```
+
+```{r ListInfObsKabled, results="asis", purl=FALSE}
+kable(InflObs)
+```   
+

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BrailleR in Action</title>
+  <meta name="description" content="Getting up and running with the BrailleR package">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="BrailleR in Action" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
+  
+  <meta property="og:description" content="Getting up and running with the BrailleR package" />
+  <meta name="github-repo" content="ajrgodfrey/BrailleR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BrailleR in Action" />
+  <meta name="twitter:site" content="@ajrgodfrey" />
+  <meta name="twitter:description" content="Getting up and running with the BrailleR package" />
+  
+
+<meta name="author" content="A. Jonathan R. Godfrey">
+
+
+<meta name="date" content="2017-12-22">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="GettingStarted.html">
+<link rel="next" href="NewGraphs.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The BrailleR Package in Action Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#citation-details"><i class="fa fa-check"></i><b>0.0.1</b> Citation details</a></li>
+<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#copyright-information"><i class="fa fa-check"></i><b>0.0.2</b> Copyright information</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-as-a-novice"><i class="fa fa-check"></i><b>1.1</b> Why will I use the BrailleR package as a novice?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#brailler-improves-the-accessibility-of-graphical-information"><i class="fa fa-check"></i><b>1.1.1</b> BrailleR improves the accessibility of graphical information</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#brailler-helps-gain-access-to-the-content-of-the-r-console"><i class="fa fa-check"></i><b>1.1.2</b> BrailleR helps gain access to the content of the R console</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#brailler-includes-convenience-functions"><i class="fa fa-check"></i><b>1.1.3</b> BrailleR includes convenience functions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-if-i-am-not-a-novice"><i class="fa fa-check"></i><b>1.2</b> Why will I use the BrailleR package if I am not a novice?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="History.html"><a href="History.html"><i class="fa fa-check"></i><b>2</b> History of the BrailleR Project</a><ul>
+<li class="chapter" data-level="2.1" data-path="History.html"><a href="History.html#my-background"><i class="fa fa-check"></i><b>2.1</b> My background</a></li>
+<li class="chapter" data-level="2.2" data-path="History.html"><a href="History.html#getting-the-brailler-project-started"><i class="fa fa-check"></i><b>2.2</b> Getting the BrailleR Project started</a></li>
+<li class="chapter" data-level="2.3" data-path="History.html"><a href="History.html#the-starting-point-example"><i class="fa fa-check"></i><b>2.3</b> The starting point example</a></li>
+<li class="chapter" data-level="2.4" data-path="History.html"><a href="History.html#exposure-of-the-brailler-package-outside-the-blind-community"><i class="fa fa-check"></i><b>2.4</b> Exposure of the BrailleR package outside the blind community</a></li>
+<li class="chapter" data-level="2.5" data-path="History.html"><a href="History.html#review-of-statistical-software"><i class="fa fa-check"></i><b>2.5</b> Review of statistical software</a></li>
+<li class="chapter" data-level="2.6" data-path="History.html"><a href="History.html#attendance-at-user-conferences"><i class="fa fa-check"></i><b>2.6</b> Attendance at UseR conferences</a></li>
+<li class="chapter" data-level="2.7" data-path="History.html"><a href="History.html#the-ongoing-work"><i class="fa fa-check"></i><b>2.7</b> The ongoing work</a></li>
+<li class="chapter" data-level="2.8" data-path="History.html"><a href="History.html#acknowledgements"><i class="fa fa-check"></i><b>2.8</b> Acknowledgements</a></li>
+<li class="chapter" data-level="2.9" data-path="History.html"><a href="History.html#references"><i class="fa fa-check"></i><b>2.9</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i><b>3</b> Getting started with BrailleR</a><ul>
+<li class="chapter" data-level="3.1" data-path="GettingStarted.html"><a href="GettingStarted.html#installing-the-brailler-package"><i class="fa fa-check"></i><b>3.1</b> Installing the BrailleR package</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="GettingStarted.html"><a href="GettingStarted.html#some-initial-setting-up-instructions"><i class="fa fa-check"></i><b>3.1.1</b> Some initial setting up instructions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="GettingStarted.html"><a href="GettingStarted.html#what-else-do-you-need"><i class="fa fa-check"></i><b>3.2</b> What else do you need?</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="GettingStarted.html"><a href="GettingStarted.html#the-document-converter-pandoc"><i class="fa fa-check"></i><b>3.2.1</b> The document converter — pandoc</a></li>
+<li class="chapter" data-level="3.2.2" data-path="GettingStarted.html"><a href="GettingStarted.html#the-principal-integrated-development-environment-rstudio"><i class="fa fa-check"></i><b>3.2.2</b> The principal integrated development environment — RStudio</a></li>
+<li class="chapter" data-level="3.2.3" data-path="GettingStarted.html"><a href="GettingStarted.html#one-programming-language-python"><i class="fa fa-check"></i><b>3.2.3</b> One programming language — Python</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>3.3</b> BrailleR commands used in this chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="VI.html"><a href="VI.html"><i class="fa fa-check"></i><b>4</b> Some basic examples</a><ul>
+<li class="chapter" data-level="4.1" data-path="VI.html"><a href="VI.html#histograms"><i class="fa fa-check"></i><b>4.1</b> Histograms</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="VI.html"><a href="VI.html#important-features"><i class="fa fa-check"></i><b>4.1.1</b> Important features</a></li>
+<li class="chapter" data-level="4.1.2" data-path="VI.html"><a href="VI.html#warning"><i class="fa fa-check"></i><b>4.1.2</b> Warning</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="VI.html"><a href="VI.html#basic-numerical-summaries"><i class="fa fa-check"></i><b>4.2</b> Basic numerical summaries</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="VI.html"><a href="VI.html#important-features-1"><i class="fa fa-check"></i><b>4.2.1</b> Important features</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="VI.html"><a href="VI.html#brailler-commands-used-in-this-chapter-1"><i class="fa fa-check"></i><b>4.3</b> BrailleR commands used in this chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="NewGraphs.html"><a href="NewGraphs.html"><i class="fa fa-check"></i><b>5</b> New BrailleR commands for making basic graphs</a><ul>
+<li class="chapter" data-level="5.1" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.1</b> Background</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="NewGraphs.html"><a href="NewGraphs.html#methods-and-classes"><i class="fa fa-check"></i><b>5.1.1</b> Methods and classes</a></li>
+<li class="chapter" data-level="5.1.2" data-path="NewGraphs.html"><a href="NewGraphs.html#who-cares-about-classes-anyway"><i class="fa fa-check"></i><b>5.1.2</b> Who cares about classes anyway?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#example-a-histogram"><i class="fa fa-check"></i><b>5.2</b> Example: A histogram</a></li>
+<li class="chapter" data-level="5.3" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.3</b> Scatter plots</a></li>
+<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#brailler-commands-used-in-this-chapter-2"><i class="fa fa-check"></i><b>5.4</b> BrailleR commands used in this chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="RMarkdown.html"><a href="RMarkdown.html"><i class="fa fa-check"></i><b>6</b> Use of R markdown to generate an analysis efficiently</a><ul>
+<li class="chapter" data-level="6.1" data-path="RMarkdown.html"><a href="RMarkdown.html#general-information"><i class="fa fa-check"></i><b>6.1</b> General information</a></li>
+<li class="chapter" data-level="6.2" data-path="RMarkdown.html"><a href="RMarkdown.html#description-of-a-single-numeric-variable"><i class="fa fa-check"></i><b>6.2</b> Description of a single numeric variable</a></li>
+<li class="chapter" data-level="6.3" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor"><i class="fa fa-check"></i><b>6.3</b> Analysis of a single continuous variable with respect to a single grouping factor</a></li>
+<li class="chapter" data-level="6.4" data-path="RMarkdown.html"><a href="RMarkdown.html#use-of-brailler-for-linear-regression"><i class="fa fa-check"></i><b>6.4</b> Use of BrailleR for linear regression</a></li>
+<li class="chapter" data-level="6.5" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable"><i class="fa fa-check"></i><b>6.5</b> Analysis of a single continuous variable with respect to another continuous variable</a></li>
+<li class="chapter" data-level="6.6" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>6.6</b> BrailleR commands used in this chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>7</b> Personalising BrailleR</a><ul>
+<li class="chapter" data-level="7.1" data-path="Personalising.html"><a href="Personalising.html#general"><i class="fa fa-check"></i><b>7.1</b> General</a></li>
+<li class="chapter" data-level="7.2" data-path="Personalising.html"><a href="Personalising.html#settings-that-are-about-you"><i class="fa fa-check"></i><b>7.2</b> Settings that are about you</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="Personalising.html"><a href="Personalising.html#who-is-the-r-markdown-file-being-written-by"><i class="fa fa-check"></i><b>7.2.1</b> Who is the R markdown file being written by?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="Personalising.html"><a href="Personalising.html#the-use-of-the-vi-command"><i class="fa fa-check"></i><b>7.2.2</b> The use of the VI() command</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="Personalising.html"><a href="Personalising.html#settings-for-saving"><i class="fa fa-check"></i><b>7.3</b> Settings for saving</a></li>
+<li class="chapter" data-level="7.4" data-path="Personalising.html"><a href="Personalising.html#brailler-commands-used-in-this-chapter-4"><i class="fa fa-check"></i><b>7.4</b> BrailleR commands used in this chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>8</b> The ggplot world and BrailleR</a><ul>
+<li class="chapter" data-level="8.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>8.1</b> Plotting a continuous variable against a categorical variable</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>8.1.1</b> univariate plots</a></li>
+<li class="chapter" data-level="8.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>8.1.2</b> bar charts for categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="GGPlot.html"><a href="GGPlot.html#time-series-plots"><i class="fa fa-check"></i><b>8.2</b> time series plots</a></li>
+<li class="chapter" data-level="8.3" data-path="GGPlot.html"><a href="GGPlot.html#path-plots"><i class="fa fa-check"></i><b>8.3</b> path plots</a></li>
+<li class="chapter" data-level="8.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>8.4</b> facets is the ggplot term for trellis’ panels</a></li>
+<li class="chapter" data-level="8.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>8.5</b> rescaling of the axes</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>9</b> Getting started with the WriteR application</a><ul>
+<li class="chapter" data-level="9.1" data-path="WriteR.html"><a href="WriteR.html#getting-python-and-wxpython-windows-users-only"><i class="fa fa-check"></i><b>9.1</b> Getting Python and wxPython (Windows users only)</a></li>
+<li class="chapter" data-level="9.2" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>9.2</b> Opening WriteR from BrailleR</a></li>
+<li class="chapter" data-level="9.3" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>9.3</b> What can I do with WriteR?</a></li>
+<li class="chapter" data-level="9.4" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>9.4</b> Our first HTML file</a></li>
+<li class="chapter" data-level="9.5" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-5"><i class="fa fa-check"></i><b>9.5</b> BrailleR commands used in this chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i><b>10</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">BrailleR in Action</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="VI" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Some basic examples</h1>
+<p>This chapter presents some examples of text output generated by the <code>VI()</code> command of the <code>BrailleR</code> package. These examples generate output that is displayed in the R session just like any output from standard R commands. Please note however that not all <code>VI()</code> commands behave in this fashion; some more advanced uses of <code>VI()</code> are discussed in a later chapter.</p>
+<p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
+<div id="histograms" class="section level2">
+<h2><span class="header-section-number">4.1</span> Histograms</h2>
+<p>The first and most commonly used example demonstrating the value of the BrailleR package to a blind user is the creation of a histogram.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">rnorm</span>(<span class="dv">1000</span>)
+<span class="kw">VI</span>(<span class="kw">hist</span>(x))</code></pre></div>
+<div class="figure"><span id="fig:hist"></span>
+<img src="04a-VIInAction_files/figure-html/hist-1.png" alt="A histogram of 1000 random values from a normal distribution" width="672" />
+<p class="caption">
+Figure 2.1: A histogram of 1000 random values from a normal distribution
+</p>
+</div>
+<pre><code>This is a histogram, with the title: Histogram of x
+&quot;x&quot; is marked on the x-axis.
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+There are a total of 1000 elements for this variable.
+Tick marks for the y-axis are at: 0, 50, 100, and 150 
+It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
+The mids and counts for the bins are:
+mid = -3.25  count = 1 
+mid = -2.75  count = 3 
+mid = -2.25  count = 14 
+mid = -1.75  count = 38 
+mid = -1.25  count = 100 
+mid = -0.75  count = 154 
+mid = -0.25  count = 188 
+mid = 0.25  count = 183 
+mid = 0.75  count = 139 
+mid = 1.25  count = 101 
+mid = 1.75  count = 56 
+mid = 2.25  count = 16 
+mid = 2.75  count = 7</code></pre>
+<p>The <code>VI()</code> command actually calls the <code>VI.histogram()</code> command as the <code>hist()</code> command creates an object of class “histogram”. This means we can tailor the output to the information needed for any histogram created using the <code>hist()</code> command.</p>
+<div id="important-features" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Important features</h3>
+<p>The <code>VI()</code> command has added to the impact of issuing the <code>hist()</code> command as the actual graphic is generated for the sighted audience. The blind user can read from the text description so that they can interpret the information that the histogram offers the sighted world.</p>
+<p>The above example showed the standard implementation of the <code>hist()</code> function. The <code>hist()</code> function of the <code>graphics</code> package does not store the additional arguments that improve the visual attractiveness. The solution (perhaps temporary) is to mask the original function with one included in the <code>BrailleR</code> package that calls the <code>graphics</code> package function, and then adds extra detail for any added plotting arguments.</p>
+<p>This is best illustrated using the example included in the <code>BrailleR::hist()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">example</span>(hist)</code></pre></div>
+<pre><code>
+hist&gt; x=rnorm(1000)
+
+hist&gt; # the stamdard hist function returns
+hist&gt; MyHist=graphics::hist(x, xlab=&quot;random normal values&quot;, main=&quot;Example histogram (graphics package)&quot;)</code></pre>
+<p><img src="04a-VIInAction_files/figure-html/BrailleRHistExample-1.png" width="672" /></p>
+<pre><code>
+hist&gt; #dev.off()
+hist&gt; MyHist
+$breaks
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[15]  3.5
+
+$counts
+ [1]   3   2  22  36  85 168 199 173 153  96  38  18   5   2
+
+$density
+ [1] 0.006 0.004 0.044 0.072 0.170 0.336 0.398 0.346 0.306 0.192 0.076
+[12] 0.036 0.010 0.004
+
+$mids
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75  3.25
+
+$xname
+[1] &quot;x&quot;
+
+$equidist
+[1] TRUE
+
+attr(,&quot;class&quot;)
+[1] &quot;histogram&quot;
+
+hist&gt; # while this version returns
+hist&gt; MyHist=hist(x, xlab=&quot;random normal values&quot;, main=&quot;Example histogram (BrailleR package)&quot;)</code></pre>
+<p><img src="04a-VIInAction_files/figure-html/BrailleRHistExample-2.png" width="672" /></p>
+<pre><code>
+hist&gt; #dev.off()
+hist&gt; MyHist
+$breaks
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[15]  3.5
+
+$counts
+ [1]   3   2  22  36  85 168 199 173 153  96  38  18   5   2
+
+$density
+ [1] 0.006 0.004 0.044 0.072 0.170 0.336 0.398 0.346 0.306 0.192 0.076
+[12] 0.036 0.010 0.004
+
+$mids
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75  3.25
+
+$xname
+[1] &quot;x&quot;
+
+$equidist
+[1] TRUE
+
+$main
+[1] &quot;Example histogram (BrailleR package)&quot;
+
+$xlab
+[1] &quot;random normal values&quot;
+
+$ExtraArgs
+$ExtraArgs$main
+[1] &quot;Histogram of x&quot;
+
+$ExtraArgs$xlab
+[1] &quot;x&quot;
+
+$ExtraArgs$ylab
+[1] &quot;Frequency&quot;
+
+$ExtraArgs$sub
+[1] &quot;&quot;
+
+
+$NBars
+[1] 14
+
+$par
+$par$xaxp
+[1] -3  3  6
+
+$par$yaxp
+[1]   0 200   4
+
+
+$xTicks
+[1] -3 -2 -1  0  1  2  3
+
+$yTicks
+[1]   0  50 100 150 200
+
+attr(,&quot;class&quot;)
+[1] &quot;Augmented&quot; &quot;histogram&quot;
+
+hist&gt; # The VI() method then uses the extra information stored
+hist&gt; VI(MyHist)
+This is a histogram, with the title: Histogram of x
+&quot;x&quot; is marked on the x-axis.
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+There are a total of 1000 elements for this variable.
+Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
+The mids and counts for the bins are:
+mid = -3.25  count = 3 
+mid = -2.75  count = 2 
+mid = -2.25  count = 22 
+mid = -1.75  count = 36 
+mid = -1.25  count = 85 
+mid = -0.75  count = 168 
+mid = -0.25  count = 199 
+mid = 0.25  count = 173 
+mid = 0.75  count = 153 
+mid = 1.25  count = 96 
+mid = 1.75  count = 38 
+mid = 2.25  count = 18 
+mid = 2.75  count = 5 
+mid = 3.25  count = 2</code></pre>
+</div>
+<div id="warning" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Warning</h3>
+<p>The <code>VI()</code> function is partially reliant on the use of the <code>hist()</code> function that is included in the <code>BrailleR</code> package. If a histogram is created using a command that directly links to the original <code>hist()</code> command found in the <code>graphics</code> package, then the <code>VI()</code> command’s output will not be as useful to the blind user. This mainly affects the presentation of the title and axis labels; it should not affect the details of the counts etc. within the histogram itself.</p>
+<p>This behaviour could arise if the histogram is sought indirectly. If for example, a function offers (as a side effect) to create a histogram, the author of the function may have explicitly stated use of the <code>hist()</code> function from the <code>graphics</code> package using <code>graphics::hist()</code> instead of <code>hist()</code>. Use of <code>graphics::hist()</code> will bypass the <code>BrailleR::hist()</code> function that the <code>VI()</code> command needs. This should not create error messages, but may result in some strange and possibly undesirable output.</p>
+</div>
+</div>
+<div id="basic-numerical-summaries" class="section level2">
+<h2><span class="header-section-number">4.2</span> Basic numerical summaries</h2>
+<p>The standard presentation of a summary of a data frame where each variable is given its own column is difficult for a screen reader user to read as the processing of information is done line by line. For example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(airquality)</code></pre></div>
+<pre><code>     Ozone           Solar.R           Wind             Temp      
+ Min.   :  1.00   Min.   :  7.0   Min.   : 1.700   Min.   :56.00  
+ 1st Qu.: 18.00   1st Qu.:115.8   1st Qu.: 7.400   1st Qu.:72.00  
+ Median : 31.50   Median :205.0   Median : 9.700   Median :79.00  
+ Mean   : 42.13   Mean   :185.9   Mean   : 9.958   Mean   :77.88  
+ 3rd Qu.: 63.25   3rd Qu.:258.8   3rd Qu.:11.500   3rd Qu.:85.00  
+ Max.   :168.00   Max.   :334.0   Max.   :20.700   Max.   :97.00  
+ NA&#39;s   :37       NA&#39;s   :7                                       
+     Month            Day      
+ Min.   :5.000   Min.   : 1.0  
+ 1st Qu.:6.000   1st Qu.: 8.0  
+ Median :7.000   Median :16.0  
+ Mean   :6.993   Mean   :15.8  
+ 3rd Qu.:8.000   3rd Qu.:23.0  
+ Max.   :9.000   Max.   :31.0  
+                               </code></pre>
+<p>The <code>VI()</code> command actually calls the <code>VI.data.frame()</code> command. It then processes each variable one by one so that the results are printed variable by variable instead of summary statistic by summary statistic. For example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">VI</span>(airquality)</code></pre></div>
+<pre><code>
+The summary of each variable is
+Ozone: Min. 1   1st Qu. 18   Median 31.5   Mean 42.1293103448276   3rd Qu. 63.25   Max. 168   NA&#39;s 37  
+Solar.R: Min. 7   1st Qu. 115.75   Median 205   Mean 185.931506849315   3rd Qu. 258.75   Max. 334   NA&#39;s 7  
+Wind: Min. 1.7   1st Qu. 7.4   Median 9.7   Mean 9.95751633986928   3rd Qu. 11.5   Max. 20.7  
+Temp: Min. 56   1st Qu. 72   Median 79   Mean 77.8823529411765   3rd Qu. 85   Max. 97  
+Month: Min. 5   1st Qu. 6   Median 7   Mean 6.99346405228758   3rd Qu. 8   Max. 9  
+Day: Min. 1   1st Qu. 8   Median 16   Mean 15.8039215686275   3rd Qu. 23   Max. 31  </code></pre>
+<div id="important-features-1" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Important features</h3>
+<p>Note that in this case, the blind user could choose to present the summary of each variable as generated by the <code>VI()</code> command, or the output from the standard <code>summary()</code> command. There is no difference in the information that is ultimately presented in this case.</p>
+</div>
+</div>
+<div id="brailler-commands-used-in-this-chapter-1" class="section level2">
+<h2><span class="header-section-number">4.3</span> BrailleR commands used in this chapter</h2>
+<p>The only explicit command from the <code>BrailleR</code> package used in this chapter was the <code>VI()</code> command.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="GettingStarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="NewGraphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["BrailleR.pdf", "BrailleR.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

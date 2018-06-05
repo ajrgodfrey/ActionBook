@@ -1,0 +1,152 @@
+# Univariate analysis for Ozone 
+#### Prepared by Jonathan Godfrey   
+
+```{r setup, purl=FALSE, include=FALSE}
+library(BrailleR)
+opts_chunk$set(dev=c("png", "pdf", "postscript", "svg"))
+opts_chunk$set(comment="", echo=FALSE, fig.path="Ozone/Ozone-", fig.width=7)
+```  
+
+## Basic summary measures
+
+```{r BasicSummaries}
+Ozone.count = length(Ozone)
+Ozone.unique = length(unique(Ozone))
+Ozone.Nobs = sum(!is.na(Ozone))
+Ozone.Nmiss = sum(is.na(Ozone))
+Ozone.mean = mean(Ozone, na.rm = TRUE)
+Ozone.tmean5 = mean(Ozone, trim =0.025, na.rm = TRUE)
+Ozone.tmean10 = mean(Ozone, trim =0.05, na.rm = TRUE)
+Ozone.IQR = IQR(Ozone, na.rm = TRUE)
+Ozone.sd = sd(Ozone, na.rm = TRUE)
+Ozone.var = var(Ozone, na.rm = TRUE)
+Ozone.skew = moments::skewness(Ozone, na.rm = TRUE)
+Ozone.kurt = moments::kurtosis(Ozone, na.rm = TRUE)
+```
+
+### Counts
+
+`r Ozone.count` values in all, made up of
+`r Ozone.unique` unique values,
+`r Ozone.Nobs` observed, and
+`r Ozone.Nmiss` missing values.   
+
+
+
+### Measures of location
+
+Data | all | 5% trimmed | 10% trimmed
+----- | ------ | ----- | ------
+Mean | `r Ozone.mean` | `r Ozone.tmean5` | `r Ozone.tmean10`
+
+### Quantiles
+
+```{r Quantiles1}
+Quantiles=quantile(Ozone, na.rm=TRUE)
+QList=c("Minimum", "Lower Quartile", "Median", "Upper Quartile", "Maximum")
+Results=data.frame(Quantile=QList, Value=Quantiles[1:5])
+```
+
+```{r QuantilesPrint, eval=FALSE}
+Results
+```
+
+```{r QuantilesKable, results="asis", purl=FALSE}
+kable(Results, digits=4)
+```
+
+### Measures of spread
+
+Measure | IQR | Standard deviation | Variance
+-------- | ------ | -------- | ------
+Value | `r Ozone.IQR` | `r Ozone.sd` | `r Ozone.var`   
+
+
+## Basic univariate graphs    
+### Histogram    
+
+```{r Hist, fig.cap="The histogram", fig.height=5}    
+VI(hist(Ozone, xlab="Ozone", main="Histogram of Ozone"))
+```   
+
+
+### Boxplot    
+
+```{r Boxplot, fig.cap="The boxplot", fig.height=3.5}  
+VI(boxplot(Ozone, horizontal=TRUE, main = "Boxplot of Ozone"))
+```   
+
+
+## Assessing normality
+
+### Formal tests for normality
+
+```{r NormalityTests}
+library(nortest)
+Results = matrix(0, nrow=6, ncol=2)
+dimnames(Results) = list(c("Shapiro-Wilk", "Anderson-Darling", "Cramer-von Mises",
+"Lilliefors (Kolmogorov-Smirnov)", "Pearson chi-square", "Shapiro-Francia"), c("Statistic", "P Value"))
+ SW =shapiro.test(Ozone)
+Results[1,] = c(SW$statistic, SW$p.value)
+AD = ad.test(Ozone)
+Results[2,] = c(AD$statistic, AD$p.value)
+CV = cvm.test(Ozone)
+Results[3,] = c(CV$statistic, CV$p.value)
+LI = lillie.test(Ozone)
+Results[4,] = c(LI$statistic, LI$p.value)
+PE = pearson.test(Ozone)
+Results[5,] = c(PE$statistic, PE$p.value)
+SF = sf.test(Ozone)
+Results[6,] = c(SF$statistic, SF$p.value)
+```
+
+```{r NormalityTestsPrint, eval=FALSE}
+Results
+```
+
+```{r NormalityTestsKable, results="asis", purl=FALSE}
+kable(Results, digits=c(4,4))
+```   
+```{r NormalityTestsTex, purl=FALSE}
+library(xtable)
+ThisTexFile = "Ozone/Ozone-Normality.tex"
+TabCapt= "Tests for normality: Variable is Ozone."
+print(xtable(Results, caption=TabCapt, label="OzoneNormality", digits=4, align="lrr"), file=ThisTexFile)
+```   
+
+### Normality plot    
+
+```{r NormPlot, fig.cap="The normality plot", fig.height=7}  
+qqnorm(Ozone, main = "Normality Plot for Ozone")
+qqline(Ozone)
+```   
+
+
+## Formal tests of moments
+
+```{r MomentsTests}
+library(moments)
+Results = matrix(0, nrow=2, ncol=3)
+dimnames(Results)= list(c( "D'Agostino skewness", "Anscombe-Glynn kurtosis"),
+ c("Statistic","Z",  "P Value"))
+AG = moments::agostino.test(Ozone)
+AN = moments::anscombe.test(Ozone)
+Results[1,] = c(AG$statistic, AG$p.value)
+Results[2,] = c(AN$statistic, AN$p.value)
+```
+
+```{r MomentsTestsPrint, eval=FALSE}
+Results
+```
+
+```{r MomentsTests2, results="asis", purl=FALSE}
+kable(Results, digits=c(4,3,4))
+```   
+
+```{r MomentsTestsTex, purl=FALSE}
+library(xtable)
+ThisTexFile = "Ozone/Ozone-Moments.tex"
+TabCapt= "Tests on moments: Variable isOzone"
+print(xtable(Results, caption=TabCapt, label="OzoneMoments", digits=4, align="lrrr"), file=ThisTexFile)
+```   
+

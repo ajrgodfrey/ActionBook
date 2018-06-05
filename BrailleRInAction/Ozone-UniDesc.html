@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Univariate analysis for Ozone</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+      font-family: arial, helvetica, sans-serif;   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+color: blue;     font-weight: bold; margin-bottom: 15pt; text-align: center;
+   font-size:2.2em;
+}
+
+h2 {
+color: darkred; font-weight: bold; 
+font-size:1.8em;
+padding-top: 15pt;
+}
+
+h3 {
+font-weight: bold; padding-left: 5pt; padding-top: 5pt;
+   font-size:1.4em;
+}
+
+h4 {
+color: blue;   margin-bottom: 15pt; text-align: center;
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid orange;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table {
+   max-width: 95%;
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+   border: 2pt solid darkblue;
+}
+
+td, th {
+  border: none;
+  padding: 5pt;
+}
+
+th{
+font-weight: bold; 
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Univariate analysis for Ozone</h1>
+
+<h4>Prepared by Jonathan Godfrey</h4>
+
+<h2>Basic summary measures</h2>
+
+<h3>Counts</h3>
+
+<p>153 values in all, made up of
+68 unique values,
+116 observed, and
+37 missing values.   </p>
+
+<h3>Measures of location</h3>
+
+<table><thead>
+<tr>
+<th>Data</th>
+<th>all</th>
+<th>5% trimmed</th>
+<th>10% trimmed</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Mean</td>
+<td>42.1293103</td>
+<td>40.8839286</td>
+<td>39.6603774</td>
+</tr>
+</tbody></table>
+
+<h3>Quantiles</h3>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="left">Quantile</th>
+<th align="right">Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">0%</td>
+<td align="left">Minimum</td>
+<td align="right">1.00</td>
+</tr>
+<tr>
+<td align="left">25%</td>
+<td align="left">Lower Quartile</td>
+<td align="right">18.00</td>
+</tr>
+<tr>
+<td align="left">50%</td>
+<td align="left">Median</td>
+<td align="right">31.50</td>
+</tr>
+<tr>
+<td align="left">75%</td>
+<td align="left">Upper Quartile</td>
+<td align="right">63.25</td>
+</tr>
+<tr>
+<td align="left">100%</td>
+<td align="left">Maximum</td>
+<td align="right">168.00</td>
+</tr>
+</tbody></table>
+
+<h3>Measures of spread</h3>
+
+<table><thead>
+<tr>
+<th>Measure</th>
+<th>IQR</th>
+<th>Standard deviation</th>
+<th>Variance</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Value</td>
+<td>45.25</td>
+<td>32.9878845</td>
+<td>1088.2005247</td>
+</tr>
+</tbody></table>
+
+<h2>Basic univariate graphs</h2>
+
+<h3>Histogram</h3>
+
+<p><img src="data:image/png;base64,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" alt="The histogram"/></p>
+
+<pre><code>This is a histogram, with the title: Histogram of Ozone
+&quot;Ozone&quot; is marked on the x-axis.
+Tick marks for the x-axis are at: 0, 50, 100, and 150 
+There are a total of 116 elements for this variable.
+Tick marks for the y-axis are at: 0, 10, 20, and 30 
+It has 9 bins with equal widths, starting at 0 and ending at 180 .
+The mids and counts for the bins are:
+mid = 10  count = 37 
+mid = 30  count = 34 
+mid = 50  count = 14 
+mid = 70  count = 15 
+mid = 90  count = 9 
+mid = 110  count = 4 
+mid = 130  count = 2 
+mid = 150  count = 0 
+mid = 170  count = 1
+</code></pre>
+
+<h3>Boxplot</h3>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAD8CAMAAACsEEbvAAAACVBMVEX9/v0AAAD9/v3/vTJ9AAAAA3RSTlP//wDXyg1BAAAACXBIWXMAAAsSAAALEgHS3X78AAAEKUlEQVR4nO3c4XKiMBRA4cL7P/T+EEwCFLOVXEjOOTMtFSJX96u2dpz9mQ3Zz903wO5JeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9tMPjp1Yc1xaWjc+Rnu+y2Pasx4U+1iqP7pWlPzXdRtw0Hn39+X1g+9kdz2e2e9+VsZzpnuaq/xoVfsRJ8tmM9msHv9mSbdNVsu/vO6arh4DOR7DGc71gk04X1mrs92022Jj2NHP246KAx4UuS4mlgA1Yy/w6fP1cUX/T6kB8Ofv18LfzBKYR/Ujn890/12S93B2uKxd01HPzu167TX+7m9HgtDucn26wunvPTWXtrTPj169fm5OVc/nJsyg+ns22/eK9JhxrfqSYNBn9Snz7NEh6a8NA48FYkPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ/tG/jJnlxD+C+ua60THprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEh/Y4+Kf87z+j9zz486PXeQl/lvCjJjw04aEJD014aMJDEx6a8NCEhxYHX/kPDYO/7VYIf2/C1y0TPmiw8I0Tvm6Z8EGDhW+c8HXLhA8aLHzjhK9bJnzQYOEbd3orrnxj4PZcwt/b2a2YPhz/3znTdsdJV8Iv72z9sA2Er7xFzbe/38Ix4P90re1RH/F/nyN8xaCo/Blft4wFf+Ng4RsnfN0y4YMGC9844euWCR80WPjGCV+3TPigwcI3Tvi6ZcIHDfZ99aMmPDThoQkPTXhowkMTHprw0ISHJjy058GH9cVdG6DHwVtMwkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEh9YS3p5cO/jyu+CqEzkyZKTw0JHCQ0cKDx0pPHSk8NCRwkNHXgZvfSU8NOGhCQ9NeGjCQxMemvDQhIcmPLSL4D++4ePilneYhI2d1qnZJmpkmzt6Dfw0B/8Ze4odu4C/PmKmTukuNhnZJ/wUO3aaw+GzkbPwad7yBBg2Nv4RP68/VRrd0U7h50iC+Ub4ZiP7hF9mjg8/NxspfO0w4Q/yqb67kf2+jg8de+fr+DYj/csdNOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8NCEhyY8NOGhCQ9NeGjCQxMemvDQhIcmPDThoQkPTXhowkMTHprw0ISHJjw04aEJD014aMJDEx6a8ND+AUDo1y5CMnOyAAAAAElFTkSuQmCC" alt="The boxplot"/></p>
+
+<pre><code>This graph has a boxplot printed horizontally
+with the title: 
+&quot;&quot; appears on the x-axis.
+&quot;&quot; appears on the y-axis.
+Tick marks for the x-axis are at: 0, 50, 100, and 150 
+This variable  has 116 values.
+An outlier is marked at: 135 168 
+The whiskers extend to 1 and 122 from the ends of the box, 
+which are at 18 and 63.5 
+The median, 31.5 is 30 % from the left end of the box to the right end.
+The right whisker is 3.44 times the length of the left whisker.
+</code></pre>
+
+<h2>Assessing normality</h2>
+
+<h3>Formal tests for normality</h3>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">Statistic</th>
+<th align="right">P Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Shapiro-Wilk</td>
+<td align="right">0.8787</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Anderson-Darling</td>
+<td align="right">4.5211</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Cramer-von Mises</td>
+<td align="right">0.8033</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Lilliefors (Kolmogorov-Smirnov)</td>
+<td align="right">0.1480</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Pearson chi-square</td>
+<td align="right">73.7241</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Shapiro-Francia</td>
+<td align="right">0.8786</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+<h3>Normality plot</h3>
+
+<p><img src="data:image/png;base64,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" alt="The normality plot"/></p>
+
+<h2>Formal tests of moments</h2>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">Statistic</th>
+<th align="right">Z</th>
+<th align="right">P Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">D&#39;Agostino skewness</td>
+<td align="right">1.2257</td>
+<td align="right">4.656</td>
+<td align="right">0.0000</td>
+</tr>
+<tr>
+<td align="left">Anscombe-Glynn kurtosis</td>
+<td align="right">4.1841</td>
+<td align="right">2.203</td>
+<td align="right">0.0276</td>
+</tr>
+</tbody></table>
+
+</body>
+
+</html>

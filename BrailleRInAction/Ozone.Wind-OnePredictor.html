@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Analysis of the Airquality data, using Ozone as the response variable and Wind as the single predictor.</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+      font-family: arial, helvetica, sans-serif;   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+color: blue;     font-weight: bold; margin-bottom: 15pt; text-align: center;
+   font-size:2.2em;
+}
+
+h2 {
+color: darkred; font-weight: bold; 
+font-size:1.8em;
+padding-top: 15pt;
+}
+
+h3 {
+font-weight: bold; padding-left: 5pt; padding-top: 5pt;
+   font-size:1.4em;
+}
+
+h4 {
+color: blue;   margin-bottom: 15pt; text-align: center;
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid orange;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table {
+   max-width: 95%;
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+   border: 2pt solid darkblue;
+}
+
+td, th {
+  border: none;
+  padding: 5pt;
+}
+
+th{
+font-weight: bold; 
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Analysis of the Airquality data, using Ozone as the response variable and Wind as the single predictor.</h1>
+
+<h4>Prepared by  Jonathan Godfrey</h4>
+
+<h2>Variable summaries</h2>
+
+<p>The response variable is Ozone and the predictor variable is Wind.</p>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="center">Minimum</th>
+<th align="center">Lower Quartile</th>
+<th align="center">Median</th>
+<th align="center">Mean</th>
+<th align="center">Upper Quartile</th>
+<th align="center">Maximum</th>
+<th align="center">Standard Deviation</th>
+<th align="center">Missing Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Ozone</td>
+<td align="center">1.0</td>
+<td align="center">18.0</td>
+<td align="center">31.5</td>
+<td align="center">42.129310</td>
+<td align="center">63.25</td>
+<td align="center">168.0</td>
+<td align="center">32.987884</td>
+<td align="center">37</td>
+</tr>
+<tr>
+<td align="left">Wind</td>
+<td align="center">1.7</td>
+<td align="center">7.4</td>
+<td align="center">9.7</td>
+<td align="center">9.957516</td>
+<td align="center">11.50</td>
+<td align="center">20.7</td>
+<td align="center">3.523001</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+
+<h2>Scatter Plot</h2>
+
+<pre><code>Error in plot.formula(Ozone ~ Wind, data = airquality, ylab = Ozone, xlab = Wind): object &#39;Ozone&#39; not found
+</code></pre>
+
+<pre><code>     1  2  3 4 Sum
+4    5  0  0 0   5
+3   19  4  0 0  23
+2   47 17  5 0  69
+1    1  9  7 2  19
+Sum 72 30 12 2 116
+</code></pre>
+
+<h2>Linear regression</h2>
+
+<pre><code>The term which is significant to 1% is
+Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 
+</code></pre>
+
+<pre><code>
+Call:
+lm(formula = Ozone ~ Wind, data = airquality)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-51.572 -18.854  -4.868  15.234  90.000 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  96.8729     7.2387   13.38  &lt; 2e-16 ***
+Wind         -5.5509     0.6904   -8.04 9.27e-13 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 26.47 on 114 degrees of freedom
+Multiple R-squared:  0.3619,    Adjusted R-squared:  0.3563 
+F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13
+</code></pre>
+
+<pre><code>Error in plot.formula(Ozone ~ Wind, data = airquality, ylab = Ozone, xlab = Wind): object &#39;Ozone&#39; not found
+</code></pre>
+
+<pre><code>Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...): plot.new has not been called yet
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="Residual analysis"/></p>
+
+<p>A separate html page showing the residual analysis and model validity checking for Ozone.Wind.lm is at <a href="Ozone.Wind.lm.Validity.html">Ozone.Wind.lm.Validity.html</a>  </p>
+
+<h3>One-way Analysis of Variance</h3>
+
+<pre><code>Analysis of Variance Table
+
+Response: Ozone
+           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+Wind        1  45284   45284  64.644 9.272e-13 ***
+Residuals 114  79859     701                      
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</code></pre>
+
+</body>
+
+</html>
