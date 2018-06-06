@@ -56,11 +56,11 @@ $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
 
 $counts
- [1]   1   7  22  53 110 151 176 203 132  89  40   9   7
+ [1]   3   4  18  40  90 155 197 193 138  93  43  16  10
 
 $density
- [1] 0.002 0.014 0.044 0.106 0.220 0.302 0.352 0.406 0.264 0.178 0.080
-[12] 0.018 0.014
+ [1] 0.006 0.008 0.036 0.080 0.180 0.310 0.394 0.386 0.276 0.186 0.086
+[12] 0.032 0.020
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
@@ -90,11 +90,11 @@ $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
 
 $counts
- [1]   1   7  22  53 110 151 176 203 132  89  40   9   7
+ [1]   3   4  18  40  90 155 197 193 138  93  43  16  10
 
 $density
- [1] 0.002 0.014 0.044 0.106 0.220 0.302 0.352 0.406 0.264 0.178 0.080
-[12] 0.018 0.014
+ [1] 0.006 0.008 0.036 0.080 0.180 0.310 0.394 0.386 0.276 0.186 0.086
+[12] 0.032 0.020
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
@@ -154,19 +154,19 @@ There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
 It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
 The mids and counts for the bins are:
-mid = -3.25  count = 1 
-mid = -2.75  count = 7 
-mid = -2.25  count = 22 
-mid = -1.75  count = 53 
-mid = -1.25  count = 110 
-mid = -0.75  count = 151 
-mid = -0.25  count = 176 
-mid = 0.25  count = 203 
-mid = 0.75  count = 132 
-mid = 1.25  count = 89 
-mid = 1.75  count = 40 
-mid = 2.25  count = 9 
-mid = 2.75  count = 7
+mid = -3.25  count = 3 
+mid = -2.75  count = 4 
+mid = -2.25  count = 18 
+mid = -1.75  count = 40 
+mid = -1.25  count = 90 
+mid = -0.75  count = 155 
+mid = -0.25  count = 197 
+mid = 0.25  count = 193 
+mid = 0.75  count = 138 
+mid = 1.25  count = 93 
+mid = 1.75  count = 43 
+mid = 2.25  count = 16 
+mid = 2.75  count = 10
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.

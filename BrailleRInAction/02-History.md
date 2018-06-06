@@ -19,7 +19,7 @@ I used to keep my research interests separate from my blindness, but  I was regu
 
 I discovered that there is room for me to take a leading role in the development of ideas that can help other blind people learn about statistical concepts.  I have been invited to all six Summer University events run by the organizers of the International Conference on Computers Helping People (ICCHP), but have been unable to attend twice due to the high cost of transporting me to Europe. I have delivered an introductory workshop on using R at four of these events [@Godfrey2011SU-R; @Godfrey2013SU-R; @Godfrey2014SU-R, and @Godfrey2016SU-R.
 
-Having observed the attendees at the 2011 Summer University as they came to grips with R, I knew there was more I could do to help them and other blind students. I started work on the BrailleR package [@BrailleRPackage] in the second half of 2011 and first proposed it could work for blind users at the Digitisation and E-Inclusion in Mathematics and Science (DEIMS12) workshop held in Tokyo during February 2012 [@Godfrey2012BrailleRPaper].
+Having observed the attendees at the 2011 Summer University as they came to grips with R, I knew there was more I could do to help them and other blind students. I started work on the BrailleR package [@Rpkg-BrailleR] in the second half of 2011 and first proposed it could work for blind users at the Digitisation and E-Inclusion in Mathematics and Science (DEIMS12) workshop held in Tokyo during February 2012 [@Godfrey2012BrailleRPaper].
 
 
 I wasn't to know the value of another talk I gave at DEIMS12 for another two years;  this second talk and associated conference paper focused on how I was using Sweave to create accessible statistical reports for me and more beautifully formatted ones for my statistical consulting clients.
@@ -76,26 +76,25 @@ VI(hist(x))
 ```
 ## This is a histogram, with the title: Histogram of x
 ## "x" is marked on the x-axis.
-## Tick marks for the x-axis are at: -4, -2, 0, and 2 
+## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, 3, and 4 
 ## There are a total of 1000 elements for this variable.
 ## Tick marks for the y-axis are at: 0, 50, 100, and 150 
-## It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
+## It has 14 bins with equal widths, starting at -3 and ending at 4 .
 ## The mids and counts for the bins are:
-## mid = -3.75  count = 1 
-## mid = -3.25  count = 0 
-## mid = -2.75  count = 3 
-## mid = -2.25  count = 18 
-## mid = -1.75  count = 38 
-## mid = -1.25  count = 87 
-## mid = -0.75  count = 149 
-## mid = -0.25  count = 186 
-## mid = 0.25  count = 175 
-## mid = 0.75  count = 158 
-## mid = 1.25  count = 108 
-## mid = 1.75  count = 45 
-## mid = 2.25  count = 22 
-## mid = 2.75  count = 9 
-## mid = 3.25  count = 1
+## mid = -2.75  count = 5 
+## mid = -2.25  count = 15 
+## mid = -1.75  count = 43 
+## mid = -1.25  count = 92 
+## mid = -0.75  count = 157 
+## mid = -0.25  count = 189 
+## mid = 0.25  count = 184 
+## mid = 0.75  count = 160 
+## mid = 1.25  count = 83 
+## mid = 1.75  count = 54 
+## mid = 2.25  count = 15 
+## mid = 2.75  count = 2 
+## mid = 3.25  count = 0 
+## mid = 3.75  count = 1
 ```
 
 This first example showed me what was possible if only I could get a few things sorted out. All histograms  are created by a function that stores the results (both numeric and text details) and calls this stored set of values a "histogram". The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a "class" to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.

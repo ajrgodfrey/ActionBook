@@ -258,7 +258,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.2</span> Getting the BrailleR Project started</h2>
 <p>I used to keep my research interests separate from my blindness, but I was regularly called upon to discuss how a blind person could study and teach Statistics by many people within New Zealand and occasionally from overseas. In 2009, I attended the Workshop on E-Inclusion in Mathematics and Science (WEIMS09) where I met other people interested in improving the success rates of blind students in the mathematical sciences. My paper was about accessibility of statistics courses, but I did point out the usefulness of R in preference to other tools I had used to that point in time <span class="citation">(Godfrey <a href="#ref-Godfrey2009AccessiblePaper">2009</a>)</span>.</p>
 <p>I discovered that there is room for me to take a leading role in the development of ideas that can help other blind people learn about statistical concepts. I have been invited to all six Summer University events run by the organizers of the International Conference on Computers Helping People (ICCHP), but have been unable to attend twice due to the high cost of transporting me to Europe. I have delivered an introductory workshop on using R at four of these events [<span class="citation">Godfrey (<a href="#ref-Godfrey2011SU-R">2011</a>)</span>; <span class="citation">Godfrey (<a href="#ref-Godfrey2013SU-R">2013</a><a href="#ref-Godfrey2013SU-R">a</a>)</span>; <span class="citation">Godfrey (<a href="#ref-Godfrey2014SU-R">2014</a><a href="#ref-Godfrey2014SU-R">b</a>)</span>, and <span class="citation">Godfrey (<a href="#ref-Godfrey2016SU-R">2016</a><a href="#ref-Godfrey2016SU-R">b</a>)</span>.</p>
-<p>Having observed the attendees at the 2011 Summer University as they came to grips with R, I knew there was more I could do to help them and other blind students. I started work on the BrailleR package <span class="citation">(<span class="citeproc-not-found" data-reference-id="BrailleRPackage"><strong>???</strong></span>)</span> in the second half of 2011 and first proposed it could work for blind users at the Digitisation and E-Inclusion in Mathematics and Science (DEIMS12) workshop held in Tokyo during February 2012 <span class="citation">(Godfrey <a href="#ref-Godfrey2012BrailleRPaper">2012</a><a href="#ref-Godfrey2012BrailleRPaper">b</a>)</span>.</p>
+<p>Having observed the attendees at the 2011 Summer University as they came to grips with R, I knew there was more I could do to help them and other blind students. I started work on the BrailleR package <span class="citation">(Godfrey et al. <a href="#ref-Rpkg-BrailleR">2018</a>)</span> in the second half of 2011 and first proposed it could work for blind users at the Digitisation and E-Inclusion in Mathematics and Science (DEIMS12) workshop held in Tokyo during February 2012 <span class="citation">(Godfrey <a href="#ref-Godfrey2012BrailleRPaper">2012</a><a href="#ref-Godfrey2012BrailleRPaper">b</a>)</span>.</p>
 <p>I wasn’t to know the value of another talk I gave at DEIMS12 for another two years; this second talk and associated conference paper focused on how I was using Sweave to create accessible statistical reports for me and more beautifully formatted ones for my statistical consulting clients.
 <span class="citation">(Godfrey <a href="#ref-Godfrey2012PuttingPaper">2012</a><a href="#ref-Godfrey2012PuttingPaper">a</a>)</span>. I now know that the groundwork I had done contributed to my desire to present my workflow as a workshop at the 5<sup>th</sup> Summer University in 2014 <span class="citation">(Godfrey <a href="#ref-Godfrey2014SU-Sweave">2014</a><a href="#ref-Godfrey2014SU-Sweave">d</a>)</span>.
 It also stood me in good stead for the work that followed on the <code>BrailleR</code> package as it developed in late 2014 and early 2015.</p>
@@ -289,26 +289,25 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </div>
 <pre><code>## This is a histogram, with the title: Histogram of x
 ## &quot;x&quot; is marked on the x-axis.
-## Tick marks for the x-axis are at: -4, -2, 0, and 2 
+## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, 3, and 4 
 ## There are a total of 1000 elements for this variable.
 ## Tick marks for the y-axis are at: 0, 50, 100, and 150 
-## It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
+## It has 14 bins with equal widths, starting at -3 and ending at 4 .
 ## The mids and counts for the bins are:
-## mid = -3.75  count = 1 
-## mid = -3.25  count = 0 
-## mid = -2.75  count = 3 
-## mid = -2.25  count = 18 
-## mid = -1.75  count = 38 
-## mid = -1.25  count = 87 
-## mid = -0.75  count = 149 
-## mid = -0.25  count = 186 
-## mid = 0.25  count = 175 
-## mid = 0.75  count = 158 
-## mid = 1.25  count = 108 
-## mid = 1.75  count = 45 
-## mid = 2.25  count = 22 
-## mid = 2.75  count = 9 
-## mid = 3.25  count = 1</code></pre>
+## mid = -2.75  count = 5 
+## mid = -2.25  count = 15 
+## mid = -1.75  count = 43 
+## mid = -1.25  count = 92 
+## mid = -0.75  count = 157 
+## mid = -0.25  count = 189 
+## mid = 0.25  count = 184 
+## mid = 0.75  count = 160 
+## mid = 1.25  count = 83 
+## mid = 1.75  count = 54 
+## mid = 2.25  count = 15 
+## mid = 2.75  count = 2 
+## mid = 3.25  count = 0 
+## mid = 3.75  count = 1</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2">
@@ -390,6 +389,9 @@ package’s existence.</p>
 </div>
 <div id="ref-Godfrey2016SU-R">
 <p>Godfrey, A. 2016b. “Introduction to R: The Most Accessible Statistical Software for Blind Students.” Linz, Austria.</p>
+</div>
+<div id="ref-Rpkg-BrailleR">
+<p>Godfrey, A. Jonathan R., Debra Warren, Paul Murrell, Timothy Bilton, and Volker Sorge. 2018. <em>BrailleR: Improved Access for Blind Users</em>. <a href="https://CRAN.R-project.org/package=BrailleR" class="uri">https://CRAN.R-project.org/package=BrailleR</a>.</p>
 </div>
 <div id="ref-Godfrey2012BrailleRPaper">
 <p>Godfrey, A. 2012b. “The BrailleR Project.” In <em>Proceedings of Digitization and E-Inclusion in Mathematics and Science</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 89–95. Tokyo, Japan.</p>
