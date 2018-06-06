@@ -13,3 +13,5 @@ Make*.R
 *.bat
 Make*.Rout
 *.url
+*.lnk
+*.bak
