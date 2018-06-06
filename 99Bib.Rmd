@@ -1,1 +1,16 @@
 # References
+
+```{R getPkgRefs, echo=FALSE, include=FALSE}
+library(BrailleR)
+Require(lattice)
+Require(ggplot2)
+Require(TeachingDemos)
+Require(gridGraphics)
+Require(gridSVG)
+Require(nortest)
+Require(moments)
+Require(xtable)
+Require(knitr)
+Require(rmarkdpown)
+write_bib(file="Rpkgs.bib", prefix="Rpkg-")
+```

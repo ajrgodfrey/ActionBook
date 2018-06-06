@@ -148,7 +148,7 @@ plot(MyModel)
 ```
 
 <div class="figure">
-<img src="05-MarkdownInAction_files/figure-epub3/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model."  />
+<img src="05-MarkdownInAction_files/figure-html/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
 <p class="caption">(\#fig:AirQuality.lm)Diagnostic plots for the simple linear regression model.</p>
 </div>
 

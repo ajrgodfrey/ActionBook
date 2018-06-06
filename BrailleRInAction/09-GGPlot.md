@@ -51,7 +51,7 @@ p11a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/p11a-1.png" alt="First graph on page 11 of @Wickham2009ggplot2"  />
+<img src="09-GGPlot_files/figure-html/p11a-1.png" alt="First graph on page 11 of @Wickham2009ggplot2" width="672" />
 <p class="caption">(\#fig:p11a)First graph on page 11 of @Wickham2009ggplot2</p>
 </div>
 
@@ -79,13 +79,13 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour #F8766D, 
-E represented by colour #C49A00, 
-F represented by colour #53B400, 
-G represented by colour #00C094, 
-H represented by colour #00B6EB, 
-I represented by colour #A58AFF and 
-J represented by colour #FB61D7.
+D represented by colour salmon, 
+E represented by colour goldenrod3, 
+F represented by colour chartreuse3, 
+G represented by colour aquamarine3, 
+H represented by colour deepskyblue2, 
+I represented by colour mediumpurple1 and 
+J represented by colour orchid1.
 The chart is a set of 100 points.
 ```
 
@@ -94,7 +94,7 @@ fig2.2a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-2a-1.png" alt="Left pane of Figure 2.2 of @Wickham2009ggplot2"  />
+<img src="09-GGPlot_files/figure-html/fig2-2a-1.png" alt="Left pane of Figure 2.2 of @Wickham2009ggplot2" width="672" />
 <p class="caption">(\#fig:fig2-2a)Left pane of Figure 2.2 of @Wickham2009ggplot2</p>
 </div>
 
@@ -124,7 +124,7 @@ fig2.2b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-2b-1.png" alt="Right pane of Figure 2.2"  />
+<img src="09-GGPlot_files/figure-html/fig2-2b-1.png" alt="Right pane of Figure 2.2" width="672" />
 <p class="caption">(\#fig:fig2-2b)Right pane of Figure 2.2</p>
 </div>
 
@@ -136,7 +136,7 @@ fig2.3b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-3b-1.png" alt="Middle pane from Figure 2.3"  />
+<img src="09-GGPlot_files/figure-html/fig2-3b-1.png" alt="Middle pane from Figure 2.3" width="672" />
 <p class="caption">(\#fig:fig2-3b)Middle pane from Figure 2.3</p>
 </div>
 
@@ -164,7 +164,7 @@ fig2.4a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-4a-1.png" alt="Left pane of Figure 2.4"  />
+<img src="09-GGPlot_files/figure-html/fig2-4a-1.png" alt="Left pane of Figure 2.4" width="672" />
 <p class="caption">(\#fig:fig2-4a)Left pane of Figure 2.4</p>
 </div>
 
@@ -192,7 +192,7 @@ fig2.8a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-8a-1.png" alt="Left pane of Figure 2.8"  />
+<img src="09-GGPlot_files/figure-html/fig2-8a-1.png" alt="Left pane of Figure 2.8" width="672" />
 <p class="caption">(\#fig:fig2-8a)Left pane of Figure 2.8</p>
 </div>
 
@@ -213,7 +213,7 @@ fig2.8b = qplot(color, price / carat, data = diamonds, geom = "boxplot")
 fig2.8b
 ```
 
-![](09-GGPlot_files/figure-epub3/fig2-8b-1.png)<!-- -->
+<img src="09-GGPlot_files/figure-html/fig2-8b-1.png" width="672" />
 
 ```r
 fig2.8b %>% VI()   
@@ -255,7 +255,7 @@ fig2.9b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-9b-1.png" alt="Middle pane of Figure 2.9"  />
+<img src="09-GGPlot_files/figure-html/fig2-9b-1.png" alt="Middle pane of Figure 2.9" width="672" />
 <p class="caption">(\#fig:fig2-9b)Middle pane of Figure 2.9</p>
 </div>
 
@@ -286,7 +286,7 @@ fig2.10a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-10a-1.png" alt="Left pane of Figure 2.10"  />
+<img src="09-GGPlot_files/figure-html/fig2-10a-1.png" alt="Left pane of Figure 2.10" width="672" />
 <p class="caption">(\#fig:fig2-10a)Left pane of Figure 2.10</p>
 </div>
 
@@ -309,7 +309,7 @@ fig2.10b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-10b-1.png" alt="Right pane of Figure 2.10"  />
+<img src="09-GGPlot_files/figure-html/fig2-10b-1.png" alt="Right pane of Figure 2.10" width="672" />
 <p class="caption">(\#fig:fig2-10b)Right pane of Figure 2.10</p>
 </div>
 
@@ -336,7 +336,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-11c-1.png" alt="Right pane of Figure 2.11"  />
+<img src="09-GGPlot_files/figure-html/fig2-11c-1.png" alt="Right pane of Figure 2.11" width="672" />
 <p class="caption">(\#fig:fig2-11c)Right pane of Figure 2.11</p>
 </div>
 
@@ -364,7 +364,7 @@ fig2.12a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-12a-1.png" alt="Left pane of Figure 2.12"  />
+<img src="09-GGPlot_files/figure-html/fig2-12a-1.png" alt="Left pane of Figure 2.12" width="672" />
 <p class="caption">(\#fig:fig2-12a)Left pane of Figure 2.12</p>
 </div>
 
@@ -377,13 +377,13 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis 'density' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour #F8766D, 
-E represented by colour #C49A00, 
-F represented by colour #53B400, 
-G represented by colour #00C094, 
-H represented by colour #00B6EB, 
-I represented by colour #A58AFF and 
-J represented by colour #FB61D7.
+D represented by colour salmon, 
+E represented by colour goldenrod3, 
+F represented by colour chartreuse3, 
+G represented by colour aquamarine3, 
+H represented by colour deepskyblue2, 
+I represented by colour mediumpurple1 and 
+J represented by colour orchid1.
 The chart is a type that VI isn't able to process.
 ```
 
@@ -399,7 +399,7 @@ fig2.12b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-12b-1.png" alt="Right pane of Figure 2.12"  />
+<img src="09-GGPlot_files/figure-html/fig2-12b-1.png" alt="Right pane of Figure 2.12" width="672" />
 <p class="caption">(\#fig:fig2-12b)Right pane of Figure 2.12</p>
 </div>
 
@@ -432,7 +432,7 @@ fig2.13a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-13a-1.png" alt="Left pane of Figure 2.13"  />
+<img src="09-GGPlot_files/figure-html/fig2-13a-1.png" alt="Left pane of Figure 2.13" width="672" />
 <p class="caption">(\#fig:fig2-13a)Left pane of Figure 2.13</p>
 </div>
 
@@ -464,7 +464,7 @@ fig2.13b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-13b-1.png" alt="Right pane of Figure 2.13"  />
+<img src="09-GGPlot_files/figure-html/fig2-13b-1.png" alt="Right pane of Figure 2.13" width="672" />
 <p class="caption">(\#fig:fig2-13b)Right pane of Figure 2.13</p>
 </div>
 
@@ -474,7 +474,7 @@ fig2.13b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-13b-2.png" alt="Right pane of Figure 2.13"  />
+<img src="09-GGPlot_files/figure-html/fig2-13b-2.png" alt="Right pane of Figure 2.13" width="672" />
 <p class="caption">(\#fig:fig2-13b)Right pane of Figure 2.13</p>
 </div>
 
@@ -506,7 +506,7 @@ fig2.14a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-14a-1.png" alt="Left pane of Figure 2.14"  />
+<img src="09-GGPlot_files/figure-html/fig2-14a-1.png" alt="Left pane of Figure 2.14" width="672" />
 <p class="caption">(\#fig:fig2-14a)Left pane of Figure 2.14</p>
 </div>
 
@@ -533,7 +533,7 @@ fig2.15b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-15b-1.png" alt="Right pane of Figure 2.15"  />
+<img src="09-GGPlot_files/figure-html/fig2-15b-1.png" alt="Right pane of Figure 2.15" width="672" />
 <p class="caption">(\#fig:fig2-15b)Right pane of Figure 2.15</p>
 </div>
 
@@ -545,14 +545,14 @@ fig2.15b %>% VI()
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'unemploy/pop' with labels 0.02, 0.03, 0.04 and 0.05.
 It has y-axis 'uempmed' with labels 5, 10, 15, 20 and 25.
-There is a legend indicating that colour is used to represent year(date), ranging from 1967 represented by colour #132B43 to 2015 represented by colour #56B1F7.
+There is a legend indicating that colour is used to represent year(date), ranging from 1967 represented by colour gray16 to 2015 represented by colour steelblue1.
 The chart is a type that VI isn't able to process.
 ```
 
 
 ## facets is the ggplot term for trellis' panels   
 
-The aspect ratio for the plot region is something that needs to be considered. I've manually adjusted the plotting window here so that he graph more closely matches that of @Wickham2009ggplot2 but it  is not an exact match.
+The aspect ratio for the plot region is something that needs to be considered. I've manually adjusted the plotting window here so that the graph more closely matches that of @Wickham2009ggplot2 but it  is not an exact match.
 
 ```r
 fig2.16a = qplot(carat, data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, 
@@ -565,7 +565,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-16a-1.png" alt="Left side of Figure 2.16"  />
+<img src="09-GGPlot_files/figure-html/fig2-16a-1.png" alt="Left side of Figure 2.16" width="384" />
 <p class="caption">(\#fig:fig2-16a)Left side of Figure 2.16</p>
 </div>
 
@@ -610,7 +610,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-16b-1.png" alt="Right side of Figure 2.16"  />
+<img src="09-GGPlot_files/figure-html/fig2-16b-1.png" alt="Right side of Figure 2.16" width="384" />
 <p class="caption">(\#fig:fig2-16b)Right side of Figure 2.16</p>
 </div>
 
@@ -653,7 +653,7 @@ p26a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/p26a-1.png" alt="First graph on page 26 of "  />
+<img src="09-GGPlot_files/figure-html/p26a-1.png" alt="First graph on page 26 of " width="672" />
 <p class="caption">(\#fig:p26a)First graph on page 26 of </p>
 </div>
 
@@ -679,7 +679,7 @@ fig3.6
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig3-6-1.png" alt="Figure 3.6 of "  />
+<img src="09-GGPlot_files/figure-html/fig3-6-1.png" alt="Figure 3.6 of " width="672" />
 <p class="caption">(\#fig:fig3-6)Figure 3.6 of </p>
 </div>
 

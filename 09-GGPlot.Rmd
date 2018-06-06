@@ -172,7 +172,7 @@ fig2.15b %>% VI()
 
 ## facets is the ggplot term for trellis' panels   
 
-The aspect ratio for the plot region is something that needs to be considered. I've manually adjusted the plotting window here so that he graph more closely matches that of @Wickham2009ggplot2 but it  is not an exact match.
+The aspect ratio for the plot region is something that needs to be considered. I've manually adjusted the plotting window here so that the graph more closely matches that of @Wickham2009ggplot2 but it  is not an exact match.
 ```{r fig2-16a, fig.cap="Left side of Figure 2.16", fig.height=10, fig.width=4}     
 fig2.16a = qplot(carat, data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, 
 xlim = c(0, 3))    

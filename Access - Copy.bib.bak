@@ -1,0 +1,99 @@
+
+@article{CalderEtAl2006,
+ author = {M. Calder and R. Cohen and J. Lanzoni and Y. Xu},
+ year=2006,
+ title = {{PLUMB}: An Interface for Users Who are Blind to Display, Create and Modify Graphs},
+ journal =	 {ASSETS'06},
+ url = {www.catea.gatech.edu/scitrain/kb/FullText_Articles/PLUMB.pdf},
+ pages =	 {263--264}
+}
+
+
+@article{IGraph,
+author={L. Ferres and P. Verkhogliad and G. Lindgaard and L. Boucher and A. Chretien and M. Lachance},
+title= {Improving accessibility to statistical graphs: The iGraph-Lite system},
+journal={ASSETS'07}, 
+pages={67-74},
+year=2007
+}
+
+
+@article{Leisch:2003,
+ author = {Friedrich Leisch},
+ title = {Sweave, Part {II}: Package Vignettes},
+ journal = {R News},
+ year = 2003,
+ volume = 3,
+ number = 2,
+ pages = {21--24},
+ month = {October},
+ url = {http://CRAN.R-project.org/doc/Rnews/}
+}
+
+
+@inproceedings{Leisch2002,
+ author = {Friedrich Leisch},
+ title = {Sweave: Dynamic Generation of Statistical Reports Using
+		 Literate Data Analysis},
+ booktitle = {Compstat 2002 --- Proceedings in Computational Statistics},
+ pages = {575--580},
+ year = 2002,
+ editor = {Wolfgang Hardle and Bernd Ronz},
+ publisher = {Physica Verlag, Heidelberg},
+ note = {ISBN 3-7908-1517-9},
+ url = {http://www.stat.uni-muenchen.de/~leisch/Sweave}
+}
+
+@book{SVGStandard,
+author={P. Dengler and D. Jackson and C. Lilley and J. Fujisawa and C. McCormack and E. Dahlström and A. Grasso and J. Ferraiolo and D. Schepers and J. Watt},
+title={Scalable vector graphics (SVG) 1.1},
+edition={second},
+publisher={W3C recommendation, W3C},
+month=Aug,
+year=2011,
+url={http://www.w3.org/TR/2011/REC-SVG11-20110816/}
+}
+@Manual{SPSS-Soft,
+ author = {{SPSS} Inc.},
+ title = {{IBM} {SPSS} Statistics~21},
+ year =	 2012,
+ organization	= {SPSS} Inc.},
+ address =	 {Chicago, IL},
+ url =		 {http://www.spss.com/}
+}
+
+
+@Manual{Minitab-Express,
+ author = {{Minitab} Inc.},
+ title =	 {Minitab} Express Statistical Software Version~},
+ year =	 2014,
+ organization={Minitab Inc.},
+ address =	 {State College, PA},
+ url =		 {http://www.minitab.com/}
+}
+
+@Manual{Minitab-Soft,
+ author = {{Minitab} Inc.},
+ title =	 {Minitab} Statistical Software Version~16.2.3},
+ year =	 2012,
+ organization= {Minitab Inc.},
+ address = {State College, PA},
+ url = {http://www.minitab.com/}
+}
+
+@article{NolanTempleLang2012,
+ author ={Deborah Nolan and Duncan {Temple Lang}},
+ title ={Interactive and Animated Scalable Vector Graphics and {R} Data Displays},
+ journal =	{Journal of Statistical Software},
+ volume=46,
+ number=1,
+ pages={1--88},
+ day=25,
+ month=1,
+ year =2012,
+ ISSN = 	"1548-7660",
+bibdate ={2011-09-19,
+ URL ={http://www.jstatsoft.org/v46/i01},
+ accepted ={2011-09-19,
+ submitted ={"2010-01-06}
+}
