@@ -79,13 +79,13 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour #F8766D, 
-E represented by colour #C49A00, 
-F represented by colour #53B400, 
-G represented by colour #00C094, 
-H represented by colour #00B6EB, 
-I represented by colour #A58AFF and 
-J represented by colour #FB61D7.
+D represented by colour strong reddish orange, 
+E represented by colour strong yellow, 
+F represented by colour vivid yellowish green, 
+G represented by colour brilliant green, 
+H represented by colour brilliant blue, 
+I represented by colour vivid violet and 
+J represented by colour deep purplish pink.
 The chart is a set of 100 points.
 ```
 
@@ -377,13 +377,13 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis 'density' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour #F8766D, 
-E represented by colour #C49A00, 
-F represented by colour #53B400, 
-G represented by colour #00C094, 
-H represented by colour #00B6EB, 
-I represented by colour #A58AFF and 
-J represented by colour #FB61D7.
+D represented by colour strong reddish orange, 
+E represented by colour strong yellow, 
+F represented by colour vivid yellowish green, 
+G represented by colour brilliant green, 
+H represented by colour brilliant blue, 
+I represented by colour vivid violet and 
+J represented by colour deep purplish pink.
 The chart is a type that VI isn't able to process.
 ```
 
@@ -545,7 +545,7 @@ fig2.15b %>% VI()
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'unemploy/pop' with labels 0.02, 0.03, 0.04 and 0.05.
 It has y-axis 'uempmed' with labels 5, 10, 15, 20 and 25.
-There is a legend indicating that colour is used to represent year(date), ranging from 1967 represented by colour #132B43 to 2015 represented by colour #56B1F7.
+There is a legend indicating that colour is used to represent year(date), ranging from 1967 represented by colour dark purplish blue to 2015 represented by colour brilliant blue.
 The chart is a type that VI isn't able to process.
 ```
 

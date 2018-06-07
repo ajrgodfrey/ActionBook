@@ -31,19 +31,19 @@ There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
 It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -2.75  count = 3 
-mid = -2.25  count = 11 
-mid = -1.75  count = 44 
-mid = -1.25  count = 92 
-mid = -0.75  count = 138 
-mid = -0.25  count = 207 
-mid = 0.25  count = 202 
-mid = 0.75  count = 149 
-mid = 1.25  count = 86 
-mid = 1.75  count = 46 
-mid = 2.25  count = 16 
+mid = -2.75  count = 2 
+mid = -2.25  count = 23 
+mid = -1.75  count = 40 
+mid = -1.25  count = 90 
+mid = -0.75  count = 158 
+mid = -0.25  count = 195 
+mid = 0.25  count = 187 
+mid = 0.75  count = 145 
+mid = 1.25  count = 90 
+mid = 1.75  count = 45 
+mid = 2.25  count = 20 
 mid = 2.75  count = 4 
-mid = 3.25  count = 2
+mid = 3.25  count = 1
 ```
 
 The `VI()` command actually calls the `VI.histogram()` command as the `hist()` command creates an object of class "histogram". This means we can tailor the output to the information needed for any histogram created using the `hist()` command.
@@ -76,19 +76,19 @@ hist> MyHist=graphics::hist(x, xlab="random normal values", main="Example histog
 hist> #dev.off()
 hist> MyHist
 $breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[15]  3.5
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
+[15]  3.0  3.5
 
 $counts
- [1]   1   3  18  46  76 151 179 204 150  99  43  23   6   1
+ [1]   2   0   2  14  48 103 144 200 182 139  96  55   9   3   3
 
 $density
- [1] 0.002 0.006 0.036 0.092 0.152 0.302 0.358 0.408 0.300 0.198 0.086
-[12] 0.046 0.012 0.002
+ [1] 0.004 0.000 0.004 0.028 0.096 0.206 0.288 0.400 0.364 0.278 0.192
+[12] 0.110 0.018 0.006 0.006
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[12]  2.25  2.75  3.25
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
+[12]  1.75  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -110,19 +110,19 @@ hist> MyHist=hist(x, xlab="random normal values", main="Example histogram (Brail
 hist> #dev.off()
 hist> MyHist
 $breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[15]  3.5
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
+[15]  3.0  3.5
 
 $counts
- [1]   1   3  18  46  76 151 179 204 150  99  43  23   6   1
+ [1]   2   0   2  14  48 103 144 200 182 139  96  55   9   3   3
 
 $density
- [1] 0.002 0.006 0.036 0.092 0.152 0.302 0.358 0.408 0.300 0.198 0.086
-[12] 0.046 0.012 0.002
+ [1] 0.004 0.000 0.004 0.028 0.096 0.206 0.288 0.400 0.364 0.278 0.192
+[12] 0.110 0.018 0.006 0.006
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[12]  2.25  2.75  3.25
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
+[12]  1.75  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -151,18 +151,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 14
+[1] 15
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -4  2  3
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -4 -2  0  2
 
 $yTicks
 [1]   0  50 100 150 200
@@ -174,25 +174,26 @@ hist> # The VI() method then uses the extra information stored
 hist> VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -4, -2, 0, and 2 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
+It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.25  count = 1 
-mid = -2.75  count = 3 
-mid = -2.25  count = 18 
-mid = -1.75  count = 46 
-mid = -1.25  count = 76 
-mid = -0.75  count = 151 
-mid = -0.25  count = 179 
-mid = 0.25  count = 204 
-mid = 0.75  count = 150 
-mid = 1.25  count = 99 
-mid = 1.75  count = 43 
-mid = 2.25  count = 23 
-mid = 2.75  count = 6 
-mid = 3.25  count = 1
+mid = -3.75  count = 2 
+mid = -3.25  count = 0 
+mid = -2.75  count = 2 
+mid = -2.25  count = 14 
+mid = -1.75  count = 48 
+mid = -1.25  count = 103 
+mid = -0.75  count = 144 
+mid = -0.25  count = 200 
+mid = 0.25  count = 182 
+mid = 0.75  count = 139 
+mid = 1.25  count = 96 
+mid = 1.75  count = 55 
+mid = 2.25  count = 9 
+mid = 2.75  count = 3 
+mid = 3.25  count = 3
 ```
 
 

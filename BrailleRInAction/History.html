@@ -289,24 +289,27 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </div>
 <pre><code>## This is a histogram, with the title: Histogram of x
 ## &quot;x&quot; is marked on the x-axis.
-## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+## Tick marks for the x-axis are at: -4, -2, 0, 2, and 4 
 ## There are a total of 1000 elements for this variable.
 ## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-## It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
+## It has 16 bins with equal widths, starting at -4 and ending at 4 .
 ## The mids and counts for the bins are:
+## mid = -3.75  count = 1 
 ## mid = -3.25  count = 1 
 ## mid = -2.75  count = 5 
-## mid = -2.25  count = 14 
-## mid = -1.75  count = 45 
-## mid = -1.25  count = 102 
-## mid = -0.75  count = 150 
-## mid = -0.25  count = 194 
-## mid = 0.25  count = 192 
-## mid = 0.75  count = 142 
-## mid = 1.25  count = 92 
-## mid = 1.75  count = 42 
-## mid = 2.25  count = 16 
-## mid = 2.75  count = 5</code></pre>
+## mid = -2.25  count = 17 
+## mid = -1.75  count = 39 
+## mid = -1.25  count = 91 
+## mid = -0.75  count = 144 
+## mid = -0.25  count = 208 
+## mid = 0.25  count = 203 
+## mid = 0.75  count = 143 
+## mid = 1.25  count = 96 
+## mid = 1.75  count = 32 
+## mid = 2.25  count = 14 
+## mid = 2.75  count = 5 
+## mid = 3.25  count = 0 
+## mid = 3.75  count = 1</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2">
@@ -348,7 +351,7 @@ There has been sufficient progress in the BrailleR Project that I presented it a
 I’ve been able to write enough example code that once I found a friendly postgraduate student (Timothy Bilton) to put some time into it, we’ve managed to add more convenience functionality.
 Timothy improved some of my earlier work and tried a few things of his own.
 This left me with the time to add increased functionality for helping blind users get into markdown for themselves.</p>
-<p>One of my irritations of working with markdown is that everyone else seems to write markdown and check their findings using RStudio <span class="citation">(RStudio <a href="#ref-RStudio">2013</a>)</span>, which remains inaccessible for me and other screen reader users. I took an old experiment where I wrote an accessible text editor in wxPython, and with the help of a postgraduate student from Computer Science (James Curtis) we’ve modified it to process Rmd files.
+<p>One of my irritations of working with markdown is that everyone else seems to write markdown and check their findings using RStudio <span class="citation">(RStudio <a href="#ref-RStudio">2018</a>)</span>, which remains inaccessible for me and other screen reader users. I took an old experiment where I wrote an accessible text editor in wxPython, and with the help of a postgraduate student from Computer Science (James Curtis) we’ve modified it to process Rmd files.
 The <code>WriteR</code> application is now beyond experimental but there is still more to do on making it truly useful <span class="citation">(Godfrey and Curtis <a href="#ref-GodfreyCurtis2016WriteRPaper">2016</a>)</span>.
 In 2018, I received a great deal of assistance from Marshall Flax who was able to help develop <code>WriteR</code> into a tool that could be very useful to blind people wishing to write and process R markdown files.</p>
 </div>
@@ -435,7 +438,7 @@ package’s existence.</p>
 <p>Godfrey, A. Jonathan R., and Timothy P. Bilton. 2016. “R Markdown: Lifesaver or Death Trap?” Stanford University, California.</p>
 </div>
 <div id="ref-RStudio">
-<p>RStudio. 2013. <em>RStudio: Integrated Development Environment for R, Version 0.97.336</em>. Boston, MA: RStudio. <a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>.</p>
+<p>RStudio. 2018. <em>RStudio: Integrated Development Environment for R, Version 1.1.453</em>. Boston, MA: RStudio. <a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>.</p>
 </div>
 <div id="ref-GodfreyCurtis2016WriteRPaper">
 <p>Godfrey, A. Jonathan R., and James M. P. Curtis. 2016. “Simple Authoring of Statistical Analyses by and for Blind People.” In <em>Proceedings of the International Workshop on Digitization and E-Inclusion in Mathematics and Science 2016</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 47–54. Kanegawa, Japan. <a href="http://workshop.sciaccess.net/DEIMS2016/index.html" class="uri">http://workshop.sciaccess.net/DEIMS2016/index.html</a>.</p>
