@@ -1,0 +1,32 @@
+# Ways of Working in R as a Blind User {#WorkingBlind}
+
+This chapter presents some strategies to offer blind users options for producing and saving work from an R session. They complement the workflows used by sighted people, or replace the tools used by sighted people that are not able to be used by a blind person.
+
+## A little background
+
+
+A major issue for blind users of any mathematical or statistical software is how the work that has been done will be transferred into a form that can be included in reports or assignments. 
+Standard methods of working with R are possible as a blind user, but there is one crucial task that sighted users find very easy that is beyond the reach of the blind user. 
+A sighted user can highlight a section of the output window (including commands and results) and copy the text  into a document using the mouse. This task is done easily in word processing or text documents using keyboard commands by the blind user, but is often impractical or impossible within many software applications. A solution has been provided within the `BrailleR` package by adapting a tool developed by another R user for a completely different purpose. The  `TeachingDemos` package  [@Rpkg-TeachingDemos], provided this tool. The original purpose was to quickly retain the output from an R session for distribution to students, and later in its 
+development, to create output files (in MS Word or HTML) that would log the progress through an assignment question or project. 
+
+
+## Using plain text files
+
+The code for saving the basic text output and commands being generated during an interactive session into a plain text file was among the early developments of the `BrailleR` package. 
+The functions `txtStart()`, `txtStop()`, `txtComment()`, and `txtSkip()` were copied (with permission) from the `TeachingDemos` package; in addition, a  `txtOut()` function that simplifies use of `txtStart()`    was added to the `BrailleR` package.
+
+
+
+## Use of R markdown
+
+The general uptake of reproducible research ideas by many in the R community has vastly improved the opportunities for novice R users to create well-formatted HTML documents from markdown documents. 
+This change in the general mindset has huge benefits for a blind user. 
+An R markdown file is just plain text and is therefore accessible. 
+Even more impressive, is that the HTML documents that result from these files are also very accessible to a blind reader.
+
+## Running jobs offline
+
+Blind users will benefit from switching to batch processing commands using `R CMD BATCH` at the command line, using the reproducible research functionality offered by the `knitr` package, or both strategies. Functions to help users (working under Windows operating systems) move to these ways of working have been included in the `BrailleR` package. In particular, a Windows user can use the `MakeBatch()` function to create a batch file in the current working directory, which creates the single command line that would be called to process a specified  R script or R markdown file appropriately. The `BrailleR` package also shows a user how a test file would be processed using these batch files. Conversion of  an R script or the history of the current workspace  to an R markdown file are implemented using the `R2Rmd()` and `History2Rmd()` functions respectively. This suite of functions should assist the blind user migrate to the more efficient methods of working and ultimately become more proficient and efficient than their peers who are not yet making use of the reproducible research type of workflow. 
+
+

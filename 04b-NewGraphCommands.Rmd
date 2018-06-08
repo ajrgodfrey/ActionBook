@@ -20,14 +20,51 @@ In Chapter \@ref(VI), we saw creation of a histogram using the `hist()` command.
 
 ### Methods and classes
 
-Methods and classes are important ideas because we can write a method function that says how we want an object with a stated class to be processed. When we create a histogram with the `hist()` command we can store an object of class "histogram", and when we create a regression model using `lm()` we create an object of class "lm". This class attribute is stored when many objects are created by R commands and many classes have methods written for them such as `print()`, `summary()`, and `plot()`.
+Development of the `BrailleR` Package and discussion of its opportunities is totally reliant on two of the structures used in the S language. 
+These are "methods" and "classes". 
+In brief, a set of commands that perform a  similar task on a selection of different classes is a "method". 
 
-If data is stored with a specified class attribute, such as a time series with class "ts", we will generate different results from employing the methods. A data.frame is itself of  class "data.frame", a matrix is of class "matrix", but rather confusingly,  a vector is not of class "vector". Vectors are assigned class attributes that depend on the type of data being stored, being "integer", "numeric", "logical", "character", etc.
+Methods and classes are important ideas because we can write a method function that says how we want an object with a stated class to be processed. Methods need classes, and we wouldn't need classes if we didn't hope to use methods.
+
+When we create a histogram with the `hist()` command we can store an object of class "histogram", and when we create a regression model using `lm()` we create an object of class "lm". 
+The `hist()` command does create an object with the class attribute set to `histogram`, but  only one specific function exists for this class, that being the `plot.histogram()`  function to plot the histogram. 
+Sighted users don't need an explicit print function for a histogram, nor does this summary graph need further summarisation.
+
+
+Tasks that warrant a method being written for each of a variety of classes include:
+
+- we might need a function to print the object out in an easy to use fashion. THis happens all the time, but most R users just take it for granted that the output looks the way it does. In fact, the output is formatted behind the scenes.
+- we may need to plot the results in a graph. A simple `plot()` command does all sorts of different things. Novice users just watch the magic without asking how it happens.
+- we may need to create a different kind of object that summarizes the original object in some way. This is already done using the `summary()` function, but that simple `summary()` command is actually a set of functions for different classes.
+
+ These are just three tasks common to objects of many classes. There is nothing stopping any R user  from writing a method to handle a variety of classes or adding to the methods that already exist.
+
+A complete method will have a base function that informs the software that there is a family of functions written for different classes, and that a method has been written for the default action, which is applied if no specific method exists for a class. For example, the print method includes specific functions:  `print()`, `print.default()`, `print.matrix()`, and many more.
+If we issue the command `print(x)`, and we know that `x` is a matrix, the `print()` method will employ the `print.matrix()` function to display the matrix. The example given in Chapterthat printed the results of the histogram object used the `print.default()` function as there is no `print.histogram()` function in existence.
+
+
+Many R commands do lead to an object being created with a class attribute being explicitly stated, sometimes it is more implicit, but all too commonly no class attribute is established at all.  The vast majority of statistical models set a class for the model being stored. There are some quite uninformative classes set as well.
+Assigning a class to an object means that we can write functions that relate to all objects of a particular class using a general approach. A class therefore needs to be defined for a set of objects that are going to be homogeneous in their structure.
+
+Data is usually stored with a specified class attribute, such as a time series with class "ts" for example.  We will generate different results from employing methods if we have correctly specified the data using a class attribute. We can also modify a data object's class, using commands like `as.tx()` to turn a vector of numbers into a time series if we need to do so to get the desired outcome.
+ 
+A data.frame is itself of  class "data.frame", a matrix is of class "matrix", but rather confusingly,  a vector is not of class "vector". Vectors are assigned class attributes that depend on the type of data being stored, being "integer", "numeric", "logical", "character", etc.
+
+As previously stated, the usefulness of methods is dependent on the use of classes being employed when objects are created. 
+The original `hist()` command does specify the resulting histogram to have a class, but no `print()` method `print.histogram()` exists. 
+In addition, not all objects are given a class so the default method must be constructed carefully. 
+There are actually only a few basic data structures to work with, the easiest and most common of which is called a "list". 
+
+The results of applying the `print()` command to a histogram shown in Chapter \@ref(VI), couldn't use the non-existent `print.histogram()` function so it used the `print.default()` method instead. The content of the object is stored as a "list", but note the last element of the list that states the class of the object. Adding this extra attribute to the data object is a minor matter that has very powerful consequences!
 
 
 ### Who cares about classes anyway?
 
-It is a reasonable question to ask. BrailleR cares because the functions written such as the `VI()` command used in  Chapter \@ref(VI) is actually a family of commands. The `VI()` commands called actually refered to the `VI.histogram()` and `VI.data.frame()` commands to generate output that is sensitive to the object of interest.
+It is a reasonable question to ask. 
+BrailleR cares because the functions written such as the `VI()` command used throughout   Chapter \@ref(VI) is actually a family of commands. 
+The beginnings of the `BrailleR` Project were formed on the idea of writing a method that would provide the summarised text version of the graph object created. To this end, a method was started with the functions: `VI()`, `VI.default()`, and `VI.histogram()` in order to demonstrate the approach.
+The `VI()` commands called actually refered to the `VI.histogram()` and `VI.data.frame()` commands to generate output that is sensitive to the object of interest.
+
 
 So for the `VI()` command to do the processing necessary to extract the information that is pushed into a graphic or textual output, we need to know what kind of object was being created. For the examples shown in Chapter \@ref(VI), that was done with the standard R commands used when creating the histogram and the data.frame we used. Well that's almost true. The standard `hist()` command from the base distribution of R does assign the class "histogram" to the stored object, but it doesn't have all the necessary information in it to replicate a plotted histogram. The solution is to create a new `hist()` command in the `BrailleR` package that does all the work of the original function and does add the details we want to help describe the histogram being plotted.
 
@@ -35,10 +72,8 @@ So for the `VI()` command to do the processing necessary to extract the informat
 
 ## Example: A histogram
 
-One of the easiest ways to demonstrate code snippets is to include them in the help documentation of the function. Running these examples is possible using the `example()` command. 
-
+One of the easiest ways to demonstrate code snippets is to include them in the help documentation of the function. Running these examples is then possible using the `example()` command. 
 In this example, we see that use of the original `hist()` from the `graphics` package yields the same graph as the `BrailleR` package version, but that the additional text for such items as titles and axis labelling used in the text description are only added by `BrailleR::hist()`. Running the command, `example(hist)` command will give you the following:
-
 ```{r exampleHist, fig.height=7, fig.width=5, fig.cap="testing examples", echo=FALSE}
 writeLines(GetExampleText(hist), "Temp.R")
 source("Temp.R", echo=TRUE)
@@ -46,6 +81,8 @@ unlink("Temp.R")
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.
+
+the `BrailleR` package includes `hist()` and `boxplot()` functions that pass the details of the command on to the `graphics` package functions of the same name, and then add any additional content required that will improve the ability to describe the visual graphic produced in text. In most cases, the graph producing functions pass on arguments such as `main`, `xlab`, or `ylab` (for main title and axis labels) to the relevant plotting commands without storing these elements in the object that is created. These elements are stored as graphical parameters and can be recalled using `par()` commands. 
 
 ## Scatter plots
 
