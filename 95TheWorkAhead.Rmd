@@ -1,4 +1,4 @@
-# The Work Ahead
+# The Work Ahead {#LookingAhead}
 
 The `BrailleR` Project is likely to evolve over time. The work on the project will be dependent on interest being shown by blind users of R, and perhaps some willingness being shown by people who could make the work so much easier.
 

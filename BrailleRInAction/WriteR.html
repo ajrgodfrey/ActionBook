@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-06-08">
+<meta name="date" content="2018-06-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="GGPlot.html">
-<link rel="next" href="the-work-ahead.html">
+<link rel="next" href="LookingAhead.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -225,13 +225,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>9.5</b> rescaling of the axes</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>10</b> Getting started with the WriteR application</a><ul>
-<li class="chapter" data-level="10.1" data-path="WriteR.html"><a href="WriteR.html#getting-python-and-wxpython-windows-users-only"><i class="fa fa-check"></i><b>10.1</b> Getting Python and wxPython (Windows users only)</a></li>
-<li class="chapter" data-level="10.2" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>10.2</b> Opening WriteR from BrailleR</a></li>
-<li class="chapter" data-level="10.3" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>10.3</b> What can I do with WriteR?</a></li>
-<li class="chapter" data-level="10.4" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>10.4</b> Our first HTML file</a></li>
-<li class="chapter" data-level="10.5" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-5"><i class="fa fa-check"></i><b>10.5</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="10.1" data-path="WriteR.html"><a href="WriteR.html#getting-python-and-wxpython-windows-users-only"><i class="fa fa-check"></i><b>10.1</b> Getting Python and wxPython (Windows users only)</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="WriteR.html"><a href="WriteR.html#i-do-not-have-python-3-installed"><i class="fa fa-check"></i><b>10.1.1</b> I do not have Python 3 installed</a></li>
+<li class="chapter" data-level="10.1.2" data-path="WriteR.html"><a href="WriteR.html#i-have-python-3-installed"><i class="fa fa-check"></i><b>10.1.2</b> I have Python 3 installed</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="the-work-ahead.html"><a href="the-work-ahead.html"><i class="fa fa-check"></i><b>11</b> The Work Ahead</a></li>
+<li class="chapter" data-level="10.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>10.2</b> Other operating systems</a></li>
+<li class="chapter" data-level="10.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>10.3</b> Checking your system is ready</a></li>
+<li class="chapter" data-level="10.4" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>10.4</b> Opening WriteR from BrailleR</a></li>
+<li class="chapter" data-level="10.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>10.5</b> What can I do with WriteR?</a></li>
+<li class="chapter" data-level="10.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>10.6</b> Our first HTML file</a></li>
+<li class="chapter" data-level="10.7" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-5"><i class="fa fa-check"></i><b>10.7</b> BrailleR commands used in this chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>11</b> The Work Ahead</a></li>
 <li class="chapter" data-level="12" data-path="references-3.html"><a href="references-3.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -255,37 +260,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="WriteR" class="section level1">
 <h1><span class="header-section-number">Chapter 10</span> Getting started with the WriteR application</h1>
-<p>The WriteR application was written to support use of R markdown and the BrailleR package. It is a Python script making use of wxPython to help build the graphic user interface (GUI) in such a way that it works for screen reader users. This book has been written in R markdown, and the author has made extensive use of WriteR because it offers so many convenient tools for a blind user wanting to write R markdown files.</p>
-<p>The script is in the BrailleR package, but it cannot run unless the user has both Python and wxPython installed. Two commands have been included in the BrailleR package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Python and WxPython independently.</p>
+<p>The WriteR application was written to support use of R markdown and the <code>BrailleR</code> package. It is a Python script making use of wxPython to help build the graphic user interface (GUI) in such a way that it works for screen reader users. This book has been written in R markdown, and the author has made extensive use of WriteR because it offers so many convenient tools for a blind user wanting to write R markdown files.</p>
+<p>The script is in the <code>BrailleR</code> package, but it cannot run unless the user has both Python and wxPython installed. Two commands have been included in the <code>BrailleR</code> package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Python and WxPython independently.</p>
 <div id="getting-python-and-wxpython-windows-users-only" class="section level2">
 <h2><span class="header-section-number">10.1</span> Getting Python and wxPython (Windows users only)</h2>
-<p>Issue the following commands at the R prompt</p>
+<p>You can check if a version of Python is already installed on your computer using</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="kw">Sys.which</span>(<span class="st">&quot;Python&quot;</span>)</a></code></pre></div>
+<pre><code>##                     Python 
+## &quot;C:\\Python27\\Python.exe&quot;</code></pre>
+<p>The output above shows you that I have Python 2.7 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail.</p>
+<p>The downloaded files will be saved in your <code>MyBrailleR</code> folder. You will need to follow the instructions and answer questions that arise whenever you install new software.</p>
+<p>Ultimately, you will need a mainstream tool to process the markdown files you write into other formats. The WriteR application will end up using a tool called “pandoc” to do this so we need to get this installed.
+If you do not have an installation of Pandoc and Python (either 2.7 or 3) then you can use some functions from the <code>BrailleR</code> package to help make the setup smoother. Remember to load the package using:</p>
 <p><code>library(BrailleR)</code></p>
+<p>It doesn’t matter if you install Python before or after Pandoc. Let’s first install Pandoc using the command:</p>
+<p><code>GetPandoc()</code></p>
+<p>There are two sets of instructions from this point onwards; you will follow only one of them.
+These are reputable installation files from the primary sites for Python and wxPython. Windows and any security software you might have should know that, but you can never tell! You will probably need to let Windows know it is OK to install the software in the default location. That pop-up might not appear as the window with focus so if things look like they’re going slowly, look around for the pop-up window.</p>
+<div id="i-do-not-have-python-3-installed" class="section level3">
+<h3><span class="header-section-number">10.1.1</span> I do not have Python 3 installed</h3>
+<p>You do not need to install Python 2.7 if you already have Python 3; the WriteR application will work with either version of Python. I preferto recommend that you install Python 2.7 here because it helps with a variety of other tools found in the <code>BrailleR</code> package.</p>
+<p>The following commands automatically download the installation files needed for Python 2.7, and start the installation process going.
+Issue them at the R prompt</p>
 <p><code>GetPython27()</code></p>
+<p>As the installer proceeds, there is one small matter to resolve. You need to make sure that as part of the installation, the Python folders are added to your system path. This makes it possible to run Python scripts from any folder on your computer. The next command will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your <code>MyBrailleR</code> folder and run it again manually before proceding.</p>
 <p><code>GetWxPython27()</code></p>
-<p>These commands automatically download the installation files and start the installation process going. The downloaded files will be saved in your MyBrailleR folder. You will need to follow the instructions and answer questions that arise whenever you install new software. These are reputable installation files from the primary sites for Python and wxPython. Windows and any security software you might have should know that, but you can never tell! You will probably need to let Windows know it is OK to install the software in the default location. That pop-up might not appear as the window with focus so if things look like they’re going slowly, look around for the pop-up window.</p>
-<p>Once you have completed both installations, you are ready to go. You shouldn’t need those installation files again, but keep them just in case.</p>
+<p>Once you have completed both installations, you are ready to go. You shouldn’t need to keep the installation files, but why not keep them just in case.</p>
+</div>
+<div id="i-have-python-3-installed" class="section level3">
+<h3><span class="header-section-number">10.1.2</span> I have Python 3 installed</h3>
+<p>If you have Python 3 on your system, it is still worth installing it again so that it gets updated to the most recent release. Use</p>
+<p><code>GetPython3()</code></p>
+<p>Instructions for getting the wx module for Python 3 installed need completion. Help from a Python 3 user is clearly needed, but the latest approach using a pip command shoudl be promising.</p>
+</div>
+</div>
+<div id="other-operating-systems" class="section level2">
+<h2><span class="header-section-number">10.2</span> Other operating systems</h2>
+</div>
+<div id="checking-your-system-is-ready" class="section level2">
+<h2><span class="header-section-number">10.3</span> Checking your system is ready</h2>
 </div>
 <div id="opening-writer-from-brailler" class="section level2">
-<h2><span class="header-section-number">10.2</span> Opening WriteR from BrailleR</h2>
+<h2><span class="header-section-number">10.4</span> Opening WriteR from BrailleR</h2>
 <p>Opening WriteR is as easy as typing WriteR! Well almost. You have the option of specifying a filename; if that file exists, it gets opened for you, and if it doesn’t exist, then it gets created with a few lines already included at the top to help get you started. Try:</p>
 <p><code>WriteR(&quot;MyFirst.Rmd&quot;)</code></p>
 </div>
 <div id="what-can-i-do-with-writer" class="section level2">
-<h2><span class="header-section-number">10.3</span> What can I do with WriteR?</h2>
+<h2><span class="header-section-number">10.5</span> What can I do with WriteR?</h2>
 <p>The window you are in has a number of menus, a status bar at the bottom and a big space in the middle for your work. Take a quick look at those menus; some will look familiar because they are common to many Windows applications.</p>
-<p>The file you have open is a markdown file. It is just text which is why it is so easy to read. The file extension of <code>Rmd</code> means it is an R markdown file. There are several flavours of markdown in common use, but they are practically all the same except for some very minor differences.</p>
+<p>The file you have opened is a markdown file. It is just text which is why it is so easy to read. The file extension of <code>Rmd</code> means it is an R markdown file. There are several flavours of markdown in common use, but they are practically all the same except for some very minor differences.</p>
 <p>A markdown file can be converted into many file formats for distribution. These include HTML, pdf, Microsoft Word, Open Office, and a number of different slide presentation formats. Let’s make the HTML file now.</p>
 </div>
 <div id="our-first-html-file" class="section level2">
-<h2><span class="header-section-number">10.4</span> Our first HTML file</h2>
-<p>Making your first HTML file is as easy as hitting a single key, or using one of the options in the <code>Build</code> menu. The variety of options are the commonly used ones in RStudio.</p>
-<p>Navigate to the current working directory using your file browser. To find out where that is, type <code>getwd()</code> back in the R window. You should see the file <code>MyFirst.Rmd</code> and once you have built it, the associated HTML file.</p>
+<h2><span class="header-section-number">10.6</span> Our first HTML file</h2>
+<p>Making your first HTML file is as easy as hitting the <code>f5</code> key, or using one of the options in the <code>Build</code> menu. The variety of options are the commonly used ones in RStudio.</p>
+<p>This will use the suite of packages, primarily including the <code>knitr</code> and <code>rmarkdown</code> packages.
+process
+Navigate to the current working directory using your file browser. To find out where that is, type <code>getwd()</code> back in the R window. You should see the file <code>MyFirst.Rmd</code> and once you have built it, the associated HTML file.</p>
 <p>Open the HTML file and see how the markdown has been rendered. You may need to switch back and forth between the WriteR window and your browser to compare the plain text and the beautiful HTML.</p>
+<p>Changes in your R markdown file are not automatically converted into the HTML file. You must re-build the HTML, and refresh your browser to see the impact of any changes you make.</p>
 </div>
 <div id="brailler-commands-used-in-this-chapter-5" class="section level2">
-<h2><span class="header-section-number">10.5</span> BrailleR commands used in this chapter</h2>
-<p>We needed to use <code>GetPython27()</code> and <code>GetWxPython27()</code> to install the necessary software to allow us to run a Python script like WriteR. We then opened a new file using <code>WriteR()</code>.</p>
+<h2><span class="header-section-number">10.7</span> BrailleR commands used in this chapter</h2>
+<p>We needed to use either <code>GetPython27()</code> and <code>GetWxPython27()</code> or <code>GetPython3()</code> to install the necessary software to allow us to run a Python script like WriteR.
+We then opened a new file using <code>WriteR()</code>.</p>
 
 </div>
 </div>
@@ -295,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="GGPlot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="the-work-ahead.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="LookingAhead.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
