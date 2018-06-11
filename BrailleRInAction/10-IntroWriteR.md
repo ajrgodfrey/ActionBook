@@ -1,11 +1,12 @@
 # Getting started with the WriteR application {#WriteR}
 
 
+
 The WriteR application was written to support use of R markdown and the `BrailleR` package. It is a Python script making use of wxPython to help build the graphic user interface (GUI) in such a way that it works for screen reader users. This book has been written in R markdown, and the author has made extensive use of WriteR because it offers so many convenient tools for a blind user wanting to write R markdown files.
 
-The script is in the `BrailleR` package, but it cannot run unless the user has both Python and wxPython installed. Two commands have been included in the `BrailleR` package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Python and WxPython independently.
+The script is in the `BrailleR` package, but it cannot run unless the user has both Python and wxPython installed. Commands have been included in the `BrailleR` package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Pandoc, Python and WxPython independently, but these tools may well already be installed.
 
-## Getting Python and wxPython (Windows users only)
+## Getting the required software (Windows users only)
 
 You can check if a version of Python is already installed on your computer using
 
@@ -18,9 +19,9 @@ Sys.which("Python")
 ## "C:\\Python27\\Python.exe"
 ```
 
-The output above shows you that I have Python 2.7 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail.
+The output above shows you that I have Python 2.7 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We must have an exact match between the version of Python 2.7 and the version of R being used.
 
-The downloaded files will be saved in your `MyBrailleR` folder. You will need to follow the instructions and answer questions that arise whenever you install new software. 
+The files downloaded as a consequence of running commands in this set of instructions will be saved in your `MyBrailleR` folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway. 
 
 Ultimately, you will need a mainstream tool to process the markdown files you write into other formats. The WriteR application will end up using a tool called "pandoc" to do this so we need to get this installed.
 If you do not have an installation of Pandoc and Python (either 2.7 or 3) then you can use some functions from the `BrailleR` package to help make the setup smoother. Remember to load the package using:
@@ -32,7 +33,7 @@ It doesn't matter if you install Python before or after Pandoc. Let's first inst
 `GetPandoc()`
 
 There are two sets of instructions from this point onwards; you will follow only one of them. 
-These are reputable installation files from the primary sites for Python and wxPython. Windows and any security software you might have should know that, but you can never tell! You will probably need to let Windows know it is OK to install the software in the default location. That pop-up might not appear as the window with focus so if things look like they're going slowly, look around for the pop-up window.
+These instructions fetch the installation files from the reputable Python sites. Windows and any security software you might have should know that, but you can never tell! You will may need to let Windows know it is OK to install the software in the default location. The pop-up might not appear as the window with focus so if things look like they're going slowly, look around for the pop-up window.
 
 
 ### I do not have Python 3 installed
@@ -44,24 +45,75 @@ Issue them at the R prompt
 
 `GetPython27()`
 
-As the installer proceeds, there is one small matter to resolve. You need to make sure that as part of the installation, the Python folders are added to your system path. This makes it possible to run Python scripts from any folder on your computer. The next command will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your `MyBrailleR` folder and run it again manually before proceding.
+As the installer proceeds, there is one small matter to resolve. You need to make sure that as part of the installation, the Python folders are added to your system path. This makes it possible to run Python scripts from any folder on your computer and for R to see where to find Python. The next few commands will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your `MyBrailleR` folder and run it again manually before proceeding.
+
+We can check the installation has worked properly at this point using:
+
+```r
+reticulate::py_config()
+```
+
+```
+## python:         C:\Python27\python.exe
+## libpython:      python27.dll
+## pythonhome:     C:\Python27
+## version:        2.7.15 (v2.7.15:ca079a3ea3, Apr 30 2018, 16:30:26) [MSC v.1500 64 bit (AMD64)]
+## Architecture:   64bit
+## numpy:           [NOT FOUND]
+## 
+## python versions found: 
+##  C:\Python27\python.exe
+##  C:\Python27\\python.exe
+```
+
+This is amuch stronger set of tests than was done earlier. In particular, the `reticulate` package makes sure that the installation of Python and R are both using a 32 bit, or if appropriate for your computer, a 64 bit installation.
+
+Now get the additional Python modules needed for WriteR using:
  
 `GetWxPython27()`
 
+Once you have completed these installations, you are ready to go. You shouldn't need to keep the  installation files, but why not keep them just in case.
+You can now skip to the section which shows you how to check everything is ready for using WriteR.
 
-Once you have completed both installations, you are ready to go. You shouldn't need to keep the  installation files, but why not keep them just in case.
-
-### I have Python 3 installed
+### I do have Python 3 installed
 
 If you have Python 3 on your system, it is still worth installing it again so that it gets updated to the most recent release. Use
 
 `GetPython3()`
 
-Instructions for getting the wx module for Python 3 installed need completion. Help from a Python 3 user is clearly needed, but the latest approach using a pip command shoudl be promising. 
+Instructions for getting the wx module for Python 3 installed need completion. Help from a Python 3 user is clearly needed, but the latest approach using a pip command should be promising. 
+
+
+Once you have completed these installations, you are ready to go. You shouldn't need to keep the  installation files, but why not keep them just in case.
+
 
 ## Other operating systems
 
 ## Checking your system is ready
+
+
+
+All going to plan, you should now have Python on your system, and the additional wxPython modules as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you've done,  using:
+
+
+```r
+reticulate::py_available(TRUE)
+```
+
+```
+## [1] TRUE
+```
+
+```r
+reticulate::py_module_available("wx")
+```
+
+```
+## [1] TRUE
+```
+
+The outcome of this second command tells you if your system is ready to run the WriteR application.
+
 
 ## Opening WriteR from BrailleR
 
