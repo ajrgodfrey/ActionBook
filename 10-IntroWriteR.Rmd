@@ -102,15 +102,25 @@ A markdown file can be converted into many file formats for distribution. These 
 
 ## Our first HTML file
 
-Making your first HTML file is as easy as hitting the `f5` key, or using one of the options in the `Build` menu. The variety of options are the commonly used ones in RStudio.
+Making your first HTML file is as easy as hitting the `f5` key, or using one of the options in the `Build` menu. The variety of options are the commonly used ones in RStudio. Let's just stick to making an HTML file for the time being. You can investigate other formats later.
 
-This will use the suite of packages, primarily including the `knitr` and `rmarkdown` packages.
-process 
-Navigate to the current working directory using your file browser. To find out where that is, type `getwd()` back in the R window. You should see the file `MyFirst.Rmd` and once you have built it, the associated HTML file.
+When the processing is underway, a second window will open which gives the same output that you would see printed in an R session window if you were processing R markdown files manually. 
+If the last line says "done 0", then everything processed properly; if it says "done 1" then there was an error to fix, so look through this log to see what went wrong. 
 
-Open the HTML file and see how the markdown has been rendered. You may need to switch back and forth between the WriteR window and your browser to compare the plain text and the beautiful HTML.
+The processing  of your R markdown document will use a suite of packages, primarily including the `knitr` [@Rpkg-knitr] and `rmarkdown` [@Rpkg-rmarkdown] packages.
+Press the `f4` key to switch back to the main document editing window in WriteR.
 
-Changes in your R markdown file are not automatically converted into the HTML file. You must re-build the HTML, and refresh your browser to see the impact of any changes you make.
+If the processing of the file "MyFirst.Rmd" was successful, then you will now have a file called "MyFirst.html" in your current working directory. You have several choices for finding the HTML file you have created:
+
+-  Navigate to the current working directory using your file browser. To find out where that is, type `getwd()` in the R window to see where the files really are located. 
+You should see the file `MyFirst.Rmd` and once you have built it, the associated HTML file. Open that file in your browser.
+- Use the `browseURL()` command in the R session. You will need to provide the filename, in quotes, for example `browseURL("MyFirst.html")`
+
+Use one of these methods to open the HTML file. Read through it to see how the markdown has been rendered. 
+You may need to switch back and forth between the WriteR window and your browser to compare the plain text and the beautiful HTML. If you didn't actually edit the R markdown file up to now then the output HTML file will be rather boring. Add in some text, or use the menus to see how to insert headings and other things.
+
+N.B. Changes in your R markdown file are not automatically converted into the HTML file. You must re-build the HTML, and refresh your browser to see the impact of any changes you make, both actions use the `f5` key.
+
 
 ## BrailleR commands used in this chapter
 

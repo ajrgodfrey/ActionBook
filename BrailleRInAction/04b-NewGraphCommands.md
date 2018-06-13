@@ -88,19 +88,19 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 
 > MyHist
 $breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
-[15]  4.0
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
+[15]  3.0  3.5  4.0
 
 $counts
- [1]   7  15  42  95 152 184 208 133  95  43  20   4   1   1
+ [1]   1   1   4  22  39 104 139 207 179 154  85  44  17   2   1   1
 
 $density
- [1] 0.014 0.030 0.084 0.190 0.304 0.368 0.416 0.266 0.190 0.086 0.040
-[12] 0.008 0.002 0.002
+ [1] 0.002 0.002 0.008 0.044 0.078 0.208 0.278 0.414 0.358 0.308 0.170
+[12] 0.088 0.034 0.004 0.002 0.002
 
 $mids
- [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[12]  2.75  3.25  3.75
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
+[12]  1.75  2.25  2.75  3.25  3.75
 
 $xname
 [1] "x"
@@ -123,19 +123,19 @@ attr(,"class")
 
 > MyHist
 $breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
-[15]  4.0
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
+[15]  3.0  3.5  4.0
 
 $counts
- [1]   7  15  42  95 152 184 208 133  95  43  20   4   1   1
+ [1]   1   1   4  22  39 104 139 207 179 154  85  44  17   2   1   1
 
 $density
- [1] 0.014 0.030 0.084 0.190 0.304 0.368 0.416 0.266 0.190 0.086 0.040
-[12] 0.008 0.002 0.002
+ [1] 0.002 0.002 0.008 0.044 0.078 0.208 0.278 0.414 0.358 0.308 0.170
+[12] 0.088 0.034 0.004 0.002 0.002
 
 $mids
- [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[12]  2.75  3.25  3.75
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
+[12]  1.75  2.25  2.75  3.25  3.75
 
 $xname
 [1] "x"
@@ -164,18 +164,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 14
+[1] 16
 
 $par
 $par$xaxp
-[1] -3  4  7
+[1] -4  4  4
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3  4
+[1] -4 -2  0  2  4
 
 $yTicks
 [1]   0  50 100 150 200
@@ -186,23 +186,25 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, 3, and 4 
+Tick marks for the x-axis are at: -4, -2, 0, 2, and 4 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 14 bins with equal widths, starting at -3 and ending at 4 .
+It has 16 bins with equal widths, starting at -4 and ending at 4 .
 The mids and counts for the bins are:
-mid = -2.75  count = 7 
-mid = -2.25  count = 15 
-mid = -1.75  count = 42 
-mid = -1.25  count = 95 
-mid = -0.75  count = 152 
-mid = -0.25  count = 184 
-mid = 0.25  count = 208 
-mid = 0.75  count = 133 
-mid = 1.25  count = 95 
-mid = 1.75  count = 43 
-mid = 2.25  count = 20 
-mid = 2.75  count = 4 
+mid = -3.75  count = 1 
+mid = -3.25  count = 1 
+mid = -2.75  count = 4 
+mid = -2.25  count = 22 
+mid = -1.75  count = 39 
+mid = -1.25  count = 104 
+mid = -0.75  count = 139 
+mid = -0.25  count = 207 
+mid = 0.25  count = 179 
+mid = 0.75  count = 154 
+mid = 1.25  count = 85 
+mid = 1.75  count = 44 
+mid = 2.25  count = 17 
+mid = 2.75  count = 2 
 mid = 3.25  count = 1 
 mid = 3.75  count = 1
 ```

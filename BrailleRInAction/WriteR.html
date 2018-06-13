@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-06-12">
+<meta name="date" content="2018-06-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -338,18 +338,32 @@ You can now skip to the section which shows you how to check everything is ready
 </div>
 <div id="our-first-html-file" class="section level2">
 <h2><span class="header-section-number">10.6</span> Our first HTML file</h2>
-<p>Making your first HTML file is as easy as hitting the <code>f5</code> key, or using one of the options in the <code>Build</code> menu. The variety of options are the commonly used ones in RStudio.</p>
-<p>This will use the suite of packages, primarily including the <code>knitr</code> and <code>rmarkdown</code> packages.
-process
-Navigate to the current working directory using your file browser. To find out where that is, type <code>getwd()</code> back in the R window. You should see the file <code>MyFirst.Rmd</code> and once you have built it, the associated HTML file.</p>
-<p>Open the HTML file and see how the markdown has been rendered. You may need to switch back and forth between the WriteR window and your browser to compare the plain text and the beautiful HTML.</p>
-<p>Changes in your R markdown file are not automatically converted into the HTML file. You must re-build the HTML, and refresh your browser to see the impact of any changes you make.</p>
+<p>Making your first HTML file is as easy as hitting the <code>f5</code> key, or using one of the options in the <code>Build</code> menu. The variety of options are the commonly used ones in RStudio. Let’s just stick to making an HTML file for the time being. You can investigate other formats later.</p>
+<p>When the processing is underway, a second window will open which gives the same output that you would see printed in an R session window if you were processing R markdown files manually.
+If the last line says “done 0”, then everything processed properly; if it says “done 1” then there was an error to fix, so look through this log to see what went wrong.</p>
+<p>The processing of your R markdown document will use a suite of packages, primarily including the <code>knitr</code> <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2018</a>)</span> and <code>rmarkdown</code> <span class="citation">(<span class="citeproc-not-found" data-reference-id="Rpkg-rmarkdown"><strong>???</strong></span>)</span> packages.
+Press the <code>f4</code> key to switch back to the main document editing window in WriteR.</p>
+<p>If the processing of the file “MyFirst.Rmd” was successful, then you will now have a file called “MyFirst.html” in your current working directory. You have several choices for finding the HTML file you have created:</p>
+<ul>
+<li>Navigate to the current working directory using your file browser. To find out where that is, type <code>getwd()</code> in the R window to see where the files really are located.
+You should see the file <code>MyFirst.Rmd</code> and once you have built it, the associated HTML file. Open that file in your browser.</li>
+<li>Use the <code>browseURL()</code> command in the R session. You will need to provide the filename, in quotes, for example <code>browseURL(&quot;MyFirst.html&quot;)</code></li>
+</ul>
+<p>Use one of these methods to open the HTML file. Read through it to see how the markdown has been rendered.
+You may need to switch back and forth between the WriteR window and your browser to compare the plain text and the beautiful HTML. If you didn’t actually edit the R markdown file up to now then the output HTML file will be rather boring. Add in some text, or use the menus to see how to insert headings and other things.</p>
+<p>N.B. Changes in your R markdown file are not automatically converted into the HTML file. You must re-build the HTML, and refresh your browser to see the impact of any changes you make, both actions use the <code>f5</code> key.</p>
 </div>
 <div id="brailler-commands-used-in-this-chapter-5" class="section level2">
 <h2><span class="header-section-number">10.7</span> BrailleR commands used in this chapter</h2>
 <p>We needed to use either <code>GetPython27()</code> and <code>GetWxPython27()</code> or <code>GetPython3()</code> to install the necessary software to allow us to run a Python script like WriteR.
 We then opened a new file using <code>WriteR()</code>.</p>
 
+</div>
+</div>
+<h3> References</h3>
+<div id="refs" class="references">
+<div id="ref-Rpkg-knitr">
+<p>Xie, Yihui. 2018. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
 </div>
 </div>
             </section>
