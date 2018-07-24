@@ -89,18 +89,18 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 > MyHist
 $breaks
  [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5  4.0
+[15]  3.0  3.5
 
 $counts
- [1]   1   1   4  22  39 104 139 207 179 154  85  44  17   2   1   1
+ [1]   1   2   4  22  37  89 155 188 213 123  88  55  21   1   1
 
 $density
- [1] 0.002 0.002 0.008 0.044 0.078 0.208 0.278 0.414 0.358 0.308 0.170
-[12] 0.088 0.034 0.004 0.002 0.002
+ [1] 0.002 0.004 0.008 0.044 0.074 0.178 0.310 0.376 0.426 0.246 0.176
+[12] 0.110 0.042 0.002 0.002
 
 $mids
  [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25  3.75
+[12]  1.75  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -124,18 +124,18 @@ attr(,"class")
 > MyHist
 $breaks
  [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5  4.0
+[15]  3.0  3.5
 
 $counts
- [1]   1   1   4  22  39 104 139 207 179 154  85  44  17   2   1   1
+ [1]   1   2   4  22  37  89 155 188 213 123  88  55  21   1   1
 
 $density
- [1] 0.002 0.002 0.008 0.044 0.078 0.208 0.278 0.414 0.358 0.308 0.170
-[12] 0.088 0.034 0.004 0.002 0.002
+ [1] 0.002 0.004 0.008 0.044 0.074 0.178 0.310 0.376 0.426 0.246 0.176
+[12] 0.110 0.042 0.002 0.002
 
 $mids
  [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25  3.75
+[12]  1.75  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -164,18 +164,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 16
+[1] 15
 
 $par
 $par$xaxp
-[1] -4  4  4
+[1] -4  2  3
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -4 -2  0  2  4
+[1] -4 -2  0  2
 
 $yTicks
 [1]   0  50 100 150 200
@@ -186,27 +186,26 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, 2, and 4 
+Tick marks for the x-axis are at: -4, -2, 0, and 2 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 16 bins with equal widths, starting at -4 and ending at 4 .
+It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
 The mids and counts for the bins are:
 mid = -3.75  count = 1 
-mid = -3.25  count = 1 
+mid = -3.25  count = 2 
 mid = -2.75  count = 4 
 mid = -2.25  count = 22 
-mid = -1.75  count = 39 
-mid = -1.25  count = 104 
-mid = -0.75  count = 139 
-mid = -0.25  count = 207 
-mid = 0.25  count = 179 
-mid = 0.75  count = 154 
-mid = 1.25  count = 85 
-mid = 1.75  count = 44 
-mid = 2.25  count = 17 
-mid = 2.75  count = 2 
-mid = 3.25  count = 1 
-mid = 3.75  count = 1
+mid = -1.75  count = 37 
+mid = -1.25  count = 89 
+mid = -0.75  count = 155 
+mid = -0.25  count = 188 
+mid = 0.25  count = 213 
+mid = 0.75  count = 123 
+mid = 1.25  count = 88 
+mid = 1.75  count = 55 
+mid = 2.25  count = 21 
+mid = 2.75  count = 1 
+mid = 3.25  count = 1
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.

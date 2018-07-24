@@ -48,3 +48,7 @@ This work is licensed under the Creative Commons Attribution-NonCommercial-NoDer
 cat("# commands to process somehow later\nlibrary(BrailleR)\n", file="RunLater.R")
 # needs to be run occasionally
 ```
+
+```{R FetchBrailleRBib, echo=FALSE}
+file.copy(from=system.file("doc/BrailleRPublications.bib", package="BrailleR"), to="./BrailleRPublications.bib", overwrite = TRUE)
+```
