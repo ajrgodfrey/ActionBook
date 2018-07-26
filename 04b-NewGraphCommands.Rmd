@@ -12,8 +12,15 @@ library(BrailleR)
 
 You will need the `BrailleR` package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command `library(BrailleR)` now.
 
+## What's in a graph?
 
 
+A challenge for many blind people is to understand the way a scatter plot shows a relationship between two variables. In a theoretical sense they can learn that a scatter plot does show a relationship, outliers etc. but the ability to construct a scatter plot for themselves and then interpret it in a similar way to their sighted peers is not possible unless they have direct access to a tactile image embosser. Such access is not immediate as embossers are not portable. Although efforts to create tools that can be used by blind people who do not have access to an embosser are not new [@CalderEtAl2006], more recent developments have tended to focus on use of touch screen technologies. To this author's knowledge, no comprehensive solution exists to meet the need for blind users to independently create statistical graphs with confidence or to modify  them without starting all over again.
+
+Solutions for giving blind people access (in a general sense) are often aimed at providing an exact replica of what the sighted person can see. A statistical graph can exist on two levels: First, the exact detail of individual elements that are plotted in the graph, and second, the combined effect this collection of elements conveys.
+
+As we look at the various graphs being produced in any analysis, we need to think about which of these activities is being done by the sighted world as they consume the content. If we do not understand what the consumer is doing, we cannot hope to provide an appropriate graph for them; to be a producer of a graph, you must also be a consumer of it, albeit temporarily. The solutions offered to blind users by `BrailleR` try to keep this ethos in mind.
+ 
 ## Background
 
 In Chapter \@ref(VI), we saw creation of a histogram using the `hist()` command. The `hist()` command used for many years is found in the `graphics` package and has its own `plot()` command called `plot.histogram()` as well. This `plot()` command is actually a family of commands that all start with`plot.*()` where the star is replaced by the type of object that is being plotted. We use this `plot()` command all the time to give us plots for different reasons. When we fit a regression model, we need to create various plots of the residuals and it is done using `plot()` which actually employs `plot.lm()` in the background to do the work. The family of commands are referred to as "methods" and the types of objects being worked on are called "classes".  We need a little more background before diving into the various new commands BrailleR offers.
@@ -97,10 +104,37 @@ unlink("Temp.R")
 ```
 
 
+### What's in the scatter plot?
+
+
+Well first we might ask what is in the graph window to be confident that a plot was actually made. The `WTF()` command was put in `BrailleR` to address this problem. For the record, WTF is the acronym for "What's this figure?" We'll see it's use in the next figure. It should tell us what appears in the graph window for things like axis lables and titles.
+
+The  current solution offered by the `BrailleR` package for helping describe the pointws plotted ina  scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,
+
+```{r addGridLines, fig.dim=c(6,6), fig.cap="Scatter plot of Ozone versus Wind with grid lines added.", fig.keep="last"}
+attach(airquality)
+plot(Wind, Ozone, pch = 4)
+abline(v=min(Wind)+c(0.25,0.5,0.75)*(max(Wind)-min(Wind)), col=6)
+abline(h = min(Ozone, na.rm=TRUE) +c(0.25,0.5,0.75)*(max(Ozone, na.rm=TRUE)-min(Ozone, na.rm=TRUE)), col=6)
+WTF()
+detach(airquality)
+```
+
+Counting the number of points falling into each cell of the graphic and presenting the results as  a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a 4$\times$4 grid of sixteen cells. 
+Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the scatter plot in 
+
+```{r countGrid}
+attach(airquality)
+WhereXY(Wind, Ozone, grid = c(4,4))
+detach(airquality)
+```
+
+In situations where the user is confident that the marginal distributions of either or both of the variables being plotted are normal, the grid lines should be spaced accordingly. 
+
 
 
 ## BrailleR commands used in this chapter
 
-The BrailleR versions of the `hist()` and  `boxplot()` commands replace those found in the `graphics` package. The BrailleR commands `ScatterPlot()` and `FittedLinePlot()` are specific to BrailleR and replace the functionality usually obtained through use of `plot()` and `abline()`.
+The BrailleR versions of the `hist()` and  `boxplot()` commands replace those found in the `graphics` package. The BrailleR commands `ScatterPlot()` and `FittedLinePlot()` are specific to BrailleR and replace the functionality usually obtained through use of `plot()` and `abline()`. The `WTF()` command helped prove a graph has appeared in the graph window, and `WhereXY()` has helped count the number of points falling into subregions of the plotting area.
 
 

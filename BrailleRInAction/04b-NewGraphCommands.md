@@ -8,8 +8,15 @@ This chapter introduces some of the new commands found in the `BrailleR` package
 
 You will need the `BrailleR` package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command `library(BrailleR)` now.
 
+## What's in a graph?
 
 
+A challenge for many blind people is to understand the way a scatter plot shows a relationship between two variables. In a theoretical sense they can learn that a scatter plot does show a relationship, outliers etc. but the ability to construct a scatter plot for themselves and then interpret it in a similar way to their sighted peers is not possible unless they have direct access to a tactile image embosser. Such access is not immediate as embossers are not portable. Although efforts to create tools that can be used by blind people who do not have access to an embosser are not new [@CalderEtAl2006], more recent developments have tended to focus on use of touch screen technologies. To this author's knowledge, no comprehensive solution exists to meet the need for blind users to independently create statistical graphs with confidence or to modify  them without starting all over again.
+
+Solutions for giving blind people access (in a general sense) are often aimed at providing an exact replica of what the sighted person can see. A statistical graph can exist on two levels: First, the exact detail of individual elements that are plotted in the graph, and second, the combined effect this collection of elements conveys.
+
+As we look at the various graphs being produced in any analysis, we need to think about which of these activities is being done by the sighted world as they consume the content. If we do not understand what the consumer is doing, we cannot hope to provide an appropriate graph for them; to be a producer of a graph, you must also be a consumer of it, albeit temporarily. The solutions offered to blind users by `BrailleR` try to keep this ethos in mind.
+ 
 ## Background
 
 In Chapter \@ref(VI), we saw creation of a histogram using the `hist()` command. The `hist()` command used for many years is found in the `graphics` package and has its own `plot()` command called `plot.histogram()` as well. This `plot()` command is actually a family of commands that all start with`plot.*()` where the star is replaced by the type of object that is being plotted. We use this `plot()` command all the time to give us plots for different reasons. When we fit a regression model, we need to create various plots of the residuals and it is done using `plot()` which actually employs `plot.lm()` in the background to do the work. The family of commands are referred to as "methods" and the types of objects being worked on are called "classes".  We need a little more background before diving into the various new commands BrailleR offers.
@@ -88,19 +95,19 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 
 > MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[15]  3.5  4.0
 
 $counts
- [1]   1   2   4  22  37  89 155 188 213 123  88  55  21   1   1
+ [1]   2  12  18  44  93 161 188 182 149  92  41  14   2   1   1
 
 $density
- [1] 0.002 0.004 0.008 0.044 0.074 0.178 0.310 0.376 0.426 0.246 0.176
-[12] 0.110 0.042 0.002 0.002
+ [1] 0.004 0.024 0.036 0.088 0.186 0.322 0.376 0.364 0.298 0.184 0.082
+[12] 0.028 0.004 0.002 0.002
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75  3.25  3.75
 
 $xname
 [1] "x"
@@ -123,19 +130,19 @@ attr(,"class")
 
 > MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[15]  3.5  4.0
 
 $counts
- [1]   1   2   4  22  37  89 155 188 213 123  88  55  21   1   1
+ [1]   2  12  18  44  93 161 188 182 149  92  41  14   2   1   1
 
 $density
- [1] 0.002 0.004 0.008 0.044 0.074 0.178 0.310 0.376 0.426 0.246 0.176
-[12] 0.110 0.042 0.002 0.002
+ [1] 0.004 0.024 0.036 0.088 0.186 0.322 0.376 0.364 0.298 0.184 0.082
+[12] 0.028 0.004 0.002 0.002
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75  3.25  3.75
 
 $xname
 [1] "x"
@@ -168,17 +175,17 @@ $NBars
 
 $par
 $par$xaxp
-[1] -4  2  3
+[1] -2  4  3
 
 $par$yaxp
-[1]   0 200   4
+[1]   0 150   3
 
 
 $xTicks
-[1] -4 -2  0  2
+[1] -2  0  2  4
 
 $yTicks
-[1]   0  50 100 150 200
+[1]   0  50 100 150
 
 attr(,"class")
 [1] "Augmented" "histogram"
@@ -186,26 +193,26 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, and 2 
+Tick marks for the x-axis are at: -2, 0, 2, and 4 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
+Tick marks for the y-axis are at: 0, 50, 100, and 150 
+It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
 The mids and counts for the bins are:
-mid = -3.75  count = 1 
 mid = -3.25  count = 2 
-mid = -2.75  count = 4 
-mid = -2.25  count = 22 
-mid = -1.75  count = 37 
-mid = -1.25  count = 89 
-mid = -0.75  count = 155 
+mid = -2.75  count = 12 
+mid = -2.25  count = 18 
+mid = -1.75  count = 44 
+mid = -1.25  count = 93 
+mid = -0.75  count = 161 
 mid = -0.25  count = 188 
-mid = 0.25  count = 213 
-mid = 0.75  count = 123 
-mid = 1.25  count = 88 
-mid = 1.75  count = 55 
-mid = 2.25  count = 21 
-mid = 2.75  count = 1 
-mid = 3.25  count = 1
+mid = 0.25  count = 182 
+mid = 0.75  count = 149 
+mid = 1.25  count = 92 
+mid = 1.75  count = 41 
+mid = 2.25  count = 14 
+mid = 2.75  count = 2 
+mid = 3.25  count = 1 
+mid = 3.75  count = 1
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.
@@ -274,10 +281,46 @@ The example given on the help page for `ScatterPlot()` proves that the plots gen
 ```
 
 
+### What's in the scatter plot?
+
+
+Well first we might ask what is in the graph window to be confident that a plot was actually made. The `WTF()` command was put in `BrailleR` to address this problem. For the record, WTF is the acronym for "What's this figure?" We'll see it's use in the next figure. It should tell us what appears in the graph window for things like axis lables and titles.
+
+The  current solution offered by the `BrailleR` package for helping describe the pointws plotted ina  scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,
+
+<div class="figure">
+<img src="04b-NewGraphCommands_files/figure-html/addGridLines-1.png" alt="Scatter plot of Ozone versus Wind with grid lines added." width="576" />
+<p class="caption">(\#fig:addGridLines)Scatter plot of Ozone versus Wind with grid lines added.</p>
+</div>
+
+Counting the number of points falling into each cell of the graphic and presenting the results as  a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a 4$\times$4 grid of sixteen cells. 
+Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the scatter plot in 
+
+
+```r
+attach(airquality)
+WhereXY(Wind, Ozone, grid = c(4,4))
+```
+
+```
+     1  2  3 4 Sum
+4    2  0  0 0   2
+3    7  5  0 0  12
+2    9 15  6 0  30
+1    1 39 27 5  72
+Sum 19 59 33 5 116
+```
+
+```r
+detach(airquality)
+```
+
+In situations where the user is confident that the marginal distributions of either or both of the variables being plotted are normal, the grid lines should be spaced accordingly. 
+
 
 
 ## BrailleR commands used in this chapter
 
-The BrailleR versions of the `hist()` and  `boxplot()` commands replace those found in the `graphics` package. The BrailleR commands `ScatterPlot()` and `FittedLinePlot()` are specific to BrailleR and replace the functionality usually obtained through use of `plot()` and `abline()`.
+The BrailleR versions of the `hist()` and  `boxplot()` commands replace those found in the `graphics` package. The BrailleR commands `ScatterPlot()` and `FittedLinePlot()` are specific to BrailleR and replace the functionality usually obtained through use of `plot()` and `abline()`. The `WTF()` command helped prove a graph has appeared in the graph window, and `WhereXY()` has helped count the number of points falling into subregions of the plotting area.
 
 

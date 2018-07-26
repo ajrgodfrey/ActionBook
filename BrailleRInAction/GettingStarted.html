@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-07-24">
+<meta name="date" content="2018-07-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -182,13 +182,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="VI.html"><a href="VI.html#brailler-commands-used-in-this-chapter-1"><i class="fa fa-check"></i><b>4.4</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="NewGraphs.html"><a href="NewGraphs.html"><i class="fa fa-check"></i><b>5</b> New BrailleR commands for making basic graphs</a><ul>
-<li class="chapter" data-level="5.1" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.1</b> Background</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="NewGraphs.html"><a href="NewGraphs.html#methods-and-classes"><i class="fa fa-check"></i><b>5.1.1</b> Methods and classes</a></li>
-<li class="chapter" data-level="5.1.2" data-path="NewGraphs.html"><a href="NewGraphs.html#who-cares-about-classes-anyway"><i class="fa fa-check"></i><b>5.1.2</b> Who cares about classes anyway?</a></li>
+<li class="chapter" data-level="5.1" data-path="NewGraphs.html"><a href="NewGraphs.html#whats-in-a-graph"><i class="fa fa-check"></i><b>5.1</b> What’s in a graph?</a></li>
+<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.2</b> Background</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="NewGraphs.html"><a href="NewGraphs.html#methods-and-classes"><i class="fa fa-check"></i><b>5.2.1</b> Methods and classes</a></li>
+<li class="chapter" data-level="5.2.2" data-path="NewGraphs.html"><a href="NewGraphs.html#who-cares-about-classes-anyway"><i class="fa fa-check"></i><b>5.2.2</b> Who cares about classes anyway?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#example-a-histogram"><i class="fa fa-check"></i><b>5.2</b> Example: A histogram</a></li>
-<li class="chapter" data-level="5.3" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.3</b> Scatter plots</a></li>
-<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#brailler-commands-used-in-this-chapter-2"><i class="fa fa-check"></i><b>5.4</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="5.3" data-path="NewGraphs.html"><a href="NewGraphs.html#example-a-histogram"><i class="fa fa-check"></i><b>5.3</b> Example: A histogram</a></li>
+<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.4</b> Scatter plots</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="NewGraphs.html"><a href="NewGraphs.html#whats-in-the-scatter-plot"><i class="fa fa-check"></i><b>5.4.1</b> What’s in the scatter plot?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="NewGraphs.html"><a href="NewGraphs.html#brailler-commands-used-in-this-chapter-2"><i class="fa fa-check"></i><b>5.5</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="WorkingBlind.html"><a href="WorkingBlind.html"><i class="fa fa-check"></i><b>6</b> Ways of Working in R as a Blind User</a><ul>
 <li class="chapter" data-level="6.1" data-path="WorkingBlind.html"><a href="WorkingBlind.html#a-little-background"><i class="fa fa-check"></i><b>6.1</b> A little background</a></li>
@@ -286,14 +289,14 @@ The decision should be made by the individual user after some experimentation; t
 <div id="installing-the-brailler-package" class="section level2">
 <h2><span class="header-section-number">3.3</span> Installing the BrailleR package</h2>
 <p>To use the functionality of the BrailleR package you need to have it installed. The package has several dependencies so installation from the CRAN repository is recommended. This would be done by issuing the following two commands in an R session:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">chooseCRANmirror</span>(<span class="dt">ind=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&quot;BrailleR&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">chooseCRANmirror</span>(<span class="dt">ind=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&quot;BrailleR&quot;</span>)</a></code></pre></div>
 <p>If for some reason you have difficulty with the above commands, you can install the BrailleR package using a zip file version available from a CRAN repository or the latest version on GitHub.</p>
 <p>From time to time, you should check that you are using the most recent version of the BrailleR package. You can update all installed packages using the commands:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">chooseCRANmirror</span>(<span class="dt">ind=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">update.packages</span>(<span class="dt">ask=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">chooseCRANmirror</span>(<span class="dt">ind=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw">update.packages</span>(<span class="dt">ask=</span><span class="ot">FALSE</span>)</a></code></pre></div>
 <p>Once you’ve got the package installed, you still need to get it running in your current R session by issuing one last command. When you issue the first of the following lines, the package start messages will also appear.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">library</span>(BrailleR)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">library</span>(BrailleR)</a></code></pre></div>
 <p>You’re ready to go!</p>
 <div id="some-initial-setting-up-instructions" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Some initial setting up instructions</h3>

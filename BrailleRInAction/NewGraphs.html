@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-07-24">
+<meta name="date" content="2018-07-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -182,13 +182,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="VI.html"><a href="VI.html#brailler-commands-used-in-this-chapter-1"><i class="fa fa-check"></i><b>4.4</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="NewGraphs.html"><a href="NewGraphs.html"><i class="fa fa-check"></i><b>5</b> New BrailleR commands for making basic graphs</a><ul>
-<li class="chapter" data-level="5.1" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.1</b> Background</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="NewGraphs.html"><a href="NewGraphs.html#methods-and-classes"><i class="fa fa-check"></i><b>5.1.1</b> Methods and classes</a></li>
-<li class="chapter" data-level="5.1.2" data-path="NewGraphs.html"><a href="NewGraphs.html#who-cares-about-classes-anyway"><i class="fa fa-check"></i><b>5.1.2</b> Who cares about classes anyway?</a></li>
+<li class="chapter" data-level="5.1" data-path="NewGraphs.html"><a href="NewGraphs.html#whats-in-a-graph"><i class="fa fa-check"></i><b>5.1</b> What’s in a graph?</a></li>
+<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.2</b> Background</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="NewGraphs.html"><a href="NewGraphs.html#methods-and-classes"><i class="fa fa-check"></i><b>5.2.1</b> Methods and classes</a></li>
+<li class="chapter" data-level="5.2.2" data-path="NewGraphs.html"><a href="NewGraphs.html#who-cares-about-classes-anyway"><i class="fa fa-check"></i><b>5.2.2</b> Who cares about classes anyway?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#example-a-histogram"><i class="fa fa-check"></i><b>5.2</b> Example: A histogram</a></li>
-<li class="chapter" data-level="5.3" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.3</b> Scatter plots</a></li>
-<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#brailler-commands-used-in-this-chapter-2"><i class="fa fa-check"></i><b>5.4</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="5.3" data-path="NewGraphs.html"><a href="NewGraphs.html#example-a-histogram"><i class="fa fa-check"></i><b>5.3</b> Example: A histogram</a></li>
+<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.4</b> Scatter plots</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="NewGraphs.html"><a href="NewGraphs.html#whats-in-the-scatter-plot"><i class="fa fa-check"></i><b>5.4.1</b> What’s in the scatter plot?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="NewGraphs.html"><a href="NewGraphs.html#brailler-commands-used-in-this-chapter-2"><i class="fa fa-check"></i><b>5.5</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="WorkingBlind.html"><a href="WorkingBlind.html"><i class="fa fa-check"></i><b>6</b> Ways of Working in R as a Blind User</a><ul>
 <li class="chapter" data-level="6.1" data-path="WorkingBlind.html"><a href="WorkingBlind.html#a-little-background"><i class="fa fa-check"></i><b>6.1</b> A little background</a></li>
@@ -265,11 +268,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 5</span> New BrailleR commands for making basic graphs</h1>
 <p>This chapter introduces some of the new commands found in the <code>BrailleR</code> package that are substitutes for other functions found in the base distribution of R. You can jump ahead to the examples, but there is some theory needed to explain how the <code>BrailleR</code> package does the extra work it does, and why we need to use these substitute commands.</p>
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
+<div id="whats-in-a-graph" class="section level2">
+<h2><span class="header-section-number">5.1</span> What’s in a graph?</h2>
+<p>A challenge for many blind people is to understand the way a scatter plot shows a relationship between two variables. In a theoretical sense they can learn that a scatter plot does show a relationship, outliers etc. but the ability to construct a scatter plot for themselves and then interpret it in a similar way to their sighted peers is not possible unless they have direct access to a tactile image embosser. Such access is not immediate as embossers are not portable. Although efforts to create tools that can be used by blind people who do not have access to an embosser are not new <span class="citation">(Calder et al. <a href="#ref-CalderEtAl2006">2006</a>)</span>, more recent developments have tended to focus on use of touch screen technologies. To this author’s knowledge, no comprehensive solution exists to meet the need for blind users to independently create statistical graphs with confidence or to modify them without starting all over again.</p>
+<p>Solutions for giving blind people access (in a general sense) are often aimed at providing an exact replica of what the sighted person can see. A statistical graph can exist on two levels: First, the exact detail of individual elements that are plotted in the graph, and second, the combined effect this collection of elements conveys.</p>
+<p>As we look at the various graphs being produced in any analysis, we need to think about which of these activities is being done by the sighted world as they consume the content. If we do not understand what the consumer is doing, we cannot hope to provide an appropriate graph for them; to be a producer of a graph, you must also be a consumer of it, albeit temporarily. The solutions offered to blind users by <code>BrailleR</code> try to keep this ethos in mind.</p>
+</div>
 <div id="background" class="section level2">
-<h2><span class="header-section-number">5.1</span> Background</h2>
+<h2><span class="header-section-number">5.2</span> Background</h2>
 <p>In Chapter <a href="VI.html#VI">4</a>, we saw creation of a histogram using the <code>hist()</code> command. The <code>hist()</code> command used for many years is found in the <code>graphics</code> package and has its own <code>plot()</code> command called <code>plot.histogram()</code> as well. This <code>plot()</code> command is actually a family of commands that all start with<code>plot.*()</code> where the star is replaced by the type of object that is being plotted. We use this <code>plot()</code> command all the time to give us plots for different reasons. When we fit a regression model, we need to create various plots of the residuals and it is done using <code>plot()</code> which actually employs <code>plot.lm()</code> in the background to do the work. The family of commands are referred to as “methods” and the types of objects being worked on are called “classes”. We need a little more background before diving into the various new commands BrailleR offers.</p>
 <div id="methods-and-classes" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Methods and classes</h3>
+<h3><span class="header-section-number">5.2.1</span> Methods and classes</h3>
 <p>Development of the <code>BrailleR</code> Package and discussion of its opportunities is totally reliant on two of the structures used in the S language.
 These are “methods” and “classes”.
 In brief, a set of commands that perform a similar task on a selection of different classes is a “method”.</p>
@@ -297,7 +306,7 @@ There are actually only a few basic data structures to work with, the easiest an
 <p>The results of applying the <code>print()</code> command to a histogram shown in Chapter <a href="VI.html#VI">4</a>, couldn’t use the non-existent <code>print.histogram()</code> function so it used the <code>print.default()</code> method instead. The content of the object is stored as a “list”, but note the last element of the list that states the class of the object. Adding this extra attribute to the data object is a minor matter that has very powerful consequences!</p>
 </div>
 <div id="who-cares-about-classes-anyway" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Who cares about classes anyway?</h3>
+<h3><span class="header-section-number">5.2.2</span> Who cares about classes anyway?</h3>
 <p>It is a reasonable question to ask.
 BrailleR cares because the functions written such as the <code>VI()</code> command used throughout Chapter <a href="VI.html#VI">4</a> is actually a family of commands.
 The beginnings of the <code>BrailleR</code> Project were formed on the idea of writing a method that would provide the summarised text version of the graph object created. To this end, a method was started with the functions: <code>VI()</code>, <code>VI.default()</code>, and <code>VI.histogram()</code> in order to demonstrate the approach.
@@ -306,7 +315,7 @@ The <code>VI()</code> commands called actually refered to the <code>VI.histogram
 </div>
 </div>
 <div id="example-a-histogram" class="section level2">
-<h2><span class="header-section-number">5.2</span> Example: A histogram</h2>
+<h2><span class="header-section-number">5.3</span> Example: A histogram</h2>
 <p>One of the easiest ways to demonstrate code snippets is to include them in the help documentation of the function. Running these examples is then possible using the <code>example()</code> command.
 In this example, we see that use of the original <code>hist()</code> from the <code>graphics</code> package yields the same graph as the <code>BrailleR</code> package version, but that the additional text for such items as titles and axis labelling used in the text description are only added by <code>BrailleR::hist()</code>. Running the command, <code>example(hist)</code> command will give you the following:</p>
 <pre><code>
@@ -323,19 +332,19 @@ Figure 5.1: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[15]  3.5  4.0
 
 $counts
- [1]   1   2   4  22  37  89 155 188 213 123  88  55  21   1   1
+ [1]   2  12  18  44  93 161 188 182 149  92  41  14   2   1   1
 
 $density
- [1] 0.002 0.004 0.008 0.044 0.074 0.178 0.310 0.376 0.426 0.246 0.176
-[12] 0.110 0.042 0.002 0.002
+ [1] 0.004 0.024 0.036 0.088 0.186 0.322 0.376 0.364 0.298 0.184 0.082
+[12] 0.028 0.004 0.002 0.002
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75  3.25  3.75
 
 $xname
 [1] &quot;x&quot;
@@ -356,19 +365,19 @@ Figure 5.1: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[15]  3.5  4.0
 
 $counts
- [1]   1   2   4  22  37  89 155 188 213 123  88  55  21   1   1
+ [1]   2  12  18  44  93 161 188 182 149  92  41  14   2   1   1
 
 $density
- [1] 0.002 0.004 0.008 0.044 0.074 0.178 0.310 0.376 0.426 0.246 0.176
-[12] 0.110 0.042 0.002 0.002
+ [1] 0.004 0.024 0.036 0.088 0.186 0.322 0.376 0.364 0.298 0.184 0.082
+[12] 0.028 0.004 0.002 0.002
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75  3.25  3.75
 
 $xname
 [1] &quot;x&quot;
@@ -401,17 +410,17 @@ $NBars
 
 $par
 $par$xaxp
-[1] -4  2  3
+[1] -2  4  3
 
 $par$yaxp
-[1]   0 200   4
+[1]   0 150   3
 
 
 $xTicks
-[1] -4 -2  0  2
+[1] -2  0  2  4
 
 $yTicks
-[1]   0  50 100 150 200
+[1]   0  50 100 150
 
 attr(,&quot;class&quot;)
 [1] &quot;Augmented&quot; &quot;histogram&quot;
@@ -419,31 +428,31 @@ attr(,&quot;class&quot;)
 &gt; VI(MyHist)
 This is a histogram, with the title: Histogram of x
 &quot;x&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, and 2 
+Tick marks for the x-axis are at: -2, 0, 2, and 4 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
+Tick marks for the y-axis are at: 0, 50, 100, and 150 
+It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
 The mids and counts for the bins are:
-mid = -3.75  count = 1 
 mid = -3.25  count = 2 
-mid = -2.75  count = 4 
-mid = -2.25  count = 22 
-mid = -1.75  count = 37 
-mid = -1.25  count = 89 
-mid = -0.75  count = 155 
+mid = -2.75  count = 12 
+mid = -2.25  count = 18 
+mid = -1.75  count = 44 
+mid = -1.25  count = 93 
+mid = -0.75  count = 161 
 mid = -0.25  count = 188 
-mid = 0.25  count = 213 
-mid = 0.75  count = 123 
-mid = 1.25  count = 88 
-mid = 1.75  count = 55 
-mid = 2.25  count = 21 
-mid = 2.75  count = 1 
-mid = 3.25  count = 1</code></pre>
+mid = 0.25  count = 182 
+mid = 0.75  count = 149 
+mid = 1.25  count = 92 
+mid = 1.75  count = 41 
+mid = 2.25  count = 14 
+mid = 2.75  count = 2 
+mid = 3.25  count = 1 
+mid = 3.75  count = 1</code></pre>
 <p>When you first issued the <code>library(BrailleR)</code> command, there were several warnings printed out. One of them told you that the <code>hist()</code> function from the <code>graphics</code> package was masked by the <code>BrailleR</code> version. This means that when you use <code>hist()</code>, it is the <code>BrailleR</code> version being used.</p>
 <p>the <code>BrailleR</code> package includes <code>hist()</code> and <code>boxplot()</code> functions that pass the details of the command on to the <code>graphics</code> package functions of the same name, and then add any additional content required that will improve the ability to describe the visual graphic produced in text. In most cases, the graph producing functions pass on arguments such as <code>main</code>, <code>xlab</code>, or <code>ylab</code> (for main title and axis labels) to the relevant plotting commands without storing these elements in the object that is created. These elements are stored as graphical parameters and can be recalled using <code>par()</code> commands.</p>
 </div>
 <div id="scatter-plots" class="section level2">
-<h2><span class="header-section-number">5.3</span> Scatter plots</h2>
+<h2><span class="header-section-number">5.4</span> Scatter plots</h2>
 <p>The description of the <code>hist()</code> function given above shows what is possible if a graph is created using a specific function. Many plots are created using the <code>plot()</code> function which is actually a family of functions tailored to the type of object pushed into them. In addition, the <code>plot()</code> command is used to generate a simple scatter plot. This is slightyly unfortunate in a theoretical sense, but useful in a practical sense. The use of <code>plot()</code> to generate a scatter plot cannot lead to a graph that the <code>VI()</code> functionality can work with. Unlike the <code>hist()</code> command which can be replaced by a function of the same name in the <code>BrailleR</code> package, the solution needs to be a new function of a new name. In addition to the new <code>ScatterPlot()</code> function, the <code>BrailleR</code> package has a <code>FittedLinePlot()</code> function that adds a fitted line to the scatter plot.</p>
 <p>The example given on the help page for <code>ScatterPlot()</code> proves that the plots generated by <code>ScatterPlot()</code> and <code>FittedLinePlot()</code> are identical to those that would normally be created using <code>plot()</code> and the addition of the fitted line using <code>abline()</code>. Running the command, <code>example(ScatterPlot)</code> command will give you the following:</p>
 <pre><code>
@@ -480,11 +489,40 @@ Figure 5.2: The six graphs generated by the <code>example(ScatterPlot)</code>
 &gt; rm(test2)
 
 &gt; rm(op)</code></pre>
+<div id="whats-in-the-scatter-plot" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> What’s in the scatter plot?</h3>
+<p>Well first we might ask what is in the graph window to be confident that a plot was actually made. The <code>WTF()</code> command was put in <code>BrailleR</code> to address this problem. For the record, WTF is the acronym for “What’s this figure?” We’ll see it’s use in the next figure. It should tell us what appears in the graph window for things like axis lables and titles.</p>
+<p>The current solution offered by the <code>BrailleR</code> package for helping describe the pointws plotted ina scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,</p>
+<div class="figure"><span id="fig:addGridLines"></span>
+<img src="04b-NewGraphCommands_files/figure-html/addGridLines-1.png" alt="Scatter plot of Ozone versus Wind with grid lines added." width="576" />
+<p class="caption">
+Figure 5.3: Scatter plot of Ozone versus Wind with grid lines added.
+</p>
+</div>
+<p>Counting the number of points falling into each cell of the graphic and presenting the results as a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a 4$$4 grid of sixteen cells.
+Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the scatter plot in</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">attach</span>(airquality)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="kw">WhereXY</span>(Wind, Ozone, <span class="dt">grid =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</a></code></pre></div>
+<pre><code>     1  2  3 4 Sum
+4    2  0  0 0   2
+3    7  5  0 0  12
+2    9 15  6 0  30
+1    1 39 27 5  72
+Sum 19 59 33 5 116</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">detach</span>(airquality)</a></code></pre></div>
+<p>In situations where the user is confident that the marginal distributions of either or both of the variables being plotted are normal, the grid lines should be spaced accordingly.</p>
+</div>
 </div>
 <div id="brailler-commands-used-in-this-chapter-2" class="section level2">
-<h2><span class="header-section-number">5.4</span> BrailleR commands used in this chapter</h2>
-<p>The BrailleR versions of the <code>hist()</code> and <code>boxplot()</code> commands replace those found in the <code>graphics</code> package. The BrailleR commands <code>ScatterPlot()</code> and <code>FittedLinePlot()</code> are specific to BrailleR and replace the functionality usually obtained through use of <code>plot()</code> and <code>abline()</code>.</p>
+<h2><span class="header-section-number">5.5</span> BrailleR commands used in this chapter</h2>
+<p>The BrailleR versions of the <code>hist()</code> and <code>boxplot()</code> commands replace those found in the <code>graphics</code> package. The BrailleR commands <code>ScatterPlot()</code> and <code>FittedLinePlot()</code> are specific to BrailleR and replace the functionality usually obtained through use of <code>plot()</code> and <code>abline()</code>. The <code>WTF()</code> command helped prove a graph has appeared in the graph window, and <code>WhereXY()</code> has helped count the number of points falling into subregions of the plotting area.</p>
 
+</div>
+</div>
+<h3> References</h3>
+<div id="refs" class="references">
+<div id="ref-CalderEtAl2006">
+<p>Calder, M., R. Cohen, J. Lanzoni, and Y. Xu. 2006. “PLUMB: An Interface for Users Who Are Blind to Display, Create and Modify Graphs.” <em>ASSETS’06</em>, 263–64. <a href="http://www.catea.gatech.edu/scitrain/kb/FullText_Articles/PLUMB.pdf" class="uri">http://www.catea.gatech.edu/scitrain/kb/FullText_Articles/PLUMB.pdf</a>.</p>
 </div>
 </div>
             </section>
