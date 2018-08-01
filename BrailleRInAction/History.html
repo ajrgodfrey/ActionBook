@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-07-25">
+<meta name="date" content="2018-07-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -132,8 +132,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
-<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#citation-details"><i class="fa fa-check"></i><b>0.0.1</b> Citation details</a></li>
-<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#copyright-information"><i class="fa fa-check"></i><b>0.0.2</b> Copyright information</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation-details"><i class="fa fa-check"></i>Citation details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#copyright-information"><i class="fa fa-check"></i>Copyright information</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-as-a-novice"><i class="fa fa-check"></i><b>1.1</b> Why will I use the BrailleR package as a novice?</a><ul>
@@ -285,7 +285,7 @@ It also stood me in good stead for the work that followed on the <code>BrailleR<
 <div id="the-starting-point-example" class="section level2">
 <h2><span class="header-section-number">2.3</span> The starting point example</h2>
 <p>The basic graph that has been used for almost every presentation of the <code>BrailleR</code> package is a histogram. There is a more detailed example, but the following commands create a set of numbers that can be kept for further processing once the graph has been created. It is the re-processing of these numbers that leads to the text description that follows.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(BrailleR)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(BrailleR)</a></code></pre></div>
 <pre><code>## The BrailleR.View,  option is set to FALSE.</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;BrailleR&#39;</code></pre>
@@ -298,8 +298,8 @@ It also stood me in good stead for the work that followed on the <code>BrailleR<
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     grep, gsub</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">x=<span class="kw">rnorm</span>(<span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">hist</span>(x))</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">x=<span class="kw">rnorm</span>(<span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">hist</span>(x))</a></code></pre></div>
 <div class="figure"><span id="fig:hist"></span>
 <img src="02-History_files/figure-html/hist-1.png" alt="A histogram of 1000 random values from a normal distribution" width="672" />
 <p class="caption">
@@ -308,26 +308,25 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </div>
 <pre><code>## This is a histogram, with the title: Histogram of x
 ## &quot;x&quot; is marked on the x-axis.
-## Tick marks for the x-axis are at: -4, -2, 0, and 2 
+## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, 3, and 4 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, and 150 
-## It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
+## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+## It has 14 bins with equal widths, starting at -3 and ending at 4 .
 ## The mids and counts for the bins are:
-## mid = -3.75  count = 1 
-## mid = -3.25  count = 2 
-## mid = -2.75  count = 5 
-## mid = -2.25  count = 18 
-## mid = -1.75  count = 45 
-## mid = -1.25  count = 93 
-## mid = -0.75  count = 148 
-## mid = -0.25  count = 185 
-## mid = 0.25  count = 189 
-## mid = 0.75  count = 152 
-## mid = 1.25  count = 92 
-## mid = 1.75  count = 43 
-## mid = 2.25  count = 17 
-## mid = 2.75  count = 8 
-## mid = 3.25  count = 2</code></pre>
+## mid = -2.75  count = 7 
+## mid = -2.25  count = 19 
+## mid = -1.75  count = 37 
+## mid = -1.25  count = 97 
+## mid = -0.75  count = 140 
+## mid = -0.25  count = 183 
+## mid = 0.25  count = 196 
+## mid = 0.75  count = 140 
+## mid = 1.25  count = 100 
+## mid = 1.75  count = 57 
+## mid = 2.25  count = 18 
+## mid = 2.75  count = 4 
+## mid = 3.25  count = 1 
+## mid = 3.75  count = 1</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2">

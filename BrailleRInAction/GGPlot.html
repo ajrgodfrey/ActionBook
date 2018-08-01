@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-07-25">
+<meta name="date" content="2018-07-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -132,8 +132,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
-<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#citation-details"><i class="fa fa-check"></i><b>0.0.1</b> Citation details</a></li>
-<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#copyright-information"><i class="fa fa-check"></i><b>0.0.2</b> Copyright information</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation-details"><i class="fa fa-check"></i>Citation details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#copyright-information"><i class="fa fa-check"></i>Copyright information</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-as-a-novice"><i class="fa fa-check"></i><b>1.1</b> Why will I use the BrailleR package as a novice?</a><ul>
@@ -269,47 +269,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The use of the ggplot style of graph production has increased markedly since its inception. The grammar of graphics as seen in the R code used to create the extremely wide range of graphs is seldom human-interpretable with ease. Creation of suitable support functionality via the <code>VI()</code> command is very definitely required. An initial attempt to extract any useful infromation from these graphs was contributed to the <code>BrailleR</code> package by Tony Hirst. Significant improvement has been made by Debra Warren as part of her postgraduate work under the supervision of Paul Murrell at the University of Auckland. Much of what is displayed in this chapter is only worth offering because of Debra’s work and the interactions had between her, Paul and I in the second half of 2017.</p>
 <p>N.B. the commands here are exact copies of the commands presented in <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span> or some minor alterations to them; any changes will be explicitly noted. All plots are created using the figure numbers from <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span> or the page numbers if no figure number was given. They are then investigated using the <code>VI()</code> command from the <code>BrailleR</code> package.</p>
 <p>You will need some additional packages to the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the commands:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">library</span>(BrailleR)   </a>
-<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="kw">library</span>(ggplot2)   </a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">library</span>(BrailleR)   </a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="kw">library</span>(ggplot2)   </a></code></pre></div>
 <pre><code>
 Attaching package: &#39;ggplot2&#39;</code></pre>
 <pre><code>The following objects are masked from &#39;package:BrailleR&#39;:
 
     xlab, ylab</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a></code></pre></div>
 <p>Note that one data set used for these examples is created by <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span> while the others are included in the <code>ggplot2</code> package.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">1410</span>)</a>
-<a class="sourceLine" id="cb52-2" data-line-number="2">dsmall &lt;-<span class="st"> </span>diamonds[<span class="kw">sample</span>(<span class="kw">nrow</span>(diamonds), <span class="dv">100</span>),]   </a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">1410</span>)</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2">dsmall &lt;-<span class="st"> </span>diamonds[<span class="kw">sample</span>(<span class="kw">nrow</span>(diamonds), <span class="dv">100</span>),]   </a></code></pre></div>
 <p>One important note for the graphs in this chapter is the difference in the way they appear here, as compared to the original figures of <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span> where differing height and width parameters have been set for each graph. For example, in the following graph, the points are smaller than in the original figure, and the aspect ratio is slightly different. The consequence is that this graph looks less cluttered than does the original.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">p11a =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> diamonds)   </a>
-<a class="sourceLine" id="cb53-2" data-line-number="2">p11a</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">p11a =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> diamonds)   </a>
+<a class="sourceLine" id="cb55-2" data-line-number="2">p11a</a></code></pre></div>
 <div class="figure"><span id="fig:p11a"></span>
 <img src="09-GGPlot_files/figure-html/p11a-1.png" alt="First graph on page 11 of @Wickham2009ggplot2" width="672" />
 <p class="caption">
 Figure 9.1: First graph on page 11 of <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span>
 </p>
 </div>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">VI</span>(p11a)  </a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">VI</span>(p11a)  </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis &#39;price&#39; with labels 0, 5000, 10000 and 15000.
 The chart is a set of 53940 points.</code></pre>
 <p>Note that unlike some other ways the <code>VI()</code> command has worked, the graph was not created by the nesting of the call to render the graph when nested inside the <code>VI()</code> command. In all the examples that follow, I use the pipe <code>%&gt;%</code> operator from the <code>magrittr</code> package to push the graph into the <code>VI()</code> function.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">fig2<span class="fl">.2</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> dsmall, <span class="dt">colour =</span> color)</a>
-<a class="sourceLine" id="cb56-2" data-line-number="2">fig2<span class="fl">.2</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">fig2<span class="fl">.2</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> dsmall, <span class="dt">colour =</span> color)</a>
+<a class="sourceLine" id="cb58-2" data-line-number="2">fig2<span class="fl">.2</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
 It has y-axis &#39;price&#39; with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour strong reddish orange, 
-E represented by colour strong yellow, 
-F represented by colour vivid yellowish green, 
-G represented by colour brilliant green, 
-H represented by colour brilliant blue, 
-I represented by colour vivid violet and 
-J represented by colour deep purplish pink.
+D represented by colour very deep purple, 
+E represented by colour vivid purplish blue, 
+F represented by colour moderate blue, 
+G represented by colour vivid bluish green, 
+H represented by colour brilliant green, 
+I represented by colour vivid yellow green and 
+J represented by colour vivid greenish yellow.
 The chart is a set of 100 points.</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">fig2<span class="fl">.2</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">fig2<span class="fl">.2</span>a</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-2a"></span>
 <img src="09-GGPlot_files/figure-html/fig2-2a-1.png" alt="Left pane of Figure 2.2 of @Wickham2009ggplot2" width="672" />
 <p class="caption">
@@ -317,8 +317,9 @@ Figure 9.2: Left pane of Figure 2.2 of <span class="citation">Wickham (<a href="
 </p>
 </div>
 <p>We haven’t been able to tell what exact colour was used in the <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span> rendering of this graph, but there has obviously been some minor alteration of the colour palette being used by the <code>ggplot2</code> package.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">fig2<span class="fl">.2</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> dsmall, <span class="dt">shape =</span> cut)    </a>
-<a class="sourceLine" id="cb59-2" data-line-number="2">fig2<span class="fl">.2</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">fig2<span class="fl">.2</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> dsmall, <span class="dt">shape =</span> cut)    </a>
+<a class="sourceLine" id="cb61-2" data-line-number="2">fig2<span class="fl">.2</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<pre><code>Warning: Using shapes for an ordinal variable is not advised</code></pre>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
 It has y-axis &#39;price&#39; with labels 0, 5000, 10000 and 15000.
@@ -329,7 +330,8 @@ Very Good represented by shape solid square,
 Premium represented by shape plus and 
 Ideal represented by shape boxed X.
 The chart is a set of 100 points.</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">fig2<span class="fl">.2</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1">fig2<span class="fl">.2</span>b</a></code></pre></div>
+<pre><code>Warning: Using shapes for an ordinal variable is not advised</code></pre>
 <div class="figure"><span id="fig:fig2-2b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-2b-1.png" alt="Right pane of Figure 2.2" width="672" />
 <p class="caption">
@@ -337,31 +339,31 @@ Figure 9.3: Right pane of Figure 2.2
 </p>
 </div>
 <p>To get semi-transparent points:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1">fig2<span class="fl">.3</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> diamonds, <span class="dt">alpha =</span> <span class="kw">I</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">100</span>))    </a>
-<a class="sourceLine" id="cb62-2" data-line-number="2">fig2<span class="fl">.3</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">fig2<span class="fl">.3</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> diamonds, <span class="dt">alpha =</span> <span class="kw">I</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">100</span>))    </a>
+<a class="sourceLine" id="cb66-2" data-line-number="2">fig2<span class="fl">.3</span>b</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-3b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-3b-1.png" alt="Middle pane from Figure 2.3" width="672" />
 <p class="caption">
 Figure 9.4: Middle pane from Figure 2.3
 </p>
 </div>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">fig2<span class="fl">.3</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">fig2<span class="fl">.3</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis &#39;price&#39; with labels 0, 5000, 10000 and 15000.
 The chart is a set of 53940 points.
 The chart has alpha set to 0.01.</code></pre>
 <p>To add a smoother (default is loess for n&lt;1000):</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">fig2<span class="fl">.4</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> dsmall, <span class="dt">geom =</span> <span class="kw">c</span>(<span class="st">&quot;point&quot;</span>, <span class="st">&quot;smooth&quot;</span>))    </a>
-<a class="sourceLine" id="cb65-2" data-line-number="2">fig2<span class="fl">.4</span>a</a></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">fig2<span class="fl">.4</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> dsmall, <span class="dt">geom =</span> <span class="kw">c</span>(<span class="st">&quot;point&quot;</span>, <span class="st">&quot;smooth&quot;</span>))    </a>
+<a class="sourceLine" id="cb69-2" data-line-number="2">fig2<span class="fl">.4</span>a</a></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <div class="figure"><span id="fig:fig2-4a"></span>
 <img src="09-GGPlot_files/figure-html/fig2-4a-1.png" alt="Left pane of Figure 2.4" width="672" />
 <p class="caption">
 Figure 9.5: Left pane of Figure 2.4
 </p>
 </div>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">fig2<span class="fl">.4</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">fig2<span class="fl">.4</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
 It has y-axis &#39;price&#39; with labels 0, 5000, 10000, 15000 and 20000.
@@ -370,23 +372,23 @@ Layer 1 is a set of 100 points.
 Layer 2 is a smoothed curve using method &#39;auto&#39; with confidence intervals.</code></pre>
 <div id="plotting-a-continuous-variable-against-a-categorical-variable" class="section level2">
 <h2><span class="header-section-number">9.1</span> Plotting a continuous variable against a categorical variable</h2>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">fig2<span class="fl">.8</span>a  =<span class="st"> </span><span class="kw">qplot</span>(color, price <span class="op">/</span><span class="st"> </span>carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;jitter&quot;</span>)</a>
-<a class="sourceLine" id="cb69-2" data-line-number="2">fig2<span class="fl">.8</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">fig2<span class="fl">.8</span>a  =<span class="st"> </span><span class="kw">qplot</span>(color, price <span class="op">/</span><span class="st"> </span>carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;jitter&quot;</span>)</a>
+<a class="sourceLine" id="cb73-2" data-line-number="2">fig2<span class="fl">.8</span>a</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-8a"></span>
 <img src="09-GGPlot_files/figure-html/fig2-8a-1.png" alt="Left pane of Figure 2.8" width="672" />
 <p class="caption">
 Figure 9.6: Left pane of Figure 2.8
 </p>
 </div>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">fig2<span class="fl">.8</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1">fig2<span class="fl">.8</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;color&#39; with labels D, E, F, G, H, I and J.
 It has y-axis &#39;price/carat&#39; with labels 5000, 10000 and 15000.
 The chart is a set of 53940 points.</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1">fig2<span class="fl">.8</span>b =<span class="st"> </span><span class="kw">qplot</span>(color, price <span class="op">/</span><span class="st"> </span>carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;boxplot&quot;</span>)    </a>
-<a class="sourceLine" id="cb72-2" data-line-number="2">fig2<span class="fl">.8</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1">fig2<span class="fl">.8</span>b =<span class="st"> </span><span class="kw">qplot</span>(color, price <span class="op">/</span><span class="st"> </span>carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;boxplot&quot;</span>)    </a>
+<a class="sourceLine" id="cb76-2" data-line-number="2">fig2<span class="fl">.8</span>b</a></code></pre></div>
 <p><img src="09-GGPlot_files/figure-html/fig2-8b-1.png" width="672" /></p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">fig2<span class="fl">.8</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">fig2<span class="fl">.8</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;color&#39; with labels D, E, F, G, H, I and J.
 It has y-axis &#39;price/carat&#39; with labels 5000, 10000 and 15000.
@@ -413,15 +415,15 @@ There is a box at x=J.
 It has median 3780. The box goes from 2562.87 to 4927.95, and the whiskers extend to 1080.65 and 8426.13.
 There are 3 outliers for this boxplot.</code></pre>
 <p>When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not realised by <code>BrailleR</code>.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1">fig2<span class="fl">.9</span>b =<span class="st"> </span><span class="kw">qplot</span>(color, price <span class="op">/</span><span class="st"> </span>carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;jitter&quot;</span>, <span class="dt">alpha =</span> <span class="kw">I</span>(<span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">50</span>))    </a>
-<a class="sourceLine" id="cb75-2" data-line-number="2">fig2<span class="fl">.9</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">fig2<span class="fl">.9</span>b =<span class="st"> </span><span class="kw">qplot</span>(color, price <span class="op">/</span><span class="st"> </span>carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;jitter&quot;</span>, <span class="dt">alpha =</span> <span class="kw">I</span>(<span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">50</span>))    </a>
+<a class="sourceLine" id="cb79-2" data-line-number="2">fig2<span class="fl">.9</span>b</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-9b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-9b-1.png" alt="Middle pane of Figure 2.9" width="672" />
 <p class="caption">
 Figure 9.7: Middle pane of Figure 2.9
 </p>
 </div>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1">fig2<span class="fl">.9</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">fig2<span class="fl">.9</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;color&#39; with labels D, E, F, G, H, I and J.
 It has y-axis &#39;price/carat&#39; with labels 5000, 10000 and 15000.
@@ -429,8 +431,8 @@ The chart is a set of 53940 points.
 The chart has alpha set to 0.02.</code></pre>
 <div id="univariate-plots" class="section level3">
 <h3><span class="header-section-number">9.1.1</span> univariate plots</h3>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1">fig2<span class="fl">.10</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>)    </a>
-<a class="sourceLine" id="cb78-2" data-line-number="2">fig2<span class="fl">.10</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">fig2<span class="fl">.10</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>)    </a>
+<a class="sourceLine" id="cb82-2" data-line-number="2">fig2<span class="fl">.10</span>a</a></code></pre></div>
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <div class="figure"><span id="fig:fig2-10a"></span>
 <img src="09-GGPlot_files/figure-html/fig2-10a-1.png" alt="Left pane of Figure 2.10" width="672" />
@@ -438,27 +440,27 @@ The chart has alpha set to 0.02.</code></pre>
 Figure 9.8: Left pane of Figure 2.10
 </p>
 </div>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1">fig2<span class="fl">.10</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">fig2<span class="fl">.10</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis &#39;count&#39; with labels 0, 5000, 10000 and 15000.
+It has y-axis &#39;&#39; with labels 0, 5000, 10000 and 15000.
 The chart is a bar chart containing 30 vertical bars.</code></pre>
 <p>Warning: This figure does look different to the original in <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span> ins spite of using the same code and same data.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1">fig2<span class="fl">.10</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;density&quot;</span>)    </a>
-<a class="sourceLine" id="cb82-2" data-line-number="2">fig2<span class="fl">.10</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1">fig2<span class="fl">.10</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;density&quot;</span>)    </a>
+<a class="sourceLine" id="cb86-2" data-line-number="2">fig2<span class="fl">.10</span>b</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-10b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-10b-1.png" alt="Right pane of Figure 2.10" width="672" />
 <p class="caption">
 Figure 9.9: Right pane of Figure 2.10
 </p>
 </div>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">fig2<span class="fl">.10</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">fig2<span class="fl">.10</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis &#39;density&#39; with labels 0.0, 0.5, 1.0 and 1.5.
+It has y-axis &#39;&#39; with labels 0.0, 0.5, 1.0 and 1.5.
 The chart is a type that VI isn&#39;t able to process.</code></pre>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1">fig2<span class="fl">.11</span>c =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.01</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>))    </a>
-<a class="sourceLine" id="cb85-2" data-line-number="2">fig2<span class="fl">.11</span>c</a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">fig2<span class="fl">.11</span>c =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.01</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>))    </a>
+<a class="sourceLine" id="cb89-2" data-line-number="2">fig2<span class="fl">.11</span>c</a></code></pre></div>
 <pre><code>Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
 <div class="figure"><span id="fig:fig2-11c"></span>
 <img src="09-GGPlot_files/figure-html/fig2-11c-1.png" alt="Right pane of Figure 2.11" width="672" />
@@ -466,36 +468,36 @@ The chart is a type that VI isn&#39;t able to process.</code></pre>
 Figure 9.10: Right pane of Figure 2.11
 </p>
 </div>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">fig2<span class="fl">.11</span>c <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">fig2<span class="fl">.11</span>c <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2 and 3.
-It has y-axis &#39;count&#39; with labels 0, 1000 and 2000.
+It has y-axis &#39;&#39; with labels 0, 1000 and 2000.
 The chart is a bar chart containing 299 vertical bars.</code></pre>
 <p>The data is separated by implication in the following graphs. The legend is automatically generated and has altered in appearance since the original was prodcued in <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span>.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1">fig2<span class="fl">.12</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;density&quot;</span>, <span class="dt">colour =</span> color)    </a>
-<a class="sourceLine" id="cb90-2" data-line-number="2">fig2<span class="fl">.12</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1">fig2<span class="fl">.12</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;density&quot;</span>, <span class="dt">colour =</span> color)    </a>
+<a class="sourceLine" id="cb94-2" data-line-number="2">fig2<span class="fl">.12</span>a</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-12a"></span>
 <img src="09-GGPlot_files/figure-html/fig2-12a-1.png" alt="Left pane of Figure 2.12" width="672" />
 <p class="caption">
 Figure 9.11: Left pane of Figure 2.12
 </p>
 </div>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">fig2<span class="fl">.12</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1">fig2<span class="fl">.12</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis &#39;density&#39; with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
+It has y-axis &#39;&#39; with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour strong reddish orange, 
-E represented by colour strong yellow, 
-F represented by colour vivid yellowish green, 
-G represented by colour brilliant green, 
-H represented by colour brilliant blue, 
-I represented by colour vivid violet and 
-J represented by colour deep purplish pink.
+D represented by colour very deep purple, 
+E represented by colour vivid purplish blue, 
+F represented by colour moderate blue, 
+G represented by colour vivid bluish green, 
+H represented by colour brilliant green, 
+I represented by colour vivid yellow green and 
+J represented by colour vivid greenish yellow.
 The chart is a type that VI isn&#39;t able to process.</code></pre>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">fig2<span class="fl">.12</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">fill =</span> color)    </a>
-<a class="sourceLine" id="cb93-2" data-line-number="2">fig2<span class="fl">.12</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1">fig2<span class="fl">.12</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">fill =</span> color)    </a>
+<a class="sourceLine" id="cb97-2" data-line-number="2">fig2<span class="fl">.12</span>b</a></code></pre></div>
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <div class="figure"><span id="fig:fig2-12b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-12b-1.png" alt="Right pane of Figure 2.12" width="672" />
@@ -503,34 +505,34 @@ The chart is a type that VI isn&#39;t able to process.</code></pre>
 Figure 9.12: Right pane of Figure 2.12
 </p>
 </div>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1">fig2<span class="fl">.12</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1">fig2<span class="fl">.12</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis &#39;count&#39; with labels 0, 5000, 10000 and 15000.
+It has y-axis &#39;&#39; with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that fill is used to represent color, with 7 levels:
-D represented by fill strong reddish orange, 
-E represented by fill strong yellow, 
-F represented by fill vivid yellowish green, 
-G represented by fill brilliant green, 
-H represented by fill brilliant blue, 
-I represented by fill vivid violet and 
-J represented by fill deep purplish pink.
+D represented by fill very deep purple, 
+E represented by fill vivid purplish blue, 
+F represented by fill moderate blue, 
+G represented by fill vivid bluish green, 
+H represented by fill brilliant green, 
+I represented by fill vivid yellow green and 
+J represented by fill vivid greenish yellow.
 The chart is a bar chart containing 210 vertical bars.</code></pre>
 </div>
 <div id="bar-charts-for-categorical-variables" class="section level3">
 <h3><span class="header-section-number">9.1.2</span> bar charts for categorical variables</h3>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1">fig2<span class="fl">.13</span>a  =<span class="st"> </span><span class="kw">qplot</span>(color, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>) <span class="co">#geom=&quot;bar&quot; is the default    </span></a>
-<a class="sourceLine" id="cb97-2" data-line-number="2">fig2<span class="fl">.13</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1">fig2<span class="fl">.13</span>a  =<span class="st"> </span><span class="kw">qplot</span>(color, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>) <span class="co">#geom=&quot;bar&quot; is the default    </span></a>
+<a class="sourceLine" id="cb101-2" data-line-number="2">fig2<span class="fl">.13</span>a</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-13a"></span>
 <img src="09-GGPlot_files/figure-html/fig2-13a-1.png" alt="Left pane of Figure 2.13" width="672" />
 <p class="caption">
 Figure 9.13: Left pane of Figure 2.13
 </p>
 </div>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1">fig2<span class="fl">.13</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1">fig2<span class="fl">.13</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;color&#39; with labels D, E, F, G, H, I and J.
-It has y-axis &#39;count&#39; with labels 0, 3000, 6000 and 9000.
+It has y-axis &#39;&#39; with labels 0, 3000, 6000 and 9000.
 The chart is a bar chart containing 7 vertical bars.
 Bar 1 is centered horizontally at D, and spans vertically from 0 to 6775.
 Bar 2 is centered horizontally at E, and spans vertically from 0 to 9797.
@@ -540,26 +542,26 @@ Bar 5 is centered horizontally at H, and spans vertically from 0 to 8304.
 Bar 6 is centered horizontally at I, and spans vertically from 0 to 5422.
 Bar 7 is centered horizontally at J, and spans vertically from 0 to 2808.</code></pre>
 <p>need to check…</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1">fig2<span class="fl">.13</span>b =<span class="st"> </span><span class="kw">qplot</span>(color, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">weight =</span> carat)   </a>
-<a class="sourceLine" id="cb100-2" data-line-number="2">fig2<span class="fl">.13</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1">fig2<span class="fl">.13</span>b =<span class="st"> </span><span class="kw">qplot</span>(color, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">weight =</span> carat)   </a>
+<a class="sourceLine" id="cb104-2" data-line-number="2">fig2<span class="fl">.13</span>b</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-13b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-13b-1.png" alt="Right pane of Figure 2.13" width="672" />
 <p class="caption">
 Figure 9.14: Right pane of Figure 2.13
 </p>
 </div>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" data-line-number="1">fig2<span class="fl">.13</span>b =<span class="st"> </span><span class="kw">qplot</span>(color, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">weight =</span> carat) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="st">&quot;carat&quot;</span>)    </a>
-<a class="sourceLine" id="cb101-2" data-line-number="2">fig2<span class="fl">.13</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">fig2<span class="fl">.13</span>b =<span class="st"> </span><span class="kw">qplot</span>(color, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">weight =</span> carat) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="st">&quot;carat&quot;</span>)    </a>
+<a class="sourceLine" id="cb105-2" data-line-number="2">fig2<span class="fl">.13</span>b</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-13b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-13b-2.png" alt="Right pane of Figure 2.13" width="672" />
 <p class="caption">
 Figure 9.14: Right pane of Figure 2.13
 </p>
 </div>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1">fig2<span class="fl">.13</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" data-line-number="1">fig2<span class="fl">.13</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;color&#39; with labels D, E, F, G, H, I and J.
-It has y-axis &#39;count&#39; with labels 0, 2500, 5000 and 7500.
+It has y-axis &#39;&#39; with labels 0, 2500, 5000 and 7500.
 The chart is a bar chart containing 7 vertical bars.
 Bar 1 is centered horizontally at D, and spans vertically from 0 to 4456.56.
 Bar 2 is centered horizontally at E, and spans vertically from 0 to 6445.12.
@@ -573,15 +575,15 @@ Bar 7 is centered horizontally at J, and spans vertically from 0 to 3263.28.</co
 <div id="time-series-plots" class="section level2">
 <h2><span class="header-section-number">9.2</span> time series plots</h2>
 <p>It looks like the data used in the next graph has been updated since the publication of <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span></p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" data-line-number="1">fig2<span class="fl">.14</span>a =<span class="st"> </span><span class="kw">qplot</span>(date, unemploy <span class="op">/</span><span class="st"> </span>pop, <span class="dt">data =</span> economics, <span class="dt">geom =</span> <span class="st">&quot;line&quot;</span>)    </a>
-<a class="sourceLine" id="cb104-2" data-line-number="2">fig2<span class="fl">.14</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1">fig2<span class="fl">.14</span>a =<span class="st"> </span><span class="kw">qplot</span>(date, unemploy <span class="op">/</span><span class="st"> </span>pop, <span class="dt">data =</span> economics, <span class="dt">geom =</span> <span class="st">&quot;line&quot;</span>)    </a>
+<a class="sourceLine" id="cb108-2" data-line-number="2">fig2<span class="fl">.14</span>a</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-14a"></span>
 <img src="09-GGPlot_files/figure-html/fig2-14a-1.png" alt="Left pane of Figure 2.14" width="672" />
 <p class="caption">
 Figure 9.15: Left pane of Figure 2.14
 </p>
 </div>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">fig2<span class="fl">.14</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1">fig2<span class="fl">.14</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;date&#39; with labels 1970, 1980, 1990, 2000 and 2010.
 It has y-axis &#39;unemploy/pop&#39; with labels 0.02, 0.03, 0.04 and 0.05.
@@ -590,17 +592,17 @@ Line 1 connects 574 points.</code></pre>
 </div>
 <div id="path-plots" class="section level2">
 <h2><span class="header-section-number">9.3</span> path plots</h2>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1">year &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">as.POSIXlt</span>(x)<span class="op">$</span>year <span class="op">+</span><span class="st"> </span><span class="dv">1900</span>    </a>
-<a class="sourceLine" id="cb107-2" data-line-number="2">fig2<span class="fl">.15</span>b =<span class="st"> </span><span class="kw">qplot</span>(unemploy <span class="op">/</span><span class="st"> </span>pop, uempmed, <span class="dt">data =</span> economics, <span class="dt">geom =</span> <span class="st">&quot;path&quot;</span>, <span class="dt">colour=</span><span class="kw">year</span>(date)) </a>
-<a class="sourceLine" id="cb107-3" data-line-number="3"><span class="co">#+ scale_area() # no longer works</span></a>
-<a class="sourceLine" id="cb107-4" data-line-number="4">fig2<span class="fl">.15</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1">year &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">as.POSIXlt</span>(x)<span class="op">$</span>year <span class="op">+</span><span class="st"> </span><span class="dv">1900</span>    </a>
+<a class="sourceLine" id="cb111-2" data-line-number="2">fig2<span class="fl">.15</span>b =<span class="st"> </span><span class="kw">qplot</span>(unemploy <span class="op">/</span><span class="st"> </span>pop, uempmed, <span class="dt">data =</span> economics, <span class="dt">geom =</span> <span class="st">&quot;path&quot;</span>, <span class="dt">colour=</span><span class="kw">year</span>(date)) </a>
+<a class="sourceLine" id="cb111-3" data-line-number="3"><span class="co">#+ scale_area() # no longer works</span></a>
+<a class="sourceLine" id="cb111-4" data-line-number="4">fig2<span class="fl">.15</span>b</a></code></pre></div>
 <div class="figure"><span id="fig:fig2-15b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-15b-1.png" alt="Right pane of Figure 2.15" width="672" />
 <p class="caption">
 Figure 9.16: Right pane of Figure 2.15
 </p>
 </div>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1">fig2<span class="fl">.15</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1">fig2<span class="fl">.15</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;unemploy/pop&#39; with labels 0.02, 0.03, 0.04 and 0.05.
 It has y-axis &#39;uempmed&#39; with labels 5, 10, 15, 20 and 25.
@@ -610,9 +612,9 @@ The chart is a type that VI isn&#39;t able to process.</code></pre>
 <div id="facets-is-the-ggplot-term-for-trellis-panels" class="section level2">
 <h2><span class="header-section-number">9.4</span> facets is the ggplot term for trellis’ panels</h2>
 <p>The aspect ratio for the plot region is something that needs to be considered. I’ve manually adjusted the plotting window here so that the graph more closely matches that of <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span> but it is not an exact match.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1">fig2<span class="fl">.16</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">facets =</span> color <span class="op">~</span><span class="st"> </span>., <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.1</span>, </a>
-<a class="sourceLine" id="cb110-2" data-line-number="2"><span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3</span>))    </a>
-<a class="sourceLine" id="cb110-3" data-line-number="3">fig2<span class="fl">.16</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1">fig2<span class="fl">.16</span>a =<span class="st"> </span><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">facets =</span> color <span class="op">~</span><span class="st"> </span>., <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.1</span>, </a>
+<a class="sourceLine" id="cb114-2" data-line-number="2"><span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3</span>))    </a>
+<a class="sourceLine" id="cb114-3" data-line-number="3">fig2<span class="fl">.16</span>a</a></code></pre></div>
 <pre><code>Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
 <div class="figure"><span id="fig:fig2-16a"></span>
 <img src="09-GGPlot_files/figure-html/fig2-16a-1.png" alt="Left side of Figure 2.16" width="384" />
@@ -620,13 +622,13 @@ The chart is a type that VI isn&#39;t able to process.</code></pre>
 Figure 9.17: Left side of Figure 2.16
 </p>
 </div>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1">fig2<span class="fl">.16</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1">fig2<span class="fl">.16</span>a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
 <pre><code>This is an untitled chart with no subtitle or caption.
 The chart is comprised of 7 panels containing sub-charts, arranged vertically.
 The panels represent different values of color.
 Each sub-chart has x-axis &#39;carat&#39; with labels 0, 1, 2 and 3.
-Each sub-chart has y-axis &#39;count&#39; with labels 0, 500, 1000, 1500, 2000 and 2500.
+Each sub-chart has y-axis &#39;&#39; with labels 0, 500, 1000, 1500, 2000 and 2500.
 Panel 1 represents data for color = D.
 Panel 1 is a bar chart containing 29 vertical bars.
 Panel 2 represents data for color = E.
@@ -641,8 +643,8 @@ Panel 6 represents data for color = I.
 Panel 6 is a bar chart containing 29 vertical bars.
 Panel 7 represents data for color = J.
 Panel 7 is a bar chart containing 29 vertical bars.</code></pre>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">fig2<span class="fl">.16</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, ..density.., <span class="dt">data =</span> diamonds, <span class="dt">facets =</span> color <span class="op">~</span><span class="st"> </span>., <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.1</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3</span>))   </a>
-<a class="sourceLine" id="cb115-2" data-line-number="2">fig2<span class="fl">.16</span>b</a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">fig2<span class="fl">.16</span>b =<span class="st"> </span><span class="kw">qplot</span>(carat, ..density.., <span class="dt">data =</span> diamonds, <span class="dt">facets =</span> color <span class="op">~</span><span class="st"> </span>., <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.1</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">3</span>))   </a>
+<a class="sourceLine" id="cb119-2" data-line-number="2">fig2<span class="fl">.16</span>b</a></code></pre></div>
 <pre><code>Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
 <div class="figure"><span id="fig:fig2-16b"></span>
 <img src="09-GGPlot_files/figure-html/fig2-16b-1.png" alt="Right side of Figure 2.16" width="384" />
@@ -650,13 +652,13 @@ Panel 7 is a bar chart containing 29 vertical bars.</code></pre>
 Figure 9.18: Right side of Figure 2.16
 </p>
 </div>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">fig2<span class="fl">.16</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">fig2<span class="fl">.16</span>b <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
 <pre><code>This is an untitled chart with no subtitle or caption.
 The chart is comprised of 7 panels containing sub-charts, arranged vertically.
 The panels represent different values of color.
 Each sub-chart has x-axis &#39;carat&#39; with labels 0, 1, 2 and 3.
-Each sub-chart has y-axis &#39;density&#39; with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
+Each sub-chart has y-axis &#39;..density..&#39; with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 Panel 1 represents data for color = D.
 Panel 1 is a bar chart containing 29 vertical bars.
 Panel 2 represents data for color = E.
@@ -674,29 +676,29 @@ Panel 7 is a bar chart containing 29 vertical bars.</code></pre>
 </div>
 <div id="rescaling-of-the-axes" class="section level2">
 <h2><span class="header-section-number">9.5</span> rescaling of the axes</h2>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1">p26a =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> dsmall, <span class="dt">log =</span> <span class="st">&quot;xy&quot;</span>)   </a>
-<a class="sourceLine" id="cb120-2" data-line-number="2">p26a</a></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">p26a =<span class="st"> </span><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> dsmall, <span class="dt">log =</span> <span class="st">&quot;xy&quot;</span>)   </a>
+<a class="sourceLine" id="cb124-2" data-line-number="2">p26a</a></code></pre></div>
 <div class="figure"><span id="fig:p26a"></span>
 <img src="09-GGPlot_files/figure-html/p26a-1.png" alt="First graph on page 26 of " width="672" />
 <p class="caption">
 Figure 9.19: First graph on page 26 of
 </p>
 </div>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">p26a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">p26a <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 1.
 It has y-axis &#39;price&#39; with labels 1000 and 10000.
 The chart is a set of 100 points.</code></pre>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">fig3<span class="fl">.6</span> =<span class="st"> </span><span class="kw">qplot</span>(displ, hwy, <span class="dt">data=</span>mpg, <span class="dt">facets =</span><span class="op">~</span><span class="st"> </span>year) <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>()    </a>
-<a class="sourceLine" id="cb123-2" data-line-number="2">fig3<span class="fl">.6</span></a></code></pre></div>
-<pre><code>`geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1">fig3<span class="fl">.6</span> =<span class="st"> </span><span class="kw">qplot</span>(displ, hwy, <span class="dt">data=</span>mpg, <span class="dt">facets =</span><span class="op">~</span><span class="st"> </span>year) <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>()    </a>
+<a class="sourceLine" id="cb127-2" data-line-number="2">fig3<span class="fl">.6</span></a></code></pre></div>
+<pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <div class="figure"><span id="fig:fig3-6"></span>
 <img src="09-GGPlot_files/figure-html/fig3-6-1.png" alt="Figure 3.6 of " width="672" />
 <p class="caption">
 Figure 9.20: Figure 3.6 of
 </p>
 </div>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">fig3<span class="fl">.6</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1">fig3<span class="fl">.6</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">VI</span>()   </a></code></pre></div>
 <pre><code>This is an untitled chart with no subtitle or caption.
 The chart is comprised of 2 panels containing sub-charts, arranged horizontally.
 The panels represent different values of year.

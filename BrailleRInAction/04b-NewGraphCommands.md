@@ -96,18 +96,18 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 > MyHist
 $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[15]  3.5  4.0
+[15]  3.5
 
 $counts
- [1]   2  12  18  44  93 161 188 182 149  92  41  14   2   1   1
+ [1]   3   3  25  39  82 156 181 195 141 106  46  13   9   1
 
 $density
- [1] 0.004 0.024 0.036 0.088 0.186 0.322 0.376 0.364 0.298 0.184 0.082
-[12] 0.028 0.004 0.002 0.002
+ [1] 0.006 0.006 0.050 0.078 0.164 0.312 0.362 0.390 0.282 0.212 0.092
+[12] 0.026 0.018 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[12]  2.25  2.75  3.25  3.75
+[12]  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -131,18 +131,18 @@ attr(,"class")
 > MyHist
 $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[15]  3.5  4.0
+[15]  3.5
 
 $counts
- [1]   2  12  18  44  93 161 188 182 149  92  41  14   2   1   1
+ [1]   3   3  25  39  82 156 181 195 141 106  46  13   9   1
 
 $density
- [1] 0.004 0.024 0.036 0.088 0.186 0.322 0.376 0.364 0.298 0.184 0.082
-[12] 0.028 0.004 0.002 0.002
+ [1] 0.006 0.006 0.050 0.078 0.164 0.312 0.362 0.390 0.282 0.212 0.092
+[12] 0.026 0.018 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[12]  2.25  2.75  3.25  3.75
+[12]  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -171,21 +171,21 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 15
+[1] 14
 
 $par
 $par$xaxp
-[1] -2  4  3
+[1] -3  3  6
 
 $par$yaxp
-[1]   0 150   3
+[1]   0 200   4
 
 
 $xTicks
-[1] -2  0  2  4
+[1] -3 -2 -1  0  1  2  3
 
 $yTicks
-[1]   0  50 100 150
+[1]   0  50 100 150 200
 
 attr(,"class")
 [1] "Augmented" "histogram"
@@ -193,26 +193,25 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -2, 0, 2, and 4 
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, and 150 
-It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
+Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.25  count = 2 
-mid = -2.75  count = 12 
-mid = -2.25  count = 18 
-mid = -1.75  count = 44 
-mid = -1.25  count = 93 
-mid = -0.75  count = 161 
-mid = -0.25  count = 188 
-mid = 0.25  count = 182 
-mid = 0.75  count = 149 
-mid = 1.25  count = 92 
-mid = 1.75  count = 41 
-mid = 2.25  count = 14 
-mid = 2.75  count = 2 
-mid = 3.25  count = 1 
-mid = 3.75  count = 1
+mid = -3.25  count = 3 
+mid = -2.75  count = 3 
+mid = -2.25  count = 25 
+mid = -1.75  count = 39 
+mid = -1.25  count = 82 
+mid = -0.75  count = 156 
+mid = -0.25  count = 181 
+mid = 0.25  count = 195 
+mid = 0.75  count = 141 
+mid = 1.25  count = 106 
+mid = 1.75  count = 46 
+mid = 2.25  count = 13 
+mid = 2.75  count = 9 
+mid = 3.25  count = 1
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.
@@ -288,10 +287,30 @@ Well first we might ask what is in the graph window to be confident that a plot 
 
 The  current solution offered by the `BrailleR` package for helping describe the pointws plotted ina  scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,
 
+
+```r
+attach(airquality)
+plot(Wind, Ozone, pch = 4)
+abline(v=min(Wind)+c(0.25,0.5,0.75)*(max(Wind)-min(Wind)), col=6)
+abline(h = min(Ozone, na.rm=TRUE) +c(0.25,0.5,0.75)*(max(Ozone, na.rm=TRUE)-min(Ozone, na.rm=TRUE)), col=6)
+WTF()
+```
+
 <div class="figure">
 <img src="04b-NewGraphCommands_files/figure-html/addGridLines-1.png" alt="Scatter plot of Ozone versus Wind with grid lines added." width="576" />
 <p class="caption">(\#fig:addGridLines)Scatter plot of Ozone versus Wind with grid lines added.</p>
 </div>
+
+```
+This graph has no main title;  and o subtitle;
+"Wind" as the x axis label;
+"Ozone" as the y axis label;
+There are 116 points marked on this graph.
+```
+
+```r
+detach(airquality)
+```
 
 Counting the number of points falling into each cell of the graphic and presenting the results as  a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a 4$\times$4 grid of sixteen cells. 
 Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the scatter plot in 
