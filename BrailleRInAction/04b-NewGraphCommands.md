@@ -1,7 +1,7 @@
-# New BrailleR commands for making basic graphs {#NewGraphs}
+# New BrailleR commands for making and interpreting basic graphs {#NewGraphs}
 
 
-This chapter introduces some of the new commands found in the `BrailleR` package that are substitutes for other functions found in the base distribution of R. You can jump ahead to the examples, but there is some theory needed to explain how the `BrailleR` package does the extra work it does, and why we need to use these substitute commands.
+This chapter introduces two types of new commands found in the `BrailleR` package. There are several commands to help a blind user know what is included ina  graph, starting with a tool to help "know" what is displayed in an otherwise inaccessible graphics device window. The other commands introduced in this chapter are substitutes for functions found in the base distribution of R. You can jump ahead to the examples, but there is some theory needed to explain how the `BrailleR` package does the extra work it does, and why we need to use these substitute commands.
 
 
 
@@ -96,18 +96,18 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 > MyHist
 $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[15]  3.5
+[15]  3.5  4.0
 
 $counts
- [1]   3   3  25  39  82 156 181 195 141 106  46  13   9   1
+ [1]   2   3  18  42  60 146 198 208 166  88  51  12   4   1   1
 
 $density
- [1] 0.006 0.006 0.050 0.078 0.164 0.312 0.362 0.390 0.282 0.212 0.092
-[12] 0.026 0.018 0.002
+ [1] 0.004 0.006 0.036 0.084 0.120 0.292 0.396 0.416 0.332 0.176 0.102
+[12] 0.024 0.008 0.002 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[12]  2.25  2.75  3.25
+[12]  2.25  2.75  3.25  3.75
 
 $xname
 [1] "x"
@@ -131,18 +131,18 @@ attr(,"class")
 > MyHist
 $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[15]  3.5
+[15]  3.5  4.0
 
 $counts
- [1]   3   3  25  39  82 156 181 195 141 106  46  13   9   1
+ [1]   2   3  18  42  60 146 198 208 166  88  51  12   4   1   1
 
 $density
- [1] 0.006 0.006 0.050 0.078 0.164 0.312 0.362 0.390 0.282 0.212 0.092
-[12] 0.026 0.018 0.002
+ [1] 0.004 0.006 0.036 0.084 0.120 0.292 0.396 0.416 0.332 0.176 0.102
+[12] 0.024 0.008 0.002 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[12]  2.25  2.75  3.25
+[12]  2.25  2.75  3.25  3.75
 
 $xname
 [1] "x"
@@ -171,18 +171,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 14
+[1] 15
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -2  4  3
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -2  0  2  4
 
 $yTicks
 [1]   0  50 100 150 200
@@ -193,25 +193,26 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -2, 0, 2, and 4 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
+It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
 The mids and counts for the bins are:
-mid = -3.25  count = 3 
+mid = -3.25  count = 2 
 mid = -2.75  count = 3 
-mid = -2.25  count = 25 
-mid = -1.75  count = 39 
-mid = -1.25  count = 82 
-mid = -0.75  count = 156 
-mid = -0.25  count = 181 
-mid = 0.25  count = 195 
-mid = 0.75  count = 141 
-mid = 1.25  count = 106 
-mid = 1.75  count = 46 
-mid = 2.25  count = 13 
-mid = 2.75  count = 9 
-mid = 3.25  count = 1
+mid = -2.25  count = 18 
+mid = -1.75  count = 42 
+mid = -1.25  count = 60 
+mid = -0.75  count = 146 
+mid = -0.25  count = 198 
+mid = 0.25  count = 208 
+mid = 0.75  count = 166 
+mid = 1.25  count = 88 
+mid = 1.75  count = 51 
+mid = 2.25  count = 12 
+mid = 2.75  count = 4 
+mid = 3.25  count = 1 
+mid = 3.75  count = 1
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.
@@ -313,7 +314,7 @@ detach(airquality)
 ```
 
 Counting the number of points falling into each cell of the graphic and presenting the results as  a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a 4$\times$4 grid of sixteen cells. 
-Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the scatter plot in 
+Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the last scatter plot are counted by the `WhereXY()` command as follows:
 
 
 ```r

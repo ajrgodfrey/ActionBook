@@ -253,6 +253,26 @@ As before, there is one small change to make To get the desired outcome. The arg
 
 As an alternative, and if you do have a current internet connection you can view the result of running the [`OnePredictor()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-OnePredictor.html) in your browser without having to re-enter the example commands.
 
+## Fitting a linear model and obtaining its residual analysis
+
+The final demonstration for this chapter is the extremely common task of fitting a linear model to some data. This is almost always taught using graphical techniques, especially for the validation of the model being fitted. Of particular note is the way an instructor would teach sighted students about the sensibility of fitting any line to some data which cannot be easily judged even using the `WhereXY()` function described earlier. A blind student lacking an embosser to produce a tactile image that shows the fitted line and the data, will almost certainly need to fit the model and see how good or bad it is. These blind students are therefore even more reliant on the residual analysis than their sighted classmates
+
+The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function's value to a blind user. The code:
+
+input R/VI.lm
+
+always generates an R markdown file  and an R script, and if `BrailleR` default settings are being used in an interactive  session, also  automatically  opens the corresponding  HTML file created by the `knit2html()` function from the `knitr` package.  This HTML document is based on the results of the `UniDesc()` function applied to the Pearson residuals for the model and a number of other graphs and tables used to validate the model. The included graphs are of the residuals plotted against the fitted values, the order the data were collected (assumes data are presented in this order), the leverages,  and the  preceding residual.
+Each of these graphs is subjected to scrutiny using the `WhereXY()` function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of  uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.
+
+A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook's distances. This table is presented in the HTML document and converted to a LaTeX file using the `xtable` package. The incorporation of this LaTeX file is demonstrated in Table{InflObsModel1}. 
+
+input R/Model1.Validity/InflObs
+
+Note that the automatic formatting of this table as performed by  the `xtable` package has not been altered to meet a specified publication style. Ultimatly, users will need to alter the presentation to meet publisher specifications for themselves. 
+
+
+
+
 ## BrailleR commands used in this chapter
 
 

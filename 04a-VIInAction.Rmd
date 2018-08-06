@@ -31,7 +31,7 @@ In conclusion, it seems  that until such time as adaptive technology for creatin
 
 At each of the Summer University and Blind Science Conference  events I have shown students that they could use R to gain access to graphed information in a manner almost unparalleled by other statistical software --- the obvious exception to this rule is S-PLUS [@SPLUS-Soft]. 
 This advantage comes from the fact that the S language, on which R is built, implicitly stores the data needed to create many  graphs, and this data can be assigned to an object for further manipulation. 
-This is not true for graphs created using the ubiquitous `plot()` function however, and many other plotting functions that explicitly return a `NULL` object. We will first look at a graph objec that can be explicitly stored. 
+This is not true for graphs created using the ubiquitous `plot()` function however, and many other plotting functions that explicitly return a `NULL` object. We will first look at a graph object that can be explicitly stored. 
 
 ## Histograms
 
