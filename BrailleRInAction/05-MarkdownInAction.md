@@ -41,11 +41,11 @@ necessary." [@RoedigerEtAl2012RKWard]
 
 Making any of these GUI tools accessible is 
 difficult because they were not developed using interface development toolkits that automatically build  accessibility into the interface. 
-Creation of a GUI such as R Commander is not a small undertaking. Retrospectively building in the necessary accessibility features would be a massive undertaking that the blind community could not reasonably expect of a very small development team. Duplicating the work done to create such a GUI tool from scratch using a development toolkit that helps build in the necessary elements for accessibility and then maintaining it as operating systems develop over time is not a practical solution either. It may be possible to improve the toolkits that are used to create the GUI options like R Commander or Deducer so that their development is not hindered while their accessibility becomes automatic; unfortunately, this requires knowledge well beyond this author's skill set.
+Creation of a GUI such as R Commander is not a small undertaking. Retrospectively building in the necessary accessibility features would be a massive undertaking that the blind community could not reasonably expect of a very small development team. Duplicating the work done to create such a GUI tool from scratch using a development toolkit that helps build in the necessary elements for accessibility and then maintaining it as operating systems develop over time is not a practical solution either. It may be possible to improve the toolkits that are used to create the GUI options like R Commander or Deducer so that their development is not hindered while their accessibility becomes automatic; unfortunately, this requires knowledge well beyond my skill set.
 
-If blind users cannot make use of any of the GUI tools and we don't have the necessary skills to develop such a tool that does work for ourselves, what solutions exist for us? When this author has discussed the merits of various statistical software with other blind users, they have questioned the use of R by saying something like, "When  I use software *x*, I can do *y* and *z*. How do I do that in R?" With respect to SAS for example, a user can build up a set of templates for various commonly used analyses for themselves. The same is true as an R user, but SAS users can get the templates by using the menus in the standard GUI,  and they can keep the procedures in files for later use. SPSS users can do this as well. (These seem to be the most commonly used software options for blind users that communicate with this author.) In either case, the code can be reused after issuing a few find/replace searches. It seems that even though it is more efficient to make use of this ability to re-use code templates, that many of the blind users of these software options prefer to use key presses to simulate mouse clicks in order to use the menus and dialogue boxes. When questioning them on their motives, we quickly come to the point that the use of menus and dialogue boxes offers a degree of comfort that  tasks have been done correctly. The next crucial aspect worth mentioning is that the GUI provides the user with more output than can be obtained from typing out numerous commands in R. Searching for the right functions and then ensuring the syntax of their arguments is correct limits a blind user's ability in any command-line software, just as it does for sighted users. 
+If blind users cannot make use of any of the GUI tools and we don't have the necessary skills to develop such a tool that does work for ourselves, what solutions exist for us? When I've discussed the merits of various statistical software with other blind users, they have questioned the use of R by saying something like, "When  I use software *x*, I can do *y* and *z*. How do I do that in R?" With respect to SAS for example, a user can build up a set of templates for various commonly used analyses for themselves. The same is true as an R user, but SAS users can get the templates by using the menus in the standard GUI,  and they can keep the procedures in files for later use. SPSS users can do this as well. (These seem to be the most commonly used software options for blind users who communicate with me.) In either case, the code can be reused after issuing a few find/replace searches. It seems that even though it is more efficient to make use of this ability to re-use code templates, that many of the blind users of these software options prefer to use key presses to simulate mouse clicks in order to use the menus and dialogue boxes. When questioning them on their motives, we quickly come to the point that the use of menus and dialogue boxes offers a degree of comfort that  tasks have been done correctly. The next crucial aspect worth mentioning is that the GUI provides the user with more output than can be obtained from typing out numerous commands in R. Searching for the right functions and then ensuring the syntax of their arguments is correct limits a blind user's ability in any command-line software, just as it does for sighted users. 
 
-The solution for a replacement of the GUI is to create convenience functions with simple names that require entry of a minimal number of arguments so  that the user gets the maximum amount of useful information. This information might prove more than is needed for many users, but hopes to deliver what is needed by the widest possible range of blind users. %%
+The solution for a replacement of the GUI is to create convenience functions with simple names that require entry of a minimal number of arguments so  that the user gets the maximum amount of useful information. This information might prove more than is needed for many users, but hopes to deliver what is needed by the widest possible range of blind users. 
 Like RKWard, `BrailleR` functions generate R scripts that are somewhat verbose [@RoedigerEtAl2012RKWard].
 
 ## Description of a single numeric variable
@@ -83,7 +83,7 @@ rm(Ozone)
 # Please investigate them to see how this function worked.
 ```
 
-There is one small change to make To get the desired outcome. The argument `View=FALSE` stops the default action which is to open the HTML document automatically. This avoids problems while the BrailleR package is being created. The `UniDesc()` function was designed for interactive use so do not include this argument if you do want this function to open the HTML file automatically.
+There is one small change to make to get the desired outcome. The argument `View=FALSE` stops the default action which is to open the HTML document automatically. This avoids problems while the BrailleR package is being created. The `UniDesc()` function was designed for interactive use so do not include this argument if you do want this function to open the HTML file automatically.
 
 As an alternative, and if you do have a current internet connection you can view the result of running the [`UniDesc()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html) in your browser without having to re-enter the example commands. You can also view the [R markdown script for Unidesc](Ozone-UniDesc.Rmd) 
 
@@ -145,7 +145,7 @@ OneFactor("Ozone", "Month", airquality2)
 # Please investigate them to see how this function worked.
 ```
 
-As before, there is one small change to make To get the desired outcome. The argument `View=FALSE` which stops the HTML document opening automatically needs to be removed.
+As before, there is one small change to make to get the desired outcome. The argument `View=FALSE` which stops the HTML document opening automatically needs to be removed.
 
 As an alternative, and if you do have a current internet connection you can view the result of running the [`OneFactor()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone.Month-OneFactor.html) in your browser without having to re-enter the example commands.
 
@@ -193,7 +193,7 @@ plot(MyModel)
 ```
 
 <div class="figure">
-<img src="05-MarkdownInAction_files/figure-html/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
+<img src="05-MarkdownInAction_files/figure-epub3/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model."  />
 <p class="caption">(\#fig:AirQuality.lm)Diagnostic plots for the simple linear regression model.</p>
 </div>
 
@@ -249,7 +249,7 @@ OnePredictor("Ozone", "Wind", airquality, View=FALSE)
 # Please investigate them to see how this function worked.
 ```
 
-As before, there is one small change to make To get the desired outcome. The argument `View=FALSE` which stops the HTML document opening automatically needs to be removed.
+As before, there is one small change to make to get the desired outcome. The argument `View=FALSE` which stops the HTML document opening automatically needs to be removed.
 
 As an alternative, and if you do have a current internet connection you can view the result of running the [`OnePredictor()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-OnePredictor.html) in your browser without having to re-enter the example commands.
 

@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -267,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="NewGraphs" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> New BrailleR commands for making and interpreting basic graphs</h1>
-<p>This chapter introduces two types of new commands found in the <code>BrailleR</code> package. There are several commands to help a blind user know what is included ina graph, starting with a tool to help “know” what is displayed in an otherwise inaccessible graphics device window. The other commands introduced in this chapter are substitutes for functions found in the base distribution of R. You can jump ahead to the examples, but there is some theory needed to explain how the <code>BrailleR</code> package does the extra work it does, and why we need to use these substitute commands.</p>
+<p>This chapter introduces two types of new commands found in the <code>BrailleR</code> package. There are several commands to help a blind user know what is included in a graph, starting with a tool to help “know” what is displayed in an otherwise inaccessible graphics device window. The other commands introduced in this chapter are substitutes for functions found in the base distribution of R. You can jump ahead to the examples, but there is some theory needed to explain how the <code>BrailleR</code> package does the extra work it does, and why we need to use these substitute commands.</p>
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
 <div id="whats-in-a-graph" class="section level2">
 <h2><span class="header-section-number">5.1</span> What’s in a graph?</h2>
@@ -337,11 +337,11 @@ $breaks
 [15]  3.5  4.0
 
 $counts
- [1]   2   3  18  42  60 146 198 208 166  88  51  12   4   1   1
+ [1]   1   6  17  37  84 149 213 185 160  85  39  16   6   1   1
 
 $density
- [1] 0.004 0.006 0.036 0.084 0.120 0.292 0.396 0.416 0.332 0.176 0.102
-[12] 0.024 0.008 0.002 0.002
+ [1] 0.002 0.012 0.034 0.074 0.168 0.298 0.426 0.370 0.320 0.170 0.078
+[12] 0.032 0.012 0.002 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
@@ -370,11 +370,11 @@ $breaks
 [15]  3.5  4.0
 
 $counts
- [1]   2   3  18  42  60 146 198 208 166  88  51  12   4   1   1
+ [1]   1   6  17  37  84 149 213 185 160  85  39  16   6   1   1
 
 $density
- [1] 0.004 0.006 0.036 0.084 0.120 0.292 0.396 0.416 0.332 0.176 0.102
-[12] 0.024 0.008 0.002 0.002
+ [1] 0.002 0.012 0.034 0.074 0.168 0.298 0.426 0.370 0.320 0.170 0.078
+[12] 0.032 0.012 0.002 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
@@ -434,19 +434,19 @@ There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
 It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
 The mids and counts for the bins are:
-mid = -3.25  count = 2 
-mid = -2.75  count = 3 
-mid = -2.25  count = 18 
-mid = -1.75  count = 42 
-mid = -1.25  count = 60 
-mid = -0.75  count = 146 
-mid = -0.25  count = 198 
-mid = 0.25  count = 208 
-mid = 0.75  count = 166 
-mid = 1.25  count = 88 
-mid = 1.75  count = 51 
-mid = 2.25  count = 12 
-mid = 2.75  count = 4 
+mid = -3.25  count = 1 
+mid = -2.75  count = 6 
+mid = -2.25  count = 17 
+mid = -1.75  count = 37 
+mid = -1.25  count = 84 
+mid = -0.75  count = 149 
+mid = -0.25  count = 213 
+mid = 0.25  count = 185 
+mid = 0.75  count = 160 
+mid = 1.25  count = 85 
+mid = 1.75  count = 39 
+mid = 2.25  count = 16 
+mid = 2.75  count = 6 
 mid = 3.25  count = 1 
 mid = 3.75  count = 1</code></pre>
 <p>When you first issued the <code>library(BrailleR)</code> command, there were several warnings printed out. One of them told you that the <code>hist()</code> function from the <code>graphics</code> package was masked by the <code>BrailleR</code> version. This means that when you use <code>hist()</code>, it is the <code>BrailleR</code> version being used.</p>
@@ -454,7 +454,7 @@ mid = 3.75  count = 1</code></pre>
 </div>
 <div id="scatter-plots" class="section level2">
 <h2><span class="header-section-number">5.4</span> Scatter plots</h2>
-<p>The description of the <code>hist()</code> function given above shows what is possible if a graph is created using a specific function. Many plots are created using the <code>plot()</code> function which is actually a family of functions tailored to the type of object pushed into them. In addition, the <code>plot()</code> command is used to generate a simple scatter plot. This is slightyly unfortunate in a theoretical sense, but useful in a practical sense. The use of <code>plot()</code> to generate a scatter plot cannot lead to a graph that the <code>VI()</code> functionality can work with. Unlike the <code>hist()</code> command which can be replaced by a function of the same name in the <code>BrailleR</code> package, the solution needs to be a new function of a new name. In addition to the new <code>ScatterPlot()</code> function, the <code>BrailleR</code> package has a <code>FittedLinePlot()</code> function that adds a fitted line to the scatter plot.</p>
+<p>The description of the <code>hist()</code> function given above shows what is possible if a graph is created using a specific function. Many plots are created using the <code>plot()</code> function which is actually a family of functions tailored to the type of object pushed into them. In addition, the <code>plot()</code> command is used to generate a simple scatter plot. This is slightly unfortunate in a theoretical sense, but useful in a practical sense. The use of <code>plot()</code> to generate a scatter plot cannot lead to a graph that the <code>VI()</code> functionality can work with. Unlike the <code>hist()</code> command which can be replaced by a function of the same name in the <code>BrailleR</code> package, the solution needs to be a new function of a new name. In addition to the new <code>ScatterPlot()</code> function, the <code>BrailleR</code> package has a <code>FittedLinePlot()</code> function that adds a fitted line to the scatter plot.</p>
 <p>The example given on the help page for <code>ScatterPlot()</code> proves that the plots generated by <code>ScatterPlot()</code> and <code>FittedLinePlot()</code> are identical to those that would normally be created using <code>plot()</code> and the addition of the fitted line using <code>abline()</code>. Running the command, <code>example(ScatterPlot)</code> command will give you the following:</p>
 <pre><code>
 &gt; attach(airquality)
@@ -510,7 +510,7 @@ Figure 5.3: Scatter plot of Ozone versus Wind with grid lines added.
 &quot;Ozone&quot; as the y axis label;
 There are 116 points marked on this graph.</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">detach</span>(airquality)</a></code></pre></div>
-<p>Counting the number of points falling into each cell of the graphic and presenting the results as a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a 4$$4 grid of sixteen cells.
+<p>Counting the number of points falling into each cell of the graphic and presenting the results as a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a <span class="math inline">\(4\times4\)</span> grid of sixteen cells.
 Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the last scatter plot are counted by the <code>WhereXY()</code> command as follows:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">attach</span>(airquality)</a>
 <a class="sourceLine" id="cb34-2" data-line-number="2"><span class="kw">WhereXY</span>(Wind, Ozone, <span class="dt">grid =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</a></code></pre></div>

@@ -51,7 +51,7 @@ p11a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/p11a-1.png" alt="First graph on page 11 of @Wickham2009ggplot2" width="672" />
+<img src="09-GGPlot_files/figure-epub3/p11a-1.png" alt="First graph on page 11 of @Wickham2009ggplot2"  />
 <p class="caption">(\#fig:p11a)First graph on page 11 of @Wickham2009ggplot2</p>
 </div>
 
@@ -94,7 +94,7 @@ fig2.2a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-2a-1.png" alt="Left pane of Figure 2.2 of @Wickham2009ggplot2" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-2a-1.png" alt="Left pane of Figure 2.2 of @Wickham2009ggplot2"  />
 <p class="caption">(\#fig:fig2-2a)Left pane of Figure 2.2 of @Wickham2009ggplot2</p>
 </div>
 
@@ -124,7 +124,7 @@ fig2.2b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-2b-1.png" alt="Right pane of Figure 2.2" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-2b-1.png" alt="Right pane of Figure 2.2"  />
 <p class="caption">(\#fig:fig2-2b)Right pane of Figure 2.2</p>
 </div>
 
@@ -136,7 +136,7 @@ fig2.3b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-3b-1.png" alt="Middle pane from Figure 2.3" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-3b-1.png" alt="Middle pane from Figure 2.3"  />
 <p class="caption">(\#fig:fig2-3b)Middle pane from Figure 2.3</p>
 </div>
 
@@ -164,7 +164,7 @@ fig2.4a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-4a-1.png" alt="Left pane of Figure 2.4" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-4a-1.png" alt="Left pane of Figure 2.4"  />
 <p class="caption">(\#fig:fig2-4a)Left pane of Figure 2.4</p>
 </div>
 
@@ -192,7 +192,7 @@ fig2.8a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-8a-1.png" alt="Left pane of Figure 2.8" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-8a-1.png" alt="Left pane of Figure 2.8"  />
 <p class="caption">(\#fig:fig2-8a)Left pane of Figure 2.8</p>
 </div>
 
@@ -213,7 +213,7 @@ fig2.8b = qplot(color, price / carat, data = diamonds, geom = "boxplot")
 fig2.8b
 ```
 
-<img src="09-GGPlot_files/figure-html/fig2-8b-1.png" width="672" />
+![](09-GGPlot_files/figure-epub3/fig2-8b-1.png)<!-- -->
 
 ```r
 fig2.8b %>% VI()   
@@ -255,7 +255,7 @@ fig2.9b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-9b-1.png" alt="Middle pane of Figure 2.9" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-9b-1.png" alt="Middle pane of Figure 2.9"  />
 <p class="caption">(\#fig:fig2-9b)Middle pane of Figure 2.9</p>
 </div>
 
@@ -286,7 +286,7 @@ fig2.10a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-10a-1.png" alt="Left pane of Figure 2.10" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-10a-1.png" alt="Left pane of Figure 2.10"  />
 <p class="caption">(\#fig:fig2-10a)Left pane of Figure 2.10</p>
 </div>
 
@@ -309,7 +309,7 @@ fig2.10b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-10b-1.png" alt="Right pane of Figure 2.10" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-10b-1.png" alt="Right pane of Figure 2.10"  />
 <p class="caption">(\#fig:fig2-10b)Right pane of Figure 2.10</p>
 </div>
 
@@ -336,7 +336,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-11c-1.png" alt="Right pane of Figure 2.11" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-11c-1.png" alt="Right pane of Figure 2.11"  />
 <p class="caption">(\#fig:fig2-11c)Right pane of Figure 2.11</p>
 </div>
 
@@ -364,7 +364,7 @@ fig2.12a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-12a-1.png" alt="Left pane of Figure 2.12" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-12a-1.png" alt="Left pane of Figure 2.12"  />
 <p class="caption">(\#fig:fig2-12a)Left pane of Figure 2.12</p>
 </div>
 
@@ -399,7 +399,7 @@ fig2.12b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-12b-1.png" alt="Right pane of Figure 2.12" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-12b-1.png" alt="Right pane of Figure 2.12"  />
 <p class="caption">(\#fig:fig2-12b)Right pane of Figure 2.12</p>
 </div>
 
@@ -432,7 +432,7 @@ fig2.13a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-13a-1.png" alt="Left pane of Figure 2.13" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-13a-1.png" alt="Left pane of Figure 2.13"  />
 <p class="caption">(\#fig:fig2-13a)Left pane of Figure 2.13</p>
 </div>
 
@@ -464,7 +464,7 @@ fig2.13b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-13b-1.png" alt="Right pane of Figure 2.13" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-13b-1.png" alt="Right pane of Figure 2.13"  />
 <p class="caption">(\#fig:fig2-13b)Right pane of Figure 2.13</p>
 </div>
 
@@ -474,7 +474,7 @@ fig2.13b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-13b-2.png" alt="Right pane of Figure 2.13" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-13b-2.png" alt="Right pane of Figure 2.13"  />
 <p class="caption">(\#fig:fig2-13b)Right pane of Figure 2.13</p>
 </div>
 
@@ -506,7 +506,7 @@ fig2.14a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-14a-1.png" alt="Left pane of Figure 2.14" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-14a-1.png" alt="Left pane of Figure 2.14"  />
 <p class="caption">(\#fig:fig2-14a)Left pane of Figure 2.14</p>
 </div>
 
@@ -533,7 +533,7 @@ fig2.15b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-15b-1.png" alt="Right pane of Figure 2.15" width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig2-15b-1.png" alt="Right pane of Figure 2.15"  />
 <p class="caption">(\#fig:fig2-15b)Right pane of Figure 2.15</p>
 </div>
 
@@ -565,7 +565,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-16a-1.png" alt="Left side of Figure 2.16" width="384" />
+<img src="09-GGPlot_files/figure-epub3/fig2-16a-1.png" alt="Left side of Figure 2.16"  />
 <p class="caption">(\#fig:fig2-16a)Left side of Figure 2.16</p>
 </div>
 
@@ -610,7 +610,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig2-16b-1.png" alt="Right side of Figure 2.16" width="384" />
+<img src="09-GGPlot_files/figure-epub3/fig2-16b-1.png" alt="Right side of Figure 2.16"  />
 <p class="caption">(\#fig:fig2-16b)Right side of Figure 2.16</p>
 </div>
 
@@ -653,7 +653,7 @@ p26a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/p26a-1.png" alt="First graph on page 26 of " width="672" />
+<img src="09-GGPlot_files/figure-epub3/p26a-1.png" alt="First graph on page 26 of "  />
 <p class="caption">(\#fig:p26a)First graph on page 26 of </p>
 </div>
 
@@ -679,7 +679,7 @@ fig3.6
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-html/fig3-6-1.png" alt="Figure 3.6 of " width="672" />
+<img src="09-GGPlot_files/figure-epub3/fig3-6-1.png" alt="Figure 3.6 of "  />
 <p class="caption">(\#fig:fig3-6)Figure 3.6 of </p>
 </div>
 

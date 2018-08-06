@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-01">
+<meta name="date" content="2018-08-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -271,7 +271,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
 <div id="accessibility-of-graphics-in-statistical-software" class="section level2">
 <h2><span class="header-section-number">4.1</span> Accessibility of graphics in statistical software</h2>
-<p>Access to graphical representations of information from mathematical or statistical software is quite limited, and therefore limits the blind user’s capacity. To this author’s knowledge, no mathematical or statistical software has the capability of directly linking to any hardware or software solutions that make the information presented in graphs immediately available. The scalable vector graphic (SVG) format can be used to present a graphic with text embedded into the file for creating access for a blind user <span class="citation">(Bulatov and Gardner <a href="#ref-BulatovGardner2004SVG">2004</a>,GardnerBulatov2010SVG)</span>.
+<p>Access to graphical representations of information from mathematical or statistical software is quite limited, and therefore limits the blind user’s capacity. To this author’s knowledge, no mathematical or statistical software has the capability of directly linking to any hardware or software solutions that make the information presented in graphs immediately available. The scalable vector graphic (SVG) format can be used to present a graphic with text embedded into the file for creating access for a blind user <span class="citation">(Bulatov and Gardner <a href="#ref-BulatovGardner2004SVG">2004</a>; Gardner and Bulatov <a href="#ref-GardnerBulatov2010SVG">2010</a>)</span>.
 Only a small number of statistical software applications have the capacity to create SVG files, but this capacity does not in itself create access because the text that makes them accessible must be added somehow; generally this is a manual process. The World Wide Web Consortium has a recommendation on the use of SVGs in web content <span class="citation">(Dengler et al. <a href="#ref-SVGStandard">2011</a>)</span> and a number of add-on packages for R make use of SVG because of the opportunity to enrich a graphic’s interactivity in webpages; see <span class="citation">(Murrell and Potter <a href="#ref-MurrellPotter2014">2014</a>)</span> for a more detailed discussion of these packages and their functionality. Of particular note is that there are different ways to create an SVG and care must be taken if the maximum accessibility for blind users is ever to be achieved.</p>
 <p>In R, a graph can be saved as an SVG using the <code>svg()</code> command, but this approach uses the Cairo SVG format; this has the unfortunate outcome that text is not always preserved as a string, and some shapes are represented by an unstructured set of straight lines <span class="citation">(Gardner and Bulatov <a href="#ref-GardnerBulatov2010SVG">2010</a>)</span>.
 Retention of text as strings is crucial if modifications such as changing the font of any text to the braille font of a user’s choosing is to be managed easily.
@@ -282,7 +282,7 @@ One major problem that results from the creation of these add-on scripts is that
 <p>In conclusion, it seems that until such time as adaptive technology for creating immediate access via tactile images is commonly available, other solutions will continue to be relevant. In fact, even once the immediacy issue is overcome, there will be a place for solutions such as the <code>BrailleR</code> package as a complementary solution rather than a substitute.</p>
 <p>At each of the Summer University and Blind Science Conference events I have shown students that they could use R to gain access to graphed information in a manner almost unparalleled by other statistical software — the obvious exception to this rule is S-PLUS <span class="citation">(Insightful Corp. <a href="#ref-SPLUS-Soft">2003</a>)</span>.
 This advantage comes from the fact that the S language, on which R is built, implicitly stores the data needed to create many graphs, and this data can be assigned to an object for further manipulation.
-This is not true for graphs created using the ubiquitous <code>plot()</code> function however, and many other plotting functions that explicitly return a <code>NULL</code> object. We will first look at a graph objec that can be explicitly stored.</p>
+This is not true for graphs created using the ubiquitous <code>plot()</code> function however, and many other plotting functions that explicitly return a <code>NULL</code> object. We will first look at a graph object that can be explicitly stored.</p>
 </div>
 <div id="histograms" class="section level2">
 <h2><span class="header-section-number">4.2</span> Histograms</h2>
@@ -298,18 +298,18 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 <p>A simple way for blind users to access the information used to create a graph is to ask R to print the object, using the <code>print()</code> command.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">print</span>(HIST)</a></code></pre></div>
 <pre><code>$breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
 
 $counts
- [1]  10  15  52  96 143 194 187 149  94  32  22   6
+ [1]   2   6  22  39  87 153 180 191 162  86  53  13   6
 
 $density
- [1] 0.020 0.030 0.104 0.192 0.286 0.388 0.374 0.298 0.188 0.064 0.044
-[12] 0.012
+ [1] 0.004 0.012 0.044 0.078 0.174 0.306 0.360 0.382 0.324 0.172 0.106
+[12] 0.026 0.012
 
 $mids
- [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[12]  2.75
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75
 
 $xname
 [1] &quot;Y&quot;
@@ -332,21 +332,21 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 12
+[1] 13
 
 $par
 $par$xaxp
 [1] -3  3  6
 
 $par$yaxp
-[1]   0 200   4
+[1]   0 150   3
 
 
 $xTicks
 [1] -3 -2 -1  0  1  2  3
 
 $yTicks
-[1]   0  50 100 150 200
+[1]   0  50 100 150
 
 attr(,&quot;class&quot;)
 [1] &quot;Augmented&quot; &quot;histogram&quot;</code></pre>
@@ -361,20 +361,21 @@ For other situations, some further work needs to be done so that the textual inf
 &quot;Y&quot; is marked on the x-axis.
 Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 12 bins with equal widths, starting at -3 and ending at 3 .
+Tick marks for the y-axis are at: 0, 50, 100, and 150 
+It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
 The mids and counts for the bins are:
-mid = -2.75  count = 10 
-mid = -2.25  count = 15 
-mid = -1.75  count = 52 
-mid = -1.25  count = 96 
-mid = -0.75  count = 143 
-mid = -0.25  count = 194 
-mid = 0.25  count = 187 
-mid = 0.75  count = 149 
-mid = 1.25  count = 94 
-mid = 1.75  count = 32 
-mid = 2.25  count = 22 
+mid = -3.25  count = 2 
+mid = -2.75  count = 6 
+mid = -2.25  count = 22 
+mid = -1.75  count = 39 
+mid = -1.25  count = 87 
+mid = -0.75  count = 153 
+mid = -0.25  count = 180 
+mid = 0.25  count = 191 
+mid = 0.75  count = 162 
+mid = 1.25  count = 86 
+mid = 1.75  count = 53 
+mid = 2.25  count = 13 
 mid = 2.75  count = 6</code></pre>
 <p>The <code>VI()</code> command actually calls the <code>VI.histogram()</code> command because we know it is a histogram that was generated by <code>hist()</code> above.</p>
 <div id="important-features" class="section level3">
@@ -435,14 +436,14 @@ Day: Min. 1   1st Qu. 8   Median 16   Mean 15.8039215686275   3rd Qu. 23   Max. 
 <div id="ref-BulatovGardner2004SVG">
 <p>Bulatov, Vladimir, and John A. Gardner. 2004. “Making Graphics Accessible.” In <em>SVG Open Conference</em>. Tokyo. <a href="http://www.svgopen.com/2004/papers/SVGOpen2004MakingGraphicsAccessible/" class="uri">http://www.svgopen.com/2004/papers/SVGOpen2004MakingGraphicsAccessible/</a>.</p>
 </div>
+<div id="ref-GardnerBulatov2010SVG">
+<p>Gardner, John, and Vladimir Bulatov. 2010. “Highly Accessible Scientific Graphical Information Through Daisy Svg.” In <em>Proceedings of the 2010 Svgopen Conference, Paris, France</em>. <a href="http://www.svgopen.org/2010/papers/56-Highly_Accessible_Scientific_Graphical_Information_through_DAISY_SVG/index.html" class="uri">http://www.svgopen.org/2010/papers/56-Highly_Accessible_Scientific_Graphical_Information_through_DAISY_SVG/index.html</a>.</p>
+</div>
 <div id="ref-SVGStandard">
 <p>Dengler, P., D. Jackson, C. Lilley, J. Fujisawa, C. McCormack, E. Dahlström, A. Grasso, J. Ferraiolo, D. Schepers, and J. Watt. 2011. <em>Scalable Vector Graphics (Svg) 1.1</em>. Second. W3C recommendation, W3C. <a href="http://www.w3.org/TR/2011/REC-SVG11-20110816/" class="uri">http://www.w3.org/TR/2011/REC-SVG11-20110816/</a>.</p>
 </div>
 <div id="ref-MurrellPotter2014">
 <p>Murrell, Paul, and Simon Potter. 2014. “The gridSVG Package.” <em>The R Journal</em> 6 (1):133–43. <a href="http://journal.r-project.org/archive/2014-1/RJournal_2014-1_murrell-potter.pdf" class="uri">http://journal.r-project.org/archive/2014-1/RJournal_2014-1_murrell-potter.pdf</a>.</p>
-</div>
-<div id="ref-GardnerBulatov2010SVG">
-<p>Gardner, John, and Vladimir Bulatov. 2010. “Highly Accessible Scientific Graphical Information Through Daisy Svg.” In <em>Proceedings of the 2010 Svgopen Conference, Paris, France</em>. <a href="http://www.svgopen.org/2010/papers/56-Highly_Accessible_Scientific_Graphical_Information_through_DAISY_SVG/index.html" class="uri">http://www.svgopen.org/2010/papers/56-Highly_Accessible_Scientific_Graphical_Information_through_DAISY_SVG/index.html</a>.</p>
 </div>
 <div id="ref-Murrell2015GridGraphics">
 <p>Murrell, Paul. 2015. “The gridGraphics Package.” <em>The R Journal</em> 7 (1):151–62. <a href="http://journal.r-project.org/archive/2015-1/murrell.pdf" class="uri">http://journal.r-project.org/archive/2015-1/murrell.pdf</a>.</p>

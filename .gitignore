@@ -16,3 +16,4 @@ Make*.Rout
 *.lnk
 *.bak
 BrailleRInAction/*.*
+RunLater.R

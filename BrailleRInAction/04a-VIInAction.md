@@ -9,7 +9,7 @@ You will need the `BrailleR` package to be ready for use to follow along with th
 
 ## Accessibility of graphics in statistical software
 
-Access to graphical representations of information from mathematical or statistical software is quite limited, and therefore limits the blind user's capacity. To this author's knowledge, no mathematical or statistical software has the capability of directly linking to any hardware or software solutions that make the information presented in graphs immediately available. The scalable vector graphic (SVG) format can be used to present a graphic with text embedded into the file for creating access for a blind user [@BulatovGardner2004SVG,GardnerBulatov2010SVG]. 
+Access to graphical representations of information from mathematical or statistical software is quite limited, and therefore limits the blind user's capacity. To this author's knowledge, no mathematical or statistical software has the capability of directly linking to any hardware or software solutions that make the information presented in graphs immediately available. The scalable vector graphic (SVG) format can be used to present a graphic with text embedded into the file for creating access for a blind user [@BulatovGardner2004SVG; @GardnerBulatov2010SVG]. 
 Only a small number of statistical software applications have the capacity to create SVG files, but this capacity does not in itself create access because the text that makes them accessible must be added somehow; generally this is a  manual process. The World Wide Web Consortium has a recommendation on the use of SVGs in web content [@SVGStandard] and a number of add-on packages for R make use of SVG because of the opportunity to enrich a graphic's interactivity in webpages; see  [@MurrellPotter2014] for a more detailed discussion of these packages and their functionality. Of particular note is that there are different ways to create an SVG and care must be taken if the maximum accessibility for blind users is ever to be achieved.
 
 In R, a graph can be saved as an SVG using the `svg()` command, but this approach  uses the Cairo SVG format; this has the unfortunate outcome that text is not always preserved as a string, and some shapes are represented by an unstructured set of straight lines [@GardnerBulatov2010SVG]. 
@@ -27,7 +27,7 @@ In conclusion, it seems  that until such time as adaptive technology for creatin
 
 At each of the Summer University and Blind Science Conference  events I have shown students that they could use R to gain access to graphed information in a manner almost unparalleled by other statistical software --- the obvious exception to this rule is S-PLUS [@SPLUS-Soft]. 
 This advantage comes from the fact that the S language, on which R is built, implicitly stores the data needed to create many  graphs, and this data can be assigned to an object for further manipulation. 
-This is not true for graphs created using the ubiquitous `plot()` function however, and many other plotting functions that explicitly return a `NULL` object. We will first look at a graph objec that can be explicitly stored. 
+This is not true for graphs created using the ubiquitous `plot()` function however, and many other plotting functions that explicitly return a `NULL` object. We will first look at a graph object that can be explicitly stored. 
 
 ## Histograms
 
@@ -40,7 +40,7 @@ Y = rnorm(1000)
 ```
 
 <div class="figure">
-<img src="04a-VIInAction_files/figure-html/hist-1.png" alt="A histogram of 1000 random values from a normal distribution" width="672" />
+<img src="04a-VIInAction_files/figure-epub3/hist-1.png" alt="A histogram of 1000 random values from a normal distribution"  />
 <p class="caption">(\#fig:hist)A histogram of 1000 random values from a normal distribution</p>
 </div>
 A simple way for blind users to access the information used to create a graph is to ask R to print the object, using the `print()` command. 
@@ -51,18 +51,19 @@ print(HIST)
 
 ```
 $breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
+[15]  3.0  3.5
 
 $counts
- [1]  10  15  52  96 143 194 187 149  94  32  22   6
+ [1]   1   3   3  14  47  94 140 180 203 142  94  50  23   4   2
 
 $density
- [1] 0.020 0.030 0.104 0.192 0.286 0.388 0.374 0.298 0.188 0.064 0.044
-[12] 0.012
+ [1] 0.002 0.006 0.006 0.028 0.094 0.188 0.280 0.360 0.406 0.284 0.188
+[12] 0.100 0.046 0.008 0.004
 
 $mids
- [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[12]  2.75
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
+[12]  1.75  2.25  2.75  3.25
 
 $xname
 [1] "Y"
@@ -85,18 +86,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 12
+[1] 15
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -4  2  3
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -4 -2  0  2
 
 $yTicks
 [1]   0  50 100 150 200
@@ -122,23 +123,26 @@ VI(HIST)
 ```
 This is a histogram, with the title: Histogram of Y
 "Y" is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -4, -2, 0, and 2 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 12 bins with equal widths, starting at -3 and ending at 3 .
+It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -2.75  count = 10 
-mid = -2.25  count = 15 
-mid = -1.75  count = 52 
-mid = -1.25  count = 96 
-mid = -0.75  count = 143 
-mid = -0.25  count = 194 
-mid = 0.25  count = 187 
-mid = 0.75  count = 149 
+mid = -3.75  count = 1 
+mid = -3.25  count = 3 
+mid = -2.75  count = 3 
+mid = -2.25  count = 14 
+mid = -1.75  count = 47 
+mid = -1.25  count = 94 
+mid = -0.75  count = 140 
+mid = -0.25  count = 180 
+mid = 0.25  count = 203 
+mid = 0.75  count = 142 
 mid = 1.25  count = 94 
-mid = 1.75  count = 32 
-mid = 2.25  count = 22 
-mid = 2.75  count = 6
+mid = 1.75  count = 50 
+mid = 2.25  count = 23 
+mid = 2.75  count = 4 
+mid = 3.25  count = 2
 ```
 
 The `VI()` command actually calls the `VI.histogram()` command because we know it is a histogram that was generated by `hist()` above.
