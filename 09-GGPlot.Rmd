@@ -84,7 +84,7 @@ fig2.8b
 fig2.8b %>% VI()   
 ```  
 
-When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not realised by `BrailleR`. 
+When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not currently realised by `BrailleR`. 
 ```{r fig2-9b, fig.cap="Middle pane of Figure 2.9"}     
 fig2.9b = qplot(color, price / carat, data = diamonds, geom = "jitter", alpha = I(1 / 50))    
 fig2.9b
@@ -92,7 +92,7 @@ fig2.9b %>% VI()
 ```
 
 
-### univariate plots   
+### Univariate plots   
 
 
 ```{r fig2-10a, fig.cap="Left pane of Figure 2.10"}     
@@ -130,7 +130,7 @@ fig2.12b
 fig2.12b %>% VI()   
 ```  
 
-### bar charts for categorical variables   
+### Bar charts for categorical variables   
 
 
 ```{r fig2-13a, fig.cap="Left pane of Figure 2.13"}     
@@ -150,7 +150,7 @@ fig2.13b
 fig2.13b %>% VI()   
 ```  
 
-## time series plots   
+## Time series plots   
 
 It looks like the data used in the next graph has been updated since the publication of @Wickham2009ggplot2 
 ```{r fig2-14a, fig.cap="Left pane of Figure 2.14"}     
@@ -159,7 +159,7 @@ fig2.14a
 fig2.14a %>% VI()   
 ```  
 
-## path plots   
+## Path plots   
 
 ```{r fig2-15b, fig.cap="Right pane of Figure 2.15"}     
 year <- function(x) as.POSIXlt(x)$year + 1900    
@@ -170,7 +170,7 @@ fig2.15b %>% VI()
 ```  
 
 
-## facets is the ggplot term for trellis' panels   
+## Facets is the ggplot term for trellis' panels   
 
 The aspect ratio for the plot region is something that needs to be considered. I've manually adjusted the plotting window here so that the graph more closely matches that of @Wickham2009ggplot2 but it  is not an exact match.
 ```{r fig2-16a, fig.cap="Left side of Figure 2.16", fig.height=10, fig.width=4}     
@@ -186,7 +186,7 @@ fig2.16b
 fig2.16b %>% VI()   
 ```  
 
-## rescaling of the axes   
+## Rescaling of the axes   
 
 ```{r p26a, fig.cap="First graph on page 26 of "}
 p26a = qplot(carat, price, data = dsmall, log = "xy")   

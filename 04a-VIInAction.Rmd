@@ -39,7 +39,7 @@ The first and most commonly used example demonstrating the value of the BrailleR
 
 ```{r hist, fig.cap="A histogram of 1000 random values from a normal distribution"}
 Y = rnorm(1000)
-    HIST <- hist(Y)
+HIST = hist(Y)
 ```
 A simple way for blind users to access the information used to create a graph is to ask R to print the object, using the `print()` command. 
 ```{r printHist}

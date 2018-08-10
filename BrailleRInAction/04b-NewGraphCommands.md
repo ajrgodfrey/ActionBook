@@ -54,7 +54,7 @@ Data is usually stored with a specified class attribute, such as a time series w
 A data.frame is itself of  class "data.frame", a matrix is of class "matrix", but rather confusingly,  a vector is not of class "vector". Vectors are assigned class attributes that depend on the type of data being stored, being "integer", "numeric", "logical", "character", etc.
 
 As previously stated, the usefulness of methods is dependent on the use of classes being employed when objects are created. 
-The original `hist()` command does specify the resulting histogram to have a class, but no `print()` method `print.histogram()` exists. 
+The original `hist()` command does specify the resulting histogram to have a class, but there is no explicit `print.histogram()` method at this time. 
 In addition, not all objects are given a class so the default method must be constructed carefully. 
 There are actually only a few basic data structures to work with, the easiest and most common of which is called a "list". 
 
@@ -99,11 +99,11 @@ $breaks
 [15]  3.5
 
 $counts
- [1]   1   5  16  38  90 149 203 204 136  99  41  14   1   3
+ [1]   2   3  13  43  90 156 208 182 155  77  48  18   3   2
 
 $density
- [1] 0.002 0.010 0.032 0.076 0.180 0.298 0.406 0.408 0.272 0.198 0.082
-[12] 0.028 0.002 0.006
+ [1] 0.004 0.006 0.026 0.086 0.180 0.312 0.416 0.364 0.310 0.154 0.096
+[12] 0.036 0.006 0.004
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
@@ -134,11 +134,11 @@ $breaks
 [15]  3.5
 
 $counts
- [1]   1   5  16  38  90 149 203 204 136  99  41  14   1   3
+ [1]   2   3  13  43  90 156 208 182 155  77  48  18   3   2
 
 $density
- [1] 0.002 0.010 0.032 0.076 0.180 0.298 0.406 0.408 0.272 0.198 0.082
-[12] 0.028 0.002 0.006
+ [1] 0.004 0.006 0.026 0.086 0.180 0.312 0.416 0.364 0.310 0.154 0.096
+[12] 0.036 0.006 0.004
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
@@ -198,20 +198,20 @@ There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
 It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.25  count = 1 
-mid = -2.75  count = 5 
-mid = -2.25  count = 16 
-mid = -1.75  count = 38 
+mid = -3.25  count = 2 
+mid = -2.75  count = 3 
+mid = -2.25  count = 13 
+mid = -1.75  count = 43 
 mid = -1.25  count = 90 
-mid = -0.75  count = 149 
-mid = -0.25  count = 203 
-mid = 0.25  count = 204 
-mid = 0.75  count = 136 
-mid = 1.25  count = 99 
-mid = 1.75  count = 41 
-mid = 2.25  count = 14 
-mid = 2.75  count = 1 
-mid = 3.25  count = 3
+mid = -0.75  count = 156 
+mid = -0.25  count = 208 
+mid = 0.25  count = 182 
+mid = 0.75  count = 155 
+mid = 1.25  count = 77 
+mid = 1.75  count = 48 
+mid = 2.25  count = 18 
+mid = 2.75  count = 3 
+mid = 3.25  count = 2
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.
@@ -220,7 +220,7 @@ the `BrailleR` package includes `hist()` and `boxplot()` functions that pass the
 
 ## Scatter plots
 
-The description of the `hist()` function given above shows what is possible if a graph is created using a specific function. Many plots are created using the `plot()` function which is actually a family of functions tailored to the type of object pushed into them. In addition, the `plot()` command is used to generate a simple scatter plot. This is slightly unfortunate in a theoretical sense, but useful in a practical sense. The use of `plot()` to generate a scatter plot cannot lead to a graph that the `VI()` functionality can work with. Unlike the `hist()` command which can be replaced by a function of the same name in the `BrailleR` package, the solution needs to be a new function of a new name. In addition to the new `ScatterPlot()` function, the `BrailleR` package has a `FittedLinePlot()` function that adds a fitted line to the scatter plot. 
+The description of the `hist()` function given above shows what is possible if a graph is created using a specific function. Many types of graphs are created using the `plot()` function which is actually a family of functions tailored to the type of object pushed into them. In addition, the `plot()` command is used to generate a simple scatter plot. This is slightly unfortunate in a theoretical sense, but useful in a practical sense. The use of `plot()` to generate a scatter plot cannot lead to a graph that the `VI()` functionality can work with. Unlike the `hist()` command which can be replaced by a function of the same name in the `BrailleR` package, the solution needs to be a new function of a new name. In addition to the new `ScatterPlot()` function, the `BrailleR` package has a `FittedLinePlot()` function that adds a fitted line to the scatter plot. 
 
 The example given on the help page for `ScatterPlot()` proves that the plots generated by `ScatterPlot()` and `FittedLinePlot()` are identical to those that would normally be created using `plot()` and the addition of the fitted line using `abline()`. Running the command, `example(ScatterPlot)` command will give you the following:
 
@@ -285,7 +285,7 @@ The example given on the help page for `ScatterPlot()` proves that the plots gen
 
 Well first we might ask what is in the graph window to be confident that a plot was actually made. The `WTF()` command was put in `BrailleR` to address this problem. For the record, WTF is the acronym for "What's this figure?" We'll see it's use in the next figure. It should tell us what appears in the graph window for things like axis lables and titles.
 
-The  current solution offered by the `BrailleR` package for helping describe the pointws plotted ina  scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,
+The  current solution offered by the `BrailleR` package for helping describe the points plotted in a  scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,
 
 
 ```r

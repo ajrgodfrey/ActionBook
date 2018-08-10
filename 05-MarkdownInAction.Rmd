@@ -15,9 +15,9 @@ You will need the `BrailleR` package to be ready for use to follow along with th
 
 Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user.
 
-This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their  screen reading software. All graphs, which are given an "alt tag" when they are included in the HTML file, can be presented using a text description available from the `VI()` functionality of the `BrailleR` package.
+This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their  screen reading software. All graphs are given an "alt tag" when they are included in the HTML file, and can be presented using a text description available from the `VI()` functionality of the `BrailleR` package.
 
-In addition, the blind user may need any/all of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script). 
+In addition, the blind user may need one or more of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script). 
 This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents uisng the `xtable` package [@Rpkg-xtable].
 
 
@@ -140,7 +140,7 @@ The example here demonstrates the point that the grouping variable must be a fac
 
 ## Use of BrailleR for linear regression 
 
-It is common for sighted users to create a handful of graphs that help them determine the validity of a linear model, even the most basic simple linear regressions. The `VI()` command can be applied to a linear model object. The specific function to do this is found in the VI.lm()` function, but most users do not need to explicitly use `VI.lm()` because the call to `VI()` will know to use the `VI.lm()` function if it is the right one to use at the time.
+It is common for sighted users to create a handful of graphs that help them determine the validity of a linear model, even the most basic simple linear regressions. The `VI()` command can be applied to a linear model object. The specific function to do this is found in the `VI.lm()` function, but most users do not need to explicitly use `VI.lm()` because the call to `VI()` will know to use the `VI.lm()` function if it is the right one to use at the time.
 
 The `VI.lm()` function generates so much text as a substitute for the graphs used by sighted users, that it is easier to put this text in an HTML document and have that new document opened in a browser instead of trying to use a screen reader within the R session.
 

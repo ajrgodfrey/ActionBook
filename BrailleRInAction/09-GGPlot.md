@@ -79,13 +79,13 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour strong reddish orange, 
-E represented by colour strong yellow, 
-F represented by colour vivid yellowish green, 
-G represented by colour brilliant green, 
-H represented by colour brilliant blue, 
-I represented by colour vivid violet and 
-J represented by colour deep purplish pink.
+D represented by colour very deep purple, 
+E represented by colour vivid purplish blue, 
+F represented by colour moderate blue, 
+G represented by colour vivid bluish green, 
+H represented by colour brilliant green, 
+I represented by colour vivid yellow green and 
+J represented by colour vivid greenish yellow.
 The chart is a set of 100 points.
 ```
 
@@ -107,6 +107,10 @@ fig2.2b %>% VI()
 ```
 
 ```
+Warning: Using shapes for an ordinal variable is not advised
+```
+
+```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
@@ -121,6 +125,10 @@ The chart is a set of 100 points.
 
 ```r
 fig2.2b
+```
+
+```
+Warning: Using shapes for an ordinal variable is not advised
 ```
 
 <div class="figure">
@@ -160,7 +168,7 @@ fig2.4a
 ```
 
 ```
-`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess' and formula 'y ~ x'
 ```
 
 <div class="figure">
@@ -247,7 +255,7 @@ It has median 3780. The box goes from 2562.87 to 4927.95, and the whiskers exten
 There are 3 outliers for this boxplot.
 ```
 
-When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not realised by `BrailleR`. 
+When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not currently realised by `BrailleR`. 
 
 ```r
 fig2.9b = qplot(color, price / carat, data = diamonds, geom = "jitter", alpha = I(1 / 50))    
@@ -272,7 +280,7 @@ The chart has alpha set to 0.02.
 ```
 
 
-### univariate plots   
+### Univariate plots   
 
 
 
@@ -297,7 +305,7 @@ fig2.10a %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis 'count' with labels 0, 5000, 10000 and 15000.
+It has y-axis '' with labels 0, 5000, 10000 and 15000.
 The chart is a bar chart containing 30 vertical bars.
 ```
 Warning: This figure does look different to the original in @Wickham2009ggplot2 ins spite of using the same code and same data.
@@ -320,7 +328,7 @@ fig2.10b %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis 'density' with labels 0.0, 0.5, 1.0 and 1.5.
+It has y-axis '' with labels 0.0, 0.5, 1.0 and 1.5.
 The chart is a type that VI isn't able to process.
 ```
 
@@ -351,7 +359,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2 and 3.
-It has y-axis 'count' with labels 0, 1000 and 2000.
+It has y-axis '' with labels 0, 1000 and 2000.
 The chart is a bar chart containing 299 vertical bars.
 ```
 
@@ -375,15 +383,15 @@ fig2.12a %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis 'density' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
+It has y-axis '' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour strong reddish orange, 
-E represented by colour strong yellow, 
-F represented by colour vivid yellowish green, 
-G represented by colour brilliant green, 
-H represented by colour brilliant blue, 
-I represented by colour vivid violet and 
-J represented by colour deep purplish pink.
+D represented by colour very deep purple, 
+E represented by colour vivid purplish blue, 
+F represented by colour moderate blue, 
+G represented by colour vivid bluish green, 
+H represented by colour brilliant green, 
+I represented by colour vivid yellow green and 
+J represented by colour vivid greenish yellow.
 The chart is a type that VI isn't able to process.
 ```
 
@@ -410,19 +418,19 @@ fig2.12b %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis 'count' with labels 0, 5000, 10000 and 15000.
+It has y-axis '' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that fill is used to represent color, with 7 levels:
-D represented by fill strong reddish orange, 
-E represented by fill strong yellow, 
-F represented by fill vivid yellowish green, 
-G represented by fill brilliant green, 
-H represented by fill brilliant blue, 
-I represented by fill vivid violet and 
-J represented by fill deep purplish pink.
+D represented by fill very deep purple, 
+E represented by fill vivid purplish blue, 
+F represented by fill moderate blue, 
+G represented by fill vivid bluish green, 
+H represented by fill brilliant green, 
+I represented by fill vivid yellow green and 
+J represented by fill vivid greenish yellow.
 The chart is a bar chart containing 210 vertical bars.
 ```
 
-### bar charts for categorical variables   
+### Bar charts for categorical variables   
 
 
 
@@ -443,7 +451,7 @@ fig2.13a %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
-It has y-axis 'count' with labels 0, 3000, 6000 and 9000.
+It has y-axis '' with labels 0, 3000, 6000 and 9000.
 The chart is a bar chart containing 7 vertical bars.
 Bar 1 is centered horizontally at D, and spans vertically from 0 to 6775.
 Bar 2 is centered horizontally at E, and spans vertically from 0 to 9797.
@@ -485,7 +493,7 @@ fig2.13b %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
-It has y-axis 'count' with labels 0, 2500, 5000 and 7500.
+It has y-axis '' with labels 0, 2500, 5000 and 7500.
 The chart is a bar chart containing 7 vertical bars.
 Bar 1 is centered horizontally at D, and spans vertically from 0 to 4456.56.
 Bar 2 is centered horizontally at E, and spans vertically from 0 to 6445.12.
@@ -496,7 +504,7 @@ Bar 6 is centered horizontally at I, and spans vertically from 0 to 5568.
 Bar 7 is centered horizontally at J, and spans vertically from 0 to 3263.28.
 ```
 
-## time series plots   
+## Time series plots   
 
 It looks like the data used in the next graph has been updated since the publication of @Wickham2009ggplot2 
 
@@ -522,7 +530,7 @@ The chart is a set of 1 line.
 Line 1 connects 574 points.
 ```
 
-## path plots   
+## Path plots   
 
 
 ```r
@@ -550,7 +558,7 @@ The chart is a type that VI isn't able to process.
 ```
 
 
-## facets is the ggplot term for trellis' panels   
+## Facets is the ggplot term for trellis' panels   
 
 The aspect ratio for the plot region is something that needs to be considered. I've manually adjusted the plotting window here so that the graph more closely matches that of @Wickham2009ggplot2 but it  is not an exact match.
 
@@ -582,7 +590,7 @@ This is an untitled chart with no subtitle or caption.
 The chart is comprised of 7 panels containing sub-charts, arranged vertically.
 The panels represent different values of color.
 Each sub-chart has x-axis 'carat' with labels 0, 1, 2 and 3.
-Each sub-chart has y-axis 'count' with labels 0, 500, 1000, 1500, 2000 and 2500.
+Each sub-chart has y-axis '' with labels 0, 500, 1000, 1500, 2000 and 2500.
 Panel 1 represents data for color = D.
 Panel 1 is a bar chart containing 29 vertical bars.
 Panel 2 represents data for color = E.
@@ -627,7 +635,7 @@ This is an untitled chart with no subtitle or caption.
 The chart is comprised of 7 panels containing sub-charts, arranged vertically.
 The panels represent different values of color.
 Each sub-chart has x-axis 'carat' with labels 0, 1, 2 and 3.
-Each sub-chart has y-axis 'density' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
+Each sub-chart has y-axis '..density..' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 Panel 1 represents data for color = D.
 Panel 1 is a bar chart containing 29 vertical bars.
 Panel 2 represents data for color = E.
@@ -644,7 +652,7 @@ Panel 7 represents data for color = J.
 Panel 7 is a bar chart containing 29 vertical bars.
 ```
 
-## rescaling of the axes   
+## Rescaling of the axes   
 
 
 ```r
@@ -675,7 +683,7 @@ fig3.6
 ```
 
 ```
-`geom_smooth()` using method = 'loess'
+`geom_smooth()` using method = 'loess' and formula 'y ~ x'
 ```
 
 <div class="figure">

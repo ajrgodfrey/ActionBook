@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-07">
+<meta name="date" content="2018-08-10">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -220,13 +220,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>9</b> The ggplot world and BrailleR</a><ul>
 <li class="chapter" data-level="9.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>9.1</b> Plotting a continuous variable against a categorical variable</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>9.1.1</b> univariate plots</a></li>
-<li class="chapter" data-level="9.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>9.1.2</b> bar charts for categorical variables</a></li>
+<li class="chapter" data-level="9.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>9.1.1</b> Univariate plots</a></li>
+<li class="chapter" data-level="9.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>9.1.2</b> Bar charts for categorical variables</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="GGPlot.html"><a href="GGPlot.html#time-series-plots"><i class="fa fa-check"></i><b>9.2</b> time series plots</a></li>
-<li class="chapter" data-level="9.3" data-path="GGPlot.html"><a href="GGPlot.html#path-plots"><i class="fa fa-check"></i><b>9.3</b> path plots</a></li>
-<li class="chapter" data-level="9.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>9.4</b> facets is the ggplot term for trellis’ panels</a></li>
-<li class="chapter" data-level="9.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>9.5</b> rescaling of the axes</a></li>
+<li class="chapter" data-level="9.2" data-path="GGPlot.html"><a href="GGPlot.html#time-series-plots"><i class="fa fa-check"></i><b>9.2</b> Time series plots</a></li>
+<li class="chapter" data-level="9.3" data-path="GGPlot.html"><a href="GGPlot.html#path-plots"><i class="fa fa-check"></i><b>9.3</b> Path plots</a></li>
+<li class="chapter" data-level="9.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>9.4</b> Facets is the ggplot term for trellis’ panels</a></li>
+<li class="chapter" data-level="9.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>9.5</b> Rescaling of the axes</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>10</b> Getting started with the WriteR application</a><ul>
 <li class="chapter" data-level="10.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>10.1</b> Getting the required software (Windows users only)</a><ul>
@@ -292,6 +292,7 @@ The decision should be made by the individual user after some experimentation; t
 <p>To use the functionality of the BrailleR package you need to have it installed. The package has several dependencies so installation from the CRAN repository is recommended. This would be done by issuing the following two commands in an R session:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">chooseCRANmirror</span>(<span class="dt">ind=</span><span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&quot;BrailleR&quot;</span>)</a></code></pre></div>
+<p>Note that the first and last letters of <code>BrailleR</code> are capitalised. This is important in R, but is also useful for screen reading software which will then give audibly different feedback, as compared to what a screen reader user hears from the lower case text “brailler”.</p>
 <p>If for some reason you have difficulty with the above commands, you can install the BrailleR package using a zip file version available from a CRAN repository or the latest version on GitHub.</p>
 <p>From time to time, you should check that you are using the most recent version of the BrailleR package. You can update all installed packages using the commands:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">chooseCRANmirror</span>(<span class="dt">ind=</span><span class="dv">1</span>)</a>
@@ -303,7 +304,7 @@ The decision should be made by the individual user after some experimentation; t
 <h3><span class="header-section-number">3.3.1</span> Some initial setting up instructions</h3>
 <p>When you first use the <code>library(BrailleR)</code> command, you will see some start up messages and a question. The rules of R packages include not writing to the user’s hard drive without expressly asking them for permission to do so. If you do not want a folder for your <code>BrailleR</code> files then use the temporary folder which will be removed when you end your R session. This will mean you need to answer the question over the location of the <code>MyBrailleR</code> folder next time you issue the <code>library(BrailleR)</code> command though.</p>
 <p>The welcome message from <code>BrailleR</code> suggests you issue the <code>GetGoing()</code> command. This will ask you a few questions that will help personalise your use of the <code>BrailleR</code> package. We will see how to alter these settings in Chapter <a href="Personalising.html#Personalising">8</a> later so don’t panic if you don’t do it all right the first time. You can re-issue the <code>GetGoing()</code> command again at any time.</p>
-<p>The book you are reading now can be reached from your R session by issuing the command <code>BrailleRInAction()</code>. That might seem a bit much, but do remember you can use tab completion to avoid typing the whole command name out in full. You will probably need no more than <code>B</code>, <code>r</code>, <code>a</code>, then tab (which adds the rest of BrailleR), then <code>I</code> and one last tab; add the opening and closing parentheses and press the Enter key. This will open the front page of the book in your browser. A similar command, <code>BrailleRHome()</code>, will open the BrailleR Project home page.</p>
+<p>The book you are reading now can be reached from your R session by issuing the command <code>BrailleRInAction()</code>. That might seem a bit much, but do remember you can use tab completion to avoid typing the whole command name out in full. You will probably need no more than <code>B</code>, <code>r</code>, <code>a</code>, then tab (which adds the rest of BrailleR), then <code>I</code> and one last tab; add the opening and closing parentheses and press the Enter key. This will open the front page of the book in your browser. A similar command, <code>BrailleRHome()</code>, will open the BrailleR Project home page. You will need to be careful with upper versus lower case when entering commands. Note that there are often capitalised letters in the middle of <code>BrailleR</code> commands. This is known as “camel case” and it works well for screen reader users.</p>
 <p>It is all too easy to feel you’re doing it on your own, which even the most accomplished people have experienced. I put the <code>ThankYou()</code> command in the BrailleR package so that it would be easy to send me a message to tell me about your experiences as a blind person using R or to ask for help; it starts an email message to me. I’m not the only blind person out there using R, and many of us are on an email list so that we can share ideas and solutions for problems, many of which are specific to blind users. The <code>JoinBlindRUG()</code> command will start the email needed to join the BlindRUG email list.</p>
 </div>
 </div>
@@ -322,7 +323,7 @@ The decision should be made by the individual user after some experimentation; t
 </div>
 <div id="one-programming-language-python" class="section level3">
 <h3><span class="header-section-number">3.4.3</span> One programming language — Python</h3>
-<p>WriteR is a simple text editor written in wxPython that needs Python and wxPython. Unfortunately, they require separate downloads. You do not need this editor so do not install Python unless you are really keen. Windows users can obtain an executable file by issuing <code>GetWriteR()</code> once the BrailleR package has been successfully installed. More on this in Chapter #WriteR</p>
+<p>WriteR is a simple text editor written in wxPython that needs Python and wxPython. Unfortunately, they require separate downloads. You do not need this editor so do not install Python unless you are really keen. Windows users can obtain an executable file by issuing <code>GetWriteR()</code> once the BrailleR package has been successfully installed. More on this in Chapter <a href="WriteR.html#WriteR">10</a>.</p>
 </div>
 </div>
 <div id="brailler-commands-used-in-this-chapter" class="section level2">

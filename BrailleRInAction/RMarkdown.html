@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-07">
+<meta name="date" content="2018-08-10">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -220,13 +220,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>9</b> The ggplot world and BrailleR</a><ul>
 <li class="chapter" data-level="9.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>9.1</b> Plotting a continuous variable against a categorical variable</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>9.1.1</b> univariate plots</a></li>
-<li class="chapter" data-level="9.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>9.1.2</b> bar charts for categorical variables</a></li>
+<li class="chapter" data-level="9.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>9.1.1</b> Univariate plots</a></li>
+<li class="chapter" data-level="9.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>9.1.2</b> Bar charts for categorical variables</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="GGPlot.html"><a href="GGPlot.html#time-series-plots"><i class="fa fa-check"></i><b>9.2</b> time series plots</a></li>
-<li class="chapter" data-level="9.3" data-path="GGPlot.html"><a href="GGPlot.html#path-plots"><i class="fa fa-check"></i><b>9.3</b> path plots</a></li>
-<li class="chapter" data-level="9.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>9.4</b> facets is the ggplot term for trellis’ panels</a></li>
-<li class="chapter" data-level="9.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>9.5</b> rescaling of the axes</a></li>
+<li class="chapter" data-level="9.2" data-path="GGPlot.html"><a href="GGPlot.html#time-series-plots"><i class="fa fa-check"></i><b>9.2</b> Time series plots</a></li>
+<li class="chapter" data-level="9.3" data-path="GGPlot.html"><a href="GGPlot.html#path-plots"><i class="fa fa-check"></i><b>9.3</b> Path plots</a></li>
+<li class="chapter" data-level="9.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>9.4</b> Facets is the ggplot term for trellis’ panels</a></li>
+<li class="chapter" data-level="9.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>9.5</b> Rescaling of the axes</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>10</b> Getting started with the WriteR application</a><ul>
 <li class="chapter" data-level="10.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>10.1</b> Getting the required software (Windows users only)</a><ul>
@@ -272,8 +272,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="general-information" class="section level2">
 <h2><span class="header-section-number">7.1</span> General information</h2>
 <p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user.</p>
-<p>This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their screen reading software. All graphs, which are given an “alt tag” when they are included in the HTML file, can be presented using a text description available from the <code>VI()</code> functionality of the <code>BrailleR</code> package.</p>
-<p>In addition, the blind user may need any/all of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script).
+<p>This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their screen reading software. All graphs are given an “alt tag” when they are included in the HTML file, and can be presented using a text description available from the <code>VI()</code> functionality of the <code>BrailleR</code> package.</p>
+<p>In addition, the blind user may need one or more of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script).
 This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents uisng the <code>xtable</code> package <span class="citation">(Dahl <a href="#ref-Rpkg-xtable">2016</a>)</span>.</p>
 <p>The commands shown in this chapter make use of R markdown, but they are not actually ready for direct use within other R markdown documents.
 If you wish to get the output you observe within the HTML documents that will be generated, you will need to extract the relevant parts of the R markdown script files that the commands create. That sounds harder than it is!</p>
@@ -371,7 +371,7 @@ OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality2)
 </div>
 <div id="use-of-brailler-for-linear-regression" class="section level2">
 <h2><span class="header-section-number">7.5</span> Use of BrailleR for linear regression</h2>
-<p>It is common for sighted users to create a handful of graphs that help them determine the validity of a linear model, even the most basic simple linear regressions. The <code>VI()</code> command can be applied to a linear model object. The specific function to do this is found in the VI.lm()<code>function, but most users do not need to explicitly use</code>VI.lm()<code>because the call to</code>VI()<code>will know to use the</code>VI.lm()` function if it is the right one to use at the time.</p>
+<p>It is common for sighted users to create a handful of graphs that help them determine the validity of a linear model, even the most basic simple linear regressions. The <code>VI()</code> command can be applied to a linear model object. The specific function to do this is found in the <code>VI.lm()</code> function, but most users do not need to explicitly use <code>VI.lm()</code> because the call to <code>VI()</code> will know to use the <code>VI.lm()</code> function if it is the right one to use at the time.</p>
 <p>The <code>VI.lm()</code> function generates so much text as a substitute for the graphs used by sighted users, that it is easier to put this text in an HTML document and have that new document opened in a browser instead of trying to use a screen reader within the R session.</p>
 <p>Let’s see an example using the <code>airquality</code> data. A simple linear regression model might be created and investigated using:</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">data</span>(airquality)</a>

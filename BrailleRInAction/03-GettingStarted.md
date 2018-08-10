@@ -36,6 +36,7 @@ To use the functionality of the BrailleR package you need to have it installed. 
 chooseCRANmirror(ind=1)
 install.packages("BrailleR")
 ```
+Note that the first and last letters of `BrailleR` are capitalised. This is important in R, but is also useful for screen reading software which will then give audibly different feedback, as compared to what a screen reader user hears from the lower case text "brailler".
 
 If for some reason you have difficulty with the above commands, you can install the BrailleR package using a zip file version available from a CRAN repository or the latest version on GitHub. 
 
@@ -62,7 +63,8 @@ When you first use the `library(BrailleR)` command, you will see some start up m
 The welcome message from `BrailleR` suggests you issue the `GetGoing()` command. This will ask you a few questions that will help personalise your use of the `BrailleR` package. We will see how to alter these settings in Chapter \@ref(Personalising) later so don't panic if you don't do it all right the first time. You can re-issue the `GetGoing()` command again at any time.
 
 
-The book you are reading now can be reached from your R session by issuing the command `BrailleRInAction()`. That might seem a bit much, but do remember you can use tab completion to avoid typing the whole command name out in full. You will probably need no more than `B`, `r`, `a`, then tab (which adds the rest of BrailleR), then `I` and one last tab; add the opening and closing parentheses and press the Enter key. This will open the front page of the book in your browser. A similar command, `BrailleRHome()`, will open the BrailleR Project home page.
+The book you are reading now can be reached from your R session by issuing the command `BrailleRInAction()`. That might seem a bit much, but do remember you can use tab completion to avoid typing the whole command name out in full. You will probably need no more than `B`, `r`, `a`, then tab (which adds the rest of BrailleR), then `I` and one last tab; add the opening and closing parentheses and press the Enter key. This will open the front page of the book in your browser. A similar command, `BrailleRHome()`, will open the BrailleR Project home page. You will need to be careful with upper versus lower case when entering commands. Note that there are often capitalised letters in the middle of `BrailleR` commands. This is known as "camel case" and it works well for screen reader users.
+
 
 It is all too easy to feel you're doing it on your own, which even the most accomplished people have experienced. I put the `ThankYou()` command in the BrailleR package so that it would be easy to send me a message to tell me about your experiences as a blind person using R or to ask for help; it starts an email message to me.  I'm not the only blind person out there using R, and many of us are on an email list so that we can share ideas and solutions for problems, many of which are specific to blind users. The `JoinBlindRUG()` command will start the email needed to join the BlindRUG email list.
 
@@ -82,7 +84,7 @@ It is a good idea to install RStudio, even if you can't actually use it as a bli
 
 ### One programming language --- Python
 
-WriteR is a simple text editor written in wxPython that needs Python and wxPython. Unfortunately, they require separate downloads. You do not need this editor so do not install Python unless you are really keen. Windows users can obtain an executable file by issuing `GetWriteR()` once the BrailleR package has been successfully installed. More on this in Chapter #WriteR
+WriteR is a simple text editor written in wxPython that needs Python and wxPython. Unfortunately, they require separate downloads. You do not need this editor so do not install Python unless you are really keen. Windows users can obtain an executable file by issuing `GetWriteR()` once the BrailleR package has been successfully installed. More on this in Chapter \@ref(WriteR).
 
 
 

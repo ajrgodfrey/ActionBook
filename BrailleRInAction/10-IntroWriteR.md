@@ -38,7 +38,7 @@ These instructions fetch the installation files from the reputable Python sites.
 
 ### I do not have Python 3 installed
 
-You do not need to install Python 2.7 if you already have Python 3; the WriteR application will work with either version of Python. I preferto recommend that you install Python 2.7 here because it helps with a variety of other tools found in the `BrailleR` package.
+You do not need to install Python 2.7 if you already have Python 3; the WriteR application will work with either version of Python. I prefer to recommend that you install Python 2.7 here because it helps with a variety of other tools found in the `BrailleR` package.
 
 The following  commands automatically download the installation files needed for Python 2.7, and start the installation process going. 
 Issue them at the R prompt
@@ -66,7 +66,7 @@ reticulate::py_config()
 ##  C:\Python27\\python.exe
 ```
 
-This is amuch stronger set of tests than was done earlier. In particular, the `reticulate` package makes sure that the installation of Python and R are both using a 32 bit, or if appropriate for your computer, a 64 bit installation.
+This is a much stronger set of tests than was done earlier. In particular, the `reticulate` package makes sure that the installation of Python and R are both using a 32 bit, or if appropriate for your computer, a 64 bit installation.
 
 Now get the additional Python modules needed for WriteR using:
  

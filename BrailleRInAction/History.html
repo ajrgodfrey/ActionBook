@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-07">
+<meta name="date" content="2018-08-10">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -220,13 +220,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>9</b> The ggplot world and BrailleR</a><ul>
 <li class="chapter" data-level="9.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>9.1</b> Plotting a continuous variable against a categorical variable</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>9.1.1</b> univariate plots</a></li>
-<li class="chapter" data-level="9.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>9.1.2</b> bar charts for categorical variables</a></li>
+<li class="chapter" data-level="9.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>9.1.1</b> Univariate plots</a></li>
+<li class="chapter" data-level="9.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>9.1.2</b> Bar charts for categorical variables</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="GGPlot.html"><a href="GGPlot.html#time-series-plots"><i class="fa fa-check"></i><b>9.2</b> time series plots</a></li>
-<li class="chapter" data-level="9.3" data-path="GGPlot.html"><a href="GGPlot.html#path-plots"><i class="fa fa-check"></i><b>9.3</b> path plots</a></li>
-<li class="chapter" data-level="9.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>9.4</b> facets is the ggplot term for trellis’ panels</a></li>
-<li class="chapter" data-level="9.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>9.5</b> rescaling of the axes</a></li>
+<li class="chapter" data-level="9.2" data-path="GGPlot.html"><a href="GGPlot.html#time-series-plots"><i class="fa fa-check"></i><b>9.2</b> Time series plots</a></li>
+<li class="chapter" data-level="9.3" data-path="GGPlot.html"><a href="GGPlot.html#path-plots"><i class="fa fa-check"></i><b>9.3</b> Path plots</a></li>
+<li class="chapter" data-level="9.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>9.4</b> Facets is the ggplot term for trellis’ panels</a></li>
+<li class="chapter" data-level="9.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>9.5</b> Rescaling of the axes</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>10</b> Getting started with the WriteR application</a><ul>
 <li class="chapter" data-level="10.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>10.1</b> Getting the required software (Windows users only)</a><ul>
@@ -309,26 +309,24 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </div>
 <pre><code>## This is a histogram, with the title: Histogram of x
 ## &quot;x&quot; is marked on the x-axis.
-## Tick marks for the x-axis are at: -2, 0, 2, and 4 
+## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-## It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
+## Tick marks for the y-axis are at: 0, 50, 100, and 150 
+## It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
 ## The mids and counts for the bins are:
-## mid = -3.25  count = 1 
-## mid = -2.75  count = 7 
-## mid = -2.25  count = 18 
+## mid = -2.75  count = 3 
+## mid = -2.25  count = 17 
 ## mid = -1.75  count = 41 
-## mid = -1.25  count = 80 
-## mid = -0.75  count = 135 
-## mid = -0.25  count = 184 
-## mid = 0.25  count = 214 
-## mid = 0.75  count = 157 
-## mid = 1.25  count = 101 
-## mid = 1.75  count = 41 
-## mid = 2.25  count = 12 
-## mid = 2.75  count = 6 
-## mid = 3.25  count = 2 
-## mid = 3.75  count = 1</code></pre>
+## mid = -1.25  count = 98 
+## mid = -0.75  count = 148 
+## mid = -0.25  count = 189 
+## mid = 0.25  count = 191 
+## mid = 0.75  count = 149 
+## mid = 1.25  count = 83 
+## mid = 1.75  count = 58 
+## mid = 2.25  count = 11 
+## mid = 2.75  count = 10 
+## mid = 3.25  count = 2</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2">
