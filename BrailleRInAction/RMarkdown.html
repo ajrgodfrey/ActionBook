@@ -322,7 +322,158 @@ UniDesc(Ozone, View=FALSE)
 rm(Ozone)
 # N.B. Various files and a folder were created in the working directory. 
 # Please investigate them to see how this function worked.</code></pre>
-<p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html"><code>UniDesc()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands. You can also view the <a href="Ozone-UniDesc.Rmd">R markdown script for Unidesc</a></p>
+<p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html"><code>UniDesc()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands. You can also view the <a href="Ozone-UniDesc.Rmd">R markdown script created by <code>Unidesc(Ozone)</code></a> which starts witht he following lines:</p>
+<pre><code># Univariate analysis for Ozone 
+#### Prepared by Jonathan Godfrey   
+
+```{r setup, purl=FALSE, include=FALSE}
+library(BrailleR)
+opts_chunk$set(dev=c(&quot;png&quot;, &quot;pdf&quot;, &quot;postscript&quot;, &quot;svg&quot;))
+opts_chunk$set(comment=&quot;&quot;, echo=FALSE, fig.path=&quot;Ozone/Ozone-&quot;, fig.width=7)
+```  
+
+## Basic summary measures
+
+```{r BasicSummaries}
+Ozone.count = length(Ozone)
+Ozone.unique = length(unique(Ozone))
+Ozone.Nobs = sum(!is.na(Ozone))
+Ozone.Nmiss = sum(is.na(Ozone))
+Ozone.mean = mean(Ozone, na.rm = TRUE)
+Ozone.tmean5 = mean(Ozone, trim =0.025, na.rm = TRUE)
+Ozone.tmean10 = mean(Ozone, trim =0.05, na.rm = TRUE)
+Ozone.IQR = IQR(Ozone, na.rm = TRUE)
+Ozone.sd = sd(Ozone, na.rm = TRUE)
+Ozone.var = var(Ozone, na.rm = TRUE)
+Ozone.skew = moments::skewness(Ozone, na.rm = TRUE)
+Ozone.kurt = moments::kurtosis(Ozone, na.rm = TRUE)
+```
+
+### Counts
+
+`r Ozone.count` values in all, made up of
+`r Ozone.unique` unique values,
+`r Ozone.Nobs` observed, and
+`r Ozone.Nmiss` missing values.   
+
+
+
+### Measures of location
+
+Data | all | 5% trimmed | 10% trimmed
+----- | ------ | ----- | ------
+Mean | `r Ozone.mean` | `r Ozone.tmean5` | `r Ozone.tmean10`
+
+### Quantiles
+
+```{r Quantiles1}
+Quantiles=quantile(Ozone, na.rm=TRUE)
+QList=c(&quot;Minimum&quot;, &quot;Lower Quartile&quot;, &quot;Median&quot;, &quot;Upper Quartile&quot;, &quot;Maximum&quot;)
+Results=data.frame(Quantile=QList, Value=Quantiles[1:5])
+```
+
+```{r QuantilesPrint, eval=FALSE}
+Results
+```
+
+```{r QuantilesKable, results=&quot;asis&quot;, purl=FALSE}
+kable(Results, digits=4)
+```
+
+### Measures of spread
+
+Measure | IQR | Standard deviation | Variance
+-------- | ------ | -------- | ------
+Value | `r Ozone.IQR` | `r Ozone.sd` | `r Ozone.var`   
+
+
+## Basic univariate graphs    
+### Histogram    
+
+```{r Hist, fig.cap=&quot;The histogram&quot;, fig.height=5}    
+VI(hist(Ozone, xlab=&quot;Ozone&quot;, main=&quot;Histogram of Ozone&quot;))
+```   
+
+
+### Boxplot    
+
+```{r Boxplot, fig.cap=&quot;The boxplot&quot;, fig.height=3.5}  
+VI(boxplot(Ozone, horizontal=TRUE, main = &quot;Boxplot of Ozone&quot;))
+```   
+
+
+## Assessing normality
+
+### Formal tests for normality
+
+```{r NormalityTests}
+library(nortest)
+Results = matrix(0, nrow=6, ncol=2)
+dimnames(Results) = list(c(&quot;Shapiro-Wilk&quot;, &quot;Anderson-Darling&quot;, &quot;Cramer-von Mises&quot;,
+&quot;Lilliefors (Kolmogorov-Smirnov)&quot;, &quot;Pearson chi-square&quot;, &quot;Shapiro-Francia&quot;), c(&quot;Statistic&quot;, &quot;P Value&quot;))
+ SW =shapiro.test(Ozone)
+Results[1,] = c(SW$statistic, SW$p.value)
+AD = ad.test(Ozone)
+Results[2,] = c(AD$statistic, AD$p.value)
+CV = cvm.test(Ozone)
+Results[3,] = c(CV$statistic, CV$p.value)
+LI = lillie.test(Ozone)
+Results[4,] = c(LI$statistic, LI$p.value)
+PE = pearson.test(Ozone)
+Results[5,] = c(PE$statistic, PE$p.value)
+SF = sf.test(Ozone)
+Results[6,] = c(SF$statistic, SF$p.value)
+```
+
+```{r NormalityTestsPrint, eval=FALSE}
+Results
+```
+
+```{r NormalityTestsKable, results=&quot;asis&quot;, purl=FALSE}
+kable(Results, digits=c(4,4))
+```   
+```{r NormalityTestsTex, purl=FALSE}
+library(xtable)
+ThisTexFile = &quot;Ozone/Ozone-Normality.tex&quot;
+TabCapt= &quot;Tests for normality: Variable is Ozone.&quot;
+print(xtable(Results, caption=TabCapt, label=&quot;OzoneNormality&quot;, digits=4, align=&quot;lrr&quot;), file=ThisTexFile)
+```   
+
+### Normality plot    
+
+```{r NormPlot, fig.cap=&quot;The normality plot&quot;, fig.height=7}  
+qqnorm(Ozone, main = &quot;Normality Plot for Ozone&quot;)
+qqline(Ozone)
+```   
+
+
+## Formal tests of moments
+
+```{r MomentsTests}
+library(moments)
+Results = matrix(0, nrow=2, ncol=3)
+dimnames(Results)= list(c( &quot;D&#39;Agostino skewness&quot;, &quot;Anscombe-Glynn kurtosis&quot;),
+ c(&quot;Statistic&quot;,&quot;Z&quot;,  &quot;P Value&quot;))
+AG = moments::agostino.test(Ozone)
+AN = moments::anscombe.test(Ozone)
+Results[1,] = c(AG$statistic, AG$p.value)
+Results[2,] = c(AN$statistic, AN$p.value)
+```
+
+```{r MomentsTestsPrint, eval=FALSE}
+Results
+```
+
+```{r MomentsTests2, results=&quot;asis&quot;, purl=FALSE}
+kable(Results, digits=c(4,3,4))
+```   
+
+```{r MomentsTestsTex, purl=FALSE}
+library(xtable)
+ThisTexFile = &quot;Ozone/Ozone-Moments.tex&quot;
+TabCapt= &quot;Tests on moments: Variable isOzone&quot;
+print(xtable(Results, caption=TabCapt, label=&quot;OzoneMoments&quot;, digits=4, align=&quot;lrrr&quot;), file=ThisTexFile)
+```   </code></pre>
 <p>The document header includes a code chunk that sets the options for the <code>knit2html()</code> process used to convert this file to HTML.
 This processing allows for:</p>
 <ul>
@@ -348,7 +499,7 @@ This processing allows for:</p>
 <li>Tukey’s Honestly Significant Difference (HSD) test on the significance of the between group differences.</li>
 </ul>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">example</span>(OneFactor)</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">example</span>(OneFactor)</a></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 data(airquality)
@@ -374,9 +525,9 @@ OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality2)
 <p>Let’s see an example using the <code>airquality</code> data.
 Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function’s value to a blind user.
 A simple linear regression model might be created and investigated using:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">data</span>(airquality)</a>
-<a class="sourceLine" id="cb41-2" data-line-number="2">MyModel =<span class="st"> </span><span class="kw">lm</span>(Ozone<span class="op">~</span>Wind, <span class="dt">data=</span>airquality)</a>
-<a class="sourceLine" id="cb41-3" data-line-number="3"><span class="kw">summary</span>(MyModel)</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">data</span>(airquality)</a>
+<a class="sourceLine" id="cb42-2" data-line-number="2">MyModel =<span class="st"> </span><span class="kw">lm</span>(Ozone<span class="op">~</span>Wind, <span class="dt">data=</span>airquality)</a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="kw">summary</span>(MyModel)</a></code></pre></div>
 <pre><code>
 Call:
 lm(formula = Ozone ~ Wind, data = airquality)
@@ -396,8 +547,8 @@ Residual standard error: 26.47 on 114 degrees of freedom
   (37 observations deleted due to missingness)
 Multiple R-squared:  0.3619,    Adjusted R-squared:  0.3563 
 F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="kw">plot</span>(MyModel)</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="kw">plot</span>(MyModel)</a></code></pre></div>
 <div class="figure">
 <img src="05-MarkdownInAction_files/figure-html/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
 <p class="caption">
@@ -405,8 +556,8 @@ F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
 </p>
 </div>
 <p>The user now has a model stored as <code>MyModel</code> in the current workspace, has printed a summary of that model, and has plotted a set of four diagnostic plots in a <span class="math inline">\(2\times{}2\)</span> grid. The blind user will still need to issue those commands so that the output is created to meet the expectations of the sighted audience, but will also find value in issuing the two extra commands</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">VI</span>(MyModel)</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">summary</span>(MyModel))</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">VI</span>(MyModel)</a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">summary</span>(MyModel))</a></code></pre></div>
 <p>The use of the second of these commands will generate</p>
 <pre><code>The term which is significant to 1% is
 Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
@@ -416,7 +567,7 @@ Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
 Each of these graphs is subjected to scrutiny using the <code>WhereXY()</code> function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.</p>
 <p>A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook’s distances. This table is presented in the HTML document and converted to a LaTeX file using the <code>xtable</code> package. The raw LaTeX for this table looks like:</p>
 <pre><code>% latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Mon Aug 13 13:45:40 2018
+% Mon Aug 13 14:24:06 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
@@ -449,7 +600,7 @@ The <code>OnePredictor()</code> command has been written as a shortcut for a bli
 <li>the counts of observations within each group,</li>
 </ul>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">example</span>(OnePredictor)</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">example</span>(OnePredictor)</a></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 data(airquality)

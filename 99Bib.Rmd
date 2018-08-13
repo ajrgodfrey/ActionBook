@@ -14,3 +14,7 @@ Require(knitr)
 Require(rmarkdpown)
 write_bib(file="Rpkgs.bib", prefix="Rpkg-")
 ```
+
+```{r makeBatch, include=FALSE}
+BrailleR::MakeBatch("RunLater.R")
+```

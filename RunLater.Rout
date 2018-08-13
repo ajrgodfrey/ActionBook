@@ -1,0 +1,53 @@
+> # commands to process somehow later
+> library(BrailleR)
+The BrailleR.View,  option is set to FALSE.
+
+Attaching package: 'BrailleR'
+
+The following objects are masked from 'package:graphics':
+
+    boxplot, hist
+
+The following object is masked from 'package:utils':
+
+    history
+
+The following objects are masked from 'package:base':
+
+    grep, gsub
+
+> 
+> Ozone=airquality$Ozone
+> UniDesc(Ozone, View=FALSE)
+> rm(Ozone)
+> # N.B. Various files and a folder were created in the working directory. 
+> # Please investigate them to see how this function worked.
+> 
+> 
+> 
+> data(airquality)
+> 
+> # the following line  returns an error:
+> ## OneFactor("Ozone", "Month", airquality, View=FALSE)
+> # so we make a copy of the data.frame, and fix that:
+> 
+> airquality2 = airquality
+> airquality2$Month = as.factor(airquality$Month)
+> # and now all is good to try:
+> OneFactor("Ozone", "Month", airquality2)
+> # N.B. Various files and a folder were created in the working directory. 
+> # Please investigate them to see how this function worked.
+> 
+> 
+> MyModel = lm(Ozone~Wind, data=airquality)
+> VI(MyModel)
+> data(airquality)
+> OnePredictor("Ozone", "Wind", airquality)
+> # N.B. Various files and a folder were created in the working directory. 
+> # Please investigate them to see how this function worked.
+> 
+> 
+> 
+> proc.time()
+   user  system elapsed 
+   2.34    0.53    3.01 

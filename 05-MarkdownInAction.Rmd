@@ -80,7 +80,12 @@ cat(paste(GetExampleText(UniDesc), collapse="\n"))
 ```
 
 
-As an alternative, and if you do have a current internet connection you can view the result of running the [`UniDesc()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html) in your browser without having to re-enter the example commands. You can also view the [R markdown script for Unidesc](Ozone-UniDesc.Rmd) 
+As an alternative, and if you do have a current internet connection you can view the result of running the [`UniDesc()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html) in your browser without having to re-enter the example commands. You can also view the [R markdown script created by  `Unidesc(Ozone)`](Ozone-UniDesc.Rmd)  which starts witht he following lines:
+
+```{r getUniDescRMDStart, echo=FALSE}
+cat(paste(readLines("./BrailleRInAction/Ozone-UniDesc.Rmd"), collapse="\n"))
+```
+
 
 The document header includes a code chunk that sets the options for the `knit2html()` process used to convert this file to HTML. 
 This processing allows for:
