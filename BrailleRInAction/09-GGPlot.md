@@ -51,7 +51,7 @@ p11a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/p11a-1.png" alt="First graph on page 11 of @Wickham2009ggplot2"  />
+<img src="09-GGPlot_files/figure-html/p11a-1.png" alt="First graph on page 11 of @Wickham2009ggplot2" width="672" />
 <p class="caption">(\#fig:p11a)First graph on page 11 of @Wickham2009ggplot2</p>
 </div>
 
@@ -79,13 +79,13 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour very deep purple, 
-E represented by colour vivid purplish blue, 
-F represented by colour moderate blue, 
-G represented by colour vivid bluish green, 
-H represented by colour brilliant green, 
-I represented by colour vivid yellow green and 
-J represented by colour vivid greenish yellow.
+D represented by colour strong reddish orange, 
+E represented by colour strong yellow, 
+F represented by colour vivid yellowish green, 
+G represented by colour brilliant green, 
+H represented by colour brilliant blue, 
+I represented by colour vivid violet and 
+J represented by colour deep purplish pink.
 The chart is a set of 100 points.
 ```
 
@@ -94,7 +94,7 @@ fig2.2a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-2a-1.png" alt="Left pane of Figure 2.2 of @Wickham2009ggplot2"  />
+<img src="09-GGPlot_files/figure-html/fig2-2a-1.png" alt="Left pane of Figure 2.2 of @Wickham2009ggplot2" width="672" />
 <p class="caption">(\#fig:fig2-2a)Left pane of Figure 2.2 of @Wickham2009ggplot2</p>
 </div>
 
@@ -104,10 +104,6 @@ We haven't been able to tell what exact colour was used in the @Wickham2009ggplo
 ```r
 fig2.2b = qplot(carat, price, data = dsmall, shape = cut)    
 fig2.2b %>% VI()   
-```
-
-```
-Warning: Using shapes for an ordinal variable is not advised
 ```
 
 ```
@@ -127,12 +123,8 @@ The chart is a set of 100 points.
 fig2.2b
 ```
 
-```
-Warning: Using shapes for an ordinal variable is not advised
-```
-
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-2b-1.png" alt="Right pane of Figure 2.2"  />
+<img src="09-GGPlot_files/figure-html/fig2-2b-1.png" alt="Right pane of Figure 2.2" width="672" />
 <p class="caption">(\#fig:fig2-2b)Right pane of Figure 2.2</p>
 </div>
 
@@ -144,7 +136,7 @@ fig2.3b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-3b-1.png" alt="Middle pane from Figure 2.3"  />
+<img src="09-GGPlot_files/figure-html/fig2-3b-1.png" alt="Middle pane from Figure 2.3" width="672" />
 <p class="caption">(\#fig:fig2-3b)Middle pane from Figure 2.3</p>
 </div>
 
@@ -168,11 +160,11 @@ fig2.4a
 ```
 
 ```
-`geom_smooth()` using method = 'loess' and formula 'y ~ x'
+`geom_smooth()` using method = 'loess'
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-4a-1.png" alt="Left pane of Figure 2.4"  />
+<img src="09-GGPlot_files/figure-html/fig2-4a-1.png" alt="Left pane of Figure 2.4" width="672" />
 <p class="caption">(\#fig:fig2-4a)Left pane of Figure 2.4</p>
 </div>
 
@@ -200,7 +192,7 @@ fig2.8a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-8a-1.png" alt="Left pane of Figure 2.8"  />
+<img src="09-GGPlot_files/figure-html/fig2-8a-1.png" alt="Left pane of Figure 2.8" width="672" />
 <p class="caption">(\#fig:fig2-8a)Left pane of Figure 2.8</p>
 </div>
 
@@ -221,7 +213,7 @@ fig2.8b = qplot(color, price / carat, data = diamonds, geom = "boxplot")
 fig2.8b
 ```
 
-![](09-GGPlot_files/figure-epub3/fig2-8b-1.png)<!-- -->
+<img src="09-GGPlot_files/figure-html/fig2-8b-1.png" width="672" />
 
 ```r
 fig2.8b %>% VI()   
@@ -263,7 +255,7 @@ fig2.9b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-9b-1.png" alt="Middle pane of Figure 2.9"  />
+<img src="09-GGPlot_files/figure-html/fig2-9b-1.png" alt="Middle pane of Figure 2.9" width="672" />
 <p class="caption">(\#fig:fig2-9b)Middle pane of Figure 2.9</p>
 </div>
 
@@ -294,7 +286,7 @@ fig2.10a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-10a-1.png" alt="Left pane of Figure 2.10"  />
+<img src="09-GGPlot_files/figure-html/fig2-10a-1.png" alt="Left pane of Figure 2.10" width="672" />
 <p class="caption">(\#fig:fig2-10a)Left pane of Figure 2.10</p>
 </div>
 
@@ -305,7 +297,7 @@ fig2.10a %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis '' with labels 0, 5000, 10000 and 15000.
+It has y-axis 'count' with labels 0, 5000, 10000 and 15000.
 The chart is a bar chart containing 30 vertical bars.
 ```
 Warning: This figure does look different to the original in @Wickham2009ggplot2 ins spite of using the same code and same data.
@@ -317,7 +309,7 @@ fig2.10b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-10b-1.png" alt="Right pane of Figure 2.10"  />
+<img src="09-GGPlot_files/figure-html/fig2-10b-1.png" alt="Right pane of Figure 2.10" width="672" />
 <p class="caption">(\#fig:fig2-10b)Right pane of Figure 2.10</p>
 </div>
 
@@ -328,7 +320,7 @@ fig2.10b %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis '' with labels 0.0, 0.5, 1.0 and 1.5.
+It has y-axis 'density' with labels 0.0, 0.5, 1.0 and 1.5.
 The chart is a type that VI isn't able to process.
 ```
 
@@ -344,7 +336,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-11c-1.png" alt="Right pane of Figure 2.11"  />
+<img src="09-GGPlot_files/figure-html/fig2-11c-1.png" alt="Right pane of Figure 2.11" width="672" />
 <p class="caption">(\#fig:fig2-11c)Right pane of Figure 2.11</p>
 </div>
 
@@ -359,7 +351,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2 and 3.
-It has y-axis '' with labels 0, 1000 and 2000.
+It has y-axis 'count' with labels 0, 1000 and 2000.
 The chart is a bar chart containing 299 vertical bars.
 ```
 
@@ -372,7 +364,7 @@ fig2.12a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-12a-1.png" alt="Left pane of Figure 2.12"  />
+<img src="09-GGPlot_files/figure-html/fig2-12a-1.png" alt="Left pane of Figure 2.12" width="672" />
 <p class="caption">(\#fig:fig2-12a)Left pane of Figure 2.12</p>
 </div>
 
@@ -383,15 +375,15 @@ fig2.12a %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis '' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
+It has y-axis 'density' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 There is a legend indicating that colour is used to represent color, with 7 levels:
-D represented by colour very deep purple, 
-E represented by colour vivid purplish blue, 
-F represented by colour moderate blue, 
-G represented by colour vivid bluish green, 
-H represented by colour brilliant green, 
-I represented by colour vivid yellow green and 
-J represented by colour vivid greenish yellow.
+D represented by colour strong reddish orange, 
+E represented by colour strong yellow, 
+F represented by colour vivid yellowish green, 
+G represented by colour brilliant green, 
+H represented by colour brilliant blue, 
+I represented by colour vivid violet and 
+J represented by colour deep purplish pink.
 The chart is a type that VI isn't able to process.
 ```
 
@@ -407,7 +399,7 @@ fig2.12b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-12b-1.png" alt="Right pane of Figure 2.12"  />
+<img src="09-GGPlot_files/figure-html/fig2-12b-1.png" alt="Right pane of Figure 2.12" width="672" />
 <p class="caption">(\#fig:fig2-12b)Right pane of Figure 2.12</p>
 </div>
 
@@ -418,15 +410,15 @@ fig2.12b %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
-It has y-axis '' with labels 0, 5000, 10000 and 15000.
+It has y-axis 'count' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that fill is used to represent color, with 7 levels:
-D represented by fill very deep purple, 
-E represented by fill vivid purplish blue, 
-F represented by fill moderate blue, 
-G represented by fill vivid bluish green, 
-H represented by fill brilliant green, 
-I represented by fill vivid yellow green and 
-J represented by fill vivid greenish yellow.
+D represented by fill strong reddish orange, 
+E represented by fill strong yellow, 
+F represented by fill vivid yellowish green, 
+G represented by fill brilliant green, 
+H represented by fill brilliant blue, 
+I represented by fill vivid violet and 
+J represented by fill deep purplish pink.
 The chart is a bar chart containing 210 vertical bars.
 ```
 
@@ -440,7 +432,7 @@ fig2.13a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-13a-1.png" alt="Left pane of Figure 2.13"  />
+<img src="09-GGPlot_files/figure-html/fig2-13a-1.png" alt="Left pane of Figure 2.13" width="672" />
 <p class="caption">(\#fig:fig2-13a)Left pane of Figure 2.13</p>
 </div>
 
@@ -451,7 +443,7 @@ fig2.13a %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
-It has y-axis '' with labels 0, 3000, 6000 and 9000.
+It has y-axis 'count' with labels 0, 3000, 6000 and 9000.
 The chart is a bar chart containing 7 vertical bars.
 Bar 1 is centered horizontally at D, and spans vertically from 0 to 6775.
 Bar 2 is centered horizontally at E, and spans vertically from 0 to 9797.
@@ -472,7 +464,7 @@ fig2.13b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-13b-1.png" alt="Right pane of Figure 2.13"  />
+<img src="09-GGPlot_files/figure-html/fig2-13b-1.png" alt="Right pane of Figure 2.13" width="672" />
 <p class="caption">(\#fig:fig2-13b)Right pane of Figure 2.13</p>
 </div>
 
@@ -482,7 +474,7 @@ fig2.13b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-13b-2.png" alt="Right pane of Figure 2.13"  />
+<img src="09-GGPlot_files/figure-html/fig2-13b-2.png" alt="Right pane of Figure 2.13" width="672" />
 <p class="caption">(\#fig:fig2-13b)Right pane of Figure 2.13</p>
 </div>
 
@@ -493,7 +485,7 @@ fig2.13b %>% VI()
 ```
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
-It has y-axis '' with labels 0, 2500, 5000 and 7500.
+It has y-axis 'count' with labels 0, 2500, 5000 and 7500.
 The chart is a bar chart containing 7 vertical bars.
 Bar 1 is centered horizontally at D, and spans vertically from 0 to 4456.56.
 Bar 2 is centered horizontally at E, and spans vertically from 0 to 6445.12.
@@ -514,7 +506,7 @@ fig2.14a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-14a-1.png" alt="Left pane of Figure 2.14"  />
+<img src="09-GGPlot_files/figure-html/fig2-14a-1.png" alt="Left pane of Figure 2.14" width="672" />
 <p class="caption">(\#fig:fig2-14a)Left pane of Figure 2.14</p>
 </div>
 
@@ -541,7 +533,7 @@ fig2.15b
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-15b-1.png" alt="Right pane of Figure 2.15"  />
+<img src="09-GGPlot_files/figure-html/fig2-15b-1.png" alt="Right pane of Figure 2.15" width="672" />
 <p class="caption">(\#fig:fig2-15b)Right pane of Figure 2.15</p>
 </div>
 
@@ -573,7 +565,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-16a-1.png" alt="Left side of Figure 2.16"  />
+<img src="09-GGPlot_files/figure-html/fig2-16a-1.png" alt="Left side of Figure 2.16" width="384" />
 <p class="caption">(\#fig:fig2-16a)Left side of Figure 2.16</p>
 </div>
 
@@ -590,7 +582,7 @@ This is an untitled chart with no subtitle or caption.
 The chart is comprised of 7 panels containing sub-charts, arranged vertically.
 The panels represent different values of color.
 Each sub-chart has x-axis 'carat' with labels 0, 1, 2 and 3.
-Each sub-chart has y-axis '' with labels 0, 500, 1000, 1500, 2000 and 2500.
+Each sub-chart has y-axis 'count' with labels 0, 500, 1000, 1500, 2000 and 2500.
 Panel 1 represents data for color = D.
 Panel 1 is a bar chart containing 29 vertical bars.
 Panel 2 represents data for color = E.
@@ -618,7 +610,7 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig2-16b-1.png" alt="Right side of Figure 2.16"  />
+<img src="09-GGPlot_files/figure-html/fig2-16b-1.png" alt="Right side of Figure 2.16" width="384" />
 <p class="caption">(\#fig:fig2-16b)Right side of Figure 2.16</p>
 </div>
 
@@ -635,7 +627,7 @@ This is an untitled chart with no subtitle or caption.
 The chart is comprised of 7 panels containing sub-charts, arranged vertically.
 The panels represent different values of color.
 Each sub-chart has x-axis 'carat' with labels 0, 1, 2 and 3.
-Each sub-chart has y-axis '..density..' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
+Each sub-chart has y-axis 'density' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 Panel 1 represents data for color = D.
 Panel 1 is a bar chart containing 29 vertical bars.
 Panel 2 represents data for color = E.
@@ -661,7 +653,7 @@ p26a
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/p26a-1.png" alt="First graph on page 26 of "  />
+<img src="09-GGPlot_files/figure-html/p26a-1.png" alt="First graph on page 26 of " width="672" />
 <p class="caption">(\#fig:p26a)First graph on page 26 of </p>
 </div>
 
@@ -683,11 +675,11 @@ fig3.6
 ```
 
 ```
-`geom_smooth()` using method = 'loess' and formula 'y ~ x'
+`geom_smooth()` using method = 'loess'
 ```
 
 <div class="figure">
-<img src="09-GGPlot_files/figure-epub3/fig3-6-1.png" alt="Figure 3.6 of "  />
+<img src="09-GGPlot_files/figure-html/fig3-6-1.png" alt="Figure 3.6 of " width="672" />
 <p class="caption">(\#fig:fig3-6)Figure 3.6 of </p>
 </div>
 

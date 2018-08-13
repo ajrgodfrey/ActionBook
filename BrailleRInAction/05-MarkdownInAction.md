@@ -72,8 +72,6 @@ example(UniDesc)
 while running R interactively. This issues the following commands.
 
 
-
-
 ```
 
 Ozone=airquality$Ozone
@@ -83,7 +81,6 @@ rm(Ozone)
 # Please investigate them to see how this function worked.
 ```
 
-There is one small change to make to get the desired outcome. The argument `View=FALSE` stops the default action which is to open the HTML document automatically. This avoids problems while the BrailleR package is being created. The `UniDesc()` function was designed for interactive use so do not include this argument if you do want this function to open the HTML file automatically.
 
 As an alternative, and if you do have a current internet connection you can view the result of running the [`UniDesc()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html) in your browser without having to re-enter the example commands. You can also view the [R markdown script for Unidesc](Ozone-UniDesc.Rmd) 
 
@@ -127,8 +124,6 @@ example(OneFactor)
 while running R interactively. This issues the following commands.
 
 
-
-
 ```
 
 data(airquality)
@@ -145,46 +140,50 @@ OneFactor("Ozone", "Month", airquality2)
 # Please investigate them to see how this function worked.
 ```
 
-As before, there is one small change to make to get the desired outcome. The argument `View=FALSE` which stops the HTML document opening automatically needs to be removed.
-
 As an alternative, and if you do have a current internet connection you can view the result of running the [`OneFactor()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone.Month-OneFactor.html) in your browser without having to re-enter the example commands.
 
 The example here demonstrates the point that the grouping variable must be a factor. The month variable is not stored as a factor in the airquality data so its use would have created an error.
 
 ## Use of BrailleR for linear regression 
 
-It is common for sighted users to create a handful of graphs that help them determine the validity of a linear model, even the most basic simple linear regressions. The `VI()` command can be applied to a linear model object. The specific function to do this is found in the `VI.lm()` function, but most users do not need to explicitly use `VI.lm()` because the call to `VI()` will know to use the `VI.lm()` function if it is the right one to use at the time.
+
+
+Linear regression is almost always taught using graphical techniques, especially for the validation of the model being fitted. Of particular note is the way an instructor would teach sighted students about the sensibility of fitting any line to some data which cannot be easily judged even using the `WhereXY()` function described earlier. A blind student lacking an embosser to produce a tactile image that shows the fitted line and the data, will almost certainly need to fit the model and see how good or bad it is. These blind students are therefore even more reliant on the residual analysis than their sighted classmates
+
+The `VI()` command can be applied to a linear model object. The specific function to do this is found in the `VI.lm()` function, but most users do not need to explicitly use `VI.lm()` because the call to `VI()` will know to use the `VI.lm()` function if it is the right one to use at the time.
 
 The `VI.lm()` function generates so much text as a substitute for the graphs used by sighted users, that it is easier to put this text in an HTML document and have that new document opened in a browser instead of trying to use a screen reader within the R session.
 
-Let's see an example using the `airquality` data. A simple linear regression model might be created and investigated using:
+Let's see an example using the `airquality` data. 
+Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function's value to a blind user. 
+A simple linear regression model might be created and investigated using:
 
 ```r
 data(airquality)
-MyModel = lm(Ozone~Temp, data=airquality)
+MyModel = lm(Ozone~Wind, data=airquality)
 summary(MyModel)
 ```
 
 ```
 
 Call:
-lm(formula = Ozone ~ Temp, data = airquality)
+lm(formula = Ozone ~ Wind, data = airquality)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--40.729 -17.409  -0.587  11.306 118.271 
+-51.572 -18.854  -4.868  15.234  90.000 
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-(Intercept) -146.9955    18.2872  -8.038 9.37e-13 ***
-Temp           2.4287     0.2331  10.418  < 2e-16 ***
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  96.8729     7.2387   13.38  < 2e-16 ***
+Wind         -5.5509     0.6904   -8.04 9.27e-13 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 23.71 on 114 degrees of freedom
+Residual standard error: 26.47 on 114 degrees of freedom
   (37 observations deleted due to missingness)
-Multiple R-squared:  0.4877,	Adjusted R-squared:  0.4832 
-F-statistic: 108.5 on 1 and 114 DF,  p-value: < 2.2e-16
+Multiple R-squared:  0.3619,	Adjusted R-squared:  0.3563 
+F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13
 ```
 
 ```r
@@ -193,17 +192,12 @@ plot(MyModel)
 ```
 
 <div class="figure">
-<img src="05-MarkdownInAction_files/figure-epub3/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model."  />
+<img src="05-MarkdownInAction_files/figure-html/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
 <p class="caption">(\#fig:AirQuality.lm)Diagnostic plots for the simple linear regression model.</p>
 </div>
 
 
 
-```r
-cat(paste("MyModel = lm(Ozone~Temp, data=airquality, echo=FALSE)",
-    "VI(MyModel)", 
-    sep="\n"), file="RunLater.R", append=TRUE)
-```
 
 
 The user now has a model stored as `MyModel` in the current workspace, has printed a summary of that model, and has plotted a set of four diagnostic plots in a $2\times{}2$ grid. The blind user will still need to issue those commands so that the output is created to meet the expectations of the sighted audience, but will also find value in issuing the two extra commands
@@ -216,11 +210,48 @@ The use of the second of these commands will generate
 
 ```
 The term which is significant to 1% is
-Temp with an estimate of 2.428703 and P-Value of 2.931897e-18 
+Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 
 ```
 which will be a much easier reading exercise for a screen reader user than would be the standard `summary()` output given earlier. Note that not all the information contained in the standard summary is contained in this output.
 
 The output from use of the `VI()` command on the linear model can be viewed in your browser if you have a current internet connection. If you do not have a connection at this time, you will need to re-issue some of the above commands for yourself in an R session.
+
+The HTML document created by `VI.lm()` is based on the results of the `UniDesc()` function applied to the Pearson residuals for the model and a number of other graphs and tables used to validate the model. The included graphs are of the residuals plotted against the fitted values, the order the data were collected (assumes data are presented in this order), the leverages,  and the  preceding residual.
+Each of these graphs is subjected to scrutiny using the `WhereXY()` function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of  uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.
+
+A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook's distances. This table is presented in the HTML document and converted to a LaTeX file using the `xtable` package. The raw LaTeX for this table looks like:
+
+
+```
+% latex table generated in R 3.5.1 by xtable 1.8-2 package
+% Mon Aug 13 13:39:59 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrrr}
+  \hline
+ & Ozone & Wind & Fit & St.residual & Leverage & Cooks.distance \\ 
+  \hline
+9 &     8 & 20.1000 & -14.7007 & 0.8934 & 0.0799 & 0.0347 \\ 
+  18 &     6 & 18.4000 & -5.2641 & 0.4370 & 0.0582 & 0.0059 \\ 
+  22 &    11 & 16.6000 & 4.7276 & 0.2408 & 0.0395 & 0.0012 \\ 
+  48 &    37 & 20.7000 & -18.0312 & 2.2149 & 0.0885 & 0.2304 \\ 
+  62 &   135 & 4.1000 & 74.1141 & 2.3847 & 0.0312 & 0.0880 \\ 
+  86 &   108 & 8.0000 & 52.4655 & 2.1428 & 0.0110 & 0.0247 \\ 
+  101 &   110 & 8.0000 & 52.4655 & 2.2233 & 0.0110 & 0.0265 \\ 
+  117 &   168 & 3.4000 & 77.9998 & 3.6474 & 0.0370 & 0.2309 \\ 
+  121 &   118 & 2.3000 & 84.1058 & 1.3164 & 0.0475 & 0.0430 \\ 
+  126 &    73 & 2.8000 & 81.3303 & -0.3204 & 0.0426 & 0.0023 \\ 
+  148 &    14 & 16.6000 & 4.7276 & 0.3561 & 0.0395 & 0.0026 \\ 
+   \hline
+\end{tabular}
+\caption{Listing of suspected outliers and influential observations.} 
+\label{InflObsMyModel}
+\end{table}
+```
+
+
+
+Note that the automatic formatting of this table as performed by  the `xtable` package has not been altered to meet a specified publication style. Ultimatly, users will need to alter the presentation to meet publisher specifications for themselves. 
 
 ## Analysis of a single continuous variable with respect to another continuous variable
 
@@ -239,36 +270,16 @@ example(OnePredictor)
 while running R interactively. This issues the following commands.
 
 
-
-
 ```
 
 data(airquality)
-OnePredictor("Ozone", "Wind", airquality, View=FALSE)
+OnePredictor("Ozone", "Wind", airquality)
 # N.B. Various files and a folder were created in the working directory. 
 # Please investigate them to see how this function worked.
 ```
 
-As before, there is one small change to make to get the desired outcome. The argument `View=FALSE` which stops the HTML document opening automatically needs to be removed.
 
 As an alternative, and if you do have a current internet connection you can view the result of running the [`OnePredictor()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-OnePredictor.html) in your browser without having to re-enter the example commands.
-
-## Fitting a linear model and obtaining its residual analysis
-
-The final demonstration for this chapter is the extremely common task of fitting a linear model to some data. This is almost always taught using graphical techniques, especially for the validation of the model being fitted. Of particular note is the way an instructor would teach sighted students about the sensibility of fitting any line to some data which cannot be easily judged even using the `WhereXY()` function described earlier. A blind student lacking an embosser to produce a tactile image that shows the fitted line and the data, will almost certainly need to fit the model and see how good or bad it is. These blind students are therefore even more reliant on the residual analysis than their sighted classmates
-
-The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function's value to a blind user. The code:
-
-input R/VI.lm
-
-always generates an R markdown file  and an R script, and if `BrailleR` default settings are being used in an interactive  session, also  automatically  opens the corresponding  HTML file created by the `knit2html()` function from the `knitr` package.  This HTML document is based on the results of the `UniDesc()` function applied to the Pearson residuals for the model and a number of other graphs and tables used to validate the model. The included graphs are of the residuals plotted against the fitted values, the order the data were collected (assumes data are presented in this order), the leverages,  and the  preceding residual.
-Each of these graphs is subjected to scrutiny using the `WhereXY()` function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of  uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.
-
-A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook's distances. This table is presented in the HTML document and converted to a LaTeX file using the `xtable` package. The incorporation of this LaTeX file is demonstrated in Table{InflObsModel1}. 
-
-input R/Model1.Validity/InflObs
-
-Note that the automatic formatting of this table as performed by  the `xtable` package has not been altered to meet a specified publication style. Ultimatly, users will need to alter the presentation to meet publisher specifications for themselves. 
 
 
 

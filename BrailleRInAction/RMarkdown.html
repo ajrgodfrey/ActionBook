@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-10">
+<meta name="date" content="2018-08-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -206,8 +206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor"><i class="fa fa-check"></i><b>7.4</b> Analysis of a single continuous variable with respect to a single grouping factor</a></li>
 <li class="chapter" data-level="7.5" data-path="RMarkdown.html"><a href="RMarkdown.html#use-of-brailler-for-linear-regression"><i class="fa fa-check"></i><b>7.5</b> Use of BrailleR for linear regression</a></li>
 <li class="chapter" data-level="7.6" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable"><i class="fa fa-check"></i><b>7.6</b> Analysis of a single continuous variable with respect to another continuous variable</a></li>
-<li class="chapter" data-level="7.7" data-path="RMarkdown.html"><a href="RMarkdown.html#fitting-a-linear-model-and-obtaining-its-residual-analysis"><i class="fa fa-check"></i><b>7.7</b> Fitting a linear model and obtaining its residual analysis</a></li>
-<li class="chapter" data-level="7.8" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>7.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="7.7" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>7.7</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>8</b> Personalising BrailleR</a><ul>
 <li class="chapter" data-level="8.1" data-path="Personalising.html"><a href="Personalising.html#general"><i class="fa fa-check"></i><b>8.1</b> General</a></li>
@@ -323,7 +322,6 @@ UniDesc(Ozone, View=FALSE)
 rm(Ozone)
 # N.B. Various files and a folder were created in the working directory. 
 # Please investigate them to see how this function worked.</code></pre>
-<p>There is one small change to make to get the desired outcome. The argument <code>View=FALSE</code> stops the default action which is to open the HTML document automatically. This avoids problems while the BrailleR package is being created. The <code>UniDesc()</code> function was designed for interactive use so do not include this argument if you do want this function to open the HTML file automatically.</p>
 <p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html"><code>UniDesc()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands. You can also view the <a href="Ozone-UniDesc.Rmd">R markdown script for Unidesc</a></p>
 <p>The document header includes a code chunk that sets the options for the <code>knit2html()</code> process used to convert this file to HTML.
 This processing allows for:</p>
@@ -365,37 +363,39 @@ airquality2$Month = as.factor(airquality$Month)
 OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality2)
 # N.B. Various files and a folder were created in the working directory. 
 # Please investigate them to see how this function worked.</code></pre>
-<p>As before, there is one small change to make to get the desired outcome. The argument <code>View=FALSE</code> which stops the HTML document opening automatically needs to be removed.</p>
 <p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone.Month-OneFactor.html"><code>OneFactor()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands.</p>
 <p>The example here demonstrates the point that the grouping variable must be a factor. The month variable is not stored as a factor in the airquality data so its use would have created an error.</p>
 </div>
 <div id="use-of-brailler-for-linear-regression" class="section level2">
 <h2><span class="header-section-number">7.5</span> Use of BrailleR for linear regression</h2>
-<p>It is common for sighted users to create a handful of graphs that help them determine the validity of a linear model, even the most basic simple linear regressions. The <code>VI()</code> command can be applied to a linear model object. The specific function to do this is found in the <code>VI.lm()</code> function, but most users do not need to explicitly use <code>VI.lm()</code> because the call to <code>VI()</code> will know to use the <code>VI.lm()</code> function if it is the right one to use at the time.</p>
+<p>Linear regression is almost always taught using graphical techniques, especially for the validation of the model being fitted. Of particular note is the way an instructor would teach sighted students about the sensibility of fitting any line to some data which cannot be easily judged even using the <code>WhereXY()</code> function described earlier. A blind student lacking an embosser to produce a tactile image that shows the fitted line and the data, will almost certainly need to fit the model and see how good or bad it is. These blind students are therefore even more reliant on the residual analysis than their sighted classmates</p>
+<p>The <code>VI()</code> command can be applied to a linear model object. The specific function to do this is found in the <code>VI.lm()</code> function, but most users do not need to explicitly use <code>VI.lm()</code> because the call to <code>VI()</code> will know to use the <code>VI.lm()</code> function if it is the right one to use at the time.</p>
 <p>The <code>VI.lm()</code> function generates so much text as a substitute for the graphs used by sighted users, that it is easier to put this text in an HTML document and have that new document opened in a browser instead of trying to use a screen reader within the R session.</p>
-<p>Let’s see an example using the <code>airquality</code> data. A simple linear regression model might be created and investigated using:</p>
+<p>Let’s see an example using the <code>airquality</code> data.
+Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function’s value to a blind user.
+A simple linear regression model might be created and investigated using:</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">data</span>(airquality)</a>
-<a class="sourceLine" id="cb41-2" data-line-number="2">MyModel =<span class="st"> </span><span class="kw">lm</span>(Ozone<span class="op">~</span>Temp, <span class="dt">data=</span>airquality)</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">MyModel =<span class="st"> </span><span class="kw">lm</span>(Ozone<span class="op">~</span>Wind, <span class="dt">data=</span>airquality)</a>
 <a class="sourceLine" id="cb41-3" data-line-number="3"><span class="kw">summary</span>(MyModel)</a></code></pre></div>
 <pre><code>
 Call:
-lm(formula = Ozone ~ Temp, data = airquality)
+lm(formula = Ozone ~ Wind, data = airquality)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--40.729 -17.409  -0.587  11.306 118.271 
+-51.572 -18.854  -4.868  15.234  90.000 
 
 Coefficients:
-             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) -146.9955    18.2872  -8.038 9.37e-13 ***
-Temp           2.4287     0.2331  10.418  &lt; 2e-16 ***
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  96.8729     7.2387   13.38  &lt; 2e-16 ***
+Wind         -5.5509     0.6904   -8.04 9.27e-13 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Residual standard error: 23.71 on 114 degrees of freedom
+Residual standard error: 26.47 on 114 degrees of freedom
   (37 observations deleted due to missingness)
-Multiple R-squared:  0.4877,    Adjusted R-squared:  0.4832 
-F-statistic: 108.5 on 1 and 114 DF,  p-value: &lt; 2.2e-16</code></pre>
+Multiple R-squared:  0.3619,    Adjusted R-squared:  0.3563 
+F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
 <a class="sourceLine" id="cb43-2" data-line-number="2"><span class="kw">plot</span>(MyModel)</a></code></pre></div>
 <div class="figure">
@@ -404,17 +404,42 @@ F-statistic: 108.5 on 1 and 114 DF,  p-value: &lt; 2.2e-16</code></pre>
 (#fig:AirQuality.lm)Diagnostic plots for the simple linear regression model.
 </p>
 </div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;MyModel = lm(Ozone~Temp, data=airquality, echo=FALSE)&quot;</span>,</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2">    <span class="st">&quot;VI(MyModel)&quot;</span>, </a>
-<a class="sourceLine" id="cb44-3" data-line-number="3">    <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>), <span class="dt">file=</span><span class="st">&quot;RunLater.R&quot;</span>, <span class="dt">append=</span><span class="ot">TRUE</span>)</a></code></pre></div>
 <p>The user now has a model stored as <code>MyModel</code> in the current workspace, has printed a summary of that model, and has plotted a set of four diagnostic plots in a <span class="math inline">\(2\times{}2\)</span> grid. The blind user will still need to issue those commands so that the output is created to meet the expectations of the sighted audience, but will also find value in issuing the two extra commands</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">VI</span>(MyModel)</a>
-<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">summary</span>(MyModel))</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">VI</span>(MyModel)</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">summary</span>(MyModel))</a></code></pre></div>
 <p>The use of the second of these commands will generate</p>
 <pre><code>The term which is significant to 1% is
-Temp with an estimate of 2.428703 and P-Value of 2.931897e-18 </code></pre>
+Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
 <p>which will be a much easier reading exercise for a screen reader user than would be the standard <code>summary()</code> output given earlier. Note that not all the information contained in the standard summary is contained in this output.</p>
 <p>The output from use of the <code>VI()</code> command on the linear model can be viewed in your browser if you have a current internet connection. If you do not have a connection at this time, you will need to re-issue some of the above commands for yourself in an R session.</p>
+<p>The HTML document created by <code>VI.lm()</code> is based on the results of the <code>UniDesc()</code> function applied to the Pearson residuals for the model and a number of other graphs and tables used to validate the model. The included graphs are of the residuals plotted against the fitted values, the order the data were collected (assumes data are presented in this order), the leverages, and the preceding residual.
+Each of these graphs is subjected to scrutiny using the <code>WhereXY()</code> function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.</p>
+<p>A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook’s distances. This table is presented in the HTML document and converted to a LaTeX file using the <code>xtable</code> package. The raw LaTeX for this table looks like:</p>
+<pre><code>% latex table generated in R 3.5.1 by xtable 1.8-2 package
+% Mon Aug 13 13:39:59 2018
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrrr}
+  \hline
+ &amp; Ozone &amp; Wind &amp; Fit &amp; St.residual &amp; Leverage &amp; Cooks.distance \\ 
+  \hline
+9 &amp;     8 &amp; 20.1000 &amp; -14.7007 &amp; 0.8934 &amp; 0.0799 &amp; 0.0347 \\ 
+  18 &amp;     6 &amp; 18.4000 &amp; -5.2641 &amp; 0.4370 &amp; 0.0582 &amp; 0.0059 \\ 
+  22 &amp;    11 &amp; 16.6000 &amp; 4.7276 &amp; 0.2408 &amp; 0.0395 &amp; 0.0012 \\ 
+  48 &amp;    37 &amp; 20.7000 &amp; -18.0312 &amp; 2.2149 &amp; 0.0885 &amp; 0.2304 \\ 
+  62 &amp;   135 &amp; 4.1000 &amp; 74.1141 &amp; 2.3847 &amp; 0.0312 &amp; 0.0880 \\ 
+  86 &amp;   108 &amp; 8.0000 &amp; 52.4655 &amp; 2.1428 &amp; 0.0110 &amp; 0.0247 \\ 
+  101 &amp;   110 &amp; 8.0000 &amp; 52.4655 &amp; 2.2233 &amp; 0.0110 &amp; 0.0265 \\ 
+  117 &amp;   168 &amp; 3.4000 &amp; 77.9998 &amp; 3.6474 &amp; 0.0370 &amp; 0.2309 \\ 
+  121 &amp;   118 &amp; 2.3000 &amp; 84.1058 &amp; 1.3164 &amp; 0.0475 &amp; 0.0430 \\ 
+  126 &amp;    73 &amp; 2.8000 &amp; 81.3303 &amp; -0.3204 &amp; 0.0426 &amp; 0.0023 \\ 
+  148 &amp;    14 &amp; 16.6000 &amp; 4.7276 &amp; 0.3561 &amp; 0.0395 &amp; 0.0026 \\ 
+   \hline
+\end{tabular}
+\caption{Listing of suspected outliers and influential observations.} 
+\label{InflObsMyModel}
+\end{table}</code></pre>
+<p>Note that the automatic formatting of this table as performed by the <code>xtable</code> package has not been altered to meet a specified publication style. Ultimatly, users will need to alter the presentation to meet publisher specifications for themselves.</p>
 </div>
 <div id="analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable" class="section level2">
 <h2><span class="header-section-number">7.6</span> Analysis of a single continuous variable with respect to another continuous variable</h2>
@@ -428,25 +453,13 @@ The <code>OnePredictor()</code> command has been written as a shortcut for a bli
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 data(airquality)
-OnePredictor(&quot;Ozone&quot;, &quot;Wind&quot;, airquality, View=FALSE)
+OnePredictor(&quot;Ozone&quot;, &quot;Wind&quot;, airquality)
 # N.B. Various files and a folder were created in the working directory. 
 # Please investigate them to see how this function worked.</code></pre>
-<p>As before, there is one small change to make to get the desired outcome. The argument <code>View=FALSE</code> which stops the HTML document opening automatically needs to be removed.</p>
 <p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-OnePredictor.html"><code>OnePredictor()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands.</p>
 </div>
-<div id="fitting-a-linear-model-and-obtaining-its-residual-analysis" class="section level2">
-<h2><span class="header-section-number">7.7</span> Fitting a linear model and obtaining its residual analysis</h2>
-<p>The final demonstration for this chapter is the extremely common task of fitting a linear model to some data. This is almost always taught using graphical techniques, especially for the validation of the model being fitted. Of particular note is the way an instructor would teach sighted students about the sensibility of fitting any line to some data which cannot be easily judged even using the <code>WhereXY()</code> function described earlier. A blind student lacking an embosser to produce a tactile image that shows the fitted line and the data, will almost certainly need to fit the model and see how good or bad it is. These blind students are therefore even more reliant on the residual analysis than their sighted classmates</p>
-<p>The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function’s value to a blind user. The code:</p>
-<p>input R/VI.lm</p>
-<p>always generates an R markdown file and an R script, and if <code>BrailleR</code> default settings are being used in an interactive session, also automatically opens the corresponding HTML file created by the <code>knit2html()</code> function from the <code>knitr</code> package. This HTML document is based on the results of the <code>UniDesc()</code> function applied to the Pearson residuals for the model and a number of other graphs and tables used to validate the model. The included graphs are of the residuals plotted against the fitted values, the order the data were collected (assumes data are presented in this order), the leverages, and the preceding residual.
-Each of these graphs is subjected to scrutiny using the <code>WhereXY()</code> function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.</p>
-<p>A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook’s distances. This table is presented in the HTML document and converted to a LaTeX file using the <code>xtable</code> package. The incorporation of this LaTeX file is demonstrated in Table{InflObsModel1}.</p>
-<p>input R/Model1.Validity/InflObs</p>
-<p>Note that the automatic formatting of this table as performed by the <code>xtable</code> package has not been altered to meet a specified publication style. Ultimatly, users will need to alter the presentation to meet publisher specifications for themselves.</p>
-</div>
 <div id="brailler-commands-used-in-this-chapter-3" class="section level2">
-<h2><span class="header-section-number">7.8</span> BrailleR commands used in this chapter</h2>
+<h2><span class="header-section-number">7.7</span> BrailleR commands used in this chapter</h2>
 <p>The first two <code>BrailleR</code> commands introduced in this chapter were the <code>UniDesc()</code> and <code>OneFactor()</code> commands; they used the <code>VI()</code> command in the R markdown files that they create, as was described back in Chapter <a href="VI.html#VI">4</a>, to give the text descriptions for graphs. We then saw a new use of the <code>VI()</code> command and several other commands designed to generate common analyses quickly. These included the <code>OnePredictor()</code>, etc.</p>
 
 </div>

@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-10">
+<meta name="date" content="2018-08-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -206,8 +206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor"><i class="fa fa-check"></i><b>7.4</b> Analysis of a single continuous variable with respect to a single grouping factor</a></li>
 <li class="chapter" data-level="7.5" data-path="RMarkdown.html"><a href="RMarkdown.html#use-of-brailler-for-linear-regression"><i class="fa fa-check"></i><b>7.5</b> Use of BrailleR for linear regression</a></li>
 <li class="chapter" data-level="7.6" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable"><i class="fa fa-check"></i><b>7.6</b> Analysis of a single continuous variable with respect to another continuous variable</a></li>
-<li class="chapter" data-level="7.7" data-path="RMarkdown.html"><a href="RMarkdown.html#fitting-a-linear-model-and-obtaining-its-residual-analysis"><i class="fa fa-check"></i><b>7.7</b> Fitting a linear model and obtaining its residual analysis</a></li>
-<li class="chapter" data-level="7.8" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>7.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="7.7" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>7.7</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>8</b> Personalising BrailleR</a><ul>
 <li class="chapter" data-level="8.1" data-path="Personalising.html"><a href="Personalising.html#general"><i class="fa fa-check"></i><b>8.1</b> General</a></li>
@@ -311,22 +310,23 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 ## &quot;x&quot; is marked on the x-axis.
 ## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, and 150 
-## It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
+## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+## It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 ## The mids and counts for the bins are:
+## mid = -3.25  count = 2 
 ## mid = -2.75  count = 3 
-## mid = -2.25  count = 17 
-## mid = -1.75  count = 41 
-## mid = -1.25  count = 98 
-## mid = -0.75  count = 148 
-## mid = -0.25  count = 189 
-## mid = 0.25  count = 191 
-## mid = 0.75  count = 149 
-## mid = 1.25  count = 83 
-## mid = 1.75  count = 58 
-## mid = 2.25  count = 11 
-## mid = 2.75  count = 10 
-## mid = 3.25  count = 2</code></pre>
+## mid = -2.25  count = 9 
+## mid = -1.75  count = 49 
+## mid = -1.25  count = 83 
+## mid = -0.75  count = 155 
+## mid = -0.25  count = 181 
+## mid = 0.25  count = 202 
+## mid = 0.75  count = 152 
+## mid = 1.25  count = 91 
+## mid = 1.75  count = 53 
+## mid = 2.25  count = 18 
+## mid = 2.75  count = 1 
+## mid = 3.25  count = 1</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2">
