@@ -1,5 +1,10 @@
 # Ways of Working in R as a Blind User {#WorkingBlind}
 
+```{r ChpSetup, echo=FALSE}
+library(knitr)
+opts_chunk$set(fig.width=7, fig.height=5, comment="")
+```
+
 This chapter presents some strategies to offer blind users options for producing and saving work from an R session. They complement the workflows used by sighted people, or replace the tools used by sighted people that are not able to be used by a blind person.
 
 ## A little background
@@ -23,7 +28,14 @@ The functions `txtStart()`, `txtStop()`, `txtComment()`, and `txtSkip()` were co
 The general uptake of reproducible research ideas by many in the R community has vastly improved the opportunities for novice R users to create well-formatted HTML documents from markdown documents. 
 This change in the general mindset has huge benefits for a blind user. 
 An R markdown file is just plain text and is therefore accessible. 
-Even more impressive, is that the HTML documents that result from these files are also very accessible to a blind reader.
+Even more impressive, is that the HTML documents that result from these files are also very accessible to a blind reader. I discovered the potential for R markdown to make life so much easier for blind students by attending a workshop delivered by Yihui Xie at the 2014 UseR conference in Los Angeles. His book [@xie2015] serves as the guide by which I create a lot of R markdown content including this book.
+
+The greatest challenge for blind R users who want to get into R markdown is that the majority of resources on the subject assume use of RStudio [@RStudio] which is not accessible to a screen reader user. Use of RStudio is not essential. For example, a basic R markdown document might start like the following:
+
+```{r startingRmdFile, echo=FALSE}
+cat(paste(readLines(system.file("Templates/YAMLHeader.Rmd", package="BrailleR")), collapse="\n"))
+cat(paste(readLines(system.file("Templates/EmptyChunk.Rmd", package="BrailleR")), collapse="\n"))
+```
 
 ## Running jobs offline
 

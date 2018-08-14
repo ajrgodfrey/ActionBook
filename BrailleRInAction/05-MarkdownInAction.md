@@ -1,6 +1,6 @@
 # Use of R markdown to generate an analysis efficiently {#RMarkdown} 
 
-In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The `BrailleR` package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown.
+In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The `BrailleR` package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown. The workflow illustrated in this chapter is also the workflow used to create this book. It is heavily reliant on the work of Yihui Xie, much of which can be found in [@xie2015].
 
 
 
@@ -9,12 +9,12 @@ You will need the `BrailleR` package to be ready for use to follow along with th
 
 ## General information
 
-Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user.
-
-This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their  screen reading software. All graphs are given an "alt tag" when they are included in the HTML file, and can be presented using a text description available from the `VI()` functionality of the `BrailleR` package.
+Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user. They make extensive use of the `knitr` package [@Rpkg-knitr] to process R commands and retrieve the R output and graphs, and then the `rmarkdown` package [@Rpkg-rmarkdown] to process the markdown content of the raw input file into HTML (or other file types if we wanted them).
+ 
+This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is automatically presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their  screen reading software. All graphs are given an "alt tag" when they are included in the HTML file, and can be presented using a text description available from the `VI()` functionality of the `BrailleR` package.
 
 In addition, the blind user may need one or more of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script). 
-This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents uisng the `xtable` package [@Rpkg-xtable].
+This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents using the `xtable` package [@Rpkg-xtable].
 
 
 The commands shown in this chapter make use of R markdown, but  they  are not actually ready for direct use within other R markdown documents. 
@@ -75,14 +75,14 @@ while running R interactively. This issues the following commands.
 ```
 
 Ozone=airquality$Ozone
-UniDesc(Ozone, View=FALSE)
+UniDesc(Ozone)
 rm(Ozone)
 # N.B. Various files and a folder were created in the working directory. 
 # Please investigate them to see how this function worked.
 ```
 
 
-As an alternative, and if you do have a current internet connection you can view the result of running the [`UniDesc()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html) in your browser without having to re-enter the example commands. You can also view the [R markdown script created by  `Unidesc(Ozone)`](Ozone-UniDesc.Rmd)  which starts witht he following lines:
+As an alternative, and if you do have a current internet connection you can view the result of running the [`UniDesc()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html) in your browser without having to re-enter the example commands. You can also view the [R markdown script created by  `UniDesc(Ozone)`](Ozone-UniDesc.Rmd)  which starts with the following lines:
 
 
 ````
@@ -110,133 +110,8 @@ Ozone.sd = sd(Ozone, na.rm = TRUE)
 Ozone.var = var(Ozone, na.rm = TRUE)
 Ozone.skew = moments::skewness(Ozone, na.rm = TRUE)
 Ozone.kurt = moments::kurtosis(Ozone, na.rm = TRUE)
-```
-
-### Counts
-
-`r Ozone.count` values in all, made up of
-`r Ozone.unique` unique values,
-`r Ozone.Nobs` observed, and
-`r Ozone.Nmiss` missing values.   
-
-
-
-### Measures of location
-
-Data | all | 5% trimmed | 10% trimmed
------ | ------ | ----- | ------
-Mean | `r Ozone.mean` | `r Ozone.tmean5` | `r Ozone.tmean10`
-
-### Quantiles
-
-```{r Quantiles1}
-Quantiles=quantile(Ozone, na.rm=TRUE)
-QList=c("Minimum", "Lower Quartile", "Median", "Upper Quartile", "Maximum")
-Results=data.frame(Quantile=QList, Value=Quantiles[1:5])
-```
-
-```{r QuantilesPrint, eval=FALSE}
-Results
-```
-
-```{r QuantilesKable, results="asis", purl=FALSE}
-kable(Results, digits=4)
-```
-
-### Measures of spread
-
-Measure | IQR | Standard deviation | Variance
--------- | ------ | -------- | ------
-Value | `r Ozone.IQR` | `r Ozone.sd` | `r Ozone.var`   
-
-
-## Basic univariate graphs    
-### Histogram    
-
-```{r Hist, fig.cap="The histogram", fig.height=5}    
-VI(hist(Ozone, xlab="Ozone", main="Histogram of Ozone"))
-```   
-
-
-### Boxplot    
-
-```{r Boxplot, fig.cap="The boxplot", fig.height=3.5}  
-VI(boxplot(Ozone, horizontal=TRUE, main = "Boxplot of Ozone"))
-```   
-
-
-## Assessing normality
-
-### Formal tests for normality
-
-```{r NormalityTests}
-library(nortest)
-Results = matrix(0, nrow=6, ncol=2)
-dimnames(Results) = list(c("Shapiro-Wilk", "Anderson-Darling", "Cramer-von Mises",
-"Lilliefors (Kolmogorov-Smirnov)", "Pearson chi-square", "Shapiro-Francia"), c("Statistic", "P Value"))
- SW =shapiro.test(Ozone)
-Results[1,] = c(SW$statistic, SW$p.value)
-AD = ad.test(Ozone)
-Results[2,] = c(AD$statistic, AD$p.value)
-CV = cvm.test(Ozone)
-Results[3,] = c(CV$statistic, CV$p.value)
-LI = lillie.test(Ozone)
-Results[4,] = c(LI$statistic, LI$p.value)
-PE = pearson.test(Ozone)
-Results[5,] = c(PE$statistic, PE$p.value)
-SF = sf.test(Ozone)
-Results[6,] = c(SF$statistic, SF$p.value)
-```
-
-```{r NormalityTestsPrint, eval=FALSE}
-Results
-```
-
-```{r NormalityTestsKable, results="asis", purl=FALSE}
-kable(Results, digits=c(4,4))
-```   
-```{r NormalityTestsTex, purl=FALSE}
-library(xtable)
-ThisTexFile = "Ozone/Ozone-Normality.tex"
-TabCapt= "Tests for normality: Variable is Ozone."
-print(xtable(Results, caption=TabCapt, label="OzoneNormality", digits=4, align="lrr"), file=ThisTexFile)
-```   
-
-### Normality plot    
-
-```{r NormPlot, fig.cap="The normality plot", fig.height=7}  
-qqnorm(Ozone, main = "Normality Plot for Ozone")
-qqline(Ozone)
-```   
-
-
-## Formal tests of moments
-
-```{r MomentsTests}
-library(moments)
-Results = matrix(0, nrow=2, ncol=3)
-dimnames(Results)= list(c( "D'Agostino skewness", "Anscombe-Glynn kurtosis"),
- c("Statistic","Z",  "P Value"))
-AG = moments::agostino.test(Ozone)
-AN = moments::anscombe.test(Ozone)
-Results[1,] = c(AG$statistic, AG$p.value)
-Results[2,] = c(AN$statistic, AN$p.value)
-```
-
-```{r MomentsTestsPrint, eval=FALSE}
-Results
-```
-
-```{r MomentsTests2, results="asis", purl=FALSE}
-kable(Results, digits=c(4,3,4))
-```   
-
-```{r MomentsTestsTex, purl=FALSE}
-library(xtable)
-ThisTexFile = "Ozone/Ozone-Moments.tex"
-TabCapt= "Tests on moments: Variable isOzone"
-print(xtable(Results, caption=TabCapt, label="OzoneMoments", digits=4, align="lrrr"), file=ThisTexFile)
-```   
+``` 
+... ... ...
 ````
 
 
@@ -252,12 +127,12 @@ This processing allows for:
 The user that does not like these settings can edit the markdown file for themselves and re-process the file, but the intention is to deliver more than all users would want so that as many users as possible get what they need. 
 
 
-This R markdown script uses the `VI()` method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the `xtable` package). Take note of the arguments supplied to the code chunks for the graphs; these include a `fig.cap` which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person's screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the `kable()` command from the `knitr` package) both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text  is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software. 
+This R markdown script uses the `VI()` method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the `xtable` package). Take note of the arguments supplied to the code chunks for the graphs; these include a `fig.cap` which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person's screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the `kable()` command from the `knitr` package) [@Rpkg-knitr] both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text  is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software. 
 
 
 If all of the optional arguments of the `UniDesc()` function are set at their defaults, the HTML file is automatically opened in a browser (courtesy of the `View` argument); it puts the R markdown file, the R script, and the HTML document in the current working directory, while the LaTeX and graph files  are all placed in a subdirectory.
 
-Several other convenience functions have been created that follow the same process as the `UniDesc()` function. The `OneFactor()` function compares one continuous response variable to a categorical variable, while `TwoFactors()` allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the `OnePredictor()` function. Each of these functions has an example using data from the `datasets` package so a user can see what can be expected from these functions.
+Several other convenience functions have been created that follow the same process as the `UniDesc()` function. The `OneFactor()` function compares one continuous response variable to a categorical variable, while `TwoFactors()` allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the `OnePredictor()` function. Each of these functions has an example using data from the `datasets` package [@Rpkg-datasets] so a user can see what can be expected from these functions.
 
 ## Analysis of a single continuous variable with respect to a single grouping factor
 
@@ -380,7 +255,7 @@ A table of unusual observations is created that uses rules of thumb for magnitud
 
 ```
 % latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Mon Aug 13 14:24:06 2018
+% Wed Aug 15 10:31:59 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
@@ -443,4 +318,6 @@ As an alternative, and if you do have a current internet connection you can view
 ## BrailleR commands used in this chapter
 
 
-The first two `BrailleR` commands introduced in this chapter were the `UniDesc()` and `OneFactor()` commands; they used the `VI()` command in the R markdown files that they create, as was described back in Chapter \@ref(VI), to give the text descriptions for graphs. We then saw a new use of the `VI()` command and several other commands designed to generate common analyses quickly. These included the `OnePredictor()`, etc.  
+The first two `BrailleR` commands introduced in this chapter were the `UniDesc()` and `OneFactor()` commands; they used the `VI()` command in the R markdown files that they create, as was described back in Chapter \@ref(VI), to give the text descriptions for graphs. We then saw a new use of the `VI()` command and several other commands designed to generate common analyses quickly. These included the `OnePredictor()` command which speeds up the presentation of a simple linear regression model. This function also creates an R markdown script which then makes an HTNML file for immediate use, and various files with tables and graphs commonly needed for simple linear regression. The specific command `VI.lm()` is an example of the `VI()` command tailored to  linear models and their analysis. Consideration of the validity of linear models is generally done via graphs so the `WhereXY()` command introduced in Chapter \@ref(NewGraphs) is applied in a variety of ways.
+
+## References

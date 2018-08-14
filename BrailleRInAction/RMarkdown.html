@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-13">
+<meta name="date" content="2018-08-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -207,6 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="RMarkdown.html"><a href="RMarkdown.html#use-of-brailler-for-linear-regression"><i class="fa fa-check"></i><b>7.5</b> Use of BrailleR for linear regression</a></li>
 <li class="chapter" data-level="7.6" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable"><i class="fa fa-check"></i><b>7.6</b> Analysis of a single continuous variable with respect to another continuous variable</a></li>
 <li class="chapter" data-level="7.7" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>7.7</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="7.8" data-path="RMarkdown.html"><a href="RMarkdown.html#references-3"><i class="fa fa-check"></i><b>7.8</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>8</b> Personalising BrailleR</a><ul>
 <li class="chapter" data-level="8.1" data-path="Personalising.html"><a href="Personalising.html#general"><i class="fa fa-check"></i><b>8.1</b> General</a></li>
@@ -243,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html#incomplete"><i class="fa fa-check"></i><b>11.1</b> incomplete</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>12</b> The Work Ahead</a></li>
-<li class="chapter" data-level="13" data-path="references-3.html"><a href="references-3.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
+<li class="chapter" data-level="13" data-path="references-4.html"><a href="references-4.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -266,14 +267,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="RMarkdown" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Use of R markdown to generate an analysis efficiently</h1>
-<p>In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The <code>BrailleR</code> package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown.</p>
+<p>In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The <code>BrailleR</code> package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown. The workflow illustrated in this chapter is also the workflow used to create this book. It is heavily reliant on the work of Yihui Xie, much of which can be found in <span class="citation">(Xie <a href="#ref-xie2015">2015</a>)</span>.</p>
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
 <div id="general-information" class="section level2">
 <h2><span class="header-section-number">7.1</span> General information</h2>
-<p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user.</p>
-<p>This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their screen reading software. All graphs are given an “alt tag” when they are included in the HTML file, and can be presented using a text description available from the <code>VI()</code> functionality of the <code>BrailleR</code> package.</p>
+<p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user. They make extensive use of the <code>knitr</code> package <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2018</a>)</span> to process R commands and retrieve the R output and graphs, and then the <code>rmarkdown</code> package <span class="citation">(Allaire et al. <a href="#ref-Rpkg-rmarkdown">2018</a>)</span> to process the markdown content of the raw input file into HTML (or other file types if we wanted them).</p>
+<p>This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is automatically presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their screen reading software. All graphs are given an “alt tag” when they are included in the HTML file, and can be presented using a text description available from the <code>VI()</code> functionality of the <code>BrailleR</code> package.</p>
 <p>In addition, the blind user may need one or more of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script).
-This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents uisng the <code>xtable</code> package <span class="citation">(Dahl <a href="#ref-Rpkg-xtable">2016</a>)</span>.</p>
+This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents using the <code>xtable</code> package <span class="citation">(Dahl <a href="#ref-Rpkg-xtable">2016</a>)</span>.</p>
 <p>The commands shown in this chapter make use of R markdown, but they are not actually ready for direct use within other R markdown documents.
 If you wish to get the output you observe within the HTML documents that will be generated, you will need to extract the relevant parts of the R markdown script files that the commands create. That sounds harder than it is!</p>
 </div>
@@ -314,15 +315,15 @@ Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewha
 </ul>
 <p>The <code>UniDesc()</code> function can deliver all of this with minimal effort from the user.</p>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">example</span>(UniDesc)</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">example</span>(UniDesc)</a></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 Ozone=airquality$Ozone
-UniDesc(Ozone, View=FALSE)
+UniDesc(Ozone)
 rm(Ozone)
 # N.B. Various files and a folder were created in the working directory. 
 # Please investigate them to see how this function worked.</code></pre>
-<p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html"><code>UniDesc()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands. You can also view the <a href="Ozone-UniDesc.Rmd">R markdown script created by <code>Unidesc(Ozone)</code></a> which starts witht he following lines:</p>
+<p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html"><code>UniDesc()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands. You can also view the <a href="Ozone-UniDesc.Rmd">R markdown script created by <code>UniDesc(Ozone)</code></a> which starts with the following lines:</p>
 <pre><code># Univariate analysis for Ozone 
 #### Prepared by Jonathan Godfrey   
 
@@ -347,133 +348,8 @@ Ozone.sd = sd(Ozone, na.rm = TRUE)
 Ozone.var = var(Ozone, na.rm = TRUE)
 Ozone.skew = moments::skewness(Ozone, na.rm = TRUE)
 Ozone.kurt = moments::kurtosis(Ozone, na.rm = TRUE)
-```
-
-### Counts
-
-`r Ozone.count` values in all, made up of
-`r Ozone.unique` unique values,
-`r Ozone.Nobs` observed, and
-`r Ozone.Nmiss` missing values.   
-
-
-
-### Measures of location
-
-Data | all | 5% trimmed | 10% trimmed
------ | ------ | ----- | ------
-Mean | `r Ozone.mean` | `r Ozone.tmean5` | `r Ozone.tmean10`
-
-### Quantiles
-
-```{r Quantiles1}
-Quantiles=quantile(Ozone, na.rm=TRUE)
-QList=c(&quot;Minimum&quot;, &quot;Lower Quartile&quot;, &quot;Median&quot;, &quot;Upper Quartile&quot;, &quot;Maximum&quot;)
-Results=data.frame(Quantile=QList, Value=Quantiles[1:5])
-```
-
-```{r QuantilesPrint, eval=FALSE}
-Results
-```
-
-```{r QuantilesKable, results=&quot;asis&quot;, purl=FALSE}
-kable(Results, digits=4)
-```
-
-### Measures of spread
-
-Measure | IQR | Standard deviation | Variance
--------- | ------ | -------- | ------
-Value | `r Ozone.IQR` | `r Ozone.sd` | `r Ozone.var`   
-
-
-## Basic univariate graphs    
-### Histogram    
-
-```{r Hist, fig.cap=&quot;The histogram&quot;, fig.height=5}    
-VI(hist(Ozone, xlab=&quot;Ozone&quot;, main=&quot;Histogram of Ozone&quot;))
-```   
-
-
-### Boxplot    
-
-```{r Boxplot, fig.cap=&quot;The boxplot&quot;, fig.height=3.5}  
-VI(boxplot(Ozone, horizontal=TRUE, main = &quot;Boxplot of Ozone&quot;))
-```   
-
-
-## Assessing normality
-
-### Formal tests for normality
-
-```{r NormalityTests}
-library(nortest)
-Results = matrix(0, nrow=6, ncol=2)
-dimnames(Results) = list(c(&quot;Shapiro-Wilk&quot;, &quot;Anderson-Darling&quot;, &quot;Cramer-von Mises&quot;,
-&quot;Lilliefors (Kolmogorov-Smirnov)&quot;, &quot;Pearson chi-square&quot;, &quot;Shapiro-Francia&quot;), c(&quot;Statistic&quot;, &quot;P Value&quot;))
- SW =shapiro.test(Ozone)
-Results[1,] = c(SW$statistic, SW$p.value)
-AD = ad.test(Ozone)
-Results[2,] = c(AD$statistic, AD$p.value)
-CV = cvm.test(Ozone)
-Results[3,] = c(CV$statistic, CV$p.value)
-LI = lillie.test(Ozone)
-Results[4,] = c(LI$statistic, LI$p.value)
-PE = pearson.test(Ozone)
-Results[5,] = c(PE$statistic, PE$p.value)
-SF = sf.test(Ozone)
-Results[6,] = c(SF$statistic, SF$p.value)
-```
-
-```{r NormalityTestsPrint, eval=FALSE}
-Results
-```
-
-```{r NormalityTestsKable, results=&quot;asis&quot;, purl=FALSE}
-kable(Results, digits=c(4,4))
-```   
-```{r NormalityTestsTex, purl=FALSE}
-library(xtable)
-ThisTexFile = &quot;Ozone/Ozone-Normality.tex&quot;
-TabCapt= &quot;Tests for normality: Variable is Ozone.&quot;
-print(xtable(Results, caption=TabCapt, label=&quot;OzoneNormality&quot;, digits=4, align=&quot;lrr&quot;), file=ThisTexFile)
-```   
-
-### Normality plot    
-
-```{r NormPlot, fig.cap=&quot;The normality plot&quot;, fig.height=7}  
-qqnorm(Ozone, main = &quot;Normality Plot for Ozone&quot;)
-qqline(Ozone)
-```   
-
-
-## Formal tests of moments
-
-```{r MomentsTests}
-library(moments)
-Results = matrix(0, nrow=2, ncol=3)
-dimnames(Results)= list(c( &quot;D&#39;Agostino skewness&quot;, &quot;Anscombe-Glynn kurtosis&quot;),
- c(&quot;Statistic&quot;,&quot;Z&quot;,  &quot;P Value&quot;))
-AG = moments::agostino.test(Ozone)
-AN = moments::anscombe.test(Ozone)
-Results[1,] = c(AG$statistic, AG$p.value)
-Results[2,] = c(AN$statistic, AN$p.value)
-```
-
-```{r MomentsTestsPrint, eval=FALSE}
-Results
-```
-
-```{r MomentsTests2, results=&quot;asis&quot;, purl=FALSE}
-kable(Results, digits=c(4,3,4))
-```   
-
-```{r MomentsTestsTex, purl=FALSE}
-library(xtable)
-ThisTexFile = &quot;Ozone/Ozone-Moments.tex&quot;
-TabCapt= &quot;Tests on moments: Variable isOzone&quot;
-print(xtable(Results, caption=TabCapt, label=&quot;OzoneMoments&quot;, digits=4, align=&quot;lrrr&quot;), file=ThisTexFile)
-```   </code></pre>
+``` 
+... ... ...</code></pre>
 <p>The document header includes a code chunk that sets the options for the <code>knit2html()</code> process used to convert this file to HTML.
 This processing allows for:</p>
 <ul>
@@ -484,9 +360,9 @@ This processing allows for:</p>
 <li>establishes the height of the figures.</li>
 </ul>
 <p>The user that does not like these settings can edit the markdown file for themselves and re-process the file, but the intention is to deliver more than all users would want so that as many users as possible get what they need.</p>
-<p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
+<p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2018</a>)</span> both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
 <p>If all of the optional arguments of the <code>UniDesc()</code> function are set at their defaults, the HTML file is automatically opened in a browser (courtesy of the <code>View</code> argument); it puts the R markdown file, the R script, and the HTML document in the current working directory, while the LaTeX and graph files are all placed in a subdirectory.</p>
-<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package so a user can see what can be expected from these functions.</p>
+<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(<span class="citeproc-not-found" data-reference-id="Rpkg-datasets"><strong>???</strong></span>)</span> so a user can see what can be expected from these functions.</p>
 </div>
 <div id="analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor" class="section level2">
 <h2><span class="header-section-number">7.4</span> Analysis of a single continuous variable with respect to a single grouping factor</h2>
@@ -499,7 +375,7 @@ This processing allows for:</p>
 <li>Tukey’s Honestly Significant Difference (HSD) test on the significance of the between group differences.</li>
 </ul>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">example</span>(OneFactor)</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">example</span>(OneFactor)</a></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 data(airquality)
@@ -525,9 +401,9 @@ OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality2)
 <p>Let’s see an example using the <code>airquality</code> data.
 Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function’s value to a blind user.
 A simple linear regression model might be created and investigated using:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">data</span>(airquality)</a>
-<a class="sourceLine" id="cb42-2" data-line-number="2">MyModel =<span class="st"> </span><span class="kw">lm</span>(Ozone<span class="op">~</span>Wind, <span class="dt">data=</span>airquality)</a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="kw">summary</span>(MyModel)</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">data</span>(airquality)</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">MyModel =<span class="st"> </span><span class="kw">lm</span>(Ozone<span class="op">~</span>Wind, <span class="dt">data=</span>airquality)</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="kw">summary</span>(MyModel)</a></code></pre></div>
 <pre><code>
 Call:
 lm(formula = Ozone ~ Wind, data = airquality)
@@ -547,8 +423,8 @@ Residual standard error: 26.47 on 114 degrees of freedom
   (37 observations deleted due to missingness)
 Multiple R-squared:  0.3619,    Adjusted R-squared:  0.3563 
 F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="kw">plot</span>(MyModel)</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="kw">plot</span>(MyModel)</a></code></pre></div>
 <div class="figure">
 <img src="05-MarkdownInAction_files/figure-html/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
 <p class="caption">
@@ -556,8 +432,8 @@ F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
 </p>
 </div>
 <p>The user now has a model stored as <code>MyModel</code> in the current workspace, has printed a summary of that model, and has plotted a set of four diagnostic plots in a <span class="math inline">\(2\times{}2\)</span> grid. The blind user will still need to issue those commands so that the output is created to meet the expectations of the sighted audience, but will also find value in issuing the two extra commands</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">VI</span>(MyModel)</a>
-<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">summary</span>(MyModel))</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">VI</span>(MyModel)</a>
+<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">summary</span>(MyModel))</a></code></pre></div>
 <p>The use of the second of these commands will generate</p>
 <pre><code>The term which is significant to 1% is
 Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
@@ -567,7 +443,7 @@ Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
 Each of these graphs is subjected to scrutiny using the <code>WhereXY()</code> function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.</p>
 <p>A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook’s distances. This table is presented in the HTML document and converted to a LaTeX file using the <code>xtable</code> package. The raw LaTeX for this table looks like:</p>
 <pre><code>% latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Mon Aug 13 14:24:06 2018
+% Wed Aug 15 10:31:59 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
@@ -600,7 +476,7 @@ The <code>OnePredictor()</code> command has been written as a shortcut for a bli
 <li>the counts of observations within each group,</li>
 </ul>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">example</span>(OnePredictor)</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">example</span>(OnePredictor)</a></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 data(airquality)
@@ -611,12 +487,24 @@ OnePredictor(&quot;Ozone&quot;, &quot;Wind&quot;, airquality)
 </div>
 <div id="brailler-commands-used-in-this-chapter-3" class="section level2">
 <h2><span class="header-section-number">7.7</span> BrailleR commands used in this chapter</h2>
-<p>The first two <code>BrailleR</code> commands introduced in this chapter were the <code>UniDesc()</code> and <code>OneFactor()</code> commands; they used the <code>VI()</code> command in the R markdown files that they create, as was described back in Chapter <a href="VI.html#VI">4</a>, to give the text descriptions for graphs. We then saw a new use of the <code>VI()</code> command and several other commands designed to generate common analyses quickly. These included the <code>OnePredictor()</code>, etc.</p>
+<p>The first two <code>BrailleR</code> commands introduced in this chapter were the <code>UniDesc()</code> and <code>OneFactor()</code> commands; they used the <code>VI()</code> command in the R markdown files that they create, as was described back in Chapter <a href="VI.html#VI">4</a>, to give the text descriptions for graphs. We then saw a new use of the <code>VI()</code> command and several other commands designed to generate common analyses quickly. These included the <code>OnePredictor()</code> command which speeds up the presentation of a simple linear regression model. This function also creates an R markdown script which then makes an HTNML file for immediate use, and various files with tables and graphs commonly needed for simple linear regression. The specific command <code>VI.lm()</code> is an example of the <code>VI()</code> command tailored to linear models and their analysis. Consideration of the validity of linear models is generally done via graphs so the <code>WhereXY()</code> command introduced in Chapter <a href="NewGraphs.html#NewGraphs">5</a> is applied in a variety of ways.</p>
+</div>
+<div id="references-3" class="section level2">
+<h2><span class="header-section-number">7.8</span> References</h2>
 
 </div>
 </div>
 <h3> References</h3>
 <div id="refs" class="references">
+<div id="ref-xie2015">
+<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/" class="uri">http://yihui.name/knitr/</a>.</p>
+</div>
+<div id="ref-Rpkg-knitr">
+<p>Xie, Yihui. 2018. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+<div id="ref-Rpkg-rmarkdown">
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, and Winston Chang. 2018. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
 <div id="ref-Rpkg-xtable">
 <p>Dahl, David B. 2016. <em>Xtable: Export Tables to Latex or Html</em>. <a href="https://CRAN.R-project.org/package=xtable" class="uri">https://CRAN.R-project.org/package=xtable</a>.</p>
 </div>

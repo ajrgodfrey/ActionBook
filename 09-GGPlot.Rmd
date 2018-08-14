@@ -1,7 +1,7 @@
 # The ggplot world and BrailleR {#GGPlot}
 
 
-The use of the ggplot style of graph production has increased markedly since its inception. The grammar of graphics as seen in the R code used to create the extremely wide range of graphs is seldom human-interpretable with ease. Creation of suitable support functionality via the `VI()` command is very definitely required. An initial attempt to extract any useful infromation from these graphs was contributed to the `BrailleR` package by Tony Hirst. Significant improvement has been made by Debra Warren as part of her postgraduate work under the supervision of Paul Murrell at the University of Auckland. Much of what is displayed in this chapter is only worth offering because of Debra's work and the interactions had between her, Paul and I in the second half of 2017.
+The use of the ggplot style of graph production has increased markedly since its inception with the `ggplot2` package [@Rpkg-ggplot2] now being one of the most used R packages. The "gg" is short for the "grammar of graphics" but the R code used to create an extremely wide range of graphs is seldom human-interpretable with ease. Creation of suitable support functionality via the `VI()` command is very definitely required. An initial attempt to extract any useful infromation from these graphs was contributed to the `BrailleR` package by Tony Hirst. Significant improvement has been made by Debra Warren as part of her postgraduate work under the supervision of Paul Murrell at the University of Auckland. Much of what is displayed in this chapter is only worth offering because of Debra's work and the interactions had between her, Paul and I in the second half of 2017.
 
 
 ```{r setup, include=FALSE}

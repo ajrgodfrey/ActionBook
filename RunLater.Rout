@@ -18,7 +18,7 @@ The following objects are masked from 'package:base':
 
 > 
 > Ozone=airquality$Ozone
-> UniDesc(Ozone, View=FALSE)
+> UniDesc(Ozone)
 > rm(Ozone)
 > # N.B. Various files and a folder were created in the working directory. 
 > # Please investigate them to see how this function worked.
@@ -50,4 +50,4 @@ The following objects are masked from 'package:base':
 > 
 > proc.time()
    user  system elapsed 
-   2.34    0.53    3.01 
+   2.40    0.60    3.03 

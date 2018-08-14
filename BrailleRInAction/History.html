@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-08-13">
+<meta name="date" content="2018-08-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -207,6 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="RMarkdown.html"><a href="RMarkdown.html#use-of-brailler-for-linear-regression"><i class="fa fa-check"></i><b>7.5</b> Use of BrailleR for linear regression</a></li>
 <li class="chapter" data-level="7.6" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable"><i class="fa fa-check"></i><b>7.6</b> Analysis of a single continuous variable with respect to another continuous variable</a></li>
 <li class="chapter" data-level="7.7" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>7.7</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="7.8" data-path="RMarkdown.html"><a href="RMarkdown.html#references-3"><i class="fa fa-check"></i><b>7.8</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>8</b> Personalising BrailleR</a><ul>
 <li class="chapter" data-level="8.1" data-path="Personalising.html"><a href="Personalising.html#general"><i class="fa fa-check"></i><b>8.1</b> General</a></li>
@@ -243,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html#incomplete"><i class="fa fa-check"></i><b>11.1</b> incomplete</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>12</b> The Work Ahead</a></li>
-<li class="chapter" data-level="13" data-path="references-3.html"><a href="references-3.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
+<li class="chapter" data-level="13" data-path="references-4.html"><a href="references-4.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -308,25 +309,26 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </div>
 <pre><code>## This is a histogram, with the title: Histogram of x
 ## &quot;x&quot; is marked on the x-axis.
-## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+## Tick marks for the x-axis are at: -2, 0, 2, and 4 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-## It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
+## Tick marks for the y-axis are at: 0, 50, 100, and 150 
+## It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
 ## The mids and counts for the bins are:
-## mid = -3.25  count = 2 
-## mid = -2.75  count = 4 
-## mid = -2.25  count = 12 
-## mid = -1.75  count = 46 
-## mid = -1.25  count = 84 
-## mid = -0.75  count = 163 
-## mid = -0.25  count = 193 
-## mid = 0.25  count = 180 
-## mid = 0.75  count = 153 
-## mid = 1.25  count = 95 
-## mid = 1.75  count = 41 
-## mid = 2.25  count = 19 
+## mid = -3.25  count = 1 
+## mid = -2.75  count = 2 
+## mid = -2.25  count = 15 
+## mid = -1.75  count = 56 
+## mid = -1.25  count = 94 
+## mid = -0.75  count = 160 
+## mid = -0.25  count = 190 
+## mid = 0.25  count = 192 
+## mid = 0.75  count = 119 
+## mid = 1.25  count = 87 
+## mid = 1.75  count = 58 
+## mid = 2.25  count = 15 
 ## mid = 2.75  count = 7 
-## mid = 3.25  count = 1</code></pre>
+## mid = 3.25  count = 3 
+## mid = 3.75  count = 1</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2">

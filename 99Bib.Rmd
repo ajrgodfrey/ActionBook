@@ -11,7 +11,8 @@ Require(nortest)
 Require(moments)
 Require(xtable)
 Require(knitr)
-Require(rmarkdpown)
+Require(rmarkdown)
+require(datasets)
 write_bib(file="Rpkgs.bib", prefix="Rpkg-")
 ```
 
