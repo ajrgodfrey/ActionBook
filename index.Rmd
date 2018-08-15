@@ -4,7 +4,7 @@ author: "A. Jonathan R. Godfrey"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [software.bib,Rpkgs.bib,book.bib,BrailleRPublications.bib,Access.bib,faulty.bib]
+bibliography: [software.bib,Rpkgs.bib,book.bib,BrailleRPublications.bib,Access.bib,articles.bib,faulty.bib]
 biblio-style: "apalike"
 link-citations: yes
 github-repo: ajrgodfrey/ActionBook

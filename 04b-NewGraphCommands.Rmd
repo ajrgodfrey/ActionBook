@@ -40,7 +40,7 @@ Sighted users don't need an explicit print function for a histogram, nor does th
 
 Tasks that warrant a method being written for each of a variety of classes include:
 
-- we might need a function to print the object out in an easy to use fashion. THis happens all the time, but most R users just take it for granted that the output looks the way it does. In fact, the output is formatted behind the scenes.
+- we might need a function to print the object out in an easy to use fashion. This happens all the time, but most R users just take it for granted that the output looks the way it does. In fact, the output is formatted behind the scenes.
 - we may need to plot the results in a graph. A simple `plot()` command does all sorts of different things. Novice users just watch the magic without asking how it happens.
 - we may need to create a different kind of object that summarizes the original object in some way. This is already done using the `summary()` function, but that simple `summary()` command is actually a set of functions for different classes.
 
