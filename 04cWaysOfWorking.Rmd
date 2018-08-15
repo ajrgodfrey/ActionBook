@@ -33,9 +33,44 @@ Even more impressive, is that the HTML documents that result from these files ar
 The greatest challenge for blind R users who want to get into R markdown is that the majority of resources on the subject assume use of RStudio [@RStudio] which is not accessible to a screen reader user. Use of RStudio is not essential. For example, a basic R markdown document might start like the following:
 
 ```{r startingRmdFile, echo=FALSE}
-cat(paste(readLines(system.file("Templates/YAMLHeader.Rmd", package="BrailleR")), collapse="\n"))
-cat(paste(readLines(system.file("Templates/EmptyChunk.Rmd", package="BrailleR")), collapse="\n"))
+cat(paste(readLines(system.file("Templates/YAMLHeader.Rmd", package="BrailleR"))[-9], collapse="\n"), "\n\n",
+    paste(readLines(system.file("Templates/EmptyChunk.Rmd", package="BrailleR")), collapse="\n"))
 ```
+
+This text needs to be saved in a  text file, usually with the file extension "Rmd". It has two parts. The top section, starting and finishing with `r cat("---")`, is a YAML header and establishes settings for the document. You will need to fill in the gaps between double quotes for the document's title, your name, and the date, but otherwise you can leave this section alone for the time-being.
+
+The second section is an empty R chunk. The opening line starts with three accent grave symbols (sometimes called backticks) and then some details used only for this chunk. The details in this chunk header say to process the upcoming commands using R and that  the chunk currently has the label "ChunkName" which you would normally change to something more meaningful. The second line of this section is where you would put an R command (instead of the meaningless dots put there now), and the last line is how we close a chunk (using those backticks again). You can put a whole series of R commands in the middle, but the chunk must start and finish with ```` ``` ````  if the document is to be processed properly.
+  
+To get this R markdown content to be converted to HTML, you must complete the following steps:
+
+1. Save the above content into a text file and name it "FirstGo.Rmd". N.B. This must be plain text.
+1. Edit the bits I suggested above. In fact, the bare minimum is to put a valid  R command in the middle of the R chunk.
+2. Put this file in the current working directory. Check what this is using `getwd()` if you need to be sure.
+3. Type the command `rmarkdown::render("FirstGo.Rmd")`
+
+You should see that this command generates a little output in the R session window and that a file called "FirstGo.html" has been created. Open that file now.
+
+The basic steps followed by all users of R markdown files are:
+
+1. Update the Rmd file.
+3. "Knit" the R markdown file; The word "knit" comes from the R package that does the work here.
+3. Review the impact on your HTML file. You might need to refresh the browser if the file is still open.
+
+You can:
+
+- add more R chunks; give them distinct labels though.
+- Write plain text in between chunks;
+- Add section headings; use number signs `#` at the start of a line that you want to be a heading. The level of heading is determined by the number of number signs you use.
+- Add mathematical expressions using standard LaTeX notation; single or double dollar signs denote the start and end of mathematical content.
+- ... and so much more.
+
+Remember: This book is written entirely in R markdown. If you see something  here, then you can have it in your own R markdown work!
+
+
+We will see the power of R markdown for doing some tasks using the `BrailleR` package in Chapter \@ref(RMarkdown) and start using WriteR as a substitute for RStudio in Chapter \@ref(WriteR).
+
+
+
 
 ## Running jobs offline
 

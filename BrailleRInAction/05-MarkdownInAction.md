@@ -255,7 +255,7 @@ A table of unusual observations is created that uses rules of thumb for magnitud
 
 ```
 % latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Wed Aug 15 10:31:59 2018
+% Wed Aug 15 11:52:21 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
