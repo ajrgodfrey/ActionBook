@@ -81,20 +81,20 @@ VI(hist(x))
 ## Tick marks for the y-axis are at: 0, 50, 100, and 150 
 ## It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 ## The mids and counts for the bins are:
-## mid = -3.25  count = 3 
+## mid = -3.25  count = 1 
 ## mid = -2.75  count = 7 
-## mid = -2.25  count = 21 
-## mid = -1.75  count = 45 
-## mid = -1.25  count = 105 
-## mid = -0.75  count = 151 
-## mid = -0.25  count = 182 
-## mid = 0.25  count = 177 
-## mid = 0.75  count = 154 
-## mid = 1.25  count = 95 
-## mid = 1.75  count = 40 
-## mid = 2.25  count = 12 
+## mid = -2.25  count = 17 
+## mid = -1.75  count = 38 
+## mid = -1.25  count = 102 
+## mid = -0.75  count = 149 
+## mid = -0.25  count = 188 
+## mid = 0.25  count = 175 
+## mid = 0.75  count = 149 
+## mid = 1.25  count = 96 
+## mid = 1.75  count = 53 
+## mid = 2.25  count = 16 
 ## mid = 2.75  count = 7 
-## mid = 3.25  count = 1
+## mid = 3.25  count = 2
 ```
 
 This first example showed me what was possible if only I could get a few things sorted out. All histograms  are created by a function that stores the results (both numeric and text details) and calls this stored set of values a "histogram". The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a "class" to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.

@@ -1,8 +1,6 @@
 # Getting started with the WriteR application {#WriteR}
 
-
-
-The WriteR application was written to support use of R markdown and the `BrailleR` package. It is a Python script making use of wxPython to help build the graphic user interface (GUI) in such a way that it works for screen reader users. This book has been written in R markdown, and the author has made extensive use of WriteR because it offers so many convenient tools for a blind user wanting to write R markdown files.
+The WriteR application was written to support use of R markdown and the `BrailleR` package. It is a Python script making use of wxPython to help build the graphic user interface (GUI) in such a way that it works for screen reader users. This book has been written in R markdown, and I have made extensive use of WriteR because it offers so many convenient tools for a blind user wanting to write R markdown files.
 
 The script is in the `BrailleR` package, but it cannot run unless the user has both Python and wxPython installed. Commands have been included in the `BrailleR` package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Pandoc, Python and WxPython independently, but these tools may well already be installed.
 
@@ -89,7 +87,12 @@ Opening WriteR is as easy as typing WriteR! Well almost. You have the option of 
 
 `WriteR("MyFirst.Rmd")`
 
+This should open the WriteR application with the following lines already there for you to edit. 
+```{r startingRmdFile, echo=FALSE}
+cat(paste(readLines(system.file("Templates/simpleYAMLHeader.Rmd", package="BrailleR")), collapse="\n"), "\n\n",
+```
 
+Some of these lines were explained back in Chapter \@ref(WorkingBlind). Fill in the gaps in the first few lines for title, author, and the date before continuing.
 
 ## What can I do with WriteR?
 

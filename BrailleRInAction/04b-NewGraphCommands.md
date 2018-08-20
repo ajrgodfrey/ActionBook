@@ -36,7 +36,7 @@ Sighted users don't need an explicit print function for a histogram, nor does th
 
 Tasks that warrant a method being written for each of a variety of classes include:
 
-- we might need a function to print the object out in an easy to use fashion. THis happens all the time, but most R users just take it for granted that the output looks the way it does. In fact, the output is formatted behind the scenes.
+- we might need a function to print the object out in an easy to use fashion. This happens all the time, but most R users just take it for granted that the output looks the way it does. In fact, the output is formatted behind the scenes.
 - we may need to plot the results in a graph. A simple `plot()` command does all sorts of different things. Novice users just watch the magic without asking how it happens.
 - we may need to create a different kind of object that summarizes the original object in some way. This is already done using the `summary()` function, but that simple `summary()` command is actually a set of functions for different classes.
 
@@ -95,19 +95,19 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 
 > MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5  4.0
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[15]  3.5
 
 $counts
- [1]   1   1   1  10  52  91 152 210 195 148  75  43  13   7   0   1
+ [1]   1   5  12  43 100 151 193 189 140  96  40  21   5   4
 
 $density
- [1] 0.002 0.002 0.002 0.020 0.104 0.182 0.304 0.420 0.390 0.296 0.150
-[12] 0.086 0.026 0.014 0.000 0.002
+ [1] 0.002 0.010 0.024 0.086 0.200 0.302 0.386 0.378 0.280 0.192 0.080
+[12] 0.042 0.010 0.008
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25  3.75
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -130,19 +130,19 @@ attr(,"class")
 
 > MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5  4.0
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[15]  3.5
 
 $counts
- [1]   1   1   1  10  52  91 152 210 195 148  75  43  13   7   0   1
+ [1]   1   5  12  43 100 151 193 189 140  96  40  21   5   4
 
 $density
- [1] 0.002 0.002 0.002 0.020 0.104 0.182 0.304 0.420 0.390 0.296 0.150
-[12] 0.086 0.026 0.014 0.000 0.002
+ [1] 0.002 0.010 0.024 0.086 0.200 0.302 0.386 0.378 0.280 0.192 0.080
+[12] 0.042 0.010 0.008
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25  3.75
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -171,18 +171,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 16
+[1] 14
 
 $par
 $par$xaxp
-[1] -4  4  4
+[1] -3  3  6
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -4 -2  0  2  4
+[1] -3 -2 -1  0  1  2  3
 
 $yTicks
 [1]   0  50 100 150 200
@@ -193,27 +193,25 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, 2, and 4 
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 16 bins with equal widths, starting at -4 and ending at 4 .
+It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.75  count = 1 
 mid = -3.25  count = 1 
-mid = -2.75  count = 1 
-mid = -2.25  count = 10 
-mid = -1.75  count = 52 
-mid = -1.25  count = 91 
-mid = -0.75  count = 152 
-mid = -0.25  count = 210 
-mid = 0.25  count = 195 
-mid = 0.75  count = 148 
-mid = 1.25  count = 75 
-mid = 1.75  count = 43 
-mid = 2.25  count = 13 
-mid = 2.75  count = 7 
-mid = 3.25  count = 0 
-mid = 3.75  count = 1
+mid = -2.75  count = 5 
+mid = -2.25  count = 12 
+mid = -1.75  count = 43 
+mid = -1.25  count = 100 
+mid = -0.75  count = 151 
+mid = -0.25  count = 193 
+mid = 0.25  count = 189 
+mid = 0.75  count = 140 
+mid = 1.25  count = 96 
+mid = 1.75  count = 40 
+mid = 2.25  count = 21 
+mid = 2.75  count = 5 
+mid = 3.25  count = 4
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.

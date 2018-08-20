@@ -1,6 +1,6 @@
 # Use of R markdown to generate an analysis efficiently {#RMarkdown} 
 
-In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The `BrailleR` package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown. The workflow illustrated in this chapter is also the workflow used to create this book. It is heavily reliant on the work of Yihui Xie, much of which can be found in [@xie2015].
+In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The `BrailleR` package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown. The workflow illustrated in this chapter is also the workflow used to create this book. It is heavily reliant on the work of Yihui Xie, much of which can be found in [@Xie2015].
 
 
 
@@ -255,7 +255,7 @@ A table of unusual observations is created that uses rules of thumb for magnitud
 
 ```
 % latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Wed Aug 15 11:52:21 2018
+% Wed Aug 15 11:59:08 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
