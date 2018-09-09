@@ -15,7 +15,7 @@ library(BrailleR)
 N.B.  the commands here are exact copies of the commands presented in @Wickham2009ggplot2 or some minor alterations to them; any changes will be explicitly noted.    All plots are created using the figure numbers from @Wickham2009ggplot2 or the page numbers if no figure number was given. They are then investigated using the `VI()` command from the `BrailleR` package.
 
 
-You will need some additional packages to the `BrailleR` package to be ready for use to follow along with the examples in this chapter. Do this by issuing the commands:
+You will need some additional packages to the `BrailleR` package to be loaded to follow along with the examples in this chapter. Do this by issuing the commands:
 
 ```{r GetLibraries}     
 library(BrailleR)   

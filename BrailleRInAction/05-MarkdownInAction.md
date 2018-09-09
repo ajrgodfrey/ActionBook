@@ -255,7 +255,7 @@ A table of unusual observations is created that uses rules of thumb for magnitud
 
 ```
 % latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Wed Aug 15 11:59:08 2018
+% Mon Sep 10 10:03:32 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
@@ -319,5 +319,3 @@ As an alternative, and if you do have a current internet connection you can view
 
 
 The first two `BrailleR` commands introduced in this chapter were the `UniDesc()` and `OneFactor()` commands; they used the `VI()` command in the R markdown files that they create, as was described back in Chapter \@ref(VI), to give the text descriptions for graphs. We then saw a new use of the `VI()` command and several other commands designed to generate common analyses quickly. These included the `OnePredictor()` command which speeds up the presentation of a simple linear regression model. This function also creates an R markdown script which then makes an HTNML file for immediate use, and various files with tables and graphs commonly needed for simple linear regression. The specific command `VI.lm()` is an example of the `VI()` command tailored to  linear models and their analysis. Consideration of the validity of linear models is generally done via graphs so the `WhereXY()` command introduced in Chapter \@ref(NewGraphs) is applied in a variety of ways.
-
-## References

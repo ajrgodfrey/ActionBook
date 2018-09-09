@@ -13,6 +13,11 @@ Require(xtable)
 Require(knitr)
 Require(rmarkdown)
 require(datasets)
+require(tidyverse)
+require(lubridate)
+require(dplyr)
+require(broom)
+require(magrittr)
 write_bib(file="Rpkgs.bib", prefix="Rpkg-")
 ```
 

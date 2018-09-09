@@ -78,22 +78,22 @@ VI(hist(x))
 ## "x" is marked on the x-axis.
 ## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, and 150 
+## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
 ## It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 ## The mids and counts for the bins are:
 ## mid = -3.25  count = 1 
 ## mid = -2.75  count = 7 
-## mid = -2.25  count = 17 
-## mid = -1.75  count = 38 
-## mid = -1.25  count = 102 
-## mid = -0.75  count = 149 
-## mid = -0.25  count = 188 
-## mid = 0.25  count = 175 
-## mid = 0.75  count = 149 
-## mid = 1.25  count = 96 
-## mid = 1.75  count = 53 
-## mid = 2.25  count = 16 
-## mid = 2.75  count = 7 
+## mid = -2.25  count = 18 
+## mid = -1.75  count = 46 
+## mid = -1.25  count = 93 
+## mid = -0.75  count = 143 
+## mid = -0.25  count = 195 
+## mid = 0.25  count = 192 
+## mid = 0.75  count = 142 
+## mid = 1.25  count = 82 
+## mid = 1.75  count = 52 
+## mid = 2.25  count = 23 
+## mid = 2.75  count = 4 
 ## mid = 3.25  count = 2
 ```
 
@@ -175,5 +175,3 @@ I've already mentioned the following contributors above:Paul Murrell, Yihui Xie,
 I also need to acknowledge the value of attending the Summer University events.  I gain so much from my interactions with the students who attend, the other workshop leaders who give me feedback, and the other professionals who assist blind students in their own countries.
  
 
-
-## References

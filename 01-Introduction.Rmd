@@ -54,6 +54,3 @@ BrailleR also includes some tools for helping run your R jobs without running R.
 
 
 In summary, the `BrailleR` package is my attempt to help blind students and their lecturers. It is built on functions that I use to work as a lecturer in statistics. It aims to make up for the inability blind users have to work with the same extension tools their sighted peers are using, including the increasing reliance on GUIs and integrated development environment (IDE) options.
-
-## References
-

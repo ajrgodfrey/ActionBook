@@ -96,5 +96,3 @@ The `ThankYou()` and `JoinBlindRUG()` commands should be used when you want to c
 
 At this stage it is recommended that you install any additional software manually when it is required.
 
-
-## References

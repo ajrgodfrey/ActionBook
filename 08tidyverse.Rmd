@@ -1,0 +1,38 @@
+# BrailleR in the tidyverse {#Tidyverse}
+
+
+Hadley wickham is unquestionably a superstar in the R community, and is perhaps the first R celebrity. There can't be room for too many people to have had a suite of packages collectively names after them by the numerous users, but history will show that the "Hadleyverse" existed until Hadley himself renamed it the "tidyverse". The tidyverse owes its prominence to the relative simplicity it offers people doing what should be simple tasks, but haven't been as easy as might have been. According to the tidyverse package [@Rpkg-tidyverse] documentation, "The 'tidyverse' is a set of packages that work in harmony
+    because they share common data representations and 'API' design." The package is just a simple way to make sure these packages are all installed and available to the user. Many users will not use all of the packages in the tidyverse, but among my favourites are, `lubridate` [@Rpkg-lubridate], `broom` [@Rpkg-broom], 
+`magrittr` [@Rpkg-magrittr], and of course `dplyr` [@Rpkg-dplyr]. The `ggplot2` package [@Rpkg-ggplot2] is another tidyverse package but it deserves a a separate chapter in order to show the way it works with `BrailleR`.  For the purposes of showing how `BrailleR` works with the tidyverse packages, or more accurately, the tidyverse way of working, the examples in this chapter all make use of the `dplyr` package and any tools it calls on to support its functionality.
+
+To replicate the examples in this chapter, you will need to have the tidyverse packages installed before running the following commands that prepare them and `BrailleR` for use.
+
+```{r GetLibraries}     
+library(BrailleR)   
+library(tidyverse)
+```
+
+## What is the pipe operator, and why should we care?
+
+The pipe operator `%>%` is used throughout the tidyverse because it makes code simpler to read. A series of pipes is referred to as a pipe chain, and it is when there are multiple pipe commands issued in conjunction that its simplicity becomes increasingly obvious. 
+
+Before the tidyverse, R users would follow a mixture of two general coding strategies. Either, we nested one command inside another, and perhaps another, and even worse, we'd nest and nest and so on; or, we can have each line of code have a single function, with the outcome of each function being stored as an explicitly named object. Nesting commands inside one another makes code very hard to read, as we read from the inside outwards to get a handle on what is actually being achieved. Storing each and every element of our working could have memory management implications, but is also prone to having too many named objects floating around that must be kept track of.
+
+In contrast, a pipe chain can be written so that each function is applied in order, left to right, top to bottom, with the answer being stored in a named object at the end if we want, or quite commonly, just printed out for us. Whether you put the individual commands in a single line or with each pipe on its own line is a matter of style and personal preference.
+
+A simple example using the `dplyr` package and the `airquality` data could ask for the dates of the hottest days for each of the five months in this dataset.
+ 
+In its most simple form, the outcome of everything done to the left of any pipe operator is used as the first argument of the first function to its right. This means that the first argument of the `group_by()` is the `airquality` data.frame we started with.  Note that there are ways to use the left-hand-side of the pipe operator as a second, third or so on, argument and even more adventurous ways of piping, but these are not relevant to the presentation of the `BrailleR` tools in this chapter.
+
+The next important note about functions used in pipe chains is that the type of object coming out of the function is the same as the object that was pushed in, although it has probably been modified on its path through the function. For example, the `group_by()` function didn't drastically alter the `airquality` data.frame, but it did add information that has an impact at the next step in the pipe chain; without it, the `summarise()` command would have operated on the entire dataset as a whole. 
+
+
+
+
+
+
+
+
+
+The packages that make up the tidyverse
+

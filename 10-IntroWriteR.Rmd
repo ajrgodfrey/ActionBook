@@ -89,7 +89,7 @@ Opening WriteR is as easy as typing WriteR! Well almost. You have the option of 
 
 This should open the WriteR application with the following lines already there for you to edit. 
 ```{r startingRmdFile, echo=FALSE}
-cat(paste(readLines(system.file("Templates/simpleYAMLHeader.Rmd", package="BrailleR")), collapse="\n"), "\n\n",
+cat(paste(readLines(system.file("Templates/simpleYAMLHeader.Rmd", package="BrailleR")), collapse="\n"), "\n\n")
 ```
 
 Some of these lines were explained back in Chapter \@ref(WorkingBlind). Fill in the gaps in the first few lines for title, author, and the date before continuing.
