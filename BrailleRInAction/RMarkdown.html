@@ -448,7 +448,7 @@ Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
 Each of these graphs is subjected to scrutiny using the <code>WhereXY()</code> function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.</p>
 <p>A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook’s distances. This table is presented in the HTML document and converted to a LaTeX file using the <code>xtable</code> package. The raw LaTeX for this table looks like:</p>
 <pre><code>% latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Fri Sep 14 21:50:35 2018
+% Tue Sep 18 13:59:32 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}

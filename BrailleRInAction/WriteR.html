@@ -274,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="getting-the-required-software-windows-users-only" class="section level2">
 <h2><span class="header-section-number">11.1</span> Getting the required software (Windows users only)</h2>
 <p>You can check if a version of Python is already installed on your computer using</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1"><span class="kw">Sys.which</span>(<span class="st">&quot;Python&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1"><span class="kw">Sys.which</span>(<span class="st">&quot;Python&quot;</span>)</a></code></pre></div>
 <pre><code>##                     Python 
 ## &quot;C:\\Python27\\Python.exe&quot;</code></pre>
 <p>The output above shows you that I have Python 2.7 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We must have an exact match between the version of Python 2.7 and the version of R being used.</p>
@@ -294,7 +294,7 @@ Issue them at the R prompt</p>
 <p><code>GetPython27()</code></p>
 <p>As the installer proceeds, there is one small matter to resolve. You need to make sure that as part of the installation, the Python folders are added to your system path. This makes it possible to run Python scripts from any folder on your computer and for R to see where to find Python. The next few commands will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your <code>MyBrailleR</code> folder and run it again manually before proceeding.</p>
 <p>We can check the installation has worked properly at this point using:</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_config</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_config</span>()</a></code></pre></div>
 <pre><code>## python:         C:\Python27\python.exe
 ## libpython:      python27.dll
 ## pythonhome:     C:\Python27
@@ -325,9 +325,9 @@ You can now skip to the section which shows you how to check everything is ready
 <div id="checking-your-system-is-ready" class="section level2">
 <h2><span class="header-section-number">11.3</span> Checking your system is ready</h2>
 <p>All going to plan, you should now have Python on your system, and the additional wxPython modules as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you’ve done, using:</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_available</span>(<span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_available</span>(<span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_module_available</span>(<span class="st">&quot;wx&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_module_available</span>(<span class="st">&quot;wx&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>The outcome of this second command tells you if your system is ready to run the WriteR application.</p>
 </div>

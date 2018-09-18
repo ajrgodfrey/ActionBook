@@ -68,9 +68,19 @@ The `BrailleR` commands `WhatIs()` and `CheckIt()` were designed to stop us from
 
 ```{r longChain2}
 set.seed(123)
-starwars %>% WhatIs() %>% filter(!is.na(species)) %>% sample_n(50) %>% group_by(species) %>% summarise(N = n(), MeanHeight = mean(height, na.rm=TRUE)) %>% CheckIt() %>% filter(N>1) %>% CheckIt() %>% arrange(MeanHeight) 
+starwars %>% filter(!is.na(species)) %>% sample_n(50) %>% group_by(species) %>% summarise(N = n(), MeanHeight = mean(height, na.rm=TRUE)) %>% CheckIt() %>% filter(N>1) %>% CheckIt() %>% WhatIs() %>% arrange(MeanHeight) 
 ```
+
+These commands have been included in the above example using what we call "camel Case" which has upper case letters for each word; to be specific it is "upper camel case" because the first word is also capitalised. The `dplyr` package uses "snake case" which replaces a space between words with an underscore, and uses only lower case letters. This choice is entirely up to the person who first develops the functions in a package. While `BrailleR` functions generally use upper camel case, it is a fairly simple exercise to add alternatives so `check_it()` and `what_is()` are also available if the user prefers to use snake case throughout the pipe chain.
+
+The `CheckIt()` or `check_it()` command is actually just a substitute for the `str()` command from base R with the additional feature that it is compliant with the pipe operator and can therefore be used in a pipe chain. The `WhatIs()` or `what_is()` command is a substitute for the `VI()` command demonstrated in other chapters, but `VI()` is not pipe chain compliant.
+
+
+Note that use of either `WhatIs()` or `CheckIt()` too early in the pipe chain may lead to verbose output. These functions are meant for checking that the output is what was sought, not for generating a final result for sharing.
+
+ 
 ## BrailleR commands used in this chapter
 
 
-The two main `BrailleR` functions relevant for use in the middle or at the end of a pipe chain are `WhatIs()` and `CheckIt()`.
+The two main `BrailleR` functions relevant for use in the middle or at the end of a pipe chain are `WhatIs()` and `CheckIt()`. Alternative spelling of these commands is also available; `check_it()` and `what_is()` are entirely equivalent versions.
+
