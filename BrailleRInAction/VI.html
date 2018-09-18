@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-09-10">
+<meta name="date" content="2018-09-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -215,7 +215,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4" data-path="Personalising.html"><a href="Personalising.html#brailler-commands-used-in-this-chapter-4"><i class="fa fa-check"></i><b>8.4</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="Tidyverse.html"><a href="Tidyverse.html"><i class="fa fa-check"></i><b>9</b> BrailleR in the tidyverse</a><ul>
-<li class="chapter" data-level="9.1" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-the-pipe-operator-and-why-should-we-care"><i class="fa fa-check"></i><b>9.1</b> What is the pipe operator, and why should we care?</a></li>
+<li class="chapter" data-level="9.1" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-tidy-and-why-do-we-care"><i class="fa fa-check"></i><b>9.1</b> What is tidy and why do we care?</a></li>
+<li class="chapter" data-level="9.2" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-the-pipe-operator-and-why-should-we-care"><i class="fa fa-check"></i><b>9.2</b> What is the pipe operator, and why should we care?</a></li>
+<li class="chapter" data-level="9.3" data-path="Tidyverse.html"><a href="Tidyverse.html#interrogation-of-data-created-within-a-pipe-chain"><i class="fa fa-check"></i><b>9.3</b> Interrogation of data created within a pipe chain</a></li>
+<li class="chapter" data-level="9.4" data-path="Tidyverse.html"><a href="Tidyverse.html#brailler-commands-used-in-this-chapter-5"><i class="fa fa-check"></i><b>9.4</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>10</b> The ggplot world and BrailleR</a><ul>
 <li class="chapter" data-level="10.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>10.1</b> Plotting a continuous variable against a categorical variable</a><ul>
@@ -237,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.4</b> Opening WriteR from BrailleR</a></li>
 <li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
 <li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
-<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-5"><i class="fa fa-check"></i><b>11.7</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.7</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a><ul>
 <li class="chapter" data-level="12.1" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html#incomplete"><i class="fa fa-check"></i><b>12.1</b> incomplete</a></li>
@@ -297,18 +300,19 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 <p>A simple way for blind users to access the information used to create a graph is to ask R to print the object, using the <code>print()</code> command.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">print</span>(HIST)</a></code></pre></div>
 <pre><code>$breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
+[15]  3.0  3.5  4.0
 
 $counts
- [1]   6  17  33  94 141 176 206 133 100  66  16  10   2
+ [1]   1   2   8  17  55  93 162 178 192 136  86  45  20   2   2   1
 
 $density
- [1] 0.012 0.034 0.066 0.188 0.282 0.352 0.412 0.266 0.200 0.132 0.032
-[12] 0.020 0.004
+ [1] 0.002 0.004 0.016 0.034 0.110 0.186 0.324 0.356 0.384 0.272 0.172
+[12] 0.090 0.040 0.004 0.004 0.002
 
 $mids
- [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[12]  2.75  3.25
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
+[12]  1.75  2.25  2.75  3.25  3.75
 
 $xname
 [1] &quot;Y&quot;
@@ -331,21 +335,21 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 13
+[1] 16
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -4  4  4
 
 $par$yaxp
-[1]   0 200   4
+[1]   0 150   3
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -4 -2  0  2  4
 
 $yTicks
-[1]   0  50 100 150 200
+[1]   0  50 100 150
 
 attr(,&quot;class&quot;)
 [1] &quot;Augmented&quot; &quot;histogram&quot;</code></pre>
@@ -358,24 +362,27 @@ For other situations, some further work needs to be done so that the textual inf
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">VI</span>(HIST)</a></code></pre></div>
 <pre><code>This is a histogram, with the title: Histogram of Y
 &quot;Y&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -4, -2, 0, 2, and 4 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
+Tick marks for the y-axis are at: 0, 50, 100, and 150 
+It has 16 bins with equal widths, starting at -4 and ending at 4 .
 The mids and counts for the bins are:
-mid = -2.75  count = 6 
+mid = -3.75  count = 1 
+mid = -3.25  count = 2 
+mid = -2.75  count = 8 
 mid = -2.25  count = 17 
-mid = -1.75  count = 33 
-mid = -1.25  count = 94 
-mid = -0.75  count = 141 
-mid = -0.25  count = 176 
-mid = 0.25  count = 206 
-mid = 0.75  count = 133 
-mid = 1.25  count = 100 
-mid = 1.75  count = 66 
-mid = 2.25  count = 16 
-mid = 2.75  count = 10 
-mid = 3.25  count = 2</code></pre>
+mid = -1.75  count = 55 
+mid = -1.25  count = 93 
+mid = -0.75  count = 162 
+mid = -0.25  count = 178 
+mid = 0.25  count = 192 
+mid = 0.75  count = 136 
+mid = 1.25  count = 86 
+mid = 1.75  count = 45 
+mid = 2.25  count = 20 
+mid = 2.75  count = 2 
+mid = 3.25  count = 2 
+mid = 3.75  count = 1</code></pre>
 <p>The <code>VI()</code> command actually calls the <code>VI.histogram()</code> command because we know it is a histogram that was generated by <code>hist()</code> above.</p>
 <div id="important-features" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Important features</h3>

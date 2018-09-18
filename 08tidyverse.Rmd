@@ -1,5 +1,12 @@
 # BrailleR in the tidyverse {#Tidyverse}
 
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(fig.width=7, fig.height=5, comment="")
+library(BrailleR)
+library(dplyr)
+```
+
 
 Hadley wickham is unquestionably a superstar in the R community, and is perhaps the first R celebrity. There can't be room for too many people to have had a suite of packages collectively named after them by numerous users, but history will show that the "Hadleyverse" existed until Hadley himself renamed it the "tidyverse". The tidyverse owes its prominence to the relative simplicity it offers people doing what should be simple tasks, but haven't been as easy as might have been. According to the tidyverse package [@Rpkg-tidyverse] documentation, "The 'tidyverse' is a set of packages that work in harmony
     because they share common data representations and 'API' design." The package is just a simple way to make sure these packages are all installed and available to the user. Many users will not use all of the packages in the tidyverse, but among my favourites are `lubridate` [@Rpkg-lubridate] for handling dates in all manner of formats, `broom` [@Rpkg-broom] for handling linear models more efficient, 
@@ -7,23 +14,23 @@ Hadley wickham is unquestionably a superstar in the R community, and is perhaps 
 
 To replicate the examples in this chapter, you will need to have the tidyverse packages installed before running the following commands that prepare them and `BrailleR` for use.
 
-```{r GetLibraries}     
+```{r GetLibraries, results="hide"}     
 library(BrailleR)   
 library(tidyverse)
 ```
 ## What is tidy and why do we care?
 
-[@refWickham2014Tidy] describes tidy data as following three rules:
+@Wickham2014Tidy describes tidy data as following three rules:
 
 1. Each variable forms a column.
 2. Each observation forms a row.
 3. Each type of observational unit forms a table.
 
-and then says that data not following these rules as "messy" [@refWickham2014Tidy] .
+and then says that data not following these rules as "messy" [@Wickham2014Tidy] .
 
 We care because tidy data is ready for an analysis, while messy data needs to be made tidy. We care because it is easier to use tools designed for tidy data, and this all means we should get the desired results effectively and efficiently. We care because it is more common for data to be messy than tidy, and we must be able to take messy data and tidy it up.
 
-To further quote [@refWickham2014Tidy] , the four most commonly used data manipulations (transformation, aggregation, filtering, and reordering) can be easily managed when we start with tidy data. The data manipulations are all performed by the `dplyr` package we use in this chapter. If we cannot work with tidy data successfully, then there is little hope for working with messy data. 
+To further quote @Wickham2014Tidy, the four most commonly used data manipulations (transformation, aggregation, filtering, and reordering) can be easily managed when we start with tidy data. The data manipulations are all performed by the `dplyr` package we use in this chapter. If we cannot work with tidy data successfully, then there is little hope for working with messy data. 
 
  
 ## What is the pipe operator, and why should we care?
@@ -41,11 +48,29 @@ airquality %>% group_by(Month) %>% summarise(ColdestDay = min(Temp), HottestDay 
  
 In its most simple form, the outcome of everything done to the left of any pipe operator is used as the first argument of the first function to its right. This means that the first argument of the `group_by()` is the `airquality` data.frame we started with.  Note that there are ways to use the left-hand-side of the pipe operator as a second, third or so on, argument and even more adventurous ways of piping, but these are not relevant to the presentation of the `BrailleR` tools in this chapter.
 
-The next important note about functions used in pipe chains is that the type of object coming out of the function is the same as the object that was pushed in, although it has probably been modified on its path through the function. For example, the `group_by()` function didn't drastically alter the `airquality` data.frame, but it did add information that has an impact at the next step in the pipe chain; without it, the `summarise()` command would have operated on the entire dataset as a whole without splitting the data into months before applying hte `min()` and `max()` functions.
+The next important note about functions used in pipe chains is that the type of object coming out of the function is the same as the object that was pushed in, although it has probably been modified on its path through the function. For example, the `group_by()` function didn't drastically alter the `airquality` data.frame, but it did add information that has an impact at the next step in the pipe chain; without it, the `summarise()` command would have operated on the entire dataset as a whole without splitting the data into months before applying the `min()` and `max()` functions.
 
 The question is, how can we be sure that what is being passed on at each step is what we expected? In simple cases like that just seen, the answer justifies the work done to that point. Much longer pipe chains are possible, such as:
+```{r longChain1}
+set.seed(123)
+starwars %>% filter(!is.na(species)) %>% sample_n(50) %>% group_by(species) %>% summarise(N = n(), MeanHeight = mean(height, na.rm=TRUE)) %>% filter(N>1) %>% arrange(MeanHeight)
+```
+which takes a  random sample of 50 Star Wars characters who each have a defined species, and evaluates the mean height for each species, but only then keeps the species with more than one character and then finally prints them out in order from shortest to tallest.
+
+This long chain is not likely to feature in anyone's real analysis, but for the purposes of demonstration it has the necessary random selection that could mean results differ from one application to the next. There is therefore uncertainty about what data reduction has taken place at each step in the chain. To prove this for yourself, you could alter the random seed forced with the `set.seed()` command.
 
 
 
+## Interrogation of data created within a pipe chain
+
+The `BrailleR` commands `WhatIs()` and `CheckIt()` were designed to stop us from having to curtail our pipe chains. Both commands were designed to use the same syntax as the other `dplyr` commands in the pipe chain, and can be put  in the middle or at the end of the chain.
 
 
+```{r longChain2}
+set.seed(123)
+starwars %>% WhatIs() %>% filter(!is.na(species)) %>% sample_n(50) %>% group_by(species) %>% summarise(N = n(), MeanHeight = mean(height, na.rm=TRUE)) %>% CheckIt() %>% filter(N>1) %>% CheckIt() %>% arrange(MeanHeight) 
+```
+## BrailleR commands used in this chapter
+
+
+The two main `BrailleR` functions relevant for use in the middle or at the end of a pipe chain are `WhatIs()` and `CheckIt()`.

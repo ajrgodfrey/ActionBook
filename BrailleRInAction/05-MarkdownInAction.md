@@ -114,6 +114,8 @@ Ozone.kurt = moments::kurtosis(Ozone, na.rm = TRUE)
 ... ... ...
 ````
 
+The full R markdown file can be opened in any text editor. A Windows user can open the file created by the `example(UniDesc)` command above, by issuing the command `Notepad("Ozone-UniDesc.Rmd")` at the R prompt. Opening the Windows Explorer file browser will help you select an alternative text editor; you can do this by typing `Explorer()`. 
+
 
 The document header includes a code chunk that sets the options for the `knit2html()` process used to convert this file to HTML. 
 This processing allows for:
@@ -144,6 +146,7 @@ There are many commands needed to get the numeric and graphic summary measures t
 - the one-way analysis of variance, and
 - Tukey's Honestly Significant Difference (HSD) test on the significance of the between group differences.
 
+There will be circumstances when the last, and perhaps evern second to last elements of this functionality are not justified by the outcome of issuing the earlier commands. In particular, generating the output from Tukey's HSD would not normally be sought unless the analysis of variance showed there was a significant difference between the group means. The choice of reading the output and subsequently using it are left to the user. In this respect, `BrailleR` has not become an expert system that decides to or not to provide something; the user is still expected to do the thinking about the relevance of each element of hte overall set of output provided.
 
 
 
@@ -175,9 +178,9 @@ As an alternative, and if you do have a current internet connection you can view
 
 The example here demonstrates the point that the grouping variable must be a factor. The month variable is not stored as a factor in the airquality data so its use would have created an error.
 
+All elements of the analysis which incorporate graphical information, or text that is slow to read using a screen reader are processed using the `VI()` functionality.
+
 ## Use of BrailleR for linear regression 
-
-
 
 Linear regression is almost always taught using graphical techniques, especially for the validation of the model being fitted. Of particular note is the way an instructor would teach sighted students about the sensibility of fitting any line to some data which cannot be easily judged even using the `WhereXY()` function described earlier. A blind student lacking an embosser to produce a tactile image that shows the fitted line and the data, will almost certainly need to fit the model and see how good or bad it is. These blind students are therefore even more reliant on the residual analysis than their sighted classmates
 
@@ -187,6 +190,7 @@ The `VI.lm()` function generates so much text as a substitute for the graphs use
 
 Let's see an example using the `airquality` data. 
 Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function's value to a blind user. 
+
 A simple linear regression model might be created and investigated using:
 
 ```r
@@ -255,7 +259,7 @@ A table of unusual observations is created that uses rules of thumb for magnitud
 
 ```
 % latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Mon Sep 10 10:03:32 2018
+% Fri Sep 14 21:50:35 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
@@ -319,3 +323,5 @@ As an alternative, and if you do have a current internet connection you can view
 
 
 The first two `BrailleR` commands introduced in this chapter were the `UniDesc()` and `OneFactor()` commands; they used the `VI()` command in the R markdown files that they create, as was described back in Chapter \@ref(VI), to give the text descriptions for graphs. We then saw a new use of the `VI()` command and several other commands designed to generate common analyses quickly. These included the `OnePredictor()` command which speeds up the presentation of a simple linear regression model. This function also creates an R markdown script which then makes an HTNML file for immediate use, and various files with tables and graphs commonly needed for simple linear regression. The specific command `VI.lm()` is an example of the `VI()` command tailored to  linear models and their analysis. Consideration of the validity of linear models is generally done via graphs so the `WhereXY()` command introduced in Chapter \@ref(NewGraphs) is applied in a variety of ways.
+
+Windows users can use the `Notepad()` function to open the R markdown files created by the examples in this chapter, or any other text file for that matter. They can choose their own text editor by opening a Windows Explorer file browser that has focus in the current working directory using `Explorer()`. The initial letter of these commands can be in upper or lower case; that is, `Notepad()` is equivalent to `notepad()` and `explorer()` is equivalent to `Explorer()`.
