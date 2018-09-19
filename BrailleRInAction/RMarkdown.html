@@ -25,7 +25,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey">
 
 
-<meta name="date" content="2018-09-18">
+<meta name="date" content="2018-09-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -142,6 +142,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#brailler-includes-convenience-functions"><i class="fa fa-check"></i><b>1.1.3</b> BrailleR includes convenience functions</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-if-i-am-not-a-novice"><i class="fa fa-check"></i><b>1.2</b> Why will I use the BrailleR package if I am not a novice?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#why-will-i-use-this-book"><i class="fa fa-check"></i><b>1.3</b> Why will I use this book?</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#what-this-book-is-not"><i class="fa fa-check"></i><b>1.4</b> What this book is not</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="History.html"><a href="History.html"><i class="fa fa-check"></i><b>2</b> History of the BrailleR Project</a><ul>
 <li class="chapter" data-level="2.1" data-path="History.html"><a href="History.html#my-background"><i class="fa fa-check"></i><b>2.1</b> My background</a></li>
@@ -240,7 +242,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.4</b> Opening WriteR from BrailleR</a></li>
 <li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
 <li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
-<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.7</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
+<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a><ul>
 <li class="chapter" data-level="12.1" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html#incomplete"><i class="fa fa-check"></i><b>12.1</b> incomplete</a></li>
@@ -448,7 +451,7 @@ Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
 Each of these graphs is subjected to scrutiny using the <code>WhereXY()</code> function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.</p>
 <p>A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook’s distances. This table is presented in the HTML document and converted to a LaTeX file using the <code>xtable</code> package. The raw LaTeX for this table looks like:</p>
 <pre><code>% latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Tue Sep 18 13:59:32 2018
+% Tue Sep 18 21:35:52 2018
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}

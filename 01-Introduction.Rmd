@@ -1,8 +1,5 @@
 # Introduction {#introduction}
 
-
-
-
 Access to information is crucial for a blind person's success in education, but transferring the knowledge about the existence of techniques into actually being able to perform those tasks is what will make that blind person employable. This paper is based on the author's  experiences as a blind academic in statistics who has often been called on for advice by blind students studying statistics and their sighted lecturers wanting to provide the best possible support. Unfortunately, there is little information available in academic journals or the public domain to offer the  statistics lecturer  who is about to teach a blind student for the first time. 
 
 At the 2009 Workshop on E-Inclusion in Mathematics and Sciences, I was able to meet other researchers and scientists who are also concerned about the low rate of blind people entering the sciences in a broad sense and the mathematical sciences in particular. [@Godfrey2009AccessiblePaper] presented my first formalized summary of what I saw as the current state of affairs for blind people taking statistics courses; that work discussed what was possible in theory, but lacked evidence of what was happening in practice.
@@ -54,3 +51,28 @@ BrailleR also includes some tools for helping run your R jobs without running R.
 
 
 In summary, the `BrailleR` package is my attempt to help blind students and their lecturers. It is built on functions that I use to work as a lecturer in statistics. It aims to make up for the inability blind users have to work with the same extension tools their sighted peers are using, including the increasing reliance on GUIs and integrated development environment (IDE) options.
+
+
+## Why will I use this book?
+
+This book has been compiled for a variety of reasons. The obvious reason is that the `BrailleR` package has many tools that cannot be demonstrated using the standard documentation options found in many packages. Some of the material found here did start in package vignettes, but the time taken to re-work them all was slowing down development of the package. 
+
+A key feature of this book is that it was written by a blind person, using only the tools the book suggests, to create a book that can be read by blind people. This end to end workflow is proof that the `BrailleR` package helps make some actions possible, and others easier for a blind person to undertake. All too often, blind people find themselves using substitute workflows that are painfully slow compared to the tools being used by our sighted peers. I'm not suggesting that the tools here will make a blind person more efficient than all of their peers, but being able to use the most efficient tools that sighted people could choose to use does matter. Using these tools will cut the disadvantage a blind person has to a minimum; I'd even go so far as to suggest that the gap between a blind person and a sighted person's efficiency  is reduced if we use the best tools on offer as compared to the gap we'd suffer if we chose to use inferior tools. 
+
+## What this book is not
+
+This book is not a comprehensive guide to using R. There are now hundreds of books a blind (or sighted) person could choose to wade through, some are good, some are great, and some are truly awesome! There are also plenty of resources on the internet that are tired and really should be avoided. I am keen to promote those texts that can be easily worked with by a blind user. I'll mention them as we get to the right point in this book for doing so, but now is a good time to mention a few that have really made a difference to me and creation of this book.
+
+I am truly reliant on the resources offered by help pages hosted by RStudio. I often include RStudio.com in my list of search terms. In adition, many of the individuals I hold in very high regard have close ties to RStudio. 
+
+Yihui Xie's work on the `knitr` package [@Rpkg-knitr] 
+and his books on writing documents using reproducible research techniques [@Xie2015]
+are key to my success and in my opinion, have also led to making life much easier for blind users to read the work of others and to create new content for themselves.
+
+I frequently use several books written by Hadley Wickham and his collaborators. In particular, I rate the [R packages book](http://r-pkgs.had.co.nz/) [@Wickham2015RPackages], the [Advanced R book](https://adv-r.hadley.nz)  [@Wickham2014Advanced', and the [R for Data Science book](http://r4ds.had.co.nz/) [@GrolemundWickham2016].
+
+
+
+
+
+

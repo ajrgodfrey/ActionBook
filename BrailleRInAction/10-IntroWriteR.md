@@ -158,7 +158,7 @@ Press the `f4` key to switch back to the main document editing window in WriteR.
 
 If the processing of the file "MyFirst.Rmd" was successful, then you will now have a file called "MyFirst.html" in your current working directory. You have several choices for finding the HTML file you have created:
 
--  Navigate to the current working directory using your file browser. To find out where that is, type `getwd()` in the R window to see where the files really are located. 
+-  Navigate to the current working directory using your file browser. To find out where that is, type `getwd()` in the R window to see where the files really are located, or if you are a Windows user, issue the `BrailleR` function `Explorer()` to opent he folder automatically. 
 You should see the file `MyFirst.Rmd` and once you have built it, the associated HTML file. Open that file in your browser.
 - Use the `browseURL()` command in the R session. You will need to provide the filename, in quotes, for example `browseURL("MyFirst.html")`
 
@@ -167,6 +167,31 @@ You may need to switch back and forth between the WriteR window and your browser
 
 N.B. Changes in your R markdown file are not automatically converted into the HTML file. You must re-build the HTML, and refresh your browser to see the impact of any changes you make, both actions use the `f5` key.
 
+
+## Some hints for writing Rmarkdown documents
+
+The WriteR application really can make writing documents easier because it offers plenty of shortcut keystrokes for items in the pulldown menus. Formatting text in a markdown document which will be converted to HTML is done in a way that creates semantic structure at the same time as font changes, or to put more precisely, you can't get a larger font for a heading without using a proper heading style. My list of hints given here are to help make your final HTML document a pleasure to read as well as easy to write.
+
+- Always  use the standard markdown syntax for inserting headings, graphics, links, and equations. WriteR will insert placeholders for graphics and links and some mathematical structures.
+- Concentrate on the material to be communicated; do not worry about the formatting of it. Keeping it simple is best.
+- Make use of the lessons learned by others. If you like hte way something is presented, then re-use the approach taken.
+- if you inset a graph created in an R chunk, then make sure you use the `fig.cap` properly. This text will be used as the "alt tag" for the resulting graph.
+- One figure per chunk is recommended. This helps with the alt tags.
+- The default presentation of R output is to have three hash signs at the left of each line of output.  Inclusion of an R chunk at the start of the document can fix this. Use something like:
+````
+
+```r
+library(knitr)
+opts_chunk$set(comment="")
+```
+````
+
+
+I found the flow of some documents was unnecessarily clunky when simple mathematical elements were entered as math mode elements. Sentences will read better if *x* and *y* are in italicised font and not math mode, and the sighted readers won't notice the difference. This won't work for Greek, some subscripts and superscripts, or symbols. If in doubt, use math mode everywhere. This means using a dollar on both sides of the mathematical content such as `$x$` for example.
+
+The method used to convert your raw markdown to beautiful HTML will matter. WriteR has been configured to use `render()` from the `rmarkdown` package as it delivers the best outcome for screen reader users.
+
+Finally, you should investigate which combination of screen reader and browser gives you the results you like best. I regularly make use of both JAWS and NVDA, and my preferred browser has changed over the years. I used to only ever use Firefox, but Chrome gets more use today; both Internet Explorer and Opera have both been used at times.
 
 ## BrailleR commands used in this chapter
 
