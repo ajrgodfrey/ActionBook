@@ -115,7 +115,7 @@ fig2.11c
 fig2.11c %>% VI()   
 ```  
 
-The data is separated by implication in the following graphs. The legend is automatically generated and has altered in appearance since the original was prodcued in @Wickham2009ggplot2.
+The data is separated by implication in the following graphs. The legend is automatically generated and has altered in appearance since the original was produced in @Wickham2009ggplot2.
 
 ```{r fig2-12a, fig.cap="Left pane of Figure 2.12"}     
 fig2.12a = qplot(carat, data = diamonds, geom = "density", colour = color)    
