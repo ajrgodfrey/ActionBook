@@ -363,7 +363,7 @@ It has y-axis '' with labels 0, 1000 and 2000.
 The chart is a bar chart containing 299 vertical bars.
 ```
 
-The data is separated by implication in the following graphs. The legend is automatically generated and has altered in appearance since the original was prodcued in @Wickham2009ggplot2.
+The data is separated by implication in the following graphs. The legend is automatically generated and has altered in appearance since the original was produced in @Wickham2009ggplot2.
 
 
 ```r
