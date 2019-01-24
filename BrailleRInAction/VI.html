@@ -303,19 +303,18 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 <p>A simple way for blind users to access the information used to create a graph is to ask R to print the object, using the <code>print()</code> command.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">print</span>(HIST)</a></code></pre></div>
 <pre><code>$breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
 
 $counts
- [1]   2   0   1  17  41  77 152 186 200 153  92  51  18   6   4
+ [1]   2   4  13  37  93 152 172 216 163  84  46  15   3
 
 $density
- [1] 0.004 0.000 0.002 0.034 0.082 0.154 0.304 0.372 0.400 0.306 0.184
-[12] 0.102 0.036 0.012 0.008
+ [1] 0.004 0.008 0.026 0.074 0.186 0.304 0.344 0.432 0.326 0.168 0.092
+[12] 0.030 0.006
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[12]  2.25  2.75
 
 $xname
 [1] &quot;Y&quot;
@@ -338,18 +337,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 15
+[1] 13
 
 $par
 $par$xaxp
-[1] -4  2  3
+[1] -3  3  6
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -4 -2  0  2
+[1] -3 -2 -1  0  1  2  3
 
 $yTicks
 [1]   0  50 100 150 200
@@ -358,38 +357,40 @@ attr(,&quot;class&quot;)
 [1] &quot;Augmented&quot; &quot;histogram&quot;</code></pre>
 <p>The <code>print()</code> command can be wrapped around the <code>hist()</code> command which avoids explicit storage of the object, but still creates the histogram. This approach can be taken for many graph types where the option of suppressing the graph is not available. The <code>hist</code> command gives the user an explicit way of generating the information a blind user may want. Similar functionality exists using the <code>boxplot.stats()</code> command for example. Such workhorse functionality is useful but not well-documented.</p>
 <p>Given the user has stored the output from the <code>hist()</code> function in an object, they can interpret the text to gain some idea of what appears in the histogram. As the object is designed for compatibility and flexibility, not all of the printed information is relevant to the end user however so some further education or perhaps further processing is still required. I found that some blind users had no appreciation for what a histogram actually looks like. In hindsight, this was reasonable because the way R presents a histogram (and many other graphs) does differ from presentations of the same data in other software.</p>
-<p>This approach is workable but not elegant. On some occasions the data structure listed is just a list of the actual data itself and is therefore not giving blind users the same information as sighted users get from a graph. Blind users need some sort of summarisation tool to replace the graph, and in many instances, are unlikely to have the skill to develop a sound statistical solution for themselves. It is also reliant on users knowing what the various elements printed out are, and how they link to the visual object created for the sighted world. The initial aim of the <code>BrailleR</code> package was to take the information created by various functions in R and create a text printout that reduces the amount of information that needs to be processed by blind users.
+<p>This “print it out” approach is workable but is far from elegant. On some occasions the data structure listed is just a list of the actual data itself and is therefore not giving blind users the same information as sighted users get from a graph. Blind users need some sort of summarisation tool to replace the graph, and in many instances, are unlikely to have the skill to develop a sound statistical solution for themselves. It is also reliant on users knowing what the various elements printed out are, and how they link to the visual object created for the sighted world. The initial aim of the <code>BrailleR</code> package was to take the information created by various functions in R and create a text printout that reduces the amount of information that needs to be processed by blind users.
 In cases like that for the histogram example just introduced, this is a fairly simple task.
 For other situations, some further work needs to be done so that the textual information is a useful summary of the graphical information without crossing over the line of interpreting the information for the user.</p>
-<p>So let’s see what <code>BrailleR</code> is going to offer a blind user instead of the verbose printout seen above. First, the <code>Describe()</code> function describes a histogram ina general sense.</p>
+<p>So let’s see what <code>BrailleR</code> is going to offer a blind user instead of the verbose printout seen above. First, the <code>Describe()</code> function describes a histogram in a general sense.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">Describe</span>(HIST)</a></code></pre></div>
 <pre><code>A histogram created using the base graphics package.
-General description: A histogram uses rectangles to represent the counts or relative frequencies of observations falling in each subrange of the numeric variable being investigated. The rectangles are standing side by side with their bottom end at the zero mark of the vertical axis. The widths of the rectangles are usually constant, but this can be altered by the user. A sighted person uses the heights and therefore the areas of the rectangles to help determine the overall shape of the distribution, the presence of gaps in the data, and any outliers that might be present. As with most graphs created by the base graphics package, the axes do not join at the bottom left corner and are separated from the area where the data are being plotted. Tick marks are automatically chosen for the data, and the axes may not extend past the ends of variables being plotted. The vertical axis for frequency always starts at zero. R normally plots a graph in a square window. This can be altered; the way this is done depends heavily on the method being used to create the graph. See the help on win.graph() or  x11() for the graphs made in an interactive  session or part of an R script; png(), pdf() or postscript() for specific file formats being created; or, use fig.height and fig.width arguments in your R markdown documents.
+
+General description: A histogram uses rectangles to represent the counts or relative frequencies of observations falling in each subrange of the numeric variable being investigated. The rectangles are standing side by side with their bottom end at the zero mark of the vertical axis. The widths of the rectangles are usually constant, but this can be altered by the user. A sighted person uses the heights and therefore the areas of the rectangles to help determine the overall shape of the distribution, the presence of gaps in the data, and any outliers that might be present.
+As with most graphs created by the base graphics package, the axes do not join at the bottom left corner and are separated from the area where the data are being plotted. Tick marks are automatically chosen for the data, and the axes may not extend past the ends of variables being plotted.The vertical axis for frequency always starts at zero.
+R normally plots a graph in a square window. This can be altered; the way this is done depends heavily on the method being used to create the graph. See the help on win.graph() or  x11() for the graphs made in an interactive  session or part of an R script; png(), pdf() or postscript() for specific file formats being created; or, use fig.height and fig.width arguments in your R markdown documents.
+
 R hints: If you intend to make a tactile version of a histogram, you may find it useful to alter the aspect ratio so that the histogram is wider than it is tall.</code></pre>
 <p>Then, we can find out what is shown in the specific histogram using the <code>VI()</code> function.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">VI</span>(HIST)</a></code></pre></div>
 <pre><code>This is a histogram, with the title: Histogram of Y
 &quot;Y&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, and 2 
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
+It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
 The mids and counts for the bins are:
-mid = -3.75  count = 2 
-mid = -3.25  count = 0 
-mid = -2.75  count = 1 
-mid = -2.25  count = 17 
-mid = -1.75  count = 41 
-mid = -1.25  count = 77 
+mid = -3.25  count = 2 
+mid = -2.75  count = 4 
+mid = -2.25  count = 13 
+mid = -1.75  count = 37 
+mid = -1.25  count = 93 
 mid = -0.75  count = 152 
-mid = -0.25  count = 186 
-mid = 0.25  count = 200 
-mid = 0.75  count = 153 
-mid = 1.25  count = 92 
-mid = 1.75  count = 51 
-mid = 2.25  count = 18 
-mid = 2.75  count = 6 
-mid = 3.25  count = 4</code></pre>
+mid = -0.25  count = 172 
+mid = 0.25  count = 216 
+mid = 0.75  count = 163 
+mid = 1.25  count = 84 
+mid = 1.75  count = 46 
+mid = 2.25  count = 15 
+mid = 2.75  count = 3</code></pre>
 <p>The <code>Describe()</code> and <code>VI()</code> commands actually call the <code>Describe.histogram()</code> and <code>VI.histogram()</code> commands because R knows it is a histogram that was generated by <code>hist()</code> earlier.</p>
 <div id="important-features" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Important features</h3>

@@ -78,21 +78,22 @@ VI(hist(x))
 ## "x" is marked on the x-axis.
 ## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, and 150 
-## It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
+## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+## It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 ## The mids and counts for the bins are:
-## mid = -2.75  count = 3 
-## mid = -2.25  count = 17 
-## mid = -1.75  count = 64 
-## mid = -1.25  count = 103 
-## mid = -0.75  count = 166 
-## mid = -0.25  count = 159 
-## mid = 0.25  count = 182 
-## mid = 0.75  count = 161 
-## mid = 1.25  count = 82 
-## mid = 1.75  count = 38 
-## mid = 2.25  count = 14 
-## mid = 2.75  count = 10 
+## mid = -3.25  count = 2 
+## mid = -2.75  count = 6 
+## mid = -2.25  count = 13 
+## mid = -1.75  count = 37 
+## mid = -1.25  count = 99 
+## mid = -0.75  count = 142 
+## mid = -0.25  count = 204 
+## mid = 0.25  count = 190 
+## mid = 0.75  count = 142 
+## mid = 1.25  count = 102 
+## mid = 1.75  count = 43 
+## mid = 2.25  count = 16 
+## mid = 2.75  count = 3 
 ## mid = 3.25  count = 1
 ```
 
