@@ -134,7 +134,7 @@ This R markdown script uses the `VI()` method for the graphs as well as the code
 
 If all of the optional arguments of the `UniDesc()` function are set at their defaults, the HTML file is automatically opened in a browser (courtesy of the `View` argument); it puts the R markdown file, the R script, and the HTML document in the current working directory, while the LaTeX and graph files  are all placed in a subdirectory.
 
-Several other convenience functions have been created that follow the same process as the `UniDesc()` function. The `OneFactor()` function compares one continuous response variable to a categorical variable, while `TwoFactors()` allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the `OnePredictor()` function. Each of these functions has an example using data from the `datasets` package [@Rpkg-datasets] so a user can see what can be expected from these functions.
+Several other convenience functions have been created that follow the same process as the `UniDesc()` function. The `OneFactor()` function compares one continuous response variable to a categorical variable, while `TwoFactors()` allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the `OnePredictor()` function. Each of these functions has an example using data from the `datasets` package [@Rpkg-base] so a user can see what can be expected from these functions.
 
 ## Analysis of a single continuous variable with respect to a single grouping factor
 
@@ -259,7 +259,7 @@ A table of unusual observations is created that uses rules of thumb for magnitud
 
 ```
 % latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Thu Jan 24 20:51:09 2019
+% Thu Jan 24 21:28:37 2019
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}

@@ -6,7 +6,7 @@ The use of the ggplot style of graph production has increased markedly since its
 
 ```{r setup, include=FALSE}
 library(knitr)
-opts_chunk$set(fig.width=7, fig.height=5, comment="")
+opts_chunk$set(fig.width=7, fig.height=5, comment="", cache=TRUE)
 library(BrailleR)
 ```
 
