@@ -1,0 +1,90 @@
+# Ways of Working in R as a Blind User {#WorkingBlind}
+
+
+
+This chapter presents some strategies to offer blind users options for producing and saving work from an R session. They complement the workflows used by sighted people, or replace the tools used by sighted people that are not able to be used by a blind person.
+
+## A little background
+
+
+A major issue for blind users of any mathematical or statistical software is how the work that has been done will be transferred into a form that can be included in reports or assignments. 
+Standard methods of working with R are possible as a blind user, but there is one crucial task that sighted users find very easy that is beyond the reach of the blind user. 
+A sighted user can highlight a section of the output window (including commands and results) and copy the text  into a document using the mouse. This task is done easily in word processing or text documents using keyboard commands by the blind user, but is often impractical or impossible within many software applications. A solution has been provided within the `BrailleR` package by adapting a tool developed by another R user for a completely different purpose. The  `TeachingDemos` package  [@Rpkg-TeachingDemos], provided this tool. The original purpose was to quickly retain the output from an R session for distribution to students, and later in its 
+development, to create output files (in MS Word or HTML) that would log the progress through an assignment question or project. 
+
+
+## Using plain text files
+
+The code for saving the basic text output and commands being generated during an interactive session into a plain text file was among the early developments of the `BrailleR` package. 
+The functions `txtStart()`, `txtStop()`, `txtComment()`, and `txtSkip()` were copied (with permission) from the `TeachingDemos` package; in addition, a  `txtOut()` function that simplifies use of `txtStart()`    was added to the `BrailleR` package.
+
+
+
+## Use of R markdown
+
+The general uptake of reproducible research ideas by many in the R community has vastly improved the opportunities for novice R users to create well-formatted HTML documents from markdown documents. 
+This change in the general mindset has huge benefits for a blind user. 
+An R markdown file is just plain text and is therefore accessible. 
+Even more impressive, is that the HTML documents that result from these files are also very accessible to a blind reader. I discovered the potential for R markdown to make life so much easier for blind students by attending a workshop delivered by Yihui Xie at the 2014 UseR conference in Los Angeles. His book [@Xie2015] serves as the guide by which I create a lot of R markdown content including this book.
+
+The greatest challenge for blind R users who want to get into R markdown is that the majority of resources on the subject assume use of RStudio [@RStudio] which is not accessible to a screen reader user. Use of RStudio is not essential. For example, a basic R markdown document might start like the following:
+
+
+````
+---
+title: ""
+author: ""
+date: ""
+output:
+    html_document:
+        toc: false
+        number_sections: false
+        fig_height: 7
+        fig_width: 7
+--- 
+
+ ```{r ChunkName}
+...
+```
+````
+
+This text needs to be saved in a  text file, usually with the file extension "Rmd". It has two parts. The top section, starting and finishing with , is a YAML header and establishes settings for the document. You will need to fill in the gaps between double quotes for the document's title, your name, and the date, but otherwise you can leave this section alone for the time-being.
+
+The second section is an empty R chunk. The opening line starts with three accent grave symbols (sometimes called backticks) and then some details used only for this chunk. The details in this chunk header say to process the upcoming commands using R and that  the chunk currently has the label "ChunkName" which you would normally change to something more meaningful. The second line of this section is where you would put an R command (instead of the meaningless dots put there now), and the last line is how we close a chunk (using those backticks again). You can put a whole series of R commands in the middle, but the chunk must start and finish with ```` ``` ````  if the document is to be processed properly.
+  
+To get this R markdown content to be converted to HTML, you must complete the following steps:
+
+1. Save the above content into a text file and name it "FirstGo.Rmd". N.B. This must be plain text.
+1. Edit the bits I suggested above. In fact, the bare minimum is to put a valid  R command in the middle of the R chunk.
+2. Put this file in the current working directory. Check what this is using `getwd()` if you need to be sure.
+3. Type the command `rmarkdown::render("FirstGo.Rmd")`
+
+You should see that this command generates a little output in the R session window and that a file called "FirstGo.html" has been created. Open that file now.
+
+The basic steps followed by all users of R markdown files are:
+
+1. Update the Rmd file.
+3. "Knit" the R markdown file; The word "knit" comes from the R package that does the work here.
+3. Review the impact on your HTML file. You might need to refresh the browser if the file is still open.
+
+You can:
+
+- add more R chunks; give them distinct labels though.
+- Write plain text in between chunks;
+- Add section headings; use number signs `#` at the start of a line that you want to be a heading. The level of heading is determined by the number of number signs you use.
+- Add mathematical expressions using standard LaTeX notation; single or double dollar signs denote the start and end of mathematical content.
+- ... and so much more.
+
+Remember: This book is written entirely in R markdown. If you see something  here, then you can have it in your own R markdown work!
+
+
+We will see the power of R markdown for doing some tasks using the `BrailleR` package in Chapter \@ref(RMarkdown) and start using WriteR as a substitute for RStudio in Chapter \@ref(WriteR).
+
+
+
+
+## Running jobs offline
+
+Blind users will benefit from switching to batch processing commands using `R CMD BATCH` at the command line, using the reproducible research functionality offered by the `knitr` package, or both strategies. Functions to help users (working under Windows operating systems) move to these ways of working have been included in the `BrailleR` package. In particular, a Windows user can use the `MakeBatch()` function to create a batch file in the current working directory, which creates the single command line that would be called to process a specified  R script or R markdown file appropriately. The `BrailleR` package also shows a user how a test file would be processed using these batch files. Conversion of  an R script or the history of the current workspace  to an R markdown file are implemented using the `R2Rmd()` and `History2Rmd()` functions respectively. This suite of functions should assist the blind user migrate to the more efficient methods of working and ultimately become more proficient and efficient than their peers who are not yet making use of the reproducible research type of workflow. 
+
+

@@ -1,0 +1,181 @@
+# BrailleR in the tidyverse {#Tidyverse}
+
+
+
+
+Hadley wickham is unquestionably a superstar in the R community, and is perhaps the first R celebrity. There can't be room for too many people to have had a suite of packages collectively named after them by numerous users, but history will show that the "Hadleyverse" existed until Hadley himself renamed it the "tidyverse". The tidyverse owes its prominence to the relative simplicity it offers people doing what should be simple tasks, but haven't been as easy as might have been. According to the tidyverse package [@Rpkg-tidyverse] documentation, "The 'tidyverse' is a set of packages that work in harmony
+    because they share common data representations and 'API' design." The package is just a simple way to make sure these packages are all installed and available to the user. Many users will not use all of the packages in the tidyverse, but among my favourites are `lubridate` [@Rpkg-lubridate] for handling dates in all manner of formats, `broom` [@Rpkg-broom] for handling linear models more efficient, 
+`magrittr` [@Rpkg-magrittr] for giving me an alternative way of writing code, and of course `dplyr` [@Rpkg-dplyr] for making data manipulation and summarisation much easier to explain to others. The `ggplot2` package [@Rpkg-ggplot2] is another tidyverse package but it deserves a separate chapter in order to show the way it works with `BrailleR`.  For the purposes of showing how `BrailleR` works with the tidyverse packages, or more accurately, the tidyverse way of working, the examples in this chapter all make use of the `dplyr` package and any tools it calls on to support its functionality.
+
+
+
+To replicate the examples in this chapter, you will need to have the tidyverse packages installed before running the following commands that prepare them and `BrailleR` for use.
+
+
+```r
+library(BrailleR)   
+library(tidyverse)
+```
+
+```
+-- Attaching packages ---------------------------------- tidyverse 1.2.1 --
+```
+
+```
+v ggplot2 3.2.1     v readr   1.3.1
+v tibble  2.1.3     v purrr   0.3.2
+v tidyr   0.8.3     v stringr 1.4.0
+v ggplot2 3.2.1     v forcats 0.4.0
+```
+
+```
+-- Conflicts ------------------------------------- tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+x ggplot2::xlab() masks BrailleR::xlab()
+x ggplot2::ylab() masks BrailleR::ylab()
+```
+
+## What is tidy and why do we care?
+
+@Wickham2014Tidy describes tidy data as following three rules:
+
+1. Each variable forms a column.
+2. Each observation forms a row.
+3. Each type of observational unit forms a table.
+
+and then says that data not following these rules as "messy" [@Wickham2014Tidy] .
+
+We care because tidy data is ready for an analysis, while messy data needs to be made tidy. We care because it is easier to use tools designed for tidy data, and this all means we should get the desired results effectively and efficiently. We care because it is more common for data to be messy than tidy, and we must be able to take messy data and tidy it up.
+
+To further quote @Wickham2014Tidy, the four most commonly used data manipulations (transformation, aggregation, filtering, and reordering) can be easily managed when we start with tidy data. The data manipulations are all performed by the `dplyr` package we use in this chapter. If we cannot work with tidy data successfully, then there is little hope for working with messy data. 
+
+A great resource for learning more about the tidyverse and its numerous tools is the  [R for Data Science book](http://r4ds.had.co.nz/) [@GrolemundWickham2016].
+
+## What is the pipe operator, and why should we care?
+
+The pipe operator `%>%`, found in the `magrittr` package,  is used throughout the tidyverse because it makes code simpler to read. A series of pipes is referred to as a pipe chain, and it is when there are multiple pipe commands issued in conjunction that its simplicity becomes increasingly obvious. 
+
+Before the tidyverse, R users would follow a mixture of two general coding strategies. Either, we nested one command inside another, and perhaps another, and even worse, we'd nest and nest and so on; or, we can have each line of code have a single function, with the outcome of each function being stored as an explicitly named object. Nesting commands inside one another makes code very hard to read, as we read from the inside outwards to get a handle on what is actually being achieved. Storing each and every element of our working could have memory management implications, but is also prone to having too many named objects floating around that must be kept track of.
+
+In contrast, a pipe chain can be written so that each function is applied in order, left to right, top to bottom, with the answer being stored in a named object at the end if we want, or quite commonly, just printed out for us. Whether you put the individual commands in a single line or with each pipe on its own line is a matter of style and personal preference.
+
+A simple example using the `dplyr` package and the `airquality` data could ask for the coldest and hottest temperatures for each of the five months in this dataset.
+
+```r
+airquality %>% group_by(Month) %>% summarise(ColdestDay = min(Temp), HottestDay = max(Temp))
+```
+
+```
+# A tibble: 5 x 3
+  Month ColdestDay HottestDay
+  <int>      <int>      <int>
+1     5         56         81
+2     6         65         93
+3     7         73         92
+4     8         72         97
+5     9         63         93
+```
+ 
+In its most simple form, the outcome of everything done to the left of any pipe operator is used as the first argument of the first function to its right. This means that the first argument of the `group_by()` is the `airquality` data.frame we started with.  Note that there are ways to use the left-hand-side of the pipe operator as a second, third or so on, argument and even more adventurous ways of piping, but these are not relevant to the presentation of the `BrailleR` tools in this chapter.
+
+The next important note about functions used in pipe chains is that the type of object coming out of the function is the same as the object that was pushed in, although it has probably been modified on its path through the function. For example, the `group_by()` function didn't drastically alter the `airquality` data.frame, but it did add information that has an impact at the next step in the pipe chain; without it, the `summarise()` command would have operated on the entire dataset as a whole without splitting the data into months before applying the `min()` and `max()` functions.
+
+The question is, how can we be sure that what is being passed on at each step is what we expected? In simple cases like that just seen, the answer justifies the work done to that point. Much longer pipe chains are possible, such as:
+
+```r
+set.seed(123)
+starwars %>% filter(!is.na(species)) %>% sample_n(50) %>% group_by(species) %>% summarise(N = n(), MeanHeight = mean(height, na.rm=TRUE)) %>% filter(N>1) %>% arrange(MeanHeight)
+```
+
+```
+# A tibble: 6 x 3
+  species      N MeanHeight
+  <chr>    <int>      <dbl>
+1 Droid        2        97 
+2 Human       18       173.
+3 Twi'lek      2       179 
+4 Gungan       2       201 
+5 Kaminoan     2       221 
+6 Wookiee      2       231 
+```
+which takes a  random sample of 50 Star Wars characters who each have a defined species, and evaluates the mean height for each species, but only then keeps the species with more than one character and then finally prints out the mean heights of the species  in order from shortest to tallest.
+
+This long chain is not likely to feature in anyone's real analysis, but for the purposes of demonstration it has the necessary random selection that could mean results differ from one application to the next. There is therefore uncertainty about what data reduction has taken place at each step in the chain. To prove this for yourself, you could alter the random seed forced with the `set.seed()` command.
+
+
+
+## Interrogation of data created within a pipe chain
+
+The `BrailleR` commands `WhatIs()` and `CheckIt()` were designed to stop us from having to curtail our pipe chains. Both commands were designed to use the same syntax as the other `dplyr` commands in the pipe chain, and can be put  in the middle or at the end of the chain.
+
+
+
+```r
+set.seed(123)
+starwars %>% filter(!is.na(species)) %>% sample_n(50) %>% group_by(species) %>% summarise(N = n(), MeanHeight = mean(height, na.rm=TRUE)) %>% CheckIt() %>% filter(N>1) %>% CheckIt() %>% WhatIs() %>% arrange(MeanHeight) 
+```
+
+```
+
+```
+
+```
+Classes 'tbl_df', 'tbl' and 'data.frame':	28 obs. of  3 variables:
+ $ species   : chr  "Aleena" "Besalisk" "Cerean" "Chagrian" ...
+ $ N         : int  1 1 1 1 2 1 1 2 18 1 ...
+ $ MeanHeight: num  79 198 198 196 97 ...
+```
+
+```
+
+```
+
+```
+Classes 'tbl_df', 'tbl' and 'data.frame':	6 obs. of  3 variables:
+ $ species   : chr  "Droid" "Gungan" "Human" "Kaminoan" ...
+ $ N         : int  2 2 18 2 2 2
+ $ MeanHeight: num  97 201 173 221 179 ...
+```
+
+```
+
+```
+
+```
+
+The summary of each variable is
+species: Length 6   Class character   Mode character  
+N: Min. 2   1st Qu. 2   Median 2   Mean 4.66666666666667   3rd Qu. 2   Max. 18  
+MeanHeight: Min. 97   1st Qu. 174.78125   Median 190   Mean 183.729166666667   3rd Qu. 216   Max. 231  
+```
+
+```
+
+```
+
+```
+# A tibble: 6 x 3
+  species      N MeanHeight
+  <chr>    <int>      <dbl>
+1 Droid        2        97 
+2 Human       18       173.
+3 Twi'lek      2       179 
+4 Gungan       2       201 
+5 Kaminoan     2       221 
+6 Wookiee      2       231 
+```
+
+These commands have been included in the above example using what we call "camel Case" which has upper case letters for each word; to be specific it is "upper camel case" because the first word is also capitalised. The `dplyr` package uses "snake case" which replaces a space between words with an underscore, and uses only lower case letters. This choice is entirely up to the person who first develops the functions in a package. While `BrailleR` functions generally use upper camel case, it is a fairly simple exercise to add alternatives so `check_it()` and `what_is()` are also available if the user prefers to use snake case throughout the pipe chain.
+
+The `CheckIt()` or `check_it()` command is actually just a substitute for the `str()` command from base R with the additional feature that it is compliant with the pipe operator and can therefore be used in a pipe chain. The `WhatIs()` or `what_is()` command is a substitute for the `VI()` command demonstrated in other chapters, but `VI()` is not pipe chain compliant.
+
+
+Note that use of either `WhatIs()` or `CheckIt()` too early in the pipe chain may lead to verbose output. These functions are meant for checking that the output is what was sought, not for generating a final result for sharing.
+
+ 
+## BrailleR commands used in this chapter
+
+
+The two main `BrailleR` functions relevant for use in the middle or at the end of a pipe chain are `WhatIs()` and `CheckIt()`. Alternative spelling of these commands is also available; `check_it()` and `what_is()` are entirely equivalent versions.
+
