@@ -51,19 +51,19 @@ print(HIST)
 
 ```
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
-[15]  3.0  3.5  4.0
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+[16]  4.0
 
 $counts
- [1]   1   1   1  16  46 108 163 187 189 121  99  42  23   2   0   1
+ [1]   3   5  16  50  89 148 170 215 153  87  42  16   4   1   1
 
 $density
- [1] 0.002 0.002 0.002 0.032 0.092 0.216 0.326 0.374 0.378 0.242 0.198
-[12] 0.084 0.046 0.004 0.000 0.002
+ [1] 0.006 0.010 0.032 0.100 0.178 0.296 0.340 0.430 0.306 0.174 0.084 0.032
+[13] 0.008 0.002 0.002
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
-[12]  1.75  2.25  2.75  3.25  3.75
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
+[13]  2.75  3.25  3.75
 
 $xname
 [1] "Y"
@@ -86,21 +86,21 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 16
+[1] 15
 
 $par
 $par$xaxp
-[1] -4  4  4
+[1] -2  4  3
 
 $par$yaxp
-[1]   0 150   3
+[1]   0 200   4
 
 
 $xTicks
-[1] -4 -2  0  2  4
+[1] -2  0  2  4
 
 $yTicks
-[1]   0  50 100 150
+[1]   0  50 100 150 200
 
 attr(,"class")
 [1] "Augmented" "histogram"
@@ -139,26 +139,25 @@ VI(HIST)
 ```
 This is a histogram, with the title: Histogram of Y
 "Y" is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, 2, and 4 
+Tick marks for the x-axis are at: -2, 0, 2, and 4 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, and 150 
-It has 16 bins with equal widths, starting at -4 and ending at 4 .
+Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
 The mids and counts for the bins are:
-mid = -3.75  count = 1 
-mid = -3.25  count = 1 
-mid = -2.75  count = 1 
+mid = -3.25  count = 3 
+mid = -2.75  count = 5 
 mid = -2.25  count = 16 
-mid = -1.75  count = 46 
-mid = -1.25  count = 108 
-mid = -0.75  count = 163 
-mid = -0.25  count = 187 
-mid = 0.25  count = 189 
-mid = 0.75  count = 121 
-mid = 1.25  count = 99 
+mid = -1.75  count = 50 
+mid = -1.25  count = 89 
+mid = -0.75  count = 148 
+mid = -0.25  count = 170 
+mid = 0.25  count = 215 
+mid = 0.75  count = 153 
+mid = 1.25  count = 87 
 mid = 1.75  count = 42 
-mid = 2.25  count = 23 
-mid = 2.75  count = 2 
-mid = 3.25  count = 0 
+mid = 2.25  count = 16 
+mid = 2.75  count = 4 
+mid = 3.25  count = 1 
 mid = 3.75  count = 1
 ```
 

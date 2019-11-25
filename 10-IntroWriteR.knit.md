@@ -17,7 +17,7 @@ Sys.which("Python")
 ## "C:\\PROGRA~1\\Python38\\Python.exe"
 ```
 
-The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We must have an exact match between the version of Python and the version of R being used.
+The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.
 
 The files downloaded as a consequence of running commands in this set of instructions will be saved in your `MyBrailleR` folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway. 
 
@@ -66,6 +66,37 @@ You need to make sure that the second of these options definitely happens; this 
 
 We can check the installation has worked properly at this point using:
 
+```r
+Sys.which("python")
+```
+
+```
+##                               python 
+## "C:\\PROGRA~1\\Python38\\python.exe"
+```
+
+```r
+shell("path")
+```
+
+This is a much stronger set of tests than was done earlier. 
+
+Now get the additional Python modules needed for WriteR using:
+ 
+`GetWxPython3()`
+
+Once you have completed these installations, you are ready to go. You shouldn't need to keep the  installation files, but why not keep them just in case.
+You can now skip to the section which shows you how to check everything is ready for using WriteR.
+
+
+
+## Other operating systems
+
+## Checking your system is ready
+
+
+
+All going to plan, you should now have Python on your system, and the additional wxPython module as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you've done,  using:
 
 
 

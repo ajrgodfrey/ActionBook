@@ -11,7 +11,7 @@ You can check if a version of Python is already installed on your computer using
 Sys.which("Python")
 ```
 
-The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We must have an exact match between the version of Python and the version of R being used.
+The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.
 
 The files downloaded as a consequence of running commands in this set of instructions will be saved in your `MyBrailleR` folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway. 
 
@@ -54,10 +54,11 @@ You need to make sure that the second of these options definitely happens; this 
 
 We can check the installation has worked properly at this point using:
 ```{r checkPyConfig}
-reticulate::py_config()
+Sys.which("python")
+shell("path")
 ```
 
-This is a much stronger set of tests than was done earlier. In particular, the `reticulate` package makes sure that the installation of Python and R are both using a 64 bit, or if appropriate for your computer, a 32 bit installation.
+This is a much stronger set of tests than was done earlier. 
 
 Now get the additional Python modules needed for WriteR using:
  
@@ -74,14 +75,17 @@ You can now skip to the section which shows you how to check everything is ready
 
 
 
-All going to plan, you should now have Python on your system, and the additional wxPython modules as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you've done,  using:
+All going to plan, you should now have Python on your system, and the additional wxPython module as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you've done,  using:
 
 ```{r checkWxAvailable}
-reticulate::py_available(TRUE)
-reticulate::py_module_available("wx")
+TestWX()
 ```
 
-The outcome of this second command tells you if your system is ready to run the WriteR application.
+N.B. The command will return more output on your system because you will be testing the function in an interactive setting. Do that now.
+
+The outcome of this command tells you if your system is ready to run the WriteR application. It first checks that a version of Python is available, and if there is, then runs a short script that uses WxPython. 
+
+If it is all working, then a small window will have opened  on your system, and told you that you are ready to use WriteR.
 
 
 ## Opening WriteR from BrailleR

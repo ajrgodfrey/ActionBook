@@ -17,20 +17,6 @@ You will need some additional packages to the `BrailleR` package to be loaded to
 ```r
 library(BrailleR)   
 library(ggplot2)   
-```
-
-```
-
-Attaching package: 'ggplot2'
-```
-
-```
-The following objects are masked from 'package:BrailleR':
-
-    xlab, ylab
-```
-
-```r
 library(magrittr)
 ```
 
@@ -76,7 +62,7 @@ fig2.2a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
+It has x-axis 'carat' with labels 1, 2, 3 and 4.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that colour is used to represent color, with 7 levels:
 D represented by colour very deep purple, 
@@ -112,7 +98,7 @@ Warning: Using shapes for an ordinal variable is not advised
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
+It has x-axis 'carat' with labels 1, 2, 3 and 4.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that shape is used to represent cut, with 5 levels:
 Fair represented by shape solid circle, 
@@ -182,8 +168,8 @@ fig2.4a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels 0.5, 1.0, 1.5, 2.0 and 2.5.
-It has y-axis 'price' with labels 0, 5000, 10000, 15000 and 20000.
+It has x-axis 'carat' with labels 1, 2, 3 and 4.
+It has y-axis 'price' with labels 0, 5000, 10000, 15000, 20000 and 25000.
 It has 2 layers.
 Layer 1 is a set of 100 points.
 Layer 2 is a smoothed curve using method 'auto' with confidence intervals.
@@ -343,6 +329,10 @@ fig2.11c
 Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
+```
+Warning: Removed 2 rows containing missing values (geom_bar).
+```
+
 <div class="figure">
 <img src="09-GGPlot_files/figure-html/fig2-11c-1.png" alt="Right pane of Figure 2.11" width="672" />
 <p class="caption">(\#fig:fig2-11c)Right pane of Figure 2.11</p>
@@ -473,7 +463,7 @@ fig2.13b
 
 <div class="figure">
 <img src="09-GGPlot_files/figure-html/fig2-13b-1.png" alt="Right pane of Figure 2.13" width="672" />
-<p class="caption">(\#fig:fig2-13b)Right pane of Figure 2.13</p>
+<p class="caption">(\#fig:fig2-13b1)Right pane of Figure 2.13</p>
 </div>
 
 ```r
@@ -483,7 +473,7 @@ fig2.13b
 
 <div class="figure">
 <img src="09-GGPlot_files/figure-html/fig2-13b-2.png" alt="Right pane of Figure 2.13" width="672" />
-<p class="caption">(\#fig:fig2-13b)Right pane of Figure 2.13</p>
+<p class="caption">(\#fig:fig2-13b2)Right pane of Figure 2.13</p>
 </div>
 
 ```r
@@ -572,6 +562,10 @@ fig2.16a
 Warning: Removed 32 rows containing non-finite values (stat_bin).
 ```
 
+```
+Warning: Removed 14 rows containing missing values (geom_bar).
+```
+
 <div class="figure">
 <img src="09-GGPlot_files/figure-html/fig2-16a-1.png" alt="Left side of Figure 2.16" width="384" />
 <p class="caption">(\#fig:fig2-16a)Left side of Figure 2.16</p>
@@ -615,6 +609,10 @@ fig2.16b
 
 ```
 Warning: Removed 32 rows containing non-finite values (stat_bin).
+```
+
+```
+Warning: Removed 14 rows containing missing values (geom_bar).
 ```
 
 <div class="figure">
@@ -671,8 +669,8 @@ p26a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels 0.3, 0.5 and 1.0.
-It has y-axis 'price' with labels 300, 1000, 3000 and 10000.
+It has x-axis 'carat' with labels 0.3, 1.0 and 3.0.
+It has y-axis 'price' with labels 1000, 3000 and 10000.
 The chart is a set of 100 points.
 ```
 
