@@ -1,45 +1,48 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BrailleR in Action</title>
-  <meta name="description" content="Getting up and running with the BrailleR package">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Getting started with BrailleR | BrailleR in Action</title>
+  <meta name="description" content="Getting up and running with the BrailleR package" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="BrailleR in Action" />
+  <meta property="og:title" content="Chapter 3 Getting started with BrailleR | BrailleR in Action" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="<a href="https://R-Resources.massey.ac.nz/BrailleRInAction/" class="uri">https://R-Resources.massey.ac.nz/BrailleRInAction/</a>" />
+  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
   
   <meta property="og:description" content="Getting up and running with the BrailleR package" />
   <meta name="github-repo" content="ajrgodfrey/ActionBook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="BrailleR in Action" />
+  <meta name="twitter:title" content="Chapter 3 Getting started with BrailleR | BrailleR in Action" />
   <meta name="twitter:site" content="@ajrgodfrey" />
   <meta name="twitter:description" content="Getting up and running with the BrailleR package" />
   
 
-<meta name="author" content="A. Jonathan R. Godfrey">
+<meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-01-24">
+<meta name="date" content="2019-11-26" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="History.html">
-<link rel="next" href="VI.html">
+<link rel="prev" href="History.html"/>
+<link rel="next" href="VI.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -55,7 +58,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -234,8 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a><ul>
 <li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#i-do-not-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.1</b> I do not have Python 3 installed</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#i-do-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.2</b> I do have Python 3 installed</a></li>
+<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
+<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
 <li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
@@ -278,7 +280,7 @@ lot!</p>
 <div id="accessibility-of-statistical-software" class="section level2">
 <h2><span class="header-section-number">3.1</span> Accessibility of statistical software</h2>
 <p>A description of what makes statistical software accessible to the blind was given by <span class="citation">(Godfrey and Loots <a href="#ref-GodfreyLoots2014JSS">2014</a>)</span>. Many of the problems blind people face are a consequence of the failure of the specialist screen reading software we use to interact with graphical user interfaces.
-Many software applications are making use of graphics when once the information would be presented in text form with an accompanying graph. — SPSS <span class="citation">(Inc. <a href="#ref-SPSS-Soft">2012</a>)</span> is an example of this, and to a lesser extent so is the standard edition of Minitab <span class="citation">(Minitab Inc. <a href="#ref-Minitab-Soft">2012</a>)</span>. The output from Minitab Express <span class="citation">(Minitab Inc. <a href="#ref-Minitab-Express">2014</a>)</span> is a prime example of the worst possible presentation of information that was originally text; this product generates graphics that include text which is not readable by a blind person for all of its statistical output. The speech output software used by blind people can only interpret information that is text. As a guide, if the individual text in a window cannot be highlighted using the keyboard and not the mouse, then it is likely that this text will not be read for the blind user.</p>
+Many software applications are making use of graphics when once the information would be presented in text form with an accompanying graph. — SPSS <span class="citation">(SPSS Inc. <a href="#ref-SPSS-Soft">2012</a>)</span> is an example of this, and to a lesser extent so is the standard edition of Minitab <span class="citation">(Minitab Inc. <a href="#ref-Minitab-Soft">2012</a>)</span>. The output from Minitab Express <span class="citation">(Minitab Inc. <a href="#ref-Minitab-Express">2014</a>)</span> is a prime example of the worst possible presentation of information that was originally text; this product generates graphics that include text which is not readable by a blind person for all of its statistical output. The speech output software used by blind people can only interpret information that is text. As a guide, if the individual text in a window cannot be highlighted using the keyboard and not the mouse, then it is likely that this text will not be read for the blind user.</p>
 <p>It is true that some add-on packages for R also generate unreadable output, but as illustrated below, this is less of an issue than for software like SPSS or Minitab.
 <span class="citation">(Godfrey and Loots <a href="#ref-GodfreyLoots2014JSS">2014</a>)</span> gave more detailed scrutiny of R, SAS <span class="citation">(SAS Institute Inc. <a href="#ref-SAS-Soft">2010</a>)</span> , SPSS, and Minitab. Of these four applications, R and SAS were clearly superior to SPSS and the standard edition of Minitab.</p>
 <p>Some software applications have retained their historical links to the days when graphs and tables were rendered in well controlled monospace fonts — Minitab for example. In such applications the user may still be able to produce an ASCII graphic instead of the more commonly used high resolution graphs expected of today’s software (and user). In contrast, SAS and SPSS can use HTML to present information in well-formatted tables. These output windows are preferred by blind users over the graph window displays but sometimes the amount of information is not easily understood. Presentation of output is often read by eye in a vertical direction, while speech output software will read line by line. Take for example, a multiple regression where the sighted reader may scan down the list of <span class="math inline">\(p\)</span>~values in the right hand column; the same information being read aloud in line by line style could prove quite difficult to interpret. Blind users can use combinations of keys to move around HTML tables to speed up this process and avoid reading the intervening columns of output. While SPSS and SAS can deliver formatted HTML as a matter of course, R users must resort to the add-on packages, many of which are available on CRAN.</p>
@@ -341,11 +343,14 @@ The decision should be made by the individual user after some experimentation; t
 </div>
 <h3> References</h3>
 <div id="refs" class="references">
+<div id="ref-GodfreyRJournal">
+<p>Godfrey, A. 2013b. “Statistical Software from a Blind Person’s Perspective: R Is the Best, but We Can Make It Better.” <em>The R Journal</em> 5 (1):73–79. <a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.</p>
+</div>
+<div id="ref-GodfreyErhardtRJournalAddendum">
+<p>Godfrey, A. Jonathan R., and Robert Erhardt. 2014. “Addendum to “Statistical Software from a Blind Person’s Perspective&quot;.” <em>The R Journal</em> 6 (1):182. <a href="https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf" class="uri">https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf</a>.</p>
+</div>
 <div id="ref-GodfreyLoots2014JSS">
 <p>Godfrey, A. Jonathan R., and M. Theodor Loots. 2014. “Statistical Software (R, SAS, SPSS, and Minitab) for Blind Students and Practitioners.” <em>Journal of Statistical Software, Software Reviews</em> 58 (1):1–25. <a href="https://www.jstatsoft.org/v58/s01" class="uri">https://www.jstatsoft.org/v58/s01</a>.</p>
-</div>
-<div id="ref-SPSS-Soft">
-<p>Inc., SPSS. 2012. <em>IBM SPSS Statistics 21</em>. Chicago, IL: SPSS Inc. <a href="http://www.spss.com/" class="uri">http://www.spss.com/</a>.</p>
 </div>
 <div id="ref-Minitab-Soft">
 <p>Minitab Inc. 2012. <em>Minitab Statistical Software Version 16.2.3</em>. State College, PA: Minitab Inc. <a href="http://www.minitab.com/" class="uri">http://www.minitab.com/</a>.</p>
@@ -356,11 +361,8 @@ The decision should be made by the individual user after some experimentation; t
 <div id="ref-SAS-Soft">
 <p>SAS Institute Inc. 2010. <em>SAS/STAT Software, Version 9.3</em>. Cary, NC: SAS Institute Inc. <a href="http://www.sas.com/" class="uri">http://www.sas.com/</a>.</p>
 </div>
-<div id="ref-GodfreyRJournal">
-<p>Godfrey, A. 2013b. “Statistical Software from a Blind Person’s Perspective: R Is the Best, but We Can Make It Better.” <em>The R Journal</em> 5 (1):73–79. <a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.</p>
-</div>
-<div id="ref-GodfreyErhardtRJournalAddendum">
-<p>Godfrey, A. Jonathan R., and Robert Erhardt. 2014. “Addendum to “Statistical Software from a Blind Person’s Perspective&quot;.” <em>The R Journal</em> 6 (1):182. <a href="https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf" class="uri">https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf</a>.</p>
+<div id="ref-SPSS-Soft">
+<p>SPSS Inc. 2012. <em>IBM SPSS Statistics 21</em>. Chicago, IL: SPSS Inc. <a href="http://www.spss.com/" class="uri">http://www.spss.com/</a>.</p>
 </div>
 </div>
             </section>
@@ -374,24 +376,24 @@ The decision should be made by the individual user after some experimentation; t
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -399,6 +401,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -416,9 +422,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

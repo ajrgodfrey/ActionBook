@@ -1,45 +1,48 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BrailleR in Action</title>
-  <meta name="description" content="Getting up and running with the BrailleR package">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 History of the BrailleR Project | BrailleR in Action</title>
+  <meta name="description" content="Getting up and running with the BrailleR package" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="BrailleR in Action" />
+  <meta property="og:title" content="Chapter 2 History of the BrailleR Project | BrailleR in Action" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="<a href="https://R-Resources.massey.ac.nz/BrailleRInAction/" class="uri">https://R-Resources.massey.ac.nz/BrailleRInAction/</a>" />
+  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
   
   <meta property="og:description" content="Getting up and running with the BrailleR package" />
   <meta name="github-repo" content="ajrgodfrey/ActionBook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="BrailleR in Action" />
+  <meta name="twitter:title" content="Chapter 2 History of the BrailleR Project | BrailleR in Action" />
   <meta name="twitter:site" content="@ajrgodfrey" />
   <meta name="twitter:description" content="Getting up and running with the BrailleR package" />
   
 
-<meta name="author" content="A. Jonathan R. Godfrey">
+<meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-01-24">
+<meta name="date" content="2019-11-26" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html">
-<link rel="next" href="GettingStarted.html">
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="GettingStarted.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -55,7 +58,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -234,8 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a><ul>
 <li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#i-do-not-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.1</b> I do not have Python 3 installed</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#i-do-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.2</b> I do have Python 3 installed</a></li>
+<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
+<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
 <li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
@@ -317,21 +319,22 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 ## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
 ## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-## It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
+## It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 ## The mids and counts for the bins are:
 ## mid = -3.25  count = 1 
-## mid = -2.75  count = 3 
-## mid = -2.25  count = 16 
-## mid = -1.75  count = 45 
-## mid = -1.25  count = 98 
-## mid = -0.75  count = 146 
-## mid = -0.25  count = 202 
-## mid = 0.25  count = 178 
-## mid = 0.75  count = 161 
-## mid = 1.25  count = 95 
-## mid = 1.75  count = 41 
+## mid = -2.75  count = 5 
+## mid = -2.25  count = 17 
+## mid = -1.75  count = 53 
+## mid = -1.25  count = 83 
+## mid = -0.75  count = 145 
+## mid = -0.25  count = 212 
+## mid = 0.25  count = 193 
+## mid = 0.75  count = 130 
+## mid = 1.25  count = 96 
+## mid = 1.75  count = 51 
 ## mid = 2.25  count = 12 
-## mid = 2.75  count = 2</code></pre>
+## mid = 2.75  count = 1 
+## mid = 3.25  count = 1</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2">
@@ -359,7 +362,7 @@ It is important to keep abreast of developments, because the statistical softwar
 <div id="attendance-at-user-conferences" class="section level2">
 <h2><span class="header-section-number">2.7</span> Attendance at UseR conferences</h2>
 <p>On my way to the 5<sup>th</sup> Summer University event, I managed to attend the principal conference for R users (UseR!2014) in Los Angeles where I presented my findings <span class="citation">(Godfrey <a href="#ref-Godfrey2014BlindUseROral">2014</a><a href="#ref-Godfrey2014BlindUseROral">c</a>)</span>.
-Perhaps the most valuable outcome of this conference was the ability to attend a tutorial on use of the <code>knitr</code> package <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2018</a>)</span> and then talk to its author, Yihui Xie.
+Perhaps the most valuable outcome of this conference was the ability to attend a tutorial on use of the <code>knitr</code> package <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2019</a>)</span> and then talk to its author, Yihui Xie.
 I’d already seen the <code>knitr</code> package before attending UseR!2014 and implemented it for some of my teaching material by updating the Sweave documents already in use.<br />
 The real value came in realising what I could probably do if I used R markdown to do a few things I had found very hard using the Sweave way of working.
 More specifically, generating an R markdown file (Rmd) from an R script was much easier than generating a Sweave file (Rnw).
@@ -402,68 +405,68 @@ package’s existence.</p>
 <div id="ref-Godfrey2011SU-R">
 <p>Godfrey, A. 2011. “R.” Telc, The Czech Republic.</p>
 </div>
-<div id="ref-Godfrey2013SU-R">
-<p>Godfrey, A. 2013a. “Using R: The Most Accessible Statistical Software for Blind Students.” Bad Herrenalb, Germany.</p>
-</div>
-<div id="ref-Godfrey2014SU-R">
-<p>Godfrey, A. 2014b. “Introduction to R: The Most Accessible Statistical Software for Blind Students.” Paris, France.</p>
-</div>
-<div id="ref-Godfrey2016SU-R">
-<p>Godfrey, A. 2016b. “Introduction to R: The Most Accessible Statistical Software for Blind Students.” Linz, Austria.</p>
-</div>
-<div id="ref-Rpkg-BrailleR">
-<p>Godfrey, A. Jonathan R., Debra Warren, Paul Murrell, Timothy Bilton, and Volker Sorge. 2019. <em>BrailleR: Improved Access for Blind Users</em>. <a href="https://CRAN.R-project.org/package=BrailleR" class="uri">https://CRAN.R-project.org/package=BrailleR</a>.</p>
+<div id="ref-Godfrey2012PuttingPaper">
+<p>Godfrey, A. 2012a. “Putting It All Together — a Blind Person’s Perspective on Document Preparation.” In <em>Proceedings of Digitization and E-Inclusion in Mathematics and Science</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 135–41. Tokyo, Japan.</p>
 </div>
 <div id="ref-Godfrey2012BrailleRPaper">
 <p>Godfrey, A. 2012b. “The BrailleR Project.” In <em>Proceedings of Digitization and E-Inclusion in Mathematics and Science</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 89–95. Tokyo, Japan.</p>
 </div>
-<div id="ref-Godfrey2012PuttingPaper">
-<p>Godfrey, A. 2012a. “Putting It All Together — a Blind Person’s Perspective on Document Preparation.” In <em>Proceedings of Digitization and E-Inclusion in Mathematics and Science</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 135–41. Tokyo, Japan.</p>
-</div>
-<div id="ref-Godfrey2014SU-Sweave">
-<p>Godfrey, A. 2014d. “R and LaTeX — a Powerful Combination for Assignment Preparation.” Paris, France.</p>
+<div id="ref-Godfrey2013SU-R">
+<p>Godfrey, A. 2013a. “Using R: The Most Accessible Statistical Software for Blind Students.” Bad Herrenalb, Germany.</p>
 </div>
 <div id="ref-GodfreyRJournal">
 <p>Godfrey, A. 2013b. “Statistical Software from a Blind Person’s Perspective: R Is the Best, but We Can Make It Better.” <em>The R Journal</em> 5 (1):73–79. <a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.</p>
 </div>
-<div id="ref-GodfreyErhardtRJournalAddendum">
-<p>Godfrey, A. Jonathan R., and Robert Erhardt. 2014. “Addendum to “Statistical Software from a Blind Person’s Perspective&quot;.” <em>The R Journal</em> 6 (1):182. <a href="https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf" class="uri">https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf</a>.</p>
-</div>
 <div id="ref-Godfrey2013BlindnessPoster">
 <p>Godfrey, A. 2013c. “Blindness in a Visual Discipline.” University of Waikato, Hamilton.</p>
-</div>
-<div id="ref-GodfreyMurrell2016TactileGraphsPaper">
-<p>Godfrey, A. Jonathan R., and Paul Murrell. 2016. “Statistical Graphs Made Tactile.” In <em>Proceedings of the International Workshop on Digitization and E-Inclusion in Mathematics and Science 2016</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 69–74. Kanegawa, Japan.</p>
-</div>
-<div id="ref-GodfreyLoots2014JSS">
-<p>Godfrey, A. Jonathan R., and M. Theodor Loots. 2014. “Statistical Software (R, SAS, SPSS, and Minitab) for Blind Students and Practitioners.” <em>Journal of Statistical Software, Software Reviews</em> 58 (1):1–25. <a href="https://www.jstatsoft.org/v58/s01" class="uri">https://www.jstatsoft.org/v58/s01</a>.</p>
 </div>
 <div id="ref-Godfrey2014SU-StatsSoft">
 <p>Godfrey, A. 2014a. “A Review of Statistical Software for Blind Students.” Paris, France.</p>
 </div>
-<div id="ref-Godfrey2016SU-StatsSoft">
-<p>Godfrey, A. 2016a. “A Review of Statistical Software for Blind Students.” Linz, Austria.</p>
+<div id="ref-Godfrey2014SU-R">
+<p>Godfrey, A. 2014b. “Introduction to R: The Most Accessible Statistical Software for Blind Students.” Paris, France.</p>
 </div>
 <div id="ref-Godfrey2014BlindUseROral">
 <p>Godfrey, A. 2014c. “Practical Use of R by Blind People.” University of California, Los Angeles.</p>
 </div>
-<div id="ref-Rpkg-knitr">
-<p>Xie, Yihui. 2018. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
+<div id="ref-Godfrey2014SU-Sweave">
+<p>Godfrey, A. 2014d. “R and LaTeX — a Powerful Combination for Assignment Preparation.” Paris, France.</p>
 </div>
 <div id="ref-Godfrey2015BaseRWeepsOral">
 <p>Godfrey, A. 2015. “While My Base R Gently Weeps.” Aalborg, Denmark.</p>
 </div>
+<div id="ref-Godfrey2016SU-StatsSoft">
+<p>Godfrey, A. 2016a. “A Review of Statistical Software for Blind Students.” Linz, Austria.</p>
+</div>
+<div id="ref-Godfrey2016SU-R">
+<p>Godfrey, A. 2016b. “Introduction to R: The Most Accessible Statistical Software for Blind Students.” Linz, Austria.</p>
+</div>
 <div id="ref-GodfreyBilton2016UseROral">
 <p>Godfrey, A. Jonathan R., and Timothy P. Bilton. 2016. “R Markdown: Lifesaver or Death Trap?” Stanford University, California.</p>
-</div>
-<div id="ref-RStudio">
-<p>RStudio. 2018. <em>RStudio: Integrated Development Environment for R, Version 1.1.453</em>. Boston, MA: RStudio. <a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>.</p>
 </div>
 <div id="ref-GodfreyCurtis2016WriteRPaper">
 <p>Godfrey, A. Jonathan R., and James M. P. Curtis. 2016. “Simple Authoring of Statistical Analyses by and for Blind People.” In <em>Proceedings of the International Workshop on Digitization and E-Inclusion in Mathematics and Science 2016</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 47–54. Kanegawa, Japan. <a href="http://workshop.sciaccess.net/DEIMS2016/index.html" class="uri">http://workshop.sciaccess.net/DEIMS2016/index.html</a>.</p>
 </div>
+<div id="ref-GodfreyErhardtRJournalAddendum">
+<p>Godfrey, A. Jonathan R., and Robert Erhardt. 2014. “Addendum to “Statistical Software from a Blind Person’s Perspective&quot;.” <em>The R Journal</em> 6 (1):182. <a href="https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf" class="uri">https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf</a>.</p>
+</div>
+<div id="ref-GodfreyLoots2014JSS">
+<p>Godfrey, A. Jonathan R., and M. Theodor Loots. 2014. “Statistical Software (R, SAS, SPSS, and Minitab) for Blind Students and Practitioners.” <em>Journal of Statistical Software, Software Reviews</em> 58 (1):1–25. <a href="https://www.jstatsoft.org/v58/s01" class="uri">https://www.jstatsoft.org/v58/s01</a>.</p>
+</div>
+<div id="ref-GodfreyMurrell2016TactileGraphsPaper">
+<p>Godfrey, A. Jonathan R., and Paul Murrell. 2016. “Statistical Graphs Made Tactile.” In <em>Proceedings of the International Workshop on Digitization and E-Inclusion in Mathematics and Science 2016</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 69–74. Kanegawa, Japan.</p>
+</div>
+<div id="ref-Rpkg-BrailleR">
+<p>Godfrey, A. Jonathan R., Debra Warren, Paul Murrell, Timothy Bilton, and Volker Sorge. 2019. <em>BrailleR: Improved Access for Blind Users</em>. <a href="https://CRAN.R-project.org/package=BrailleR" class="uri">https://CRAN.R-project.org/package=BrailleR</a>.</p>
+</div>
+<div id="ref-RStudio">
+<p>RStudio. 2018. <em>RStudio: Integrated Development Environment for R, Version 1.1.453</em>. Boston, MA: RStudio. <a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>.</p>
+</div>
 <div id="ref-Rpkg-TeachingDemos">
 <p>Snow, Greg. 2016. <em>TeachingDemos: Demonstrations for Teaching and Learning</em>. <a href="https://CRAN.R-project.org/package=TeachingDemos" class="uri">https://CRAN.R-project.org/package=TeachingDemos</a>.</p>
+</div>
+<div id="ref-Rpkg-knitr">
+<p>Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
 </div>
 </div>
             </section>
@@ -477,24 +480,24 @@ package’s existence.</p>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -502,6 +505,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -519,9 +526,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

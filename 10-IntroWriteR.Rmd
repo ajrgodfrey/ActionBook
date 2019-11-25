@@ -1,8 +1,15 @@
 # Getting started with the WriteR application {#WriteR}
 
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(fig.width=7, fig.height=5, comment="")
+library(BrailleR)
+```
+
 The WriteR application was written to support use of R markdown and the `BrailleR` package. It is a Python script making use of wxPython to help build the graphic user interface (GUI) in such a way that it works for screen reader users. This book has been written in R markdown, and I have made extensive use of WriteR because it offers so many convenient tools for a blind user wanting to write R markdown files.
 
-The script is in the `BrailleR` package, but it cannot run unless the user has both Python and wxPython installed. Commands have been included in the `BrailleR` package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Pandoc, Python and WxPython independently, but these tools may well already be installed.
+The script is in the `BrailleR` package, but it cannot run unless the user has both Python and wxPython installed. Commands have been included in the `BrailleR` package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Pandoc, Python and wxPython independently, but these tools may well already be installed.
 
 ## Getting the required software (Windows users only)
 
@@ -11,7 +18,7 @@ You can check if a version of Python is already installed on your computer using
 Sys.which("Python")
 ```
 
-The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.
+The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check your system that return more useful detail, but for the moment the `Sys.which()` command above issufficient.  What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.
 
 The files downloaded as a consequence of running commands in this set of instructions will be saved in your `MyBrailleR` folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway. 
 
@@ -20,7 +27,9 @@ If you do not have an installation of Pandoc and Python 3 then you can use some 
  
 `library(BrailleR)`
 
-It doesn't matter if you install Python before or after Pandoc. 
+It doesn't matter if you install Python before or after Pandoc.
+
+
 
 ### Installing Pandoc
 
@@ -55,7 +64,7 @@ You need to make sure that the second of these options definitely happens; this 
 We can check the installation has worked properly at this point using:
 ```{r checkPyConfig}
 Sys.which("python")
-shell("path")
+shell("echo path")
 ```
 
 This is a much stronger set of tests than was done earlier. 
@@ -143,7 +152,7 @@ The WriteR application really can make writing documents easier because it offer
 - One figure per chunk is recommended. This helps with the alt tags.
 - The default presentation of R output is to have three hash signs at the left of each line of output.  Inclusion of an R chunk at the start of the document can fix this. Use something like:
 ````
-```{r setup}
+```{r MySetup}
 library(knitr)
 opts_chunk$set(comment="")
 ```
@@ -158,6 +167,9 @@ Finally, you should investigate which combination of screen reader and browser g
 
 ## BrailleR commands used in this chapter
 
-We needed to use either `GetPython27()` and `GetWxPython27()` or `GetPython3()` to install the necessary software to allow us to run a Python script like WriteR. 
-We then opened a new file using `WriteR()`.
+We used `TestWX()` to check the necessary Python installations were successful. It automatically called the `TestPython()` command as its first step.
+
+We needed to use `GetPython3()`  and `GetWxPython3()` to install the necessary software to run a Python script like WriteR. 
+
+Finally, we opened a new file using `WriteR()`.
 

@@ -1,45 +1,48 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BrailleR in Action</title>
-  <meta name="description" content="Getting up and running with the BrailleR package">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Some basic examples | BrailleR in Action</title>
+  <meta name="description" content="Getting up and running with the BrailleR package" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="BrailleR in Action" />
+  <meta property="og:title" content="Chapter 4 Some basic examples | BrailleR in Action" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="<a href="https://R-Resources.massey.ac.nz/BrailleRInAction/" class="uri">https://R-Resources.massey.ac.nz/BrailleRInAction/</a>" />
+  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
   
   <meta property="og:description" content="Getting up and running with the BrailleR package" />
   <meta name="github-repo" content="ajrgodfrey/ActionBook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="BrailleR in Action" />
+  <meta name="twitter:title" content="Chapter 4 Some basic examples | BrailleR in Action" />
   <meta name="twitter:site" content="@ajrgodfrey" />
   <meta name="twitter:description" content="Getting up and running with the BrailleR package" />
   
 
-<meta name="author" content="A. Jonathan R. Godfrey">
+<meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-01-24">
+<meta name="date" content="2019-11-26" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="GettingStarted.html">
-<link rel="next" href="NewGraphs.html">
+<link rel="prev" href="GettingStarted.html"/>
+<link rel="next" href="NewGraphs.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -55,7 +58,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -234,8 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a><ul>
 <li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#i-do-not-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.1</b> I do not have Python 3 installed</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#i-do-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.2</b> I do have Python 3 installed</a></li>
+<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
+<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
 <li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
@@ -303,19 +305,18 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 <p>A simple way for blind users to access the information used to create a graph is to ask R to print the object, using the <code>print()</code> command.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">print</span>(HIST)</a></code></pre></div>
 <pre><code>$breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[15]  3.5  4.0
+ [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
- [1]   1   5  18  35  85 156 198 209 155  76  39  17   3   2   1
+ [1]   5  10  42  97 149 177 194 153  98  53  18   2   2
 
 $density
- [1] 0.002 0.010 0.036 0.070 0.170 0.312 0.396 0.418 0.310 0.152 0.078
-[12] 0.034 0.006 0.004 0.002
+ [1] 0.010 0.020 0.084 0.194 0.298 0.354 0.388 0.306 0.196 0.106 0.036 0.004
+[13] 0.004
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[12]  2.25  2.75  3.25  3.75
+ [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75
+[13]  3.25
 
 $xname
 [1] &quot;Y&quot;
@@ -338,18 +339,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 15
+[1] 13
 
 $par
 $par$xaxp
-[1] -2  4  3
+[1] -3  3  6
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -2  0  2  4
+[1] -3 -2 -1  0  1  2  3
 
 $yTicks
 [1]   0  50 100 150 200
@@ -374,26 +375,24 @@ R hints: If you intend to make a tactile version of a histogram, you may find it
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">VI</span>(HIST)</a></code></pre></div>
 <pre><code>This is a histogram, with the title: Histogram of Y
 &quot;Y&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -2, 0, 2, and 4 
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
+It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.25  count = 1 
 mid = -2.75  count = 5 
-mid = -2.25  count = 18 
-mid = -1.75  count = 35 
-mid = -1.25  count = 85 
-mid = -0.75  count = 156 
-mid = -0.25  count = 198 
-mid = 0.25  count = 209 
-mid = 0.75  count = 155 
-mid = 1.25  count = 76 
-mid = 1.75  count = 39 
-mid = 2.25  count = 17 
-mid = 2.75  count = 3 
-mid = 3.25  count = 2 
-mid = 3.75  count = 1</code></pre>
+mid = -2.25  count = 10 
+mid = -1.75  count = 42 
+mid = -1.25  count = 97 
+mid = -0.75  count = 149 
+mid = -0.25  count = 177 
+mid = 0.25  count = 194 
+mid = 0.75  count = 153 
+mid = 1.25  count = 98 
+mid = 1.75  count = 53 
+mid = 2.25  count = 18 
+mid = 2.75  count = 2 
+mid = 3.25  count = 2</code></pre>
 <p>The <code>Describe()</code> and <code>VI()</code> commands actually call the <code>Describe.histogram()</code> and <code>VI.histogram()</code> commands because R knows it is a histogram that was generated by <code>hist()</code> earlier.</p>
 <div id="important-features" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Important features</h3>
@@ -453,29 +452,29 @@ Day: Min. 1   1st Qu. 8   Median 16   Mean 15.8039215686275   3rd Qu. 23   Max. 
 <div id="ref-BulatovGardner2004SVG">
 <p>Bulatov, Vladimir, and John A. Gardner. 2004. “Making Graphics Accessible.” In <em>SVG Open Conference</em>. Tokyo. <a href="http://www.svgopen.com/2004/papers/SVGOpen2004MakingGraphicsAccessible/" class="uri">http://www.svgopen.com/2004/papers/SVGOpen2004MakingGraphicsAccessible/</a>.</p>
 </div>
-<div id="ref-GardnerBulatov2010SVG">
-<p>Gardner, John, and Vladimir Bulatov. 2010. “Highly Accessible Scientific Graphical Information Through Daisy Svg.” In <em>Proceedings of the 2010 Svgopen Conference, Paris, France</em>. <a href="http://www.svgopen.org/2010/papers/56-Highly_Accessible_Scientific_Graphical_Information_through_DAISY_SVG/index.html" class="uri">http://www.svgopen.org/2010/papers/56-Highly_Accessible_Scientific_Graphical_Information_through_DAISY_SVG/index.html</a>.</p>
-</div>
 <div id="ref-SVGStandard">
 <p>Dengler, P., D. Jackson, C. Lilley, J. Fujisawa, C. McCormack, E. Dahlström, A. Grasso, J. Ferraiolo, D. Schepers, and J. Watt. 2011. <em>Scalable Vector Graphics (Svg) 1.1</em>. Second. W3C recommendation, W3C. <a href="http://www.w3.org/TR/2011/REC-SVG11-20110816/" class="uri">http://www.w3.org/TR/2011/REC-SVG11-20110816/</a>.</p>
-</div>
-<div id="ref-MurrellPotter2014">
-<p>Murrell, Paul, and Simon Potter. 2014. “The gridSVG Package.” <em>The R Journal</em> 6 (1):133–43. <a href="http://journal.r-project.org/archive/2014-1/RJournal_2014-1_murrell-potter.pdf" class="uri">http://journal.r-project.org/archive/2014-1/RJournal_2014-1_murrell-potter.pdf</a>.</p>
-</div>
-<div id="ref-Murrell2015GridGraphics">
-<p>Murrell, Paul. 2015. “The gridGraphics Package.” <em>The R Journal</em> 7 (1):151–62. <a href="http://journal.r-project.org/archive/2015-1/murrell.pdf" class="uri">http://journal.r-project.org/archive/2015-1/murrell.pdf</a>.</p>
 </div>
 <div id="ref-JAWS">
 <p>Freedom Scientific. 2018. <em>JAWS Version 2018.1805.33</em>. St. Petersburg, FL: Freedom Scientific. <a href="http://www.freedomscientific.com/" class="uri">http://www.freedomscientific.com/</a>.</p>
 </div>
+<div id="ref-GardnerBulatov2010SVG">
+<p>Gardner, John, and Vladimir Bulatov. 2010. “Highly Accessible Scientific Graphical Information Through Daisy Svg.” In <em>Proceedings of the 2010 Svgopen Conference, Paris, France</em>. <a href="http://www.svgopen.org/2010/papers/56-Highly_Accessible_Scientific_Graphical_Information_through_DAISY_SVG/index.html" class="uri">http://www.svgopen.org/2010/papers/56-Highly_Accessible_Scientific_Graphical_Information_through_DAISY_SVG/index.html</a>.</p>
+</div>
 <div id="ref-GodfreyLoots2014JSS">
 <p>Godfrey, A. Jonathan R., and M. Theodor Loots. 2014. “Statistical Software (R, SAS, SPSS, and Minitab) for Blind Students and Practitioners.” <em>Journal of Statistical Software, Software Reviews</em> 58 (1):1–25. <a href="https://www.jstatsoft.org/v58/s01" class="uri">https://www.jstatsoft.org/v58/s01</a>.</p>
 </div>
-<div id="ref-NVDA">
-<p>NVDA Team. 2018. <em>NVDA Version 2018.1.1</em>. <a href="http://www.nvaccess.org/" class="uri">http://www.nvaccess.org/</a>.</p>
-</div>
 <div id="ref-SPLUS-Soft">
 <p>Insightful Corp. 2003. <em>S-PLUS Version 6.2</em>. Seattle, WA. <a href="http://www.insightful.com/" class="uri">http://www.insightful.com/</a>.</p>
+</div>
+<div id="ref-Murrell2015GridGraphics">
+<p>Murrell, Paul. 2015. “The gridGraphics Package.” <em>The R Journal</em> 7 (1):151–62. <a href="http://journal.r-project.org/archive/2015-1/murrell.pdf" class="uri">http://journal.r-project.org/archive/2015-1/murrell.pdf</a>.</p>
+</div>
+<div id="ref-MurrellPotter2014">
+<p>Murrell, Paul, and Simon Potter. 2014. “The gridSVG Package.” <em>The R Journal</em> 6 (1):133–43. <a href="http://journal.r-project.org/archive/2014-1/RJournal_2014-1_murrell-potter.pdf" class="uri">http://journal.r-project.org/archive/2014-1/RJournal_2014-1_murrell-potter.pdf</a>.</p>
+</div>
+<div id="ref-NVDA">
+<p>NVDA Team. 2018. <em>NVDA Version 2018.1.1</em>. <a href="http://www.nvaccess.org/" class="uri">http://www.nvaccess.org/</a>.</p>
 </div>
 </div>
             </section>
@@ -489,24 +488,24 @@ Day: Min. 1   1st Qu. 8   Median 16   Mean 15.8039215686275   3rd Qu. 23   Max. 
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -514,6 +513,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -531,9 +534,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

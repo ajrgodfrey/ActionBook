@@ -1,45 +1,48 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BrailleR in Action</title>
-  <meta name="description" content="Getting up and running with the BrailleR package">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action</title>
+  <meta name="description" content="Getting up and running with the BrailleR package" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="BrailleR in Action" />
+  <meta property="og:title" content="Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="<a href="https://R-Resources.massey.ac.nz/BrailleRInAction/" class="uri">https://R-Resources.massey.ac.nz/BrailleRInAction/</a>" />
+  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
   
   <meta property="og:description" content="Getting up and running with the BrailleR package" />
   <meta name="github-repo" content="ajrgodfrey/ActionBook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="BrailleR in Action" />
+  <meta name="twitter:title" content="Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action" />
   <meta name="twitter:site" content="@ajrgodfrey" />
   <meta name="twitter:description" content="Getting up and running with the BrailleR package" />
   
 
-<meta name="author" content="A. Jonathan R. Godfrey">
+<meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-01-24">
+<meta name="date" content="2019-11-26" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="WorkingBlind.html">
-<link rel="next" href="Personalising.html">
+<link rel="prev" href="WorkingBlind.html"/>
+<link rel="next" href="Personalising.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -55,7 +58,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -234,8 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a><ul>
 <li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#i-do-not-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.1</b> I do not have Python 3 installed</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#i-do-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.2</b> I do have Python 3 installed</a></li>
+<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
+<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
 <li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
@@ -276,10 +278,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
 <div id="general-information" class="section level2">
 <h2><span class="header-section-number">7.1</span> General information</h2>
-<p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user. They make extensive use of the <code>knitr</code> package <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2018</a>)</span> to process R commands and retrieve the R output and graphs, and then the <code>rmarkdown</code> package <span class="citation">(Allaire et al. <a href="#ref-Rpkg-rmarkdown">2018</a>)</span> to process the markdown content of the raw input file into HTML (or other file types if we wanted them).</p>
+<p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user. They make extensive use of the <code>knitr</code> package <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2019</a>)</span> to process R commands and retrieve the R output and graphs, and then the <code>rmarkdown</code> package <span class="citation">(Allaire et al. <a href="#ref-Rpkg-rmarkdown">2019</a>)</span> to process the markdown content of the raw input file into HTML (or other file types if we wanted them).</p>
 <p>This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is automatically presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their screen reading software. All graphs are given an “alt tag” when they are included in the HTML file, and can be presented using a text description available from the <code>VI()</code> functionality of the <code>BrailleR</code> package.</p>
 <p>In addition, the blind user may need one or more of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script).
-This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents using the <code>xtable</code> package <span class="citation">(Dahl <a href="#ref-Rpkg-xtable">2016</a>)</span>.</p>
+This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents using the <code>xtable</code> package <span class="citation">(Dahl et al. <a href="#ref-Rpkg-xtable">2019</a>)</span>.</p>
 <p>The commands shown in this chapter make use of R markdown, but they are not actually ready for direct use within other R markdown documents.
 If you wish to get the output you observe within the HTML documents that will be generated, you will need to extract the relevant parts of the R markdown script files that the commands create. That sounds harder than it is!</p>
 </div>
@@ -366,9 +368,9 @@ This processing allows for:</p>
 <li>establishes the height of the figures.</li>
 </ul>
 <p>The user that does not like these settings can edit the markdown file for themselves and re-process the file, but the intention is to deliver more than all users would want so that as many users as possible get what they need.</p>
-<p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2018</a>)</span> both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
+<p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2019</a>)</span> both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
 <p>If all of the optional arguments of the <code>UniDesc()</code> function are set at their defaults, the HTML file is automatically opened in a browser (courtesy of the <code>View</code> argument); it puts the R markdown file, the R script, and the HTML document in the current working directory, while the LaTeX and graph files are all placed in a subdirectory.</p>
-<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(R Core Team <a href="#ref-Rpkg-base">2018</a>)</span> so a user can see what can be expected from these functions.</p>
+<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(R Core Team <a href="#ref-Rpkg-base">2019</a>)</span> so a user can see what can be expected from these functions.</p>
 </div>
 <div id="analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor" class="section level2">
 <h2><span class="header-section-number">7.4</span> Analysis of a single continuous variable with respect to a single grouping factor</h2>
@@ -451,7 +453,7 @@ Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
 Each of these graphs is subjected to scrutiny using the <code>WhereXY()</code> function as described earlier. The marginal distribution of the residuals is assumed normal while the fitted values and leverages are categorized on the basis of a uniform distribution. The assumption of normality for residuals is immediately obvious, but the choice to explicitly use an incorrect assumption of uniformity for the other values needs to be justified. While these quantities aare unlikely to be uniformly distributed, the intended audience needs to know about the pattern of their presentation on the graph; this should be easier to understand if the categorization is done using uniform spacing rather than another distribution that is unfamiliar to the intended audience.</p>
 <p>A table of unusual observations is created that uses rules of thumb for magnitude of residuals, leverages, and Cook’s distances. This table is presented in the HTML document and converted to a LaTeX file using the <code>xtable</code> package. The raw LaTeX for this table looks like:</p>
 <pre><code>% latex table generated in R 3.5.1 by xtable 1.8-2 package
-% Thu Jan 24 21:28:37 2019
+% Thu Jan 24 21:36:59 2019
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrrr}
@@ -502,38 +504,38 @@ OnePredictor(&quot;Ozone&quot;, &quot;Wind&quot;, airquality)
 </div>
 <h3> References</h3>
 <div id="refs" class="references">
-<div id="ref-Xie2015">
-<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/" class="uri">http://yihui.name/knitr/</a>.</p>
-</div>
-<div id="ref-Rpkg-knitr">
-<p>Xie, Yihui. 2018. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
-</div>
 <div id="ref-Rpkg-rmarkdown">
-<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, and Winston Chang. 2018. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2019. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>
 <div id="ref-Rpkg-xtable">
-<p>Dahl, David B. 2016. <em>Xtable: Export Tables to Latex or Html</em>. <a href="https://CRAN.R-project.org/package=xtable" class="uri">https://CRAN.R-project.org/package=xtable</a>.</p>
-</div>
-<div id="ref-GodfreyRJournal">
-<p>Godfrey, A. 2013b. “Statistical Software from a Blind Person’s Perspective: R Is the Best, but We Can Make It Better.” <em>The R Journal</em> 5 (1):73–79. <a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.</p>
-</div>
-<div id="ref-Fox2005-RCommander">
-<p>Fox, John. 2005. “The R Commander: A Basic Statistics Graphical User Interface to R.” <em>Journal of Statistical Software</em> 14 (9):1–42. <a href="http://www.jstatsoft.org/v14/i09" class="uri">http://www.jstatsoft.org/v14/i09</a>.</p>
+<p>Dahl, David B., David Scott, Charles Roosen, Arni Magnusson, and Jonathan Swinton. 2019. <em>Xtable: Export Tables to Latex or Html</em>. <a href="https://CRAN.R-project.org/package=xtable" class="uri">https://CRAN.R-project.org/package=xtable</a>.</p>
 </div>
 <div id="ref-Fellows2012Deducer">
 <p>Fellows, Ian. 2012. “Deducer: A Data Analysis GUI for R.” <em>Journal of Statistical Software</em> 49 (8):1–15. <a href="http://www.jstatsoft.org/v49/i08" class="uri">http://www.jstatsoft.org/v49/i08</a>.</p>
 </div>
-<div id="ref-RoedigerEtAl2012RKWard">
-<p>Rödiger, Stefan, Thomas Friedrichsmeier, Prasenjit Kapat, and Meik Michalke. 2012. “RKWard: A Comprehensive Graphical User Interface and Integrated Development Environment for Statistical Analysis with R.” <em>Journal of Statistical Software</em> 49 (9):1–34. <a href="http://www.jstatsoft.org/v49/i09" class="uri">http://www.jstatsoft.org/v49/i09</a>.</p>
+<div id="ref-Fox2005-RCommander">
+<p>Fox, John. 2005. “The R Commander: A Basic Statistics Graphical User Interface to R.” <em>Journal of Statistical Software</em> 14 (9):1–42. <a href="http://www.jstatsoft.org/v14/i09" class="uri">http://www.jstatsoft.org/v14/i09</a>.</p>
 </div>
-<div id="ref-Rpkg-moments">
-<p>Komsta, Lukasz, and Frederick Novomestky. 2015. <em>Moments: Moments, Cumulants, Skewness, Kurtosis and Related Tests</em>. <a href="https://CRAN.R-project.org/package=moments" class="uri">https://CRAN.R-project.org/package=moments</a>.</p>
+<div id="ref-GodfreyRJournal">
+<p>Godfrey, A. 2013b. “Statistical Software from a Blind Person’s Perspective: R Is the Best, but We Can Make It Better.” <em>The R Journal</em> 5 (1):73–79. <a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.</p>
 </div>
 <div id="ref-Rpkg-nortest">
 <p>Gross, Juergen, and Uwe Ligges. 2015. <em>Nortest: Tests for Normality</em>. <a href="https://CRAN.R-project.org/package=nortest" class="uri">https://CRAN.R-project.org/package=nortest</a>.</p>
 </div>
+<div id="ref-Rpkg-moments">
+<p>Komsta, Lukasz, and Frederick Novomestky. 2015. <em>Moments: Moments, Cumulants, Skewness, Kurtosis and Related Tests</em>. <a href="https://CRAN.R-project.org/package=moments" class="uri">https://CRAN.R-project.org/package=moments</a>.</p>
+</div>
 <div id="ref-Rpkg-base">
-<p>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-RoedigerEtAl2012RKWard">
+<p>Rödiger, Stefan, Thomas Friedrichsmeier, Prasenjit Kapat, and Meik Michalke. 2012. “RKWard: A Comprehensive Graphical User Interface and Integrated Development Environment for Statistical Analysis with R.” <em>Journal of Statistical Software</em> 49 (9):1–34. <a href="http://www.jstatsoft.org/v49/i09" class="uri">http://www.jstatsoft.org/v49/i09</a>.</p>
+</div>
+<div id="ref-Xie2015">
+<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/" class="uri">http://yihui.name/knitr/</a>.</p>
+</div>
+<div id="ref-Rpkg-knitr">
+<p>Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
 </div>
 </div>
             </section>
@@ -547,24 +549,24 @@ OnePredictor(&quot;Ozone&quot;, &quot;Wind&quot;, airquality)
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -572,6 +574,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -589,9 +595,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

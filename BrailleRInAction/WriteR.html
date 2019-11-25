@@ -1,45 +1,48 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BrailleR in Action</title>
-  <meta name="description" content="Getting up and running with the BrailleR package">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 11 Getting started with the WriteR application | BrailleR in Action</title>
+  <meta name="description" content="Getting up and running with the BrailleR package" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="BrailleR in Action" />
+  <meta property="og:title" content="Chapter 11 Getting started with the WriteR application | BrailleR in Action" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="<a href="https://R-Resources.massey.ac.nz/BrailleRInAction/" class="uri">https://R-Resources.massey.ac.nz/BrailleRInAction/</a>" />
+  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
   
   <meta property="og:description" content="Getting up and running with the BrailleR package" />
   <meta name="github-repo" content="ajrgodfrey/ActionBook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="BrailleR in Action" />
+  <meta name="twitter:title" content="Chapter 11 Getting started with the WriteR application | BrailleR in Action" />
   <meta name="twitter:site" content="@ajrgodfrey" />
   <meta name="twitter:description" content="Getting up and running with the BrailleR package" />
   
 
-<meta name="author" content="A. Jonathan R. Godfrey">
+<meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-01-24">
+<meta name="date" content="2019-11-26" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="GGPlot.html">
-<link rel="next" href="AccessibleGraphs.html">
+<link rel="prev" href="GGPlot.html"/>
+<link rel="next" href="AccessibleGraphs.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -55,7 +58,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -234,8 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a><ul>
 <li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#i-do-not-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.1</b> I do not have Python 3 installed</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#i-do-have-python-3-installed"><i class="fa fa-check"></i><b>11.1.2</b> I do have Python 3 installed</a></li>
+<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
+<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
 <li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
@@ -273,53 +275,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="WriteR" class="section level1">
 <h1><span class="header-section-number">Chapter 11</span> Getting started with the WriteR application</h1>
 <p>The WriteR application was written to support use of R markdown and the <code>BrailleR</code> package. It is a Python script making use of wxPython to help build the graphic user interface (GUI) in such a way that it works for screen reader users. This book has been written in R markdown, and I have made extensive use of WriteR because it offers so many convenient tools for a blind user wanting to write R markdown files.</p>
-<p>The script is in the <code>BrailleR</code> package, but it cannot run unless the user has both Python and wxPython installed. Commands have been included in the <code>BrailleR</code> package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Pandoc, Python and WxPython independently, but these tools may well already be installed.</p>
+<p>The script is in the <code>BrailleR</code> package, but it cannot run unless the user has both Python and wxPython installed. Commands have been included in the <code>BrailleR</code> package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Pandoc, Python and wxPython independently, but these tools may well already be installed.</p>
 <div id="getting-the-required-software-windows-users-only" class="section level2">
 <h2><span class="header-section-number">11.1</span> Getting the required software (Windows users only)</h2>
 <p>You can check if a version of Python is already installed on your computer using</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="kw">Sys.which</span>(<span class="st">&quot;Python&quot;</span>)</a></code></pre></div>
-<pre><code>##                     Python 
-## &quot;C:\\Python27\\Python.exe&quot;</code></pre>
-<p>The output above shows you that I have Python 2.7 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check that return more useful detail What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We must have an exact match between the version of Python 2.7 and the version of R being used.</p>
+<pre><code>                              Python 
+&quot;C:\\PROGRA~1\\Python38\\Python.exe&quot; </code></pre>
+<p>The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check your system that return more useful detail, but for the moment the <code>Sys.which()</code> command above issufficient. What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.</p>
 <p>The files downloaded as a consequence of running commands in this set of instructions will be saved in your <code>MyBrailleR</code> folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway.</p>
 <p>Ultimately, you will need a mainstream tool to process the markdown files you write into other formats. The WriteR application will end up using a tool called “pandoc” to do this so we need to get this installed.
-If you do not have an installation of Pandoc and Python (either 2.7 or 3) then you can use some functions from the <code>BrailleR</code> package to help make the setup smoother. Remember to load the package using:</p>
+If you do not have an installation of Pandoc and Python 3 then you can use some functions from the <code>BrailleR</code> package to help make the setup smoother. Remember to load the package using:</p>
 <p><code>library(BrailleR)</code></p>
-<p>It doesn’t matter if you install Python before or after Pandoc. Let’s first install Pandoc using the command:</p>
+<p>It doesn’t matter if you install Python before or after Pandoc.</p>
+<div id="installing-pandoc" class="section level3">
+<h3><span class="header-section-number">11.1.1</span> Installing Pandoc</h3>
+<p>Let’s first install Pandoc using the command:</p>
 <p><code>GetPandoc()</code></p>
-<p>There are two sets of instructions from this point onwards; you will follow only one of them.
-These instructions fetch the installation files from the reputable Python sites. Windows and any security software you might have should know that, but you can never tell! You will may need to let Windows know it is OK to install the software in the default location. The pop-up might not appear as the window with focus so if things look like they’re going slowly, look around for the pop-up window.</p>
-<div id="i-do-not-have-python-3-installed" class="section level3">
-<h3><span class="header-section-number">11.1.1</span> I do not have Python 3 installed</h3>
-<p>You do not need to install Python 2.7 if you already have Python 3; the WriteR application will work with either version of Python. I prefer to recommend that you install Python 2.7 here because it helps with a variety of other tools found in the <code>BrailleR</code> package.</p>
-<p>The following commands automatically download the installation files needed for Python 2.7, and start the installation process going.
+<p>To check that you have Pandoc installed, and that R can therefore find it, use the command&quot;</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">Sys.which</span>(<span class="st">&quot;pandoc&quot;</span>)</a></code></pre></div>
+<pre><code>                            pandoc 
+&quot;C:\\PROGRA~2\\Pandoc\\pandoc.exe&quot; </code></pre>
+<p>which will show where Pandoc was installed.</p>
+</div>
+<div id="installing-python" class="section level3">
+<h3><span class="header-section-number">11.1.2</span> Installing Python</h3>
+<p>The following instructions fetch the installation files from the reputable Python sites. Windows and any security software you might have should know that, but you can never tell! You may need to let Windows know it is OK to install the software in the default location. The pop-up might not appear as the window with focus so if things look like they’re going slowly, look around for the pop-up window.</p>
+<p>The following commands automatically download the installation files needed for Python 3.x, and start the installation process going.
 Issue them at the R prompt</p>
-<p><code>GetPython27()</code></p>
-<p>As the installer proceeds, there is one small matter to resolve. You need to make sure that as part of the installation, the Python folders are added to your system path. This makes it possible to run Python scripts from any folder on your computer and for R to see where to find Python. The next few commands will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your <code>MyBrailleR</code> folder and run it again manually before proceeding.</p>
+<p><code>GetPython3()</code></p>
+<p>Make sure that the first thing you do as part of the installation is to choose to use a custom installation. This allows you to make sure Python will be availabel to all users, update the system’s environment variables. You may need to make sure these options are selected.</p>
+<p>You need to make sure that the second of these options definitely happens; this ensures that the Python folders are added to your system path which means R and any other software that wants Python can find it. This makes it possible to run Python scripts from any folder on your computer. The next few commands will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your <code>MyBrailleR</code> folder and run it again manually before proceeding.</p>
 <p>We can check the installation has worked properly at this point using:</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_config</span>()</a></code></pre></div>
-<pre><code>## python:         C:\Python27\python.exe
-## libpython:      python27.dll
-## pythonhome:     C:\Python27
-## version:        2.7.15 (v2.7.15:ca079a3ea3, Apr 30 2018, 16:30:26) [MSC v.1500 64 bit (AMD64)]
-## Architecture:   64bit
-## numpy:           [NOT FOUND]
-## 
-## python versions found: 
-##  C:\Python27\python.exe
-##  C:\Python27\\python.exe</code></pre>
-<p>This is a much stronger set of tests than was done earlier. In particular, the <code>reticulate</code> package makes sure that the installation of Python and R are both using a 32 bit, or if appropriate for your computer, a 64 bit installation.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">Sys.which</span>(<span class="st">&quot;python&quot;</span>)</a></code></pre></div>
+<pre><code>                              python 
+&quot;C:\\PROGRA~1\\Python38\\python.exe&quot; </code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">shell</span>(<span class="st">&quot;echo path&quot;</span>)</a></code></pre></div>
+<p>This is a much stronger set of tests than was done earlier.</p>
 <p>Now get the additional Python modules needed for WriteR using:</p>
-<p><code>GetWxPython27()</code></p>
+<p><code>GetWxPython3()</code></p>
 <p>Once you have completed these installations, you are ready to go. You shouldn’t need to keep the installation files, but why not keep them just in case.
 You can now skip to the section which shows you how to check everything is ready for using WriteR.</p>
-</div>
-<div id="i-do-have-python-3-installed" class="section level3">
-<h3><span class="header-section-number">11.1.2</span> I do have Python 3 installed</h3>
-<p>If you have Python 3 on your system, it is still worth installing it again so that it gets updated to the most recent release. Use</p>
-<p><code>GetPython3()</code></p>
-<p>Instructions for getting the wx module for Python 3 installed need completion. Help from a Python 3 user is clearly needed, but the latest approach using a pip command should be promising.</p>
-<p>Once you have completed these installations, you are ready to go. You shouldn’t need to keep the installation files, but why not keep them just in case.</p>
 </div>
 </div>
 <div id="other-operating-systems" class="section level2">
@@ -327,29 +323,30 @@ You can now skip to the section which shows you how to check everything is ready
 </div>
 <div id="checking-your-system-is-ready" class="section level2">
 <h2><span class="header-section-number">11.3</span> Checking your system is ready</h2>
-<p>All going to plan, you should now have Python on your system, and the additional wxPython modules as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you’ve done, using:</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_available</span>(<span class="ot">TRUE</span>)</a></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1">reticulate<span class="op">::</span><span class="kw">py_module_available</span>(<span class="st">&quot;wx&quot;</span>)</a></code></pre></div>
-<pre><code>## [1] TRUE</code></pre>
-<p>The outcome of this second command tells you if your system is ready to run the WriteR application.</p>
+<p>All going to plan, you should now have Python on your system, and the additional wxPython module as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you’ve done, using:</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="kw">TestWX</span>()</a></code></pre></div>
+<pre><code>Your system is using Python 3.8.0</code></pre>
+<pre><code>Warning in TestWX(): This function is meant for use in interactive mode only.</code></pre>
+<p>N.B. The command will return more output on your system because you will be testing the function in an interactive setting. Do that now.</p>
+<p>The outcome of this command tells you if your system is ready to run the WriteR application. It first checks that a version of Python is available, and if there is, then runs a short script that uses WxPython.</p>
+<p>If it is all working, then a small window will have opened on your system, and told you that you are ready to use WriteR.</p>
 </div>
 <div id="opening-writer-from-brailler" class="section level2">
 <h2><span class="header-section-number">11.4</span> Opening WriteR from BrailleR</h2>
 <p>Opening WriteR is as easy as typing WriteR! Well almost. You have the option of specifying a filename; if that file exists, it gets opened for you, and if it doesn’t exist, then it gets created with a few lines already included at the top to help get you started. Try:</p>
 <p><code>WriteR(&quot;MyFirst.Rmd&quot;)</code></p>
 <p>This should open the WriteR application with the following lines already there for you to edit.</p>
-<pre><code>## ---
-## title: &quot;&quot;
-## author: &quot;&quot;
-## date: &quot;&quot;
-## output:
-##     html_document:
-##         toc: false
-##         number_sections: false
-##         fig_height: 5
-##         fig_width: 7
-## ---</code></pre>
+<pre><code>---
+title: &quot;&quot;
+author: &quot;&quot;
+date: &quot;&quot;
+output:
+    html_document:
+        toc: false
+        number_sections: false
+        fig_height: 5
+        fig_width: 7
+--- </code></pre>
 <p>Some of these lines were explained back in Chapter <a href="WorkingBlind.html#WorkingBlind">6</a>. Fill in the gaps in the first few lines for title, author, and the date before continuing.</p>
 </div>
 <div id="what-can-i-do-with-writer" class="section level2">
@@ -363,7 +360,7 @@ You can now skip to the section which shows you how to check everything is ready
 <p>Making your first HTML file is as easy as hitting the <code>f5</code> key, or using one of the options in the <code>Build</code> menu. The variety of options are the commonly used ones in RStudio. Let’s just stick to making an HTML file for the time being. You can investigate other formats later.</p>
 <p>When the processing is underway, a second window will open which gives the same output that you would see printed in an R session window if you were processing R markdown files manually.
 If the last line says “done 0”, then everything processed properly; if it says “done 1” then there was an error to fix, so look through this log to see what went wrong.</p>
-<p>The processing of your R markdown document will use a suite of packages, primarily including the <code>knitr</code> <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2018</a>)</span> and <code>rmarkdown</code> <span class="citation">(Allaire et al. <a href="#ref-Rpkg-rmarkdown">2018</a>)</span> packages.
+<p>The processing of your R markdown document will use a suite of packages, primarily including the <code>knitr</code> <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2019</a>)</span> and <code>rmarkdown</code> <span class="citation">(Allaire et al. <a href="#ref-Rpkg-rmarkdown">2019</a>)</span> packages.
 Press the <code>f4</code> key to switch back to the main document editing window in WriteR.</p>
 <p>If the processing of the file “MyFirst.Rmd” was successful, then you will now have a file called “MyFirst.html” in your current working directory. You have several choices for finding the HTML file you have created:</p>
 <ul>
@@ -397,18 +394,19 @@ opts_chunk$set(comment=&quot;&quot;)
 </div>
 <div id="brailler-commands-used-in-this-chapter-6" class="section level2">
 <h2><span class="header-section-number">11.8</span> BrailleR commands used in this chapter</h2>
-<p>We needed to use either <code>GetPython27()</code> and <code>GetWxPython27()</code> or <code>GetPython3()</code> to install the necessary software to allow us to run a Python script like WriteR.
-We then opened a new file using <code>WriteR()</code>.</p>
+<p>We used <code>TestWX()</code> to check the necessary Python installations were successful. It automatically called the <code>TestPython()</code> command as its first step.</p>
+<p>We needed to use <code>GetPython3()</code> and <code>GetWxPython3()</code> to install the necessary software to run a Python script like WriteR.</p>
+<p>Finally, we opened a new file using <code>WriteR()</code>.</p>
 
 </div>
 </div>
 <h3> References</h3>
 <div id="refs" class="references">
-<div id="ref-Rpkg-knitr">
-<p>Xie, Yihui. 2018. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
-</div>
 <div id="ref-Rpkg-rmarkdown">
-<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, and Winston Chang. 2018. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2019. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div id="ref-Rpkg-knitr">
+<p>Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
 </div>
 </div>
             </section>
@@ -422,24 +420,24 @@ We then opened a new file using <code>WriteR()</code>.</p>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -447,6 +445,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -464,9 +466,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
