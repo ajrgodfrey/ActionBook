@@ -64,10 +64,10 @@ You need to make sure that the second of these options definitely happens; this 
 We can check the installation has worked properly at this point using:
 ```{r checkPyConfig}
 Sys.which("python")
-shell("echo path")
+shell("path", intern=TRUE)
 ```
 
-This is a much stronger set of tests than was done earlier. 
+This is a much stronger test than was done earlier. You can see the folders that Windows will search through to find the tools you are using all the time. The folder for Python needs to be listed there somewhere.
 
 Now get the additional Python modules needed for WriteR using:
  

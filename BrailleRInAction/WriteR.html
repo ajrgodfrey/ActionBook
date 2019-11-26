@@ -310,8 +310,9 @@ Issue them at the R prompt</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">Sys.which</span>(<span class="st">&quot;python&quot;</span>)</a></code></pre></div>
 <pre><code>                              python 
 &quot;C:\\PROGRA~1\\Python38\\python.exe&quot; </code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">shell</span>(<span class="st">&quot;echo path&quot;</span>)</a></code></pre></div>
-<p>This is a much stronger set of tests than was done earlier.</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">shell</span>(<span class="st">&quot;path&quot;</span>, <span class="dt">intern=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>[1] &quot;PATH=C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Rtools\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Pandoc\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;&quot;</code></pre>
+<p>This is a much stronger test than was done earlier. You can see the folders that Windows will search through to find the tools you are using all the time. The folder for Python needs to be listed there somewhere.</p>
 <p>Now get the additional Python modules needed for WriteR using:</p>
 <p><code>GetWxPython3()</code></p>
 <p>Once you have completed these installations, you are ready to go. You shouldn’t need to keep the installation files, but why not keep them just in case.
@@ -324,7 +325,7 @@ You can now skip to the section which shows you how to check everything is ready
 <div id="checking-your-system-is-ready" class="section level2">
 <h2><span class="header-section-number">11.3</span> Checking your system is ready</h2>
 <p>All going to plan, you should now have Python on your system, and the additional wxPython module as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you’ve done, using:</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="kw">TestWX</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1"><span class="kw">TestWX</span>()</a></code></pre></div>
 <pre><code>Your system is using Python 3.8.0</code></pre>
 <pre><code>Warning in TestWX(): This function is meant for use in interactive mode only.</code></pre>
 <p>N.B. The command will return more output on your system because you will be testing the function in an interactive setting. Do that now.</p>
