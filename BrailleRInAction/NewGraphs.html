@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 New BrailleR commands for making and interpreting basic graphs | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 New BrailleR commands for making and interpreting basic graphs | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -340,16 +340,18 @@ Figure 5.1: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -5 -4 -3 -2 -1  0  1  2  3  4
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
-[1]   1   1  29 133 338 358 119  19   2
+ [1]   1   3  20  39  98 144 182 195 154  94  40  22   7   1
 
 $density
-[1] 0.001 0.001 0.029 0.133 0.338 0.358 0.119 0.019 0.002
+ [1] 0.002 0.006 0.040 0.078 0.196 0.288 0.364 0.390 0.308 0.188 0.080 0.044
+[13] 0.014 0.002
 
 $mids
-[1] -4.5 -3.5 -2.5 -1.5 -0.5  0.5  1.5  2.5  3.5
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
+[13]  2.75  3.25
 
 $xname
 [1] &quot;x&quot;
@@ -370,16 +372,18 @@ Figure 5.2: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -5 -4 -3 -2 -1  0  1  2  3  4
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
-[1]   1   1  29 133 338 358 119  19   2
+ [1]   1   3  20  39  98 144 182 195 154  94  40  22   7   1
 
 $density
-[1] 0.001 0.001 0.029 0.133 0.338 0.358 0.119 0.019 0.002
+ [1] 0.002 0.006 0.040 0.078 0.196 0.288 0.364 0.390 0.308 0.188 0.080 0.044
+[13] 0.014 0.002
 
 $mids
-[1] -4.5 -3.5 -2.5 -1.5 -0.5  0.5  1.5  2.5  3.5
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
+[13]  2.75  3.25
 
 $xname
 [1] &quot;x&quot;
@@ -408,21 +412,21 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 9
+[1] 14
 
 $par
 $par$xaxp
-[1] -4  4  4
+[1] -3  3  6
 
 $par$yaxp
-[1]   0 350   7
+[1]   0 200   4
 
 
 $xTicks
-[1] -4 -2  0  2  4
+[1] -3 -2 -1  0  1  2  3
 
 $yTicks
-[1]   0  50 100 150 200 250 300 350
+[1]   0  50 100 150 200
 
 attr(,&quot;class&quot;)
 [1] &quot;Augmented&quot; &quot;histogram&quot;
@@ -430,20 +434,25 @@ attr(,&quot;class&quot;)
 &gt; VI(MyHist)
 This is a histogram, with the title: Histogram of x
 &quot;x&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, 2, and 4 
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, 150, 200, 250, 300, and 350 
-It has 9 bins with equal widths, starting at -5 and ending at 4 .
+Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -4.5  count = 1 
-mid = -3.5  count = 1 
-mid = -2.5  count = 29 
-mid = -1.5  count = 133 
-mid = -0.5  count = 338 
-mid = 0.5  count = 358 
-mid = 1.5  count = 119 
-mid = 2.5  count = 19 
-mid = 3.5  count = 2</code></pre>
+mid = -3.25  count = 1 
+mid = -2.75  count = 3 
+mid = -2.25  count = 20 
+mid = -1.75  count = 39 
+mid = -1.25  count = 98 
+mid = -0.75  count = 144 
+mid = -0.25  count = 182 
+mid = 0.25  count = 195 
+mid = 0.75  count = 154 
+mid = 1.25  count = 94 
+mid = 1.75  count = 40 
+mid = 2.25  count = 22 
+mid = 2.75  count = 7 
+mid = 3.25  count = 1</code></pre>
 <p>When you first issued the <code>library(BrailleR)</code> command, there were several warnings printed out. One of them told you that the <code>hist()</code> function from the <code>graphics</code> package was masked by the <code>BrailleR</code> version. This means that when you use <code>hist()</code>, it is the <code>BrailleR</code> version being used.</p>
 <p>the <code>BrailleR</code> package includes <code>hist()</code> and <code>boxplot()</code> functions that pass the details of the command on to the <code>graphics</code> package functions of the same name, and then add any additional content required that will improve the ability to describe the visual graphic produced in text. In most cases, the graph producing functions pass on arguments such as <code>main</code>, <code>xlab</code>, or <code>ylab</code> (for main title and axis labels) to the relevant plotting commands without storing these elements in the object that is created. These elements are stored as graphical parameters and can be recalled using <code>par()</code> commands.</p>
 </div>
@@ -553,6 +562,7 @@ Sum 19 59 33 5 116</code></pre>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
+"github": false,
 "facebook": true,
 "twitter": true,
 "linkedin": false,
@@ -571,6 +581,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
