@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-11-26" />
+<meta name="date" content="2019-11-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -327,10 +327,24 @@ You can now skip to the section which shows you how to check everything is ready
 <p>All going to plan, you should now have Python on your system, and the additional wxPython module as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you’ve done, using:</p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1"><span class="kw">TestWX</span>()</a></code></pre></div>
 <pre><code>Your system is using Python 3.8.0</code></pre>
-<pre><code>Warning in TestWX(): This function is meant for use in interactive mode only.</code></pre>
-<p>N.B. The command will return more output on your system because you will be testing the function in an interactive setting. Do that now.</p>
+<p>N.B. The command will return more output on your system if you test the function in an interactive setting. Do that now.</p>
 <p>The outcome of this command tells you if your system is ready to run the WriteR application. It first checks that a version of Python is available, and if there is, then runs a short script that uses WxPython.</p>
-<p>If it is all working, then a small window will have opened on your system, and told you that you are ready to use WriteR.</p>
+<p>If you are in an interactive session, and Python is all working, then a small window will have opened on your system, and told you that you are ready to use WriteR.</p>
+<p>If for some reason you are not getting it all going properly, then there are several commands that can be issued at a command prompt. Windows users get a command prompt by typing <code>cmd</code> at the <code>Run</code> (Found by <code>Windows+R</code>).</p>
+<p>The following commands are not R commands. They should work on all operating systems. Do not proceed until each has worked without error messages.</p>
+<p>1.Typing</p>
+<pre><code>python --version</code></pre>
+<p>will tell you if Python is installed by returning the version number.
+2. Make sure you can use the tool that grabs extra Python modules from an official site by typing</p>
+<pre><code>pip --version</code></pre>
+<p>If this doesn’t work you will need to seek out the correct strategy via the Python wiki pages available online.
+3. Upgrade your Python modules using</p>
+<pre><code>python -m pip install --user --upgrade pip setuptools wheel</code></pre>
+<p>This should download a few files and automatically put them on your system.
+4. Finnally, install the wxPython module using</p>
+<pre><code>pip install --user --upgrade wxPython</code></pre>
+<p>Remember, do not move on to the next step until each of the commands above has returned satisfactory feedback. Windows users close the window using <code>Alt+F4</code> or by typing <code>exit</code>.</p>
+<p>I strongly recommend that you go back and check everything has worked using the commands presented earlier in this chapter.</p>
 </div>
 <div id="opening-writer-from-brailler" class="section level2">
 <h2><span class="header-section-number">11.4</span> Opening WriteR from BrailleR</h2>

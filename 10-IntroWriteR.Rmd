@@ -90,7 +90,7 @@ All going to plan, you should now have Python on your system, and the additional
 TestWX()
 ```
 
-N.B. The command will return more output on your system because you will be testing the function in an interactive setting. Do that now.
+N.B. The command will return more output on your system if you test the function in an interactive setting. Do that now.
 
 The outcome of this command tells you if your system is ready to run the WriteR application. It first checks that a version of Python is available, and if there is, then runs a short script that uses WxPython. 
 

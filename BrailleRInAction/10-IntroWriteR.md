@@ -116,15 +116,40 @@ TestWX()
 Your system is using Python 3.8.0
 ```
 
-```
-Warning in TestWX(): This function is meant for use in interactive mode only.
-```
-
-N.B. The command will return more output on your system because you will be testing the function in an interactive setting. Do that now.
+N.B. The command will return more output on your system if you test the function in an interactive setting. Do that now.
 
 The outcome of this command tells you if your system is ready to run the WriteR application. It first checks that a version of Python is available, and if there is, then runs a short script that uses WxPython. 
 
-If it is all working, then a small window will have opened  on your system, and told you that you are ready to use WriteR.
+If you are in an interactive session, and Python is all working, then a small window will have opened  on your system, and told you that you are ready to use WriteR.
+
+If for some reason you are not getting it all going properly, then there are several commands that can be issued at a command prompt. Windows users get a command prompt by typing `cmd` at the `Run` (Found by `Windows+R`). 
+
+The following commands are not R commands. They should work on all operating systems. Do not proceed until each has worked without error messages.
+
+1.Typing
+```
+python --version
+```
+will tell you if Python is installed by returning the version number.
+2. Make sure you can use the tool that grabs extra Python modules from an official site by typing
+```
+pip --version
+```
+If this doesn't work you will need to seek out the correct strategy via the Python wiki pages available online.
+3. Upgrade your Python modules using
+```
+python -m pip install --user --upgrade pip setuptools wheel
+```
+This should download a few files and automatically put them on your system.
+4. Finnally, install the wxPython module using
+```
+pip install --user --upgrade wxPython
+```
+
+Remember, do not move on to the next step until each of the commands above has returned satisfactory feedback. Windows users close the window using `Alt+F4` or by typing `exit`.
+
+I strongly recommend that you go back and check everything has worked using the commands presented earlier in this chapter.
+
 
 
 ## Opening WriteR from BrailleR
