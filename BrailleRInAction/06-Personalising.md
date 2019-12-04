@@ -30,12 +30,11 @@ The `BrailleR` package was intended for use by blind people, but we need to see 
 
 I think a standard workflow might be to start `BrailleR`, do some analyses using `UniDesc()` or `OnePredictor()` and the like, and then having worked out what was working well, use `GoSighted()` and re-issue the commands that you want to share with others. Don't forget to `GoBlind()` again though so that you can get the text descriptions back when you need them.
 
-## Settings for saving 
+<!--- ## Settings for saving  --->
 
 
 ## BrailleR commands used in this chapter
 
 
-
-`SetAuthor()`, `GoBlind()` and `GoSighted()`, 
+We saw the use of the `SetAuthor()` function to personalise the work you are doing to use your name instead of a generic author. The  `GoBlind()` and `GoSighted()` functions toggle between providing the additional output needed by blind users to interpret our work. Much of this additional output is not of interest to a sighted audience so changing back and forth should prove useful.
 

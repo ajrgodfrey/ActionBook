@@ -29,7 +29,7 @@ library(tidyverse)
 2. Each observation forms a row.
 3. Each type of observational unit forms a table.
 
-and then says that data not following these rules as "messy" [@Wickham2014Tidy] .
+and then says that data not following these rules is "messy" [@Wickham2014Tidy] .
 
 We care because tidy data is ready for an analysis, while messy data needs to be made tidy. We care because it is easier to use tools designed for tidy data, and this all means we should get the desired results effectively and efficiently. We care because it is more common for data to be messy than tidy, and we must be able to take messy data and tidy it up.
 
@@ -75,7 +75,7 @@ set.seed(123)
 starwars %>% filter(!is.na(species)) %>% sample_n(50) %>% group_by(species) %>% summarise(N = n(), MeanHeight = mean(height, na.rm=TRUE)) %>% CheckIt() %>% filter(N>1) %>% CheckIt() %>% WhatIs() %>% arrange(MeanHeight) 
 ```
 
-These commands have been included in the above example using what we call "camel Case" which has upper case letters for each word; to be specific it is "upper camel case" because the first word is also capitalised. The `dplyr` package uses "snake case" which replaces a space between words with an underscore, and uses only lower case letters. This choice is entirely up to the person who first develops the functions in a package. While `BrailleR` functions generally use upper camel case, it is a fairly simple exercise to add alternatives so `check_it()` and `what_is()` are also available if the user prefers to use snake case throughout the pipe chain.
+These commands have been included in the above example using what we call "camel case" which has upper case letters for each word; to be specific it is "upper camel case" because the first word is also capitalised. The `dplyr` package uses "snake case" which replaces a space between words with an underscore, and uses only lower case letters. This choice is entirely up to the person who first develops the functions in a package. While `BrailleR` functions generally use upper camel case, it is a fairly simple exercise to add alternatives so `check_it()` and `what_is()` are also available if the user prefers to use snake case throughout the pipe chain.
 
 The `CheckIt()` or `check_it()` command is actually just a substitute for the `str()` command from base R with the additional feature that it is compliant with the pipe operator and can therefore be used in a pipe chain. The `WhatIs()` or `what_is()` command is a substitute for the `VI()` command demonstrated in other chapters, but `VI()` is not pipe chain compliant.
 

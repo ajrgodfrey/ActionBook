@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 History of the BrailleR Project | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 History of the BrailleR Project | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-11-28" />
+<meta name="date" content="2019-12-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -215,8 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.1" data-path="Personalising.html"><a href="Personalising.html#who-is-the-r-markdown-file-being-written-by"><i class="fa fa-check"></i><b>8.2.1</b> Who is the R markdown file being written by?</a></li>
 <li class="chapter" data-level="8.2.2" data-path="Personalising.html"><a href="Personalising.html#the-use-of-the-vi-command"><i class="fa fa-check"></i><b>8.2.2</b> The use of the VI() command</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="Personalising.html"><a href="Personalising.html#settings-for-saving"><i class="fa fa-check"></i><b>8.3</b> Settings for saving</a></li>
-<li class="chapter" data-level="8.4" data-path="Personalising.html"><a href="Personalising.html#brailler-commands-used-in-this-chapter-4"><i class="fa fa-check"></i><b>8.4</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="8.3" data-path="Personalising.html"><a href="Personalising.html#brailler-commands-used-in-this-chapter-4"><i class="fa fa-check"></i><b>8.3</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="Tidyverse.html"><a href="Tidyverse.html"><i class="fa fa-check"></i><b>9</b> BrailleR in the tidyverse</a><ul>
 <li class="chapter" data-level="9.1" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-tidy-and-why-do-we-care"><i class="fa fa-check"></i><b>9.1</b> What is tidy and why do we care?</a></li>
@@ -247,9 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
 <li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a><ul>
-<li class="chapter" data-level="12.1" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html#incomplete"><i class="fa fa-check"></i><b>12.1</b> incomplete</a></li>
-</ul></li>
+<li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
 <li class="chapter" data-level="14" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>14</b> References</a></li>
 <li class="divider"></li>
@@ -318,23 +315,22 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 ## &quot;x&quot; is marked on the x-axis.
 ## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, and 150 
-## It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
+## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+## It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
 ## The mids and counts for the bins are:
-## mid = -3.25  count = 2 
-## mid = -2.75  count = 5 
-## mid = -2.25  count = 22 
-## mid = -1.75  count = 66 
-## mid = -1.25  count = 91 
-## mid = -0.75  count = 154 
-## mid = -0.25  count = 173 
-## mid = 0.25  count = 182 
-## mid = 0.75  count = 138 
-## mid = 1.25  count = 90 
-## mid = 1.75  count = 63 
-## mid = 2.25  count = 13 
-## mid = 2.75  count = 0 
-## mid = 3.25  count = 1</code></pre>
+## mid = -3.25  count = 1 
+## mid = -2.75  count = 4 
+## mid = -2.25  count = 14 
+## mid = -1.75  count = 35 
+## mid = -1.25  count = 92 
+## mid = -0.75  count = 150 
+## mid = -0.25  count = 205 
+## mid = 0.25  count = 205 
+## mid = 0.75  count = 147 
+## mid = 1.25  count = 83 
+## mid = 1.75  count = 38 
+## mid = 2.25  count = 22 
+## mid = 2.75  count = 4</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2">
@@ -491,7 +487,6 @@ package’s existence.</p>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
 "linkedin": false,
@@ -510,10 +505,6 @@ gitbook.start({
 "text": null
 },
 "history": {
-"link": null,
-"text": null
-},
-"view": {
 "link": null,
 "text": null
 },

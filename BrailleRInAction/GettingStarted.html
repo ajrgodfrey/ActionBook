@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Getting started with BrailleR | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Getting started with BrailleR | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-11-28" />
+<meta name="date" content="2019-12-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -215,8 +215,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2.1" data-path="Personalising.html"><a href="Personalising.html#who-is-the-r-markdown-file-being-written-by"><i class="fa fa-check"></i><b>8.2.1</b> Who is the R markdown file being written by?</a></li>
 <li class="chapter" data-level="8.2.2" data-path="Personalising.html"><a href="Personalising.html#the-use-of-the-vi-command"><i class="fa fa-check"></i><b>8.2.2</b> The use of the VI() command</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="Personalising.html"><a href="Personalising.html#settings-for-saving"><i class="fa fa-check"></i><b>8.3</b> Settings for saving</a></li>
-<li class="chapter" data-level="8.4" data-path="Personalising.html"><a href="Personalising.html#brailler-commands-used-in-this-chapter-4"><i class="fa fa-check"></i><b>8.4</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="8.3" data-path="Personalising.html"><a href="Personalising.html#brailler-commands-used-in-this-chapter-4"><i class="fa fa-check"></i><b>8.3</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="Tidyverse.html"><a href="Tidyverse.html"><i class="fa fa-check"></i><b>9</b> BrailleR in the tidyverse</a><ul>
 <li class="chapter" data-level="9.1" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-tidy-and-why-do-we-care"><i class="fa fa-check"></i><b>9.1</b> What is tidy and why do we care?</a></li>
@@ -247,9 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
 <li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a><ul>
-<li class="chapter" data-level="12.1" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html#incomplete"><i class="fa fa-check"></i><b>12.1</b> incomplete</a></li>
-</ul></li>
+<li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
 <li class="chapter" data-level="14" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>14</b> References</a></li>
 <li class="divider"></li>
@@ -283,7 +280,7 @@ lot!</p>
 Many software applications are making use of graphics when once the information would be presented in text form with an accompanying graph. — SPSS <span class="citation">(SPSS Inc. <a href="#ref-SPSS-Soft">2012</a>)</span> is an example of this, and to a lesser extent so is the standard edition of Minitab <span class="citation">(Minitab Inc. <a href="#ref-Minitab-Soft">2012</a>)</span>. The output from Minitab Express <span class="citation">(Minitab Inc. <a href="#ref-Minitab-Express">2014</a>)</span> is a prime example of the worst possible presentation of information that was originally text; this product generates graphics that include text which is not readable by a blind person for all of its statistical output. The speech output software used by blind people can only interpret information that is text. As a guide, if the individual text in a window cannot be highlighted using the keyboard and not the mouse, then it is likely that this text will not be read for the blind user.</p>
 <p>It is true that some add-on packages for R also generate unreadable output, but as illustrated below, this is less of an issue than for software like SPSS or Minitab.
 <span class="citation">(Godfrey and Loots <a href="#ref-GodfreyLoots2014JSS">2014</a>)</span> gave more detailed scrutiny of R, SAS <span class="citation">(SAS Institute Inc. <a href="#ref-SAS-Soft">2010</a>)</span> , SPSS, and Minitab. Of these four applications, R and SAS were clearly superior to SPSS and the standard edition of Minitab.</p>
-<p>Some software applications have retained their historical links to the days when graphs and tables were rendered in well controlled monospace fonts — Minitab for example. In such applications the user may still be able to produce an ASCII graphic instead of the more commonly used high resolution graphs expected of today’s software (and user). In contrast, SAS and SPSS can use HTML to present information in well-formatted tables. These output windows are preferred by blind users over the graph window displays but sometimes the amount of information is not easily understood. Presentation of output is often read by eye in a vertical direction, while speech output software will read line by line. Take for example, a multiple regression where the sighted reader may scan down the list of <span class="math inline">\(p\)</span>~values in the right hand column; the same information being read aloud in line by line style could prove quite difficult to interpret. Blind users can use combinations of keys to move around HTML tables to speed up this process and avoid reading the intervening columns of output. While SPSS and SAS can deliver formatted HTML as a matter of course, R users must resort to the add-on packages, many of which are available on CRAN.</p>
+<p>Some software applications have retained their historical links to the days when graphs and tables were rendered in well controlled monospace fonts — Minitab for example. In such applications the user may still be able to produce an ASCII graphic instead of the more commonly used high resolution graphs expected of today’s software (and user). In contrast, SAS and SPSS can use HTML to present information in well-formatted tables. These output windows are preferred by blind users over the graph window displays but sometimes the amount of information is not easily understood. Presentation of output is often read by eye in a vertical direction, while speech output software will read line by line. Take for example, a multiple regression where the sighted reader may scan down the list of <em>p</em> values in the right hand column; the same information being read aloud in line by line style could prove quite difficult to interpret. Blind users can use combinations of keys to move around HTML tables to speed up this process and avoid reading the intervening columns of output. While SPSS and SAS can deliver formatted HTML as a matter of course, R users must resort to the add-on packages, many of which are available on CRAN.</p>
 </div>
 <div id="accessibility-of-r" class="section level2">
 <h2><span class="header-section-number">3.2</span> Accessibility of R</h2>
@@ -387,7 +384,6 @@ The decision should be made by the individual user after some experimentation; t
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
 "facebook": true,
 "twitter": true,
 "linkedin": false,
@@ -406,10 +402,6 @@ gitbook.start({
 "text": null
 },
 "history": {
-"link": null,
-"text": null
-},
-"view": {
 "link": null,
 "text": null
 },
