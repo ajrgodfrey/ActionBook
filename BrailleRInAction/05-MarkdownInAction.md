@@ -74,11 +74,14 @@ while running R interactively. This issues the following commands.
 
 ```
 
+DIR = getwd()
+setwd(tempdir())
 Ozone=airquality$Ozone
 UniDesc(Ozone)
 rm(Ozone)
-# N.B. Various files and a folder were created in the working directory. 
+# N.B. Various files and a folder were created in a temporary directory. 
 # Please investigate them to see how this function worked.
+setwd(DIR)
 ```
 
 
@@ -160,18 +163,21 @@ while running R interactively. This issues the following commands.
 
 ```
 
+DIR = getwd()
+setwd(tempdir())
 data(airquality)
 
 # the following line  returns an error:
-## OneFactor("Ozone", "Month", airquality, View=FALSE)
+## OneFactor("Ozone", "Month", airquality, Folder=tempdir(), View=FALSE)
 # so we make a copy of the data.frame, and fix that:
 
 airquality2 = airquality
 airquality2$Month = as.factor(airquality$Month)
 # and now all is good to try:
 OneFactor("Ozone", "Month", airquality2)
-# N.B. Various files and a folder were created in the working directory. 
+# N.B. Various files and a folder were created in a temporary directory. 
 # Please investigate them to see how this function worked.
+setwd(DIR)
 ```
 
 As an alternative, and if you do have a current internet connection you can view the result of running the [`OneFactor()` command on the Ozone data](https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone.Month-OneFactor.html) in your browser without having to re-enter the example commands.
@@ -307,10 +313,13 @@ while running R interactively. This issues the following commands.
 
 ```
 
+DIR = getwd()
+setwd(tempdir())
 data(airquality)
 OnePredictor("Ozone", "Wind", airquality)
-# N.B. Various files and a folder were created in the working directory. 
+# N.B. Various files and a folder were created in a temporary directory. 
 # Please investigate them to see how this function worked.
+setwd(DIR)
 ```
 
 

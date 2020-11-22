@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2019-12-05" />
+<meta name="date" content="2020-01-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -322,11 +322,14 @@ Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewha
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">example</span>(UniDesc)</a></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
+DIR = getwd()
+setwd(tempdir())
 Ozone=airquality$Ozone
 UniDesc(Ozone)
 rm(Ozone)
-# N.B. Various files and a folder were created in the working directory. 
-# Please investigate them to see how this function worked.</code></pre>
+# N.B. Various files and a folder were created in a temporary directory. 
+# Please investigate them to see how this function worked.
+setwd(DIR)</code></pre>
 <p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-UniDesc.html"><code>UniDesc()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands. You can also view the <a href="Ozone-UniDesc.Rmd">R markdown script created by <code>UniDesc(Ozone)</code></a> which starts with the following lines:</p>
 <pre><code># Univariate analysis for Ozone 
 #### Prepared by Jonathan Godfrey   
@@ -384,18 +387,21 @@ This processing allows for:</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">example</span>(OneFactor)</a></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
+DIR = getwd()
+setwd(tempdir())
 data(airquality)
 
 # the following line  returns an error:
-## OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality, View=FALSE)
+## OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality, Folder=tempdir(), View=FALSE)
 # so we make a copy of the data.frame, and fix that:
 
 airquality2 = airquality
 airquality2$Month = as.factor(airquality$Month)
 # and now all is good to try:
 OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality2)
-# N.B. Various files and a folder were created in the working directory. 
-# Please investigate them to see how this function worked.</code></pre>
+# N.B. Various files and a folder were created in a temporary directory. 
+# Please investigate them to see how this function worked.
+setwd(DIR)</code></pre>
 <p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone.Month-OneFactor.html"><code>OneFactor()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands.</p>
 <p>The example here demonstrates the point that the grouping variable must be a factor. The month variable is not stored as a factor in the airquality data so its use would have created an error.</p>
 <p>All elements of the analysis which incorporate graphical information, or text that is slow to read using a screen reader are processed using the <code>VI()</code> functionality.</p>
@@ -486,10 +492,13 @@ The <code>OnePredictor()</code> command has been written as a shortcut for a bli
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">example</span>(OnePredictor)</a></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
+DIR = getwd()
+setwd(tempdir())
 data(airquality)
 OnePredictor(&quot;Ozone&quot;, &quot;Wind&quot;, airquality)
-# N.B. Various files and a folder were created in the working directory. 
-# Please investigate them to see how this function worked.</code></pre>
+# N.B. Various files and a folder were created in a temporary directory. 
+# Please investigate them to see how this function worked.
+setwd(DIR)</code></pre>
 <p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-OnePredictor.html"><code>OnePredictor()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands.</p>
 </div>
 <div id="brailler-commands-used-in-this-chapter-3" class="section level2">
@@ -557,6 +566,7 @@ OnePredictor(&quot;Ozone&quot;, &quot;Wind&quot;, airquality)
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
+"github": false,
 "facebook": true,
 "twitter": true,
 "linkedin": false,
@@ -575,6 +585,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

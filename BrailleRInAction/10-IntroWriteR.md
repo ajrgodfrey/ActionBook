@@ -85,7 +85,7 @@ shell("path", intern=TRUE)
 ```
 
 ```
-[1] "PATH=C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Rtools\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Pandoc\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;"
+[1] "PATH=C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Rtools\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Pandoc\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;"
 ```
 
 This is a much stronger test than was done earlier. You can see the folders that Windows will search through to find the tools you are using all the time. The folder for Python needs to be listed there somewhere.
@@ -118,6 +118,7 @@ Your system is using Python 3.8.0
 
 ```
 Python can see the necessary wx module.
+You are ready to use WriteR.
 ```
 
 N.B. The command will return more output on your system if you test the function in an interactive setting. Do that now.
