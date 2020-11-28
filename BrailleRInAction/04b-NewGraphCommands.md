@@ -88,26 +88,25 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 
 <div class="figure">
 <img src="04b-NewGraphCommands_files/figure-html/exampleHist-1.png" alt="testing examples" width="480" />
-<p class="caption">(\#fig:exampleHist1)testing examples</p>
+<p class="caption">(\#fig:exampleHist-1)testing examples</p>
 </div>
 
 ```
 
 > MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[16]  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
- [1]   1   2   7  12  60  90 152 175 194 144  90  38  27   5   3
+ [1]   1   4  15  51  93 164 164 207 143 100  37  20   0   1
 
 $density
- [1] 0.002 0.004 0.014 0.024 0.120 0.180 0.304 0.350 0.388 0.288 0.180 0.076
-[13] 0.054 0.010 0.006
+ [1] 0.002 0.008 0.030 0.102 0.186 0.328 0.328 0.414 0.286 0.200 0.074 0.040
+[13] 0.000 0.002
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[13]  2.25  2.75  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
+[13]  2.75  3.25
 
 $xname
 [1] "x"
@@ -123,26 +122,25 @@ attr(,"class")
 
 <div class="figure">
 <img src="04b-NewGraphCommands_files/figure-html/exampleHist-2.png" alt="testing examples" width="480" />
-<p class="caption">(\#fig:exampleHist2)testing examples</p>
+<p class="caption">(\#fig:exampleHist-2)testing examples</p>
 </div>
 
 ```
 
 > MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[16]  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
- [1]   1   2   7  12  60  90 152 175 194 144  90  38  27   5   3
+ [1]   1   4  15  51  93 164 164 207 143 100  37  20   0   1
 
 $density
- [1] 0.002 0.004 0.014 0.024 0.120 0.180 0.304 0.350 0.388 0.288 0.180 0.076
-[13] 0.054 0.010 0.006
+ [1] 0.002 0.008 0.030 0.102 0.186 0.328 0.328 0.414 0.286 0.200 0.074 0.040
+[13] 0.000 0.002
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[13]  2.25  2.75  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
+[13]  2.75  3.25
 
 $xname
 [1] "x"
@@ -171,18 +169,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 15
+[1] 14
 
 $par
 $par$xaxp
-[1] -4  2  3
+[1] -3  3  6
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -4 -2  0  2
+[1] -3 -2 -1  0  1  2  3
 
 $yTicks
 [1]   0  50 100 150 200
@@ -193,26 +191,25 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, and 2 
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
+It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.75  count = 1 
-mid = -3.25  count = 2 
-mid = -2.75  count = 7 
-mid = -2.25  count = 12 
-mid = -1.75  count = 60 
-mid = -1.25  count = 90 
-mid = -0.75  count = 152 
-mid = -0.25  count = 175 
-mid = 0.25  count = 194 
-mid = 0.75  count = 144 
-mid = 1.25  count = 90 
-mid = 1.75  count = 38 
-mid = 2.25  count = 27 
-mid = 2.75  count = 5 
-mid = 3.25  count = 3
+mid = -3.25  count = 1 
+mid = -2.75  count = 4 
+mid = -2.25  count = 15 
+mid = -1.75  count = 51 
+mid = -1.25  count = 93 
+mid = -0.75  count = 164 
+mid = -0.25  count = 164 
+mid = 0.25  count = 207 
+mid = 0.75  count = 143 
+mid = 1.25  count = 100 
+mid = 1.75  count = 37 
+mid = 2.25  count = 20 
+mid = 2.75  count = 0 
+mid = 3.25  count = 1
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.
