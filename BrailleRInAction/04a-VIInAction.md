@@ -54,11 +54,11 @@ $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
- [1]   1   5  19  48  78 140 202 195 147 105  42  14   3   1
+ [1]   1   9  21  45  73 158 199 194 158  76  42  16   7   1
 
 $density
- [1] 0.002 0.010 0.038 0.096 0.156 0.280 0.404 0.390 0.294 0.210 0.084 0.028
-[13] 0.006 0.002
+ [1] 0.002 0.018 0.042 0.090 0.146 0.316 0.398 0.388 0.316 0.152 0.084 0.032
+[13] 0.014 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
@@ -144,18 +144,18 @@ Tick marks for the y-axis are at: 0, 50, 100, 150, and 200
 It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 The mids and counts for the bins are:
 mid = -3.25  count = 1 
-mid = -2.75  count = 5 
-mid = -2.25  count = 19 
-mid = -1.75  count = 48 
-mid = -1.25  count = 78 
-mid = -0.75  count = 140 
-mid = -0.25  count = 202 
-mid = 0.25  count = 195 
-mid = 0.75  count = 147 
-mid = 1.25  count = 105 
+mid = -2.75  count = 9 
+mid = -2.25  count = 21 
+mid = -1.75  count = 45 
+mid = -1.25  count = 73 
+mid = -0.75  count = 158 
+mid = -0.25  count = 199 
+mid = 0.25  count = 194 
+mid = 0.75  count = 158 
+mid = 1.25  count = 76 
 mid = 1.75  count = 42 
-mid = 2.25  count = 14 
-mid = 2.75  count = 3 
+mid = 2.25  count = 16 
+mid = 2.75  count = 7 
 mid = 3.25  count = 1
 ```
 

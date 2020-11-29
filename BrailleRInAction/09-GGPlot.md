@@ -47,8 +47,8 @@ VI(p11a)
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis 'price' with labels .
+It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
+It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 The chart is a set of 53940 points.
 ```
 
@@ -62,8 +62,8 @@ fig2.2a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis 'price' with labels .
+It has x-axis 'carat' with labels 1, 2, 3 and 4.
+It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that colour is used to represent color, with 7 levels:
 D represented by colour very deep purple, 
 E represented by colour vivid purplish blue, 
@@ -98,8 +98,8 @@ Warning: Using shapes for an ordinal variable is not advised
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis 'price' with labels .
+It has x-axis 'carat' with labels 1, 2, 3 and 4.
+It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that shape is used to represent cut, with 5 levels:
 Fair represented by shape solid circle, 
 Good represented by shape solid triangle, 
@@ -140,8 +140,8 @@ fig2.3b %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis 'price' with labels .
+It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
+It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
 The chart is a set of 53940 points.
 The chart has alpha set to 0.01.
 ```
@@ -168,8 +168,8 @@ fig2.4a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis 'price' with labels .
+It has x-axis 'carat' with labels 1, 2, 3 and 4.
+It has y-axis 'price' with labels 0, 5000, 10000, 15000, 20000 and 25000.
 It has 2 layers.
 Layer 1 is a set of 100 points.
 Layer 2 is a smoothed curve using method '' with confidence intervals.
@@ -196,8 +196,8 @@ fig2.8a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'color' with labels .
-It has y-axis 'price/carat' with labels .
+It has x-axis 'color' with labels D, E, F, G, H, I and J.
+It has y-axis 'price/carat' with labels 5000, 10000 and 15000.
 The chart is a set of 53940 points.
 ```
 
@@ -215,8 +215,8 @@ fig2.8b %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'color' with labels .
-It has y-axis 'price/carat' with labels .
+It has x-axis 'color' with labels D, E, F, G, H, I and J.
+It has y-axis 'price/carat' with labels 5000, 10000 and 15000.
 The chart is a boxplot comprised of 7 boxes with whiskers.
 There is a box at x=D.
 It has median 3410.53. The box goes from 2455 to 4749.31, and the whiskers extend to 1128.12 and 8183.33.
@@ -259,8 +259,8 @@ fig2.9b %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'color' with labels .
-It has y-axis 'price/carat' with labels .
+It has x-axis 'color' with labels D, E, F, G, H, I and J.
+It has y-axis 'price/carat' with labels 5000, 10000 and 15000.
 The chart is a set of 53940 points.
 The chart has alpha set to 0.02.
 ```
@@ -290,8 +290,8 @@ fig2.10a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis '' with labels .
+It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
+It has y-axis '' with labels 0, 5000, 10000 and 15000.
 The chart is a bar chart containing 30 vertical bars.
 ```
 Warning: This figure does look different to the original in @Wickham2009ggplot2 ins spite of using the same code and same data.
@@ -313,8 +313,8 @@ fig2.10b %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis '' with labels .
+It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
+It has y-axis '' with labels 0.0, 0.5, 1.0 and 1.5.
 The chart is a type that VI isn't able to process.
 ```
 
@@ -348,8 +348,8 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis '' with labels .
+It has x-axis 'carat' with labels 0, 1, 2 and 3.
+It has y-axis '' with labels 0, 1000 and 2000.
 The chart is a bar chart containing 299 vertical bars.
 ```
 
@@ -372,8 +372,8 @@ fig2.12a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis '' with labels .
+It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
+It has y-axis '' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 There is a legend indicating that colour is used to represent color, with 7 levels:
 D represented by colour very deep purple, 
 E represented by colour vivid purplish blue, 
@@ -407,8 +407,8 @@ fig2.12b %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis '' with labels .
+It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
+It has y-axis '' with labels 0, 5000, 10000 and 15000.
 There is a legend indicating that fill is used to represent color, with 7 levels:
 D represented by fill very deep purple, 
 E represented by fill vivid purplish blue, 
@@ -440,8 +440,8 @@ fig2.13a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'color' with labels .
-It has y-axis '' with labels .
+It has x-axis 'color' with labels D, E, F, G, H, I and J.
+It has y-axis '' with labels 0, 3000, 6000 and 9000.
 The chart is a bar chart containing 7 vertical bars.
 Bar 1 is centered horizontally at D, and spans vertically from 0 to 6775.
 Bar 2 is centered horizontally at E, and spans vertically from 0 to 9797.
@@ -482,8 +482,8 @@ fig2.13b %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'color' with labels .
-It has y-axis '' with labels .
+It has x-axis 'color' with labels D, E, F, G, H, I and J.
+It has y-axis '' with labels 0, 2500, 5000 and 7500.
 The chart is a bar chart containing 7 vertical bars.
 Bar 1 is centered horizontally at D, and spans vertically from 0 to 4456.56.
 Bar 2 is centered horizontally at E, and spans vertically from 0 to 6445.12.
@@ -514,8 +514,8 @@ fig2.14a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'date' with labels .
-It has y-axis 'unemploy/pop' with labels .
+It has x-axis 'date' with labels 1960, 1970, 1980, 1990, 2000, 2010 and 2020.
+It has y-axis 'unemploy/pop' with labels 0.02, 0.03, 0.04 and 0.05.
 The chart is a set of 1 line.
 Line 1 connects 574 points.
 ```
@@ -541,8 +541,8 @@ fig2.15b %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'unemploy/pop' with labels .
-It has y-axis 'uempmed' with labels .
+It has x-axis 'unemploy/pop' with labels 0.02, 0.03, 0.04 and 0.05.
+It has y-axis 'uempmed' with labels 5, 10, 15, 20 and 25.
 There is a legend indicating that colour is used to represent year(date), ranging from 1967 represented by colour dark purplish blue to 2015 represented by colour brilliant blue.
 The chart is a type that VI isn't able to process.
 ```
@@ -583,8 +583,8 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 This is an untitled chart with no subtitle or caption.
 The chart is comprised of 7 panels containing sub-charts, arranged vertically.
 The panels represent different values of color.
-Each sub-chart has x-axis 'carat' with labels .
-Each sub-chart has y-axis '' with labels .
+Each sub-chart has x-axis 'carat' with labels 0, 1, 2 and 3.
+Each sub-chart has y-axis '' with labels 0, 500, 1000, 1500, 2000 and 2500.
 Panel 1 represents data for color = D.
 Panel 1 is a bar chart containing 29 vertical bars.
 Panel 2 represents data for color = E.
@@ -632,8 +632,8 @@ Warning: Removed 32 rows containing non-finite values (stat_bin).
 This is an untitled chart with no subtitle or caption.
 The chart is comprised of 7 panels containing sub-charts, arranged vertically.
 The panels represent different values of color.
-Each sub-chart has x-axis 'carat' with labels .
-Each sub-chart has y-axis '..density..' with labels .
+Each sub-chart has x-axis 'carat' with labels 0, 1, 2 and 3.
+Each sub-chart has y-axis '..density..' with labels 0.0, 0.5, 1.0, 1.5 and 2.0.
 Panel 1 represents data for color = D.
 Panel 1 is a bar chart containing 29 vertical bars.
 Panel 2 represents data for color = E.
@@ -669,8 +669,8 @@ p26a %>% VI()
 
 ```
 This is an untitled chart with no subtitle or caption.
-It has x-axis 'carat' with labels .
-It has y-axis 'price' with labels .
+It has x-axis 'carat' with labels 0.3, 1.0 and 3.0.
+It has y-axis 'price' with labels 1000, 3000 and 10000.
 The chart is a set of 100 points.
 ```
 
@@ -697,8 +697,8 @@ fig3.6 %>% VI()
 This is an untitled chart with no subtitle or caption.
 The chart is comprised of 2 panels containing sub-charts, arranged horizontally.
 The panels represent different values of year.
-Each sub-chart has x-axis 'displ' with labels .
-Each sub-chart has y-axis 'hwy' with labels .
+Each sub-chart has x-axis 'displ' with labels 2, 3, 4, 5, 6 and 7.
+Each sub-chart has y-axis 'hwy' with labels 20, 30 and 40.
 Each sub-chart has 2 layers.
 Panel 1 represents data for year = 1999.
 Layer 1 of panel 1 is a set of 117 points.

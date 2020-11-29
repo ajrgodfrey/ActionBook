@@ -95,18 +95,19 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 
 > MyHist
 $breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[16]  3.5
 
 $counts
- [1]   1   4  15  51  93 164 164 207 143 100  37  20   0   1
+ [1]   1   0   5  19  39  88 162 219 180 142  75  45  20   4   1
 
 $density
- [1] 0.002 0.008 0.030 0.102 0.186 0.328 0.328 0.414 0.286 0.200 0.074 0.040
-[13] 0.000 0.002
+ [1] 0.002 0.000 0.010 0.038 0.078 0.176 0.324 0.438 0.360 0.284 0.150 0.090
+[13] 0.040 0.008 0.002
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[13]  2.75  3.25
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[13]  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -129,18 +130,19 @@ attr(,"class")
 
 > MyHist
 $breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[16]  3.5
 
 $counts
- [1]   1   4  15  51  93 164 164 207 143 100  37  20   0   1
+ [1]   1   0   5  19  39  88 162 219 180 142  75  45  20   4   1
 
 $density
- [1] 0.002 0.008 0.030 0.102 0.186 0.328 0.328 0.414 0.286 0.200 0.074 0.040
-[13] 0.000 0.002
+ [1] 0.002 0.000 0.010 0.038 0.078 0.176 0.324 0.438 0.360 0.284 0.150 0.090
+[13] 0.040 0.008 0.002
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[13]  2.75  3.25
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[13]  2.25  2.75  3.25
 
 $xname
 [1] "x"
@@ -169,18 +171,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 14
+[1] 15
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -4  2  3
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -4 -2  0  2
 
 $yTicks
 [1]   0  50 100 150 200
@@ -191,24 +193,25 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -4, -2, 0, and 2 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
+It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.25  count = 1 
-mid = -2.75  count = 4 
-mid = -2.25  count = 15 
-mid = -1.75  count = 51 
-mid = -1.25  count = 93 
-mid = -0.75  count = 164 
-mid = -0.25  count = 164 
-mid = 0.25  count = 207 
-mid = 0.75  count = 143 
-mid = 1.25  count = 100 
-mid = 1.75  count = 37 
+mid = -3.75  count = 1 
+mid = -3.25  count = 0 
+mid = -2.75  count = 5 
+mid = -2.25  count = 19 
+mid = -1.75  count = 39 
+mid = -1.25  count = 88 
+mid = -0.75  count = 162 
+mid = -0.25  count = 219 
+mid = 0.25  count = 180 
+mid = 0.75  count = 142 
+mid = 1.25  count = 75 
+mid = 1.75  count = 45 
 mid = 2.25  count = 20 
-mid = 2.75  count = 0 
+mid = 2.75  count = 4 
 mid = 3.25  count = 1
 ```
 
