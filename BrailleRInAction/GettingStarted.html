@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Getting started with BrailleR | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Getting started with BrailleR | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2020-11-29" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="History.html"/>
 <link rel="next" href="VI.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,27 +54,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -133,12 +134,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">The BrailleR Package in Action Book</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation-details"><i class="fa fa-check"></i>Citation details</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#copyright-information"><i class="fa fa-check"></i>Copyright information</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-as-a-novice"><i class="fa fa-check"></i><b>1.1</b> Why will I use the BrailleR package as a novice?</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-as-a-novice"><i class="fa fa-check"></i><b>1.1</b> Why will I use the BrailleR package as a novice?</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#brailler-improves-the-accessibility-of-graphical-information"><i class="fa fa-check"></i><b>1.1.1</b> BrailleR improves the accessibility of graphical information</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#brailler-helps-gain-access-to-the-content-of-the-r-console"><i class="fa fa-check"></i><b>1.1.2</b> BrailleR helps gain access to the content of the R console</a></li>
 <li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#brailler-includes-convenience-functions"><i class="fa fa-check"></i><b>1.1.3</b> BrailleR includes convenience functions</a></li>
@@ -147,7 +151,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#why-will-i-use-this-book"><i class="fa fa-check"></i><b>1.3</b> Why will I use this book?</a></li>
 <li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#what-this-book-is-not"><i class="fa fa-check"></i><b>1.4</b> What this book is not</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="History.html"><a href="History.html"><i class="fa fa-check"></i><b>2</b> History of the BrailleR Project</a><ul>
+<li class="chapter" data-level="2" data-path="History.html"><a href="History.html"><i class="fa fa-check"></i><b>2</b> History of the BrailleR Project</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="History.html"><a href="History.html#my-background"><i class="fa fa-check"></i><b>2.1</b> My background</a></li>
 <li class="chapter" data-level="2.2" data-path="History.html"><a href="History.html#getting-the-brailler-project-started"><i class="fa fa-check"></i><b>2.2</b> Getting the BrailleR Project started</a></li>
 <li class="chapter" data-level="2.3" data-path="History.html"><a href="History.html#the-starting-point-example"><i class="fa fa-check"></i><b>2.3</b> The starting point example</a></li>
@@ -158,73 +163,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="History.html"><a href="History.html#the-ongoing-work"><i class="fa fa-check"></i><b>2.8</b> The ongoing work</a></li>
 <li class="chapter" data-level="2.9" data-path="History.html"><a href="History.html#acknowledgements"><i class="fa fa-check"></i><b>2.9</b> Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i><b>3</b> Getting started with BrailleR</a><ul>
+<li class="chapter" data-level="3" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i><b>3</b> Getting started with BrailleR</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="GettingStarted.html"><a href="GettingStarted.html#accessibility-of-statistical-software"><i class="fa fa-check"></i><b>3.1</b> Accessibility of statistical software</a></li>
 <li class="chapter" data-level="3.2" data-path="GettingStarted.html"><a href="GettingStarted.html#accessibility-of-r"><i class="fa fa-check"></i><b>3.2</b> Accessibility of R</a></li>
-<li class="chapter" data-level="3.3" data-path="GettingStarted.html"><a href="GettingStarted.html#installing-the-brailler-package"><i class="fa fa-check"></i><b>3.3</b> Installing the BrailleR package</a><ul>
+<li class="chapter" data-level="3.3" data-path="GettingStarted.html"><a href="GettingStarted.html#installing-the-brailler-package"><i class="fa fa-check"></i><b>3.3</b> Installing the BrailleR package</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="GettingStarted.html"><a href="GettingStarted.html#some-initial-setting-up-instructions"><i class="fa fa-check"></i><b>3.3.1</b> Some initial setting up instructions</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="GettingStarted.html"><a href="GettingStarted.html#what-else-do-you-need"><i class="fa fa-check"></i><b>3.4</b> What else do you need?</a><ul>
+<li class="chapter" data-level="3.4" data-path="GettingStarted.html"><a href="GettingStarted.html#what-else-do-you-need"><i class="fa fa-check"></i><b>3.4</b> What else do you need?</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="GettingStarted.html"><a href="GettingStarted.html#the-document-converter-pandoc"><i class="fa fa-check"></i><b>3.4.1</b> The document converter — pandoc</a></li>
 <li class="chapter" data-level="3.4.2" data-path="GettingStarted.html"><a href="GettingStarted.html#the-principal-integrated-development-environment-rstudio"><i class="fa fa-check"></i><b>3.4.2</b> The principal integrated development environment — RStudio</a></li>
 <li class="chapter" data-level="3.4.3" data-path="GettingStarted.html"><a href="GettingStarted.html#one-programming-language-python"><i class="fa fa-check"></i><b>3.4.3</b> One programming language — Python</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>3.5</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="VI.html"><a href="VI.html"><i class="fa fa-check"></i><b>4</b> Some basic examples</a><ul>
+<li class="chapter" data-level="4" data-path="VI.html"><a href="VI.html"><i class="fa fa-check"></i><b>4</b> Some basic examples</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="VI.html"><a href="VI.html#accessibility-of-graphics-in-statistical-software"><i class="fa fa-check"></i><b>4.1</b> Accessibility of graphics in statistical software</a></li>
-<li class="chapter" data-level="4.2" data-path="VI.html"><a href="VI.html#histograms"><i class="fa fa-check"></i><b>4.2</b> Histograms</a><ul>
+<li class="chapter" data-level="4.2" data-path="VI.html"><a href="VI.html#histograms"><i class="fa fa-check"></i><b>4.2</b> Histograms</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="VI.html"><a href="VI.html#important-features"><i class="fa fa-check"></i><b>4.2.1</b> Important features</a></li>
 <li class="chapter" data-level="4.2.2" data-path="VI.html"><a href="VI.html#warning"><i class="fa fa-check"></i><b>4.2.2</b> Warning</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="VI.html"><a href="VI.html#basic-numerical-summaries"><i class="fa fa-check"></i><b>4.3</b> Basic numerical summaries</a><ul>
+<li class="chapter" data-level="4.3" data-path="VI.html"><a href="VI.html#basic-numerical-summaries"><i class="fa fa-check"></i><b>4.3</b> Basic numerical summaries</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="VI.html"><a href="VI.html#important-features-1"><i class="fa fa-check"></i><b>4.3.1</b> Important features</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>4.4</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="4.4" data-path="VI.html"><a href="VI.html#brailler-commands-used-in-this-chapter-1"><i class="fa fa-check"></i><b>4.4</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="NewGraphs.html"><a href="NewGraphs.html"><i class="fa fa-check"></i><b>5</b> New BrailleR commands for making and interpreting basic graphs</a><ul>
+<li class="chapter" data-level="5" data-path="NewGraphs.html"><a href="NewGraphs.html"><i class="fa fa-check"></i><b>5</b> New BrailleR commands for making and interpreting basic graphs</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="NewGraphs.html"><a href="NewGraphs.html#whats-in-a-graph"><i class="fa fa-check"></i><b>5.1</b> What’s in a graph?</a></li>
-<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.2</b> Background</a><ul>
+<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.2</b> Background</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="NewGraphs.html"><a href="NewGraphs.html#methods-and-classes"><i class="fa fa-check"></i><b>5.2.1</b> Methods and classes</a></li>
 <li class="chapter" data-level="5.2.2" data-path="NewGraphs.html"><a href="NewGraphs.html#who-cares-about-classes-anyway"><i class="fa fa-check"></i><b>5.2.2</b> Who cares about classes anyway?</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="NewGraphs.html"><a href="NewGraphs.html#example-a-histogram"><i class="fa fa-check"></i><b>5.3</b> Example: A histogram</a></li>
-<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.4</b> Scatter plots</a><ul>
+<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.4</b> Scatter plots</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="NewGraphs.html"><a href="NewGraphs.html#whats-in-the-scatter-plot"><i class="fa fa-check"></i><b>5.4.1</b> What’s in the scatter plot?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>5.5</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="5.5" data-path="NewGraphs.html"><a href="NewGraphs.html#brailler-commands-used-in-this-chapter-2"><i class="fa fa-check"></i><b>5.5</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="WorkingBlind.html"><a href="WorkingBlind.html"><i class="fa fa-check"></i><b>6</b> Ways of Working in R as a Blind User</a><ul>
+<li class="chapter" data-level="6" data-path="WorkingBlind.html"><a href="WorkingBlind.html"><i class="fa fa-check"></i><b>6</b> Ways of Working in R as a Blind User</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="WorkingBlind.html"><a href="WorkingBlind.html#a-little-background"><i class="fa fa-check"></i><b>6.1</b> A little background</a></li>
 <li class="chapter" data-level="6.2" data-path="WorkingBlind.html"><a href="WorkingBlind.html#using-plain-text-files"><i class="fa fa-check"></i><b>6.2</b> Using plain text files</a></li>
 <li class="chapter" data-level="6.3" data-path="WorkingBlind.html"><a href="WorkingBlind.html#use-of-r-markdown"><i class="fa fa-check"></i><b>6.3</b> Use of R markdown</a></li>
 <li class="chapter" data-level="6.4" data-path="WorkingBlind.html"><a href="WorkingBlind.html#running-jobs-offline"><i class="fa fa-check"></i><b>6.4</b> Running jobs offline</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="RMarkdown.html"><a href="RMarkdown.html"><i class="fa fa-check"></i><b>7</b> Use of R markdown to generate an analysis efficiently</a><ul>
+<li class="chapter" data-level="7" data-path="RMarkdown.html"><a href="RMarkdown.html"><i class="fa fa-check"></i><b>7</b> Use of R markdown to generate an analysis efficiently</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="RMarkdown.html"><a href="RMarkdown.html#general-information"><i class="fa fa-check"></i><b>7.1</b> General information</a></li>
 <li class="chapter" data-level="7.2" data-path="RMarkdown.html"><a href="RMarkdown.html#replacing-the-graphic-user-interface-gui"><i class="fa fa-check"></i><b>7.2</b> Replacing the Graphic User Interface (GUI)</a></li>
 <li class="chapter" data-level="7.3" data-path="RMarkdown.html"><a href="RMarkdown.html#description-of-a-single-numeric-variable"><i class="fa fa-check"></i><b>7.3</b> Description of a single numeric variable</a></li>
 <li class="chapter" data-level="7.4" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor"><i class="fa fa-check"></i><b>7.4</b> Analysis of a single continuous variable with respect to a single grouping factor</a></li>
 <li class="chapter" data-level="7.5" data-path="RMarkdown.html"><a href="RMarkdown.html#use-of-brailler-for-linear-regression"><i class="fa fa-check"></i><b>7.5</b> Use of BrailleR for linear regression</a></li>
 <li class="chapter" data-level="7.6" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable"><i class="fa fa-check"></i><b>7.6</b> Analysis of a single continuous variable with respect to another continuous variable</a></li>
-<li class="chapter" data-level="7.7" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>7.7</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="7.7" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>7.7</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>8</b> Personalising BrailleR</a><ul>
+<li class="chapter" data-level="8" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>8</b> Personalising BrailleR</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="Personalising.html"><a href="Personalising.html#general"><i class="fa fa-check"></i><b>8.1</b> General</a></li>
-<li class="chapter" data-level="8.2" data-path="Personalising.html"><a href="Personalising.html#settings-that-are-about-you"><i class="fa fa-check"></i><b>8.2</b> Settings that are about you</a><ul>
+<li class="chapter" data-level="8.2" data-path="Personalising.html"><a href="Personalising.html#settings-that-are-about-you"><i class="fa fa-check"></i><b>8.2</b> Settings that are about you</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="Personalising.html"><a href="Personalising.html#who-is-the-r-markdown-file-being-written-by"><i class="fa fa-check"></i><b>8.2.1</b> Who is the R markdown file being written by?</a></li>
 <li class="chapter" data-level="8.2.2" data-path="Personalising.html"><a href="Personalising.html#the-use-of-the-vi-command"><i class="fa fa-check"></i><b>8.2.2</b> The use of the VI() command</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>8.3</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="8.3" data-path="Personalising.html"><a href="Personalising.html#brailler-commands-used-in-this-chapter-4"><i class="fa fa-check"></i><b>8.3</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="Tidyverse.html"><a href="Tidyverse.html"><i class="fa fa-check"></i><b>9</b> BrailleR in the tidyverse</a><ul>
+<li class="chapter" data-level="9" data-path="Tidyverse.html"><a href="Tidyverse.html"><i class="fa fa-check"></i><b>9</b> BrailleR in the tidyverse</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-tidy-and-why-do-we-care"><i class="fa fa-check"></i><b>9.1</b> What is tidy and why do we care?</a></li>
 <li class="chapter" data-level="9.2" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-the-pipe-operator-and-why-should-we-care"><i class="fa fa-check"></i><b>9.2</b> What is the pipe operator, and why should we care?</a></li>
 <li class="chapter" data-level="9.3" data-path="Tidyverse.html"><a href="Tidyverse.html#interrogation-of-data-created-within-a-pipe-chain"><i class="fa fa-check"></i><b>9.3</b> Interrogation of data created within a pipe chain</a></li>
-<li class="chapter" data-level="9.4" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>9.4</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="9.4" data-path="Tidyverse.html"><a href="Tidyverse.html#brailler-commands-used-in-this-chapter-5"><i class="fa fa-check"></i><b>9.4</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>10</b> The ggplot world and BrailleR</a><ul>
-<li class="chapter" data-level="10.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>10.1</b> Plotting a continuous variable against a categorical variable</a><ul>
+<li class="chapter" data-level="10" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>10</b> The ggplot world and BrailleR</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>10.1</b> Plotting a continuous variable against a categorical variable</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>10.1.1</b> Univariate plots</a></li>
 <li class="chapter" data-level="10.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>10.1.2</b> Bar charts for categorical variables</a></li>
 </ul></li>
@@ -233,8 +254,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>10.4</b> Facets is the ggplot term for trellis’ panels</a></li>
 <li class="chapter" data-level="10.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>10.5</b> Rescaling of the axes</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a><ul>
-<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a><ul>
+<li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
 <li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
 </ul></li>
@@ -244,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
 <li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
 <li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
-<li class="chapter" data-level="11.8" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
@@ -269,42 +292,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="GettingStarted" class="section level1">
+<div id="GettingStarted" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Getting started with BrailleR</h1>
 <p>The BrailleR package has been created for the benefit of blind people wishing to
 get more out of R than it already offers — which is actually quite a
 lot!</p>
-<div id="accessibility-of-statistical-software" class="section level2">
+<div id="accessibility-of-statistical-software" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Accessibility of statistical software</h2>
-<p>A description of what makes statistical software accessible to the blind was given by <span class="citation">(Godfrey and Loots <a href="#ref-GodfreyLoots2014JSS">2014</a>)</span>. Many of the problems blind people face are a consequence of the failure of the specialist screen reading software we use to interact with graphical user interfaces.
-Many software applications are making use of graphics when once the information would be presented in text form with an accompanying graph. — SPSS <span class="citation">(SPSS Inc. <a href="#ref-SPSS-Soft">2012</a>)</span> is an example of this, and to a lesser extent so is the standard edition of Minitab <span class="citation">(Minitab Inc. <a href="#ref-Minitab-Soft">2012</a>)</span>. The output from Minitab Express <span class="citation">(Minitab Inc. <a href="#ref-Minitab-Express">2014</a>)</span> is a prime example of the worst possible presentation of information that was originally text; this product generates graphics that include text which is not readable by a blind person for all of its statistical output. The speech output software used by blind people can only interpret information that is text. As a guide, if the individual text in a window cannot be highlighted using the keyboard and not the mouse, then it is likely that this text will not be read for the blind user.</p>
+<p>A description of what makes statistical software accessible to the blind was given by <span class="citation">(<a href="references.html#ref-GodfreyLoots2014JSS" role="doc-biblioref">Godfrey and Loots 2014</a>)</span>. Many of the problems blind people face are a consequence of the failure of the specialist screen reading software we use to interact with graphical user interfaces.
+Many software applications are making use of graphics when once the information would be presented in text form with an accompanying graph. — SPSS <span class="citation">(<a href="references.html#ref-SPSS-Soft" role="doc-biblioref">SPSS Inc. 2012</a>)</span> is an example of this, and to a lesser extent so is the standard edition of Minitab <span class="citation">(<a href="references.html#ref-Minitab-Soft" role="doc-biblioref">Minitab Inc. 2012</a>)</span>. The output from Minitab Express <span class="citation">(<a href="references.html#ref-Minitab-Express" role="doc-biblioref">Minitab Inc. 2014</a>)</span> is a prime example of the worst possible presentation of information that was originally text; this product generates graphics that include text which is not readable by a blind person for all of its statistical output. The speech output software used by blind people can only interpret information that is text. As a guide, if the individual text in a window cannot be highlighted using the keyboard and not the mouse, then it is likely that this text will not be read for the blind user.</p>
 <p>It is true that some add-on packages for R also generate unreadable output, but as illustrated below, this is less of an issue than for software like SPSS or Minitab.
-<span class="citation">(Godfrey and Loots <a href="#ref-GodfreyLoots2014JSS">2014</a>)</span> gave more detailed scrutiny of R, SAS <span class="citation">(SAS Institute Inc. <a href="#ref-SAS-Soft">2010</a>)</span> , SPSS, and Minitab. Of these four applications, R and SAS were clearly superior to SPSS and the standard edition of Minitab.</p>
+<span class="citation">(<a href="references.html#ref-GodfreyLoots2014JSS" role="doc-biblioref">Godfrey and Loots 2014</a>)</span> gave more detailed scrutiny of R, SAS <span class="citation">(<a href="references.html#ref-SAS-Soft" role="doc-biblioref">SAS Institute Inc. 2010</a>)</span> , SPSS, and Minitab. Of these four applications, R and SAS were clearly superior to SPSS and the standard edition of Minitab.</p>
 <p>Some software applications have retained their historical links to the days when graphs and tables were rendered in well controlled monospace fonts — Minitab for example. In such applications the user may still be able to produce an ASCII graphic instead of the more commonly used high resolution graphs expected of today’s software (and user). In contrast, SAS and SPSS can use HTML to present information in well-formatted tables. These output windows are preferred by blind users over the graph window displays but sometimes the amount of information is not easily understood. Presentation of output is often read by eye in a vertical direction, while speech output software will read line by line. Take for example, a multiple regression where the sighted reader may scan down the list of <em>p</em> values in the right hand column; the same information being read aloud in line by line style could prove quite difficult to interpret. Blind users can use combinations of keys to move around HTML tables to speed up this process and avoid reading the intervening columns of output. While SPSS and SAS can deliver formatted HTML as a matter of course, R users must resort to the add-on packages, many of which are available on CRAN.</p>
 </div>
-<div id="accessibility-of-r" class="section level2">
+<div id="accessibility-of-r" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Accessibility of R</h2>
-<p><span class="citation">(Godfrey <a href="#ref-GodfreyRJournal">2013</a><a href="#ref-GodfreyRJournal">b</a>)</span> documented the ability to use R almost immediately after installation; only one minor change is recommended and can be achieved in less than a minute even when explained via email or a telephone call. For users of the Windows operating system, up until Windows XP, I always recommended running R in a terminal window instead of the GUI; the shortcut placed on the Windows desktop would then need to be pointed to <code>Rterm.exe</code> instead of <code>Rgui.exe</code>.
+<p><span class="citation">(<a href="references.html#ref-GodfreyRJournal" role="doc-biblioref">Godfrey 2013b</a>)</span> documented the ability to use R almost immediately after installation; only one minor change is recommended and can be achieved in less than a minute even when explained via email or a telephone call. For users of the Windows operating system, up until Windows XP, I always recommended running R in a terminal window instead of the GUI; the shortcut placed on the Windows desktop would then need to be pointed to <code>Rterm.exe</code> instead of <code>Rgui.exe</code>.
 Macintosh and Linux users are operational with no special actions required.
-Users of Windows Vista or Windows 7 did have an additional challenge of what appeared to be the screen locking up, or more exactly, the screen reader software “losing focus” in the R terminal window. The solution for this problem, as documented in <span class="citation">(Godfrey and Erhardt <a href="#ref-GodfreyErhardtRJournalAddendum">2014</a>)</span>, was to hit the <code>Alt</code> key.
+Users of Windows Vista or Windows 7 did have an additional challenge of what appeared to be the screen locking up, or more exactly, the screen reader software “losing focus” in the R terminal window. The solution for this problem, as documented in <span class="citation">(<a href="references.html#ref-GodfreyErhardtRJournalAddendum" role="doc-biblioref">Godfrey and Erhardt 2014</a>)</span>, was to hit the <code>Alt</code> key.
 Blind users now need to compare the combinations of screen reader and the terminal versus the GUI.
 The decision should be made by the individual user after some experimentation; their decision may depend on the skill level they have with their prefered screen reader and should be revisited at a later date.</p>
 <p>Blind students attending the <a href="http://icchp-su.net/?q=node/108">R workshop at the 2011 Summer University,</a> held in the Czech Republic, were able to set up R for use in a classroom setting on their own machines. This included a variety of operating systems and adaptive technology (hardware and software for blind people). Similar events were held in 2013 and 2014 but most attendees used computers supplied by the host organizing committees. Many attendees have made contact when issues have arisen, but none of the issues relate to the installation of R or its interactions with the particular hardware or software being used. I am confident that anyone intending to undertake use of any statistical software will be able to get R working with their screen reader.</p>
 </div>
-<div id="installing-the-brailler-package" class="section level2">
+<div id="installing-the-brailler-package" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Installing the BrailleR package</h2>
 <p>To use the functionality of the BrailleR package you need to have it installed. The package has several dependencies so installation from the CRAN repository is recommended. This would be done by issuing the following two commands in an R session:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">chooseCRANmirror</span>(<span class="dt">ind=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&quot;BrailleR&quot;</span>)</a></code></pre></div>
-<p>Note that the first and last letters of <code>BrailleR</code> are capitalised. This is important in R, but is also useful for screen reading software which will then give audibly different feedback, as compared to what a screen reader user hears from the lower case text “brailler”.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="GettingStarted.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chooseCRANmirror</span>(<span class="at">ind=</span><span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="GettingStarted.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BrailleR&quot;</span>)</span></code></pre></div>
+<p>Note that the first and last letters of <code>BrailleR</code> are capitalised. This is important in R, but is also useful for screen reading software which will then give audibly different feedback, as compared to what a screen reader user hears from the lower case text “brailler.”</p>
 <p>If for some reason you have difficulty with the above commands, you can install the BrailleR package using a zip file version available from a CRAN repository or the latest version on GitHub.</p>
 <p>From time to time, you should check that you are using the most recent version of the BrailleR package. You can update all installed packages using the commands:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">chooseCRANmirror</span>(<span class="dt">ind=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">update.packages</span>(<span class="dt">ask=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="GettingStarted.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chooseCRANmirror</span>(<span class="at">ind=</span><span class="dv">1</span>)</span>
+<span id="cb10-2"><a href="GettingStarted.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <p>Once you’ve got the package installed, you still need to get it running in your current R session by issuing one last command. When you issue the first of the following lines, the package start messages will also appear.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">library</span>(BrailleR)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="GettingStarted.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BrailleR)</span></code></pre></div>
 <p>You’re ready to go!</p>
-<div id="some-initial-setting-up-instructions" class="section level3">
+<div id="some-initial-setting-up-instructions" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Some initial setting up instructions</h3>
 <p>When you first use the <code>library(BrailleR)</code> command, you will see some start up messages and a question. The rules of R packages include not writing to the user’s hard drive without expressly asking them for permission to do so. If you do not want a folder for your <code>BrailleR</code> files then use the temporary folder which will be removed when you end your R session. This will mean you need to answer the question over the location of the <code>MyBrailleR</code> folder next time you issue the <code>library(BrailleR)</code> command though.</p>
 <p>The welcome message from <code>BrailleR</code> suggests you issue the <code>GetGoing()</code> command. This will ask you a few questions that will help personalise your use of the <code>BrailleR</code> package. We will see how to alter these settings in Chapter <a href="Personalising.html#Personalising">8</a> later so don’t panic if you don’t do it all right the first time. You can re-issue the <code>GetGoing()</code> command again at any time.</p>
@@ -312,54 +335,30 @@ The decision should be made by the individual user after some experimentation; t
 <p>It is all too easy to feel you’re doing it on your own, which even the most accomplished people have experienced. I put the <code>ThankYou()</code> command in the BrailleR package so that it would be easy to send me a message to tell me about your experiences as a blind person using R or to ask for help; it starts an email message to me. I’m not the only blind person out there using R, and many of us are on an email list so that we can share ideas and solutions for problems, many of which are specific to blind users. The <code>JoinBlindRUG()</code> command will start the email needed to join the BlindRUG email list.</p>
 </div>
 </div>
-<div id="what-else-do-you-need" class="section level2">
+<div id="what-else-do-you-need" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> What else do you need?</h2>
 <p>You obviously have R installed or an intention to do so soon if you are reading this document. Aside from R and the add-on packages that BrailleR needs, there are no other software requirements. There are several optional software installations that could make life easier if they are installed before you need them. In order of necessity, they are:</p>
-<div id="the-document-converter-pandoc" class="section level3">
+<div id="the-document-converter-pandoc" class="section level3" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> The document converter — pandoc</h3>
 <p>BrailleR requires the very useful file converter called pandoc. Get it from the
 <a href="https://github.com/jgm/pandoc/releases">pandoc download page</a></p>
 </div>
-<div id="the-principal-integrated-development-environment-rstudio" class="section level3">
+<div id="the-principal-integrated-development-environment-rstudio" class="section level3" number="3.4.2">
 <h3><span class="header-section-number">3.4.2</span> The principal integrated development environment — RStudio</h3>
 <p>It is a good idea to install RStudio, even if you can’t actually use it as a blind person using screen reading software. The reason is that RStudio installs a few other useful tools that we will make use of by other means. Get it from the
 <a href="https://www.rstudio.com/products/rstudio/download2">RStudio download page</a></p>
 </div>
-<div id="one-programming-language-python" class="section level3">
+<div id="one-programming-language-python" class="section level3" number="3.4.3">
 <h3><span class="header-section-number">3.4.3</span> One programming language — Python</h3>
 <p>WriteR is a simple text editor written in wxPython that needs Python and wxPython. Unfortunately, they require separate downloads. You do not need this editor so do not install Python unless you are really keen. Windows users can obtain an executable file by issuing <code>GetWriteR()</code> once the BrailleR package has been successfully installed. More on this in Chapter <a href="WriteR.html#WriteR">11</a>.</p>
 </div>
 </div>
-<div id="brailler-commands-used-in-this-chapter" class="section level2">
+<div id="brailler-commands-used-in-this-chapter" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> BrailleR commands used in this chapter</h2>
 <p>The only BrailleR command actually recommended in this chapter was <code>GetGoing()</code>. You might find it useful to use <code>BrailleRHome()</code> and <code>BrailleRInAction()</code> from time to time, but you’re already reading the book that the second of these commands opens.</p>
 <p>The <code>ThankYou()</code> and <code>JoinBlindRUG()</code> commands should be used when you want to connect with me, or other blind R users.</p>
 <p>At this stage it is recommended that you install any additional software manually when it is required.</p>
 
-</div>
-</div>
-<h3> References</h3>
-<div id="refs" class="references">
-<div id="ref-GodfreyRJournal">
-<p>Godfrey, A. 2013b. “Statistical Software from a Blind Person’s Perspective: R Is the Best, but We Can Make It Better.” <em>The R Journal</em> 5 (1):73–79. <a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.</p>
-</div>
-<div id="ref-GodfreyErhardtRJournalAddendum">
-<p>Godfrey, A. Jonathan R., and Robert Erhardt. 2014. “Addendum to “Statistical Software from a Blind Person’s Perspective&quot;.” <em>The R Journal</em> 6 (1):182. <a href="https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf" class="uri">https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf</a>.</p>
-</div>
-<div id="ref-GodfreyLoots2014JSS">
-<p>Godfrey, A. Jonathan R., and M. Theodor Loots. 2014. “Statistical Software (R, SAS, SPSS, and Minitab) for Blind Students and Practitioners.” <em>Journal of Statistical Software, Software Reviews</em> 58 (1):1–25. <a href="https://www.jstatsoft.org/v58/s01" class="uri">https://www.jstatsoft.org/v58/s01</a>.</p>
-</div>
-<div id="ref-Minitab-Soft">
-<p>Minitab Inc. 2012. <em>Minitab Statistical Software Version 16.2.3</em>. State College, PA: Minitab Inc. <a href="http://www.minitab.com/" class="uri">http://www.minitab.com/</a>.</p>
-</div>
-<div id="ref-Minitab-Express">
-<p>Minitab Inc. 2014. <em>Minitab Express Statistical Software Version </em>. State College, PA: Minitab Inc. <a href="http://www.minitab.com/" class="uri">http://www.minitab.com/</a>.</p>
-</div>
-<div id="ref-SAS-Soft">
-<p>SAS Institute Inc. 2010. <em>SAS/STAT Software, Version 9.3</em>. Cary, NC: SAS Institute Inc. <a href="http://www.sas.com/" class="uri">http://www.sas.com/</a>.</p>
-</div>
-<div id="ref-SPSS-Soft">
-<p>SPSS Inc. 2012. <em>IBM SPSS Statistics 21</em>. Chicago, IL: SPSS Inc. <a href="http://www.spss.com/" class="uri">http://www.spss.com/</a>.</p>
 </div>
 </div>
             </section>

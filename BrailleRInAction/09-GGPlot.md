@@ -172,7 +172,7 @@ It has x-axis 'carat' with labels 1, 2, 3 and 4.
 It has y-axis 'price' with labels 0, 5000, 10000, 15000, 20000 and 25000.
 It has 2 layers.
 Layer 1 is a set of 100 points.
-Layer 2 is a smoothed curve using method '' with confidence intervals.
+Layer 2 is a smoothed curve using method 'lowess' with confidence intervals.
 ```
 
 
@@ -702,8 +702,8 @@ Each sub-chart has y-axis 'hwy' with labels 20, 30 and 40.
 Each sub-chart has 2 layers.
 Panel 1 represents data for year = 1999.
 Layer 1 of panel 1 is a set of 117 points.
-Layer 2 of panel 1 is a smoothed curve using method '' with confidence intervals.
+Layer 2 of panel 1 is a smoothed curve using method 'lowess' with confidence intervals.
 Panel 2 represents data for year = 2008.
 Layer 1 of panel 2 is a set of 117 points.
-Layer 2 of panel 2 is a smoothed curve using method '' with confidence intervals.
+Layer 2 of panel 2 is a smoothed curve using method 'lowess' with confidence intervals.
 ```

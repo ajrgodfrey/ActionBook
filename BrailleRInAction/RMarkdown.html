@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2020-11-29" />
+<meta name="date" content="2021-01-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="WorkingBlind.html"/>
 <link rel="next" href="Personalising.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,27 +54,27 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +83,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -133,12 +134,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">The BrailleR Package in Action Book</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#citation-details"><i class="fa fa-check"></i>Citation details</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#copyright-information"><i class="fa fa-check"></i>Copyright information</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-as-a-novice"><i class="fa fa-check"></i><b>1.1</b> Why will I use the BrailleR package as a novice?</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#why-will-i-use-the-brailler-package-as-a-novice"><i class="fa fa-check"></i><b>1.1</b> Why will I use the BrailleR package as a novice?</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#brailler-improves-the-accessibility-of-graphical-information"><i class="fa fa-check"></i><b>1.1.1</b> BrailleR improves the accessibility of graphical information</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#brailler-helps-gain-access-to-the-content-of-the-r-console"><i class="fa fa-check"></i><b>1.1.2</b> BrailleR helps gain access to the content of the R console</a></li>
 <li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#brailler-includes-convenience-functions"><i class="fa fa-check"></i><b>1.1.3</b> BrailleR includes convenience functions</a></li>
@@ -147,7 +151,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#why-will-i-use-this-book"><i class="fa fa-check"></i><b>1.3</b> Why will I use this book?</a></li>
 <li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#what-this-book-is-not"><i class="fa fa-check"></i><b>1.4</b> What this book is not</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="History.html"><a href="History.html"><i class="fa fa-check"></i><b>2</b> History of the BrailleR Project</a><ul>
+<li class="chapter" data-level="2" data-path="History.html"><a href="History.html"><i class="fa fa-check"></i><b>2</b> History of the BrailleR Project</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="History.html"><a href="History.html#my-background"><i class="fa fa-check"></i><b>2.1</b> My background</a></li>
 <li class="chapter" data-level="2.2" data-path="History.html"><a href="History.html#getting-the-brailler-project-started"><i class="fa fa-check"></i><b>2.2</b> Getting the BrailleR Project started</a></li>
 <li class="chapter" data-level="2.3" data-path="History.html"><a href="History.html#the-starting-point-example"><i class="fa fa-check"></i><b>2.3</b> The starting point example</a></li>
@@ -158,73 +163,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.8" data-path="History.html"><a href="History.html#the-ongoing-work"><i class="fa fa-check"></i><b>2.8</b> The ongoing work</a></li>
 <li class="chapter" data-level="2.9" data-path="History.html"><a href="History.html#acknowledgements"><i class="fa fa-check"></i><b>2.9</b> Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i><b>3</b> Getting started with BrailleR</a><ul>
+<li class="chapter" data-level="3" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i><b>3</b> Getting started with BrailleR</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="GettingStarted.html"><a href="GettingStarted.html#accessibility-of-statistical-software"><i class="fa fa-check"></i><b>3.1</b> Accessibility of statistical software</a></li>
 <li class="chapter" data-level="3.2" data-path="GettingStarted.html"><a href="GettingStarted.html#accessibility-of-r"><i class="fa fa-check"></i><b>3.2</b> Accessibility of R</a></li>
-<li class="chapter" data-level="3.3" data-path="GettingStarted.html"><a href="GettingStarted.html#installing-the-brailler-package"><i class="fa fa-check"></i><b>3.3</b> Installing the BrailleR package</a><ul>
+<li class="chapter" data-level="3.3" data-path="GettingStarted.html"><a href="GettingStarted.html#installing-the-brailler-package"><i class="fa fa-check"></i><b>3.3</b> Installing the BrailleR package</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="GettingStarted.html"><a href="GettingStarted.html#some-initial-setting-up-instructions"><i class="fa fa-check"></i><b>3.3.1</b> Some initial setting up instructions</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="GettingStarted.html"><a href="GettingStarted.html#what-else-do-you-need"><i class="fa fa-check"></i><b>3.4</b> What else do you need?</a><ul>
+<li class="chapter" data-level="3.4" data-path="GettingStarted.html"><a href="GettingStarted.html#what-else-do-you-need"><i class="fa fa-check"></i><b>3.4</b> What else do you need?</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="GettingStarted.html"><a href="GettingStarted.html#the-document-converter-pandoc"><i class="fa fa-check"></i><b>3.4.1</b> The document converter — pandoc</a></li>
 <li class="chapter" data-level="3.4.2" data-path="GettingStarted.html"><a href="GettingStarted.html#the-principal-integrated-development-environment-rstudio"><i class="fa fa-check"></i><b>3.4.2</b> The principal integrated development environment — RStudio</a></li>
 <li class="chapter" data-level="3.4.3" data-path="GettingStarted.html"><a href="GettingStarted.html#one-programming-language-python"><i class="fa fa-check"></i><b>3.4.3</b> One programming language — Python</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>3.5</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="VI.html"><a href="VI.html"><i class="fa fa-check"></i><b>4</b> Some basic examples</a><ul>
+<li class="chapter" data-level="4" data-path="VI.html"><a href="VI.html"><i class="fa fa-check"></i><b>4</b> Some basic examples</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="VI.html"><a href="VI.html#accessibility-of-graphics-in-statistical-software"><i class="fa fa-check"></i><b>4.1</b> Accessibility of graphics in statistical software</a></li>
-<li class="chapter" data-level="4.2" data-path="VI.html"><a href="VI.html#histograms"><i class="fa fa-check"></i><b>4.2</b> Histograms</a><ul>
+<li class="chapter" data-level="4.2" data-path="VI.html"><a href="VI.html#histograms"><i class="fa fa-check"></i><b>4.2</b> Histograms</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="VI.html"><a href="VI.html#important-features"><i class="fa fa-check"></i><b>4.2.1</b> Important features</a></li>
 <li class="chapter" data-level="4.2.2" data-path="VI.html"><a href="VI.html#warning"><i class="fa fa-check"></i><b>4.2.2</b> Warning</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="VI.html"><a href="VI.html#basic-numerical-summaries"><i class="fa fa-check"></i><b>4.3</b> Basic numerical summaries</a><ul>
+<li class="chapter" data-level="4.3" data-path="VI.html"><a href="VI.html#basic-numerical-summaries"><i class="fa fa-check"></i><b>4.3</b> Basic numerical summaries</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="VI.html"><a href="VI.html#important-features-1"><i class="fa fa-check"></i><b>4.3.1</b> Important features</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>4.4</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="4.4" data-path="VI.html"><a href="VI.html#brailler-commands-used-in-this-chapter-1"><i class="fa fa-check"></i><b>4.4</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="NewGraphs.html"><a href="NewGraphs.html"><i class="fa fa-check"></i><b>5</b> New BrailleR commands for making and interpreting basic graphs</a><ul>
+<li class="chapter" data-level="5" data-path="NewGraphs.html"><a href="NewGraphs.html"><i class="fa fa-check"></i><b>5</b> New BrailleR commands for making and interpreting basic graphs</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="NewGraphs.html"><a href="NewGraphs.html#whats-in-a-graph"><i class="fa fa-check"></i><b>5.1</b> What’s in a graph?</a></li>
-<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.2</b> Background</a><ul>
+<li class="chapter" data-level="5.2" data-path="NewGraphs.html"><a href="NewGraphs.html#background"><i class="fa fa-check"></i><b>5.2</b> Background</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="NewGraphs.html"><a href="NewGraphs.html#methods-and-classes"><i class="fa fa-check"></i><b>5.2.1</b> Methods and classes</a></li>
 <li class="chapter" data-level="5.2.2" data-path="NewGraphs.html"><a href="NewGraphs.html#who-cares-about-classes-anyway"><i class="fa fa-check"></i><b>5.2.2</b> Who cares about classes anyway?</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="NewGraphs.html"><a href="NewGraphs.html#example-a-histogram"><i class="fa fa-check"></i><b>5.3</b> Example: A histogram</a></li>
-<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.4</b> Scatter plots</a><ul>
+<li class="chapter" data-level="5.4" data-path="NewGraphs.html"><a href="NewGraphs.html#scatter-plots"><i class="fa fa-check"></i><b>5.4</b> Scatter plots</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="NewGraphs.html"><a href="NewGraphs.html#whats-in-the-scatter-plot"><i class="fa fa-check"></i><b>5.4.1</b> What’s in the scatter plot?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>5.5</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="5.5" data-path="NewGraphs.html"><a href="NewGraphs.html#brailler-commands-used-in-this-chapter-2"><i class="fa fa-check"></i><b>5.5</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="WorkingBlind.html"><a href="WorkingBlind.html"><i class="fa fa-check"></i><b>6</b> Ways of Working in R as a Blind User</a><ul>
+<li class="chapter" data-level="6" data-path="WorkingBlind.html"><a href="WorkingBlind.html"><i class="fa fa-check"></i><b>6</b> Ways of Working in R as a Blind User</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="WorkingBlind.html"><a href="WorkingBlind.html#a-little-background"><i class="fa fa-check"></i><b>6.1</b> A little background</a></li>
 <li class="chapter" data-level="6.2" data-path="WorkingBlind.html"><a href="WorkingBlind.html#using-plain-text-files"><i class="fa fa-check"></i><b>6.2</b> Using plain text files</a></li>
 <li class="chapter" data-level="6.3" data-path="WorkingBlind.html"><a href="WorkingBlind.html#use-of-r-markdown"><i class="fa fa-check"></i><b>6.3</b> Use of R markdown</a></li>
 <li class="chapter" data-level="6.4" data-path="WorkingBlind.html"><a href="WorkingBlind.html#running-jobs-offline"><i class="fa fa-check"></i><b>6.4</b> Running jobs offline</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="RMarkdown.html"><a href="RMarkdown.html"><i class="fa fa-check"></i><b>7</b> Use of R markdown to generate an analysis efficiently</a><ul>
+<li class="chapter" data-level="7" data-path="RMarkdown.html"><a href="RMarkdown.html"><i class="fa fa-check"></i><b>7</b> Use of R markdown to generate an analysis efficiently</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="RMarkdown.html"><a href="RMarkdown.html#general-information"><i class="fa fa-check"></i><b>7.1</b> General information</a></li>
 <li class="chapter" data-level="7.2" data-path="RMarkdown.html"><a href="RMarkdown.html#replacing-the-graphic-user-interface-gui"><i class="fa fa-check"></i><b>7.2</b> Replacing the Graphic User Interface (GUI)</a></li>
 <li class="chapter" data-level="7.3" data-path="RMarkdown.html"><a href="RMarkdown.html#description-of-a-single-numeric-variable"><i class="fa fa-check"></i><b>7.3</b> Description of a single numeric variable</a></li>
 <li class="chapter" data-level="7.4" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor"><i class="fa fa-check"></i><b>7.4</b> Analysis of a single continuous variable with respect to a single grouping factor</a></li>
 <li class="chapter" data-level="7.5" data-path="RMarkdown.html"><a href="RMarkdown.html#use-of-brailler-for-linear-regression"><i class="fa fa-check"></i><b>7.5</b> Use of BrailleR for linear regression</a></li>
 <li class="chapter" data-level="7.6" data-path="RMarkdown.html"><a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable"><i class="fa fa-check"></i><b>7.6</b> Analysis of a single continuous variable with respect to another continuous variable</a></li>
-<li class="chapter" data-level="7.7" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>7.7</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="7.7" data-path="RMarkdown.html"><a href="RMarkdown.html#brailler-commands-used-in-this-chapter-3"><i class="fa fa-check"></i><b>7.7</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>8</b> Personalising BrailleR</a><ul>
+<li class="chapter" data-level="8" data-path="Personalising.html"><a href="Personalising.html"><i class="fa fa-check"></i><b>8</b> Personalising BrailleR</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="Personalising.html"><a href="Personalising.html#general"><i class="fa fa-check"></i><b>8.1</b> General</a></li>
-<li class="chapter" data-level="8.2" data-path="Personalising.html"><a href="Personalising.html#settings-that-are-about-you"><i class="fa fa-check"></i><b>8.2</b> Settings that are about you</a><ul>
+<li class="chapter" data-level="8.2" data-path="Personalising.html"><a href="Personalising.html#settings-that-are-about-you"><i class="fa fa-check"></i><b>8.2</b> Settings that are about you</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="Personalising.html"><a href="Personalising.html#who-is-the-r-markdown-file-being-written-by"><i class="fa fa-check"></i><b>8.2.1</b> Who is the R markdown file being written by?</a></li>
 <li class="chapter" data-level="8.2.2" data-path="Personalising.html"><a href="Personalising.html#the-use-of-the-vi-command"><i class="fa fa-check"></i><b>8.2.2</b> The use of the VI() command</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>8.3</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="8.3" data-path="Personalising.html"><a href="Personalising.html#brailler-commands-used-in-this-chapter-4"><i class="fa fa-check"></i><b>8.3</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="Tidyverse.html"><a href="Tidyverse.html"><i class="fa fa-check"></i><b>9</b> BrailleR in the tidyverse</a><ul>
+<li class="chapter" data-level="9" data-path="Tidyverse.html"><a href="Tidyverse.html"><i class="fa fa-check"></i><b>9</b> BrailleR in the tidyverse</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-tidy-and-why-do-we-care"><i class="fa fa-check"></i><b>9.1</b> What is tidy and why do we care?</a></li>
 <li class="chapter" data-level="9.2" data-path="Tidyverse.html"><a href="Tidyverse.html#what-is-the-pipe-operator-and-why-should-we-care"><i class="fa fa-check"></i><b>9.2</b> What is the pipe operator, and why should we care?</a></li>
 <li class="chapter" data-level="9.3" data-path="Tidyverse.html"><a href="Tidyverse.html#interrogation-of-data-created-within-a-pipe-chain"><i class="fa fa-check"></i><b>9.3</b> Interrogation of data created within a pipe chain</a></li>
-<li class="chapter" data-level="9.4" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>9.4</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="9.4" data-path="Tidyverse.html"><a href="Tidyverse.html#brailler-commands-used-in-this-chapter-5"><i class="fa fa-check"></i><b>9.4</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>10</b> The ggplot world and BrailleR</a><ul>
-<li class="chapter" data-level="10.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>10.1</b> Plotting a continuous variable against a categorical variable</a><ul>
+<li class="chapter" data-level="10" data-path="GGPlot.html"><a href="GGPlot.html"><i class="fa fa-check"></i><b>10</b> The ggplot world and BrailleR</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="GGPlot.html"><a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable"><i class="fa fa-check"></i><b>10.1</b> Plotting a continuous variable against a categorical variable</a>
+<ul>
 <li class="chapter" data-level="10.1.1" data-path="GGPlot.html"><a href="GGPlot.html#univariate-plots"><i class="fa fa-check"></i><b>10.1.1</b> Univariate plots</a></li>
 <li class="chapter" data-level="10.1.2" data-path="GGPlot.html"><a href="GGPlot.html#bar-charts-for-categorical-variables"><i class="fa fa-check"></i><b>10.1.2</b> Bar charts for categorical variables</a></li>
 </ul></li>
@@ -233,8 +254,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.4" data-path="GGPlot.html"><a href="GGPlot.html#facets-is-the-ggplot-term-for-trellis-panels"><i class="fa fa-check"></i><b>10.4</b> Facets is the ggplot term for trellis’ panels</a></li>
 <li class="chapter" data-level="10.5" data-path="GGPlot.html"><a href="GGPlot.html#rescaling-of-the-axes"><i class="fa fa-check"></i><b>10.5</b> Rescaling of the axes</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a><ul>
-<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a><ul>
+<li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a>
+<ul>
 <li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
 <li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
 </ul></li>
@@ -244,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
 <li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
 <li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
-<li class="chapter" data-level="11.8" data-path="GettingStarted.html"><a href="GettingStarted.html#brailler-commands-used-in-this-chapter"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
@@ -269,41 +292,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="RMarkdown" class="section level1">
+<div id="RMarkdown" class="section level1" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Use of R markdown to generate an analysis efficiently</h1>
-<p>In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The <code>BrailleR</code> package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown. The workflow illustrated in this chapter is also the workflow used to create this book. It is heavily reliant on the work of Yihui Xie, much of which can be found in <span class="citation">(Xie <a href="#ref-Xie2015">2015</a>)</span>.</p>
+<p>In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The <code>BrailleR</code> package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown. The workflow illustrated in this chapter is also the workflow used to create this book. It is heavily reliant on the work of Yihui Xie, much of which can be found in <span class="citation">(<a href="references.html#ref-Xie2015" role="doc-biblioref">Xie 2015</a>)</span>.</p>
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
-<div id="general-information" class="section level2">
+<div id="general-information" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> General information</h2>
-<p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user. They make extensive use of the <code>knitr</code> package <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2020</a>)</span> to process R commands and retrieve the R output and graphs, and then the <code>rmarkdown</code> package <span class="citation">(Allaire et al. <a href="#ref-Rpkg-rmarkdown">2020</a>)</span> to process the markdown content of the raw input file into HTML (or other file types if we wanted them).</p>
+<p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user. They make extensive use of the <code>knitr</code> package <span class="citation">(<a href="references.html#ref-Rpkg-knitr" role="doc-biblioref">Xie 2020</a>)</span> to process R commands and retrieve the R output and graphs, and then the <code>rmarkdown</code> package <span class="citation">(<a href="references.html#ref-Rpkg-rmarkdown" role="doc-biblioref">Allaire et al. 2020</a>)</span> to process the markdown content of the raw input file into HTML (or other file types if we wanted them).</p>
 <p>This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is automatically presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their screen reading software. All graphs are given an “alt tag” when they are included in the HTML file, and can be presented using a text description available from the <code>VI()</code> functionality of the <code>BrailleR</code> package.</p>
 <p>In addition, the blind user may need one or more of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script).
-This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents using the <code>xtable</code> package <span class="citation">(Dahl et al. <a href="#ref-Rpkg-xtable">2019</a>)</span>.</p>
+This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents using the <code>xtable</code> package <span class="citation">(<a href="references.html#ref-Rpkg-xtable" role="doc-biblioref">Dahl et al. 2019</a>)</span>.</p>
 <p>The commands shown in this chapter make use of R markdown, but they are not actually ready for direct use within other R markdown documents.
 If you wish to get the output you observe within the HTML documents that will be generated, you will need to extract the relevant parts of the R markdown script files that the commands create. That sounds harder than it is!</p>
 </div>
-<div id="replacing-the-graphic-user-interface-gui" class="section level2">
+<div id="replacing-the-graphic-user-interface-gui" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Replacing the Graphic User Interface (GUI)</h2>
-<p>One major criticism of R often heard from novice users is that a graphic user interface (GUI) is much easier to use than the command line mode of operation. Blind users are no different in this respect, but as has been reported previously <span class="citation">(Godfrey <a href="#ref-GodfreyRJournal">2013</a><a href="#ref-GodfreyRJournal">b</a>)</span>, none of the GUI-based front ends for R are accessible to the blind user.
+<p>One major criticism of R often heard from novice users is that a graphic user interface (GUI) is much easier to use than the command line mode of operation. Blind users are no different in this respect, but as has been reported previously <span class="citation">(<a href="references.html#ref-GodfreyRJournal" role="doc-biblioref">Godfrey 2013b</a>)</span>, none of the GUI-based front ends for R are accessible to the blind user.
 When considering the benefits of using a GUI mode of operation, we turn to the justification used for the creation of some of these interfaces; redacting all references to the GUI helps emphasize the reasons for their existence:</p>
 <ul>
 <li>R Commander aims “to support … the statistical functionality required for a basic-statistics course; to make it relatively difficult to do unreasonable things;
 and to render visible the relationship between choices made …<br />
-and the R commands that they generate.” <span class="citation">(Fox <a href="#ref-Fox2005-RCommander">2005</a>)</span>.</li>
+and the R commands that they generate.” <span class="citation">(<a href="references.html#ref-Fox2005-RCommander" role="doc-biblioref">Fox 2005</a>)</span>.</li>
 <li>“Because R analyses must be called as text commands, the user is required to find out the name of the function that will accomplish their task, and then remember that name along with the names of the variables to feed it, and its argument options. Perhaps more fundamentally, many users have never dealt with a program that requires them to type in commands that manipulate objects in the program.
-For beginners, Deducer is designed to be an intuitive dialog based interface to common data manipulation and analysis tasks.” <span class="citation">(Fellows <a href="#ref-Fellows2012Deducer">2012</a>)</span></li>
-<li>“The scope of RKWard is deliberately broad, targeting both R novices and experts. For the first group, the aim is to allow any person with knowledge on statistical procedures to start using RKWard for their everyday work without having to learn anything about the R programming language, at least initially. At the same time, RKWard tries to support users who want to learn and exploit the full flexibility of the R language for automating or customizing an analysis.” <span class="citation">(Rödiger et al. <a href="#ref-RoedigerEtAl2012RKWard">2012</a>)</span></li>
+For beginners, Deducer is designed to be an intuitive dialog based interface to common data manipulation and analysis tasks.” <span class="citation">(<a href="references.html#ref-Fellows2012Deducer" role="doc-biblioref">Fellows 2012</a>)</span></li>
+<li>“The scope of RKWard is deliberately broad, targeting both R novices and experts. For the first group, the aim is to allow any person with knowledge on statistical procedures to start using RKWard for their everyday work without having to learn anything about the R programming language, at least initially. At the same time, RKWard tries to support users who want to learn and exploit the full flexibility of the R language for automating or customizing an analysis.” <span class="citation">(<a href="references.html#ref-RoedigerEtAl2012RKWard" role="doc-biblioref">Rödiger et al. 2012</a>)</span></li>
 <li>RKWard “avoids wrapping complex sequences of data manipulation or analysis into custom highlevel R functions. The task of providing high-level functions is logically independent of the development of the GUI frontend, and should best be addressed in dedicated R packages, where
-necessary.” <span class="citation">(Rödiger et al. <a href="#ref-RoedigerEtAl2012RKWard">2012</a>)</span></li>
+necessary.” <span class="citation">(<a href="references.html#ref-RoedigerEtAl2012RKWard" role="doc-biblioref">Rödiger et al. 2012</a>)</span></li>
 </ul>
 <p>Making any of these GUI tools accessible is
 difficult because they were not developed using interface development toolkits that automatically build accessibility into the interface.
 Creation of a GUI such as R Commander is not a small undertaking. Retrospectively building in the necessary accessibility features would be a massive undertaking that the blind community could not reasonably expect of a very small development team. Duplicating the work done to create such a GUI tool from scratch using a development toolkit that helps build in the necessary elements for accessibility and then maintaining it as operating systems develop over time is not a practical solution either. It may be possible to improve the toolkits that are used to create the GUI options like R Commander or Deducer so that their development is not hindered while their accessibility becomes automatic; unfortunately, this requires knowledge well beyond my skill set.</p>
 <p>If blind users cannot make use of any of the GUI tools and we don’t have the necessary skills to develop such a tool that does work for ourselves, what solutions exist for us? When I’ve discussed the merits of various statistical software with other blind users, they have questioned the use of R by saying something like, “When I use software <em>x</em>, I can do <em>y</em> and <em>z</em>. How do I do that in R?” With respect to SAS for example, a user can build up a set of templates for various commonly used analyses for themselves. The same is true as an R user, but SAS users can get the templates by using the menus in the standard GUI, and they can keep the procedures in files for later use. SPSS users can do this as well. (These seem to be the most commonly used software options for blind users who communicate with me.) In either case, the code can be reused after issuing a few find/replace searches. It seems that even though it is more efficient to make use of this ability to re-use code templates, that many of the blind users of these software options prefer to use key presses to simulate mouse clicks in order to use the menus and dialogue boxes. When questioning them on their motives, we quickly come to the point that the use of menus and dialogue boxes offers a degree of comfort that tasks have been done correctly. The next crucial aspect worth mentioning is that the GUI provides the user with more output than can be obtained from typing out numerous commands in R. Searching for the right functions and then ensuring the syntax of their arguments is correct limits a blind user’s ability in any command-line software, just as it does for sighted users.</p>
 <p>The solution for a replacement of the GUI is to create convenience functions with simple names that require entry of a minimal number of arguments so that the user gets the maximum amount of useful information. This information might prove more than is needed for many users, but hopes to deliver what is needed by the widest possible range of blind users.
-Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewhat verbose <span class="citation">(Rödiger et al. <a href="#ref-RoedigerEtAl2012RKWard">2012</a>)</span>.</p>
+Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewhat verbose <span class="citation">(<a href="references.html#ref-RoedigerEtAl2012RKWard" role="doc-biblioref">Rödiger et al. 2012</a>)</span>.</p>
 </div>
-<div id="description-of-a-single-numeric-variable" class="section level2">
+<div id="description-of-a-single-numeric-variable" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Description of a single numeric variable</h2>
 <p>There are many commands needed to get the numeric and graphic summary measures that might be required to collect all relevant information on a single numeric variable. The <code>UniDesc()</code> command has been written as a shortcut for a blind user who wishes to obtain:</p>
 <ul>
@@ -311,15 +334,15 @@ Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewha
 <li>the mean and trimmed mean,</li>
 <li>the five number summary: minimum, lower quartile, median, upper quartile, and maximum,</li>
 <li>the interquartile range (IQR) and standard deviation,</li>
-<li>measures of skewness and kurtosis, relying on the <code>moments</code> package <span class="citation">(Komsta and Novomestky <a href="#ref-Rpkg-moments">2015</a>)</span>,</li>
+<li>measures of skewness and kurtosis, relying on the <code>moments</code> package <span class="citation">(<a href="references.html#ref-Rpkg-moments" role="doc-biblioref">Komsta and Novomestky 2015</a>)</span>,</li>
 <li>a histogram and/or a boxplot,</li>
 <li>a normality (quantile-quantile) plot,</li>
-<li>various tests for normality, courtesy of the <code>nortest</code> package <span class="citation">(Gross and Ligges <a href="#ref-Rpkg-nortest">2015</a>)</span> , and</li>
-<li>tests on the significance of the skewness and kurtosis, also courtesy of the <code>moments</code> package <span class="citation">(Komsta and Novomestky <a href="#ref-Rpkg-moments">2015</a>)</span>.</li>
+<li>various tests for normality, courtesy of the <code>nortest</code> package <span class="citation">(<a href="references.html#ref-Rpkg-nortest" role="doc-biblioref">Gross and Ligges 2015</a>)</span> , and</li>
+<li>tests on the significance of the skewness and kurtosis, also courtesy of the <code>moments</code> package <span class="citation">(<a href="references.html#ref-Rpkg-moments" role="doc-biblioref">Komsta and Novomestky 2015</a>)</span>.</li>
 </ul>
 <p>The <code>UniDesc()</code> function can deliver all of this with minimal effort from the user.</p>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">example</span>(UniDesc)</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="RMarkdown.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(UniDesc)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 DIR = getwd()
@@ -357,7 +380,7 @@ Ozone.skew = moments::skewness(Ozone, na.rm = TRUE)
 Ozone.kurt = moments::kurtosis(Ozone, na.rm = TRUE)
 ``` 
 ... ... ...</code></pre>
-<p>The full R markdown file can be opened in any text editor. A Windows user can open the file created by the <code>example(UniDesc)</code> command above, by issuing the command <code>Notepad(&quot;Ozone-UniDesc.Rmd&quot;)</code> at the R prompt. Opening the Windows Explorer file browser will help you select an alternative text editor; you can do this by typing <code>Explorer()</code>.</p>
+<p>The full R markdown file can be opened in any text editor. A Windows user can open the file created by the <code>example(UniDesc)</code> command above, by issuing the command <code>Notepad("Ozone-UniDesc.Rmd")</code> at the R prompt. Opening the Windows Explorer file browser will help you select an alternative text editor; you can do this by typing <code>Explorer()</code>.</p>
 <p>The document header includes a code chunk that sets the options for the <code>knit2html()</code> process used to convert this file to HTML.
 This processing allows for:</p>
 <ul>
@@ -368,11 +391,11 @@ This processing allows for:</p>
 <li>establishes the height of the figures.</li>
 </ul>
 <p>The user that does not like these settings can edit the markdown file for themselves and re-process the file, but the intention is to deliver more than all users would want so that as many users as possible get what they need.</p>
-<p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) <span class="citation">(Xie <a href="#ref-Rpkg-knitr">2020</a>)</span> both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
+<p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) <span class="citation">(<a href="references.html#ref-Rpkg-knitr" role="doc-biblioref">Xie 2020</a>)</span> both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
 <p>If all of the optional arguments of the <code>UniDesc()</code> function are set at their defaults, the HTML file is automatically opened in a browser (courtesy of the <code>View</code> argument); it puts the R markdown file, the R script, and the HTML document in the current working directory, while the LaTeX and graph files are all placed in a subdirectory.</p>
-<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(R Core Team <a href="#ref-Rpkg-base">2020</a>)</span> so a user can see what can be expected from these functions.</p>
+<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(<a href="references.html#ref-Rpkg-base" role="doc-biblioref">R Core Team 2020</a>)</span> so a user can see what can be expected from these functions.</p>
 </div>
-<div id="analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor" class="section level2">
+<div id="analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Analysis of a single continuous variable with respect to a single grouping factor</h2>
 <p>There are many commands needed to get the numeric and graphic summary measures that might be required to collect all relevant information on a single numeric variable when it might depend on a grouping factor. The <code>OneFactor()</code> command has been written as a shortcut for a blind user who wishes to obtain:</p>
 <ul>
@@ -384,7 +407,7 @@ This processing allows for:</p>
 </ul>
 <p>There will be circumstances when the last, and perhaps evern second to last elements of this functionality are not justified by the outcome of issuing the earlier commands. In particular, generating the output from Tukey’s HSD would not normally be sought unless the analysis of variance showed there was a significant difference between the group means. The choice of reading the output and subsequently using it are left to the user. In this respect, <code>BrailleR</code> has not become an expert system that decides to or not to provide something; the user is still expected to do the thinking about the relevance of each element of hte overall set of output provided.</p>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">example</span>(OneFactor)</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="RMarkdown.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(OneFactor)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 DIR = getwd()
@@ -406,7 +429,7 @@ setwd(DIR)</code></pre>
 <p>The example here demonstrates the point that the grouping variable must be a factor. The month variable is not stored as a factor in the airquality data so its use would have created an error.</p>
 <p>All elements of the analysis which incorporate graphical information, or text that is slow to read using a screen reader are processed using the <code>VI()</code> functionality.</p>
 </div>
-<div id="use-of-brailler-for-linear-regression" class="section level2">
+<div id="use-of-brailler-for-linear-regression" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> Use of BrailleR for linear regression</h2>
 <p>Linear regression is almost always taught using graphical techniques, especially for the validation of the model being fitted. Of particular note is the way an instructor would teach sighted students about the sensibility of fitting any line to some data which cannot be easily judged even using the <code>WhereXY()</code> function described earlier. A blind student lacking an embosser to produce a tactile image that shows the fitted line and the data, will almost certainly need to fit the model and see how good or bad it is. These blind students are therefore even more reliant on the residual analysis than their sighted classmates</p>
 <p>The <code>VI()</code> command can be applied to a linear model object. The specific function to do this is found in the <code>VI.lm()</code> function, but most users do not need to explicitly use <code>VI.lm()</code> because the call to <code>VI()</code> will know to use the <code>VI.lm()</code> function if it is the right one to use at the time.</p>
@@ -414,9 +437,9 @@ setwd(DIR)</code></pre>
 <p>Let’s see an example using the <code>airquality</code> data.
 Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function’s value to a blind user.</p>
 <p>A simple linear regression model might be created and investigated using:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">data</span>(airquality)</a>
-<a class="sourceLine" id="cb45-2" data-line-number="2">MyModel =<span class="st"> </span><span class="kw">lm</span>(Ozone<span class="op">~</span>Wind, <span class="dt">data=</span>airquality)</a>
-<a class="sourceLine" id="cb45-3" data-line-number="3"><span class="kw">summary</span>(MyModel)</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="RMarkdown.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airquality)</span>
+<span id="cb45-2"><a href="RMarkdown.html#cb45-2" aria-hidden="true" tabindex="-1"></a>MyModel <span class="ot">=</span> <span class="fu">lm</span>(Ozone<span class="sc">~</span>Wind, <span class="at">data=</span>airquality)</span>
+<span id="cb45-3"><a href="RMarkdown.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MyModel)</span></code></pre></div>
 <pre><code>
 Call:
 lm(formula = Ozone ~ Wind, data = airquality)
@@ -434,10 +457,10 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 
 Residual standard error: 26.47 on 114 degrees of freedom
   (37 observations deleted due to missingness)
-Multiple R-squared:  0.3619,	Adjusted R-squared:  0.3563 
+Multiple R-squared:  0.3619,    Adjusted R-squared:  0.3563 
 F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="kw">plot</span>(MyModel)</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="RMarkdown.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb47-2"><a href="RMarkdown.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MyModel)</span></code></pre></div>
 <div class="figure">
 <img src="05-MarkdownInAction_files/figure-html/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
 <p class="caption">
@@ -445,8 +468,8 @@ F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
 </p>
 </div>
 <p>The user now has a model stored as <code>MyModel</code> in the current workspace, has printed a summary of that model, and has plotted a set of four diagnostic plots in a <span class="math inline">\(2\times{}2\)</span> grid. The blind user will still need to issue those commands so that the output is created to meet the expectations of the sighted audience, but will also find value in issuing the two extra commands</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">VI</span>(MyModel)</a>
-<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="kw">VI</span>(<span class="kw">summary</span>(MyModel))</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="RMarkdown.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(MyModel)</span>
+<span id="cb48-2"><a href="RMarkdown.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(<span class="fu">summary</span>(MyModel))</span></code></pre></div>
 <p>The use of the second of these commands will generate</p>
 <pre><code>The term which is significant to 1% is
 Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
@@ -481,7 +504,7 @@ Each of these graphs is subjected to scrutiny using the <code>WhereXY()</code> f
 \end{table}</code></pre>
 <p>Note that the automatic formatting of this table as performed by the <code>xtable</code> package has not been altered to meet a specified publication style. Ultimatly, users will need to alter the presentation to meet publisher specifications for themselves.</p>
 </div>
-<div id="analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable" class="section level2">
+<div id="analysis-of-a-single-continuous-variable-with-respect-to-another-continuous-variable" class="section level2" number="7.6">
 <h2><span class="header-section-number">7.6</span> Analysis of a single continuous variable with respect to another continuous variable</h2>
 <p>The <code>OnePredictor()</code> command is similar to the <code>OneFactor()</code> command describe earlier in this chapter and makes use of the <code>VI()</code> command as applied to the simple linear regression model fitted to a pair of continuous variables, one of which is determined to respond to the other.
 The <code>OnePredictor()</code> command has been written as a shortcut for a blind user who wishes to obtain:</p>
@@ -489,7 +512,7 @@ The <code>OnePredictor()</code> command has been written as a shortcut for a bli
 <li>the counts of observations within each group,</li>
 </ul>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">example</span>(OnePredictor)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="RMarkdown.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(OnePredictor)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 DIR = getwd()
@@ -501,47 +524,11 @@ OnePredictor(&quot;Ozone&quot;, &quot;Wind&quot;, airquality)
 setwd(DIR)</code></pre>
 <p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone-OnePredictor.html"><code>OnePredictor()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands.</p>
 </div>
-<div id="brailler-commands-used-in-this-chapter" class="section level2">
+<div id="brailler-commands-used-in-this-chapter-3" class="section level2" number="7.7">
 <h2><span class="header-section-number">7.7</span> BrailleR commands used in this chapter</h2>
 <p>The first two <code>BrailleR</code> commands introduced in this chapter were the <code>UniDesc()</code> and <code>OneFactor()</code> commands; they used the <code>VI()</code> command in the R markdown files that they create, as was described back in Chapter <a href="VI.html#VI">4</a>, to give the text descriptions for graphs. We then saw a new use of the <code>VI()</code> command and several other commands designed to generate common analyses quickly. These included the <code>OnePredictor()</code> command which speeds up the presentation of a simple linear regression model. This function also creates an R markdown script which then makes an HTNML file for immediate use, and various files with tables and graphs commonly needed for simple linear regression. The specific command <code>VI.lm()</code> is an example of the <code>VI()</code> command tailored to linear models and their analysis. Consideration of the validity of linear models is generally done via graphs so the <code>WhereXY()</code> command introduced in Chapter <a href="NewGraphs.html#NewGraphs">5</a> is applied in a variety of ways.</p>
 <p>Windows users can use the <code>Notepad()</code> function to open the R markdown files created by the examples in this chapter, or any other text file for that matter. They can choose their own text editor by opening a Windows Explorer file browser that has focus in the current working directory using <code>Explorer()</code>. The initial letter of these commands can be in upper or lower case; that is, <code>Notepad()</code> is equivalent to <code>notepad()</code> and <code>explorer()</code> is equivalent to <code>Explorer()</code>.</p>
 
-</div>
-</div>
-<h3> References</h3>
-<div id="refs" class="references">
-<div id="ref-Rpkg-rmarkdown">
-<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
-</div>
-<div id="ref-Rpkg-xtable">
-<p>Dahl, David B., David Scott, Charles Roosen, Arni Magnusson, and Jonathan Swinton. 2019. <em>Xtable: Export Tables to Latex or Html</em>. <a href="https://CRAN.R-project.org/package=xtable" class="uri">https://CRAN.R-project.org/package=xtable</a>.</p>
-</div>
-<div id="ref-Fellows2012Deducer">
-<p>Fellows, Ian. 2012. “Deducer: A Data Analysis GUI for R.” <em>Journal of Statistical Software</em> 49 (8):1–15. <a href="http://www.jstatsoft.org/v49/i08" class="uri">http://www.jstatsoft.org/v49/i08</a>.</p>
-</div>
-<div id="ref-Fox2005-RCommander">
-<p>Fox, John. 2005. “The R Commander: A Basic Statistics Graphical User Interface to R.” <em>Journal of Statistical Software</em> 14 (9):1–42. <a href="http://www.jstatsoft.org/v14/i09" class="uri">http://www.jstatsoft.org/v14/i09</a>.</p>
-</div>
-<div id="ref-GodfreyRJournal">
-<p>Godfrey, A. 2013b. “Statistical Software from a Blind Person’s Perspective: R Is the Best, but We Can Make It Better.” <em>The R Journal</em> 5 (1):73–79. <a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.</p>
-</div>
-<div id="ref-Rpkg-nortest">
-<p>Gross, Juergen, and Uwe Ligges. 2015. <em>Nortest: Tests for Normality</em>. <a href="https://CRAN.R-project.org/package=nortest" class="uri">https://CRAN.R-project.org/package=nortest</a>.</p>
-</div>
-<div id="ref-Rpkg-moments">
-<p>Komsta, Lukasz, and Frederick Novomestky. 2015. <em>Moments: Moments, Cumulants, Skewness, Kurtosis and Related Tests</em>. <a href="https://CRAN.R-project.org/package=moments" class="uri">https://CRAN.R-project.org/package=moments</a>.</p>
-</div>
-<div id="ref-Rpkg-base">
-<p>R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
-</div>
-<div id="ref-RoedigerEtAl2012RKWard">
-<p>Rödiger, Stefan, Thomas Friedrichsmeier, Prasenjit Kapat, and Meik Michalke. 2012. “RKWard: A Comprehensive Graphical User Interface and Integrated Development Environment for Statistical Analysis with R.” <em>Journal of Statistical Software</em> 49 (9):1–34. <a href="http://www.jstatsoft.org/v49/i09" class="uri">http://www.jstatsoft.org/v49/i09</a>.</p>
-</div>
-<div id="ref-Xie2015">
-<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/" class="uri">http://yihui.name/knitr/</a>.</p>
-</div>
-<div id="ref-Rpkg-knitr">
-<p>Xie, Yihui. 2020. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
 </div>
 </div>
             </section>

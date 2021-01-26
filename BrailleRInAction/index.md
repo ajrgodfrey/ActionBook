@@ -1,7 +1,7 @@
 --- 
 title: "BrailleR in Action"
 author: "A. Jonathan R. Godfrey"
-date: "2020-11-29"
+date: "2021-01-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [software.bib,Rpkgs.bib,book.bib,BrailleRPublications.bib,Access.bib,articles.bib,faulty.bib]
