@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-01-26" />
+<meta name="date" content="2021-07-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="History.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -116,6 +118,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -295,12 +320,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
 <p>Access to information is crucial for a blind person’s success in education, but transferring the knowledge about the existence of techniques into actually being able to perform those tasks is what will make that blind person employable. This e-book is based on the author’s experiences as a blind academic in statistics who has often been called on for advice by blind students studying statistics and their sighted lecturers wanting to provide the best possible support. Unfortunately, there is little information available in academic journals or the public domain to offer the statistics lecturer who is about to teach a blind student for the first time. That is changing however.</p>
-<p>At the 2009 Workshop on E-Inclusion in Mathematics and Sciences, I was able to meet other researchers and scientists who are also concerned about the low rate of blind people entering the sciences in a broad sense and the mathematical sciences in particular. <span class="citation">(<a href="references.html#ref-Godfrey2009AccessiblePaper" role="doc-biblioref">Godfrey 2009</a>)</span> presented my first formalized summary of what I saw as the current state of affairs for blind people taking statistics courses; that work discussed what was possible in theory, but lacked evidence of what was happening in practice.
-A collaboration with the only other blind person to gain employment as a full-time Lecturer in Statistics led to a more comprehensive review of what we believe is the current state of affairs for blind students learning statistics. <span class="citation">(<a href="references.html#ref-GodfreyLoots-JSE" role="doc-biblioref">Godfrey and Loots 2015</a>)</span> present a wide range of issues that blind students and their teachers must overcome, often through use of the best software options available today. R <span class="citation">(<a href="references.html#ref-Rpkg-base" role="doc-biblioref">R Core Team 2020</a>)</span> has featured as a key element in my recommendations for teaching statistics to blind students <span class="citation">(<a href="references.html#ref-Godfrey2009AccessiblePaper" role="doc-biblioref">Godfrey 2009</a>)</span> because it offers the greatest opportunity for meeting the needs of blind users.</p>
+<p>At the 2009 Workshop on E-Inclusion in Mathematics and Sciences, I was able to meet other researchers and scientists who are also concerned about the low rate of blind people entering the sciences in a broad sense and the mathematical sciences in particular. <span class="citation">(<a href="#ref-Godfrey2009AccessiblePaper" role="doc-biblioref">Godfrey 2009</a>)</span> presented my first formalized summary of what I saw as the current state of affairs for blind people taking statistics courses; that work discussed what was possible in theory, but lacked evidence of what was happening in practice.
+A collaboration with the only other blind person to gain employment as a full-time Lecturer in Statistics led to a more comprehensive review of what we believe is the current state of affairs for blind students learning statistics. <span class="citation">(<a href="#ref-GodfreyLoots-JSE" role="doc-biblioref">Godfrey and Loots 2015</a>)</span> present a wide range of issues that blind students and their teachers must overcome, often through use of the best software options available today. R <span class="citation">(<a href="#ref-Rpkg-base" role="doc-biblioref">R Core Team 2021</a>)</span> has featured as a key element in my recommendations for teaching statistics to blind students <span class="citation">(<a href="#ref-Godfrey2009AccessiblePaper" role="doc-biblioref">Godfrey 2009</a>)</span> because it offers the greatest opportunity for meeting the needs of blind users.</p>
 <p>An invitation to attend the <a href="http://icchp-su.net/">second “Summer University” event</a> was taken up in mid 2011; the purpose of this event was to show blind students and disability support staff from universities what software and hardware is available to improve the success rates of blind students entering the sciences.
 This was my first direct opportunity to show blind students how R could be used by them, and the relative merit that R has for them over alternative statistical software.
 I observed blind students working with R and struggling more than I thought was truly necessary. I knew I could do something about it and have spent a lot of time doing so ever since.
-An R Journal article <span class="citation">(<a href="references.html#ref-GodfreyRJournal" role="doc-biblioref">Godfrey 2013b</a>)</span> followed which exposed the needs of blind users to the R community and also announced the initial development of the <code>BrailleR</code> package <span class="citation">(<a href="references.html#ref-Rpkg-BrailleR" role="doc-biblioref">Godfrey et al. 2021</a>)</span>.</p>
+An R Journal article <span class="citation">(<a href="#ref-GodfreyRJournal" role="doc-biblioref">Godfrey 2013b</a>)</span> followed which exposed the needs of blind users to the R community and also announced the initial development of the <code>BrailleR</code> package <span class="citation">(<a href="#ref-Rpkg-BrailleR" role="doc-biblioref">Godfrey et al. 2021</a>)</span>.</p>
 <p>The <code>BrailleR</code> package is my attempt to help blind students and their lecturers. It is built on functions that I use to work as a lecturer in statistics. It aims to make up for the inability blind users have to work with the same extension tools their sighted peers are using, including the increasing number of graphical user interface (GUI) and integrated development environment (IDE) options.</p>
 <div id="why-will-i-use-the-brailler-package-as-a-novice" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Why will I use the BrailleR package as a novice?</h2>
@@ -341,11 +366,44 @@ The convenience functions introduced in Chapter <a href="RMarkdown.html#RMarkdow
 <h2><span class="header-section-number">1.4</span> What this book is not</h2>
 <p>This book is not a comprehensive guide to using R. There are now hundreds of books a blind (or sighted) person could choose to wade through, some are good, some are great, and some are truly awesome! There are also plenty of resources on the internet that are tired and really should be avoided. I am keen to promote those texts that can be easily worked with by a blind user. I’ll mention them as we get to the right point in this book for doing so, but now is a good time to mention a few that have really made a difference to me and creation of this book.</p>
 <p>I am truly reliant on the resources offered by help pages hosted by RStudio. I often include RStudio.com in my list of search terms. In adition, many of the individuals I hold in very high regard have close ties to RStudio.</p>
-<p>Yihui Xie’s work on the <code>knitr</code> package <span class="citation">(<a href="references.html#ref-Rpkg-knitr" role="doc-biblioref">Xie 2020</a>)</span>
-and his books on writing documents using reproducible research techniques <span class="citation">(<a href="references.html#ref-Xie2015" role="doc-biblioref">Xie 2015</a>)</span>
+<p>Yihui Xie’s work on the <code>knitr</code> package <span class="citation">(<a href="#ref-Rpkg-knitr" role="doc-biblioref">Xie 2021</a>)</span>
+and his books on writing documents using reproducible research techniques <span class="citation">(<a href="#ref-Xie2015" role="doc-biblioref">Xie 2015</a>)</span>
 are key to my success and in my opinion, have also led to making life much easier for blind users to read the work of others and to create new content for themselves.</p>
-<p>I frequently use several books written by Hadley Wickham and his collaborators. In particular, I rate the <a href="http://r-pkgs.had.co.nz/">R packages book</a> <span class="citation">(<a href="references.html#ref-Wickham2015RPackages" role="doc-biblioref">Wickham 2015</a>)</span>, the <a href="https://adv-r.hadley.nz">Advanced R book</a> [<span class="citation"><a href="references.html#ref-Wickham2014Advanced" role="doc-biblioref">Wickham</a> (<a href="references.html#ref-Wickham2014Advanced" role="doc-biblioref">2014a</a>)</span>’, and the <a href="http://r4ds.had.co.nz/">R for Data Science book</a> <span class="citation">(<a href="references.html#ref-GrolemundWickham2016" role="doc-biblioref">Grolemund and Wickham 2016</a>)</span>.</p>
+<p>I frequently use several books written by Hadley Wickham and his collaborators. In particular, I rate the <a href="http://r-pkgs.had.co.nz/">R packages book</a> <span class="citation">(<a href="#ref-Wickham2015RPackages" role="doc-biblioref">Wickham 2015</a>)</span>, the <a href="https://adv-r.hadley.nz">Advanced R book</a> [<span class="citation"><a href="#ref-Wickham2014Advanced" role="doc-biblioref">Wickham</a> (<a href="#ref-Wickham2014Advanced" role="doc-biblioref">2014a</a>)</span>’, and the <a href="http://r4ds.had.co.nz/">R for Data Science book</a> <span class="citation">(<a href="#ref-GrolemundWickham2016" role="doc-biblioref">Grolemund and Wickham 2016</a>)</span>.</p>
 
+</div>
+</div>
+<h3> References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Godfrey2009AccessiblePaper" class="csl-entry">
+Godfrey, A. Jonathan R. 2009. <span>“Are Statistics Courses Accessible?”</span> In <em>Proceedings of the Workshop on e-Inclusion in Mathematics and Science 2009</em>, 72–80. Fukuoka, Japan.
+</div>
+<div id="ref-GodfreyRJournal" class="csl-entry">
+———. 2013b. <span>“Statistical Software from a Blind Person’s Perspective: <span>R</span> Is the Best, but We Can Make It Better.”</span> <em>The R Journal</em> 5 (1): 73–79.<a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf "> https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.
+</div>
+<div id="ref-GodfreyLoots-JSE" class="csl-entry">
+———. 2015. <span>“Advice from Blind Teachers on How to Teach Statistics to Blind Students.”</span> <em>Journal of Statistics Education</em> 23 (3): 1–28. <a href="http://www.amstat.org/publications/jse/v23n3/godfrey.pdf">http://www.amstat.org/publications/jse/v23n3/godfrey.pdf</a>.
+</div>
+<div id="ref-Rpkg-BrailleR" class="csl-entry">
+Godfrey, A. Jonathan R., Debra Warren, Paul Murrell, Timothy Bilton, and Volker Sorge. 2021. <em>BrailleR: Improved Access for Blind Users</em>. <a href="https://github.com/ajrgodfrey/BrailleR">https://github.com/ajrgodfrey/BrailleR</a>.
+</div>
+<div id="ref-GrolemundWickham2016" class="csl-entry">
+Grolemund, G., and H. Wickham. 2016. <em>R for <span>Data Science</span></em>. <span>O’Reilly Media</span>. <a href="http://r4ds.had.co.nz/">http://r4ds.had.co.nz/</a>.
+</div>
+<div id="ref-Rpkg-base" class="csl-entry">
+R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-Wickham2014Advanced" class="csl-entry">
+———. 2014a. <em>Advanced r</em>. CRC Press. <a href="https://adv-r.hadley.nz">https://adv-r.hadley.nz</a>.
+</div>
+<div id="ref-Wickham2015RPackages" class="csl-entry">
+———. 2015. <em>R Packages</em>. <span>O’Reilly Media</span>. <a href="http://r-pkgs.had.co.nz/">http://r-pkgs.had.co.nz/</a>.
+</div>
+<div id="ref-Xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.
+</div>
+<div id="ref-Rpkg-knitr" class="csl-entry">
+———. 2021. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 </div>
             </section>
@@ -377,6 +435,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

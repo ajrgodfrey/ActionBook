@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Getting started with BrailleR | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Getting started with BrailleR | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-01-26" />
+<meta name="date" content="2021-07-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="History.html"/>
 <link rel="next" href="VI.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -116,6 +118,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -299,17 +324,17 @@ get more out of R than it already offers — which is actually quite a
 lot!</p>
 <div id="accessibility-of-statistical-software" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Accessibility of statistical software</h2>
-<p>A description of what makes statistical software accessible to the blind was given by <span class="citation">(<a href="references.html#ref-GodfreyLoots2014JSS" role="doc-biblioref">Godfrey and Loots 2014</a>)</span>. Many of the problems blind people face are a consequence of the failure of the specialist screen reading software we use to interact with graphical user interfaces.
-Many software applications are making use of graphics when once the information would be presented in text form with an accompanying graph. — SPSS <span class="citation">(<a href="references.html#ref-SPSS-Soft" role="doc-biblioref">SPSS Inc. 2012</a>)</span> is an example of this, and to a lesser extent so is the standard edition of Minitab <span class="citation">(<a href="references.html#ref-Minitab-Soft" role="doc-biblioref">Minitab Inc. 2012</a>)</span>. The output from Minitab Express <span class="citation">(<a href="references.html#ref-Minitab-Express" role="doc-biblioref">Minitab Inc. 2014</a>)</span> is a prime example of the worst possible presentation of information that was originally text; this product generates graphics that include text which is not readable by a blind person for all of its statistical output. The speech output software used by blind people can only interpret information that is text. As a guide, if the individual text in a window cannot be highlighted using the keyboard and not the mouse, then it is likely that this text will not be read for the blind user.</p>
+<p>A description of what makes statistical software accessible to the blind was given by <span class="citation">(<a href="#ref-GodfreyLoots2014JSS" role="doc-biblioref">Godfrey and Loots 2014</a>)</span>. Many of the problems blind people face are a consequence of the failure of the specialist screen reading software we use to interact with graphical user interfaces.
+Many software applications are making use of graphics when once the information would be presented in text form with an accompanying graph. — SPSS <span class="citation">(<a href="#ref-SPSS-Soft" role="doc-biblioref">SPSS Inc. 2012</a>)</span> is an example of this, and to a lesser extent so is the standard edition of Minitab <span class="citation">(<a href="#ref-Minitab-Soft" role="doc-biblioref">Minitab Inc. 2012</a>)</span>. The output from Minitab Express <span class="citation">(<a href="#ref-Minitab-Express" role="doc-biblioref">Minitab Inc. 2014</a>)</span> is a prime example of the worst possible presentation of information that was originally text; this product generates graphics that include text which is not readable by a blind person for all of its statistical output. The speech output software used by blind people can only interpret information that is text. As a guide, if the individual text in a window cannot be highlighted using the keyboard and not the mouse, then it is likely that this text will not be read for the blind user.</p>
 <p>It is true that some add-on packages for R also generate unreadable output, but as illustrated below, this is less of an issue than for software like SPSS or Minitab.
-<span class="citation">(<a href="references.html#ref-GodfreyLoots2014JSS" role="doc-biblioref">Godfrey and Loots 2014</a>)</span> gave more detailed scrutiny of R, SAS <span class="citation">(<a href="references.html#ref-SAS-Soft" role="doc-biblioref">SAS Institute Inc. 2010</a>)</span> , SPSS, and Minitab. Of these four applications, R and SAS were clearly superior to SPSS and the standard edition of Minitab.</p>
+<span class="citation">(<a href="#ref-GodfreyLoots2014JSS" role="doc-biblioref">Godfrey and Loots 2014</a>)</span> gave more detailed scrutiny of R, SAS <span class="citation">(<a href="#ref-SAS-Soft" role="doc-biblioref">SAS Institute Inc. 2010</a>)</span> , SPSS, and Minitab. Of these four applications, R and SAS were clearly superior to SPSS and the standard edition of Minitab.</p>
 <p>Some software applications have retained their historical links to the days when graphs and tables were rendered in well controlled monospace fonts — Minitab for example. In such applications the user may still be able to produce an ASCII graphic instead of the more commonly used high resolution graphs expected of today’s software (and user). In contrast, SAS and SPSS can use HTML to present information in well-formatted tables. These output windows are preferred by blind users over the graph window displays but sometimes the amount of information is not easily understood. Presentation of output is often read by eye in a vertical direction, while speech output software will read line by line. Take for example, a multiple regression where the sighted reader may scan down the list of <em>p</em> values in the right hand column; the same information being read aloud in line by line style could prove quite difficult to interpret. Blind users can use combinations of keys to move around HTML tables to speed up this process and avoid reading the intervening columns of output. While SPSS and SAS can deliver formatted HTML as a matter of course, R users must resort to the add-on packages, many of which are available on CRAN.</p>
 </div>
 <div id="accessibility-of-r" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Accessibility of R</h2>
-<p><span class="citation">(<a href="references.html#ref-GodfreyRJournal" role="doc-biblioref">Godfrey 2013b</a>)</span> documented the ability to use R almost immediately after installation; only one minor change is recommended and can be achieved in less than a minute even when explained via email or a telephone call. For users of the Windows operating system, up until Windows XP, I always recommended running R in a terminal window instead of the GUI; the shortcut placed on the Windows desktop would then need to be pointed to <code>Rterm.exe</code> instead of <code>Rgui.exe</code>.
+<p><span class="citation">(<a href="#ref-GodfreyRJournal" role="doc-biblioref">Godfrey 2013b</a>)</span> documented the ability to use R almost immediately after installation; only one minor change is recommended and can be achieved in less than a minute even when explained via email or a telephone call. For users of the Windows operating system, up until Windows XP, I always recommended running R in a terminal window instead of the GUI; the shortcut placed on the Windows desktop would then need to be pointed to <code>Rterm.exe</code> instead of <code>Rgui.exe</code>.
 Macintosh and Linux users are operational with no special actions required.
-Users of Windows Vista or Windows 7 did have an additional challenge of what appeared to be the screen locking up, or more exactly, the screen reader software “losing focus” in the R terminal window. The solution for this problem, as documented in <span class="citation">(<a href="references.html#ref-GodfreyErhardtRJournalAddendum" role="doc-biblioref">Godfrey and Erhardt 2014</a>)</span>, was to hit the <code>Alt</code> key.
+Users of Windows Vista or Windows 7 did have an additional challenge of what appeared to be the screen locking up, or more exactly, the screen reader software “losing focus” in the R terminal window. The solution for this problem, as documented in <span class="citation">(<a href="#ref-GodfreyErhardtRJournalAddendum" role="doc-biblioref">Godfrey and Erhardt 2014</a>)</span>, was to hit the <code>Alt</code> key.
 Blind users now need to compare the combinations of screen reader and the terminal versus the GUI.
 The decision should be made by the individual user after some experimentation; their decision may depend on the skill level they have with their prefered screen reader and should be revisited at a later date.</p>
 <p>Blind students attending the <a href="http://icchp-su.net/?q=node/108">R workshop at the 2011 Summer University,</a> held in the Czech Republic, were able to set up R for use in a classroom setting on their own machines. This included a variety of operating systems and adaptive technology (hardware and software for blind people). Similar events were held in 2013 and 2014 but most attendees used computers supplied by the host organizing committees. Many attendees have made contact when issues have arisen, but none of the issues relate to the installation of R or its interactions with the particular hardware or software being used. I am confident that anyone intending to undertake use of any statistical software will be able to get R working with their screen reader.</p>
@@ -361,6 +386,30 @@ The decision should be made by the individual user after some experimentation; t
 
 </div>
 </div>
+<h3> References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-GodfreyRJournal" class="csl-entry">
+———. 2013b. <span>“Statistical Software from a Blind Person’s Perspective: <span>R</span> Is the Best, but We Can Make It Better.”</span> <em>The R Journal</em> 5 (1): 73–79.<a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf "> https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.
+</div>
+<div id="ref-GodfreyErhardtRJournalAddendum" class="csl-entry">
+Godfrey, A. Jonathan R., and Robert Erhardt. 2014. <span>“Addendum to “Statistical Software from a Blind Person’s Perspective".”</span> <em>The R Journal</em> 6 (1): 182. <a href="https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf">https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf</a>.
+</div>
+<div id="ref-GodfreyLoots2014JSS" class="csl-entry">
+Godfrey, A. Jonathan R., and M. Theodor Loots. 2014. <span>“Statistical Software (<span>R</span>, <span>SAS</span>, <span>SPSS</span>, and <span>Minitab</span>) for Blind Students and Practitioners.”</span> <em>Journal of Statistical Software, Software Reviews</em> 58 (1): 1–25. <a href="https://www.jstatsoft.org/v58/s01">https://www.jstatsoft.org/v58/s01</a>.
+</div>
+<div id="ref-Minitab-Soft" class="csl-entry">
+Minitab Inc. 2012. <em><span>Minitab</span> Statistical Software Version 16.2.3</em>. State College, PA: Minitab Inc. <a href="http://www.minitab.com/">http://www.minitab.com/</a>.
+</div>
+<div id="ref-Minitab-Express" class="csl-entry">
+———. 2014. <em>Minitab Express Statistical Software Version </em>. State College, PA: Minitab Inc. <a href="http://www.minitab.com/">http://www.minitab.com/</a>.
+</div>
+<div id="ref-SAS-Soft" class="csl-entry">
+SAS Institute Inc. 2010. <em><span>SAS/STAT</span> Software, Version 9.3</em>. Cary, NC: <span>SAS</span> Institute Inc. <a href="http://www.sas.com/">http://www.sas.com/</a>.
+</div>
+<div id="ref-SPSS-Soft" class="csl-entry">
+SPSS Inc. 2012. <em><span>IBM</span> <span>SPSS</span> Statistics 21</em>. Chicago, IL: SPSS Inc. <a href="http://www.spss.com/">http://www.spss.com/</a>.
+</div>
+</div>
             </section>
 
           </div>
@@ -390,6 +439,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

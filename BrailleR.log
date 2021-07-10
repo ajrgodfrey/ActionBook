@@ -1,0 +1,1453 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.5.31)  15 MAY 2021 19:51
+entering extended mode
+**./BrailleR.tex
+(BrailleR.tex
+LaTeX2e <2018-04-01> patch level 4
+Babel <3.20> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk10.clo"
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks15
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\microtype.sty
+Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+\MT@toks=\toks22
+\MT@count=\count101
+LaTeX Info: Redefining \textls on input line 793.
+\MT@outer@kern=\dimen112
+LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
+\MT@listname@count=\count102
+
+(C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\microtype-pdf
+tex.def
+File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 913.
+LaTeX Info: Redefining \lslig on input line 913.
+\MT@outer@space=\skip46
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\microtype.cfg
+File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
+)) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\parskip\parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\xurl\xurl.sty
+Package: xurl 2020/12/30 v 0.09a modify URL breaks
+(C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\bookmark.sty"
+Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdfescape.sty"
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package hobsub Info: Skipping package `pdfescape' (already loaded).
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen113
+\Hy@linkcounter=\count103
+\Hy@pagecounter=\count104
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count105
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4383.
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
+File: puenc.def 2018/02/06 v6.86b Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count106
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen114
+\Fld@menulength=\count107
+\Field@Width=\dimen115
+\Fld@charsize=\dimen116
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count108
+\c@Item=\count109
+\c@Hfootnote=\count110
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count111
+\c@bookmark@seq@number=\count112
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip47
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\bkm-pdftex.def"
+File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
+\BKM@id=\count113
+)) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyvrb\fancyvrb.st
+y
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count114
+\FV@InFile=\read1
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count115
+\FV@StepNumber=\count116
+\FV@OutFile=\write3
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip48
+\fb@frw=\dimen117
+\fb@frh=\dimen118
+\FrameRule=\dimen119
+\FrameSep=\dimen120
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip49
+\LTright=\skip50
+\LTpre=\skip51
+\LTpost=\skip52
+\LTchunksize=\count117
+\LTcapwidth=\dimen121
+\LT@head=\box29
+\LT@firsthead=\box30
+\LT@foot=\box31
+\LT@lastfoot=\box32
+\LT@cols=\count118
+\LT@rows=\count119
+\c@LT@tables=\count120
+\c@LT@chunks=\count121
+\LT@p@ftn=\toks23
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen122
+\lightrulewidth=\dimen123
+\cmidrulewidth=\dimen124
+\belowrulesep=\dimen125
+\belowbottomsep=\dimen126
+\aboverulesep=\dimen127
+\abovetopsep=\dimen128
+\cmidrulesep=\dimen129
+\cmidrulekern=\dimen130
+\defaultaddspace=\dimen131
+\@cmidla=\count122
+\@cmidlb=\count123
+\@aboverulesep=\dimen132
+\@belowrulesep=\dimen133
+\@thisruleclass=\count124
+\@lastruleclass=\count125
+\@thisrulewidth=\dimen134
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
+\col@sep=\dimen135
+\ar@mcellbox=\box33
+\extrarowheight=\dimen136
+\NC@list=\toks24
+\extratabsurround=\skip53
+\backup@length=\skip54
+\ar@cellbox=\box34
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count126
+\calc@Bcount=\count127
+\calc@Adimen=\dimen137
+\calc@Bdimen=\dimen138
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count128
+\calc@Cskip=\skip57
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\etoolbox\etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count129
+)
+(C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\footnotehyper\footnoteh
+yper.sty
+Package: footnotehyper 2021/02/04 v1.1d hyperref aware footnote.sty (JFB)
+\FNH@notes=\box35
+\FNH@width=\dimen139
+\FNH@toks=\toks25
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip58
+\bibsep=\skip59
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count130
+)
+No file BrailleR.aux.
+\openout1 = `BrailleR.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 122.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 122.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 122.
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Info: Redefining \microtypecontext on input line 122.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count131
+\scratchdimen=\dimen142
+\scratchbox=\box36
+\nofMPsegments=\count132
+\nofMParguments=\count133
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count134
+\MPscratchDim=\dimen143
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
+\everyMPtoPDFconversion=\toks27
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+\AtBeginShipoutBox=\box37
+Package hyperref Info: Link coloring OFF on input line 122.
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count137
+)
+LaTeX Info: Redefining \ref on input line 122.
+LaTeX Info: Redefining \pageref on input line 122.
+LaTeX Info: Redefining \nameref on input line 122.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 124.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 124.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 124
+.
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 124
+.
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 124.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 124.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 124.
+LaTeX Font Info:    Try loading font information for U+msa on input line 124.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 124.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [1
+
+
+{C:/Users/ajgodfre/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+
+]
+\tf@toc=\write4
+\openout4 = `BrailleR.toc'.
+
+[3] [4
+
+]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 135.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [5]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 150.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 150.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 150.
+[6]
+Chapter 1.
+
+Package natbib Warning: Citation `Godfrey2009AccessiblePaper' on page 7 undefin
+ed on input line 165.
+
+
+Package natbib Warning: Citation `GodfreyLoots-JSE' on page 7 undefined on inpu
+t line 166.
+
+
+Package natbib Warning: Citation `Rpkg-base' on page 7 undefined on input line 
+166.
+
+
+Package natbib Warning: Citation `Godfrey2009AccessiblePaper' on page 7 undefin
+ed on input line 166.
+
+
+Package natbib Warning: Citation `GodfreyRJournal' on page 7 undefined on input
+ line 171.
+
+
+Package natbib Warning: Citation `Rpkg-BrailleR' on page 7 undefined on input l
+ine 171.
+
+[7
+
+]
+
+LaTeX Warning: Reference `VI' on page 8 undefined on input line 188.
+
+
+LaTeX Warning: Reference `VI' on page 8 undefined on input line 195.
+
+[8]
+
+LaTeX Warning: Reference `RMarkdown' on page 9 undefined on input line 202.
+
+
+LaTeX Warning: Reference `RMarkdown' on page 9 undefined on input line 208.
+
+
+Overfull \hbox (12.73979pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 1.2.  WHY WILL I USE THE BRAILLER PACKAGE IF I AM NOT A NOVICE?
+ \T1/lmr/m/n/10 9
+ []
+
+[9]
+
+Package natbib Warning: Citation `Rpkg-knitr' on page 10 undefined on input lin
+e 228.
+
+
+Package natbib Warning: Citation `Xie2015' on page 10 undefined on input line 2
+29.
+
+
+Package natbib Warning: Citation `Wickham2015RPackages' on page 10 undefined on
+ input line 232.
+
+
+Package natbib Warning: Citation `Wickham2014Advanced' on page 10 undefined on 
+input line 232.
+
+
+Package natbib Warning: Citation `GrolemundWickham2016' on page 10 undefined on
+ input line 232.
+
+[10]
+Chapter 2.
+[11
+
+]
+
+Package natbib Warning: Citation `Godfrey2009AccessiblePaper' on page 12 undefi
+ned on input line 251.
+
+
+Package natbib Warning: Citation `Godfrey2011SU-R' on page 12 undefined on inpu
+t line 253.
+
+
+Package natbib Warning: Citation `Godfrey2013SU-R' on page 12 undefined on inpu
+t line 253.
+
+
+Package natbib Warning: Citation `Godfrey2014SU-R' on page 12 undefined on inpu
+t line 253.
+
+
+Package natbib Warning: Citation `Godfrey2016SU-R' on page 12 undefined on inpu
+t line 253.
+
+
+Package natbib Warning: Citation `Rpkg-BrailleR' on page 12 undefined on input 
+line 255.
+
+
+Package natbib Warning: Citation `Godfrey2012BrailleRPaper' on page 12 undefine
+d on input line 255.
+
+
+Package natbib Warning: Citation `Godfrey2012PuttingPaper' on page 12 undefined
+ on input line 258.
+
+
+Package natbib Warning: Citation `Godfrey2014SU-Sweave' on page 12 undefined on
+ input line 258.
+
+
+Underfull \vbox (badness 2970) has occurred while \output is active []
+
+[12]
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 279
+.
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmtt.fd"
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<02-History_files/figure-latex/hist-1.pdf, id=98, 469.755pt x 325.215pt>
+File: 02-History_files/figure-latex/hist-1.pdf Graphic file (type pdf)
+<use 02-History_files/figure-latex/hist-1.pdf>
+Package pdftex.def Info: 02-History_files/figure-latex/hist-1.pdf  used on inpu
+t line 308.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 335--335
+[]\T1/lmtt/m/n/10 ## It has 15 bins with equal widths, starting at -4 and endin
+g at 3.5 .[] 
+ []
+
+[13] [14 <./02-History_files/figure-latex/hist-1.pdf>]
+
+Package natbib Warning: Citation `GodfreyRJournal' on page 15 undefined on inpu
+t line 356.
+
+
+Package natbib Warning: Citation `GodfreyRJournal' on page 15 undefined on inpu
+t line 356.
+
+
+Package natbib Warning: Citation `GodfreyErhardtRJournalAddendum' on page 15 un
+defined on input line 356.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[15]
+
+Package natbib Warning: Citation `Godfrey2013BlindnessPoster' on page 16 undefi
+ned on input line 358.
+
+
+Package natbib Warning: Citation `GodfreyMurrell2016TactileGraphsPaper' on page
+ 16 undefined on input line 358.
+
+
+Package natbib Warning: Citation `GodfreyLoots2014JSS' on page 16 undefined on 
+input line 364.
+
+
+Package natbib Warning: Citation `Godfrey2014SU-StatsSoft' on page 16 undefined
+ on input line 365.
+
+
+Package natbib Warning: Citation `Godfrey2016SU-StatsSoft' on page 16 undefined
+ on input line 365.
+
+
+Package natbib Warning: Citation `Godfrey2014BlindUseROral' on page 16 undefine
+d on input line 371.
+
+
+Package natbib Warning: Citation `Rpkg-knitr' on page 16 undefined on input lin
+e 372.
+
+
+Package natbib Warning: Citation `Godfrey2015BaseRWeepsOral' on page 16 undefin
+ed on input line 378.
+
+
+Package natbib Warning: Citation `GodfreyBilton2016UseROral' on page 16 undefin
+ed on input line 378.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[16]
+
+Package natbib Warning: Citation `RStudio' on page 17 undefined on input line 3
+88.
+
+
+Package natbib Warning: Citation `GodfreyCurtis2016WriteRPaper' on page 17 unde
+fined on input line 389.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[17]
+
+Package natbib Warning: Citation `Rpkg-TeachingDemos' on page 18 undefined on i
+nput line 401.
+
+[18]
+Chapter 3.
+
+Package natbib Warning: Citation `GodfreyLoots2014JSS' on page 19 undefined on 
+input line 422.
+
+
+Package natbib Warning: Citation `SPSS-Soft' on page 19 undefined on input line
+ 423.
+
+
+Package natbib Warning: Citation `Minitab-Soft' on page 19 undefined on input l
+ine 423.
+
+
+Package natbib Warning: Citation `Minitab-Express' on page 19 undefined on inpu
+t line 423.
+
+
+Package natbib Warning: Citation `GodfreyLoots2014JSS' on page 19 undefined on 
+input line 426.
+
+
+Package natbib Warning: Citation `SAS-Soft' on page 19 undefined on input line 
+426.
+
+[19
+
+]
+
+Package natbib Warning: Citation `GodfreyRJournal' on page 20 undefined on inpu
+t line 433.
+
+
+Package natbib Warning: Citation `GodfreyErhardtRJournalAddendum' on page 20 un
+defined on input line 435.
+
+[20]
+
+LaTeX Warning: Reference `Personalising' on page 21 undefined on input line 481
+.
+
+[21]
+
+LaTeX Warning: Reference `WriteR' on page 22 undefined on input line 507.
+
+[22]
+Underfull \hbox (badness 2318) in paragraph at lines 512--513
+\T1/lmtt/m/n/10 GetGoing()\T1/lmr/m/n/10 (+20) . You might find it use-ful to u
+se \T1/lmtt/m/n/10 BrailleRHome() \T1/lmr/m/n/10 (+20) and
+ []
+
+[23] [24
+
+]
+Chapter 4.
+
+Package natbib Warning: Citation `BulatovGardner2004SVG' on page 25 undefined o
+n input line 528.
+
+
+Package natbib Warning: Citation `GardnerBulatov2010SVG' on page 25 undefined o
+n input line 528.
+
+
+Package natbib Warning: Citation `SVGStandard' on page 25 undefined on input li
+ne 529.
+
+
+Package natbib Warning: Citation `MurrellPotter2014' on page 25 undefined on in
+put line 529.
+
+[25]
+
+Package natbib Warning: Citation `GardnerBulatov2010SVG' on page 26 undefined o
+n input line 531.
+
+
+Package natbib Warning: Citation `MurrellPotter2014' on page 26 undefined on in
+put line 533.
+
+
+Package natbib Warning: Citation `GardnerBulatov2010SVG' on page 26 undefined o
+n input line 533.
+
+
+Package natbib Warning: Citation `Murrell2015GridGraphics' on page 26 undefined
+ on input line 534.
+
+
+Package natbib Warning: Citation `JAWS' on page 26 undefined on input line 536.
+
+
+
+Package natbib Warning: Citation `GodfreyLoots2014JSS' on page 26 undefined on 
+input line 537.
+
+
+Package natbib Warning: Citation `NVDA' on page 26 undefined on input line 537.
+
+
+
+Package natbib Warning: Citation `SPLUS-Soft' on page 26 undefined on input lin
+e 541.
+
+[26]
+<04a-VIInAction_files/figure-latex/hist-1.pdf, id=207, 505.89pt x 361.35pt>
+File: 04a-VIInAction_files/figure-latex/hist-1.pdf Graphic file (type pdf)
+<use 04a-VIInAction_files/figure-latex/hist-1.pdf>
+Package pdftex.def Info: 04a-VIInAction_files/figure-latex/hist-1.pdf  used on 
+input line 557.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 620--620
+[] \T1/lmtt/m/n/10 [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  
+2.0  2.5  3.0[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 620--620
+[] \T1/lmtt/m/n/10 [1] 0.006 0.010 0.026 0.098 0.170 0.300 0.346 0.376 0.320 0.
+200 0.102 0.038[] 
+ []
+
+[27 <./04a-VIInAction_files/figure-latex/hist-1.pdf>]
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 620--620
+[] \T1/lmtt/m/n/10 [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1
+.25  1.75  2.25[] 
+ []
+
+[28]
+Overfull \hbox (2689.49118pt too wide) in paragraph at lines 646--646
+[]\T1/lmtt/m/n/10 General description: A histogram uses rectangles to represent
+ the counts or relative frequencies of observations falling in each subrange of
+ the numeric variable being investigated. The rectangles are standing side by s
+ide with their bottom end at the zero mark of the vertical axis. The widths of 
+the rectangles are usually constant, but this can be altered by the user. A sig
+hted person uses the heights and therefore the areas of the rectangles to help 
+determine the overall shape of the distribution, the presence of gaps in the da
+ta, and any outliers that might be present.[] 
+ []
+
+
+Overfull \hbox (1460.99475pt too wide) in paragraph at lines 646--646
+[]\T1/lmtt/m/n/10 As with most graphs created by the base graphics package, the
+ axes do not join at the bottom left corner and are separated from the area whe
+re the data are being plotted. Tick marks are automatically chosen for the data
+, and the axes may not extend past the ends of variables being plotted.The vert
+ical axis for frequency always starts at zero.[] 
+ []
+
+
+Overfull \hbox (1754.9939pt too wide) in paragraph at lines 646--646
+[]\T1/lmtt/m/n/10 R normally plots a graph in a square window. This can be alte
+red; the way this is done depends heavily on the method being used to create th
+e graph. See the help on win.graph() or  x11() for the graphs made in an intera
+ctive  session or part of an R script; png(), pdf() or postscript() for specifi
+c file formats being created; or, use fig.height and fig.width arguments in you
+r R markdown documents.[] 
+ []
+
+
+Overfull \hbox (500.24754pt too wide) in paragraph at lines 646--646
+[]\T1/lmtt/m/n/10 R hints: If you intend to make a tactile version of a histogr
+am, you may find it useful to alter the aspect ratio so that the histogram is w
+ider than it is tall.[] 
+ []
+
+[29]
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 677--677
+[]\T1/lmtt/m/n/10 It has 13 bins with equal widths, starting at -3.5 and ending
+ at 3 .[] 
+ []
+
+[30]
+Overfull \hbox (185.24846pt too wide) in paragraph at lines 741--741
+[]\T1/lmtt/m/n/10 Ozone: Min. 1   1st Qu. 18   Median 31.5   Mean 42.1293103448
+276   3rd Qu. 63.25   Max. 168   NA\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 s 37[] 
+ []
+
+
+Overfull \hbox (211.49838pt too wide) in paragraph at lines 741--741
+[]\T1/lmtt/m/n/10 Solar.R: Min. 7   1st Qu. 115.75   Median 205   Mean 185.9315
+06849315   3rd Qu. 258.75   Max. 334   NA\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 s 7[
+] 
+ []
+
+
+Overfull \hbox (137.9986pt too wide) in paragraph at lines 741--741
+[]\T1/lmtt/m/n/10 Wind: Min. 1.7   1st Qu. 7.4   Median 9.7   Mean 9.9575163398
+6928   3rd Qu. 11.5   Max. 20.7[] 
+ []
+
+
+Overfull \hbox (101.2487pt too wide) in paragraph at lines 741--741
+[]\T1/lmtt/m/n/10 Temp: Min. 56   1st Qu. 72   Median 79   Mean 77.882352941176
+5   3rd Qu. 85   Max. 97[] 
+ []
+
+
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 741--741
+[]\T1/lmtt/m/n/10 Month: Min. 5   1st Qu. 6   Median 7   Mean 6.99346405228758 
+  3rd Qu. 8   Max. 9[] 
+ []
+
+
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 741--741
+[]\T1/lmtt/m/n/10 Day: Min. 1   1st Qu. 8   Median 16   Mean 15.8039215686275  
+ 3rd Qu. 23   Max. 31[] 
+ []
+
+[31] [32]
+Chapter 5.
+
+Package natbib Warning: Citation `CalderEtAl2006' on page 33 undefined on input
+ line 763.
+
+[33
+
+]
+
+LaTeX Warning: Reference `VI' on page 34 undefined on input line 772.
+
+
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 34 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[34]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 792.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [35]
+
+LaTeX Warning: Reference `VI' on page 36 undefined on input line 816.
+
+
+LaTeX Warning: Reference `VI' on page 36 undefined on input line 822.
+
+
+LaTeX Warning: Reference `VI' on page 36 undefined on input line 826.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 36 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[36]
+<04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf, id=279, 361.35pt x 
+505.89pt>
+File: 04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf Graphic file (t
+ype pdf)
+<use 04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf>
+Package pdftex.def Info: 04b-NewGraphCommands_files/figure-latex/exampleHist-1.
+pdf  used on input line 843.
+(pdftex.def)             Requested size: 345.00084pt x 483.00116pt.
+
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 873--873
+[] \T1/lmtt/m/n/10 [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  
+2.0  2.5  3.0  3.5[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 873--873
+[] \T1/lmtt/m/n/10 [1] 0.004 0.008 0.024 0.084 0.178 0.282 0.404 0.374 0.310 0.
+196 0.082 0.040[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 873--873
+[] \T1/lmtt/m/n/10 [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1
+.25  1.75  2.25[] 
+ []
+
+
+Overfull \hbox (158.99854pt too wide) in paragraph at lines 873--873
+[]\T1/lmtt/m/n/10 > MyHist = hist(x, xlab = "random normal values", main = "Exa
+mple histogram (BrailleR package)")[] 
+ []
+
+<04b-NewGraphCommands_files/figure-latex/exampleHist-2.pdf, id=280, 361.35pt x 
+505.89pt>
+File: 04b-NewGraphCommands_files/figure-latex/exampleHist-2.pdf Graphic file (t
+ype pdf)
+<use 04b-NewGraphCommands_files/figure-latex/exampleHist-2.pdf>
+Package pdftex.def Info: 04b-NewGraphCommands_files/figure-latex/exampleHist-2.
+pdf  used on input line 877.
+(pdftex.def)             Requested size: 345.00084pt x 483.00116pt.
+
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 965--965
+[] \T1/lmtt/m/n/10 [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  
+2.0  2.5  3.0  3.5[] 
+ []
+
+[37]
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 38 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[38 <./04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf>] [39 <./04b-N
+ewGraphCommands_files/figure-latex/exampleHist-2.pdf>]
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 965--965
+[] \T1/lmtt/m/n/10 [1] 0.004 0.008 0.024 0.084 0.178 0.282 0.404 0.374 0.310 0.
+196 0.082 0.040[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 965--965
+[] \T1/lmtt/m/n/10 [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1
+.25  1.75  2.25[] 
+ []
+
+
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 40 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[40]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 965--965
+[]\T1/lmtt/m/n/10 It has 14 bins with equal widths, starting at -3.5 and ending
+ at 3.5 .[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[41]
+<04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf, id=318, 578.
+16pt x 578.16pt>
+File: 04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf Graphic 
+file (type pdf)
+<use 04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf>
+Package pdftex.def Info: 04b-NewGraphCommands_files/figure-latex/exampleScatter
+Plot-1.pdf  used on input line 1010.
+(pdftex.def)             Requested size: 344.99312pt x 344.99312pt.
+
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 42 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[42] [43 <./04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf>]
+<04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf, id=336, 433.62pt x
+ 433.62pt>
+File: 04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf Graphic file (
+type pdf)
+<use 04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf>
+Package pdftex.def Info: 04b-NewGraphCommands_files/figure-latex/addGridLines-1
+.pdf  used on input line 1045.
+(pdftex.def)             Requested size: 345.01738pt x 345.01738pt.
+
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 44 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[44] [45 <./04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf>]
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 46 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[46]
+Chapter 6.
+
+Package natbib Warning: Citation `Rpkg-TeachingDemos' on page 47 undefined on i
+nput line 1104.
+
+
+Underfull \vbox (badness 2443) has occurred while \output is active []
+
+[47
+
+]
+
+Package natbib Warning: Citation `Xie2015' on page 48 undefined on input line 1
+119.
+
+
+Package natbib Warning: Citation `RStudio' on page 48 undefined on input line 1
+121.
+
+[48] [49]
+
+LaTeX Warning: Reference `RMarkdown' on page 50 undefined on input line 1193.
+
+
+LaTeX Warning: Reference `WriteR' on page 50 undefined on input line 1193.
+
+[50]
+Chapter 7.
+
+Package natbib Warning: Citation `Xie2015' on page 51 undefined on input line 1
+203.
+
+
+Package natbib Warning: Citation `Rpkg-knitr' on page 51 undefined on input lin
+e 1210.
+
+
+Package natbib Warning: Citation `Rpkg-rmarkdown' on page 51 undefined on input
+ line 1210.
+
+[51
+
+]
+
+Package natbib Warning: Citation `Rpkg-xtable' on page 52 undefined on input li
+ne 1215.
+
+
+Package natbib Warning: Citation `GodfreyRJournal' on page 52 undefined on inpu
+t line 1223.
+
+
+Package natbib Warning: Citation `Fox2005-RCommander' on page 52 undefined on i
+nput line 1231.
+
+
+Package natbib Warning: Citation `Fellows2012Deducer' on page 52 undefined on i
+nput line 1234.
+
+
+Package natbib Warning: Citation `RoedigerEtAl2012RKWard' on page 52 undefined 
+on input line 1236.
+
+
+Overfull \hbox (61.63365pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 52 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+ANALYSIS EFFICIENTLY
+ []
+
+[52]
+
+Package natbib Warning: Citation `RoedigerEtAl2012RKWard' on page 53 undefined 
+on input line 1239.
+
+
+Package natbib Warning: Citation `RoedigerEtAl2012RKWard' on page 53 undefined 
+on input line 1249.
+
+[53]
+
+Package natbib Warning: Citation `Rpkg-moments' on page 54 undefined on input l
+ine 1267.
+
+
+Package natbib Warning: Citation `Rpkg-nortest' on page 54 undefined on input l
+ine 1273.
+
+
+Package natbib Warning: Citation `Rpkg-moments' on page 54 undefined on input l
+ine 1275.
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 1299--1299
+[]\T1/lmtt/m/n/10 # N.B. Various files and a folder were created in a temporary
+ directory.[] 
+ []
+
+
+Overfull \hbox (61.63365pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 54 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+ANALYSIS EFFICIENTLY
+ []
+
+[54]
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 1330--1330
+[]\T1/lmtt/m/n/10 opts_chunk$set(comment="", echo=FALSE, fig.path="Ozone/Ozone-
+", fig.width=7)[] 
+ []
+
+[55]
+
+Package natbib Warning: Citation `Rpkg-knitr' on page 56 undefined on input lin
+e 1353.
+
+
+Package natbib Warning: Citation `Rpkg-base' on page 56 undefined on input line
+ 1357.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (61.63365pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 56 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+ANALYSIS EFFICIENTLY
+ []
+
+[56]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 1406--1406
+[]\T1/lmtt/m/n/10 ## OneFactor("Ozone", "Month", airquality, Folder=tempdir(), 
+View=FALSE)[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 1406--1406
+[]\T1/lmtt/m/n/10 # N.B. Various files and a folder were created in a temporary
+ directory.[] 
+ []
+
+
+Overfull \hbox (179.33524pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 7.4.  ANALYSIS OF A SINGLE CONTINUOUS VARIABLE WITH RESPECT TO 
+A SINGLE GROUPING FACTOR \T1/lmr/m/n/10 57
+ []
+
+[57]
+Overfull \hbox (61.63365pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 58 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+ANALYSIS EFFICIENTLY
+ []
+
+[58]
+
+! LaTeX Error: Unknown graphics extension: .lm-1.pdf.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1466 ..._files/figure-latex/AirQuality.lm-1.pdf}
+                                                   
+Here is how much of TeX's memory you used:
+ 14006 strings out of 492976
+ 203479 string characters out of 3135982
+ 311833 words of memory out of 3000000
+ 17360 multiletter control sequences out of 15000+200000
+ 77696 words of font info for 117 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 34i,6n,38p,1721b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+!  ==> Fatal error occurred, no output PDF file produced!
