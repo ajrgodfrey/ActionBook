@@ -4,6 +4,9 @@
 The use of the ggplot style of graph production has increased markedly since its inception with the `ggplot2` package [@Rpkg-ggplot2] now being one of the most used R packages. The "gg" is short for the "grammar of graphics" but the R code used to create an extremely wide range of graphs is seldom human-interpretable with ease. Creation of suitable support functionality via the `VI()` command is very definitely required. An initial attempt to extract any useful infromation from these graphs was contributed to the `BrailleR` package by Tony Hirst. Significant improvement has been made by Debra Warren as part of her postgraduate work under the supervision of Paul Murrell at the University of Auckland. Much of what is displayed in this chapter is only worth offering because of Debra's work and the interactions had between her, Paul and I in the second half of 2017.
 
 
+In 2021, the `plot.ggplot()` command in the `ggplot2` package was updated to automatically call `BrailleR`'s `VI()` function if the user has specified they are blind. The `GoBlind()` and `GoSighted()` commands will toggle the automated use of `VI()` on and off respectively. The default starting mode is to get the automated `VI()` output.
+
+
 ```{r setup, include=FALSE}
 library(knitr)
 opts_chunk$set(fig.width=7, fig.height=5, comment="")
@@ -14,7 +17,7 @@ library(magrittr)
 
 
 
-N.B.  the commands here are exact copies of the commands presented in @Wickham2009ggplot2 or some minor alterations to them; any changes will be explicitly noted.    All plots are created using the figure numbers from @Wickham2009ggplot2 or the page numbers if no figure number was given. They are then investigated using the `VI()` command from the `BrailleR` package.
+N.B.  the commands here are exact copies of the commands presented in @Wickham2009ggplot2 or some minor alterations to them; any changes will be explicitly noted.    All plots are created using the figure numbers from @Wickham2009ggplot2 or the page numbers if no figure number was given. They are then automatically investigated using the `VI()` command from the `BrailleR` package which has not needed to be explicitly called since v0.32.0 of `BrailleR` and v3.3.5 of the `ggplot2` package..
 
 
 You will need some additional packages to the `BrailleR` package to be loaded to follow along with the examples in this chapter. Do this by issuing the commands:
@@ -37,22 +40,19 @@ One important note for the graphs in this chapter is the difference in the way t
 ```{r p11a, fig.cap="First graph on page 11 of @Wickham2009ggplot2"}     
 p11a = qplot(carat, price, data = diamonds)   
 p11a
-VI(p11a)  
 ```  
 
-Note that unlike some other ways the `VI()` command has worked, the graph was not created by the nesting of the call to render the graph when nested inside the `VI()` command. In all the examples that follow, I use the pipe `%>%` operator from the `magrittr` package to push the graph into the `VI()` function.
+Note that if you do not want to generate the graph but want to know what its text description has to offer, you can use the `%>%` pipe operator as follows:
 
 ```{r fig2-2a, fig.cap="Left pane of Figure 2.2 of @Wickham2009ggplot2"}
 fig2.2a = qplot(carat, price, data = dsmall, colour = color)
 fig2.2a %>% VI()   
-fig2.2a
 ```
 
-We haven't been able to tell what exact colour was used in the @Wickham2009ggplot2 rendering of this graph,  but there has obviously been some minor alteration of the colour palette being used by the `ggplot2` package.
+We haven't been able to tell what exact colour was used in the @Wickham2009ggplot2 rendering of this graph,  but there has obviously been some minor alteration of the colour palette being used by the `ggplot2` package over the years.
 
 ```{r fig2-2b, fig.cap="Right pane of Figure 2.2"}
 fig2.2b = qplot(carat, price, data = dsmall, shape = cut)    
-fig2.2b %>% VI()   
 fig2.2b
 ```  
 
@@ -60,14 +60,12 @@ To get semi-transparent points:
 ```{r fig2-3b, fig.cap="Middle pane from Figure 2.3"}     
 fig2.3b = qplot(carat, price, data = diamonds, alpha = I(1/100))    
 fig2.3b
-fig2.3b %>% VI()   
 ```  
 
 To add a smoother (default is loess for n<1000):   
 ```{r fig2-4a, fig.cap="Left pane of Figure 2.4"}     
 fig2.4a = qplot(carat, price, data = dsmall, geom = c("point", "smooth"))    
 fig2.4a
-fig2.4a %>% VI()   
 ```  
 
 
@@ -77,20 +75,17 @@ fig2.4a %>% VI()
 ```{r fig2-8a, fig.cap="Left pane of Figure 2.8"}     
 fig2.8a  = qplot(color, price / carat, data = diamonds, geom = "jitter")
 fig2.8a
-fig2.8a %>% VI()   
 ```
 
 ```{r fig2-8b}
 fig2.8b = qplot(color, price / carat, data = diamonds, geom = "boxplot")    
 fig2.8b
-fig2.8b %>% VI()   
 ```  
 
 When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not currently realised by `BrailleR`. 
 ```{r fig2-9b, fig.cap="Middle pane of Figure 2.9"}     
 fig2.9b = qplot(color, price / carat, data = diamonds, geom = "jitter", alpha = I(1 / 50))    
 fig2.9b
-fig2.9b %>% VI()   
 ```
 
 
@@ -100,21 +95,18 @@ fig2.9b %>% VI()
 ```{r fig2-10a, fig.cap="Left pane of Figure 2.10"}     
 fig2.10a = qplot(carat, data = diamonds, geom = "histogram")    
 fig2.10a
-fig2.10a %>% VI()   
 ```
 Warning: This figure does look different to the original in @Wickham2009ggplot2 ins spite of using the same code and same data.
 
 ```{r fig2-10b, fig.cap="Right pane of Figure 2.10"}     
 fig2.10b = qplot(carat, data = diamonds, geom = "density")    
 fig2.10b
-fig2.10b %>% VI()   
 ```
 
 
 ```{r fig2-11c, fig.cap="Right pane of Figure 2.11"}     
 fig2.11c = qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.01, xlim = c(0,3))    
 fig2.11c
-fig2.11c %>% VI()   
 ```  
 
 The data is separated by implication in the following graphs. The legend is automatically generated and has altered in appearance since the original was produced in @Wickham2009ggplot2.
@@ -122,14 +114,12 @@ The data is separated by implication in the following graphs. The legend is auto
 ```{r fig2-12a, fig.cap="Left pane of Figure 2.12"}     
 fig2.12a = qplot(carat, data = diamonds, geom = "density", colour = color)    
 fig2.12a
-fig2.12a %>% VI()   
 ```
 
 
 ```{r fig2-12b, fig.cap="Right pane of Figure 2.12"}     
 fig2.12b = qplot(carat, data = diamonds, geom = "histogram", fill = color)    
 fig2.12b
-fig2.12b %>% VI()   
 ```  
 
 ### Bar charts for categorical variables   
@@ -138,7 +128,6 @@ fig2.12b %>% VI()
 ```{r fig2-13a, fig.cap="Left pane of Figure 2.13"}     
 fig2.13a  = qplot(color, data = diamonds, geom = "bar") #geom="bar" is the default    
 fig2.13a
-fig2.13a %>% VI()   
 ```
 
 
@@ -149,7 +138,6 @@ fig2.13b = qplot(color, data = diamonds, geom = "bar", weight = carat)
 fig2.13b
 fig2.13b = qplot(color, data = diamonds, geom = "bar", weight = carat) + scale_y_continuous("carat")    
 fig2.13b
-fig2.13b %>% VI()   
 ```  
 
 ## Time series plots   
@@ -158,7 +146,6 @@ It looks like the data used in the next graph has been updated since the publica
 ```{r fig2-14a, fig.cap="Left pane of Figure 2.14"}     
 fig2.14a = qplot(date, unemploy / pop, data = economics, geom = "line")    
 fig2.14a
-fig2.14a %>% VI()   
 ```  
 
 ## Path plots   
@@ -168,7 +155,6 @@ year <- function(x) as.POSIXlt(x)$year + 1900
 fig2.15b = qplot(unemploy / pop, uempmed, data = economics, geom = "path", colour=year(date)) 
 #+ scale_area() # no longer works
 fig2.15b
-fig2.15b %>% VI()   
 ```  
 
 
@@ -179,13 +165,11 @@ The aspect ratio for the plot region is something that needs to be considered. I
 fig2.16a = qplot(carat, data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, 
 xlim = c(0, 3))    
 fig2.16a
-fig2.16a %>% VI()   
 ```
 
 ```{r fig2-16b, fig.cap="Right side of Figure 2.16", fig.height=10, fig.width=4}
 fig2.16b = qplot(carat, ..density.., data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, xlim = c(0, 3))   
 fig2.16b
-fig2.16b %>% VI()   
 ```  
 
 ## Rescaling of the axes   
@@ -193,11 +177,9 @@ fig2.16b %>% VI()
 ```{r p26a, fig.cap="First graph on page 26 of "}
 p26a = qplot(carat, price, data = dsmall, log = "xy")   
 p26a
-p26a %>% VI()   
 ```  
 
 ```{r fig3-6, fig.cap="Figure 3.6 of "}
 fig3.6 = qplot(displ, hwy, data=mpg, facets =~ year) + geom_smooth()    
 fig3.6
-fig3.6 %>% VI()   
 ```  

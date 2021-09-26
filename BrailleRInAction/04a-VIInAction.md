@@ -54,11 +54,11 @@ $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
- [1]   2   4  11  53  96 138 188 228 132  84  46  13   4   1
+ [1]   2   8  19  43  86 152 191 178 159  91  56   6   8   1
 
 $density
- [1] 0.004 0.008 0.022 0.106 0.192 0.276 0.376 0.456 0.264 0.168 0.092 0.026
-[13] 0.008 0.002
+ [1] 0.004 0.016 0.038 0.086 0.172 0.304 0.382 0.356 0.318 0.182 0.112 0.012
+[13] 0.016 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
@@ -92,14 +92,14 @@ $par$xaxp
 [1] -3  3  6
 
 $par$yaxp
-[1]   0 200   4
+[1]   0 150   3
 
 
 $xTicks
 [1] -3 -2 -1  0  1  2  3
 
 $yTicks
-[1]   0  50 100 150 200
+[1]   0  50 100 150
 
 attr(,"class")
 [1] "Augmented" "histogram"
@@ -140,22 +140,22 @@ This is a histogram, with the title: Histogram of Y
 "Y" is marked on the x-axis.
 Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+Tick marks for the y-axis are at: 0, 50, 100, and 150 
 It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 The mids and counts for the bins are:
 mid = -3.25  count = 2 
-mid = -2.75  count = 4 
-mid = -2.25  count = 11 
-mid = -1.75  count = 53 
-mid = -1.25  count = 96 
-mid = -0.75  count = 138 
-mid = -0.25  count = 188 
-mid = 0.25  count = 228 
-mid = 0.75  count = 132 
-mid = 1.25  count = 84 
-mid = 1.75  count = 46 
-mid = 2.25  count = 13 
-mid = 2.75  count = 4 
+mid = -2.75  count = 8 
+mid = -2.25  count = 19 
+mid = -1.75  count = 43 
+mid = -1.25  count = 86 
+mid = -0.75  count = 152 
+mid = -0.25  count = 191 
+mid = 0.25  count = 178 
+mid = 0.75  count = 159 
+mid = 1.25  count = 91 
+mid = 1.75  count = 56 
+mid = 2.25  count = 6 
+mid = 2.75  count = 8 
 mid = 3.25  count = 1
 ```
 

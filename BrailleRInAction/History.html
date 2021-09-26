@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 History of the BrailleR Project | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 History of the BrailleR Project | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-07-10" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="introduction.html"/>
 <link rel="next" href="GettingStarted.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -339,6 +339,7 @@ It also stood me in good stead for the work that followed on the <code>BrailleR<
 <h2><span class="header-section-number">2.3</span> The starting point example</h2>
 <p>The basic graph that has been used for almost every presentation of the <code>BrailleR</code> package is a histogram. There is a more detailed example, but the following commands create a set of numbers that can be kept for further processing once the graph has been created. It is the re-processing of these numbers that leads to the text description that follows.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="History.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BrailleR)</span></code></pre></div>
+<pre><code>## Warning: package &#39;BrailleR&#39; was built under R version 4.1.1</code></pre>
 <pre><code>## The BrailleR.View,  option is set to FALSE.</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;BrailleR&#39;</code></pre>
@@ -351,9 +352,9 @@ It also stood me in good stead for the work that followed on the <code>BrailleR<
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     grep, gsub</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="History.html#cb7-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
-<span id="cb7-2"><a href="History.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(<span class="fu">hist</span>(x))</span></code></pre></div>
-<div class="figure"><span id="fig:hist"></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="History.html#cb8-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb8-2"><a href="History.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(<span class="fu">hist</span>(x))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:hist"></span>
 <img src="02-History_files/figure-html/hist-1.png" alt="A histogram of 1000 random values from a normal distribution" width="672" />
 <p class="caption">
 Figure 2.1: A histogram of 1000 random values from a normal distribution
@@ -361,24 +362,22 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </div>
 <pre><code>## This is a histogram, with the title: Histogram of x
 ## &quot;x&quot; is marked on the x-axis.
-## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, and 2 
 ## There are a total of 1000 elements for this variable.
 ## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-## It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
+## It has 11 bins with equal widths, starting at -3 and ending at 2.5 .
 ## The mids and counts for the bins are:
-## mid = -2.75  count = 5 
-## mid = -2.25  count = 20 
-## mid = -1.75  count = 38 
-## mid = -1.25  count = 87 
-## mid = -0.75  count = 143 
-## mid = -0.25  count = 194 
-## mid = 0.25  count = 194 
-## mid = 0.75  count = 164 
-## mid = 1.25  count = 84 
-## mid = 1.75  count = 47 
-## mid = 2.25  count = 18 
-## mid = 2.75  count = 5 
-## mid = 3.25  count = 1</code></pre>
+## mid = -2.75  count = 4 
+## mid = -2.25  count = 15 
+## mid = -1.75  count = 31 
+## mid = -1.25  count = 98 
+## mid = -0.75  count = 156 
+## mid = -0.25  count = 206 
+## mid = 0.25  count = 175 
+## mid = 0.75  count = 139 
+## mid = 1.25  count = 99 
+## mid = 1.75  count = 60 
+## mid = 2.25  count = 17</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram.” The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2" number="2.4">
@@ -523,7 +522,6 @@ Snow, Greg. 2020. <em>TeachingDemos: Demonstrations for Teaching and Learning</e
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -563,6 +561,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BrailleR.pdf", "BrailleR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

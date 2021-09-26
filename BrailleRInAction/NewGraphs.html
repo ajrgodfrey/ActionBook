@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 New BrailleR commands for making and interpreting basic graphs | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 New BrailleR commands for making and interpreting basic graphs | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-07-10" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="VI.html"/>
 <link rel="next" href="WorkingBlind.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -376,7 +376,7 @@ In this example, we see that use of the original <code>hist()</code> from the <c
 
 &gt; MyHist = graphics::hist(x, xlab = &quot;random normal values&quot;, 
 +     main = &quot;Example histogram (graphics package)&quot;)</code></pre>
-<div class="figure"><span id="fig:exampleHist-1"></span>
+<div class="figure"><span style="display:block;" id="fig:exampleHist-1"></span>
 <img src="04b-NewGraphCommands_files/figure-html/exampleHist-1.png" alt="testing examples" width="480" />
 <p class="caption">
 Figure 5.1: testing examples
@@ -385,19 +385,19 @@ Figure 5.1: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
-[16]  4.0  4.5
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[16]  3.5
 
 $counts
- [1]   1   5  19  36 104 159 173 197 165  69  45  19   6   1   0   1
+ [1]   1   0   3  13  45  85 163 176 169 173 110  37  21   3   1
 
 $density
- [1] 0.002 0.010 0.038 0.072 0.208 0.318 0.346 0.394 0.330 0.138 0.090 0.038
-[13] 0.012 0.002 0.000 0.002
+ [1] 0.002 0.000 0.006 0.026 0.090 0.170 0.326 0.352 0.338 0.346 0.220 0.074
+[13] 0.042 0.006 0.002
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[13]  2.75  3.25  3.75  4.25
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[13]  2.25  2.75  3.25
 
 $xname
 [1] &quot;x&quot;
@@ -409,7 +409,7 @@ attr(,&quot;class&quot;)
 [1] &quot;histogram&quot;
 
 &gt; MyHist = hist(x, xlab = &quot;random normal values&quot;, main = &quot;Example histogram (BrailleR package)&quot;)</code></pre>
-<div class="figure"><span id="fig:exampleHist-2"></span>
+<div class="figure"><span style="display:block;" id="fig:exampleHist-2"></span>
 <img src="04b-NewGraphCommands_files/figure-html/exampleHist-2.png" alt="testing examples" width="480" />
 <p class="caption">
 Figure 5.2: testing examples
@@ -418,19 +418,19 @@ Figure 5.2: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
-[16]  4.0  4.5
+ [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+[16]  3.5
 
 $counts
- [1]   1   5  19  36 104 159 173 197 165  69  45  19   6   1   0   1
+ [1]   1   0   3  13  45  85 163 176 169 173 110  37  21   3   1
 
 $density
- [1] 0.002 0.010 0.038 0.072 0.208 0.318 0.346 0.394 0.330 0.138 0.090 0.038
-[13] 0.012 0.002 0.000 0.002
+ [1] 0.002 0.000 0.006 0.026 0.090 0.170 0.326 0.352 0.338 0.346 0.220 0.074
+[13] 0.042 0.006 0.002
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[13]  2.75  3.25  3.75  4.25
+ [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
+[13]  2.25  2.75  3.25
 
 $xname
 [1] &quot;x&quot;
@@ -459,21 +459,21 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 16
+[1] 15
 
 $par
 $par$xaxp
-[1] -2  4  3
+[1] -4  2  3
 
 $par$yaxp
-[1]   0 200   4
+[1]   0 150   3
 
 
 $xTicks
-[1] -2  0  2  4
+[1] -4 -2  0  2
 
 $yTicks
-[1]   0  50 100 150 200
+[1]   0  50 100 150
 
 attr(,&quot;class&quot;)
 [1] &quot;Augmented&quot; &quot;histogram&quot;
@@ -481,27 +481,26 @@ attr(,&quot;class&quot;)
 &gt; VI(MyHist)
 This is a histogram, with the title: Histogram of x
 &quot;x&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -2, 0, 2, and 4 
+Tick marks for the x-axis are at: -4, -2, 0, and 2 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 16 bins with equal widths, starting at -3.5 and ending at 4.5 .
+Tick marks for the y-axis are at: 0, 50, 100, and 150 
+It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.25  count = 1 
-mid = -2.75  count = 5 
-mid = -2.25  count = 19 
-mid = -1.75  count = 36 
-mid = -1.25  count = 104 
-mid = -0.75  count = 159 
-mid = -0.25  count = 173 
-mid = 0.25  count = 197 
-mid = 0.75  count = 165 
-mid = 1.25  count = 69 
-mid = 1.75  count = 45 
-mid = 2.25  count = 19 
-mid = 2.75  count = 6 
-mid = 3.25  count = 1 
-mid = 3.75  count = 0 
-mid = 4.25  count = 1</code></pre>
+mid = -3.75  count = 1 
+mid = -3.25  count = 0 
+mid = -2.75  count = 3 
+mid = -2.25  count = 13 
+mid = -1.75  count = 45 
+mid = -1.25  count = 85 
+mid = -0.75  count = 163 
+mid = -0.25  count = 176 
+mid = 0.25  count = 169 
+mid = 0.75  count = 173 
+mid = 1.25  count = 110 
+mid = 1.75  count = 37 
+mid = 2.25  count = 21 
+mid = 2.75  count = 3 
+mid = 3.25  count = 1</code></pre>
 <p>When you first issued the <code>library(BrailleR)</code> command, there were several warnings printed out. One of them told you that the <code>hist()</code> function from the <code>graphics</code> package was masked by the <code>BrailleR</code> version. This means that when you use <code>hist()</code>, it is the <code>BrailleR</code> version being used.</p>
 <p>the <code>BrailleR</code> package includes <code>hist()</code> and <code>boxplot()</code> functions that pass the details of the command on to the <code>graphics</code> package functions of the same name, and then add any additional content required that will improve the ability to describe the visual graphic produced in text. In most cases, the graph producing functions pass on arguments such as <code>main</code>, <code>xlab</code>, or <code>ylab</code> (for main title and axis labels) to the relevant plotting commands without storing these elements in the object that is created. These elements are stored as graphical parameters and can be recalled using <code>par()</code> commands.</p>
 </div>
@@ -527,7 +526,7 @@ mid = 4.25  count = 1</code></pre>
 &gt; test2 = FittedLinePlot(Wind, Ozone, line.col = 4)</code></pre>
 <pre><code>
 &gt; test2</code></pre>
-<div class="figure"><span id="fig:exampleScatterPlot"></span>
+<div class="figure"><span style="display:block;" id="fig:exampleScatterPlot"></span>
 <img src="04b-NewGraphCommands_files/figure-html/exampleScatterPlot-1.png" alt="The six graphs generated by the `example(ScatterPlot)`" width="768" />
 <p class="caption">
 Figure 5.3: The six graphs generated by the <code>example(ScatterPlot)</code>
@@ -547,12 +546,12 @@ Figure 5.3: The six graphs generated by the <code>example(ScatterPlot)</code>
 <h3><span class="header-section-number">5.4.1</span> What’s in the scatter plot?</h3>
 <p>Well first we might ask what is in the graph window to be confident that a plot was actually made. The <code>WTF()</code> command was put in <code>BrailleR</code> to address this problem. For the record, WTF is the acronym for “What’s this figure?” We’ll see it’s use in the next figure. It should tell us what appears in the graph window for things like axis lables and titles.</p>
 <p>The current solution offered by the <code>BrailleR</code> package for helping describe the points plotted in a scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="NewGraphs.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
-<span id="cb33-2"><a href="NewGraphs.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Wind, Ozone, <span class="at">pch =</span> <span class="dv">4</span>)</span>
-<span id="cb33-3"><a href="NewGraphs.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">min</span>(Wind)<span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Wind)<span class="sc">-</span><span class="fu">min</span>(Wind)), <span class="at">col=</span><span class="dv">6</span>)</span>
-<span id="cb33-4"><a href="NewGraphs.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">-</span><span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)), <span class="at">col=</span><span class="dv">6</span>)</span>
-<span id="cb33-5"><a href="NewGraphs.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">WTF</span>()</span></code></pre></div>
-<div class="figure"><span id="fig:addGridLines"></span>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="NewGraphs.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
+<span id="cb34-2"><a href="NewGraphs.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Wind, Ozone, <span class="at">pch =</span> <span class="dv">4</span>)</span>
+<span id="cb34-3"><a href="NewGraphs.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">min</span>(Wind)<span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Wind)<span class="sc">-</span><span class="fu">min</span>(Wind)), <span class="at">col=</span><span class="dv">6</span>)</span>
+<span id="cb34-4"><a href="NewGraphs.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">-</span><span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)), <span class="at">col=</span><span class="dv">6</span>)</span>
+<span id="cb34-5"><a href="NewGraphs.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">WTF</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:addGridLines"></span>
 <img src="04b-NewGraphCommands_files/figure-html/addGridLines-1.png" alt="Scatter plot of Ozone versus Wind with grid lines added." width="576" />
 <p class="caption">
 Figure 5.4: Scatter plot of Ozone versus Wind with grid lines added.
@@ -562,18 +561,18 @@ Figure 5.4: Scatter plot of Ozone versus Wind with grid lines added.
 &quot;Wind&quot; as the x axis label;
 &quot;Ozone&quot; as the y axis label;
 There are 116 points marked on this graph.</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="NewGraphs.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="NewGraphs.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
 <p>Counting the number of points falling into each cell of the graphic and presenting the results as a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a <span class="math inline">\(4\times4\)</span> grid of sixteen cells.
 Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the last scatter plot are counted by the <code>WhereXY()</code> command as follows:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="NewGraphs.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
-<span id="cb36-2"><a href="NewGraphs.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">WhereXY</span>(Wind, Ozone, <span class="at">grid =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="NewGraphs.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
+<span id="cb37-2"><a href="NewGraphs.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">WhereXY</span>(Wind, Ozone, <span class="at">grid =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
 <pre><code>     1  2  3 4 Sum
 4    2  0  0 0   2
 3    7  5  0 0  12
 2    9 15  6 0  30
 1    1 39 27 5  72
 Sum 19 59 33 5 116</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="NewGraphs.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="NewGraphs.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
 <p>In situations where the user is confident that the marginal distributions of either or both of the variables being plotted are normal, the grid lines should be spaced accordingly.</p>
 </div>
 </div>
@@ -599,7 +598,6 @@ Calder, M., R. Cohen, J. Lanzoni, and Y. Xu. 2006. <span>“<span>PLUMB</span>: 
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -639,6 +637,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BrailleR.pdf", "BrailleR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

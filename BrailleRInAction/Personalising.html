@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Personalising BrailleR | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Personalising BrailleR | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-07-10" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="RMarkdown.html"/>
 <link rel="next" href="Tidyverse.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -330,7 +330,7 @@ There are a wide range of options needed to get the best out of the <code>Braill
 <div id="who-is-the-r-markdown-file-being-written-by" class="section level3" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Who is the R markdown file being written by?</h3>
 <p>You might want your analyses to use your name instead of the default name <code>BrailleR</code>. Do this using the <code>SetAuthor()</code> function. e.g.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="Personalising.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SetAuthor</span>(<span class="st">&quot;Jonathan Godfrey&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="Personalising.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SetAuthor</span>(<span class="st">&quot;Jonathan Godfrey&quot;</span>)</span></code></pre></div>
 <p>OK, you ought to use your name not mine, but you get the point.</p>
 <p>This will have an instant impact, even on the examples for <code>BrailleR</code> functions. Set the author and then try <code>example(UniDesc)</code> for example.</p>
 </div>
@@ -357,7 +357,6 @@ There are a wide range of options needed to get the best out of the <code>Braill
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -397,6 +396,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BrailleR.pdf", "BrailleR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

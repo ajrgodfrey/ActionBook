@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Getting started with the WriteR application | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Getting started with the WriteR application | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-07-10" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="GGPlot.html"/>
 <link rel="next" href="AccessibleGraphs.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -42,7 +43,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -324,7 +324,7 @@ div.csl-indent {
 <div id="getting-the-required-software-windows-users-only" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> Getting the required software (Windows users only)</h2>
 <p>You can check if a version of Python is already installed on your computer using</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="WriteR.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;Python&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="WriteR.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;Python&quot;</span>)</span></code></pre></div>
 <pre><code>                              Python 
 &quot;C:\\PROGRA~1\\Python38\\Python.exe&quot; </code></pre>
 <p>The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check your system that return more useful detail, but for the moment the <code>Sys.which()</code> command above issufficient. What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.</p>
@@ -338,7 +338,7 @@ If you do not have an installation of Pandoc and Python 3 then you can use some 
 <p>Let’s first install Pandoc using the command:</p>
 <p><code>GetPandoc()</code></p>
 <p>To check that you have Pandoc installed, and that R can therefore find it, use the command"</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="WriteR.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;pandoc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="WriteR.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;pandoc&quot;</span>)</span></code></pre></div>
 <pre><code>                            pandoc 
 &quot;C:\\PROGRA~1\\Pandoc\\pandoc.exe&quot; </code></pre>
 <p>which will show where Pandoc was installed.</p>
@@ -352,11 +352,11 @@ Issue them at the R prompt</p>
 <p>Make sure that the first thing you do as part of the installation is to choose to use a custom installation. This allows you to make sure Python will be availabel to all users, update the system’s environment variables. You may need to make sure these options are selected.</p>
 <p>You need to make sure that the second of these options definitely happens; this ensures that the Python folders are added to your system path which means R and any other software that wants Python can find it. This makes it possible to run Python scripts from any folder on your computer. The next few commands will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your <code>MyBrailleR</code> folder and run it again manually before proceeding.</p>
 <p>We can check the installation has worked properly at this point using:</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="WriteR.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;python&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="WriteR.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;python&quot;</span>)</span></code></pre></div>
 <pre><code>                              python 
 &quot;C:\\PROGRA~1\\Python38\\python.exe&quot; </code></pre>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="WriteR.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shell</span>(<span class="st">&quot;path&quot;</span>, <span class="at">intern=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>[1] &quot;PATH=C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Rtools\\bin;C:\\Program Files\\ImageMagick-7.0.7-Q16;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\Program Files (x86)\\Pandoc\\;c:\\batch;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Pandoc\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;&quot;</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="WriteR.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shell</span>(<span class="st">&quot;path&quot;</span>, <span class="at">intern=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>[1] &quot;PATH=C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Rtools\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Pandoc\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Pandoc\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;&quot;</code></pre>
 <p>This is a much stronger test than was done earlier. You can see the folders that Windows will search through to find the tools you are using all the time. The folder for Python needs to be listed there somewhere.</p>
 <p>Now get the additional Python modules needed for WriteR using:</p>
 <p><code>GetWxPython3()</code></p>
@@ -370,7 +370,7 @@ You can now skip to the section which shows you how to check everything is ready
 <div id="checking-your-system-is-ready" class="section level2" number="11.3">
 <h2><span class="header-section-number">11.3</span> Checking your system is ready</h2>
 <p>All going to plan, you should now have Python on your system, and the additional wxPython module as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you’ve done, using:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="WriteR.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TestWX</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="WriteR.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TestWX</span>()</span></code></pre></div>
 <pre><code>Your system is using Python 3.8.0</code></pre>
 <pre><code>Python can see the necessary wx module.
 You are ready to use WriteR.</code></pre>
@@ -481,7 +481,6 @@ Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron A
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -521,6 +520,10 @@ gitbook.start({
 "text": null
 },
 "download": ["BrailleR.pdf", "BrailleR.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
