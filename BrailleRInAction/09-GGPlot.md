@@ -84,8 +84,7 @@ fig2.2b
 
 ```
 Warning: Using shapes for an ordinal variable is not advised
-
-Warning: Using shapes for an ordinal variable is not advised
+Using shapes for an ordinal variable is not advised
 ```
 
 <div class="figure">

@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-09-26" />
+<meta name="date" content="2022-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -281,18 +281,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a>
-<ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
-<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
-<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.4</b> Opening WriteR from BrailleR</a></li>
-<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
-<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
-<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
-<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-a-stand-alone-version-of-writer"><i class="fa fa-check"></i><b>11.1</b> Getting a stand alone version of WriteR</a></li>
+<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#getting-the-right-version-of-python-windows-users-only"><i class="fa fa-check"></i><b>11.2</b> Getting the right version of Python (Windows users only)</a></li>
+<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc-windows-users"><i class="fa fa-check"></i><b>11.3</b> Installing Pandoc (Windows users)</a></li>
+<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.4</b> Other operating systems</a></li>
+<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.5</b> Checking your system is ready</a></li>
+<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.6</b> Opening WriteR from BrailleR</a></li>
+<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.7</b> What can I do with WriteR?</a></li>
+<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.8</b> Our first HTML file</a></li>
+<li class="chapter" data-level="11.9" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.9</b> Some hints for writing Rmarkdown documents</a></li>
+<li class="chapter" data-level="11.10" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.10</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
@@ -321,56 +319,59 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 11</span> Getting started with the WriteR application</h1>
 <p>The WriteR application was written to support use of R markdown and the <code>BrailleR</code> package. It is a Python script making use of wxPython to help build the graphic user interface (GUI) in such a way that it works for screen reader users. This book has been written in R markdown, and I have made extensive use of WriteR because it offers so many convenient tools for a blind user wanting to write R markdown files.</p>
 <p>The script is in the <code>BrailleR</code> package, but it cannot run unless the user has both Python and wxPython installed. Commands have been included in the <code>BrailleR</code> package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Pandoc, Python and wxPython independently, but these tools may well already be installed.</p>
-<div id="getting-the-required-software-windows-users-only" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> Getting the required software (Windows users only)</h2>
+<div id="getting-a-stand-alone-version-of-writer" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Getting a stand alone version of WriteR</h2>
+<p>Windows users who do not feel comfortable installing or using Python can make use of a pre-compiled installer. You will still need to look at getting Pandoc (described below) and of course you’ve already got R installed.</p>
+<p>To get a copy of the installer, go to the <a href="WriteR%20home%20page.">https://r-resources.massey.ac.nz/WriteR/</a> If you do use the installer, you can skip the next section because you do not need to install Python.</p>
+</div>
+<div id="getting-the-right-version-of-python-windows-users-only" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Getting the right version of Python (Windows users only)</h2>
+<p>N.B. The files downloaded as a consequence of running commands in this section will be saved in your <code>MyBrailleR</code> folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway.</p>
 <p>You can check if a version of Python is already installed on your computer using</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="WriteR.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;Python&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="WriteR.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;Python&quot;</span>)</span></code></pre></div>
 <pre><code>                              Python 
 &quot;C:\\PROGRA~1\\Python38\\Python.exe&quot; </code></pre>
-<p>The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check your system that return more useful detail, but for the moment the <code>Sys.which()</code> command above issufficient. What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.</p>
-<p>The files downloaded as a consequence of running commands in this set of instructions will be saved in your <code>MyBrailleR</code> folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway.</p>
-<p>Ultimately, you will need a mainstream tool to process the markdown files you write into other formats. The WriteR application will end up using a tool called “pandoc” to do this so we need to get this installed.
-If you do not have an installation of Pandoc and Python 3 then you can use some functions from the <code>BrailleR</code> package to help make the setup smoother. Remember to load the package using:</p>
-<p><code>library(BrailleR)</code></p>
-<p>It doesn’t matter if you install Python before or after Pandoc.</p>
-<div id="installing-pandoc" class="section level3" number="11.1.1">
-<h3><span class="header-section-number">11.1.1</span> Installing Pandoc</h3>
-<p>Let’s first install Pandoc using the command:</p>
-<p><code>GetPandoc()</code></p>
-<p>To check that you have Pandoc installed, and that R can therefore find it, use the command"</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="WriteR.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;pandoc&quot;</span>)</span></code></pre></div>
-<pre><code>                            pandoc 
-&quot;C:\\PROGRA~1\\Pandoc\\pandoc.exe&quot; </code></pre>
-<p>which will show where Pandoc was installed.</p>
-</div>
-<div id="installing-python" class="section level3" number="11.1.2">
-<h3><span class="header-section-number">11.1.2</span> Installing Python</h3>
+<p>The output above shows you that I have Python 3 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check your system that return more useful detail, but for the moment the <code>Sys.which()</code> command above issufficient. What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.</p>
 <p>The following instructions fetch the installation files from the reputable Python sites. Windows and any security software you might have should know that, but you can never tell! You may need to let Windows know it is OK to install the software in the default location. The pop-up might not appear as the window with focus so if things look like they’re going slowly, look around for the pop-up window.</p>
 <p>The following commands automatically download the installation files needed for Python 3.x, and start the installation process going.
 Issue them at the R prompt</p>
 <p><code>GetPython3()</code></p>
-<p>Make sure that the first thing you do as part of the installation is to choose to use a custom installation. This allows you to make sure Python will be availabel to all users, update the system’s environment variables. You may need to make sure these options are selected.</p>
+<p>Make sure that the first thing you do as part of the installation is to choose to use a custom installation. This allows you to make sure Python will be availabel to all users, and update the system’s environment variables. You may need to make sure these options are selected.</p>
 <p>You need to make sure that the second of these options definitely happens; this ensures that the Python folders are added to your system path which means R and any other software that wants Python can find it. This makes it possible to run Python scripts from any folder on your computer. The next few commands will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your <code>MyBrailleR</code> folder and run it again manually before proceeding.</p>
 <p>We can check the installation has worked properly at this point using:</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="WriteR.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;python&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="WriteR.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;python&quot;</span>)</span></code></pre></div>
 <pre><code>                              python 
 &quot;C:\\PROGRA~1\\Python38\\python.exe&quot; </code></pre>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="WriteR.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shell</span>(<span class="st">&quot;path&quot;</span>, <span class="at">intern=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>[1] &quot;PATH=C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Rtools\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Pandoc\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Pandoc\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;&quot;</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="WriteR.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shell</span>(<span class="st">&quot;path&quot;</span>, <span class="at">intern=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>[1] &quot;PATH=C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Program Files\\Python310\\Scripts\\;C:\\Program Files\\Python310\\;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MiKTeX\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Pandoc\\;C:\\Program Files (x86)\\dotnet\\;C:\\Program Files\\dotnet\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;&quot;</code></pre>
 <p>This is a much stronger test than was done earlier. You can see the folders that Windows will search through to find the tools you are using all the time. The folder for Python needs to be listed there somewhere.</p>
 <p>Now get the additional Python modules needed for WriteR using:</p>
 <p><code>GetWxPython3()</code></p>
-<p>Once you have completed these installations, you are ready to go. You shouldn’t need to keep the installation files, but why not keep them just in case.
-You can now skip to the section which shows you how to check everything is ready for using WriteR.</p>
 </div>
+<div id="installing-pandoc-windows-users" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Installing Pandoc (Windows users)</h2>
+<p>N.B. The files downloaded as a consequence of running commands in this set of instructions will be saved in your <code>MyBrailleR</code> folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway.</p>
+<p>Ultimately, you will need a mainstream tool to process the markdown files you write into other formats. The WriteR application will end up using a tool called “pandoc” to do this so we need to get this installed.
+If you do not have an installation of Pandoc then you can use functions from the <code>BrailleR</code> package to help make the setup smoother. Remember to load the package using:</p>
+<p><code>library(BrailleR)</code></p>
+<p>Let’s first install Pandoc using the command:</p>
+<p><code>GetPandoc()</code></p>
+<p>To check that you have Pandoc installed, and that R can therefore find it, use the command”</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="WriteR.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">&quot;pandoc&quot;</span>)</span></code></pre></div>
+<pre><code>                            pandoc 
+&quot;C:\\PROGRA~1\\Pandoc\\pandoc.exe&quot; </code></pre>
+<p>which will show where Pandoc was installed.</p>
+<p>Once you have completed this installation, you are ready to go. You shouldn’t need to keep the installation file, but why not keep it just in case.</p>
+<p>You can now skip to the section which shows you how to check everything is ready for using WriteR.</p>
 </div>
-<div id="other-operating-systems" class="section level2" number="11.2">
-<h2><span class="header-section-number">11.2</span> Other operating systems</h2>
+<div id="other-operating-systems" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Other operating systems</h2>
+<p>Anyone using another operating system will have to take the Python scripts to a sensible place on their computer. You will need to have an installationof Python and the necessary additional modules the scripts use. This includes wxPython.</p>
 </div>
-<div id="checking-your-system-is-ready" class="section level2" number="11.3">
-<h2><span class="header-section-number">11.3</span> Checking your system is ready</h2>
+<div id="checking-your-system-is-ready" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> Checking your system is ready</h2>
 <p>All going to plan, you should now have Python on your system, and the additional wxPython module as well. You only need to check that R really can see the right version of Python, and that one extra Python module is correctly installed and available to R to find out how well you’ve done, using:</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="WriteR.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TestWX</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="WriteR.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TestWX</span>()</span></code></pre></div>
 <pre><code>Your system is using Python 3.8.0</code></pre>
 <pre><code>Python can see the necessary wx module.
 You are ready to use WriteR.</code></pre>
@@ -388,13 +389,13 @@ You are ready to use WriteR.</code></pre>
 3. Upgrade your Python modules using</p>
 <pre><code>python -m pip install --user --upgrade pip setuptools wheel</code></pre>
 <p>This should download a few files and automatically put them on your system.
-4. Finnally, install the wxPython module using</p>
+4. Finally, install the wxPython module using</p>
 <pre><code>pip install --user --upgrade wxPython</code></pre>
 <p>Remember, do not move on to the next step until each of the commands above has returned satisfactory feedback. Windows users close the window using <code>Alt+F4</code> or by typing <code>exit</code>.</p>
 <p>I strongly recommend that you go back and check everything has worked using the commands presented earlier in this chapter.</p>
 </div>
-<div id="opening-writer-from-brailler" class="section level2" number="11.4">
-<h2><span class="header-section-number">11.4</span> Opening WriteR from BrailleR</h2>
+<div id="opening-writer-from-brailler" class="section level2" number="11.6">
+<h2><span class="header-section-number">11.6</span> Opening WriteR from BrailleR</h2>
 <p>Opening WriteR is as easy as typing WriteR! Well almost. You have the option of specifying a filename; if that file exists, it gets opened for you, and if it doesn’t exist, then it gets created with a few lines already included at the top to help get you started. Try:</p>
 <p><code>WriteR("MyFirst.Rmd")</code></p>
 <p>This should open the WriteR application with the following lines already there for you to edit.</p>
@@ -411,17 +412,17 @@ output:
 --- </code></pre>
 <p>Some of these lines were explained back in Chapter <a href="WorkingBlind.html#WorkingBlind">6</a>. Fill in the gaps in the first few lines for title, author, and the date before continuing.</p>
 </div>
-<div id="what-can-i-do-with-writer" class="section level2" number="11.5">
-<h2><span class="header-section-number">11.5</span> What can I do with WriteR?</h2>
+<div id="what-can-i-do-with-writer" class="section level2" number="11.7">
+<h2><span class="header-section-number">11.7</span> What can I do with WriteR?</h2>
 <p>The window you are in has a number of menus, a status bar at the bottom and a big space in the middle for your work. Take a quick look at those menus; some will look familiar because they are common to many Windows applications.</p>
 <p>The file you have opened is a markdown file. It is just text which is why it is so easy to read. The file extension of <code>Rmd</code> means it is an R markdown file. There are several flavours of markdown in common use, but they are practically all the same except for some very minor differences.</p>
 <p>A markdown file can be converted into many file formats for distribution. These include HTML, pdf, Microsoft Word, Open Office, and a number of different slide presentation formats. Let’s make the HTML file now.</p>
 </div>
-<div id="our-first-html-file" class="section level2" number="11.6">
-<h2><span class="header-section-number">11.6</span> Our first HTML file</h2>
+<div id="our-first-html-file" class="section level2" number="11.8">
+<h2><span class="header-section-number">11.8</span> Our first HTML file</h2>
 <p>Making your first HTML file is as easy as hitting the <code>f5</code> key, or using one of the options in the <code>Build</code> menu. The variety of options are the commonly used ones in RStudio. Let’s just stick to making an HTML file for the time being. You can investigate other formats later.</p>
 <p>When the processing is underway, a second window will open which gives the same output that you would see printed in an R session window if you were processing R markdown files manually.
-If the last line says “done 0,” then everything processed properly; if it says “done 1” then there was an error to fix, so look through this log to see what went wrong.</p>
+If the last line says “done 0”, then everything processed properly; if it says “done 1” then there was an error to fix, so look through this log to see what went wrong.</p>
 <p>The processing of your R markdown document will use a suite of packages, primarily including the <code>knitr</code> <span class="citation">(<a href="#ref-Rpkg-knitr" role="doc-biblioref">Xie 2021</a>)</span> and <code>rmarkdown</code> <span class="citation">(<a href="#ref-Rpkg-rmarkdown" role="doc-biblioref">Allaire et al. 2021</a>)</span> packages.
 Press the <code>f4</code> key to switch back to the main document editing window in WriteR.</p>
 <p>If the processing of the file “MyFirst.Rmd” was successful, then you will now have a file called “MyFirst.html” in your current working directory. You have several choices for finding the HTML file you have created:</p>
@@ -434,14 +435,14 @@ You should see the file <code>MyFirst.Rmd</code> and once you have built it, the
 You may need to switch back and forth between the WriteR window and your browser to compare the plain text and the beautiful HTML. If you didn’t actually edit the R markdown file up to now then the output HTML file will be rather boring. Add in some text, or use the menus to see how to insert headings and other things.</p>
 <p>N.B. Changes in your R markdown file are not automatically converted into the HTML file. You must re-build the HTML, and refresh your browser to see the impact of any changes you make, both actions use the <code>f5</code> key.</p>
 </div>
-<div id="some-hints-for-writing-rmarkdown-documents" class="section level2" number="11.7">
-<h2><span class="header-section-number">11.7</span> Some hints for writing Rmarkdown documents</h2>
+<div id="some-hints-for-writing-rmarkdown-documents" class="section level2" number="11.9">
+<h2><span class="header-section-number">11.9</span> Some hints for writing Rmarkdown documents</h2>
 <p>The WriteR application really can make writing documents easier because it offers plenty of shortcut keystrokes for items in the pulldown menus. Formatting text in a markdown document which will be converted to HTML is done in a way that creates semantic structure at the same time as font changes, or to put more precisely, you can’t get a larger font for a heading without using a proper heading style. My list of hints given here are to help make your final HTML document a pleasure to read as well as easy to write.</p>
 <ul>
 <li>Always use the standard markdown syntax for inserting headings, graphics, links, and equations. WriteR will insert placeholders for graphics and links and some mathematical structures.</li>
 <li>Concentrate on the material to be communicated; do not worry about the formatting of it. Keeping it simple is best.</li>
-<li>Make use of the lessons learned by others. If you like hte way something is presented, then re-use the approach taken.</li>
-<li>if you inset a graph created in an R chunk, then make sure you use the <code>fig.cap</code> properly. This text will be used as the “alt tag” for the resulting graph.</li>
+<li>Make use of the lessons learned by others. If you like the way something is presented, then re-use the approach taken.</li>
+<li>if you insert a graph created in an R chunk, then make sure you use the <code>fig.cap</code> properly. This text will be used as the caption for the graph in your document. If you use a <code>fig.alt</code> tag, you will get an “alt tag” for the resulting graph as well; if you don’t use <code>fig.alt</code> but do provide <code>fig.cap</code> then you’ll have the caption used for the alt text as well.</li>
 <li>One figure per chunk is recommended. This helps with the alt tags.</li>
 <li>The default presentation of R output is to have three hash signs at the left of each line of output. Inclusion of an R chunk at the start of the document can fix this. Use something like:</li>
 </ul>
@@ -454,8 +455,8 @@ opts_chunk$set(comment=&quot;&quot;)
 <p>The method used to convert your raw markdown to beautiful HTML will matter. WriteR has been configured to use <code>render()</code> from the <code>rmarkdown</code> package as it delivers the best outcome for screen reader users.</p>
 <p>Finally, you should investigate which combination of screen reader and browser gives you the results you like best. I regularly make use of both JAWS and NVDA, and my preferred browser has changed over the years. I used to only ever use Firefox, but Chrome gets more use today; both Internet Explorer and Opera have both been used at times.</p>
 </div>
-<div id="brailler-commands-used-in-this-chapter-6" class="section level2" number="11.8">
-<h2><span class="header-section-number">11.8</span> BrailleR commands used in this chapter</h2>
+<div id="brailler-commands-used-in-this-chapter-6" class="section level2" number="11.10">
+<h2><span class="header-section-number">11.10</span> BrailleR commands used in this chapter</h2>
 <p>We used <code>TestWX()</code> to check the necessary Python installations were successful. It automatically called the <code>TestPython()</code> command as its first step.</p>
 <p>We needed to use <code>GetPython3()</code> and <code>GetWxPython3()</code> to install the necessary software to run a Python script like WriteR.</p>
 <p>Finally, we opened a new file using <code>WriteR()</code>.</p>

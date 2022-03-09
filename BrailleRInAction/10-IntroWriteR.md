@@ -7,7 +7,18 @@ The WriteR application was written to support use of R markdown and the `Braille
 
 The script is in the `BrailleR` package, but it cannot run unless the user has both Python and wxPython installed. Commands have been included in the `BrailleR` package to help Windows users obtain installation files for them. Users of other operating systems currently have to install Pandoc, Python and wxPython independently, but these tools may well already be installed.
 
-## Getting the required software (Windows users only)
+
+## Getting a stand alone version of WriteR
+
+Windows users who do not feel comfortable installing or using Python can make use of a pre-compiled installer. You will still need to look at getting Pandoc (described below) and of course you've already got R installed.
+
+To get a copy of the installer, go to the [https://r-resources.massey.ac.nz/WriteR/](WriteR home page.) If you do use the installer, you can skip the next section because you do not need to install Python.
+
+
+
+## Getting the right version of Python (Windows users only)
+
+N.B. The files downloaded as a consequence of running commands in this section will be saved in your `MyBrailleR` folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway. 
 
 You can check if a version of Python is already installed on your computer using
 
@@ -20,20 +31,55 @@ Sys.which("Python")
 "C:\\PROGRA~1\\Python38\\Python.exe" 
 ```
 
-The output above shows you that I have Python 3.8 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check your system that return more useful detail, but for the moment the `Sys.which()` command above issufficient.  What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.
+The output above shows you that I have Python 3 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check your system that return more useful detail, but for the moment the `Sys.which()` command above issufficient.  What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.
 
-The files downloaded as a consequence of running commands in this set of instructions will be saved in your `MyBrailleR` folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway. 
+
+The following  instructions fetch the installation files from the reputable Python sites. Windows and any security software you might have should know that, but you can never tell! You may need to let Windows know it is OK to install the software in the default location. The pop-up might not appear as the window with focus so if things look like they're going slowly, look around for the pop-up window.
+
+
+The following  commands automatically download the installation files needed for Python 3.x, and start the installation process going. 
+Issue them at the R prompt
+
+`GetPython3()`
+
+Make sure that the first thing you do as part of the installation is to choose to use a custom installation. This allows you to make sure Python will be availabel to all users, and update the system's environment variables. You may need to make sure these options are selected.
+
+You need to make sure that the second of these options definitely happens; this ensures that the Python folders are added to your system path which means R and any other software that wants Python can find it. This makes it possible to run Python scripts from any folder on your computer. The next few commands will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your `MyBrailleR` folder and run it again manually before proceeding.
+
+We can check the installation has worked properly at this point using:
+
+```r
+Sys.which("python")
+```
+
+```
+                              python 
+"C:\\PROGRA~1\\Python38\\python.exe" 
+```
+
+```r
+shell("path", intern=TRUE)
+```
+
+```
+[1] "PATH=C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Program Files\\Python310\\Scripts\\;C:\\Program Files\\Python310\\;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MiKTeX\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Pandoc\\;C:\\Program Files (x86)\\dotnet\\;C:\\Program Files\\dotnet\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;"
+```
+
+This is a much stronger test than was done earlier. You can see the folders that Windows will search through to find the tools you are using all the time. The folder for Python needs to be listed there somewhere.
+
+Now get the additional Python modules needed for WriteR using:
+ 
+`GetWxPython3()`
+
+## Installing Pandoc (Windows users)
+
+N.B. The files downloaded as a consequence of running commands in this set of instructions will be saved in your `MyBrailleR` folder. You will need to follow the instructions and answer questions that arise whenever you install new software, but you should probably read all the way through this set of instructions before getting underway. 
 
 Ultimately, you will need a mainstream tool to process the markdown files you write into other formats. The WriteR application will end up using a tool called "pandoc" to do this so we need to get this installed.
-If you do not have an installation of Pandoc and Python 3 then you can use some functions from the `BrailleR` package to help make the setup smoother. Remember to load the package using:
+If you do not have an installation of Pandoc then you can use functions from the `BrailleR` package to help make the setup smoother. Remember to load the package using:
  
 `library(BrailleR)`
 
-It doesn't matter if you install Python before or after Pandoc.
-
-
-
-### Installing Pandoc
 
 Let's first install Pandoc using the command:
 
@@ -54,52 +100,18 @@ Sys.which("pandoc")
 
 which will show where Pandoc was installed.
 
-### Installing Python
 
 
-The following  instructions fetch the installation files from the reputable Python sites. Windows and any security software you might have should know that, but you can never tell! You may need to let Windows know it is OK to install the software in the default location. The pop-up might not appear as the window with focus so if things look like they're going slowly, look around for the pop-up window.
+Once you have completed this installation, you are ready to go. You shouldn't need to keep the  installation file,  but why not keep it just in case.
 
-
-The following  commands automatically download the installation files needed for Python 3.x, and start the installation process going. 
-Issue them at the R prompt
-
-`GetPython3()`
-
-Make sure that the first thing you do as part of the installation is to choose to use a custom installation. This allows you to make sure Python will be availabel to all users, update the system's environment variables. You may need to make sure these options are selected.
-
-You need to make sure that the second of these options definitely happens; this ensures that the Python folders are added to your system path which means R and any other software that wants Python can find it. This makes it possible to run Python scripts from any folder on your computer. The next few commands will fail if this is not done properly. If you missed that step during the installation, look for the installer file in your `MyBrailleR` folder and run it again manually before proceeding.
-
-We can check the installation has worked properly at this point using:
-
-```r
-Sys.which("python")
-```
-
-```
-                              python 
-"C:\\PROGRA~1\\Python38\\python.exe" 
-```
-
-```r
-shell("path", intern=TRUE)
-```
-
-```
-[1] "PATH=C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Rtools\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Pandoc\\;C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Pandoc\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;"
-```
-
-This is a much stronger test than was done earlier. You can see the folders that Windows will search through to find the tools you are using all the time. The folder for Python needs to be listed there somewhere.
-
-Now get the additional Python modules needed for WriteR using:
- 
-`GetWxPython3()`
-
-Once you have completed these installations, you are ready to go. You shouldn't need to keep the  installation files, but why not keep them just in case.
 You can now skip to the section which shows you how to check everything is ready for using WriteR.
 
 
 
 ## Other operating systems
+
+
+Anyone using another operating system will have to take the Python scripts to a sensible place on their computer. You will need to have an installationof Python and the necessary additional modules the scripts use. This includes wxPython.
 
 ## Checking your system is ready
 
@@ -146,7 +158,7 @@ If this doesn't work you will need to seek out the correct strategy via the Pyth
 python -m pip install --user --upgrade pip setuptools wheel
 ```
 This should download a few files and automatically put them on your system.
-4. Finnally, install the wxPython module using
+4. Finally, install the wxPython module using
 ```
 pip install --user --upgrade wxPython
 ```
@@ -218,8 +230,8 @@ The WriteR application really can make writing documents easier because it offer
 
 - Always  use the standard markdown syntax for inserting headings, graphics, links, and equations. WriteR will insert placeholders for graphics and links and some mathematical structures.
 - Concentrate on the material to be communicated; do not worry about the formatting of it. Keeping it simple is best.
-- Make use of the lessons learned by others. If you like hte way something is presented, then re-use the approach taken.
-- if you inset a graph created in an R chunk, then make sure you use the `fig.cap` properly. This text will be used as the "alt tag" for the resulting graph.
+- Make use of the lessons learned by others. If you like the way something is presented, then re-use the approach taken.
+- if you insert a graph created in an R chunk, then make sure you use the `fig.cap` properly. This text will be used as the caption for the graph in your document. If you use a `fig.alt` tag, you will get  an "alt tag" for the resulting graph as well; if you don't use `fig.alt` but do provide `fig.cap` then you'll have the caption used for the alt text as well.
 - One figure per chunk is recommended. This helps with the alt tags.
 - The default presentation of R output is to have three hash signs at the left of each line of output.  Inclusion of an R chunk at the start of the document can fix this. Use something like:
 ````

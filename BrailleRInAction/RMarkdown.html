@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-09-26" />
+<meta name="date" content="2022-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -281,18 +281,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a>
-<ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
-<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
-<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.4</b> Opening WriteR from BrailleR</a></li>
-<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
-<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
-<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
-<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-a-stand-alone-version-of-writer"><i class="fa fa-check"></i><b>11.1</b> Getting a stand alone version of WriteR</a></li>
+<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#getting-the-right-version-of-python-windows-users-only"><i class="fa fa-check"></i><b>11.2</b> Getting the right version of Python (Windows users only)</a></li>
+<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc-windows-users"><i class="fa fa-check"></i><b>11.3</b> Installing Pandoc (Windows users)</a></li>
+<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.4</b> Other operating systems</a></li>
+<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.5</b> Checking your system is ready</a></li>
+<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.6</b> Opening WriteR from BrailleR</a></li>
+<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.7</b> What can I do with WriteR?</a></li>
+<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.8</b> Our first HTML file</a></li>
+<li class="chapter" data-level="11.9" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.9</b> Some hints for writing Rmarkdown documents</a></li>
+<li class="chapter" data-level="11.10" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.10</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
@@ -367,7 +365,7 @@ Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewha
 </ul>
 <p>The <code>UniDesc()</code> function can deliver all of this with minimal effort from the user.</p>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="RMarkdown.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(UniDesc)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="RMarkdown.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(UniDesc)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 DIR = getwd()
@@ -432,7 +430,7 @@ This processing allows for:</p>
 </ul>
 <p>There will be circumstances when the last, and perhaps evern second to last elements of this functionality are not justified by the outcome of issuing the earlier commands. In particular, generating the output from Tukey’s HSD would not normally be sought unless the analysis of variance showed there was a significant difference between the group means. The choice of reading the output and subsequently using it are left to the user. In this respect, <code>BrailleR</code> has not become an expert system that decides to or not to provide something; the user is still expected to do the thinking about the relevance of each element of hte overall set of output provided.</p>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="RMarkdown.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(OneFactor)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="RMarkdown.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(OneFactor)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 DIR = getwd()
@@ -462,9 +460,9 @@ setwd(DIR)</code></pre>
 <p>Let’s see an example using the <code>airquality</code> data.
 Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function’s value to a blind user.</p>
 <p>A simple linear regression model might be created and investigated using:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="RMarkdown.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airquality)</span>
-<span id="cb47-2"><a href="RMarkdown.html#cb47-2" aria-hidden="true" tabindex="-1"></a>MyModel <span class="ot">=</span> <span class="fu">lm</span>(Ozone<span class="sc">~</span>Wind, <span class="at">data=</span>airquality)</span>
-<span id="cb47-3"><a href="RMarkdown.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MyModel)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="RMarkdown.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airquality)</span>
+<span id="cb45-2"><a href="RMarkdown.html#cb45-2" aria-hidden="true" tabindex="-1"></a>MyModel <span class="ot">=</span> <span class="fu">lm</span>(Ozone<span class="sc">~</span>Wind, <span class="at">data=</span>airquality)</span>
+<span id="cb45-3"><a href="RMarkdown.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MyModel)</span></code></pre></div>
 <pre><code>
 Call:
 lm(formula = Ozone ~ Wind, data = airquality)
@@ -484,17 +482,17 @@ Residual standard error: 26.47 on 114 degrees of freedom
   (37 observations deleted due to missingness)
 Multiple R-squared:  0.3619,    Adjusted R-squared:  0.3563 
 F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="RMarkdown.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb49-2"><a href="RMarkdown.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MyModel)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="RMarkdown.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb47-2"><a href="RMarkdown.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MyModel)</span></code></pre></div>
 <div class="figure">
-<img src="05-MarkdownInAction_files/figure-html/AirQuality.lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
+<img src="05-MarkdownInAction_files/figure-html/AirQuality_lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
 <p class="caption">
-(#fig:AirQuality.lm)Diagnostic plots for the simple linear regression model.
+(#fig:AirQuality_lm)Diagnostic plots for the simple linear regression model.
 </p>
 </div>
 <p>The user now has a model stored as <code>MyModel</code> in the current workspace, has printed a summary of that model, and has plotted a set of four diagnostic plots in a <span class="math inline">\(2\times{}2\)</span> grid. The blind user will still need to issue those commands so that the output is created to meet the expectations of the sighted audience, but will also find value in issuing the two extra commands</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="RMarkdown.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(MyModel)</span>
-<span id="cb50-2"><a href="RMarkdown.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(<span class="fu">summary</span>(MyModel))</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="RMarkdown.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(MyModel)</span>
+<span id="cb48-2"><a href="RMarkdown.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(<span class="fu">summary</span>(MyModel))</span></code></pre></div>
 <p>The use of the second of these commands will generate</p>
 <pre><code>The term which is significant to 1% is
 Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
@@ -537,7 +535,7 @@ The <code>OnePredictor()</code> command has been written as a shortcut for a bli
 <li>the counts of observations within each group,</li>
 </ul>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="RMarkdown.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(OnePredictor)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="RMarkdown.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(OnePredictor)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 DIR = getwd()
@@ -571,7 +569,7 @@ Fellows, Ian. 2012. <span>“Deducer: A Data Analysis <span>GUI</span> for <span
 Fox, John. 2005. <span>“The <span>R</span> <span>C</span>ommander: A Basic Statistics Graphical User Interface to <span>R</span>.”</span> <em>Journal of Statistical Software</em> 14 (9): 1–42. <a href="http://www.jstatsoft.org/v14/i09">http://www.jstatsoft.org/v14/i09</a>.
 </div>
 <div id="ref-GodfreyRJournal" class="csl-entry">
-———. 2013b. <span>“Statistical Software from a Blind Person’s Perspective: <span>R</span> Is the Best, but We Can Make It Better.”</span> <em>The R Journal</em> 5 (1): 73–79.<a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf "> https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.
+———. 2013b. <span>“Statistical Software from a Blind Person’s Perspective: <span>R</span> Is the Best, but We Can Make It Better.”</span> <em>The R Journal</em> 5 (1): 73–79.<a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf </a>.
 </div>
 <div id="ref-Rpkg-nortest" class="csl-entry">
 Gross, Juergen, and Uwe Ligges. 2015. <em>Nortest: Tests for Normality</em>. <a href="https://CRAN.R-project.org/package=nortest">https://CRAN.R-project.org/package=nortest</a>.

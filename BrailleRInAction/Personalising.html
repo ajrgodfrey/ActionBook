@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-09-26" />
+<meta name="date" content="2022-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -281,18 +281,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a>
-<ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
-<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
-<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.4</b> Opening WriteR from BrailleR</a></li>
-<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
-<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
-<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
-<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-a-stand-alone-version-of-writer"><i class="fa fa-check"></i><b>11.1</b> Getting a stand alone version of WriteR</a></li>
+<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#getting-the-right-version-of-python-windows-users-only"><i class="fa fa-check"></i><b>11.2</b> Getting the right version of Python (Windows users only)</a></li>
+<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc-windows-users"><i class="fa fa-check"></i><b>11.3</b> Installing Pandoc (Windows users)</a></li>
+<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.4</b> Other operating systems</a></li>
+<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.5</b> Checking your system is ready</a></li>
+<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.6</b> Opening WriteR from BrailleR</a></li>
+<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.7</b> What can I do with WriteR?</a></li>
+<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.8</b> Our first HTML file</a></li>
+<li class="chapter" data-level="11.9" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.9</b> Some hints for writing Rmarkdown documents</a></li>
+<li class="chapter" data-level="11.10" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.10</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
@@ -330,7 +328,7 @@ There are a wide range of options needed to get the best out of the <code>Braill
 <div id="who-is-the-r-markdown-file-being-written-by" class="section level3" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Who is the R markdown file being written by?</h3>
 <p>You might want your analyses to use your name instead of the default name <code>BrailleR</code>. Do this using the <code>SetAuthor()</code> function. e.g.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="Personalising.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SetAuthor</span>(<span class="st">&quot;Jonathan Godfrey&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="Personalising.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SetAuthor</span>(<span class="st">&quot;Jonathan Godfrey&quot;</span>)</span></code></pre></div>
 <p>OK, you ought to use your name not mine, but you get the point.</p>
 <p>This will have an instant impact, even on the examples for <code>BrailleR</code> functions. Set the author and then try <code>example(UniDesc)</code> for example.</p>
 </div>

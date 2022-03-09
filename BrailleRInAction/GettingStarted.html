@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-09-26" />
+<meta name="date" content="2022-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -281,18 +281,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a>
-<ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
-<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
-<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.4</b> Opening WriteR from BrailleR</a></li>
-<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
-<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
-<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
-<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-a-stand-alone-version-of-writer"><i class="fa fa-check"></i><b>11.1</b> Getting a stand alone version of WriteR</a></li>
+<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#getting-the-right-version-of-python-windows-users-only"><i class="fa fa-check"></i><b>11.2</b> Getting the right version of Python (Windows users only)</a></li>
+<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc-windows-users"><i class="fa fa-check"></i><b>11.3</b> Installing Pandoc (Windows users)</a></li>
+<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.4</b> Other operating systems</a></li>
+<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.5</b> Checking your system is ready</a></li>
+<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.6</b> Opening WriteR from BrailleR</a></li>
+<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.7</b> What can I do with WriteR?</a></li>
+<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.8</b> Our first HTML file</a></li>
+<li class="chapter" data-level="11.9" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.9</b> Some hints for writing Rmarkdown documents</a></li>
+<li class="chapter" data-level="11.10" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.10</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
@@ -342,15 +340,15 @@ The decision should be made by the individual user after some experimentation; t
 <div id="installing-the-brailler-package" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Installing the BrailleR package</h2>
 <p>To use the functionality of the BrailleR package you need to have it installed. The package has several dependencies so installation from the CRAN repository is recommended. This would be done by issuing the following two commands in an R session:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="GettingStarted.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chooseCRANmirror</span>(<span class="at">ind=</span><span class="dv">1</span>)</span>
-<span id="cb10-2"><a href="GettingStarted.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BrailleR&quot;</span>)</span></code></pre></div>
-<p>Note that the first and last letters of <code>BrailleR</code> are capitalised. This is important in R, but is also useful for screen reading software which will then give audibly different feedback, as compared to what a screen reader user hears from the lower case text “brailler.”</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="GettingStarted.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chooseCRANmirror</span>(<span class="at">ind=</span><span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="GettingStarted.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BrailleR&quot;</span>)</span></code></pre></div>
+<p>Note that the first and last letters of <code>BrailleR</code> are capitalised. This is important in R, but is also useful for screen reading software which will then give audibly different feedback, as compared to what a screen reader user hears from the lower case text “brailler”.</p>
 <p>If for some reason you have difficulty with the above commands, you can install the BrailleR package using a zip file version available from a CRAN repository or the latest version on GitHub.</p>
 <p>From time to time, you should check that you are using the most recent version of the BrailleR package. You can update all installed packages using the commands:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="GettingStarted.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chooseCRANmirror</span>(<span class="at">ind=</span><span class="dv">1</span>)</span>
-<span id="cb11-2"><a href="GettingStarted.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="GettingStarted.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chooseCRANmirror</span>(<span class="at">ind=</span><span class="dv">1</span>)</span>
+<span id="cb10-2"><a href="GettingStarted.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <p>Once you’ve got the package installed, you still need to get it running in your current R session by issuing one last command. When you issue the first of the following lines, the package start messages will also appear.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="GettingStarted.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BrailleR)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="GettingStarted.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BrailleR)</span></code></pre></div>
 <p>You’re ready to go!</p>
 <div id="some-initial-setting-up-instructions" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Some initial setting up instructions</h3>
@@ -389,7 +387,7 @@ The decision should be made by the individual user after some experimentation; t
 <h3> References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-GodfreyRJournal" class="csl-entry">
-———. 2013b. <span>“Statistical Software from a Blind Person’s Perspective: <span>R</span> Is the Best, but We Can Make It Better.”</span> <em>The R Journal</em> 5 (1): 73–79.<a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf "> https://journal.r-project.org/archive/2013-1/godfrey.pdf</a>.
+———. 2013b. <span>“Statistical Software from a Blind Person’s Perspective: <span>R</span> Is the Best, but We Can Make It Better.”</span> <em>The R Journal</em> 5 (1): 73–79.<a href=" https://journal.r-project.org/archive/2013-1/godfrey.pdf ">https://journal.r-project.org/archive/2013-1/godfrey.pdf </a>.
 </div>
 <div id="ref-GodfreyErhardtRJournalAddendum" class="csl-entry">
 Godfrey, A. Jonathan R., and Robert Erhardt. 2014. <span>“Addendum to “Statistical Software from a Blind Person’s Perspective".”</span> <em>The R Journal</em> 6 (1): 182. <a href="https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf">https://journal.r-project.org/archive/2014-1/godfrey-erhardt.pdf</a>.

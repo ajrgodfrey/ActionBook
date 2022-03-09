@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.5.31)  15 MAY 2021 19:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6700 64-bit) (preloaded format=pdflatex 2018.5.31)  14 DEC 2021 10:15
 entering extended mode
 **./BrailleR.tex
 (BrailleR.tex
@@ -116,11 +116,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\generic\iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
@@ -349,16 +346,19 @@ Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\generic\iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\generic\iftex\ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
+)) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\generic\iftex\ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (C:\Users\ajgodfre\AppData\Roaming\MiKTeX\2.9\tex\generic\iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
@@ -564,8 +564,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip59
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count130
-)
-No file BrailleR.aux.
+) (BrailleR.aux)
 \openout1 = `BrailleR.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
@@ -687,360 +686,115 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {C:/Users/ajgodfre/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
-]
+] (BrailleR.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 5.
+[3] [4])
 \tf@toc=\write4
 \openout4 = `BrailleR.toc'.
 
-[3] [4
+[5] [6
 
 ]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 135.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [5]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 150.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 150.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 150.
-[6]
+) [7] [8]
 Chapter 1.
+[9
 
-Package natbib Warning: Citation `Godfrey2009AccessiblePaper' on page 7 undefin
-ed on input line 165.
-
-
-Package natbib Warning: Citation `GodfreyLoots-JSE' on page 7 undefined on inpu
-t line 166.
-
-
-Package natbib Warning: Citation `Rpkg-base' on page 7 undefined on input line 
-166.
-
-
-Package natbib Warning: Citation `Godfrey2009AccessiblePaper' on page 7 undefin
-ed on input line 166.
-
-
-Package natbib Warning: Citation `GodfreyRJournal' on page 7 undefined on input
- line 171.
-
-
-Package natbib Warning: Citation `Rpkg-BrailleR' on page 7 undefined on input l
-ine 171.
-
-[7
-
-]
-
-LaTeX Warning: Reference `VI' on page 8 undefined on input line 188.
-
-
-LaTeX Warning: Reference `VI' on page 8 undefined on input line 195.
-
-[8]
-
-LaTeX Warning: Reference `RMarkdown' on page 9 undefined on input line 202.
-
-
-LaTeX Warning: Reference `RMarkdown' on page 9 undefined on input line 208.
-
-
-Overfull \hbox (12.73979pt too wide) has occurred while \output is active
+] [10]
+Overfull \hbox (17.73979pt too wide) has occurred while \output is active
 \T1/lmr/m/sl/10 1.2.  WHY WILL I USE THE BRAILLER PACKAGE IF I AM NOT A NOVICE?
- \T1/lmr/m/n/10 9
+ \T1/lmr/m/n/10 11
  []
 
-[9]
-
-Package natbib Warning: Citation `Rpkg-knitr' on page 10 undefined on input lin
-e 228.
-
-
-Package natbib Warning: Citation `Xie2015' on page 10 undefined on input line 2
-29.
-
-
-Package natbib Warning: Citation `Wickham2015RPackages' on page 10 undefined on
- input line 232.
-
-
-Package natbib Warning: Citation `Wickham2014Advanced' on page 10 undefined on 
-input line 232.
-
-
-Package natbib Warning: Citation `GrolemundWickham2016' on page 10 undefined on
- input line 232.
-
-[10]
+[11] [12]
 Chapter 2.
-[11
+[13
 
 ]
-
-Package natbib Warning: Citation `Godfrey2009AccessiblePaper' on page 12 undefi
-ned on input line 251.
-
-
-Package natbib Warning: Citation `Godfrey2011SU-R' on page 12 undefined on inpu
-t line 253.
-
-
-Package natbib Warning: Citation `Godfrey2013SU-R' on page 12 undefined on inpu
-t line 253.
-
-
-Package natbib Warning: Citation `Godfrey2014SU-R' on page 12 undefined on inpu
-t line 253.
-
-
-Package natbib Warning: Citation `Godfrey2016SU-R' on page 12 undefined on inpu
-t line 253.
-
-
-Package natbib Warning: Citation `Rpkg-BrailleR' on page 12 undefined on input 
-line 255.
-
-
-Package natbib Warning: Citation `Godfrey2012BrailleRPaper' on page 12 undefine
-d on input line 255.
-
-
-Package natbib Warning: Citation `Godfrey2012PuttingPaper' on page 12 undefined
- on input line 258.
-
-
-Package natbib Warning: Citation `Godfrey2014SU-Sweave' on page 12 undefined on
- input line 258.
-
-
 Underfull \vbox (badness 2970) has occurred while \output is active []
 
-[12]
+[14]
 LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 279
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmtt.fd"
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<02-History_files/figure-latex/hist-1.pdf, id=98, 469.755pt x 325.215pt>
+<02-History_files/figure-latex/hist-1.pdf, id=310, 469.755pt x 325.215pt>
 File: 02-History_files/figure-latex/hist-1.pdf Graphic file (type pdf)
 <use 02-History_files/figure-latex/hist-1.pdf>
 Package pdftex.def Info: 02-History_files/figure-latex/hist-1.pdf  used on inpu
 t line 308.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 335--335
-[]\T1/lmtt/m/n/10 ## It has 15 bins with equal widths, starting at -4 and endin
-g at 3.5 .[] 
+Overfull \hbox (1.499pt too wide) in paragraph at lines 334--334
+[]\T1/lmtt/m/n/10 ## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, 3, 
+and 4[] 
  []
 
-[13] [14 <./02-History_files/figure-latex/hist-1.pdf>]
 
-Package natbib Warning: Citation `GodfreyRJournal' on page 15 undefined on inpu
-t line 356.
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 334--334
+[]\T1/lmtt/m/n/10 ## It has 14 bins with equal widths, starting at -3 and endin
+g at 4 .[] 
+ []
 
-
-Package natbib Warning: Citation `GodfreyRJournal' on page 15 undefined on inpu
-t line 356.
-
-
-Package natbib Warning: Citation `GodfreyErhardtRJournalAddendum' on page 15 un
-defined on input line 356.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[15]
-
-Package natbib Warning: Citation `Godfrey2013BlindnessPoster' on page 16 undefi
-ned on input line 358.
-
-
-Package natbib Warning: Citation `GodfreyMurrell2016TactileGraphsPaper' on page
- 16 undefined on input line 358.
-
-
-Package natbib Warning: Citation `GodfreyLoots2014JSS' on page 16 undefined on 
-input line 364.
-
-
-Package natbib Warning: Citation `Godfrey2014SU-StatsSoft' on page 16 undefined
- on input line 365.
-
-
-Package natbib Warning: Citation `Godfrey2016SU-StatsSoft' on page 16 undefined
- on input line 365.
-
-
-Package natbib Warning: Citation `Godfrey2014BlindUseROral' on page 16 undefine
-d on input line 371.
-
-
-Package natbib Warning: Citation `Rpkg-knitr' on page 16 undefined on input lin
-e 372.
-
-
-Package natbib Warning: Citation `Godfrey2015BaseRWeepsOral' on page 16 undefin
-ed on input line 378.
-
-
-Package natbib Warning: Citation `GodfreyBilton2016UseROral' on page 16 undefin
-ed on input line 378.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[16]
-
-Package natbib Warning: Citation `RStudio' on page 17 undefined on input line 3
-88.
-
-
-Package natbib Warning: Citation `GodfreyCurtis2016WriteRPaper' on page 17 unde
-fined on input line 389.
-
-
+[15] [16 <./02-History_files/figure-latex/hist-1.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [17]
-
-Package natbib Warning: Citation `Rpkg-TeachingDemos' on page 18 undefined on i
-nput line 401.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[19] [20]
 Chapter 3.
+[21
 
-Package natbib Warning: Citation `GodfreyLoots2014JSS' on page 19 undefined on 
-input line 422.
-
-
-Package natbib Warning: Citation `SPSS-Soft' on page 19 undefined on input line
- 423.
-
-
-Package natbib Warning: Citation `Minitab-Soft' on page 19 undefined on input l
-ine 423.
-
-
-Package natbib Warning: Citation `Minitab-Express' on page 19 undefined on inpu
-t line 423.
-
-
-Package natbib Warning: Citation `GodfreyLoots2014JSS' on page 19 undefined on 
-input line 426.
-
-
-Package natbib Warning: Citation `SAS-Soft' on page 19 undefined on input line 
-426.
-
-[19
-
-]
-
-Package natbib Warning: Citation `GodfreyRJournal' on page 20 undefined on inpu
-t line 433.
-
-
-Package natbib Warning: Citation `GodfreyErhardtRJournalAddendum' on page 20 un
-defined on input line 435.
-
-[20]
-
-LaTeX Warning: Reference `Personalising' on page 21 undefined on input line 481
-.
-
-[21]
-
-LaTeX Warning: Reference `WriteR' on page 22 undefined on input line 507.
-
-[22]
-Underfull \hbox (badness 2318) in paragraph at lines 512--513
+] [22] [23] [24]
+Underfull \hbox (badness 2318) in paragraph at lines 511--512
 \T1/lmtt/m/n/10 GetGoing()\T1/lmr/m/n/10 (+20) . You might find it use-ful to u
 se \T1/lmtt/m/n/10 BrailleRHome() \T1/lmr/m/n/10 (+20) and
  []
 
-[23] [24
+[25] [26
 
 ]
 Chapter 4.
-
-Package natbib Warning: Citation `BulatovGardner2004SVG' on page 25 undefined o
-n input line 528.
-
-
-Package natbib Warning: Citation `GardnerBulatov2010SVG' on page 25 undefined o
-n input line 528.
-
-
-Package natbib Warning: Citation `SVGStandard' on page 25 undefined on input li
-ne 529.
-
-
-Package natbib Warning: Citation `MurrellPotter2014' on page 25 undefined on in
-put line 529.
-
-[25]
-
-Package natbib Warning: Citation `GardnerBulatov2010SVG' on page 26 undefined o
-n input line 531.
-
-
-Package natbib Warning: Citation `MurrellPotter2014' on page 26 undefined on in
-put line 533.
-
-
-Package natbib Warning: Citation `GardnerBulatov2010SVG' on page 26 undefined o
-n input line 533.
-
-
-Package natbib Warning: Citation `Murrell2015GridGraphics' on page 26 undefined
- on input line 534.
-
-
-Package natbib Warning: Citation `JAWS' on page 26 undefined on input line 536.
-
-
-
-Package natbib Warning: Citation `GodfreyLoots2014JSS' on page 26 undefined on 
-input line 537.
-
-
-Package natbib Warning: Citation `NVDA' on page 26 undefined on input line 537.
-
-
-
-Package natbib Warning: Citation `SPLUS-Soft' on page 26 undefined on input lin
-e 541.
-
-[26]
-<04a-VIInAction_files/figure-latex/hist-1.pdf, id=207, 505.89pt x 361.35pt>
+[27] [28]
+<04a-VIInAction_files/figure-latex/hist-1.pdf, id=502, 505.89pt x 361.35pt>
 File: 04a-VIInAction_files/figure-latex/hist-1.pdf Graphic file (type pdf)
 <use 04a-VIInAction_files/figure-latex/hist-1.pdf>
 Package pdftex.def Info: 04a-VIInAction_files/figure-latex/hist-1.pdf  used on 
-input line 557.
+input line 556.
 (pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 620--620
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 619--619
 [] \T1/lmtt/m/n/10 [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  
-2.0  2.5  3.0[] 
+2.0  2.5  3.0  3.5[] 
+ []
+
+[29 <./04a-VIInAction_files/figure-latex/hist-1.pdf>]
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 619--619
+[] \T1/lmtt/m/n/10 [1] 0.002 0.010 0.026 0.112 0.172 0.294 0.340 0.420 0.320 0.
+176 0.094 0.020[] 
  []
 
 
-Overfull \hbox (53.99884pt too wide) in paragraph at lines 620--620
-[] \T1/lmtt/m/n/10 [1] 0.006 0.010 0.026 0.098 0.170 0.300 0.346 0.376 0.320 0.
-200 0.102 0.038[] 
- []
-
-[27 <./04a-VIInAction_files/figure-latex/hist-1.pdf>]
-Overfull \hbox (53.99884pt too wide) in paragraph at lines 620--620
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 619--619
 [] \T1/lmtt/m/n/10 [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1
 .25  1.75  2.25[] 
  []
 
-[28]
-Overfull \hbox (2689.49118pt too wide) in paragraph at lines 646--646
+[30]
+Overfull \hbox (2689.49118pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 General description: A histogram uses rectangles to represent
  the counts or relative frequencies of observations falling in each subrange of
  the numeric variable being investigated. The rectangles are standing side by s
@@ -1052,7 +806,7 @@ ta, and any outliers that might be present.[]
  []
 
 
-Overfull \hbox (1460.99475pt too wide) in paragraph at lines 646--646
+Overfull \hbox (1460.99475pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 As with most graphs created by the base graphics package, the
  axes do not join at the bottom left corner and are separated from the area whe
 re the data are being plotted. Tick marks are automatically chosen for the data
@@ -1061,7 +815,7 @@ ical axis for frequency always starts at zero.[]
  []
 
 
-Overfull \hbox (1754.9939pt too wide) in paragraph at lines 646--646
+Overfull \hbox (1754.9939pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 R normally plots a graph in a square window. This can be alte
 red; the way this is done depends heavily on the method being used to create th
 e graph. See the help on win.graph() or  x11() for the graphs made in an intera
@@ -1071,19 +825,19 @@ r R markdown documents.[]
  []
 
 
-Overfull \hbox (500.24754pt too wide) in paragraph at lines 646--646
+Overfull \hbox (500.24754pt too wide) in paragraph at lines 645--645
 []\T1/lmtt/m/n/10 R hints: If you intend to make a tactile version of a histogr
 am, you may find it useful to alter the aspect ratio so that the histogram is w
 ider than it is tall.[] 
  []
 
-[29]
-Overfull \hbox (11.99896pt too wide) in paragraph at lines 677--677
-[]\T1/lmtt/m/n/10 It has 13 bins with equal widths, starting at -3.5 and ending
- at 3 .[] 
+[31]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 677--677
+[]\T1/lmtt/m/n/10 It has 14 bins with equal widths, starting at -3.5 and ending
+ at 3.5 .[] 
  []
 
-[30]
+[32]
 Overfull \hbox (185.24846pt too wide) in paragraph at lines 741--741
 []\T1/lmtt/m/n/10 Ozone: Min. 1   1st Qu. 18   Median 31.5   Mean 42.1293103448
 276   3rd Qu. 63.25   Max. 168   NA\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 s 37[] 
@@ -1108,7 +862,7 @@ Overfull \hbox (101.2487pt too wide) in paragraph at lines 741--741
 5   3rd Qu. 85   Max. 97[] 
  []
 
-
+[33]
 Overfull \hbox (80.24876pt too wide) in paragraph at lines 741--741
 []\T1/lmtt/m/n/10 Month: Min. 5   1st Qu. 6   Median 7   Mean 6.99346405228758 
   3rd Qu. 8   Max. 9[] 
@@ -1120,50 +874,32 @@ Overfull \hbox (85.49875pt too wide) in paragraph at lines 741--741
  3rd Qu. 23   Max. 31[] 
  []
 
-[31] [32]
+[34]
 Chapter 5.
-
-Package natbib Warning: Citation `CalderEtAl2006' on page 33 undefined on input
- line 763.
-
-[33
+[35
 
 ]
-
-LaTeX Warning: Reference `VI' on page 34 undefined on input line 772.
-
-
-Overfull \hbox (128.43767pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 34 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
-AND INTERPRETING BASIC GRAPHS
- []
-
-[34]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 792.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [35]
-
-LaTeX Warning: Reference `VI' on page 36 undefined on input line 816.
-
-
-LaTeX Warning: Reference `VI' on page 36 undefined on input line 822.
-
-
-LaTeX Warning: Reference `VI' on page 36 undefined on input line 826.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Overfull \hbox (128.43767pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10 36 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
 AND INTERPRETING BASIC GRAPHS
  []
 
 [36]
-<04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf, id=279, 361.35pt x 
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 792.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [37]
+Underfull \vbox (badness 4899) has occurred while \output is active []
+
+
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 38 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[38]
+<04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf, id=576, 361.35pt x 
 505.89pt>
 File: 04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf Graphic file (t
 ype pdf)
@@ -1179,8 +915,8 @@ Overfull \hbox (69.7488pt too wide) in paragraph at lines 873--873
 
 
 Overfull \hbox (53.99884pt too wide) in paragraph at lines 873--873
-[] \T1/lmtt/m/n/10 [1] 0.004 0.008 0.024 0.084 0.178 0.282 0.404 0.374 0.310 0.
-196 0.082 0.040[] 
+[] \T1/lmtt/m/n/10 [1] 0.002 0.010 0.048 0.096 0.204 0.294 0.372 0.416 0.240 0.
+204 0.072 0.026[] 
  []
 
 
@@ -1195,7 +931,7 @@ Overfull \hbox (158.99854pt too wide) in paragraph at lines 873--873
 mple histogram (BrailleR package)")[] 
  []
 
-<04b-NewGraphCommands_files/figure-latex/exampleHist-2.pdf, id=280, 361.35pt x 
+<04b-NewGraphCommands_files/figure-latex/exampleHist-2.pdf, id=577, 361.35pt x 
 505.89pt>
 File: 04b-NewGraphCommands_files/figure-latex/exampleHist-2.pdf Graphic file (t
 ype pdf)
@@ -1209,17 +945,17 @@ Overfull \hbox (69.7488pt too wide) in paragraph at lines 965--965
 2.0  2.5  3.0  3.5[] 
  []
 
-[37]
+[39]
 Overfull \hbox (128.43767pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 38 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+\T1/lmr/m/n/10 40 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
 AND INTERPRETING BASIC GRAPHS
  []
 
-[38 <./04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf>] [39 <./04b-N
+[40 <./04b-NewGraphCommands_files/figure-latex/exampleHist-1.pdf>] [41 <./04b-N
 ewGraphCommands_files/figure-latex/exampleHist-2.pdf>]
 Overfull \hbox (53.99884pt too wide) in paragraph at lines 965--965
-[] \T1/lmtt/m/n/10 [1] 0.004 0.008 0.024 0.084 0.178 0.282 0.404 0.374 0.310 0.
-196 0.082 0.040[] 
+[] \T1/lmtt/m/n/10 [1] 0.002 0.010 0.048 0.096 0.204 0.294 0.372 0.416 0.240 0.
+204 0.072 0.026[] 
  []
 
 
@@ -1230,11 +966,11 @@ Overfull \hbox (53.99884pt too wide) in paragraph at lines 965--965
 
 
 Overfull \hbox (128.43767pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 40 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+\T1/lmr/m/n/10 42 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
 AND INTERPRETING BASIC GRAPHS
  []
 
-[40]
+[42]
 Overfull \hbox (22.49893pt too wide) in paragraph at lines 965--965
 []\T1/lmtt/m/n/10 It has 14 bins with equal widths, starting at -3.5 and ending
  at 3.5 .[] 
@@ -1243,163 +979,99 @@ Overfull \hbox (22.49893pt too wide) in paragraph at lines 965--965
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[41]
-<04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf, id=318, 578.
-16pt x 578.16pt>
-File: 04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf Graphic 
-file (type pdf)
-<use 04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf>
-Package pdftex.def Info: 04b-NewGraphCommands_files/figure-latex/exampleScatter
-Plot-1.pdf  used on input line 1010.
-(pdftex.def)             Requested size: 344.99312pt x 344.99312pt.
-
-Overfull \hbox (128.43767pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 42 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
-AND INTERPRETING BASIC GRAPHS
+[43]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 997--997
+[]\T1/lmtt/m/n/10 Warning in plot.xy(xy, type, ...): "base" is not a graphical 
+parameter[] 
  []
 
-[42] [43 <./04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf>]
-<04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf, id=336, 433.62pt x
- 433.62pt>
-File: 04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf Graphic file (
-type pdf)
-<use 04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf>
-Package pdftex.def Info: 04b-NewGraphCommands_files/figure-latex/addGridLines-1
-.pdf  used on input line 1045.
-(pdftex.def)             Requested size: 345.01738pt x 345.01738pt.
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 1005--1005
+[]\T1/lmtt/m/n/10 Warning in axis(side = side, at = at, labels = labels, ...): 
+"base" is not a[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 1005--1005
+[]\T1/lmtt/m/n/10 Warning in axis(side = side, at = at, labels = labels, ...): 
+"base" is not a[] 
+ []
+
 
 Overfull \hbox (128.43767pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10 44 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
 AND INTERPRETING BASIC GRAPHS
  []
 
-[44] [45 <./04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf>]
+[44]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1036--1036
+[]\T1/lmtt/m/n/10 Warning in plot.xy(xy, type, ...): "base" is not a graphical 
+parameter[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 1044--1044
+[]\T1/lmtt/m/n/10 Warning in axis(side = side, at = at, labels = labels, ...): 
+"base" is not a[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 1044--1044
+[]\T1/lmtt/m/n/10 Warning in axis(side = side, at = at, labels = labels, ...): 
+"base" is not a[] 
+ []
+
+<04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf, id=618, 578.
+16pt x 578.16pt>
+File: 04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf Graphic 
+file (type pdf)
+<use 04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf>
+Package pdftex.def Info: 04b-NewGraphCommands_files/figure-latex/exampleScatter
+Plot-1.pdf  used on input line 1060.
+(pdftex.def)             Requested size: 344.99312pt x 344.99312pt.
+[45 <./04b-NewGraphCommands_files/figure-latex/exampleScatterPlot-1.pdf>]
+<04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf, id=629, 433.62pt x
+ 433.62pt>
+File: 04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf Graphic file (
+type pdf)
+<use 04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf>
+Package pdftex.def Info: 04b-NewGraphCommands_files/figure-latex/addGridLines-1
+.pdf  used on input line 1089.
+(pdftex.def)             Requested size: 345.01738pt x 345.01738pt.
+
 Overfull \hbox (128.43767pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10 46 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
 AND INTERPRETING BASIC GRAPHS
  []
 
-[46]
+[46] [47 <./04b-NewGraphCommands_files/figure-latex/addGridLines-1.pdf>]
+Overfull \hbox (128.43767pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 48 \T1/lmr/m/sl/10 CHAPTER 5.  NEW BRAILLER COMMANDS FOR MAKING 
+AND INTERPRETING BASIC GRAPHS
+ []
+
+[48]
 Chapter 6.
-
-Package natbib Warning: Citation `Rpkg-TeachingDemos' on page 47 undefined on i
-nput line 1104.
-
 
 Underfull \vbox (badness 2443) has occurred while \output is active []
 
-[47
+[49
 
-]
-
-Package natbib Warning: Citation `Xie2015' on page 48 undefined on input line 1
-119.
-
-
-Package natbib Warning: Citation `RStudio' on page 48 undefined on input line 1
-121.
-
-[48] [49]
-
-LaTeX Warning: Reference `RMarkdown' on page 50 undefined on input line 1193.
-
-
-LaTeX Warning: Reference `WriteR' on page 50 undefined on input line 1193.
-
-[50]
+] [50] [51] [52]
 Chapter 7.
-
-Package natbib Warning: Citation `Xie2015' on page 51 undefined on input line 1
-203.
-
-
-Package natbib Warning: Citation `Rpkg-knitr' on page 51 undefined on input lin
-e 1210.
-
-
-Package natbib Warning: Citation `Rpkg-rmarkdown' on page 51 undefined on input
- line 1210.
-
-[51
+[53
 
 ]
-
-Package natbib Warning: Citation `Rpkg-xtable' on page 52 undefined on input li
-ne 1215.
-
-
-Package natbib Warning: Citation `GodfreyRJournal' on page 52 undefined on inpu
-t line 1223.
-
-
-Package natbib Warning: Citation `Fox2005-RCommander' on page 52 undefined on i
-nput line 1231.
-
-
-Package natbib Warning: Citation `Fellows2012Deducer' on page 52 undefined on i
-nput line 1234.
-
-
-Package natbib Warning: Citation `RoedigerEtAl2012RKWard' on page 52 undefined 
-on input line 1236.
-
-
-Overfull \hbox (61.63365pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 52 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
-ANALYSIS EFFICIENTLY
- []
-
-[52]
-
-Package natbib Warning: Citation `RoedigerEtAl2012RKWard' on page 53 undefined 
-on input line 1239.
-
-
-Package natbib Warning: Citation `RoedigerEtAl2012RKWard' on page 53 undefined 
-on input line 1249.
-
-[53]
-
-Package natbib Warning: Citation `Rpkg-moments' on page 54 undefined on input l
-ine 1267.
-
-
-Package natbib Warning: Citation `Rpkg-nortest' on page 54 undefined on input l
-ine 1273.
-
-
-Package natbib Warning: Citation `Rpkg-moments' on page 54 undefined on input l
-ine 1275.
-
-
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 1299--1299
-[]\T1/lmtt/m/n/10 # N.B. Various files and a folder were created in a temporary
- directory.[] 
- []
-
-
 Overfull \hbox (61.63365pt too wide) has occurred while \output is active
 \T1/lmr/m/n/10 54 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
 ANALYSIS EFFICIENTLY
  []
 
-[54]
-Overfull \hbox (53.99884pt too wide) in paragraph at lines 1330--1330
-[]\T1/lmtt/m/n/10 opts_chunk$set(comment="", echo=FALSE, fig.path="Ozone/Ozone-
-", fig.width=7)[] 
+[54] [55]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 1343--1343
+[]\T1/lmtt/m/n/10 # N.B. Various files and a folder were created in a temporary
+ directory.[] 
  []
-
-[55]
-
-Package natbib Warning: Citation `Rpkg-knitr' on page 56 undefined on input lin
-e 1353.
-
-
-Package natbib Warning: Citation `Rpkg-base' on page 56 undefined on input line
- 1357.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (61.63365pt too wide) has occurred while \output is active
@@ -1408,13 +1080,22 @@ ANALYSIS EFFICIENTLY
  []
 
 [56]
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 1406--1406
-[]\T1/lmtt/m/n/10 ## OneFactor("Ozone", "Month", airquality, Folder=tempdir(), 
-View=FALSE)[] 
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 1374--1374
+[]\T1/lmtt/m/n/10 opts_chunk$set(comment="", echo=FALSE, fig.path="Ozone/Ozone-
+", fig.width=7)[] 
  []
 
+[57]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 1406--1406
+
+Overfull \hbox (61.63365pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 58 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+ANALYSIS EFFICIENTLY
+ []
+
+[58]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 1450--1450
 []\T1/lmtt/m/n/10 # N.B. Various files and a folder were created in a temporary
  directory.[] 
  []
@@ -1422,32 +1103,683 @@ Overfull \hbox (32.9989pt too wide) in paragraph at lines 1406--1406
 
 Overfull \hbox (179.33524pt too wide) has occurred while \output is active
 \T1/lmr/m/sl/10 7.4.  ANALYSIS OF A SINGLE CONTINUOUS VARIABLE WITH RESPECT TO 
-A SINGLE GROUPING FACTOR \T1/lmr/m/n/10 57
+A SINGLE GROUPING FACTOR \T1/lmr/m/n/10 59
  []
 
-[57]
+[59]
 Overfull \hbox (61.63365pt too wide) has occurred while \output is active
-\T1/lmr/m/n/10 58 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+\T1/lmr/m/n/10 60 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
 ANALYSIS EFFICIENTLY
  []
 
-[58]
+[60]
+<05-MarkdownInAction_files/figure-latex/AirQuality_lm-1.pdf, id=773, 650.43pt x
+ 650.43pt>
+File: 05-MarkdownInAction_files/figure-latex/AirQuality_lm-1.pdf Graphic file (
+type pdf)
+<use 05-MarkdownInAction_files/figure-latex/AirQuality_lm-1.pdf>
+Package pdftex.def Info: 05-MarkdownInAction_files/figure-latex/AirQuality_lm-1
+.pdf  used on input line 1510.
+(pdftex.def)             Requested size: 345.00415pt x 345.00415pt.
+[61]
+Overfull \hbox (61.63365pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 62 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+ANALYSIS EFFICIENTLY
+ []
 
-! LaTeX Error: Unknown graphics extension: .lm-1.pdf.
+[62 <./05-MarkdownInAction_files/figure-latex/AirQuality_lm-1.pdf>]
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1564--1564
+[] \T1/lmtt/m/n/10 & Ozone & Wind & Fit & St.residual & Leverage & Cooks.distan
+ce \\[] 
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1466 ..._files/figure-latex/AirQuality.lm-1.pdf}
-                                                   
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 1564--1564
+[]\T1/lmtt/m/n/10 \caption{Listing of suspected outliers and influential observ
+ations.}[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[63]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 1598--1598
+[]\T1/lmtt/m/n/10 # N.B. Various files and a folder were created in a temporary
+ directory.[] 
+ []
+
+
+Overfull \hbox (61.63365pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 64 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+ANALYSIS EFFICIENTLY
+ []
+
+[64] [65]
+Overfull \hbox (61.63365pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 66 \T1/lmr/m/sl/10 CHAPTER 7.  USE OF R MARKDOWN TO GENERATE AN 
+ANALYSIS EFFICIENTLY
+ []
+
+[66
+
+]
+Chapter 8.
+[67] [68]
+Chapter 9.
+
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 1668--1668
+[]\T1/lmtt/m/n/10 -- Attaching packages ---------------------------------------
+ tidyverse 1.3.1 --[] 
+ []
+
+[69
+
+]
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 1681--1681
+[]\T1/lmtt/m/n/10 -- Conflicts ------------------------------------------ tidyv
+erse_conflicts() --[] 
+ []
+
+[70] [71]
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 1784--1784
+[] \T1/lmtt/m/n/10 $ MeanHeight: num [1:25] 79 198 96.5 112 88 201 175 188 221 
+188 ...[] 
+ []
+
+[72]
+Overfull \hbox (80.24876pt too wide) in paragraph at lines 1804--1804
+[]\T1/lmtt/m/n/10 N: Min. 2   1st Qu. 2   Median 2   Mean 5.16666666666667   3r
+d Qu. 2.75   Max. 20[] 
+ []
+
+
+Overfull \hbox (164.24852pt too wide) in paragraph at lines 1804--1804
+[]\T1/lmtt/m/n/10 MeanHeight: Min. 96.5   1st Qu. 176   Median 190   Mean 183.9
+16666666667   3rd Qu. 216   Max. 231[] 
+ []
+
+[73] [74]
+Chapter 10.
+[75
+
+]
+<09-GGPlot_files/figure-latex/p11a-1.pdf, id=904, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/p11a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/p11a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/p11a-1.pdf  used on input
+ line 1871.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+[76 <./09-GGPlot_files/figure-latex/p11a-1.pdf>]
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1904--1904
+[]\T1/lmtt/m/n/10 There is a legend indicating colour is used to show color, wi
+th 7 levels:[] 
+ []
+
+<09-GGPlot_files/figure-latex/fig2-2b-1.pdf, id=919, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-2b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-2b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-2b-1.pdf  used on in
+put line 1923.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1938--1938
+[]\T1/lmtt/m/n/10 There is a legend indicating shape is used to show cut, with 
+5 levels:[] 
+ []
+
+<09-GGPlot_files/figure-latex/fig2-3b-1.pdf, id=920, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-3b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-3b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-3b-1.pdf  used on in
+put line 1951.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+[77] [78 <./09-GGPlot_files/figure-latex/fig2-2b-1.pdf> <./09-GGPlot_files/figu
+re-latex/fig2-3b-1.pdf>]
+<09-GGPlot_files/figure-latex/fig2-4a-1.pdf, id=945, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-4a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-4a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-4a-1.pdf  used on in
+put line 1978.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1989--1989
+[]\T1/lmtt/m/n/10 It has y-axis \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 price\TS1/lmt
+t/m/n/10 ' \T1/lmtt/m/n/10 with labels 0, 5000, 10000, 15000, 20000 and 25000.[
+] 
+ []
+
+
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 1989--1989
+[]\T1/lmtt/m/n/10 Layer 2 is a \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 lowess\TS1/lmt
+t/m/n/10 ' \T1/lmtt/m/n/10 smoothed curve with 95% confidence intervals.[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[79 <./09-GGPlot_files/figure-latex/fig2-4a-1.pdf>]
+<09-GGPlot_files/figure-latex/fig2-8a-1.pdf, id=961, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-8a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-8a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-8a-1.pdf  used on in
+put line 2003.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+<09-GGPlot_files/figure-latex/fig2-8b-1.pdf, id=962, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-8b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-8b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-8b-1.pdf  used on in
+put line 2021.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[80 <./09-GGPlot_files/figure-latex/fig2-8a-1.pdf>]
+Overfull \hbox (206.2484pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 It has median 3410.53. The box goes from 2455 to 4749.31, and
+ the whiskers extend to 1128.12 and 8183.33.[] 
+ []
+
+
+Overfull \hbox (216.74837pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 It has median 3253.66. The box goes from 2430.3 to 4508.41, a
+nd the whiskers extend to 1078.12 and 7616.39.[] 
+ []
+
+
+Overfull \hbox (195.74843pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 It has median 3494.32. The box goes from 2587.1 to 4947.22, a
+nd the whiskers extend to 1168 and 8477.5.[] 
+ []
+
+
+Overfull \hbox (200.99841pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 It has median 3490.38. The box goes from 2538.24 to 5500, and
+ the whiskers extend to 1139.02 and 9937.2.[] 
+ []
+
+
+Overfull \hbox (206.2484pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 It has median 3818.89. The box goes from 2396.88 to 5127.28, 
+and the whiskers extend to 1051.16 and 9220.[] 
+ []
+
+
+Overfull \hbox (216.74837pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 It has median 3779.74. The box goes from 2344.65 to 5196.75, 
+and the whiskers extend to 1151.72 and 9397.5.[] 
+ []
+
+
+Overfull \hbox (206.2484pt too wide) in paragraph at lines 2049--2049
+[]\T1/lmtt/m/n/10 It has median 3780. The box goes from 2562.87 to 4927.95, and
+ the whiskers extend to 1080.65 and 8426.13.[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (72.74306pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 10.1.  PLOTTING A CONTINUOUS VARIABLE AGAINST A CATEGORICAL VAR
+IABLE \T1/lmr/m/n/10 81
+ []
+
+[81 <./09-GGPlot_files/figure-latex/fig2-8b-1.pdf>]
+<09-GGPlot_files/figure-latex/fig2-9b-1.pdf, id=982, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-9b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-9b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-9b-1.pdf  used on in
+put line 2062.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 2086--2086
+[]\TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 stat_bin()\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/1
+0 using \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 bins = 30\TS1/lmtt/m/n/10 `\T1/lmtt/m
+/n/10 . Pick better value with \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 binwidth\TS1/l
+mtt/m/n/10 `\T1/lmtt/m/n/10 .[] 
+ []
+
+<09-GGPlot_files/figure-latex/fig2-10a-1.pdf, id=983, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-10a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-10a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-10a-1.pdf  used on i
+nput line 2090.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+[82 <./09-GGPlot_files/figure-latex/fig2-9b-1.pdf>]
+<09-GGPlot_files/figure-latex/fig2-10b-1.pdf, id=1002, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-10b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-10b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-10b-1.pdf  used on i
+nput line 2112.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+<09-GGPlot_files/figure-latex/fig2-11c-1.pdf, id=1003, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-11c-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-11c-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-11c-1.pdf  used on i
+nput line 2144.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (72.74306pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 10.1.  PLOTTING A CONTINUOUS VARIABLE AGAINST A CATEGORICAL VAR
+IABLE \T1/lmr/m/n/10 83
+ []
+
+[83 <./09-GGPlot_files/figure-latex/fig2-10a-1.pdf>] [84 <./09-GGPlot_files/fig
+ure-latex/fig2-10b-1.pdf> <./09-GGPlot_files/figure-latex/fig2-11c-1.pdf>]
+<09-GGPlot_files/figure-latex/fig2-12a-1.pdf, id=1032, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-12a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-12a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-12a-1.pdf  used on i
+nput line 2166.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2183--2183
+[]\T1/lmtt/m/n/10 There is a legend indicating colour is used to show color, wi
+th 7 levels:[] 
+ []
+
+
+Overfull \hbox (72.74306pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 10.1.  PLOTTING A CONTINUOUS VARIABLE AGAINST A CATEGORICAL VAR
+IABLE \T1/lmr/m/n/10 85
+ []
+
+[85 <./09-GGPlot_files/figure-latex/fig2-12a-1.pdf>]
+Overfull \hbox (1.499pt too wide) in paragraph at lines 2194--2194
+[]\TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 stat_bin()\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/1
+0 using \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 bins = 30\TS1/lmtt/m/n/10 `\T1/lmtt/m
+/n/10 . Pick better value with \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 binwidth\TS1/l
+mtt/m/n/10 `\T1/lmtt/m/n/10 .[] 
+ []
+
+<09-GGPlot_files/figure-latex/fig2-12b-1.pdf, id=1044, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-12b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-12b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-12b-1.pdf  used on i
+nput line 2198.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 2216--2216
+[]\T1/lmtt/m/n/10 There is a legend indicating fill is used to show color, with
+ 7 levels:[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[86 <./09-GGPlot_files/figure-latex/fig2-12b-1.pdf>]
+<09-GGPlot_files/figure-latex/fig2-13a-1.pdf, id=1056, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-13a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-13a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-13a-1.pdf  used on i
+nput line 2230.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2246--2246
+[]\T1/lmtt/m/n/10 Bar 1 is centered horizontally at D, and spans vertically fro
+m 0 to 6775.[] 
+ []
+
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2246--2246
+[]\T1/lmtt/m/n/10 Bar 2 is centered horizontally at E, and spans vertically fro
+m 0 to 9797.[] 
+ []
+
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2246--2246
+[]\T1/lmtt/m/n/10 Bar 3 is centered horizontally at F, and spans vertically fro
+m 0 to 9542.[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2246--2246
+[]\T1/lmtt/m/n/10 Bar 4 is centered horizontally at G, and spans vertically fro
+m 0 to 11292.[] 
+ []
+
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2246--2246
+[]\T1/lmtt/m/n/10 Bar 5 is centered horizontally at H, and spans vertically fro
+m 0 to 8304.[] 
+ []
+
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2246--2246
+[]\T1/lmtt/m/n/10 Bar 6 is centered horizontally at I, and spans vertically fro
+m 0 to 5422.[] 
+ []
+
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2246--2246
+[]\T1/lmtt/m/n/10 Bar 7 is centered horizontally at J, and spans vertically fro
+m 0 to 2808.[] 
+ []
+
+<09-GGPlot_files/figure-latex/fig2-13b-1.pdf, id=1057, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-13b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-13b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-13b-1.pdf  used on i
+nput line 2259.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (72.74306pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 10.1.  PLOTTING A CONTINUOUS VARIABLE AGAINST A CATEGORICAL VAR
+IABLE \T1/lmr/m/n/10 87
+ []
+
+[87 <./09-GGPlot_files/figure-latex/fig2-13a-1.pdf>]
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2275--2275
+[]\T1/lmtt/m/n/10 Bar 1 is centered horizontally at D, and spans vertically fro
+m 0 to 4456.56.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2275--2275
+[]\T1/lmtt/m/n/10 Bar 2 is centered horizontally at E, and spans vertically fro
+m 0 to 6445.12.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2275--2275
+[]\T1/lmtt/m/n/10 Bar 3 is centered horizontally at F, and spans vertically fro
+m 0 to 7028.05.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2275--2275
+[]\T1/lmtt/m/n/10 Bar 4 is centered horizontally at G, and spans vertically fro
+m 0 to 8708.28.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2275--2275
+[]\T1/lmtt/m/n/10 Bar 5 is centered horizontally at H, and spans vertically fro
+m 0 to 7571.58.[] 
+ []
+
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2275--2275
+[]\T1/lmtt/m/n/10 Bar 6 is centered horizontally at I, and spans vertically fro
+m 0 to 5568.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2275--2275
+[]\T1/lmtt/m/n/10 Bar 7 is centered horizontally at J, and spans vertically fro
+m 0 to 3263.28.[] 
+ []
+
+<09-GGPlot_files/figure-latex/fig2-13b-2.pdf, id=1070, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-13b-2.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-13b-2.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-13b-2.pdf  used on i
+nput line 2286.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2302--2302
+[]\T1/lmtt/m/n/10 Bar 1 is centered horizontally at D, and spans vertically fro
+m 0 to 4456.56.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2302--2302
+[]\T1/lmtt/m/n/10 Bar 2 is centered horizontally at E, and spans vertically fro
+m 0 to 6445.12.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2302--2302
+[]\T1/lmtt/m/n/10 Bar 3 is centered horizontally at F, and spans vertically fro
+m 0 to 7028.05.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2302--2302
+[]\T1/lmtt/m/n/10 Bar 4 is centered horizontally at G, and spans vertically fro
+m 0 to 8708.28.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2302--2302
+[]\T1/lmtt/m/n/10 Bar 5 is centered horizontally at H, and spans vertically fro
+m 0 to 7571.58.[] 
+ []
+
+[88 <./09-GGPlot_files/figure-latex/fig2-13b-1.pdf>]
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 2302--2302
+[]\T1/lmtt/m/n/10 Bar 6 is centered horizontally at I, and spans vertically fro
+m 0 to 5568.[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 2302--2302
+[]\T1/lmtt/m/n/10 Bar 7 is centered horizontally at J, and spans vertically fro
+m 0 to 3263.28.[] 
+ []
+
+<09-GGPlot_files/figure-latex/fig2-14a-1.pdf, id=1083, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-14a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-14a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-14a-1.pdf  used on i
+nput line 2318.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 2328--2328
+[]\T1/lmtt/m/n/10 It has y-axis \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 unemploy/pop\
+TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 with labels 0.02, 0.03, 0.04 and 0.05.[] 
+ []
+
+
+Underfull \vbox (badness 4060) has occurred while \output is active []
+
+[89 <./09-GGPlot_files/figure-latex/fig2-13b-2.pdf>]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2335.
+<09-GGPlot_files/figure-latex/fig2-15b-1.pdf, id=1096, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig2-15b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-15b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-15b-1.pdf  used on i
+nput line 2344.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 2354--2354
+[]\T1/lmtt/m/n/10 It has x-axis \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 unemploy/pop\
+TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 with labels 0.02, 0.03, 0.04 and 0.05.[] 
+ []
+
+
+Overfull \hbox (505.49753pt too wide) in paragraph at lines 2354--2354
+[]\T1/lmtt/m/n/10 There is a legend indicating colour is used to show year(date
+), ranging from 1967 represented by colour dark purplish blue to 2015 shown as 
+colour brilliant blue.[] 
+ []
+
+[90 <./09-GGPlot_files/figure-latex/fig2-14a-1.pdf>]
+<09-GGPlot_files/figure-latex/fig2-16a-1.pdf, id=1111, 289.08pt x 722.7pt>
+File: 09-GGPlot_files/figure-latex/fig2-16a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-16a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-16a-1.pdf  used on i
+nput line 2383.
+(pdftex.def)             Requested size: 220.00302pt x 550.00757pt.
+
+LaTeX Warning: Float too large for page by 23.952pt on input line 2385.
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 2407--2407
+[]\T1/lmtt/m/n/10 The chart is comprised of 7 panels containing sub-charts, arr
+anged vertically.[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 2407--2407
+[]\T1/lmtt/m/n/10 Each sub-chart has y-axis \TS1/lmtt/m/n/10 '' \T1/lmtt/m/n/10
+ with labels 0, 500, 1000, 1500, 2000 and 2500.[] 
+ []
+
+[91 <./09-GGPlot_files/figure-latex/fig2-15b-1.pdf>] [92 <./09-GGPlot_files/fig
+ure-latex/fig2-16a-1.pdf>]
+<09-GGPlot_files/figure-latex/fig2-16b-1.pdf, id=1134, 289.08pt x 722.7pt>
+File: 09-GGPlot_files/figure-latex/fig2-16b-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig2-16b-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig2-16b-1.pdf  used on i
+nput line 2430.
+(pdftex.def)             Requested size: 220.00302pt x 550.00757pt.
+
+LaTeX Warning: Float too large for page by 23.952pt on input line 2432.
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 2454--2454
+[]\T1/lmtt/m/n/10 The chart is comprised of 7 panels containing sub-charts, arr
+anged vertically.[] 
+ []
+
+
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2454--2454
+[]\T1/lmtt/m/n/10 Each sub-chart has y-axis \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 .
+.density..\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 with labels 0.0, 0.5, 1.0, 1.5 and
+ 2.0.[] 
+ []
+
+<09-GGPlot_files/figure-latex/p26a-1.pdf, id=1135, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/p26a-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/p26a-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/p26a-1.pdf  used on input
+ line 2468.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+[93] [94 <./09-GGPlot_files/figure-latex/fig2-16b-1.pdf>]
+<09-GGPlot_files/figure-latex/fig3-6-1.pdf, id=1151, 505.89pt x 361.35pt>
+File: 09-GGPlot_files/figure-latex/fig3-6-1.pdf Graphic file (type pdf)
+<use 09-GGPlot_files/figure-latex/fig3-6-1.pdf>
+Package pdftex.def Info: 09-GGPlot_files/figure-latex/fig3-6-1.pdf  used on inp
+ut line 2492.
+(pdftex.def)             Requested size: 345.00414pt x 246.43153pt.
+
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 2508--2508
+[]\T1/lmtt/m/n/10 The chart is comprised of 2 panels containing sub-charts, arr
+anged horizontally.[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 2508--2508
+[]\T1/lmtt/m/n/10 Each sub-chart has x-axis \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 d
+ispl\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 with labels 2, 3, 4, 5, 6 and 7.[] 
+ []
+
+
+Overfull \hbox (274.4982pt too wide) in paragraph at lines 2508--2508
+[]\T1/lmtt/m/n/10 Layer 2 of panel 1 is a \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 low
+ess\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 smoothed curve with 95% confidence interv
+als.Panel 2 represents data for year = 2008.[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 2508--2508
+[]\T1/lmtt/m/n/10 Layer 2 of panel 2 is a \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 low
+ess\TS1/lmtt/m/n/10 ' \T1/lmtt/m/n/10 smoothed curve with 95% confidence interv
+als.[] 
+ []
+
+[95 <./09-GGPlot_files/figure-latex/p26a-1.pdf>] [96 <./09-GGPlot_files/figure-
+latex/fig3-6-1.pdf>]
+Chapter 11.
+[97
+
+]
+Overfull \hbox (7.25917pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 98 \T1/lmr/m/sl/10 CHAPTER 11.  GETTING STARTED WITH THE WRITER 
+APPLICATION
+ []
+
+[98]
+Overfull \hbox (4605.73561pt too wide) in paragraph at lines 2601--2601
+[]\T1/lmtt/m/n/10 [1] "PATH=C:\\Program Files\\Python38\\Scripts\\;C:\\Program 
+Files\\Python38\\;C:\\Rtools\\bin;C:\\Program Files\\ImageMagick-7.0.7-Q16;C:\\
+WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32
+\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program F
+iles\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\MiKTeX 2.9\\mikt
+ex\\bin\\x64\\;C:\\Program Files (x86)\\Pandoc\\;c:\\batch;C:\\Program Files\\G
+it\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C
+:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Pandoc\\;C:\\Program Files (
+x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Inte
+l\\Intel(R) Management Engine Components\\DAL;C:\\Users\\ajgodfre\\AppData\\Loc
+al\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\ajgodfre\\AppData\\Local\
+\Programs\\Python\\Python310\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\
+WindowsApps;"[] 
+ []
+
+[99]
+Overfull \hbox (12.25917pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 100 \T1/lmr/m/sl/10 CHAPTER 11.  GETTING STARTED WITH THE WRITER
+ APPLICATION
+ []
+
+[100]
+Underfull \vbox (badness 2809) has occurred while \output is active []
+
+[101]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (12.25917pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 102 \T1/lmr/m/sl/10 CHAPTER 11.  GETTING STARTED WITH THE WRITER
+ APPLICATION
+ []
+
+[102] [103]
+Overfull \hbox (12.25917pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 104 \T1/lmr/m/sl/10 CHAPTER 11.  GETTING STARTED WITH THE WRITER
+ APPLICATION
+ []
+
+[104]
+Chapter 12.
+[105
+
+] [106
+
+]
+Chapter 13.
+[107] [108]
+Chapter 14.
+(BrailleR.bbl [109
+
+] [110
+
+] [111] [112] [113])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2814.
+[114]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2814.
+(BrailleR.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2814.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2814.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2814.
+ ) 
 Here is how much of TeX's memory you used:
- 14006 strings out of 492976
- 203479 string characters out of 3135982
- 311833 words of memory out of 3000000
- 17360 multiletter control sequences out of 15000+200000
- 77696 words of font info for 117 fonts, out of 3000000 for 9000
+ 14713 strings out of 492976
+ 220585 string characters out of 3135982
+ 321726 words of memory out of 3000000
+ 17791 multiletter control sequences out of 15000+200000
+ 80626 words of font info for 137 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,6n,38p,1721b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,6n,38p,1721b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm
+.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmro10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
+/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb>
+Output written on BrailleR.pdf (114 pages, 9896381 bytes).
+PDF statistics:
+ 1629 PDF objects out of 1728 (max. 8388607)
+ 398 named destinations out of 1000 (max. 500000)
+ 15061 words of extra memory for PDF output out of 17280 (max. 10000000)
 
-!  ==> Fatal error occurred, no output PDF file produced!

@@ -151,7 +151,7 @@ Let's see an example using the `airquality` data.
 Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function's value to a blind user. 
 
 A simple linear regression model might be created and investigated using:
-```{r AirQuality.lm, fig.height=9, fig.width=9, fig.cap="Diagnostic plots for the simple linear regression model."}
+```{r AirQuality_lm, fig.height=9, fig.width=9, fig.cap="Diagnostic plots for the simple linear regression model."}
 data(airquality)
 MyModel = lm(Ozone~Wind, data=airquality)
 summary(MyModel)

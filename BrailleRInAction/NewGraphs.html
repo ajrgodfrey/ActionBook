@@ -24,7 +24,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2021-09-26" />
+<meta name="date" content="2022-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -281,18 +281,16 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="11" data-path="WriteR.html"><a href="WriteR.html"><i class="fa fa-check"></i><b>11</b> Getting started with the WriteR application</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-the-required-software-windows-users-only"><i class="fa fa-check"></i><b>11.1</b> Getting the required software (Windows users only)</a>
-<ul>
-<li class="chapter" data-level="11.1.1" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc"><i class="fa fa-check"></i><b>11.1.1</b> Installing Pandoc</a></li>
-<li class="chapter" data-level="11.1.2" data-path="WriteR.html"><a href="WriteR.html#installing-python"><i class="fa fa-check"></i><b>11.1.2</b> Installing Python</a></li>
-</ul></li>
-<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.2</b> Other operating systems</a></li>
-<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.3</b> Checking your system is ready</a></li>
-<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.4</b> Opening WriteR from BrailleR</a></li>
-<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.5</b> What can I do with WriteR?</a></li>
-<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.6</b> Our first HTML file</a></li>
-<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.7</b> Some hints for writing Rmarkdown documents</a></li>
-<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.8</b> BrailleR commands used in this chapter</a></li>
+<li class="chapter" data-level="11.1" data-path="WriteR.html"><a href="WriteR.html#getting-a-stand-alone-version-of-writer"><i class="fa fa-check"></i><b>11.1</b> Getting a stand alone version of WriteR</a></li>
+<li class="chapter" data-level="11.2" data-path="WriteR.html"><a href="WriteR.html#getting-the-right-version-of-python-windows-users-only"><i class="fa fa-check"></i><b>11.2</b> Getting the right version of Python (Windows users only)</a></li>
+<li class="chapter" data-level="11.3" data-path="WriteR.html"><a href="WriteR.html#installing-pandoc-windows-users"><i class="fa fa-check"></i><b>11.3</b> Installing Pandoc (Windows users)</a></li>
+<li class="chapter" data-level="11.4" data-path="WriteR.html"><a href="WriteR.html#other-operating-systems"><i class="fa fa-check"></i><b>11.4</b> Other operating systems</a></li>
+<li class="chapter" data-level="11.5" data-path="WriteR.html"><a href="WriteR.html#checking-your-system-is-ready"><i class="fa fa-check"></i><b>11.5</b> Checking your system is ready</a></li>
+<li class="chapter" data-level="11.6" data-path="WriteR.html"><a href="WriteR.html#opening-writer-from-brailler"><i class="fa fa-check"></i><b>11.6</b> Opening WriteR from BrailleR</a></li>
+<li class="chapter" data-level="11.7" data-path="WriteR.html"><a href="WriteR.html#what-can-i-do-with-writer"><i class="fa fa-check"></i><b>11.7</b> What can I do with WriteR?</a></li>
+<li class="chapter" data-level="11.8" data-path="WriteR.html"><a href="WriteR.html#our-first-html-file"><i class="fa fa-check"></i><b>11.8</b> Our first HTML file</a></li>
+<li class="chapter" data-level="11.9" data-path="WriteR.html"><a href="WriteR.html#some-hints-for-writing-rmarkdown-documents"><i class="fa fa-check"></i><b>11.9</b> Some hints for writing Rmarkdown documents</a></li>
+<li class="chapter" data-level="11.10" data-path="WriteR.html"><a href="WriteR.html#brailler-commands-used-in-this-chapter-6"><i class="fa fa-check"></i><b>11.10</b> BrailleR commands used in this chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="AccessibleGraphs.html"><a href="AccessibleGraphs.html"><i class="fa fa-check"></i><b>12</b> Making Accessible Graphs</a></li>
 <li class="chapter" data-level="13" data-path="LookingAhead.html"><a href="LookingAhead.html"><i class="fa fa-check"></i><b>13</b> The Work Ahead</a></li>
@@ -329,14 +327,14 @@ div.csl-indent {
 </div>
 <div id="background" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Background</h2>
-<p>In Chapter <a href="VI.html#VI">4</a>, we saw creation of a histogram using the <code>hist()</code> command. The <code>hist()</code> command used for many years is found in the <code>graphics</code> package and has its own <code>plot()</code> command called <code>plot.histogram()</code> as well. This <code>plot()</code> command is actually a family of commands that all start with<code>plot.*()</code> where the star is replaced by the type of object that is being plotted. We use this <code>plot()</code> command all the time to give us plots for different reasons. When we fit a regression model, we need to create various plots of the residuals and it is done using <code>plot()</code> which actually employs <code>plot.lm()</code> in the background to do the work. The family of commands are referred to as “methods” and the types of objects being worked on are called “classes.” We need a little more background before diving into the various new commands BrailleR offers.</p>
+<p>In Chapter <a href="VI.html#VI">4</a>, we saw creation of a histogram using the <code>hist()</code> command. The <code>hist()</code> command used for many years is found in the <code>graphics</code> package and has its own <code>plot()</code> command called <code>plot.histogram()</code> as well. This <code>plot()</code> command is actually a family of commands that all start with<code>plot.*()</code> where the star is replaced by the type of object that is being plotted. We use this <code>plot()</code> command all the time to give us plots for different reasons. When we fit a regression model, we need to create various plots of the residuals and it is done using <code>plot()</code> which actually employs <code>plot.lm()</code> in the background to do the work. The family of commands are referred to as “methods” and the types of objects being worked on are called “classes”. We need a little more background before diving into the various new commands BrailleR offers.</p>
 <div id="methods-and-classes" class="section level3" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Methods and classes</h3>
 <p>Development of the <code>BrailleR</code> Package and discussion of its opportunities is totally reliant on two of the structures used in the S language.
-These are “methods” and “classes.”
-In brief, a set of commands that perform a similar task on a selection of different classes is a “method.”</p>
+These are “methods” and “classes”.
+In brief, a set of commands that perform a similar task on a selection of different classes is a “method”.</p>
 <p>Methods and classes are important ideas because we can write a method function that says how we want an object with a stated class to be processed. Methods need classes, and we wouldn’t need classes if we didn’t hope to use methods.</p>
-<p>When we create a histogram with the <code>hist()</code> command we can store an object of class “histogram,” and when we create a regression model using <code>lm()</code> we create an object of class “lm.”
+<p>When we create a histogram with the <code>hist()</code> command we can store an object of class “histogram”, and when we create a regression model using <code>lm()</code> we create an object of class “lm”.
 The <code>hist()</code> command does create an object with the class attribute set to <code>histogram</code>, but only one specific function exists for this class, that being the <code>plot.histogram()</code> function to plot the histogram.
 Sighted users don’t need an explicit print function for a histogram, nor does this summary graph need further summarisation.</p>
 <p>Tasks that warrant a method being written for each of a variety of classes include:</p>
@@ -351,12 +349,12 @@ If we issue the command <code>print(x)</code>, and we know that <code>x</code> i
 <p>Many R commands do lead to an object being created with a class attribute being explicitly stated, sometimes it is more implicit, but all too commonly no class attribute is established at all. The vast majority of statistical models set a class for the model being stored. There are some quite uninformative classes set as well.
 Assigning a class to an object means that we can write functions that relate to all objects of a particular class using a general approach. A class therefore needs to be defined for a set of objects that are going to be homogeneous in their structure.</p>
 <p>Data is usually stored with a specified class attribute, such as a time series with class “ts” for example. We will generate different results from employing methods if we have correctly specified the data using a class attribute. We can also modify a data object’s class, using commands like <code>as.tx()</code> to turn a vector of numbers into a time series if we need to do so to get the desired outcome.</p>
-<p>A data.frame is itself of class “data.frame,” a matrix is of class “matrix,” but rather confusingly, a vector is not of class “vector.” Vectors are assigned class attributes that depend on the type of data being stored, being “integer,” “numeric,” “logical,” “character,” etc.</p>
+<p>A data.frame is itself of class “data.frame”, a matrix is of class “matrix”, but rather confusingly, a vector is not of class “vector”. Vectors are assigned class attributes that depend on the type of data being stored, being “integer”, “numeric”, “logical”, “character”, etc.</p>
 <p>As previously stated, the usefulness of methods is dependent on the use of classes being employed when objects are created.
 The original <code>hist()</code> command does specify the resulting histogram to have a class, but there is no explicit <code>print.histogram()</code> method at this time.
 In addition, not all objects are given a class so the default method must be constructed carefully.
-There are actually only a few basic data structures to work with, the easiest and most common of which is called a “list.”</p>
-<p>The results of applying the <code>print()</code> command to a histogram shown in Chapter <a href="VI.html#VI">4</a>, couldn’t use the non-existent <code>print.histogram()</code> function so it used the <code>print.default()</code> method instead. The content of the object is stored as a “list,” but note the last element of the list that states the class of the object. Adding this extra attribute to the data object is a minor matter that has very powerful consequences!</p>
+There are actually only a few basic data structures to work with, the easiest and most common of which is called a “list”.</p>
+<p>The results of applying the <code>print()</code> command to a histogram shown in Chapter <a href="VI.html#VI">4</a>, couldn’t use the non-existent <code>print.histogram()</code> function so it used the <code>print.default()</code> method instead. The content of the object is stored as a “list”, but note the last element of the list that states the class of the object. Adding this extra attribute to the data object is a minor matter that has very powerful consequences!</p>
 </div>
 <div id="who-cares-about-classes-anyway" class="section level3" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Who cares about classes anyway?</h3>
@@ -385,19 +383,18 @@ Figure 5.1: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[16]  3.5
+ [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
- [1]   1   0   3  13  45  85 163 176 169 173 110  37  21   3   1
+ [1]   9  17  49  85 124 183 203 158 103  50  14   3   2
 
 $density
- [1] 0.002 0.000 0.006 0.026 0.090 0.170 0.326 0.352 0.338 0.346 0.220 0.074
-[13] 0.042 0.006 0.002
+ [1] 0.018 0.034 0.098 0.170 0.248 0.366 0.406 0.316 0.206 0.100 0.028 0.006
+[13] 0.004
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[13]  2.25  2.75  3.25
+ [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75
+[13]  3.25
 
 $xname
 [1] &quot;x&quot;
@@ -418,19 +415,18 @@ Figure 5.2: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
-[16]  3.5
+ [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
 
 $counts
- [1]   1   0   3  13  45  85 163 176 169 173 110  37  21   3   1
+ [1]   9  17  49  85 124 183 203 158 103  50  14   3   2
 
 $density
- [1] 0.002 0.000 0.006 0.026 0.090 0.170 0.326 0.352 0.338 0.346 0.220 0.074
-[13] 0.042 0.006 0.002
+ [1] 0.018 0.034 0.098 0.170 0.248 0.366 0.406 0.316 0.206 0.100 0.028 0.006
+[13] 0.004
 
 $mids
- [1] -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75
-[13]  2.25  2.75  3.25
+ [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75
+[13]  3.25
 
 $xname
 [1] &quot;x&quot;
@@ -459,21 +455,21 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 15
+[1] 13
 
 $par
 $par$xaxp
-[1] -4  2  3
+[1] -3  3  6
 
 $par$yaxp
-[1]   0 150   3
+[1]   0 200   4
 
 
 $xTicks
-[1] -4 -2  0  2
+[1] -3 -2 -1  0  1  2  3
 
 $yTicks
-[1]   0  50 100 150
+[1]   0  50 100 150 200
 
 attr(,&quot;class&quot;)
 [1] &quot;Augmented&quot; &quot;histogram&quot;
@@ -481,26 +477,24 @@ attr(,&quot;class&quot;)
 &gt; VI(MyHist)
 This is a histogram, with the title: Histogram of x
 &quot;x&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -4, -2, 0, and 2 
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, and 150 
-It has 15 bins with equal widths, starting at -4 and ending at 3.5 .
+Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
 The mids and counts for the bins are:
-mid = -3.75  count = 1 
-mid = -3.25  count = 0 
-mid = -2.75  count = 3 
-mid = -2.25  count = 13 
-mid = -1.75  count = 45 
+mid = -2.75  count = 9 
+mid = -2.25  count = 17 
+mid = -1.75  count = 49 
 mid = -1.25  count = 85 
-mid = -0.75  count = 163 
-mid = -0.25  count = 176 
-mid = 0.25  count = 169 
-mid = 0.75  count = 173 
-mid = 1.25  count = 110 
-mid = 1.75  count = 37 
-mid = 2.25  count = 21 
+mid = -0.75  count = 124 
+mid = -0.25  count = 183 
+mid = 0.25  count = 203 
+mid = 0.75  count = 158 
+mid = 1.25  count = 103 
+mid = 1.75  count = 50 
+mid = 2.25  count = 14 
 mid = 2.75  count = 3 
-mid = 3.25  count = 1</code></pre>
+mid = 3.25  count = 2</code></pre>
 <p>When you first issued the <code>library(BrailleR)</code> command, there were several warnings printed out. One of them told you that the <code>hist()</code> function from the <code>graphics</code> package was masked by the <code>BrailleR</code> version. This means that when you use <code>hist()</code>, it is the <code>BrailleR</code> version being used.</p>
 <p>the <code>BrailleR</code> package includes <code>hist()</code> and <code>boxplot()</code> functions that pass the details of the command on to the <code>graphics</code> package functions of the same name, and then add any additional content required that will improve the ability to describe the visual graphic produced in text. In most cases, the graph producing functions pass on arguments such as <code>main</code>, <code>xlab</code>, or <code>ylab</code> (for main title and axis labels) to the relevant plotting commands without storing these elements in the object that is created. These elements are stored as graphical parameters and can be recalled using <code>par()</code> commands.</p>
 </div>
@@ -535,22 +529,16 @@ Figure 5.3: The six graphs generated by the <code>example(ScatterPlot)</code>
 <pre><code>
 &gt; par(op)
 
-&gt; detach(airquality)
-
-&gt; rm(test1)
-
-&gt; rm(test2)
-
-&gt; rm(op)</code></pre>
+&gt; detach(airquality)</code></pre>
 <div id="whats-in-the-scatter-plot" class="section level3" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> What’s in the scatter plot?</h3>
 <p>Well first we might ask what is in the graph window to be confident that a plot was actually made. The <code>WTF()</code> command was put in <code>BrailleR</code> to address this problem. For the record, WTF is the acronym for “What’s this figure?” We’ll see it’s use in the next figure. It should tell us what appears in the graph window for things like axis lables and titles.</p>
 <p>The current solution offered by the <code>BrailleR</code> package for helping describe the points plotted in a scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="NewGraphs.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
-<span id="cb34-2"><a href="NewGraphs.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Wind, Ozone, <span class="at">pch =</span> <span class="dv">4</span>)</span>
-<span id="cb34-3"><a href="NewGraphs.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">min</span>(Wind)<span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Wind)<span class="sc">-</span><span class="fu">min</span>(Wind)), <span class="at">col=</span><span class="dv">6</span>)</span>
-<span id="cb34-4"><a href="NewGraphs.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">-</span><span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)), <span class="at">col=</span><span class="dv">6</span>)</span>
-<span id="cb34-5"><a href="NewGraphs.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">WTF</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="NewGraphs.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
+<span id="cb33-2"><a href="NewGraphs.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Wind, Ozone, <span class="at">pch =</span> <span class="dv">4</span>)</span>
+<span id="cb33-3"><a href="NewGraphs.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">min</span>(Wind)<span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Wind)<span class="sc">-</span><span class="fu">min</span>(Wind)), <span class="at">col=</span><span class="dv">6</span>)</span>
+<span id="cb33-4"><a href="NewGraphs.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">-</span><span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)), <span class="at">col=</span><span class="dv">6</span>)</span>
+<span id="cb33-5"><a href="NewGraphs.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">WTF</span>()</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:addGridLines"></span>
 <img src="04b-NewGraphCommands_files/figure-html/addGridLines-1.png" alt="Scatter plot of Ozone versus Wind with grid lines added." width="576" />
 <p class="caption">
@@ -561,18 +549,18 @@ Figure 5.4: Scatter plot of Ozone versus Wind with grid lines added.
 &quot;Wind&quot; as the x axis label;
 &quot;Ozone&quot; as the y axis label;
 There are 116 points marked on this graph.</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="NewGraphs.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="NewGraphs.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
 <p>Counting the number of points falling into each cell of the graphic and presenting the results as a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a <span class="math inline">\(4\times4\)</span> grid of sixteen cells.
 Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the last scatter plot are counted by the <code>WhereXY()</code> command as follows:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="NewGraphs.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
-<span id="cb37-2"><a href="NewGraphs.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">WhereXY</span>(Wind, Ozone, <span class="at">grid =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="NewGraphs.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
+<span id="cb36-2"><a href="NewGraphs.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">WhereXY</span>(Wind, Ozone, <span class="at">grid =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
 <pre><code>     1  2  3 4 Sum
 4    2  0  0 0   2
 3    7  5  0 0  12
 2    9 15  6 0  30
 1    1 39 27 5  72
 Sum 19 59 33 5 116</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="NewGraphs.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="NewGraphs.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
 <p>In situations where the user is confident that the marginal distributions of either or both of the variables being plotted are normal, the grid lines should be spaced accordingly.</p>
 </div>
 </div>
