@@ -27,8 +27,8 @@ Sys.which("Python")
 ```
 
 ```
-                              Python 
-"C:\\PROGRA~1\\Python38\\Python.exe" 
+                                                               Python 
+"C:\\Users\\ajgodfre\\AppData\\Local\\MICROS~1\\WINDOW~1\\Python.exe" 
 ```
 
 The output above shows you that I have Python 3 installed on my computer, and that it can be found in the folder I know is the default location. You can use this command later to check your progress, but there are other ways to check your system that return more useful detail, but for the moment the `Sys.which()` command above issufficient.  What it does not show you is whether the installation of Python is suited for a 64 bit machine, or is the more universal 32 bit installation. We really ought to have an exact match between the version of Python and the version of R being used.
@@ -53,8 +53,8 @@ Sys.which("python")
 ```
 
 ```
-                              python 
-"C:\\PROGRA~1\\Python38\\python.exe" 
+                                                               python 
+"C:\\Users\\ajgodfre\\AppData\\Local\\MICROS~1\\WINDOW~1\\python.exe" 
 ```
 
 ```r
@@ -62,7 +62,7 @@ shell("path", intern=TRUE)
 ```
 
 ```
-[1] "PATH=C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Program Files\\Python310\\Scripts\\;C:\\Program Files\\Python310\\;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\MiKTeX\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Pandoc\\;C:\\Program Files (x86)\\dotnet\\;C:\\Program Files\\dotnet\\;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps;"
+[1] "PATH=C:\\rtools42/x86_64-w64-mingw32.static.posix/bin;C:\\rtools42/usr/bin;C:\\rtools42/x86_64-w64-mingw32.static.posix/bin;C:\\rtools42/usr/bin;C:\\rtools42/x86_64-w64-mingw32.static.posix/bin;C:\\rtools42/usr/bin;C:\\Program Files\\Quarto\\bin;C:\\Program Files\\Python38\\Scripts\\;C:\\Program Files\\Python38\\;C:\\Program Files\\Python310\\Scripts\\;C:\\Program Files\\Python310\\;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files\\MiKTeX\\miktex\\bin\\x64\\;C:\\batch;C:\\Program Files\\Pandoc\\;C:\\Program Files (x86)\\dotnet\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Git\\cmd;C:\\Users\\ajgodfre\\AppData\\Local\\Microsoft\\WindowsApps/"
 ```
 
 This is a much stronger test than was done earlier. You can see the folders that Windows will search through to find the tools you are using all the time. The folder for Python needs to be listed there somewhere.
@@ -125,12 +125,12 @@ TestWX()
 ```
 
 ```
-Your system is using Python 3.8.0
+Your system is using Python 3.10.8
 ```
 
 ```
-Python can see the necessary wx module.
-You are ready to use WriteR.
+Python cannot see the necessary wx module.
+You need to get that fixed.
 ```
 
 N.B. The command will return more output on your system if you test the function in an interactive setting. Do that now.

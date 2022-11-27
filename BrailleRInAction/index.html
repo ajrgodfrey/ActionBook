@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="BrailleR in Action" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
   
   <meta property="og:description" content="Getting up and running with the BrailleR package" />
   <meta name="github-repo" content="ajrgodfrey/ActionBook" />
@@ -24,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2022-03-09" />
+<meta name="date" content="2022-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 
 <link rel="next" href="introduction.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -93,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -106,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -318,10 +317,10 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">BrailleR in Action</h1>
 <p class="author"><em>A. Jonathan R. Godfrey</em></p>
-<p class="date"><em>2022-03-09</em></p>
+<p class="date"><em>2022-11-27</em></p>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>If blind students are to truly gain access to statistical analyses, they will need to be able to successfully complete a course in statistics at university level. To do this, they must learn how the graphical techniques used in the sighted world look and are used. Generation of tactile images can show blind students what a particular graph does in a general sense, but greater understanding will come from generating these graphs as part of an analysis — in the same way it does for sighted students.</p>
 <p>While sighted students can make use of a number of graphical user interfaces (GUIs), blind students are restricted to use of the command-line mode of operation or typing out an R script in full. One key benefit of the GUI mode of working is the ability to quickly generate basic numerical and graphical analyses. Blind students need to gain the same information as their sighted peers without expending too much additional time and energy. The <code>BrailleR</code> package aims to bridge this gap by delivering the range of analyses commonly found in introductory courses via a reduced set of commands.</p>
 <p>Once blind students have completed their first course in statistics, they may embark on research at a university, or head out into industry to apply their knowledge. Irrespective of the direction they choose, they will need certainty in being able to independently create graphs for the sighted readers of their work.
@@ -329,13 +328,13 @@ Creation of tactile images that provide the same representation of the images to
 <p>In summary, this book presents the work included in the <code>BrailleR</code> package that will assist blind students successfully complete an introductory course in statistics when other software options fail them. Many of the functions support workflows that improve the efficiency of blind users at all levels of experience.</p>
 <p>I’ve tried a few ways to help get blind people using the BrailleR package and needed a place to combine the efforts easily. I don’t yet know if this e-book will turn into anything but a few webpages, but let’s see shall we?</p>
 <p>Jonathan Godfrey</p>
-<div id="citation-details" class="section level3 unnumbered">
-<h3>Citation details</h3>
+<div id="citation-details" class="section level3 unnumbered hasAnchor">
+<h3>Citation details<a href="index.html#citation-details" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Please refer interested parties to the online edition of this work at <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/" class="uri">https://R-Resources.massey.ac.nz/BrailleRInAction/</a></p>
 <p>When citing this work, please use the title, author, and date information on this page. The online version has ISBN978-0-473-41495-5 and is preferred for citation over other formats. The epub version has ISBN 978-0-473-41493-1 and pdf version has ISBN 978-0-473-41494-8; these fixed formats were created in October 2017.</p>
 </div>
-<div id="copyright-information" class="section level3 unnumbered">
-<h3>Copyright information</h3>
+<div id="copyright-information" class="section level3 unnumbered hasAnchor">
+<h3>Copyright information<a href="index.html#copyright-information" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" class="uri">http://creativecommons.org/licenses/by-nc-nd/4.0/</a> or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.</p>
 
 </div>
@@ -406,7 +405,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

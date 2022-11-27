@@ -95,18 +95,19 @@ In this example, we see that use of the original `hist()` from the `graphics` pa
 
 > MyHist
 $breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+[16]  4.0
 
 $counts
- [1]   9  17  49  85 124 183 203 158 103  50  14   3   2
+ [1]   1   5  18  29  98 152 196 198 152  91  43  10   4   1   2
 
 $density
- [1] 0.018 0.034 0.098 0.170 0.248 0.366 0.406 0.316 0.206 0.100 0.028 0.006
-[13] 0.004
+ [1] 0.002 0.010 0.036 0.058 0.196 0.304 0.392 0.396 0.304 0.182 0.086 0.020
+[13] 0.008 0.002 0.004
 
 $mids
- [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75
-[13]  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
+[13]  2.75  3.25  3.75
 
 $xname
 [1] "x"
@@ -129,18 +130,19 @@ attr(,"class")
 
 > MyHist
 $breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+ [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+[16]  4.0
 
 $counts
- [1]   9  17  49  85 124 183 203 158 103  50  14   3   2
+ [1]   1   5  18  29  98 152 196 198 152  91  43  10   4   1   2
 
 $density
- [1] 0.018 0.034 0.098 0.170 0.248 0.366 0.406 0.316 0.206 0.100 0.028 0.006
-[13] 0.004
+ [1] 0.002 0.010 0.036 0.058 0.196 0.304 0.392 0.396 0.304 0.182 0.086 0.020
+[13] 0.008 0.002 0.004
 
 $mids
- [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75
-[13]  3.25
+ [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
+[13]  2.75  3.25  3.75
 
 $xname
 [1] "x"
@@ -169,18 +171,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 13
+[1] 15
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -2  4  3
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -2  0  2  4
 
 $yTicks
 [1]   0  50 100 150 200
@@ -191,24 +193,26 @@ attr(,"class")
 > VI(MyHist)
 This is a histogram, with the title: Histogram of x
 "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -2, 0, 2, and 4 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
+It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
 The mids and counts for the bins are:
-mid = -2.75  count = 9 
-mid = -2.25  count = 17 
-mid = -1.75  count = 49 
-mid = -1.25  count = 85 
-mid = -0.75  count = 124 
-mid = -0.25  count = 183 
-mid = 0.25  count = 203 
-mid = 0.75  count = 158 
-mid = 1.25  count = 103 
-mid = 1.75  count = 50 
-mid = 2.25  count = 14 
-mid = 2.75  count = 3 
-mid = 3.25  count = 2
+mid = -3.25  count = 1 
+mid = -2.75  count = 5 
+mid = -2.25  count = 18 
+mid = -1.75  count = 29 
+mid = -1.25  count = 98 
+mid = -0.75  count = 152 
+mid = -0.25  count = 196 
+mid = 0.25  count = 198 
+mid = 0.75  count = 152 
+mid = 1.25  count = 91 
+mid = 1.75  count = 43 
+mid = 2.25  count = 10 
+mid = 2.75  count = 4 
+mid = 3.25  count = 1 
+mid = 3.75  count = 2
 ```
 
 When you first issued the `library(BrailleR)` command, there were several warnings printed out. One of them told you that the `hist()` function from the `graphics` package was masked by the `BrailleR` version. This means that when you use `hist()`, it is the `BrailleR` version being used.
@@ -228,12 +232,37 @@ The example given on the help page for `ScatterPlot()` proves that the plots gen
 
 > op = par(mfcol = c(3, 2))
 
-> plot(Wind, Ozone, pch = 4)
+> plot(x = Wind, y = Ozone, pch = 4)
 ```
 
 ```
 
-> test1 = ScatterPlot(Wind, Ozone, pch = 4)
+> test1 = ScatterPlot(x = Wind, y = Ozone, pch = 4, 
++     base = TRUE)
+```
+
+```
+Warning in plot.window(...): "base" is not a graphical parameter
+```
+
+```
+Warning in plot.xy(xy, type, ...): "base" is not a graphical parameter
+```
+
+```
+Warning in axis(side = side, at = at, labels = labels, ...): "base" is not a
+graphical parameter
+
+Warning in axis(side = side, at = at, labels = labels, ...): "base" is not a
+graphical parameter
+```
+
+```
+Warning in box(...): "base" is not a graphical parameter
+```
+
+```
+Warning in title(...): "base" is not a graphical parameter
 ```
 
 ```
@@ -243,14 +272,39 @@ The example given on the help page for `ScatterPlot()` proves that the plots gen
 
 ```
 
-> plot(Wind, Ozone)
+> plot(x = Wind, y = Ozone)
 ```
 
 ```
 
 > abline(coef(lm(Ozone ~ Wind)), col = 4)
 
-> test2 = FittedLinePlot(Wind, Ozone, line.col = 4)
+> test2 = FittedLinePlot(x = Wind, y = Ozone, line.col = 4, 
++     base = TRUE)
+```
+
+```
+Warning in plot.window(...): "base" is not a graphical parameter
+```
+
+```
+Warning in plot.xy(xy, type, ...): "base" is not a graphical parameter
+```
+
+```
+Warning in axis(side = side, at = at, labels = labels, ...): "base" is not a
+graphical parameter
+
+Warning in axis(side = side, at = at, labels = labels, ...): "base" is not a
+graphical parameter
+```
+
+```
+Warning in box(...): "base" is not a graphical parameter
+```
+
+```
+Warning in title(...): "base" is not a graphical parameter
 ```
 
 ```

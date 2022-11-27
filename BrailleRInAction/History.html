@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 History of the BrailleR Project | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 History of the BrailleR Project | BrailleR in Action" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
   
   <meta property="og:description" content="Getting up and running with the BrailleR package" />
   <meta name="github-repo" content="ajrgodfrey/ActionBook" />
@@ -24,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2022-03-09" />
+<meta name="date" content="2022-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="introduction.html"/>
 <link rel="next" href="GettingStarted.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -93,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -106,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -315,26 +314,26 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="History" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> History of the BrailleR Project</h1>
+<div id="History" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> History of the BrailleR Project<a href="History.html#History" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>I am one of only two blind people in the world today who gained employment as full-time lecturers of statistics, that is, teaching statistics classes and doing research in theoretical matters as against applying statistical techniques. For years, I tried to keep my blindness separate from my research but I took some opportunities that came my way and heeded the advice of some colleagues to put more energy into improving the ability of blind students around the world to have greater access to statistics courses and statistical understanding. This document shows you a bit more insight into how I (with the help of some useful collaborations) got the BrailleR package to where it is now.</p>
-<div id="my-background" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> My background</h2>
+<div id="my-background" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> My background<a href="History.html#my-background" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>My adult life has been centred around Massey University, initially as an extramural student and then studying on campus. I have undergraduate degrees in Finance and Operations Research, a Master’s degree in Operations Research and a PhD in Statistics. I was a Graduate Assistant from 1998 to 2002, and then Assistant Lecturer from January 2003 to June 2004 when I became a Lecturer in Statistics. I was promoted to Senior Lecturer in late 2014.</p>
 <p>While I don’t find it important, I do get asked about the condition that caused my blindness. It is Retinitis Pigmentosa. I do have some light perception, and can make use of it in familiar surroundings for orientation but it has no value to me for reading anything at all. I chose to work with screen reading software when I started university and obtained my first computer because my residual vision at the time was limiting my reading speed. I have therefore operated a computer as a totally blind user throughout my adult life.</p>
 <p>I did not learn braille until after I completed my PhD. This might seem strange, but there was very little material in a suitable digital format for me to read throughout my student life. Things have changed and I now spend a lot more time reading material and doing programming where the accuracy of braille is absolutely necessary. Braille has now become a very important part of my working life and I have a braille display connected to my computer most of the time.</p>
 </div>
-<div id="getting-the-brailler-project-started" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Getting the BrailleR Project started</h2>
+<div id="getting-the-brailler-project-started" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Getting the BrailleR Project started<a href="History.html#getting-the-brailler-project-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I used to keep my research interests separate from my blindness, but I was regularly called upon to discuss how a blind person could study and teach Statistics by many people within New Zealand and occasionally from overseas. In 2009, I attended the Workshop on E-Inclusion in Mathematics and Science (WEIMS09) where I met other people interested in improving the success rates of blind students in the mathematical sciences. My paper was about accessibility of statistics courses, but I did point out the usefulness of R in preference to other tools I had used to that point in time <span class="citation">(<a href="#ref-Godfrey2009AccessiblePaper" role="doc-biblioref">Godfrey 2009</a>)</span>.</p>
 <p>I discovered that there is room for me to take a leading role in the development of ideas that can help other blind people learn about statistical concepts. I have been invited to all six Summer University events run by the organizers of the International Conference on Computers Helping People (ICCHP), but have been unable to attend twice due to the high cost of transporting me to Europe. I have delivered an introductory workshop on using R at four of these events <span class="citation">(<a href="#ref-Godfrey2011SU-R" role="doc-biblioref">Godfrey 2011</a>, <a href="#ref-Godfrey2013SU-R" role="doc-biblioref">2013a</a>, <a href="#ref-Godfrey2014SU-R" role="doc-biblioref">2014b</a>; and <a href="#ref-Godfrey2016SU-R" role="doc-biblioref">Godfrey 2016b</a>)</span>.</p>
-<p>Having observed the attendees at the 2011 Summer University as they came to grips with R, I knew there was more I could do to help them and other blind students. I started work on the BrailleR package <span class="citation">(<a href="#ref-Rpkg-BrailleR" role="doc-biblioref">Godfrey et al. 2021</a>)</span> in the second half of 2011 and first proposed it could work for blind users at the Digitisation and E-Inclusion in Mathematics and Science (DEIMS12) workshop held in Tokyo during February 2012 <span class="citation">(<a href="#ref-Godfrey2012BrailleRPaper" role="doc-biblioref">Godfrey 2012b</a>)</span>.</p>
+<p>Having observed the attendees at the 2011 Summer University as they came to grips with R, I knew there was more I could do to help them and other blind students. I started work on the BrailleR package <span class="citation">(<a href="#ref-Rpkg-BrailleR" role="doc-biblioref">Godfrey et al. 2022</a>)</span> in the second half of 2011 and first proposed it could work for blind users at the Digitisation and E-Inclusion in Mathematics and Science (DEIMS12) workshop held in Tokyo during February 2012 <span class="citation">(<a href="#ref-Godfrey2012BrailleRPaper" role="doc-biblioref">Godfrey 2012b</a>)</span>.</p>
 <p>I wasn’t to know the value of another talk I gave at DEIMS12 for another two years; this second talk and associated conference paper focused on how I was using Sweave to create accessible statistical reports for me and more beautifully formatted ones for my statistical consulting clients.
 <span class="citation">(<a href="#ref-Godfrey2012PuttingPaper" role="doc-biblioref">Godfrey 2012a</a>)</span>. I now know that the groundwork I had done contributed to my desire to present my workflow as a workshop at the 5<sup>th</sup> Summer University in 2014 <span class="citation">(<a href="#ref-Godfrey2014SU-Sweave" role="doc-biblioref">Godfrey 2014d</a>)</span>.
 It also stood me in good stead for the work that followed on the <code>BrailleR</code> package as it developed in late 2014 and early 2015.</p>
 </div>
-<div id="the-starting-point-example" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> The starting point example</h2>
+<div id="the-starting-point-example" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> The starting point example<a href="History.html#the-starting-point-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The basic graph that has been used for almost every presentation of the <code>BrailleR</code> package is a histogram. There is a more detailed example, but the following commands create a set of numbers that can be kept for further processing once the graph has been created. It is the re-processing of these numbers that leads to the text description that follows.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="History.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BrailleR)</span></code></pre></div>
 <pre><code>## The BrailleR.View,  option is set to FALSE.</code></pre>
@@ -359,29 +358,29 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </div>
 <pre><code>## This is a histogram, with the title: Histogram of x
 ## &quot;x&quot; is marked on the x-axis.
-## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, 3, and 4 
+## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
 ## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-## It has 14 bins with equal widths, starting at -3 and ending at 4 .
+## It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
 ## The mids and counts for the bins are:
-## mid = -2.75  count = 9 
-## mid = -2.25  count = 9 
+## mid = -3.25  count = 4 
+## mid = -2.75  count = 4 
+## mid = -2.25  count = 18 
 ## mid = -1.75  count = 44 
-## mid = -1.25  count = 89 
-## mid = -0.75  count = 138 
-## mid = -0.25  count = 190 
-## mid = 0.25  count = 200 
-## mid = 0.75  count = 153 
-## mid = 1.25  count = 95 
-## mid = 1.75  count = 47 
-## mid = 2.25  count = 19 
-## mid = 2.75  count = 6 
-## mid = 3.25  count = 0 
-## mid = 3.75  count = 1</code></pre>
+## mid = -1.25  count = 94 
+## mid = -0.75  count = 143 
+## mid = -0.25  count = 198 
+## mid = 0.25  count = 183 
+## mid = 0.75  count = 154 
+## mid = 1.25  count = 91 
+## mid = 1.75  count = 46 
+## mid = 2.25  count = 15 
+## mid = 2.75  count = 4 
+## mid = 3.25  count = 2</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
-<div id="why-just-plain-text" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Why just plain text?</h2>
+<div id="why-just-plain-text" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Why just plain text?<a href="History.html#why-just-plain-text" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The first initiative of <code>BrailleR</code> was to turn information presented in a visual medium into a medium that is simple to work with, efficient, and complementary to the skill set of as wide a group of blind people as possible. With this in mind, a plain text solution for gaining access to visual information was favoured above tactile images as there is no need for any additional adaptive technology (hardware or software) over that used for the blind person’s other work.
 Information presented in text is readable in braille or heard via synthetic speech, and is therefore only limited to the user’s skill set.</p>
 <p>Other research projects are progressing the creation of tactile images that replace the printed graphics sighted people deal with all the time in statistical work. Tactile images do have a role to play in educating blind people and providing them with access to information, but their greatest drawback remains their lack of immediacy. Rendering a graphic into a master file complete with braille labels, and then producing this for consumption are tasks receiving much attention, but the value for such efforts is probably greatest for situations where one master can be used to create multiple copies for wider consumption such as the conversion of textbooks into braille. Some preliminary investigations into the ability to create tactile image versions of graphs created in R have been made as part of the wider BrailleR Project.</p>
@@ -390,22 +389,22 @@ It may be some time until the effectiveness of tactile image hardware and softwa
 Perhaps we can look forward to the time when most blind people can have access to a refreshable tactile display that can display two-dimensional images that compare with the best that is possible in hard copy today.</p>
 <p>Sonification is considered by many to be an alternative to production of tactile images for a blind audience. Work on sonifying statistical graphs is being considered, but is at present best described as experimental. Several concerns must be overcome before sonification can be claimed a truly useful method for interpretting data. There is an assumption made frequently by correspondents with this author that lack of vision implies a blind person has superior aural ability . This may be true for some blind people, but it is not universally true. We must be sure that the interpretation gained through sound is comparable to the interpretation that a graph in visual form would convey. Proponents of sonification often suggest that sound provides a different interpretation to a visual display. If they are correct, then sonification cannot be a true alternative to a visual graph. The same, of course, can be said for the difference between the interpretation obtained through touching tactile images. In both cases, the solution for blind users must be that the visual representation can be converted to a useful format when blind users need it, without the assistance of a sighted person to check the validity of the outcome.</p>
 </div>
-<div id="exposure-of-the-brailler-package-outside-the-blind-community" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Exposure of the BrailleR package outside the blind community</h2>
+<div id="exposure-of-the-brailler-package-outside-the-blind-community" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Exposure of the BrailleR package outside the blind community<a href="History.html#exposure-of-the-brailler-package-outside-the-blind-community" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It was obvious to me that getting the word out to the masses about the usefulness of R for blind students and professionals was crucial. I started to compile my notes built up from various posts made to email groups and individuals over the years, as well as the lessons I learned from attendance at the 2<sup>nd</sup> Summer University event. This led to the eventual publication of my findings in <span class="citation">(<a href="#ref-GodfreyRJournal" role="doc-biblioref">Godfrey 2013b</a>)</span>. I know that this was a worthwhile task because it was read by teachers of blind students who were already using R for their courses. One such person tested R and a screen reader and managed to find a solution to a problem posed in <span class="citation">Godfrey (<a href="#ref-GodfreyRJournal" role="doc-biblioref">2013b</a>)</span> which led to an addendum <span class="citation">(<a href="#ref-GodfreyErhardtRJournalAddendum" role="doc-biblioref">Godfrey and Erhardt 2014</a>)</span>.</p>
 <p>I presented some of my work via a poster <span class="citation">(<a href="#ref-Godfrey2013BlindnessPoster" role="doc-biblioref">Godfrey 2013c</a>)</span> at the NZ Statistical Association conference in Hamilton during November 2013. This ‘poster’ presentation was developed as a multimedia presentation so that the audience could observe video footage, handle tactile images and be able to talk with me about the BrailleR Project. The plan to get talking with people instead of talking at them worked and I started a really useful collaboration with Paul Murrell from the University of Auckland. His major contributions didn’t feature in the BrailleR package for some time, but we’re making some really nice progress. Paul is an expert in graphics, especially their creation and manipulation in R. Our discussions about graphics has yielded a few titbits for my own work that have been tested for the package. We’ve been working on how to make scalable vector graphics that can be augmented to offer blind users greater interactivity and therefore hopefully greater understanding <span class="citation">(see <a href="#ref-GodfreyMurrell2016TactileGraphsPaper" role="doc-biblioref">Godfrey and Murrell 2016</a>)</span>.</p>
 </div>
-<div id="reviewing-statistical-software" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Reviewing statistical software</h2>
+<div id="reviewing-statistical-software" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Reviewing statistical software<a href="History.html#reviewing-statistical-software" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I have been asked about the use of R in preference to other statistical software by many blind students, their support staff, and their teachers.
 Eventually I joined forces with the only other blind person to gain employment as a lecturer of statistics (Theodor Loots, University of Pretoria) to compare the most commonly used statistical software for its accessibility <span class="citation">(<a href="#ref-GodfreyLoots2014JSS" role="doc-biblioref">Godfrey and Loots 2014</a>)</span>.
 I summarised this paper at the 5<sup>th</sup> Summer University event <span class="citation">(<a href="#ref-Godfrey2014SU-StatsSoft" role="doc-biblioref">Godfrey 2014a</a>)</span>, and offered a similar presentation at the 6<sup>th</sup> Summer University event <span class="citation">(<a href="#ref-Godfrey2016SU-StatsSoft" role="doc-biblioref">Godfrey 2016a</a>)</span> with a few updates.
 It is important to keep abreast of developments, because the statistical software changes, and so does the screen reading software that gives us access to the mainstream statistical software.</p>
 </div>
-<div id="attendance-at-user-conferences" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Attendance at UseR conferences</h2>
+<div id="attendance-at-user-conferences" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Attendance at UseR conferences<a href="History.html#attendance-at-user-conferences" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On my way to the 5<sup>th</sup> Summer University event, I managed to attend the principal conference for R users (UseR!2014) in Los Angeles where I presented my findings <span class="citation">(<a href="#ref-Godfrey2014BlindUseROral" role="doc-biblioref">Godfrey 2014c</a>)</span>.
-Perhaps the most valuable outcome of this conference was the ability to attend a tutorial on use of the <code>knitr</code> package <span class="citation">(<a href="#ref-Rpkg-knitr" role="doc-biblioref">Xie 2021</a>)</span> and then talk to its author, Yihui Xie.
+Perhaps the most valuable outcome of this conference was the ability to attend a tutorial on use of the <code>knitr</code> package <span class="citation">(<a href="#ref-Rpkg-knitr" role="doc-biblioref">Xie 2022</a>)</span> and then talk to its author, Yihui Xie.
 I’d already seen the <code>knitr</code> package before attending UseR!2014 and implemented it for some of my teaching material by updating the Sweave documents already in use.<br />
 The real value came in realising what I could probably do if I used R markdown to do a few things I had found very hard using the Sweave way of working.
 More specifically, generating an R markdown file (Rmd) from an R script was much easier than generating a Sweave file (Rnw).
@@ -413,8 +412,8 @@ Writing the convenience functions for the <code>BrailleR</code> package started 
 I dug out some old work that wasn’t fit for sharing and converted it to the markdown way of working.
 There has been sufficient progress in the BrailleR Project that I presented it at UseR!2015 <span class="citation">(<a href="#ref-Godfrey2015BaseRWeepsOral" role="doc-biblioref">Godfrey 2015</a>)</span>. In 2016, I presented my findings on writing (and therefore reading) R markdown documents for (and by) blind users <span class="citation">(<a href="#ref-GodfreyBilton2016UseROral" role="doc-biblioref">Godfrey and Bilton 2016</a>)</span>.</p>
 </div>
-<div id="the-ongoing-work" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> The ongoing work</h2>
+<div id="the-ongoing-work" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> The ongoing work<a href="History.html#the-ongoing-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The introduction of R markdown to the BrailleR package made a huge difference.
 I’ve been able to write enough example code that once I found a friendly postgraduate student (Timothy Bilton) to put some time into it, we’ve managed to add more convenience functionality.
 Timothy improved some of my earlier work and tried a few things of his own.
@@ -423,8 +422,8 @@ This left me with the time to add increased functionality for helping blind user
 The <code>WriteR</code> application is now beyond experimental but there is still more to do on making it truly useful <span class="citation">(<a href="#ref-GodfreyCurtis2016WriteRPaper" role="doc-biblioref">Godfrey and Curtis 2016</a>)</span>.
 In 2018, I received a great deal of assistance from Marshall Flax who was able to help develop <code>WriteR</code> into a tool that could be very useful to blind people wishing to write and process R markdown files.</p>
 </div>
-<div id="acknowledgements" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Acknowledgements</h2>
+<div id="acknowledgements" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> Acknowledgements<a href="History.html#acknowledgements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Contributions to the BrailleR Project are welcome from anyone who has an
 interest. I will acknowledge assistance in chronological order of the
 contributions I have received thus far.</p>
@@ -440,7 +439,7 @@ package’s existence.</p>
 
 </div>
 </div>
-<h3> References</h3>
+<h3> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Godfrey2009AccessiblePaper" class="csl-entry">
 Godfrey, A. Jonathan R. 2009. <span>“Are Statistics Courses Accessible?”</span> In <em>Proceedings of the Workshop on e-Inclusion in Mathematics and Science 2009</em>, 72–80. Fukuoka, Japan.
@@ -500,7 +499,7 @@ Godfrey, A. Jonathan R., and M. Theodor Loots. 2014. <span>“Statistical Softwa
 Godfrey, A. Jonathan R., and Paul Murrell. 2016. <span>“Statistical Graphs Made Tactile.”</span> In <em>Proceedings of the International Workshop on Digitization and e-Inclusion in Mathematics and Science 2016</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 69–74. Kanegawa, Japan.
 </div>
 <div id="ref-Rpkg-BrailleR" class="csl-entry">
-Godfrey, A. Jonathan R., Debra Warren, Paul Murrell, Timothy Bilton, and Volker Sorge. 2021. <em>BrailleR: Improved Access for Blind Users</em>. <a href="https://github.com/ajrgodfrey/BrailleR">https://github.com/ajrgodfrey/BrailleR</a>.
+Godfrey, A. Jonathan R., Debra Warren, James Thompson, Paul Murrell, Timothy Bilton, and Volker Sorge. 2022. <em>BrailleR: Improved Access for Blind Users</em>. <a href="https://github.com/ajrgodfrey/BrailleR">https://github.com/ajrgodfrey/BrailleR</a>.
 </div>
 <div id="ref-RStudio" class="csl-entry">
 RStudio. 2018. <em><span>RStudio</span>: Integrated Development Environment for <span>R</span>, Version 1.1.453</em>. Boston, MA: RStudio. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.
@@ -509,7 +508,7 @@ RStudio. 2018. <em><span>RStudio</span>: Integrated Development Environment for 
 Snow, Greg. 2020. <em>TeachingDemos: Demonstrations for Teaching and Learning</em>. <a href="https://CRAN.R-project.org/package=TeachingDemos">https://CRAN.R-project.org/package=TeachingDemos</a>.
 </div>
 <div id="ref-Rpkg-knitr" class="csl-entry">
-———. 2021. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+———. 2022. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 </div>
             </section>
@@ -578,7 +577,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

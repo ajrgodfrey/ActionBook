@@ -74,6 +74,7 @@ while running R interactively. This issues the following commands.
 
 ```
 
+if(require(nortest)){ # used in the Rmd file, not the UniDesc function
 DIR = getwd()
 setwd(tempdir())
 Ozone=airquality$Ozone
@@ -82,6 +83,7 @@ rm(Ozone)
 # N.B. Various files and a folder were created in a temporary directory. 
 # Please investigate them to see how this function worked.
 setwd(DIR)
+}
 ```
 
 
@@ -166,17 +168,17 @@ while running R interactively. This issues the following commands.
 DIR = getwd()
 setwd(tempdir())
 data(airquality)
-
+library(dplyr)
 # the following line  returns an error:
-## OneFactor("Ozone", "Month", airquality, Folder=tempdir(), View=FALSE)
+## OneFactor("Ozone", "Month", airquality, View=FALSE)
 # so we make a copy of the data.frame, and fix that:
-
-airquality2 = airquality
-airquality2$Month = as.factor(airquality$Month)
+if(require(dplyr)){
+airquality2 = airquality |> mutate(Month = as.factor(Month))
 # and now all is good to try:
 OneFactor("Ozone", "Month", airquality2)
 # N.B. Various files and a folder were created in a temporary directory. 
 # Please investigate them to see how this function worked.
+}
 setwd(DIR)
 ```
 
@@ -313,6 +315,7 @@ while running R interactively. This issues the following commands.
 
 ```
 
+if(require(nortest)){ # used in a dependent function's Rmd file
 DIR = getwd()
 setwd(tempdir())
 data(airquality)
@@ -320,6 +323,7 @@ OnePredictor("Ozone", "Wind", airquality)
 # N.B. Various files and a folder were created in a temporary directory. 
 # Please investigate them to see how this function worked.
 setwd(DIR)
+}
 ```
 
 

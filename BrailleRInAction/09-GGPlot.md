@@ -36,6 +36,13 @@ One important note for the graphs in this chapter is the difference in the way t
 
 ```r
 p11a = qplot(carat, price, data = diamonds)   
+```
+
+```
+Warning: `qplot()` was deprecated in ggplot2 3.4.0.
+```
+
+```r
 p11a
 ```
 
@@ -133,7 +140,7 @@ fig2.4a
 ```
 
 ```
-`geom_smooth()` using method = 'loess' and formula 'y ~ x'
+`geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 ```
 
 <div class="figure">
@@ -147,7 +154,7 @@ It has x-axis 'carat' with labels 1, 2, 3 and 4.
 It has y-axis 'price' with labels 0, 5000, 10000, 15000, 20000 and 25000.
 It has 2 layers.
 Layer 1 is a set of 100 points.
-Layer 2 is a 'lowess' smoothed curve with 95% confidence intervals.
+Layer 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 13% of the graph.
 ```
 
 
@@ -270,7 +277,7 @@ fig2.10b
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis '' with labels 0.0, 0.5, 1.0 and 1.5.
-The chart is a density graph that VI can not process.
+The chart is a density graph that VI cannot process.
 ```
 
 
@@ -281,15 +288,15 @@ fig2.11c
 ```
 
 ```
-Warning: Removed 32 rows containing non-finite values (stat_bin).
+Warning: Removed 32 rows containing non-finite values (`stat_bin()`).
 ```
 
 ```
-Warning: Removed 2 rows containing missing values (geom_bar).
+Warning: Removed 2 rows containing missing values (`geom_bar()`).
 ```
 
 ```
-Warning: Removed 32 rows containing non-finite values (stat_bin).
+Warning: Removed 32 rows containing non-finite values (`stat_bin()`).
 ```
 
 <div class="figure">
@@ -329,7 +336,7 @@ G shown as vivid bluish green colour,
 H shown as brilliant green colour, 
 I shown as vivid yellow green colour and 
 J shown as vivid greenish yellow colour.
-The chart is a density graph that VI can not process.
+The chart is a density graph that VI cannot process.
 ```
 
 
@@ -486,7 +493,7 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'unemploy/pop' with labels 0.02, 0.03, 0.04 and 0.05.
 It has y-axis 'uempmed' with labels 5, 10, 15, 20 and 25.
 There is a legend indicating colour is used to show year(date), ranging from 1967 represented by colour dark purplish blue to 2015 shown as colour brilliant blue.
-The chart is a path graph that VI can not process.
+The chart is a path graph that VI cannot process.
 ```
 
 
@@ -501,15 +508,15 @@ fig2.16a
 ```
 
 ```
-Warning: Removed 32 rows containing non-finite values (stat_bin).
+Warning: Removed 32 rows containing non-finite values (`stat_bin()`).
 ```
 
 ```
-Warning: Removed 14 rows containing missing values (geom_bar).
+Warning: Removed 14 rows containing missing values (`geom_bar()`).
 ```
 
 ```
-Warning: Removed 32 rows containing non-finite values (stat_bin).
+Warning: Removed 32 rows containing non-finite values (`stat_bin()`).
 ```
 
 <div class="figure">
@@ -546,15 +553,20 @@ fig2.16b
 ```
 
 ```
-Warning: Removed 32 rows containing non-finite values (stat_bin).
+Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
+ℹ Please use `after_stat(density)` instead.
 ```
 
 ```
-Warning: Removed 14 rows containing missing values (geom_bar).
+Warning: Removed 32 rows containing non-finite values (`stat_bin()`).
 ```
 
 ```
-Warning: Removed 32 rows containing non-finite values (stat_bin).
+Warning: Removed 14 rows containing missing values (`geom_bar()`).
+```
+
+```
+Warning: Removed 32 rows containing non-finite values (`stat_bin()`).
 ```
 
 <div class="figure">
@@ -611,7 +623,7 @@ fig3.6
 ```
 
 ```
-`geom_smooth()` using method = 'loess' and formula 'y ~ x'
+`geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 ```
 
 <div class="figure">
@@ -628,7 +640,7 @@ Each sub-chart has y-axis 'hwy' with labels 20, 30 and 40.
 Each sub-chart has 2 layers.
 Panel 1 represents data for year = 1999.
 Layer 1 of panel 1 is a set of 117 points.
-Layer 2 of panel 1 is a 'lowess' smoothed curve with 95% confidence intervals.Panel 2 represents data for year = 2008.
+Layer 2 of panel 1 is a 'lowess' smoothed curve with 95% confidence intervals covering 9.8% of the graph.Panel 2 represents data for year = 2008.
 Layer 1 of panel 2 is a set of 117 points.
-Layer 2 of panel 2 is a 'lowess' smoothed curve with 95% confidence intervals.
+Layer 2 of panel 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 9.8% of the graph.
 ```

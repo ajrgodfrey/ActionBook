@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Personalising BrailleR | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Personalising BrailleR | BrailleR in Action" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://R-Resources.massey.ac.nz/BrailleRInAction/" />
   
   <meta property="og:description" content="Getting up and running with the BrailleR package" />
   <meta name="github-repo" content="ajrgodfrey/ActionBook" />
@@ -24,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2022-03-09" />
+<meta name="date" content="2022-11-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 <link rel="prev" href="RMarkdown.html"/>
 <link rel="next" href="Tidyverse.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -93,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -106,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -315,32 +314,32 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Personalising" class="section level1" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Personalising BrailleR</h1>
-<div id="general" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> General</h2>
+<div id="Personalising" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Personalising BrailleR<a href="Personalising.html#Personalising" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="general" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> General<a href="Personalising.html#general" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Once you’ve played with a few examples, you might want to settle on the way you want BrailleR to work for you.
 There are a wide range of options needed to get the best out of the <code>BrailleR</code> package specific to each user, and perhaps for each user who wants specific settings to be in play for different projects. All <code>BrailleR</code> settings are stored in a local file, and also in a global file. These files are both called <code>BrailleROptions</code>. The global settings file is located in a folder called <code>MyBrailleR</code> which is located where you let <code>BrailleR</code> choose when you first loaded the package using the <code>library(BrailleR)</code> command. You could have let this be a temporary location so you will be asked every time you start <code>BrailleR</code> until you let the standard location be used.</p>
 <p>The <code>BrailleROptions</code> file in the <code>MyBrailleR</code> folder will be used unless a local version is found. This local file will be in the working directory being used when the package is loaded.</p>
 </div>
-<div id="settings-that-are-about-you" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Settings that are about you</h2>
-<div id="who-is-the-r-markdown-file-being-written-by" class="section level3" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> Who is the R markdown file being written by?</h3>
+<div id="settings-that-are-about-you" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Settings that are about you<a href="Personalising.html#settings-that-are-about-you" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="who-is-the-r-markdown-file-being-written-by" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Who is the R markdown file being written by?<a href="Personalising.html#who-is-the-r-markdown-file-being-written-by" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You might want your analyses to use your name instead of the default name <code>BrailleR</code>. Do this using the <code>SetAuthor()</code> function. e.g.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="Personalising.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SetAuthor</span>(<span class="st">&quot;Jonathan Godfrey&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="Personalising.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SetAuthor</span>(<span class="st">&quot;Jonathan Godfrey&quot;</span>)</span></code></pre></div>
 <p>OK, you ought to use your name not mine, but you get the point.</p>
 <p>This will have an instant impact, even on the examples for <code>BrailleR</code> functions. Set the author and then try <code>example(UniDesc)</code> for example.</p>
 </div>
-<div id="the-use-of-the-vi-command" class="section level3" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> The use of the VI() command</h3>
+<div id="the-use-of-the-vi-command" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> The use of the VI() command<a href="Personalising.html#the-use-of-the-vi-command" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <code>BrailleR</code> package was intended for use by blind people, but we need to see more in text than do most people in our intended audiences. You may wish to turn off or on the use of the output generated by the <code>VI()</code> commands throughout the R markdown files written by such commands as <code>UniDesc()</code> etc. Do this using the functions <code>GoBlind()</code> to use the <code>VI()</code> command, and <code>GoSighted()</code> to turn it off.</p>
 <p>I think a standard workflow might be to start <code>BrailleR</code>, do some analyses using <code>UniDesc()</code> or <code>OnePredictor()</code> and the like, and then having worked out what was working well, use <code>GoSighted()</code> and re-issue the commands that you want to share with others. Don’t forget to <code>GoBlind()</code> again though so that you can get the text descriptions back when you need them.</p>
 <!--- ## Settings for saving  --->
 </div>
 </div>
-<div id="brailler-commands-used-in-this-chapter-4" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> BrailleR commands used in this chapter</h2>
+<div id="brailler-commands-used-in-this-chapter-4" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> BrailleR commands used in this chapter<a href="Personalising.html#brailler-commands-used-in-this-chapter-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We saw the use of the <code>SetAuthor()</code> function to personalise the work you are doing to use your name instead of a generic author. The <code>GoBlind()</code> and <code>GoSighted()</code> functions toggle between providing the additional output needed by blind users to interpret our work. Much of this additional output is not of interest to a sighted audience so changing back and forth should prove useful.</p>
 
 </div>
@@ -411,7 +410,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
