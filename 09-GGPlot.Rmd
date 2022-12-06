@@ -6,6 +6,7 @@ The use of the ggplot style of graph production has increased markedly since its
 
 In 2021, the `plot.ggplot()` command in the `ggplot2` package was updated to automatically call `BrailleR`'s `VI()` function if the user has specified they are blind. The `GoBlind()` and `GoSighted()` commands will toggle the automated use of `VI()` on and off respectively. The default starting mode is to get the automated `VI()` output.
 
+The search was then on for someone to come on board and start ramping up the number of different graph types that `VI()` can handle. James Thompson was a summer student who climbed into the task in November 2022. One of his first questions was to ask me when `BrailleR` would take the bold step into version 1.x.y, and maybe his efforts will get us close.
 
 ```{r setup, include=FALSE}
 library(knitr)
@@ -17,7 +18,7 @@ library(magrittr)
 
 
 
-N.B.  the commands here are exact copies of the commands presented in @Wickham2009ggplot2 or some minor alterations to them; any changes will be explicitly noted.    All plots are created using the figure numbers from @Wickham2009ggplot2 or the page numbers if no figure number was given. They are then automatically investigated using the `VI()` command from the `BrailleR` package which has not needed to be explicitly called since v0.32.0 of `BrailleR` and v3.3.5 of the `ggplot2` package..
+N.B.  the commands here are minor alterations to the commands presented in @Wickham2009ggplot2; any major changes will be explicitly noted, but do note the use of the native R pipe `|>` instead of the older `%>%` pipe.    All plots are created using the figure numbers from @Wickham2009ggplot2 or the page numbers if no figure number was given. They are then automatically investigated using the `VI()` command from the `BrailleR` package which has not needed to be explicitly called since v0.32.0 of `BrailleR` and v3.3.5 of the `ggplot2` package.
 
 
 You will need some additional packages to the `BrailleR` package to be loaded to follow along with the examples in this chapter. Do this by issuing the commands:
@@ -25,7 +26,6 @@ You will need some additional packages to the `BrailleR` package to be loaded to
 ```{r GetLibraries}     
 library(BrailleR)   
 library(ggplot2)   
-library(magrittr)
 ```
 
 Note that one data set used for these examples is created by @Wickham2009ggplot2 while the others are included in the `ggplot2` package.
@@ -42,30 +42,30 @@ p11a = qplot(carat, price, data = diamonds)
 p11a
 ```  
 
-Note that if you do not want to generate the graph but want to know what its text description has to offer, you can use the `%>%` pipe operator as follows:
+Note that if you do not want to generate the graph but want to know what its text description has to offer, you can use the `|>` pipe operator as follows:
 
 ```{r fig2-2a, fig.cap="Left pane of Figure 2.2 of @Wickham2009ggplot2"}
 fig2.2a = qplot(carat, price, data = dsmall, colour = color)
-fig2.2a %>% VI()   
+fig2.2a |> VI()   
 ```
+
+
+N.B. It is not necessary to keep the graphs for `BrailleR` to do its magic, so from here onwards, they will not be explicitly stored and called back as was done above.
 
 We haven't been able to tell what exact colour was used in the @Wickham2009ggplot2 rendering of this graph,  but there has obviously been some minor alteration of the colour palette being used by the `ggplot2` package over the years.
 
 ```{r fig2-2b, fig.cap="Right pane of Figure 2.2"}
-fig2.2b = qplot(carat, price, data = dsmall, shape = cut)    
-fig2.2b
+qplot(carat, price, data = dsmall, shape = cut)    
 ```  
 
 To get semi-transparent points:   
 ```{r fig2-3b, fig.cap="Middle pane from Figure 2.3"}     
-fig2.3b = qplot(carat, price, data = diamonds, alpha = I(1/100))    
-fig2.3b
+qplot(carat, price, data = diamonds, alpha = I(1/100))    
 ```  
 
 To add a smoother (default is loess for n<1000):   
 ```{r fig2-4a, fig.cap="Left pane of Figure 2.4"}     
-fig2.4a = qplot(carat, price, data = dsmall, geom = c("point", "smooth"))    
-fig2.4a
+qplot(carat, price, data = dsmall, geom = c("point", "smooth"))    
 ```  
 
 
@@ -73,19 +73,16 @@ fig2.4a
 ## Plotting a  continuous variable against a categorical variable  
 
 ```{r fig2-8a, fig.cap="Left pane of Figure 2.8"}     
-fig2.8a  = qplot(color, price / carat, data = diamonds, geom = "jitter")
-fig2.8a
+qplot(color, price / carat, data = diamonds, geom = "jitter")
 ```
 
 ```{r fig2-8b}
-fig2.8b = qplot(color, price / carat, data = diamonds, geom = "boxplot")    
-fig2.8b
+qplot(color, price / carat, data = diamonds, geom = "boxplot")    
 ```  
 
 When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not currently realised by `BrailleR`. 
 ```{r fig2-9b, fig.cap="Middle pane of Figure 2.9"}     
-fig2.9b = qplot(color, price / carat, data = diamonds, geom = "jitter", alpha = I(1 / 50))    
-fig2.9b
+qplot(color, price / carat, data = diamonds, geom = "jitter", alpha = I(1 / 50))    
 ```
 
 
@@ -93,68 +90,58 @@ fig2.9b
 
 
 ```{r fig2-10a, fig.cap="Left pane of Figure 2.10"}     
-fig2.10a = qplot(carat, data = diamonds, geom = "histogram")    
-fig2.10a
+qplot(carat, data = diamonds, geom = "histogram")    
 ```
 Warning: This figure does look different to the original in @Wickham2009ggplot2 ins spite of using the same code and same data.
 
 ```{r fig2-10b, fig.cap="Right pane of Figure 2.10"}     
-fig2.10b = qplot(carat, data = diamonds, geom = "density")    
-fig2.10b
+qplot(carat, data = diamonds, geom = "density")    
 ```
 
 
 ```{r fig2-11c, fig.cap="Right pane of Figure 2.11"}     
-fig2.11c = qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.01, xlim = c(0,3))    
-fig2.11c
+qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.01, xlim = c(0,3))    
 ```  
 
 The data is separated by implication in the following graphs. The legend is automatically generated and has altered in appearance since the original was produced in @Wickham2009ggplot2.
 
 ```{r fig2-12a, fig.cap="Left pane of Figure 2.12"}     
-fig2.12a = qplot(carat, data = diamonds, geom = "density", colour = color)    
-fig2.12a
+qplot(carat, data = diamonds, geom = "density", colour = color)    
 ```
 
 
 ```{r fig2-12b, fig.cap="Right pane of Figure 2.12"}     
-fig2.12b = qplot(carat, data = diamonds, geom = "histogram", fill = color)    
-fig2.12b
+qplot(carat, data = diamonds, geom = "histogram", fill = color)    
 ```  
 
 ### Bar charts for categorical variables   
 
 
 ```{r fig2-13a, fig.cap="Left pane of Figure 2.13"}     
-fig2.13a  = qplot(color, data = diamonds, geom = "bar") #geom="bar" is the default    
-fig2.13a
+qplot(color, data = diamonds, geom = "bar") #geom="bar" is the default    
 ```
 
 
 need to check...
 
 ```{r fig2-13b, fig.cap="Right pane of Figure 2.13"}     
-fig2.13b = qplot(color, data = diamonds, geom = "bar", weight = carat)   
-fig2.13b
-fig2.13b = qplot(color, data = diamonds, geom = "bar", weight = carat) + scale_y_continuous("carat")    
-fig2.13b
+qplot(color, data = diamonds, geom = "bar", weight = carat)   
+qplot(color, data = diamonds, geom = "bar", weight = carat) + scale_y_continuous("carat")    
 ```  
 
 ## Time series plots   
 
 It looks like the data used in the next graph has been updated since the publication of @Wickham2009ggplot2 
 ```{r fig2-14a, fig.cap="Left pane of Figure 2.14"}     
-fig2.14a = qplot(date, unemploy / pop, data = economics, geom = "line")    
-fig2.14a
+qplot(date, unemploy / pop, data = economics, geom = "line")    
 ```  
 
 ## Path plots   
 
 ```{r fig2-15b, fig.cap="Right pane of Figure 2.15"}     
 year <- function(x) as.POSIXlt(x)$year + 1900    
-fig2.15b = qplot(unemploy / pop, uempmed, data = economics, geom = "path", colour=year(date)) 
+qplot(unemploy / pop, uempmed, data = economics, geom = "path", colour=year(date)) 
 #+ scale_area() # no longer works
-fig2.15b
 ```  
 
 
@@ -162,24 +149,20 @@ fig2.15b
 
 The aspect ratio for the plot region is something that needs to be considered. I've manually adjusted the plotting window here so that the graph more closely matches that of @Wickham2009ggplot2 but it  is not an exact match.
 ```{r fig2-16a, fig.cap="Left side of Figure 2.16", fig.height=10, fig.width=4}     
-fig2.16a = qplot(carat, data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, 
+qplot(carat, data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, 
 xlim = c(0, 3))    
-fig2.16a
 ```
 
 ```{r fig2-16b, fig.cap="Right side of Figure 2.16", fig.height=10, fig.width=4}
-fig2.16b = qplot(carat, ..density.., data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, xlim = c(0, 3))   
-fig2.16b
+qplot(carat, ..density.., data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, xlim = c(0, 3))   
 ```  
 
 ## Rescaling of the axes   
 
 ```{r p26a, fig.cap="First graph on page 26 of "}
-p26a = qplot(carat, price, data = dsmall, log = "xy")   
-p26a
+qplot(carat, price, data = dsmall, log = "xy")   
 ```  
 
 ```{r fig3-6, fig.cap="Figure 3.6 of "}
-fig3.6 = qplot(displ, hwy, data=mpg, facets =~ year) + geom_smooth()    
-fig3.6
+qplot(displ, hwy, data=mpg, facets =~ year) + geom_smooth()    
 ```  

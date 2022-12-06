@@ -6,12 +6,13 @@ The use of the ggplot style of graph production has increased markedly since its
 
 In 2021, the `plot.ggplot()` command in the `ggplot2` package was updated to automatically call `BrailleR`'s `VI()` function if the user has specified they are blind. The `GoBlind()` and `GoSighted()` commands will toggle the automated use of `VI()` on and off respectively. The default starting mode is to get the automated `VI()` output.
 
+The search was then on for someone to come on board and start ramping up the number of different graph types that `VI()` can handle. James Thompson was a summer student who climbed into the task in November 2022. One of his first questions was to ask me when `BrailleR` would take the bold step into version 1.x.y, and maybe his efforts will get us close.
 
 
 
 
 
-N.B.  the commands here are exact copies of the commands presented in @Wickham2009ggplot2 or some minor alterations to them; any changes will be explicitly noted.    All plots are created using the figure numbers from @Wickham2009ggplot2 or the page numbers if no figure number was given. They are then automatically investigated using the `VI()` command from the `BrailleR` package which has not needed to be explicitly called since v0.32.0 of `BrailleR` and v3.3.5 of the `ggplot2` package..
+N.B.  the commands here are minor alterations to the commands presented in @Wickham2009ggplot2; any major changes will be explicitly noted, but do note the use of the native R pipe `|>` instead of the older `%>%` pipe.    All plots are created using the figure numbers from @Wickham2009ggplot2 or the page numbers if no figure number was given. They are then automatically investigated using the `VI()` command from the `BrailleR` package which has not needed to be explicitly called since v0.32.0 of `BrailleR` and v3.3.5 of the `ggplot2` package.
 
 
 You will need some additional packages to the `BrailleR` package to be loaded to follow along with the examples in this chapter. Do this by issuing the commands:
@@ -20,7 +21,6 @@ You will need some additional packages to the `BrailleR` package to be loaded to
 ```r
 library(BrailleR)   
 library(ggplot2)   
-library(magrittr)
 ```
 
 Note that one data set used for these examples is created by @Wickham2009ggplot2 while the others are included in the `ggplot2` package.
@@ -55,15 +55,15 @@ p11a
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
-The chart is a set of 53940 points.
+The chart is a set of 53940 big solid circle points.
 ```
 
-Note that if you do not want to generate the graph but want to know what its text description has to offer, you can use the `%>%` pipe operator as follows:
+Note that if you do not want to generate the graph but want to know what its text description has to offer, you can use the `|>` pipe operator as follows:
 
 
 ```r
 fig2.2a = qplot(carat, price, data = dsmall, colour = color)
-fig2.2a %>% VI()   
+fig2.2a |> VI()   
 ```
 
 ```
@@ -78,15 +78,17 @@ G shown as vivid bluish green colour,
 H shown as brilliant green colour, 
 I shown as vivid yellow green colour and 
 J shown as vivid greenish yellow colour.
-The chart is a set of 100 points.
+The chart is a set of 100 big solid circle points.
 ```
+
+
+N.B. It is not necessary to keep the graphs for `BrailleR` to do its magic, so from here onwards, they will not be explicitly stored and called back as was done above.
 
 We haven't been able to tell what exact colour was used in the @Wickham2009ggplot2 rendering of this graph,  but there has obviously been some minor alteration of the colour palette being used by the `ggplot2` package over the years.
 
 
 ```r
-fig2.2b = qplot(carat, price, data = dsmall, shape = cut)    
-fig2.2b
+qplot(carat, price, data = dsmall, shape = cut)    
 ```
 
 ```
@@ -115,8 +117,7 @@ The chart is a set of 100 points.
 To get semi-transparent points:   
 
 ```r
-fig2.3b = qplot(carat, price, data = diamonds, alpha = I(1/100))    
-fig2.3b
+qplot(carat, price, data = diamonds, alpha = I(1/100))    
 ```
 
 <div class="figure">
@@ -128,15 +129,14 @@ fig2.3b
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
-The chart is a set of 53940 points.
+The chart is a set of 53940 big solid circle points.
 It has alpha set to 0.01.
 ```
 
 To add a smoother (default is loess for n<1000):   
 
 ```r
-fig2.4a = qplot(carat, price, data = dsmall, geom = c("point", "smooth"))    
-fig2.4a
+qplot(carat, price, data = dsmall, geom = c("point", "smooth"))    
 ```
 
 ```
@@ -153,7 +153,7 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 1, 2, 3 and 4.
 It has y-axis 'price' with labels 0, 5000, 10000, 15000, 20000 and 25000.
 It has 2 layers.
-Layer 1 is a set of 100 points.
+Layer 1 is a set of 100 big solid circle points.
 Layer 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 13% of the graph.
 ```
 
@@ -163,8 +163,7 @@ Layer 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 13% 
 
 
 ```r
-fig2.8a  = qplot(color, price / carat, data = diamonds, geom = "jitter")
-fig2.8a
+qplot(color, price / carat, data = diamonds, geom = "jitter")
 ```
 
 <div class="figure">
@@ -176,13 +175,12 @@ fig2.8a
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
 It has y-axis 'price/carat' with labels 5000, 10000 and 15000.
-The chart is a set of 53940 points.
+The chart is a set of 53940 big solid circle points.
 ```
 
 
 ```r
-fig2.8b = qplot(color, price / carat, data = diamonds, geom = "boxplot")    
-fig2.8b
+qplot(color, price / carat, data = diamonds, geom = "boxplot")    
 ```
 
 <img src="09-GGPlot_files/figure-html/fig2-8b-1.png" width="672" />
@@ -218,8 +216,7 @@ There are 3 outliers for this boxplot.
 When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not currently realised by `BrailleR`. 
 
 ```r
-fig2.9b = qplot(color, price / carat, data = diamonds, geom = "jitter", alpha = I(1 / 50))    
-fig2.9b
+qplot(color, price / carat, data = diamonds, geom = "jitter", alpha = I(1 / 50))    
 ```
 
 <div class="figure">
@@ -231,7 +228,7 @@ fig2.9b
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
 It has y-axis 'price/carat' with labels 5000, 10000 and 15000.
-The chart is a set of 53940 points.
+The chart is a set of 53940 big solid circle points.
 It has alpha set to 0.02.
 ```
 
@@ -241,8 +238,7 @@ It has alpha set to 0.02.
 
 
 ```r
-fig2.10a = qplot(carat, data = diamonds, geom = "histogram")    
-fig2.10a
+qplot(carat, data = diamonds, geom = "histogram")    
 ```
 
 ```
@@ -264,8 +260,7 @@ Warning: This figure does look different to the original in @Wickham2009ggplot2 
 
 
 ```r
-fig2.10b = qplot(carat, data = diamonds, geom = "density")    
-fig2.10b
+qplot(carat, data = diamonds, geom = "density")    
 ```
 
 <div class="figure">
@@ -283,8 +278,7 @@ The chart is a density graph that VI cannot process.
 
 
 ```r
-fig2.11c = qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.01, xlim = c(0,3))    
-fig2.11c
+qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.01, xlim = c(0,3))    
 ```
 
 ```
@@ -315,8 +309,7 @@ The data is separated by implication in the following graphs. The legend is auto
 
 
 ```r
-fig2.12a = qplot(carat, data = diamonds, geom = "density", colour = color)    
-fig2.12a
+qplot(carat, data = diamonds, geom = "density", colour = color)    
 ```
 
 <div class="figure">
@@ -342,8 +335,7 @@ The chart is a density graph that VI cannot process.
 
 
 ```r
-fig2.12b = qplot(carat, data = diamonds, geom = "histogram", fill = color)    
-fig2.12b
+qplot(carat, data = diamonds, geom = "histogram", fill = color)    
 ```
 
 ```
@@ -367,7 +359,7 @@ G shown as vivid bluish green fill,
 H shown as brilliant green fill, 
 I shown as vivid yellow green fill and 
 J shown as vivid greenish yellow fill.
-The chart is a bar chart with 210 vertical bars.
+The chart is a bar chart with 30 vertical bars.
 These are stacked, as sorted by color.
 ```
 
@@ -376,8 +368,7 @@ These are stacked, as sorted by color.
 
 
 ```r
-fig2.13a  = qplot(color, data = diamonds, geom = "bar") #geom="bar" is the default    
-fig2.13a
+qplot(color, data = diamonds, geom = "bar") #geom="bar" is the default    
 ```
 
 <div class="figure">
@@ -390,13 +381,13 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
 It has y-axis '' with labels 0, 3000, 6000 and 9000.
 The chart is a bar chart with 7 vertical bars.
-Bar 1 is centered horizontally at D, and spans vertically from 0 to 6775.
-Bar 2 is centered horizontally at E, and spans vertically from 0 to 9797.
-Bar 3 is centered horizontally at F, and spans vertically from 0 to 9542.
-Bar 4 is centered horizontally at G, and spans vertically from 0 to 11292.
-Bar 5 is centered horizontally at H, and spans vertically from 0 to 8304.
-Bar 6 is centered horizontally at I, and spans vertically from 0 to 5422.
-Bar 7 is centered horizontally at J, and spans vertically from 0 to 2808.
+Bar 1 is centered at 1, and length is from 0 to 6775.
+Bar 2 is centered at 2, and length is from 0 to 9797.
+Bar 3 is centered at 3, and length is from 0 to 9542.
+Bar 4 is centered at 4, and length is from 0 to 11292.
+Bar 5 is centered at 5, and length is from 0 to 8304.
+Bar 6 is centered at 6, and length is from 0 to 5422.
+Bar 7 is centered at 7, and length is from 0 to 2808.
 ```
 
 
@@ -404,8 +395,7 @@ need to check...
 
 
 ```r
-fig2.13b = qplot(color, data = diamonds, geom = "bar", weight = carat)   
-fig2.13b
+qplot(color, data = diamonds, geom = "bar", weight = carat)   
 ```
 
 <div class="figure">
@@ -418,18 +408,17 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
 It has y-axis '' with labels 0, 2500, 5000 and 7500.
 The chart is a bar chart with 7 vertical bars.
-Bar 1 is centered horizontally at D, and spans vertically from 0 to 4456.56.
-Bar 2 is centered horizontally at E, and spans vertically from 0 to 6445.12.
-Bar 3 is centered horizontally at F, and spans vertically from 0 to 7028.05.
-Bar 4 is centered horizontally at G, and spans vertically from 0 to 8708.28.
-Bar 5 is centered horizontally at H, and spans vertically from 0 to 7571.58.
-Bar 6 is centered horizontally at I, and spans vertically from 0 to 5568.
-Bar 7 is centered horizontally at J, and spans vertically from 0 to 3263.28.
+Bar 1 is centered at 1, and length is from 0 to 4456.56.
+Bar 2 is centered at 2, and length is from 0 to 6445.12.
+Bar 3 is centered at 3, and length is from 0 to 7028.05.
+Bar 4 is centered at 4, and length is from 0 to 8708.28.
+Bar 5 is centered at 5, and length is from 0 to 7571.58.
+Bar 6 is centered at 6, and length is from 0 to 5568.
+Bar 7 is centered at 7, and length is from 0 to 3263.28.
 ```
 
 ```r
-fig2.13b = qplot(color, data = diamonds, geom = "bar", weight = carat) + scale_y_continuous("carat")    
-fig2.13b
+qplot(color, data = diamonds, geom = "bar", weight = carat) + scale_y_continuous("carat")    
 ```
 
 <div class="figure">
@@ -442,13 +431,13 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
 It has y-axis '' with labels 0, 2500, 5000 and 7500.
 The chart is a bar chart with 7 vertical bars.
-Bar 1 is centered horizontally at D, and spans vertically from 0 to 4456.56.
-Bar 2 is centered horizontally at E, and spans vertically from 0 to 6445.12.
-Bar 3 is centered horizontally at F, and spans vertically from 0 to 7028.05.
-Bar 4 is centered horizontally at G, and spans vertically from 0 to 8708.28.
-Bar 5 is centered horizontally at H, and spans vertically from 0 to 7571.58.
-Bar 6 is centered horizontally at I, and spans vertically from 0 to 5568.
-Bar 7 is centered horizontally at J, and spans vertically from 0 to 3263.28.
+Bar 1 is centered at 1, and length is from 0 to 4456.56.
+Bar 2 is centered at 2, and length is from 0 to 6445.12.
+Bar 3 is centered at 3, and length is from 0 to 7028.05.
+Bar 4 is centered at 4, and length is from 0 to 8708.28.
+Bar 5 is centered at 5, and length is from 0 to 7571.58.
+Bar 6 is centered at 6, and length is from 0 to 5568.
+Bar 7 is centered at 7, and length is from 0 to 3263.28.
 ```
 
 ## Time series plots   
@@ -456,8 +445,7 @@ Bar 7 is centered horizontally at J, and spans vertically from 0 to 3263.28.
 It looks like the data used in the next graph has been updated since the publication of @Wickham2009ggplot2 
 
 ```r
-fig2.14a = qplot(date, unemploy / pop, data = economics, geom = "line")    
-fig2.14a
+qplot(date, unemploy / pop, data = economics, geom = "line")    
 ```
 
 <div class="figure">
@@ -478,9 +466,7 @@ Line 1 connects 574 points.
 
 ```r
 year <- function(x) as.POSIXlt(x)$year + 1900    
-fig2.15b = qplot(unemploy / pop, uempmed, data = economics, geom = "path", colour=year(date)) 
-#+ scale_area() # no longer works
-fig2.15b
+qplot(unemploy / pop, uempmed, data = economics, geom = "path", colour=year(date)) 
 ```
 
 <div class="figure">
@@ -496,15 +482,18 @@ There is a legend indicating colour is used to show year(date), ranging from 196
 The chart is a path graph that VI cannot process.
 ```
 
+```r
+#+ scale_area() # no longer works
+```
+
 
 ## Facets is the ggplot term for trellis' panels   
 
 The aspect ratio for the plot region is something that needs to be considered. I've manually adjusted the plotting window here so that the graph more closely matches that of @Wickham2009ggplot2 but it  is not an exact match.
 
 ```r
-fig2.16a = qplot(carat, data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, 
+qplot(carat, data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, 
 xlim = c(0, 3))    
-fig2.16a
 ```
 
 ```
@@ -548,8 +537,7 @@ Panel 7 is a bar chart with 29 vertical bars.
 
 
 ```r
-fig2.16b = qplot(carat, ..density.., data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, xlim = c(0, 3))   
-fig2.16b
+qplot(carat, ..density.., data = diamonds, facets = color ~ ., geom = "histogram", binwidth = 0.1, xlim = c(0, 3))   
 ```
 
 ```
@@ -600,8 +588,7 @@ Panel 7 is a bar chart with 29 vertical bars.
 
 
 ```r
-p26a = qplot(carat, price, data = dsmall, log = "xy")   
-p26a
+qplot(carat, price, data = dsmall, log = "xy")   
 ```
 
 <div class="figure">
@@ -613,13 +600,12 @@ p26a
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0.3, 1.0 and 3.0.
 It has y-axis 'price' with labels 1000, 3000 and 10000.
-The chart is a set of 100 points.
+The chart is a set of 100 big solid circle points.
 ```
 
 
 ```r
-fig3.6 = qplot(displ, hwy, data=mpg, facets =~ year) + geom_smooth()    
-fig3.6
+qplot(displ, hwy, data=mpg, facets =~ year) + geom_smooth()    
 ```
 
 ```
@@ -639,8 +625,8 @@ Each sub-chart has x-axis 'displ' with labels 2, 3, 4, 5, 6 and 7.
 Each sub-chart has y-axis 'hwy' with labels 20, 30 and 40.
 Each sub-chart has 2 layers.
 Panel 1 represents data for year = 1999.
-Layer 1 of panel 1 is a set of 117 points.
+Layer 1 of panel 1 is a set of 117 big solid circle points.
 Layer 2 of panel 1 is a 'lowess' smoothed curve with 95% confidence intervals covering 9.8% of the graph.Panel 2 represents data for year = 2008.
-Layer 1 of panel 2 is a set of 117 points.
+Layer 1 of panel 2 is a set of 117 big solid circle points.
 Layer 2 of panel 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 9.8% of the graph.
 ```

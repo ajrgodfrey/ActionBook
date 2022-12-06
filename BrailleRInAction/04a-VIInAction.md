@@ -52,17 +52,18 @@ print(HIST)
 ```
 $breaks
  [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+[16]  4.0
 
 $counts
- [1]   1   6  21  34 104 145 171 177 156 101  46  26   5   7
+ [1]   1   5  13  49  95 133 185 196 170  87  42  17   4   2   1
 
 $density
- [1] 0.002 0.012 0.042 0.068 0.208 0.290 0.342 0.354 0.312 0.202 0.092 0.052
-[13] 0.010 0.014
+ [1] 0.002 0.010 0.026 0.098 0.190 0.266 0.370 0.392 0.340 0.174 0.084 0.034
+[13] 0.008 0.004 0.002
 
 $mids
  [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[13]  2.75  3.25
+[13]  2.75  3.25  3.75
 
 $xname
 [1] "Y"
@@ -85,21 +86,21 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 14
+[1] 15
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -2  4  3
 
 $par$yaxp
-[1]   0 150   3
+[1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -2  0  2  4
 
 $yTicks
-[1]   0  50 100 150
+[1]   0  50 100 150 200
 
 attr(,"class")
 [1] "Augmented" "histogram"
@@ -122,11 +123,11 @@ Describe(HIST)
 ```
 A histogram created using the base graphics package.
 
-General description: A histogram uses rectangles to represent the counts or relative frequencies of observations falling in each subrange of the numeric variable being investigated. The rectangles are standing side by side with their bottom end at the zero mark of the vertical axis. The widths of the rectangles are usually constant, but this can be altered by the user. A sighted person uses the heights and therefore the areas of the rectangles to help determine the overall shape of the distribution, the presence of gaps in the data, and any outliers that might be present.
-As with most graphs created by the base graphics package, the axes do not join at the bottom left corner and are separated from the area where the data are being plotted. Tick marks are automatically chosen for the data, and the axes may not extend past the ends of variables being plotted.The vertical axis for frequency always starts at zero.
-R normally plots a graph in a square window. This can be altered; the way this is done depends heavily on the method being used to create the graph. See the help on win.graph() or  x11() for the graphs made in an interactive  session or part of an R script; png(), pdf() or postscript() for specific file formats being created; or, use fig.height and fig.width arguments in your R markdown documents.
+General Description:
+A histogram uses rectangles to represent the counts or relative frequencies of observations falling in each subrange of the numeric variable being investigated. The rectangles are standing side by side with their bottom end at the zero mark of the vertical axis. The widths of the rectangles are usually constant, but this can be altered by the user. A sighted person uses the heights and therefore the areas of the rectangles to help determine the overall shape of the distribution, the presence of gaps in the data, and any outliers that might be present. The vertical axis for frequency always starts at zero. As with most graphs created by the base graphics package, the axes do not join at the bottom left corner and are separated from the area where the data are being plotted. Tick marks are automatically chosen for the data, and the axes may not extend past the ends of variables being plotted. R normally plots a graph in a square window. This can be altered; the way this is done depends heavily on the method being used to create the graph. See the help on win.graph() or  x11() for the graphs made in an interactive  session or part of an R script; png(), pdf() or postscript() for specific file formats being created; or, use fig.height and fig.width arguments in your R markdown documents.
 
-R hints: If you intend to make a tactile version of a histogram, you may find it useful to alter the aspect ratio so that the histogram is wider than it is tall.
+R hints:
+If you intend to make a tactile version of a histogram, you may find it useful to alter the aspect ratio so that the histogram is wider than it is tall. 
 ```
 
 Then, we can find out what is shown in the specific histogram using the `VI()` function.
@@ -136,27 +137,28 @@ VI(HIST)
 ```
 
 ```
-This is a histogram, with the title: Histogram of Y
+This is a histogram, with the title: with the title: Histogram of Y
 "Y" is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -2, 0, 2, and 4 
 There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, and 150 
-It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
+Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+It has 15 bins with equal widths, starting at -3.5 and ending at 4 .
 The mids and counts for the bins are:
 mid = -3.25  count = 1 
-mid = -2.75  count = 6 
-mid = -2.25  count = 21 
-mid = -1.75  count = 34 
-mid = -1.25  count = 104 
-mid = -0.75  count = 145 
-mid = -0.25  count = 171 
-mid = 0.25  count = 177 
-mid = 0.75  count = 156 
-mid = 1.25  count = 101 
-mid = 1.75  count = 46 
-mid = 2.25  count = 26 
-mid = 2.75  count = 5 
-mid = 3.25  count = 7
+mid = -2.75  count = 5 
+mid = -2.25  count = 13 
+mid = -1.75  count = 49 
+mid = -1.25  count = 95 
+mid = -0.75  count = 133 
+mid = -0.25  count = 185 
+mid = 0.25  count = 196 
+mid = 0.75  count = 170 
+mid = 1.25  count = 87 
+mid = 1.75  count = 42 
+mid = 2.25  count = 17 
+mid = 2.75  count = 4 
+mid = 3.25  count = 2 
+mid = 3.75  count = 1
 ```
 
 The `Describe()` and `VI()` commands actually call the `Describe.histogram()` and `VI.histogram()` commands because R knows it is a histogram that was generated by `hist()` earlier. 
