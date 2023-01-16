@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 The ggplot world and BrailleR | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 The ggplot world and BrailleR | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2022-12-06" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -339,7 +339,7 @@ Figure 10.1: First graph on page 11 of <span class="citation">Wickham (<a href="
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis &#39;price&#39; with labels 0, 5000, 10000 and 15000.
-The chart is a set of 53940 big solid circle points.</code></pre>
+The chart is a set of 53940 big solid circle points of which about 3.5% can be seen.</code></pre>
 <p>Note that if you do not want to generate the graph but want to know what its text description has to offer, you can use the <code>|&gt;</code> pipe operator as follows:</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="GGPlot.html#cb79-1" aria-hidden="true" tabindex="-1"></a>fig2<span class="fl">.2</span>a <span class="ot">=</span> <span class="fu">qplot</span>(carat, price, <span class="at">data =</span> dsmall, <span class="at">colour =</span> color)</span>
 <span id="cb79-2"><a href="GGPlot.html#cb79-2" aria-hidden="true" tabindex="-1"></a>fig2<span class="fl">.2</span>a <span class="sc">|&gt;</span> <span class="fu">VI</span>()   </span></code></pre></div>
@@ -354,7 +354,7 @@ G shown as vivid bluish green colour,
 H shown as brilliant green colour, 
 I shown as vivid yellow green colour and 
 J shown as vivid greenish yellow colour.
-The chart is a set of 100 big solid circle points.</code></pre>
+The chart is a set of 100 big solid circle points of which about 84% can be seen.</code></pre>
 <p>N.B. It is not necessary to keep the graphs for <code>BrailleR</code> to do its magic, so from here onwards, they will not be explicitly stored and called back as was done above.</p>
 <p>We haven’t been able to tell what exact colour was used in the <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2" role="doc-biblioref">2009</a>)</span> rendering of this graph, but there has obviously been some minor alteration of the colour palette being used by the <code>ggplot2</code> package over the years.</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="GGPlot.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(carat, price, <span class="at">data =</span> dsmall, <span class="at">shape =</span> cut)    </span></code></pre></div>
@@ -375,7 +375,7 @@ Good shown as solid triangle shape,
 Very Good shown as solid square shape, 
 Premium shown as plus shape and 
 Ideal shown as boxed X shape.
-The chart is a set of 100 points.</code></pre>
+The chart is a set of 100 points of which about 84% can be seen.</code></pre>
 <p>To get semi-transparent points:</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="GGPlot.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(carat, price, <span class="at">data =</span> diamonds, <span class="at">alpha =</span> <span class="fu">I</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">100</span>))    </span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:fig2-3b"></span>
@@ -387,7 +387,7 @@ Figure 10.3: Middle pane from Figure 2.3
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis &#39;price&#39; with labels 0, 5000, 10000 and 15000.
-The chart is a set of 53940 big solid circle points.
+The chart is a set of 53940 big solid circle points of which about 3.5% can be seen.
 It has alpha set to 0.01.</code></pre>
 <p>To add a smoother (default is loess for n&lt;1000):</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="GGPlot.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(carat, price, <span class="at">data =</span> dsmall, <span class="at">geom =</span> <span class="fu">c</span>(<span class="st">&quot;point&quot;</span>, <span class="st">&quot;smooth&quot;</span>))    </span></code></pre></div>
@@ -402,7 +402,7 @@ Figure 10.4: Left pane of Figure 2.4
 It has x-axis &#39;carat&#39; with labels 1, 2, 3 and 4.
 It has y-axis &#39;price&#39; with labels 0, 5000, 10000, 15000, 20000 and 25000.
 It has 2 layers.
-Layer 1 is a set of 100 big solid circle points.
+Layer 1 is a set of 100 big solid circle points of which about 84% can be seen.
 Layer 2 is a &#39;lowess&#39; smoothed curve with 95% confidence intervals covering 13% of the graph.</code></pre>
 <div id="plotting-a-continuous-variable-against-a-categorical-variable" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Plotting a continuous variable against a categorical variable<a href="GGPlot.html#plotting-a-continuous-variable-against-a-categorical-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -416,34 +416,34 @@ Figure 10.5: Left pane of Figure 2.8
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;color&#39; with labels D, E, F, G, H, I and J.
 It has y-axis &#39;price/carat&#39; with labels 5000, 10000 and 15000.
-The chart is a set of 53940 big solid circle points.</code></pre>
+The chart is a set of 53940 big solid circle points of which about 7.9% can be seen.</code></pre>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="GGPlot.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(color, price <span class="sc">/</span> carat, <span class="at">data =</span> diamonds, <span class="at">geom =</span> <span class="st">&quot;boxplot&quot;</span>)    </span></code></pre></div>
 <p><img src="09-GGPlot_files/figure-html/fig2-8b-1.png" width="672" /></p>
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;color&#39; with labels D, E, F, G, H, I and J.
 It has y-axis &#39;price/carat&#39; with labels 5000, 10000 and 15000.
-The chart is a boxplot comprised of 7 boxes with whiskers.
-There is a box at x=D.
+The chart is a boxplot comprised of 7 vertical boxes with whiskers.
+There is a box at x=1.
 It has median 3410.53. The box goes from 2455 to 4749.31, and the whiskers extend to 1128.12 and 8183.33.
-There are 338 outliers for this boxplot.
-There is a box at x=E.
+There are 338 max and 0 min outliers for this boxplot.
+There is a box at x=2.
 It has median 3253.66. The box goes from 2430.3 to 4508.41, and the whiskers extend to 1078.12 and 7616.39.
-There are 593 outliers for this boxplot.
-There is a box at x=F.
+There are 593 max and 0 min outliers for this boxplot.
+There is a box at x=3.
 It has median 3494.32. The box goes from 2587.1 to 4947.22, and the whiskers extend to 1168 and 8477.5.
-There are 585 outliers for this boxplot.
-There is a box at x=G.
+There are 585 max and 0 min outliers for this boxplot.
+There is a box at x=4.
 It has median 3490.38. The box goes from 2538.24 to 5500, and the whiskers extend to 1139.02 and 9937.2.
-There are 119 outliers for this boxplot.
-There is a box at x=H.
+There are 119 max and 0 min outliers for this boxplot.
+There is a box at x=5.
 It has median 3818.89. The box goes from 2396.88 to 5127.28, and the whiskers extend to 1051.16 and 9220.
-There are 13 outliers for this boxplot.
-There is a box at x=I.
+There are 13 max and 0 min outliers for this boxplot.
+There is a box at x=6.
 It has median 3779.74. The box goes from 2344.65 to 5196.75, and the whiskers extend to 1151.72 and 9397.5.
 There are 0 outliers for this boxplot.
-There is a box at x=J.
+There is a box at x=7.
 It has median 3780. The box goes from 2562.87 to 4927.95, and the whiskers extend to 1080.65 and 8426.13.
-There are 3 outliers for this boxplot.</code></pre>
+There are 3 max and 0 min outliers for this boxplot.</code></pre>
 <p>When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not currently realised by <code>BrailleR</code>.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="GGPlot.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(color, price <span class="sc">/</span> carat, <span class="at">data =</span> diamonds, <span class="at">geom =</span> <span class="st">&quot;jitter&quot;</span>, <span class="at">alpha =</span> <span class="fu">I</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="dv">50</span>))    </span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:fig2-9b"></span>
@@ -455,7 +455,7 @@ Figure 10.6: Middle pane of Figure 2.9
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;color&#39; with labels D, E, F, G, H, I and J.
 It has y-axis &#39;price/carat&#39; with labels 5000, 10000 and 15000.
-The chart is a set of 53940 big solid circle points.
+The chart is a set of 53940 big solid circle points of which about 8% can be seen.
 It has alpha set to 0.02.</code></pre>
 <div id="univariate-plots" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> Univariate plots<a href="GGPlot.html#univariate-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -708,7 +708,7 @@ Figure 10.19: First graph on page 26 of
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis &#39;carat&#39; with labels 0.3, 1.0 and 3.0.
 It has y-axis &#39;price&#39; with labels 1000, 3000 and 10000.
-The chart is a set of 100 big solid circle points.</code></pre>
+The chart is a set of 100 big solid circle points of which about 95% can be seen.</code></pre>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="GGPlot.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(displ, hwy, <span class="at">data=</span>mpg, <span class="at">facets =</span><span class="sc">~</span> year) <span class="sc">+</span> <span class="fu">geom_smooth</span>()    </span></code></pre></div>
 <pre><code>`geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:fig3-6"></span>
@@ -724,9 +724,9 @@ Each sub-chart has x-axis &#39;displ&#39; with labels 2, 3, 4, 5, 6 and 7.
 Each sub-chart has y-axis &#39;hwy&#39; with labels 20, 30 and 40.
 Each sub-chart has 2 layers.
 Panel 1 represents data for year = 1999.
-Layer 1 of panel 1 is a set of 117 big solid circle points.
+Layer 1 of panel 1 is a set of 117 big solid circle points of which about 57% can be seen.
 Layer 2 of panel 1 is a &#39;lowess&#39; smoothed curve with 95% confidence intervals covering 9.8% of the graph.Panel 2 represents data for year = 2008.
-Layer 1 of panel 2 is a set of 117 big solid circle points.
+Layer 1 of panel 2 is a set of 117 big solid circle points of which about 61% can be seen.
 Layer 2 of panel 2 is a &#39;lowess&#39; smoothed curve with 95% confidence intervals covering 9.8% of the graph.</code></pre>
 
 </div>

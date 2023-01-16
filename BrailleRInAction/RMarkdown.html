@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2022-12-06" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -438,16 +438,15 @@ DIR = getwd()
 setwd(tempdir())
 data(airquality)
 library(dplyr)
+library(knitr)
 # the following line  returns an error:
 ## OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality, View=FALSE)
 # so we make a copy of the data.frame, and fix that:
-if(require(dplyr)){
 airquality2 = airquality |&gt; mutate(Month = as.factor(Month))
 # and now all is good to try:
 OneFactor(&quot;Ozone&quot;, &quot;Month&quot;, airquality2)
 # N.B. Various files and a folder were created in a temporary directory. 
 # Please investigate them to see how this function worked.
-}
 setwd(DIR)</code></pre>
 <p>As an alternative, and if you do have a current internet connection you can view the result of running the <a href="https://R-Resources.massey.ac.nz/BrailleRInAction/Ozone.Month-OneFactor.html"><code>OneFactor()</code> command on the Ozone data</a> in your browser without having to re-enter the example commands.</p>
 <p>The example here demonstrates the point that the grouping variable must be a factor. The month variable is not stored as a factor in the airquality data so its use would have created an error.</p>
@@ -540,6 +539,7 @@ The <code>OnePredictor()</code> command has been written as a shortcut for a bli
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 if(require(nortest)){ # used in a dependent function&#39;s Rmd file
+library(knitr)
 DIR = getwd()
 setwd(tempdir())
 data(airquality)

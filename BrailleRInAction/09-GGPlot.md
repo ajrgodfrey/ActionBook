@@ -55,7 +55,7 @@ p11a
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
-The chart is a set of 53940 big solid circle points.
+The chart is a set of 53940 big solid circle points of which about 3.5% can be seen.
 ```
 
 Note that if you do not want to generate the graph but want to know what its text description has to offer, you can use the `|>` pipe operator as follows:
@@ -78,7 +78,7 @@ G shown as vivid bluish green colour,
 H shown as brilliant green colour, 
 I shown as vivid yellow green colour and 
 J shown as vivid greenish yellow colour.
-The chart is a set of 100 big solid circle points.
+The chart is a set of 100 big solid circle points of which about 84% can be seen.
 ```
 
 
@@ -111,7 +111,7 @@ Good shown as solid triangle shape,
 Very Good shown as solid square shape, 
 Premium shown as plus shape and 
 Ideal shown as boxed X shape.
-The chart is a set of 100 points.
+The chart is a set of 100 points of which about 84% can be seen.
 ```
 
 To get semi-transparent points:   
@@ -129,7 +129,7 @@ qplot(carat, price, data = diamonds, alpha = I(1/100))
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0, 1, 2, 3, 4 and 5.
 It has y-axis 'price' with labels 0, 5000, 10000 and 15000.
-The chart is a set of 53940 big solid circle points.
+The chart is a set of 53940 big solid circle points of which about 3.5% can be seen.
 It has alpha set to 0.01.
 ```
 
@@ -153,7 +153,7 @@ This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 1, 2, 3 and 4.
 It has y-axis 'price' with labels 0, 5000, 10000, 15000, 20000 and 25000.
 It has 2 layers.
-Layer 1 is a set of 100 big solid circle points.
+Layer 1 is a set of 100 big solid circle points of which about 84% can be seen.
 Layer 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 13% of the graph.
 ```
 
@@ -175,7 +175,7 @@ qplot(color, price / carat, data = diamonds, geom = "jitter")
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
 It has y-axis 'price/carat' with labels 5000, 10000 and 15000.
-The chart is a set of 53940 big solid circle points.
+The chart is a set of 53940 big solid circle points of which about 7.9% can be seen.
 ```
 
 
@@ -189,28 +189,28 @@ qplot(color, price / carat, data = diamonds, geom = "boxplot")
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
 It has y-axis 'price/carat' with labels 5000, 10000 and 15000.
-The chart is a boxplot comprised of 7 boxes with whiskers.
-There is a box at x=D.
+The chart is a boxplot comprised of 7 vertical boxes with whiskers.
+There is a box at x=1.
 It has median 3410.53. The box goes from 2455 to 4749.31, and the whiskers extend to 1128.12 and 8183.33.
-There are 338 outliers for this boxplot.
-There is a box at x=E.
+There are 338 max and 0 min outliers for this boxplot.
+There is a box at x=2.
 It has median 3253.66. The box goes from 2430.3 to 4508.41, and the whiskers extend to 1078.12 and 7616.39.
-There are 593 outliers for this boxplot.
-There is a box at x=F.
+There are 593 max and 0 min outliers for this boxplot.
+There is a box at x=3.
 It has median 3494.32. The box goes from 2587.1 to 4947.22, and the whiskers extend to 1168 and 8477.5.
-There are 585 outliers for this boxplot.
-There is a box at x=G.
+There are 585 max and 0 min outliers for this boxplot.
+There is a box at x=4.
 It has median 3490.38. The box goes from 2538.24 to 5500, and the whiskers extend to 1139.02 and 9937.2.
-There are 119 outliers for this boxplot.
-There is a box at x=H.
+There are 119 max and 0 min outliers for this boxplot.
+There is a box at x=5.
 It has median 3818.89. The box goes from 2396.88 to 5127.28, and the whiskers extend to 1051.16 and 9220.
-There are 13 outliers for this boxplot.
-There is a box at x=I.
+There are 13 max and 0 min outliers for this boxplot.
+There is a box at x=6.
 It has median 3779.74. The box goes from 2344.65 to 5196.75, and the whiskers extend to 1151.72 and 9397.5.
 There are 0 outliers for this boxplot.
-There is a box at x=J.
+There is a box at x=7.
 It has median 3780. The box goes from 2562.87 to 4927.95, and the whiskers extend to 1080.65 and 8426.13.
-There are 3 outliers for this boxplot.
+There are 3 max and 0 min outliers for this boxplot.
 ```
 
 When seeking to use shading or opaqueness to describe the density of the points, the fact the size of the points has an impact on the opaqueness is not currently realised by `BrailleR`. 
@@ -228,7 +228,7 @@ qplot(color, price / carat, data = diamonds, geom = "jitter", alpha = I(1 / 50))
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'color' with labels D, E, F, G, H, I and J.
 It has y-axis 'price/carat' with labels 5000, 10000 and 15000.
-The chart is a set of 53940 big solid circle points.
+The chart is a set of 53940 big solid circle points of which about 8% can be seen.
 It has alpha set to 0.02.
 ```
 
@@ -600,7 +600,7 @@ qplot(carat, price, data = dsmall, log = "xy")
 This is an untitled chart with no subtitle or caption.
 It has x-axis 'carat' with labels 0.3, 1.0 and 3.0.
 It has y-axis 'price' with labels 1000, 3000 and 10000.
-The chart is a set of 100 big solid circle points.
+The chart is a set of 100 big solid circle points of which about 95% can be seen.
 ```
 
 
@@ -625,8 +625,8 @@ Each sub-chart has x-axis 'displ' with labels 2, 3, 4, 5, 6 and 7.
 Each sub-chart has y-axis 'hwy' with labels 20, 30 and 40.
 Each sub-chart has 2 layers.
 Panel 1 represents data for year = 1999.
-Layer 1 of panel 1 is a set of 117 big solid circle points.
+Layer 1 of panel 1 is a set of 117 big solid circle points of which about 57% can be seen.
 Layer 2 of panel 1 is a 'lowess' smoothed curve with 95% confidence intervals covering 9.8% of the graph.Panel 2 represents data for year = 2008.
-Layer 1 of panel 2 is a set of 117 big solid circle points.
+Layer 1 of panel 2 is a set of 117 big solid circle points of which about 61% can be seen.
 Layer 2 of panel 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 9.8% of the graph.
 ```

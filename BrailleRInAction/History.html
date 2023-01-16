@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 History of the BrailleR Project | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 History of the BrailleR Project | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2022-12-06" />
+<meta name="date" content="2023-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -327,7 +327,7 @@ div.csl-indent {
 <h2><span class="header-section-number">2.2</span> Getting the BrailleR Project started<a href="History.html#getting-the-brailler-project-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I used to keep my research interests separate from my blindness, but I was regularly called upon to discuss how a blind person could study and teach Statistics by many people within New Zealand and occasionally from overseas. In 2009, I attended the Workshop on E-Inclusion in Mathematics and Science (WEIMS09) where I met other people interested in improving the success rates of blind students in the mathematical sciences. My paper was about accessibility of statistics courses, but I did point out the usefulness of R in preference to other tools I had used to that point in time <span class="citation">(<a href="#ref-Godfrey2009AccessiblePaper" role="doc-biblioref">Godfrey 2009</a>)</span>.</p>
 <p>I discovered that there is room for me to take a leading role in the development of ideas that can help other blind people learn about statistical concepts. I have been invited to all six Summer University events run by the organizers of the International Conference on Computers Helping People (ICCHP), but have been unable to attend twice due to the high cost of transporting me to Europe. I have delivered an introductory workshop on using R at four of these events <span class="citation">(<a href="#ref-Godfrey2011SU-R" role="doc-biblioref">Godfrey 2011</a>, <a href="#ref-Godfrey2013SU-R" role="doc-biblioref">2013a</a>, <a href="#ref-Godfrey2014SU-R" role="doc-biblioref">2014b</a>; and <a href="#ref-Godfrey2016SU-R" role="doc-biblioref">Godfrey 2016b</a>)</span>.</p>
-<p>Having observed the attendees at the 2011 Summer University as they came to grips with R, I knew there was more I could do to help them and other blind students. I started work on the BrailleR package <span class="citation">(<a href="#ref-Rpkg-BrailleR" role="doc-biblioref">Godfrey et al. 2022</a>)</span> in the second half of 2011 and first proposed it could work for blind users at the Digitisation and E-Inclusion in Mathematics and Science (DEIMS12) workshop held in Tokyo during February 2012 <span class="citation">(<a href="#ref-Godfrey2012BrailleRPaper" role="doc-biblioref">Godfrey 2012b</a>)</span>.</p>
+<p>Having observed the attendees at the 2011 Summer University as they came to grips with R, I knew there was more I could do to help them and other blind students. I started work on the BrailleR package <span class="citation">(<a href="#ref-Rpkg-BrailleR" role="doc-biblioref">Godfrey et al. 2023</a>)</span> in the second half of 2011 and first proposed it could work for blind users at the Digitisation and E-Inclusion in Mathematics and Science (DEIMS12) workshop held in Tokyo during February 2012 <span class="citation">(<a href="#ref-Godfrey2012BrailleRPaper" role="doc-biblioref">Godfrey 2012b</a>)</span>.</p>
 <p>I wasn’t to know the value of another talk I gave at DEIMS12 for another two years; this second talk and associated conference paper focused on how I was using Sweave to create accessible statistical reports for me and more beautifully formatted ones for my statistical consulting clients.
 <span class="citation">(<a href="#ref-Godfrey2012PuttingPaper" role="doc-biblioref">Godfrey 2012a</a>)</span>. I now know that the groundwork I had done contributed to my desire to present my workflow as a workshop at the 5<sup>th</sup> Summer University in 2014 <span class="citation">(<a href="#ref-Godfrey2014SU-Sweave" role="doc-biblioref">Godfrey 2014d</a>)</span>.
 It also stood me in good stead for the work that followed on the <code>BrailleR</code> package as it developed in late 2014 and early 2015.</p>
@@ -358,25 +358,24 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </div>
 <pre><code>## This is a histogram, with the title: with the title: Histogram of x
 ## &quot;x&quot; is marked on the x-axis.
-## Tick marks for the x-axis are at: -4, -3, -2, -1, 0, 1, 2, and 3 
+## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, and 150 
-## It has 14 bins with equal widths, starting at -4 and ending at 3 .
+## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
+## It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
 ## The mids and counts for the bins are:
-## mid = -3.75  count = 1 
-## mid = -3.25  count = 1 
-## mid = -2.75  count = 6 
-## mid = -2.25  count = 14 
-## mid = -1.75  count = 48 
-## mid = -1.25  count = 106 
-## mid = -0.75  count = 144 
-## mid = -0.25  count = 185 
-## mid = 0.25  count = 190 
-## mid = 0.75  count = 140 
-## mid = 1.25  count = 93 
-## mid = 1.75  count = 47 
-## mid = 2.25  count = 18 
-## mid = 2.75  count = 7</code></pre>
+## mid = -2.75  count = 3 
+## mid = -2.25  count = 21 
+## mid = -1.75  count = 50 
+## mid = -1.25  count = 92 
+## mid = -0.75  count = 139 
+## mid = -0.25  count = 169 
+## mid = 0.25  count = 219 
+## mid = 0.75  count = 155 
+## mid = 1.25  count = 94 
+## mid = 1.75  count = 40 
+## mid = 2.25  count = 11 
+## mid = 2.75  count = 6 
+## mid = 3.25  count = 1</code></pre>
 <p>This first example showed me what was possible if only I could get a few things sorted out. All histograms are created by a function that stores the results (both numeric and text details) and calls this stored set of values a “histogram”. The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a “class” to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.</p>
 </div>
 <div id="why-just-plain-text" class="section level2 hasAnchor" number="2.4">
@@ -499,7 +498,7 @@ Godfrey, A. Jonathan R., and M. Theodor Loots. 2014. <span>“Statistical Softwa
 Godfrey, A. Jonathan R., and Paul Murrell. 2016. <span>“Statistical Graphs Made Tactile.”</span> In <em>Proceedings of the International Workshop on Digitization and e-Inclusion in Mathematics and Science 2016</em>, edited by Katsuhito Yamaguchi and Masakazu Suzuki, 69–74. Kanegawa, Japan.
 </div>
 <div id="ref-Rpkg-BrailleR" class="csl-entry">
-Godfrey, A. Jonathan R., Debra Warren, James Thompson, Paul Murrell, Timothy Bilton, and Volker Sorge. 2022. <em>BrailleR: Improved Access for Blind Users</em>. <a href="https://github.com/ajrgodfrey/BrailleR">https://github.com/ajrgodfrey/BrailleR</a>.
+Godfrey, A. Jonathan R., Debra Warren, James Thompson, Paul Murrell, Timothy Bilton, and Volker Sorge. 2023. <em>BrailleR: Improved Access for Blind Users</em>.
 </div>
 <div id="ref-RStudio" class="csl-entry">
 RStudio. 2018. <em><span>RStudio</span>: Integrated Development Environment for <span>R</span>, Version 1.1.453</em>. Boston, MA: RStudio. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.
