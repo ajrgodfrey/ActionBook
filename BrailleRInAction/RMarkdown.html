@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2023-01-16" />
+<meta name="date" content="2023-02-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -316,37 +316,37 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="RMarkdown" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Use of R markdown to generate an analysis efficiently<a href="RMarkdown.html#RMarkdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The <code>BrailleR</code> package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown. The workflow illustrated in this chapter is also the workflow used to create this book. It is heavily reliant on the work of Yihui Xie, much of which can be found in <span class="citation">(<a href="#ref-Xie2015" role="doc-biblioref">Xie 2015</a>)</span>.</p>
+<p>In a general sense, R markdown has been used to create reports and package vignettes because it creates an analysis that is reproducible. The <code>BrailleR</code> package started to use R markdown in late 2014 as a method for generating simple analyses that might be needed by students taking introductory statistics courses. Since that time, the prevalence of R markdown as a teaching tool in these courses has increased. The functions described below are therefore also generating example R markdown files to help learn how to use R markdown. The workflow illustrated in this chapter is also the workflow used to create this book. It is heavily reliant on the work of Yihui Xie, much of which can be found in <span class="citation">(<a href="#ref-Xie2015">Xie 2015</a>)</span>.</p>
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
 <div id="general-information" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> General information<a href="RMarkdown.html#general-information" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user. They make extensive use of the <code>knitr</code> package <span class="citation">(<a href="#ref-Rpkg-knitr" role="doc-biblioref">Xie 2022</a>)</span> to process R commands and retrieve the R output and graphs, and then the <code>rmarkdown</code> package <span class="citation">(<a href="#ref-Rpkg-rmarkdown" role="doc-biblioref">Allaire et al. 2022</a>)</span> to process the markdown content of the raw input file into HTML (or other file types if we wanted them).</p>
+<p>Each command described in this chapter and other similar commands draft a new R markdown file and then compile it to an HTML file that is easily read by a screen reader user. They make extensive use of the <code>knitr</code> package <span class="citation">(<a href="#ref-Rpkg-knitr">Xie 2023</a>)</span> to process R commands and retrieve the R output and graphs, and then the <code>rmarkdown</code> package <span class="citation">(<a href="#ref-Rpkg-rmarkdown">Allaire et al. 2023</a>)</span> to process the markdown content of the raw input file into HTML (or other file types if we wanted them).</p>
 <p>This HTML file is opened automatically if R is being used interactively, giving the blind user immediate access to the information. The content is automatically presented using sufficiently marked up HTML code including headings and tables so that the blind user can make best use of their screen reading software. All graphs are given an “alt tag” when they are included in the HTML file, and can be presented using a text description available from the <code>VI()</code> functionality of the <code>BrailleR</code> package.</p>
 <p>In addition, the blind user may need one or more of the graphs in a variety of formats (png, pdf, eps, or svg), nicely formatted tables for insertion into documents (LaTeX or HTML), and access to the code that generated these graphs and tables (an R script).
-This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents using the <code>xtable</code> package <span class="citation">(<a href="#ref-Rpkg-xtable" role="doc-biblioref">Dahl et al. 2019</a>)</span>.</p>
+This is handled using add-on packages wherever possible so that blind users are completing tasks using the same tools as their sighted peers. For example, nicely tabulated results can be saved as individual text files for later inclusion in LaTeX documents using the <code>xtable</code> package <span class="citation">(<a href="#ref-Rpkg-xtable">Dahl et al. 2019</a>)</span>.</p>
 <p>The commands shown in this chapter make use of R markdown, but they are not actually ready for direct use within other R markdown documents.
 If you wish to get the output you observe within the HTML documents that will be generated, you will need to extract the relevant parts of the R markdown script files that the commands create. That sounds harder than it is!</p>
 </div>
 <div id="replacing-the-graphic-user-interface-gui" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Replacing the Graphic User Interface (GUI)<a href="RMarkdown.html#replacing-the-graphic-user-interface-gui" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>One major criticism of R often heard from novice users is that a graphic user interface (GUI) is much easier to use than the command line mode of operation. Blind users are no different in this respect, but as has been reported previously <span class="citation">(<a href="#ref-GodfreyRJournal" role="doc-biblioref">Godfrey 2013b</a>)</span>, none of the GUI-based front ends for R are accessible to the blind user.
+<p>One major criticism of R often heard from novice users is that a graphic user interface (GUI) is much easier to use than the command line mode of operation. Blind users are no different in this respect, but as has been reported previously <span class="citation">(<a href="#ref-GodfreyRJournal">Godfrey 2013b</a>)</span>, none of the GUI-based front ends for R are accessible to the blind user.
 When considering the benefits of using a GUI mode of operation, we turn to the justification used for the creation of some of these interfaces; redacting all references to the GUI helps emphasize the reasons for their existence:</p>
 <ul>
 <li>R Commander aims “to support … the statistical functionality required for a basic-statistics course; to make it relatively difficult to do unreasonable things;
 and to render visible the relationship between choices made …<br />
-and the R commands that they generate.” <span class="citation">(<a href="#ref-Fox2005-RCommander" role="doc-biblioref">Fox 2005</a>)</span>.</li>
+and the R commands that they generate.” <span class="citation">(<a href="#ref-Fox2005-RCommander">Fox 2005</a>)</span>.</li>
 <li>“Because R analyses must be called as text commands, the user is required to find out the name of the function that will accomplish their task, and then remember that name along with the names of the variables to feed it, and its argument options. Perhaps more fundamentally, many users have never dealt with a program that requires them to type in commands that manipulate objects in the program.
-For beginners, Deducer is designed to be an intuitive dialog based interface to common data manipulation and analysis tasks.” <span class="citation">(<a href="#ref-Fellows2012Deducer" role="doc-biblioref">Fellows 2012</a>)</span></li>
-<li>“The scope of RKWard is deliberately broad, targeting both R novices and experts. For the first group, the aim is to allow any person with knowledge on statistical procedures to start using RKWard for their everyday work without having to learn anything about the R programming language, at least initially. At the same time, RKWard tries to support users who want to learn and exploit the full flexibility of the R language for automating or customizing an analysis.” <span class="citation">(<a href="#ref-RoedigerEtAl2012RKWard" role="doc-biblioref">Rödiger et al. 2012</a>)</span></li>
+For beginners, Deducer is designed to be an intuitive dialog based interface to common data manipulation and analysis tasks.” <span class="citation">(<a href="#ref-Fellows2012Deducer">Fellows 2012</a>)</span></li>
+<li>“The scope of RKWard is deliberately broad, targeting both R novices and experts. For the first group, the aim is to allow any person with knowledge on statistical procedures to start using RKWard for their everyday work without having to learn anything about the R programming language, at least initially. At the same time, RKWard tries to support users who want to learn and exploit the full flexibility of the R language for automating or customizing an analysis.” <span class="citation">(<a href="#ref-RoedigerEtAl2012RKWard">Rödiger et al. 2012</a>)</span></li>
 <li>RKWard “avoids wrapping complex sequences of data manipulation or analysis into custom highlevel R functions. The task of providing high-level functions is logically independent of the development of the GUI frontend, and should best be addressed in dedicated R packages, where
-necessary.” <span class="citation">(<a href="#ref-RoedigerEtAl2012RKWard" role="doc-biblioref">Rödiger et al. 2012</a>)</span></li>
+necessary.” <span class="citation">(<a href="#ref-RoedigerEtAl2012RKWard">Rödiger et al. 2012</a>)</span></li>
 </ul>
 <p>Making any of these GUI tools accessible is
 difficult because they were not developed using interface development toolkits that automatically build accessibility into the interface.
 Creation of a GUI such as R Commander is not a small undertaking. Retrospectively building in the necessary accessibility features would be a massive undertaking that the blind community could not reasonably expect of a very small development team. Duplicating the work done to create such a GUI tool from scratch using a development toolkit that helps build in the necessary elements for accessibility and then maintaining it as operating systems develop over time is not a practical solution either. It may be possible to improve the toolkits that are used to create the GUI options like R Commander or Deducer so that their development is not hindered while their accessibility becomes automatic; unfortunately, this requires knowledge well beyond my skill set.</p>
 <p>If blind users cannot make use of any of the GUI tools and we don’t have the necessary skills to develop such a tool that does work for ourselves, what solutions exist for us? When I’ve discussed the merits of various statistical software with other blind users, they have questioned the use of R by saying something like, “When I use software <em>x</em>, I can do <em>y</em> and <em>z</em>. How do I do that in R?” With respect to SAS for example, a user can build up a set of templates for various commonly used analyses for themselves. The same is true as an R user, but SAS users can get the templates by using the menus in the standard GUI, and they can keep the procedures in files for later use. SPSS users can do this as well. (These seem to be the most commonly used software options for blind users who communicate with me.) In either case, the code can be reused after issuing a few find/replace searches. It seems that even though it is more efficient to make use of this ability to re-use code templates, that many of the blind users of these software options prefer to use key presses to simulate mouse clicks in order to use the menus and dialogue boxes. When questioning them on their motives, we quickly come to the point that the use of menus and dialogue boxes offers a degree of comfort that tasks have been done correctly. The next crucial aspect worth mentioning is that the GUI provides the user with more output than can be obtained from typing out numerous commands in R. Searching for the right functions and then ensuring the syntax of their arguments is correct limits a blind user’s ability in any command-line software, just as it does for sighted users.</p>
 <p>The solution for a replacement of the GUI is to create convenience functions with simple names that require entry of a minimal number of arguments so that the user gets the maximum amount of useful information. This information might prove more than is needed for many users, but hopes to deliver what is needed by the widest possible range of blind users.
-Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewhat verbose <span class="citation">(<a href="#ref-RoedigerEtAl2012RKWard" role="doc-biblioref">Rödiger et al. 2012</a>)</span>.</p>
+Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewhat verbose <span class="citation">(<a href="#ref-RoedigerEtAl2012RKWard">Rödiger et al. 2012</a>)</span>.</p>
 </div>
 <div id="description-of-a-single-numeric-variable" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Description of a single numeric variable<a href="RMarkdown.html#description-of-a-single-numeric-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -356,15 +356,15 @@ Like RKWard, <code>BrailleR</code> functions generate R scripts that are somewha
 <li>the mean and trimmed mean,</li>
 <li>the five number summary: minimum, lower quartile, median, upper quartile, and maximum,</li>
 <li>the interquartile range (IQR) and standard deviation,</li>
-<li>measures of skewness and kurtosis, relying on the <code>moments</code> package <span class="citation">(<a href="#ref-Rpkg-moments" role="doc-biblioref">Komsta and Novomestky 2022</a>)</span>,</li>
+<li>measures of skewness and kurtosis, relying on the <code>moments</code> package <span class="citation">(<a href="#ref-Rpkg-moments">Komsta and Novomestky 2022</a>)</span>,</li>
 <li>a histogram and/or a boxplot,</li>
 <li>a normality (quantile-quantile) plot,</li>
-<li>various tests for normality, courtesy of the <code>nortest</code> package <span class="citation">(<a href="#ref-Rpkg-nortest" role="doc-biblioref">Gross and Ligges 2015</a>)</span> , and</li>
-<li>tests on the significance of the skewness and kurtosis, also courtesy of the <code>moments</code> package <span class="citation">(<a href="#ref-Rpkg-moments" role="doc-biblioref">Komsta and Novomestky 2022</a>)</span>.</li>
+<li>various tests for normality, courtesy of the <code>nortest</code> package <span class="citation">(<a href="#ref-Rpkg-nortest">Gross and Ligges 2015</a>)</span> , and</li>
+<li>tests on the significance of the skewness and kurtosis, also courtesy of the <code>moments</code> package <span class="citation">(<a href="#ref-Rpkg-moments">Komsta and Novomestky 2022</a>)</span>.</li>
 </ul>
 <p>The <code>UniDesc()</code> function can deliver all of this with minimal effort from the user.</p>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="RMarkdown.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(UniDesc)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="RMarkdown.html#cb50-1" tabindex="-1"></a><span class="fu">example</span>(UniDesc)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 if(require(nortest)){ # used in the Rmd file, not the UniDesc function
@@ -415,9 +415,9 @@ This processing allows for:</p>
 <li>establishes the height of the figures.</li>
 </ul>
 <p>The user that does not like these settings can edit the markdown file for themselves and re-process the file, but the intention is to deliver more than all users would want so that as many users as possible get what they need.</p>
-<p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) <span class="citation">(<a href="#ref-Rpkg-knitr" role="doc-biblioref">Xie 2022</a>)</span> both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
+<p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) <span class="citation">(<a href="#ref-Rpkg-knitr">Xie 2023</a>)</span> both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
 <p>If all of the optional arguments of the <code>UniDesc()</code> function are set at their defaults, the HTML file is automatically opened in a browser (courtesy of the <code>View</code> argument); it puts the R markdown file, the R script, and the HTML document in the current working directory, while the LaTeX and graph files are all placed in a subdirectory.</p>
-<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(<a href="#ref-Rpkg-base" role="doc-biblioref">R Core Team 2022</a>)</span> so a user can see what can be expected from these functions.</p>
+<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(<a href="#ref-Rpkg-base">R Core Team 2022</a>)</span> so a user can see what can be expected from these functions.</p>
 </div>
 <div id="analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Analysis of a single continuous variable with respect to a single grouping factor<a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -431,7 +431,7 @@ This processing allows for:</p>
 </ul>
 <p>There will be circumstances when the last, and perhaps evern second to last elements of this functionality are not justified by the outcome of issuing the earlier commands. In particular, generating the output from Tukey’s HSD would not normally be sought unless the analysis of variance showed there was a significant difference between the group means. The choice of reading the output and subsequently using it are left to the user. In this respect, <code>BrailleR</code> has not become an expert system that decides to or not to provide something; the user is still expected to do the thinking about the relevance of each element of hte overall set of output provided.</p>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="RMarkdown.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(OneFactor)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="RMarkdown.html#cb53-1" tabindex="-1"></a><span class="fu">example</span>(OneFactor)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 DIR = getwd()
@@ -460,9 +460,9 @@ setwd(DIR)</code></pre>
 <p>Let’s see an example using the <code>airquality</code> data.
 Please note: The example is chosen for reproducibility and its lack of statistical validity, as this is the best way to demonstrate the function’s value to a blind user.</p>
 <p>A simple linear regression model might be created and investigated using:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="RMarkdown.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airquality)</span>
-<span id="cb55-2"><a href="RMarkdown.html#cb55-2" aria-hidden="true" tabindex="-1"></a>MyModel <span class="ot">=</span> <span class="fu">lm</span>(Ozone<span class="sc">~</span>Wind, <span class="at">data=</span>airquality)</span>
-<span id="cb55-3"><a href="RMarkdown.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(MyModel)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="RMarkdown.html#cb55-1" tabindex="-1"></a><span class="fu">data</span>(airquality)</span>
+<span id="cb55-2"><a href="RMarkdown.html#cb55-2" tabindex="-1"></a>MyModel <span class="ot">=</span> <span class="fu">lm</span>(Ozone<span class="sc">~</span>Wind, <span class="at">data=</span>airquality)</span>
+<span id="cb55-3"><a href="RMarkdown.html#cb55-3" tabindex="-1"></a><span class="fu">summary</span>(MyModel)</span></code></pre></div>
 <pre><code>
 Call:
 lm(formula = Ozone ~ Wind, data = airquality)
@@ -482,8 +482,8 @@ Residual standard error: 26.47 on 114 degrees of freedom
   (37 observations deleted due to missingness)
 Multiple R-squared:  0.3619,    Adjusted R-squared:  0.3563 
 F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="RMarkdown.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb57-2"><a href="RMarkdown.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(MyModel)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="RMarkdown.html#cb57-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb57-2"><a href="RMarkdown.html#cb57-2" tabindex="-1"></a><span class="fu">plot</span>(MyModel)</span></code></pre></div>
 <div class="figure">
 <img src="05-MarkdownInAction_files/figure-html/AirQuality_lm-1.png" alt="Diagnostic plots for the simple linear regression model." width="864" />
 <p class="caption">
@@ -491,8 +491,8 @@ F-statistic: 64.64 on 1 and 114 DF,  p-value: 9.272e-13</code></pre>
 </p>
 </div>
 <p>The user now has a model stored as <code>MyModel</code> in the current workspace, has printed a summary of that model, and has plotted a set of four diagnostic plots in a <span class="math inline">\(2\times{}2\)</span> grid. The blind user will still need to issue those commands so that the output is created to meet the expectations of the sighted audience, but will also find value in issuing the two extra commands</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="RMarkdown.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(MyModel)</span>
-<span id="cb58-2"><a href="RMarkdown.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(<span class="fu">summary</span>(MyModel))</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="RMarkdown.html#cb58-1" tabindex="-1"></a><span class="fu">VI</span>(MyModel)</span>
+<span id="cb58-2"><a href="RMarkdown.html#cb58-2" tabindex="-1"></a><span class="fu">VI</span>(<span class="fu">summary</span>(MyModel))</span></code></pre></div>
 <p>The use of the second of these commands will generate</p>
 <pre><code>The term which is significant to 1% is
 Wind with an estimate of -5.550923 and P-Value of 9.271974e-13 </code></pre>
@@ -535,7 +535,7 @@ The <code>OnePredictor()</code> command has been written as a shortcut for a bli
 <li>the counts of observations within each group,</li>
 </ul>
 <p>An example of the main output document (HTML) can be viewed by re-issuing the commands generated by calling</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="RMarkdown.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(OnePredictor)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="RMarkdown.html#cb61-1" tabindex="-1"></a><span class="fu">example</span>(OnePredictor)</span></code></pre></div>
 <p>while running R interactively. This issues the following commands.</p>
 <pre><code>
 if(require(nortest)){ # used in a dependent function&#39;s Rmd file
@@ -560,7 +560,7 @@ setwd(DIR)
 <h3> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Rpkg-rmarkdown" class="csl-entry">
-Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2022. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
+Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2023. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
 </div>
 <div id="ref-Rpkg-xtable" class="csl-entry">
 Dahl, David B., David Scott, Charles Roosen, Arni Magnusson, and Jonathan Swinton. 2019. <em>Xtable: Export Tables to LaTeX or HTML</em>. <a href="http://xtable.r-forge.r-project.org/">http://xtable.r-forge.r-project.org/</a>.
@@ -590,7 +590,7 @@ Rödiger, Stefan, Thomas Friedrichsmeier, Prasenjit Kapat, and Meik Michalke. 20
 Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.
 </div>
 <div id="ref-Rpkg-knitr" class="csl-entry">
-———. 2022. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+———. 2023. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
 </div>
             </section>

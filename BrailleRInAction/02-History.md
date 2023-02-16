@@ -78,22 +78,22 @@ VI(hist(x))
 ## "x" is marked on the x-axis.
 ## Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
 ## There are a total of 1000 elements for this variable.
-## Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-## It has 13 bins with equal widths, starting at -3 and ending at 3.5 .
+## Tick marks for the y-axis are at: 0, 50, 100, and 150 
+## It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
 ## The mids and counts for the bins are:
+## mid = -3.25  count = 3 
 ## mid = -2.75  count = 3 
-## mid = -2.25  count = 21 
-## mid = -1.75  count = 50 
-## mid = -1.25  count = 92 
-## mid = -0.75  count = 139 
-## mid = -0.25  count = 169 
-## mid = 0.25  count = 219 
+## mid = -2.25  count = 16 
+## mid = -1.75  count = 55 
+## mid = -1.25  count = 81 
+## mid = -0.75  count = 148 
+## mid = -0.25  count = 177 
+## mid = 0.25  count = 188 
 ## mid = 0.75  count = 155 
-## mid = 1.25  count = 94 
-## mid = 1.75  count = 40 
-## mid = 2.25  count = 11 
-## mid = 2.75  count = 6 
-## mid = 3.25  count = 1
+## mid = 1.25  count = 107 
+## mid = 1.75  count = 46 
+## mid = 2.25  count = 15 
+## mid = 2.75  count = 6
 ```
 
 This first example showed me what was possible if only I could get a few things sorted out. All histograms  are created by a function that stores the results (both numeric and text details) and calls this stored set of values a "histogram". The main issue is that storing the set of details is not consistent in R, nor is the fact that the stored object gets given a "class" to tell me what type of object it is. This problem haunted me for quite some time because I was talking to the wrong people about the problem; it was time to find people that held the solution instead of talking to the people that would benefit if a solution was found.

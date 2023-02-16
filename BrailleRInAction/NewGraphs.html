@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 New BrailleR commands for making and interpreting basic graphs | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 New BrailleR commands for making and interpreting basic graphs | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2023-01-16" />
+<meta name="date" content="2023-02-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -320,7 +320,7 @@ div.csl-indent {
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
 <div id="whats-in-a-graph" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> What’s in a graph?<a href="NewGraphs.html#whats-in-a-graph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A challenge for many blind people is to understand the way a scatter plot shows a relationship between two variables. In a theoretical sense they can learn that a scatter plot does show a relationship, outliers etc. but the ability to construct a scatter plot for themselves and then interpret it in a similar way to their sighted peers is not possible unless they have direct access to a tactile image embosser. Such access is not immediate as embossers are not portable. Although efforts to create tools that can be used by blind people who do not have access to an embosser are not new <span class="citation">(<a href="#ref-CalderEtAl2006" role="doc-biblioref">Calder et al. 2006</a>)</span>, more recent developments have tended to focus on use of touch screen technologies. To this author’s knowledge, no comprehensive solution exists to meet the need for blind users to independently create statistical graphs with confidence or to modify them without starting all over again.</p>
+<p>A challenge for many blind people is to understand the way a scatter plot shows a relationship between two variables. In a theoretical sense they can learn that a scatter plot does show a relationship, outliers etc. but the ability to construct a scatter plot for themselves and then interpret it in a similar way to their sighted peers is not possible unless they have direct access to a tactile image embosser. Such access is not immediate as embossers are not portable. Although efforts to create tools that can be used by blind people who do not have access to an embosser are not new <span class="citation">(<a href="#ref-CalderEtAl2006">Calder et al. 2006</a>)</span>, more recent developments have tended to focus on use of touch screen technologies. To this author’s knowledge, no comprehensive solution exists to meet the need for blind users to independently create statistical graphs with confidence or to modify them without starting all over again.</p>
 <p>Solutions for giving blind people access (in a general sense) are often aimed at providing an exact replica of what the sighted person can see. A statistical graph can exist on two levels: First, the exact detail of individual elements that are plotted in the graph, and second, the combined effect this collection of elements conveys.</p>
 <p>As we look at the various graphs being produced in any analysis, we need to think about which of these activities is being done by the sighted world as they consume the content. If we do not understand what the consumer is doing, we cannot hope to provide an appropriate graph for them; to be a producer of a graph, you must also be a consumer of it, albeit temporarily. The solutions offered to blind users by <code>BrailleR</code> try to keep this ethos in mind.</p>
 </div>
@@ -382,16 +382,18 @@ Figure 5.1: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+ [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5  4.0
 
 $counts
- [1]   7  21  42  96 137 195 184 155  93  48  18   4
+ [1]   4  16  38  90 146 171 222 153 101  40  10   6   1   2
 
 $density
- [1] 0.014 0.042 0.084 0.192 0.274 0.390 0.368 0.310 0.186 0.096 0.036 0.008
+ [1] 0.008 0.032 0.076 0.180 0.292 0.342 0.444 0.306 0.202 0.080 0.020 0.012
+[13] 0.002 0.004
 
 $mids
  [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75
+[13]  3.25  3.75
 
 $xname
 [1] &quot;x&quot;
@@ -412,16 +414,18 @@ Figure 5.2: testing examples
 <pre><code>
 &gt; MyHist
 $breaks
- [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+ [1] -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5  4.0
 
 $counts
- [1]   7  21  42  96 137 195 184 155  93  48  18   4
+ [1]   4  16  38  90 146 171 222 153 101  40  10   6   1   2
 
 $density
- [1] 0.014 0.042 0.084 0.192 0.274 0.390 0.368 0.310 0.186 0.096 0.036 0.008
+ [1] 0.008 0.032 0.076 0.180 0.292 0.342 0.444 0.306 0.202 0.080 0.020 0.012
+[13] 0.002 0.004
 
 $mids
  [1] -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25  2.75
+[13]  3.25  3.75
 
 $xname
 [1] &quot;x&quot;
@@ -450,18 +454,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 12
+[1] 14
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -3  4  7
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -3 -2 -1  0  1  2  3  4
 
 $yTicks
 [1]   0  50 100 150 200
@@ -472,23 +476,25 @@ attr(,&quot;class&quot;)
 &gt; VI(MyHist)
 This is a histogram, with the title: with the title: Example histogram (BrailleR package)
 &quot;x&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, 3, and 4 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 12 bins with equal widths, starting at -3 and ending at 3 .
+It has 14 bins with equal widths, starting at -3 and ending at 4 .
 The mids and counts for the bins are:
-mid = -2.75  count = 7 
-mid = -2.25  count = 21 
-mid = -1.75  count = 42 
-mid = -1.25  count = 96 
-mid = -0.75  count = 137 
-mid = -0.25  count = 195 
-mid = 0.25  count = 184 
-mid = 0.75  count = 155 
-mid = 1.25  count = 93 
-mid = 1.75  count = 48 
-mid = 2.25  count = 18 
-mid = 2.75  count = 4</code></pre>
+mid = -2.75  count = 4 
+mid = -2.25  count = 16 
+mid = -1.75  count = 38 
+mid = -1.25  count = 90 
+mid = -0.75  count = 146 
+mid = -0.25  count = 171 
+mid = 0.25  count = 222 
+mid = 0.75  count = 153 
+mid = 1.25  count = 101 
+mid = 1.75  count = 40 
+mid = 2.25  count = 10 
+mid = 2.75  count = 6 
+mid = 3.25  count = 1 
+mid = 3.75  count = 2</code></pre>
 <p>When you first issued the <code>library(BrailleR)</code> command, there were several warnings printed out. One of them told you that the <code>hist()</code> function from the <code>graphics</code> package was masked by the <code>BrailleR</code> version. This means that when you use <code>hist()</code>, it is the <code>BrailleR</code> version being used.</p>
 <p>the <code>BrailleR</code> package includes <code>hist()</code> and <code>boxplot()</code> functions that pass the details of the command on to the <code>graphics</code> package functions of the same name, and then add any additional content required that will improve the ability to describe the visual graphic produced in text. In most cases, the graph producing functions pass on arguments such as <code>main</code>, <code>xlab</code>, or <code>ylab</code> (for main title and axis labels) to the relevant plotting commands without storing these elements in the object that is created. These elements are stored as graphical parameters and can be recalled using <code>par()</code> commands.</p>
 </div>
@@ -548,11 +554,11 @@ Figure 5.3: The six graphs generated by the <code>example(ScatterPlot)</code>
 <h3><span class="header-section-number">5.4.1</span> What’s in the scatter plot?<a href="NewGraphs.html#whats-in-the-scatter-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Well first we might ask what is in the graph window to be confident that a plot was actually made. The <code>WTF()</code> command was put in <code>BrailleR</code> to address this problem. For the record, WTF is the acronym for “What’s this figure?” We’ll see it’s use in the next figure. It should tell us what appears in the graph window for things like axis lables and titles.</p>
 <p>The current solution offered by the <code>BrailleR</code> package for helping describe the points plotted in a scatter plot, is to attempt to replicate the summarisation done by sight using a text construct. A sighted person looking at a scatter plot might look at the trend being displayed by a set of points, but they might as easily partition the plot area into a grid pattern and recognize the density of points in each region. For example,</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="NewGraphs.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
-<span id="cb43-2"><a href="NewGraphs.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Wind, Ozone, <span class="at">pch =</span> <span class="dv">4</span>)</span>
-<span id="cb43-3"><a href="NewGraphs.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">min</span>(Wind)<span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Wind)<span class="sc">-</span><span class="fu">min</span>(Wind)), <span class="at">col=</span><span class="dv">6</span>)</span>
-<span id="cb43-4"><a href="NewGraphs.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">-</span><span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)), <span class="at">col=</span><span class="dv">6</span>)</span>
-<span id="cb43-5"><a href="NewGraphs.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">WTF</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="NewGraphs.html#cb43-1" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
+<span id="cb43-2"><a href="NewGraphs.html#cb43-2" tabindex="-1"></a><span class="fu">plot</span>(Wind, Ozone, <span class="at">pch =</span> <span class="dv">4</span>)</span>
+<span id="cb43-3"><a href="NewGraphs.html#cb43-3" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">min</span>(Wind)<span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Wind)<span class="sc">-</span><span class="fu">min</span>(Wind)), <span class="at">col=</span><span class="dv">6</span>)</span>
+<span id="cb43-4"><a href="NewGraphs.html#cb43-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">+</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.5</span>,<span class="fl">0.75</span>)<span class="sc">*</span>(<span class="fu">max</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">-</span><span class="fu">min</span>(Ozone, <span class="at">na.rm=</span><span class="cn">TRUE</span>)), <span class="at">col=</span><span class="dv">6</span>)</span>
+<span id="cb43-5"><a href="NewGraphs.html#cb43-5" tabindex="-1"></a><span class="fu">WTF</span>()</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:addGridLines"></span>
 <img src="04b-NewGraphCommands_files/figure-html/addGridLines-1.png" alt="Scatter plot of Ozone versus Wind with grid lines added." width="576" />
 <p class="caption">
@@ -563,18 +569,18 @@ Figure 5.4: Scatter plot of Ozone versus Wind with grid lines added.
 &quot;Wind&quot; as the x axis label;
 &quot;Ozone&quot; as the y axis label;
 There are 116 points marked on this graph.</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="NewGraphs.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="NewGraphs.html#cb45-1" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
 <p>Counting the number of points falling into each cell of the graphic and presenting the results as a table would give the reader an impression of the density of those points. The grid lines added in this last figure were spaced uniformly, and chosen to split the region into a <span class="math inline">\(4\times4\)</span> grid of sixteen cells.
 Refining the number of cells and the distributional assumptions for the grid lines should make it easier to understand the relationship between the two variables being plotted. Note that the general picture is what is sought, not the specific locations of every point. The number of points for the last scatter plot are counted by the <code>WhereXY()</code> command as follows:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="NewGraphs.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
-<span id="cb46-2"><a href="NewGraphs.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">WhereXY</span>(Wind, Ozone, <span class="at">grid =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="NewGraphs.html#cb46-1" tabindex="-1"></a><span class="fu">attach</span>(airquality)</span>
+<span id="cb46-2"><a href="NewGraphs.html#cb46-2" tabindex="-1"></a><span class="fu">WhereXY</span>(Wind, Ozone, <span class="at">grid =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span></code></pre></div>
 <pre><code>     1  2  3 4 Sum
 4    2  0  0 0   2
 3    7  5  0 0  12
 2    9 15  6 0  30
 1    1 39 27 5  72
 Sum 19 59 33 5 116</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="NewGraphs.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="NewGraphs.html#cb48-1" tabindex="-1"></a><span class="fu">detach</span>(airquality)</span></code></pre></div>
 <p>In situations where the user is confident that the marginal distributions of either or both of the variables being plotted are normal, the grid lines should be spaced accordingly.</p>
 </div>
 </div>

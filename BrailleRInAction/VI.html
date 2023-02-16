@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Some basic examples | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Some basic examples | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2023-01-16" />
+<meta name="date" content="2023-02-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -320,24 +320,24 @@ div.csl-indent {
 <p>You will need the <code>BrailleR</code> package to be ready for use to follow along with the examples in this chapter. Do this by issuing the command <code>library(BrailleR)</code> now.</p>
 <div id="accessibility-of-graphics-in-statistical-software" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Accessibility of graphics in statistical software<a href="VI.html#accessibility-of-graphics-in-statistical-software" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Access to graphical representations of information from mathematical or statistical software is quite limited, and therefore limits the blind user’s capacity. To this author’s knowledge, no mathematical or statistical software has the capability of directly linking to any hardware or software solutions that make the information presented in graphs immediately available. The scalable vector graphic (SVG) format can be used to present a graphic with text embedded into the file for creating access for a blind user <span class="citation">(<a href="#ref-BulatovGardner2004SVG" role="doc-biblioref">Bulatov and Gardner 2004</a>; <a href="#ref-GardnerBulatov2010SVG" role="doc-biblioref">Gardner and Bulatov 2010</a>)</span>.
-Only a small number of statistical software applications have the capacity to create SVG files, but this capacity does not in itself create access because the text that makes them accessible must be added somehow; generally this is a manual process. The World Wide Web Consortium has a recommendation on the use of SVGs in web content <span class="citation">(<a href="#ref-SVGStandard" role="doc-biblioref">Dengler et al. 2011</a>)</span> and a number of add-on packages for R make use of SVG because of the opportunity to enrich a graphic’s interactivity in webpages; see <span class="citation">(<a href="#ref-MurrellPotter2014" role="doc-biblioref">Murrell and Potter 2014</a>)</span> for a more detailed discussion of these packages and their functionality. Of particular note is that there are different ways to create an SVG and care must be taken if the maximum accessibility for blind users is ever to be achieved.</p>
-<p>In R, a graph can be saved as an SVG using the <code>svg()</code> command, but this approach uses the Cairo SVG format; this has the unfortunate outcome that text is not always preserved as a string, and some shapes are represented by an unstructured set of straight lines <span class="citation">(<a href="#ref-GardnerBulatov2010SVG" role="doc-biblioref">Gardner and Bulatov 2010</a>)</span>.
+<p>Access to graphical representations of information from mathematical or statistical software is quite limited, and therefore limits the blind user’s capacity. To this author’s knowledge, no mathematical or statistical software has the capability of directly linking to any hardware or software solutions that make the information presented in graphs immediately available. The scalable vector graphic (SVG) format can be used to present a graphic with text embedded into the file for creating access for a blind user <span class="citation">(<a href="#ref-BulatovGardner2004SVG">Bulatov and Gardner 2004</a>; <a href="#ref-GardnerBulatov2010SVG">Gardner and Bulatov 2010</a>)</span>.
+Only a small number of statistical software applications have the capacity to create SVG files, but this capacity does not in itself create access because the text that makes them accessible must be added somehow; generally this is a manual process. The World Wide Web Consortium has a recommendation on the use of SVGs in web content <span class="citation">(<a href="#ref-SVGStandard">Dengler et al. 2011</a>)</span> and a number of add-on packages for R make use of SVG because of the opportunity to enrich a graphic’s interactivity in webpages; see <span class="citation">(<a href="#ref-MurrellPotter2014">Murrell and Potter 2014</a>)</span> for a more detailed discussion of these packages and their functionality. Of particular note is that there are different ways to create an SVG and care must be taken if the maximum accessibility for blind users is ever to be achieved.</p>
+<p>In R, a graph can be saved as an SVG using the <code>svg()</code> command, but this approach uses the Cairo SVG format; this has the unfortunate outcome that text is not always preserved as a string, and some shapes are represented by an unstructured set of straight lines <span class="citation">(<a href="#ref-GardnerBulatov2010SVG">Gardner and Bulatov 2010</a>)</span>.
 Retention of text as strings is crucial if modifications such as changing the font of any text to the braille font of a user’s choosing is to be managed easily.
-Use of the <code>gridSVG</code> package <span class="citation">(<a href="#ref-MurrellPotter2014" role="doc-biblioref">Murrell and Potter 2014</a>)</span> does lead to creation of SVG files that do keep strings of text intact and a hierarchy of graphical elements. These SVG files are more easily modified to create accessibility for blind users that have the technology to interpret them <span class="citation">(<a href="#ref-GardnerBulatov2010SVG" role="doc-biblioref">Gardner and Bulatov 2010</a>)</span>.<br />
-Any graph created in R using functions from the <code>graphics</code> package will need to be converted to the <code>grid</code> package system for generating graphics through use of the <code>gridGraphics</code> <span class="citation">(<a href="#ref-Murrell2015GridGraphics" role="doc-biblioref">Murrell 2015</a>)</span> package before they are exported in SVG format. Existence of the <code>gridSVG</code> and <code>gridGraphics</code> packages means that it should be possible to automate the creation and addition of the necessary text information to the SVG so that the need for human intervention is minimised.</p>
-<p>Add-on scripts for screen reader software, such as JAWS <span class="citation">(<a href="#ref-JAWS" role="doc-biblioref">Freedom Scientific 2018</a>)</span>, that attempt to interpret the graphs created by common spreadsheet software has been tried in the past.
-One major problem that results from the creation of these add-on scripts is that of maintenance; unfortunately, the add-on scripts for screen reader software support of spreadsheet applications has not kept pace with the developments of those applications sufficiently enough to give blind people access to the full range of graphs. Sporadic effort has been made at providing access to statistical software through the creation of add-on scripts for screen readers, but little effort was ever given to creating access to the content of graphics. It is unfortunate that these have also not been sufficiently maintained. In this respect the use of R or SAS currently hold an advantage over other commonly used software (notably SPSS and Minitab) for the blind user because no additional scripts for the screen reading software are required. <span class="citation">(<a href="#ref-GodfreyLoots2014JSS" role="doc-biblioref">Godfrey and Loots 2014</a>)</span>. R and SAS also work well with the open source screen reader called NVDA <span class="citation">(<a href="#ref-NVDA" role="doc-biblioref">NVDA Team 2018</a>)</span>.</p>
+Use of the <code>gridSVG</code> package <span class="citation">(<a href="#ref-MurrellPotter2014">Murrell and Potter 2014</a>)</span> does lead to creation of SVG files that do keep strings of text intact and a hierarchy of graphical elements. These SVG files are more easily modified to create accessibility for blind users that have the technology to interpret them <span class="citation">(<a href="#ref-GardnerBulatov2010SVG">Gardner and Bulatov 2010</a>)</span>.<br />
+Any graph created in R using functions from the <code>graphics</code> package will need to be converted to the <code>grid</code> package system for generating graphics through use of the <code>gridGraphics</code> <span class="citation">(<a href="#ref-Murrell2015GridGraphics">Murrell 2015</a>)</span> package before they are exported in SVG format. Existence of the <code>gridSVG</code> and <code>gridGraphics</code> packages means that it should be possible to automate the creation and addition of the necessary text information to the SVG so that the need for human intervention is minimised.</p>
+<p>Add-on scripts for screen reader software, such as JAWS <span class="citation">(<a href="#ref-JAWS">Freedom Scientific 2018</a>)</span>, that attempt to interpret the graphs created by common spreadsheet software has been tried in the past.
+One major problem that results from the creation of these add-on scripts is that of maintenance; unfortunately, the add-on scripts for screen reader software support of spreadsheet applications has not kept pace with the developments of those applications sufficiently enough to give blind people access to the full range of graphs. Sporadic effort has been made at providing access to statistical software through the creation of add-on scripts for screen readers, but little effort was ever given to creating access to the content of graphics. It is unfortunate that these have also not been sufficiently maintained. In this respect the use of R or SAS currently hold an advantage over other commonly used software (notably SPSS and Minitab) for the blind user because no additional scripts for the screen reading software are required. <span class="citation">(<a href="#ref-GodfreyLoots2014JSS">Godfrey and Loots 2014</a>)</span>. R and SAS also work well with the open source screen reader called NVDA <span class="citation">(<a href="#ref-NVDA">NVDA Team 2018</a>)</span>.</p>
 <p>In conclusion, it seems that until such time as adaptive technology for creating immediate access via tactile images is commonly available, other solutions will continue to be relevant. In fact, even once the immediacy issue is overcome, there will be a place for solutions such as the <code>BrailleR</code> package as a complementary solution rather than a substitute.</p>
-<p>At each of the Summer University and Blind Science Conference events I have shown students that they could use R to gain access to graphed information in a manner almost unparalleled by other statistical software — the obvious exception to this rule is S-PLUS <span class="citation">(<a href="#ref-SPLUS-Soft" role="doc-biblioref">Insightful Corp. 2003</a>)</span>.
+<p>At each of the Summer University and Blind Science Conference events I have shown students that they could use R to gain access to graphed information in a manner almost unparalleled by other statistical software — the obvious exception to this rule is S-PLUS <span class="citation">(<a href="#ref-SPLUS-Soft">Insightful Corp. 2003</a>)</span>.
 This advantage comes from the fact that the S language, on which R is built, implicitly stores the data needed to create many graphs, and this data can be assigned to an object for further manipulation.
 This is not true for graphs created using the ubiquitous <code>plot()</code> function however, and many other plotting functions that explicitly return a <code>NULL</code> object. We will first look at a graph object that can be explicitly stored.</p>
 </div>
 <div id="histograms" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Histograms<a href="VI.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The first and most commonly used example demonstrating the value of the BrailleR package to a blind user is the creation of a histogram. For example, a sighted user wanting a histogram of 1000 randomly chosen values from a standard normal distribution would type</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="VI.html#cb12-1" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
-<span id="cb12-2"><a href="VI.html#cb12-2" aria-hidden="true" tabindex="-1"></a>HIST <span class="ot">=</span> <span class="fu">hist</span>(Y)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="VI.html#cb12-1" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb12-2"><a href="VI.html#cb12-2" tabindex="-1"></a>HIST <span class="ot">=</span> <span class="fu">hist</span>(Y)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:hist"></span>
 <img src="04a-VIInAction_files/figure-html/hist-1.png" alt="A histogram of 1000 random values from a normal distribution" width="672" />
 <p class="caption">
@@ -345,20 +345,21 @@ Figure 2.1: A histogram of 1000 random values from a normal distribution
 </p>
 </div>
 <p>A simple way for blind users to access the information used to create a graph is to ask R to print the object, using the <code>print()</code> command.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="VI.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(HIST)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="VI.html#cb13-1" tabindex="-1"></a><span class="fu">print</span>(HIST)</span></code></pre></div>
 <pre><code>$breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0
+ [1] -4.5 -4.0 -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5
+[16]  3.0
 
 $counts
- [1]   2   5  17  39 106 165 203 189 139  83  31  16   5
+ [1]   1   0   1   6  14  35 102 143 194 193 151 106  37  14   3
 
 $density
- [1] 0.004 0.010 0.034 0.078 0.212 0.330 0.406 0.378 0.278 0.166 0.062 0.032
-[13] 0.010
+ [1] 0.002 0.000 0.002 0.012 0.028 0.070 0.204 0.286 0.388 0.386 0.302 0.212
+[13] 0.074 0.028 0.006
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25  1.75  2.25
-[13]  2.75
+ [1] -4.25 -3.75 -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75  1.25
+[13]  1.75  2.25  2.75
 
 $xname
 [1] &quot;Y&quot;
@@ -381,18 +382,18 @@ $ExtraArgs$sub
 
 
 $NBars
-[1] 13
+[1] 15
 
 $par
 $par$xaxp
-[1] -3  3  6
+[1] -4  2  3
 
 $par$yaxp
 [1]   0 200   4
 
 
 $xTicks
-[1] -3 -2 -1  0  1  2  3
+[1] -4 -2  0  2
 
 $yTicks
 [1]   0  50 100 150 200
@@ -405,7 +406,7 @@ attr(,&quot;class&quot;)
 In cases like that for the histogram example just introduced, this is a fairly simple task.
 For other situations, some further work needs to be done so that the textual information is a useful summary of the graphical information without crossing over the line of interpreting the information for the user.</p>
 <p>So let’s see what <code>BrailleR</code> is going to offer a blind user instead of the verbose printout seen above. First, the <code>Describe()</code> function describes a histogram in a general sense.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="VI.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Describe</span>(HIST)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="VI.html#cb15-1" tabindex="-1"></a><span class="fu">Describe</span>(HIST)</span></code></pre></div>
 <pre><code>A histogram created using the base graphics package.
 
 General Description:
@@ -414,27 +415,29 @@ A histogram uses rectangles to represent the counts or relative frequencies of o
 R hints:
 If you intend to make a tactile version of a histogram, you may find it useful to alter the aspect ratio so that the histogram is wider than it is tall. </code></pre>
 <p>Then, we can find out what is shown in the specific histogram using the <code>VI()</code> function.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="VI.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(HIST)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="VI.html#cb17-1" tabindex="-1"></a><span class="fu">VI</span>(HIST)</span></code></pre></div>
 <pre><code>This is a histogram, with the title: with the title: Histogram of Y
 &quot;Y&quot; is marked on the x-axis.
-Tick marks for the x-axis are at: -3, -2, -1, 0, 1, 2, and 3 
+Tick marks for the x-axis are at: -4, -2, 0, and 2 
 There are a total of 1000 elements for this variable.
 Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 13 bins with equal widths, starting at -3.5 and ending at 3 .
+It has 15 bins with equal widths, starting at -4.5 and ending at 3 .
 The mids and counts for the bins are:
-mid = -3.25  count = 2 
-mid = -2.75  count = 5 
-mid = -2.25  count = 17 
-mid = -1.75  count = 39 
-mid = -1.25  count = 106 
-mid = -0.75  count = 165 
-mid = -0.25  count = 203 
-mid = 0.25  count = 189 
-mid = 0.75  count = 139 
-mid = 1.25  count = 83 
-mid = 1.75  count = 31 
-mid = 2.25  count = 16 
-mid = 2.75  count = 5</code></pre>
+mid = -4.25  count = 1 
+mid = -3.75  count = 0 
+mid = -3.25  count = 1 
+mid = -2.75  count = 6 
+mid = -2.25  count = 14 
+mid = -1.75  count = 35 
+mid = -1.25  count = 102 
+mid = -0.75  count = 143 
+mid = -0.25  count = 194 
+mid = 0.25  count = 193 
+mid = 0.75  count = 151 
+mid = 1.25  count = 106 
+mid = 1.75  count = 37 
+mid = 2.25  count = 14 
+mid = 2.75  count = 3</code></pre>
 <p>The <code>Describe()</code> and <code>VI()</code> commands actually call the <code>Describe.histogram()</code> and <code>VI.histogram()</code> commands because R knows it is a histogram that was generated by <code>hist()</code> earlier.</p>
 <div id="important-features" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Important features<a href="VI.html#important-features" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -451,7 +454,7 @@ The blind user can then read from the text description so that they can interpre
 <div id="basic-numerical-summaries" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Basic numerical summaries<a href="VI.html#basic-numerical-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The standard presentation of a summary of a data frame where each variable is given its own column is difficult for a screen reader user to read as the processing of information is done line by line. For example:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="VI.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="VI.html#cb19-1" tabindex="-1"></a><span class="fu">summary</span>(airquality)</span></code></pre></div>
 <pre><code>     Ozone           Solar.R           Wind             Temp      
  Min.   :  1.00   Min.   :  7.0   Min.   : 1.700   Min.   :56.00  
  1st Qu.: 18.00   1st Qu.:115.8   1st Qu.: 7.400   1st Qu.:72.00  
@@ -469,7 +472,7 @@ The blind user can then read from the text description so that they can interpre
  Max.   :9.000   Max.   :31.0  
                                </code></pre>
 <p>The <code>VI()</code> command actually calls the <code>VI.data.frame()</code> command. It then processes each variable one by one so that the results are printed variable by variable instead of summary statistic by summary statistic. For example:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="VI.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">VI</span>(airquality)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="VI.html#cb21-1" tabindex="-1"></a><span class="fu">VI</span>(airquality)</span></code></pre></div>
 <pre><code>
 The summary of each variable is
 Ozone: Min. 1   1st Qu. 18   Median 31.5   Mean 42.1293103448276   3rd Qu. 63.25   Max. 168   NA&#39;s 37  
