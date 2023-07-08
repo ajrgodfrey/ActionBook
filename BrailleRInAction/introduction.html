@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2023-02-16" />
+<meta name="date" content="2023-06-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -318,7 +322,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 1</span> Introduction<a href="introduction.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Access to information is crucial for a blind person’s success in education, but transferring the knowledge about the existence of techniques into actually being able to perform those tasks is what will make that blind person employable. This e-book is based on the author’s experiences as a blind academic in statistics who has often been called on for advice by blind students studying statistics and their sighted lecturers wanting to provide the best possible support. Unfortunately, there is little information available in academic journals or the public domain to offer the statistics lecturer who is about to teach a blind student for the first time. That is changing however.</p>
 <p>At the 2009 Workshop on E-Inclusion in Mathematics and Sciences, I was able to meet other researchers and scientists who are also concerned about the low rate of blind people entering the sciences in a broad sense and the mathematical sciences in particular. <span class="citation">(<a href="#ref-Godfrey2009AccessiblePaper">Godfrey 2009</a>)</span> presented my first formalized summary of what I saw as the current state of affairs for blind people taking statistics courses; that work discussed what was possible in theory, but lacked evidence of what was happening in practice.
-A collaboration with the only other blind person to gain employment as a full-time Lecturer in Statistics led to a more comprehensive review of what we believe is the current state of affairs for blind students learning statistics. <span class="citation">(<a href="#ref-GodfreyLoots-JSE">Godfrey and Loots 2015</a>)</span> present a wide range of issues that blind students and their teachers must overcome, often through use of the best software options available today. R <span class="citation">(<a href="#ref-Rpkg-base">R Core Team 2022</a>)</span> has featured as a key element in my recommendations for teaching statistics to blind students <span class="citation">(<a href="#ref-Godfrey2009AccessiblePaper">Godfrey 2009</a>)</span> because it offers the greatest opportunity for meeting the needs of blind users.</p>
+A collaboration with the only other blind person to gain employment as a full-time Lecturer in Statistics led to a more comprehensive review of what we believe is the current state of affairs for blind students learning statistics. <span class="citation">(<a href="#ref-GodfreyLoots-JSE">Godfrey and Loots 2015</a>)</span> present a wide range of issues that blind students and their teachers must overcome, often through use of the best software options available today. R <span class="citation">(<a href="#ref-Rpkg-base">R Core Team 2023</a>)</span> has featured as a key element in my recommendations for teaching statistics to blind students <span class="citation">(<a href="#ref-Godfrey2009AccessiblePaper">Godfrey 2009</a>)</span> because it offers the greatest opportunity for meeting the needs of blind users.</p>
 <p>An invitation to attend the <a href="http://icchp-su.net/">second “Summer University” event</a> was taken up in mid 2011; the purpose of this event was to show blind students and disability support staff from universities what software and hardware is available to improve the success rates of blind students entering the sciences.
 This was my first direct opportunity to show blind students how R could be used by them, and the relative merit that R has for them over alternative statistical software.
 I observed blind students working with R and struggling more than I thought was truly necessary. I knew I could do something about it and have spent a lot of time doing so ever since.
@@ -333,7 +337,8 @@ An R Journal article <span class="citation">(<a href="#ref-GodfreyRJournal">Godf
 be interpreted by blind students who cannot access the graphs without
 printing the image to a tactile embosser, or who need the extra text to
 support any tactile images they do create.</p>
-<p>At present this is limited to only a few graph types found in base R functionality. An example of a histogram is presented in Chapter <a href="VI.html#VI">4</a>.</p>
+<p>For many years, this was limited to only a few graph types found in base R functionality. An example of a histogram is presented in Chapter <a href="VI.html#VI">4</a>.<br />
+More recently however, many R users are making use of the <code>ggplot2</code> package to create graphs.</p>
 </div>
 <div id="brailler-helps-gain-access-to-the-content-of-the-r-console" class="section level3 hasAnchor" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> BrailleR helps gain access to the content of the R console<a href="introduction.html#brailler-helps-gain-access-to-the-content-of-the-r-console" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -362,7 +367,7 @@ The convenience functions introduced in Chapter <a href="RMarkdown.html#RMarkdow
 <div id="what-this-book-is-not" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> What this book is not<a href="introduction.html#what-this-book-is-not" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This book is not a comprehensive guide to using R. There are now hundreds of books a blind (or sighted) person could choose to wade through, some are good, some are great, and some are truly awesome! There are also plenty of resources on the internet that are tired and really should be avoided. I am keen to promote those texts that can be easily worked with by a blind user. I’ll mention them as we get to the right point in this book for doing so, but now is a good time to mention a few that have really made a difference to me and creation of this book.</p>
-<p>I am truly reliant on the resources offered by help pages hosted by RStudio. I often include RStudio.com in my list of search terms. In adition, many of the individuals I hold in very high regard have close ties to RStudio.</p>
+<p>I am truly reliant on the resources offered by help pages hosted by RStudio. I often include RStudio.com in my list of search terms. In adition, many of the individuals I hold in very high regard have close ties to RStudio, now known as Posit.</p>
 <p>Yihui Xie’s work on the <code>knitr</code> package <span class="citation">(<a href="#ref-Rpkg-knitr">Xie 2023</a>)</span>
 and his books on writing documents using reproducible research techniques <span class="citation">(<a href="#ref-Xie2015">Xie 2015</a>)</span>
 are key to my success and in my opinion, have also led to making life much easier for blind users to read the work of others and to create new content for themselves.</p>
@@ -388,7 +393,7 @@ Godfrey, A. Jonathan R., Debra Warren, James Thompson, Paul Murrell, Timothy Bil
 Grolemund, G., and H. Wickham. 2016. <em>R for <span>Data Science</span></em>. <span>O’Reilly Media</span>. <a href="http://r4ds.had.co.nz/">http://r4ds.had.co.nz/</a>.
 </div>
 <div id="ref-Rpkg-base" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-Wickham2014Advanced" class="csl-entry">
 ———. 2014a. <em>Advanced r</em>. CRC Press. <a href="https://adv-r.hadley.nz">https://adv-r.hadley.nz</a>.

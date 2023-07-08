@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 The ggplot world and BrailleR | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 The ggplot world and BrailleR | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2023-02-16" />
+<meta name="date" content="2023-06-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -328,7 +332,10 @@ div.csl-indent {
 <span id="cb74-2"><a href="GGPlot.html#cb74-2" tabindex="-1"></a>dsmall <span class="ot">&lt;-</span> diamonds[<span class="fu">sample</span>(<span class="fu">nrow</span>(diamonds), <span class="dv">100</span>),]   </span></code></pre></div>
 <p>One important note for the graphs in this chapter is the difference in the way they appear here, as compared to the original figures of <span class="citation">Wickham (<a href="#ref-Wickham2009ggplot2">2009</a>)</span> where differing height and width parameters have been set for each graph. For example, in the following graph, the points are smaller than in the original figure, and the aspect ratio is slightly different. The consequence is that this graph looks less cluttered than does the original.</p>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="GGPlot.html#cb75-1" tabindex="-1"></a>p11a <span class="ot">=</span> <span class="fu">qplot</span>(carat, price, <span class="at">data =</span> diamonds)   </span></code></pre></div>
-<pre><code>Warning: `qplot()` was deprecated in ggplot2 3.4.0.</code></pre>
+<pre><code>Warning: `qplot()` was deprecated in ggplot2 3.4.0.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.</code></pre>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="GGPlot.html#cb77-1" tabindex="-1"></a>p11a</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:p11a"></span>
 <img src="09-GGPlot_files/figure-html/p11a-1.png" alt="First graph on page 11 of @Wickham2009ggplot2" width="672" />
@@ -666,7 +673,10 @@ Panel 7 represents data for color = J.
 Panel 7 is a bar chart with 29 vertical bars.</code></pre>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="GGPlot.html#cb126-1" tabindex="-1"></a><span class="fu">qplot</span>(carat, ..density.., <span class="at">data =</span> diamonds, <span class="at">facets =</span> color <span class="sc">~</span> ., <span class="at">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="at">binwidth =</span> <span class="fl">0.1</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>))   </span></code></pre></div>
 <pre><code>Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
-ℹ Please use `after_stat(density)` instead.</code></pre>
+ℹ Please use `after_stat(density)` instead.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.</code></pre>
 <pre><code>Warning: Removed 32 rows containing non-finite values (`stat_bin()`).</code></pre>
 <pre><code>Warning: Removed 14 rows containing missing values (`geom_bar()`).</code></pre>
 <pre><code>Warning: Removed 32 rows containing non-finite values (`stat_bin()`).</code></pre>

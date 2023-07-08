@@ -24,7 +24,8 @@ be interpreted by blind students who cannot access the graphs without
 printing the image to a tactile embosser, or who need the extra text to
 support any tactile images they do create.
 
-At present this is limited to only a few graph types found in base R functionality. An example of a histogram is presented in Chapter \@ref(VI).  
+For many years, this was limited to only a few graph types found in base R functionality. An example of a histogram is presented in Chapter \@ref(VI).  
+More recently however, many R users are making use of the `ggplot2` package to create graphs.
 
 ### BrailleR helps gain access to the content of the R console
 
@@ -63,7 +64,7 @@ A key feature of this book is that it was written by a blind person, using only 
 
 This book is not a comprehensive guide to using R. There are now hundreds of books a blind (or sighted) person could choose to wade through, some are good, some are great, and some are truly awesome! There are also plenty of resources on the internet that are tired and really should be avoided. I am keen to promote those texts that can be easily worked with by a blind user. I'll mention them as we get to the right point in this book for doing so, but now is a good time to mention a few that have really made a difference to me and creation of this book.
 
-I am truly reliant on the resources offered by help pages hosted by RStudio. I often include RStudio.com in my list of search terms. In adition, many of the individuals I hold in very high regard have close ties to RStudio. 
+I am truly reliant on the resources offered by help pages hosted by RStudio. I often include RStudio.com in my list of search terms. In adition, many of the individuals I hold in very high regard have close ties to RStudio, now known as Posit. 
 
 Yihui Xie's work on the `knitr` package [@Rpkg-knitr] 
 and his books on writing documents using reproducible research techniques [@Xie2015]

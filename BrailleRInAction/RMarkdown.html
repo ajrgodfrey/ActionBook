@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action</title>
   <meta name="description" content="Getting up and running with the BrailleR package" />
-  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Use of R markdown to generate an analysis efficiently | BrailleR in Action" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Jonathan R. Godfrey" />
 
 
-<meta name="date" content="2023-02-16" />
+<meta name="date" content="2023-06-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -417,7 +421,7 @@ This processing allows for:</p>
 <p>The user that does not like these settings can edit the markdown file for themselves and re-process the file, but the intention is to deliver more than all users would want so that as many users as possible get what they need.</p>
 <p>This R markdown script uses the <code>VI()</code> method for the graphs as well as the code that generates the HTML (via markdown) and LaTeX tables (using the <code>xtable</code> package). Take note of the arguments supplied to the code chunks for the graphs; these include a <code>fig.cap</code> which is used as an Alt tag in the resulting HTML files. The quoted string is the only text that is read aloud by a blind person’s screen reading software as they move the cursor onto the graph while reading through the HTML document. The methods used for creating tables in markdown (either directly or using the <code>kable()</code> command from the <code>knitr</code> package) <span class="citation">(<a href="#ref-Rpkg-knitr">Xie 2023</a>)</span> both lead to a formatted HTML table that is easily navigated by a screen reader using keystrokes that help move between rows or columns. The result is that the HTML document is about as user-friendly as can be expected for a blind user. It is important to recognize that some of the text is arranged for the optimal use by a blind person; it is possible to alter the cosmetics of the HTML document without altering the experience for blind users. Given a blind user might be accompanied by sighted classmates, teaching staff, or colleagues, making the HTML pages presentable is desirable; this has been achieved using a custom style sheet (CSS) included in the package. This style includes some color, adequate spacing of content and other features that improve the clarity of the presented material which is important for a user with some residual vision that wishes to read through the results visually rather than using screen reading software.</p>
 <p>If all of the optional arguments of the <code>UniDesc()</code> function are set at their defaults, the HTML file is automatically opened in a browser (courtesy of the <code>View</code> argument); it puts the R markdown file, the R script, and the HTML document in the current working directory, while the LaTeX and graph files are all placed in a subdirectory.</p>
-<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(<a href="#ref-Rpkg-base">R Core Team 2022</a>)</span> so a user can see what can be expected from these functions.</p>
+<p>Several other convenience functions have been created that follow the same process as the <code>UniDesc()</code> function. The <code>OneFactor()</code> function compares one continuous response variable to a categorical variable, while <code>TwoFactors()</code> allows for two categorical variables and their possible interaction to help explain a single continuous response variable. These functions create group summary statistics and suitable graphs that a sighted audience might expect to see. Comparing a continuous response variable to a continuous predictor variable is achieved using the <code>OnePredictor()</code> function. Each of these functions has an example using data from the <code>datasets</code> package <span class="citation">(<a href="#ref-Rpkg-base">R Core Team 2023</a>)</span> so a user can see what can be expected from these functions.</p>
 </div>
 <div id="analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Analysis of a single continuous variable with respect to a single grouping factor<a href="RMarkdown.html#analysis-of-a-single-continuous-variable-with-respect-to-a-single-grouping-factor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -560,7 +564,7 @@ setwd(DIR)
 <h3> References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Rpkg-rmarkdown" class="csl-entry">
-Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2023. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
+Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2023. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
 </div>
 <div id="ref-Rpkg-xtable" class="csl-entry">
 Dahl, David B., David Scott, Charles Roosen, Arni Magnusson, and Jonathan Swinton. 2019. <em>Xtable: Export Tables to LaTeX or HTML</em>. <a href="http://xtable.r-forge.r-project.org/">http://xtable.r-forge.r-project.org/</a>.
@@ -581,7 +585,7 @@ Gross, Juergen, and Uwe Ligges. 2015. <em>Nortest: Tests for Normality</em>. <a 
 Komsta, Lukasz, and Frederick Novomestky. 2022. <em>Moments: Moments, Cumulants, Skewness, Kurtosis and Related Tests</em>. <a href="https://CRAN.R-project.org/package=moments">https://CRAN.R-project.org/package=moments</a>.
 </div>
 <div id="ref-Rpkg-base" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-RoedigerEtAl2012RKWard" class="csl-entry">
 Rödiger, Stefan, Thomas Friedrichsmeier, Prasenjit Kapat, and Meik Michalke. 2012. <span>“<span>RKWard</span>: A Comprehensive Graphical User Interface and Integrated Development Environment for Statistical Analysis with <span>R</span>.”</span> <em>Journal of Statistical Software</em> 49 (9): 1–34. <a href="http://www.jstatsoft.org/v49/i09">http://www.jstatsoft.org/v49/i09</a>.

@@ -40,6 +40,9 @@ p11a = qplot(carat, price, data = diamonds)
 
 ```
 Warning: `qplot()` was deprecated in ggplot2 3.4.0.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.
 ```
 
 ```r
@@ -543,6 +546,9 @@ qplot(carat, ..density.., data = diamonds, facets = color ~ ., geom = "histogram
 ```
 Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
 ℹ Please use `after_stat(density)` instead.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.
 ```
 
 ```
